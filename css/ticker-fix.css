@@ -1,0 +1,72 @@
+/* ══════════════════════════════════════
+   NUCLEAR TICKER FIX (Restore Color & Motion)
+   ══════════════════════════════════════ */
+
+/* Force Gold Color */
+.divider-text {
+    color: #D4AF37 !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
+}
+
+.divider-line {
+    background: linear-gradient(to var(--dir, right), #D4AF37, transparent) !important;
+}
+
+/* Force Smooth Marquee Animation */
+.logo-ticker-track {
+    display: flex !important;
+    width: max-content !important;
+    min-width: 200% !important;
+    animation: marquee-glide 18s linear infinite !important;
+    /* Slower for professional feel */
+    animation-play-state: running !important;
+    will-change: transform !important;
+}
+
+.logo-ticker-track:hover {
+    animation-play-state: paused !important;
+}
+
+@keyframes marquee-glide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Visibility & Original Color Restoration */
+.logo-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 0 20px !important;
+    width: 200px !important;
+    height: 100px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px) !important;
+    border-color: #D4AF37 !important;
+}
+
+.logo-item img {
+    max-width: 85% !important;
+    max-height: 70% !important;
+    object-fit: contain !important;
+    filter: none !important;
+    /* Restore Original Colors */
+    opacity: 1 !important;
+    transition: transform 0.3s ease !important;
+}
