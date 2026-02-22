@@ -15,10 +15,10 @@ body {
     overflow: hidden !important;
     width: 100% !important;
     position: relative !important;
-    background: transparent !important;
-    /* Inherit section-dark blue */
-    margin: 20px 0 !important;
-    padding: 20px 0 !important;
+    background: #0a2540 !important;
+    /* Standalone Professional Blue Strip */
+    margin: 40px 0 !important;
+    padding: 60px 0 !important;
 }
 
 /* Professional Lateral Fades matching the dark background */
