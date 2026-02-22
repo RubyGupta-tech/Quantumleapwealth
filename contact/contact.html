@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Contact Us — Quantumleap Wealth</title>
+    <meta name="description"
+        content="Get in touch with Quantumleap Wealth. Book a free financial consultation, ask questions, or find our California office location." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
+            padding: 80px 0 70px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 14px;
+            justify-content: center
+        }
+
+        .breadcrumb a {
+            color: var(--accent-light);
+            text-decoration: none
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.3)
+        }
+
+        /* Contact info cards row */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px
+        }
+
+        .contact-info-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md)
+        }
+
+        .ci-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 16px
+        }
+
+        .contact-info-card h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 8px
+        }
+
+        .contact-info-card p,
+        .contact-info-card a {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            text-decoration: none
+        }
+
+        .contact-info-card a:hover {
+            color: var(--accent)
+        }
+
+        /* Main contact section */
+        .contact-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 70px 0 80px;
+            align-items: start
+        }
+
+        .contact-form-side h2 {
+            font-size: 1.7rem;
+            margin-bottom: 10px
+        }
+
+        .contact-form-side p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.7;
+            margin-bottom: 28px
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .form-group {
+            margin-bottom: 18px
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: #fff
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12)
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical
+        }
+
+        .form-submit {
+            padding: 14px 36px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s, transform 0.2s;
+            width: 100%
+        }
+
+        .form-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-1px)
+        }
+
+        /* Info side */
+        .contact-info-side h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px
+        }
+
+        .contact-info-side p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 28px
+        }
+
+        .info-detail {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 20px
+        }
+
+        .info-detail-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.14), rgba(201, 168, 76, 0.06));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0
+        }
+
+        .info-detail-text h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3px
+        }
+
+        .info-detail-text p,
+        .info-detail-text a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            text-decoration: none;
+            margin: 0
+        }
+
+        .info-detail-text a:hover {
+            color: var(--accent)
+        }
+
+        .hours-table {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            margin-top: 28px
+        }
+
+        .hours-table h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 12px
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.84rem;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted)
+        }
+
+        .hours-row:last-child {
+            border: none
+        }
+
+        .hours-row span:last-child {
+            color: var(--primary);
+            font-weight: 600
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #166534;
+            font-weight: 600
+        }
+
+        @media(max-width:900px) {
+            .contact-cards {
+                grid-template-columns: 1fr;
+                gap: 16px
+            }
+
+            .contact-main {
+                grid-template-columns: 1fr;
+                padding: 50px 0
+            }
+
+            .form-row {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+    <!-- Calendly popup widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
+                    Talam.prasad@gmail.com</a>
+                <div class="topbar-divider"></div><span>📍 California, USA</span>
+            </div>
+            <div class="topbar-right">
+                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+            </div>
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-brand"><img src="../images/Quantumleap_logo.png"
+                    alt="Quantumleap Wealth Logo" class="brand-logo" />
+                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
+                        class="brand-tagline">Financial Excellence</span></div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../who_we_are/about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
+                        <li><a href="../who_we_are/partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
+                                Partners</a></li>
+                        <li><a href="../who_we_are/disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
+                                Disclaimer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown wide">
+                        <li><a href="../images/services/investment-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">📈</span>Investment Planning</a></li>
+                        <li><a href="../images/services/living-will-trust.html" class="dropdown-item"><span class="dd-icon">📜</span>Living
+                                Will &amp; Trust</a></li>
+                        <li><a href="../images/services/tax-saving.html" class="dropdown-item"><span class="dd-icon">💰</span>Tax
+                                Savings</a></li>
+                        <li><a href="../images/services/retirement-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
+                        <li><a href="../images/services/kids-college.html" class="dropdown-item"><span class="dd-icon">🎓</span>Kids
+                                College</a></li>
+                        <li><a href="../images/services/life-insurance.html" class="dropdown-item"><span class="dd-icon">🛡️</span>Life
+                                Insurance</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span class="dd-icon">🚀</span>6
+                                Steps to Financial Freedom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../Activities/Photos.html" class="dropdown-item"><span
+                                    class="dd-icon">📸</span>Photos</a></li>
+                        <li><a href="../Activities/videos.html" class="dropdown-item"><span
+                                    class="dd-icon">🎥</span>Videos</a></li>
+                        <li><a href="../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="nav-item"><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;" class="btn-nav-cta">Book Consultation <svg width="13"
+                            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-inner">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                            style="color:var(--accent-light)">Contact</span></div>
+                    <h1>Get in Touch</h1>
+                    <p>We offer free consultations. Whether you have a quick question or are ready to start your
+                        financial journey — our team is here, ready to help.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" style="margin-top:-30px;position:relative;z-index:2">
+            <div class="contact-cards">
+                <div class="contact-info-card">
+                    <div class="ci-icon">📞</div>
+                    <h4>Call Us</h4>
+                    <p><a href="tel:+14082033877">(+1) 408-203-3877</a><br /><a href="tel:+14082033877">(+1) 408-203-3877</a></p>
+                </div>
+                <div class="contact-info-card">
+                    <div class="ci-icon">✉</div>
+                    <h4>Email Us</h4>
+                    <p><a href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></p>
+                </div>
+                <div class="contact-info-card">
+                    <div class="ci-icon">📍</div>
+                    <h4>Location</h4>
+                    <p>California, USA<br /><span style="font-size:0.8rem">Serving clients nationwide</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contact-main">
+
+                <!-- FORM -->
+                <div class="contact-form-side">
+                    <h2>Book a Free Consultation</h2>
+                    <p>Fill out the form below and one of our expert advisors will get back to you within 24 hours. No
+                        obligations — just a genuine conversation about your financial future.</p>
+                    <form id="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group"><label>First Name *</label><input type="text" required
+                                    placeholder="First name" /></div>
+                            <div class="form-group"><label>Last Name *</label><input type="text" required
+                                    placeholder="Last name" /></div>
+                        </div>
+                        <div class="form-group"><label>Email Address *</label><input type="email" required
+                                placeholder="your@email.com" /></div>
+                        <div class="form-group"><label>Phone Number</label><input type="tel"
+                                placeholder="(+1) 000-000-0000" /></div>
+                        <div class="form-group"><label>Service of Interest</label>
+                            <select>
+                                <option value="">— Select a service —</option>
+                                <option>Investment Planning</option>
+                                <option>Living Will &amp; Trust</option>
+                                <option>Tax Savings</option>
+                                <option>Retirement Planning</option>
+                                <option>Kids College Fund</option>
+                                <option>Life Insurance</option>
+                                <option>6 Steps to Financial Freedom</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Your Message *</label><textarea required
+                                placeholder="Tell us about your financial goals, questions, or anything else we should know..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Send Message — It's Free →</button>
+                    </form>
+                    <div class="form-success" id="form-success">✅ Thank you! Your message has been sent. We'll reach out
+                        within 24 hours.</div>
+                </div>
+
+                <!-- INFO SIDE -->
+                <div class="contact-info-side">
+                    <h2>We're Here to Help</h2>
+                    <p>Our advisors are committed to guiding you toward financial clarity and confidence. Reach out
+                        through any of the channels below — we'd love to connect.</p>
+
+                    <div class="info-detail">
+                        <div class="info-detail-icon">📞</div>
+                        <div class="info-detail-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+14082033877">(+1) 408-203-3877</a><br /><a href="tel:+14082033877">(+1) 408-203-3877</a></p>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <div class="info-detail-icon">✉</div>
+                        <div class="info-detail-text">
+                            <h4>Email</h4><a href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <div class="info-detail-icon">📍</div>
+                        <div class="info-detail-text">
+                            <h4>Office Location</h4>
+                            <p>California, USA<br />Serving clients nationwide</p>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <div class="info-detail-icon">💬</div>
+                        <div class="info-detail-text">
+                            <h4>Response Time</h4>
+                            <p>We typically respond within 24 hours of receiving your inquiry. Consultations available 7
+                                days a week.</p>
+                        </div>
+                    </div>
+
+                    <div class="hours-table">
+                        <h4>📅 Office Hours</h4>
+                        <div class="hours-row"><span>Monday – Friday</span><span>9:00 AM – 6:00 PM EST</span></div>
+                        <div class="hours-row"><span>Saturday</span><span>10:00 AM – 4:00 PM EST</span></div>
+                        <div class="hours-row"><span>Sunday</span><span>By Appointment Only</span></div>
+                    </div>
+
+                    <div
+                        style="margin-top:28px;padding:20px;background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,0.2);border-radius:12px">
+                        <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.65;margin:0"><strong
+                                style="color:var(--primary)">🎁 Free Consultation Promise:</strong> Your first
+                            consultation is always completely free. No pressure, no obligations — just personalized
+                            financial guidance from a certified expert.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Quantumleap Wealth</h4>
+                    <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+                        wealth preservation.</p>
+                    <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                            href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../who_we_are/about.html">About Us</a></li>
+                        <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="../images/services/investment-planning.html">Investment Planning</a></li>
+                        <li><a href="../images/services/retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="../images/services/life-insurance.html">Life Insurance</a></li>
+                        <li><a href="../images/services/tax-saving.html">Tax Savings</a></li>
+                        <li><a href="../images/services/kids-college.html">Kids College Fund</a></li>
+                        <li><a href="../images/services/living-will-trust.html">Living Will &amp; Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">✉ <a
+                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+                    <div class="footer-contact-item">📍 California, USA</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+                        href="../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('form-success').offsetTop - 100, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

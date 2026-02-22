@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Tax Savings — Quantumleap Wealth</title>
+    <meta name="description"
+        content="Maximize your wealth with smart, proactive tax strategies from Quantumleap Wealth. Expert tax savings planning in California." />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/navbar.css" />
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
+            padding: 80px 0 70px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 1rem;
+            max-width: 560px;
+            line-height: 1.7
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 14px
+        }
+
+        .breadcrumb a {
+            color: var(--accent-light);
+            text-decoration: none
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.3)
+        }
+
+        .page-hero-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            flex-shrink: 0
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            align-items: start;
+            padding: 70px 0
+        }
+
+        .service-content h2 {
+            font-size: 1.7rem;
+            margin-bottom: 16px
+        }
+
+        .service-content h3 {
+            font-size: 1.2rem;
+            margin: 32px 0 14px
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 0.95rem
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0 32px
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent)
+        }
+
+        .feature-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .feature-item span {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.4
+        }
+
+        .tax-strategies {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 20px 0 32px
+        }
+
+        .strategy-item {
+            display: flex;
+            gap: 18px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent)
+        }
+
+        .strategy-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0
+        }
+
+        .strategy-item h4 {
+            font-size: 0.97rem;
+            color: var(--primary);
+            margin-bottom: 5px
+        }
+
+        .strategy-item p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.04));
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 28px
+        }
+
+        .info-box p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .content-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            border-radius: 16px;
+            padding: 36px 32px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .content-cta h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-bottom: 6px
+        }
+
+        .content-cta p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.88rem;
+            margin: 0
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .sidebar-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm)
+        }
+
+        .sidebar-card-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            padding: 18px 22px
+        }
+
+        .sidebar-card-header h4 {
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif
+        }
+
+        .sidebar-card-body {
+            padding: 20px 22px
+        }
+
+        .services-nav {
+            list-style: none
+        }
+
+        .services-nav li {
+            border-bottom: 1px solid var(--border)
+        }
+
+        .services-nav li:last-child {
+            border: none
+        }
+
+        .services-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s, padding-left 0.2s
+        }
+
+        .services-nav a:hover {
+            color: var(--accent);
+            padding-left: 6px
+        }
+
+        .services-nav a.active {
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        .cfg {
+            margin-bottom: 14px
+        }
+
+        .cfg label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em
+        }
+
+        .cfg input,
+        .cfg textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.86rem;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark)
+        }
+
+        .cfg input:focus,
+        .cfg textarea:focus {
+            border-color: var(--accent)
+        }
+
+        .cfg textarea {
+            height: 90px;
+            resize: vertical
+        }
+
+        .sidebar-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s
+        }
+
+        .sidebar-submit:hover {
+            opacity: 0.9
+        }
+
+        @media(max-width:900px) {
+            .service-layout {
+                grid-template-columns: 1fr;
+                padding: 50px 0
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr
+            }
+
+            .content-cta {
+                flex-direction: column
+            }
+        }
+    </style>
+    <!-- Calendly popup widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
+                    Talam.prasad@gmail.com</a>
+                <div class="topbar-divider"></div><span>📍 California, USA</span>
+            </div>
+            <div class="topbar-right">
+                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+            </div>
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="navbar-brand"><img src="../../images/Quantumleap_logo.png"
+                    alt="Quantumleap Wealth Logo" class="brand-logo" />
+                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
+                        class="brand-tagline">Financial Excellence</span></div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../who_we_are/about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
+                        <li><a href="../../who_we_are/partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
+                                Partners</a></li>
+                        <li><a href="../../who_we_are/disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
+                                Disclaimer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Services <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown wide">
+                        <li><a href="investment-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">📈</span>Investment Planning</a></li>
+                        <li><a href="living-will-trust.html" class="dropdown-item"><span class="dd-icon">📜</span>Living
+                                Will &amp; Trust</a></li>
+                        <li><a href="tax-saving.html" class="dropdown-item"><span class="dd-icon">💰</span>Tax
+                                Savings</a></li>
+                        <li><a href="retirement-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
+                        <li><a href="kids-college.html" class="dropdown-item"><span class="dd-icon">🎓</span>Kids
+                                College</a></li>
+                        <li><a href="life-insurance.html" class="dropdown-item"><span class="dd-icon">🛡️</span>Life
+                                Insurance</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span class="dd-icon">🚀</span>6
+                                Steps to Financial Freedom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../Activities/Photos.html" class="dropdown-item"><span
+                                    class="dd-icon">📸</span>Photos</a></li>
+                        <li><a href="../../Activities/videos.html" class="dropdown-item"><span
+                                    class="dd-icon">🎥</span>Videos</a></li>
+                        <li><a href="../../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;" class="btn-nav-cta">Book Consultation <svg width="13"
+                            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-inner">
+                    <div>
+                        <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
+                                href="../../index.html#services">Services</a><span>›</span><span
+                                style="color:var(--accent-light)">Tax Savings</span></div>
+                        <h1>Tax Savings</h1>
+                        <p>Maximize your wealth by keeping more of what you earn. Our proactive, personalized tax
+                            strategies are designed to legally minimize your tax burden year after year.</p>
+                        <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Book a Free
+                            Consultation</a>
+                    </div>
+                    <div class="page-hero-icon">💰</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="service-layout">
+                <div class="service-content">
+                    <h2>Keep More of Your Hard-Earned Money</h2>
+                    <p>At Quantumleap Wealth, we believe every dollar matters. The difference between a good financial
+                        plan and a great one often comes down to tax efficiency. Our advisors work year-round — not just
+                        at tax season — to identify every legal opportunity to reduce your tax liability and accelerate
+                        your wealth-building journey.</p>
+                    <p>Whether you're a salaried employee, a business owner, or an investor, we design tax strategies
+                        uniquely tailored to your income structure, goals, and life stage.</p>
+                    <h3>Our Tax Savings Strategies</h3>
+                    <div class="tax-strategies">
+                        <div class="strategy-item">
+                            <div class="strategy-icon">🏦</div>
+                            <div>
+                                <h4>Tax-Advantaged Account Optimization</h4>
+                                <p>We maximize contributions to 401(k), IRA, HSA, and other tax-advantaged accounts to
+                                    reduce your taxable income while simultaneously accelerating wealth growth.</p>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-icon">📉</div>
+                            <div>
+                                <h4>Tax-Loss Harvesting</h4>
+                                <p>We strategically sell underperforming investments to offset capital gains, reducing
+                                    your overall tax bill while maintaining a balanced, goal-aligned portfolio.</p>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-icon">🏠</div>
+                            <div>
+                                <h4>Real Estate &amp; Deduction Planning</h4>
+                                <p>From mortgage interest to depreciation and home office deductions, we identify every
+                                    property-related tax benefit available to you.</p>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-icon">💼</div>
+                            <div>
+                                <h4>Business &amp; Self-Employment Tax Planning</h4>
+                                <p>Business owners and the self-employed have unique tax advantages. We structure your
+                                    business entity, expenses, and income timing to minimize self-employment tax and
+                                    maximize deductions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Key Benefits</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Year-Round Proactive Tax Planning</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Maximize All Legal Deductions</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Reduce Capital Gains Tax</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Retirement Account Optimization</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Estate &amp; Inheritance Tax Planning</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Business Tax Structure Advice</span>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div style="font-size:1.4rem;flex-shrink:0">💡</div>
+                        <p><strong>Did you know?</strong> The average American overpays their taxes by <strong>$1,249
+                                per year</strong> due to missed deductions and poor planning. Our clients typically save
+                            2–4x the cost of our advisory fee in tax savings alone.</p>
+                    </div>
+                    <div class="content-cta">
+                        <div>
+                            <h3>Stop Overpaying — Start Saving Smarter</h3>
+                            <p>Let our tax planning specialists build a year-round strategy tailored to your income and
+                                goals.</p>
+                        </div>
+                        <a href="../../contact/contact.html" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0">Book
+                            Appointment Now →</a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>📅 Book a Free Consultation</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
+                                Schedule your complimentary tax strategy session today.</p>
+                            <div class="cfg"><label>Full Name</label><input type="text" placeholder="Your full name" />
+                            </div>
+                            <div class="cfg"><label>Email</label><input type="email" placeholder="your@email.com" />
+                            </div>
+                            <div class="cfg"><label>Phone</label><input type="tel" placeholder="(+1) 000-000-0000" />
+                            </div>
+                            <div class="cfg"><label>Message</label><textarea
+                                    placeholder="Tell us about your tax situation..."></textarea></div>
+                            <button class="sidebar-submit"
+                                onclick="alert('Thank you! We will contact you shortly.')">Send Message →</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>Our Other Services</h4>
+                        </div>
+                        <div class="sidebar-card-body" style="padding:10px 22px">
+                            <ul class="services-nav">
+                                <li><a href="investment-planning.html"><span>📈 Investment
+                                            Planning</span><span>›</span></a></li>
+                                <li><a href="living-will-trust.html"><span>📜 Living Will &amp;
+                                            Trust</span><span>›</span></a></li>
+                                <li><a href="tax-saving.html" class="active"><span>💰 Tax
+                                            Savings</span><span>›</span></a></li>
+                                <li><a href="retirement-planning.html"><span>🏖️ Retirement
+                                            Planning</span><span>›</span></a></li>
+                                <li><a href="kids-college.html"><span>🎓 Kids College Fund</span><span>›</span></a></li>
+                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span>›</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>📞 Reach Us Directly</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <div
+                                style="display:flex;flex-direction:column;gap:12px;font-size:0.85rem;color:var(--text-muted)">
+                                <div>📞 <a href="tel:+14082033877" style="color:var(--primary);font-weight:600">(+1) 408-203-3877</a></div>
+                                <div>📞 <a href="tel:+14082033877" style="color:var(--primary);font-weight:600">(+1) 408-203-3877</a></div>
+                                <div>✉ <a href="mailto:Talam.prasad@gmail.com"
+                                        style="color:var(--primary);font-weight:600">Talam.prasad@gmail.com</a>
+                                </div>
+                                <div>📍 California, USA</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Quantumleap Wealth</h4>
+                    <p class="footer-brand-desc">Your trusted partner for comprehensive financial planning, investment
+                        guidance, and wealth preservation.</p>
+                    <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                            href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../who_we_are/about.html">About Us</a></li>
+                        <li><a href="../../who_we_are/partners.html">Our Partners</a></li>
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+                        <li><a href="../../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="investment-planning.html">Investment Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="tax-saving.html">Tax Savings</a></li>
+                        <li><a href="kids-college.html">Kids College Fund</a></li>
+                        <li><a href="living-will-trust.html">Living Will &amp; Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">✉ <a
+                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+                    <div class="footer-contact-item">📍 California, USA</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+                        href="../../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

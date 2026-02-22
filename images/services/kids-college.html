@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Kids College Fund — Quantumleap Wealth</title>
+    <meta name="description"
+        content="Give your child the gift of education without financial stress. Quantumleap Wealth helps you plan and fund your child's college future in California." />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/navbar.css" />
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
+            padding: 80px 0 70px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 1rem;
+            max-width: 560px;
+            line-height: 1.7
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 14px
+        }
+
+        .breadcrumb a {
+            color: var(--accent-light);
+            text-decoration: none
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.3)
+        }
+
+        .page-hero-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            flex-shrink: 0
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            align-items: start;
+            padding: 70px 0
+        }
+
+        .service-content h2 {
+            font-size: 1.7rem;
+            margin-bottom: 16px
+        }
+
+        .service-content h3 {
+            font-size: 1.2rem;
+            margin: 32px 0 14px
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 0.95rem
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0 32px
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent)
+        }
+
+        .feature-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .feature-item span {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.4
+        }
+
+        .plan-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 20px 0 32px
+        }
+
+        .plan-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s
+        }
+
+        .plan-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md)
+        }
+
+        .plan-card .plan-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px
+        }
+
+        .plan-card h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 6px
+        }
+
+        .plan-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.04));
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 28px
+        }
+
+        .info-box p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .content-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            border-radius: 16px;
+            padding: 36px 32px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .content-cta h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-bottom: 6px
+        }
+
+        .content-cta p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.88rem;
+            margin: 0
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .sidebar-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm)
+        }
+
+        .sidebar-card-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            padding: 18px 22px
+        }
+
+        .sidebar-card-header h4 {
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif
+        }
+
+        .sidebar-card-body {
+            padding: 20px 22px
+        }
+
+        .services-nav {
+            list-style: none
+        }
+
+        .services-nav li {
+            border-bottom: 1px solid var(--border)
+        }
+
+        .services-nav li:last-child {
+            border: none
+        }
+
+        .services-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s, padding-left 0.2s
+        }
+
+        .services-nav a:hover {
+            color: var(--accent);
+            padding-left: 6px
+        }
+
+        .services-nav a.active {
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        .cfg {
+            margin-bottom: 14px
+        }
+
+        .cfg label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em
+        }
+
+        .cfg input,
+        .cfg textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.86rem;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark)
+        }
+
+        .cfg input:focus,
+        .cfg textarea:focus {
+            border-color: var(--accent)
+        }
+
+        .cfg textarea {
+            height: 90px;
+            resize: vertical
+        }
+
+        .sidebar-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s
+        }
+
+        .sidebar-submit:hover {
+            opacity: 0.9
+        }
+
+        @media(max-width:900px) {
+            .service-layout {
+                grid-template-columns: 1fr;
+                padding: 50px 0
+            }
+
+            .feature-list,
+            .plan-options {
+                grid-template-columns: 1fr
+            }
+
+            .content-cta {
+                flex-direction: column
+            }
+        }
+    </style>
+    <!-- Calendly popup widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
+                    Talam.prasad@gmail.com</a>
+                <div class="topbar-divider"></div><span>📍 California, USA</span>
+            </div>
+            <div class="topbar-right">
+                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+            </div>
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="navbar-brand"><img src="../../images/Quantumleap_logo.png"
+                    alt="Quantumleap Wealth Logo" class="brand-logo" />
+                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
+                        class="brand-tagline">Financial Excellence</span></div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../who_we_are/about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
+                        <li><a href="../../who_we_are/partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
+                                Partners</a></li>
+                        <li><a href="../../who_we_are/disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
+                                Disclaimer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Services <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown wide">
+                        <li><a href="investment-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">📈</span>Investment Planning</a></li>
+                        <li><a href="living-will-trust.html" class="dropdown-item"><span class="dd-icon">📜</span>Living
+                                Will &amp; Trust</a></li>
+                        <li><a href="tax-saving.html" class="dropdown-item"><span class="dd-icon">💰</span>Tax
+                                Savings</a></li>
+                        <li><a href="retirement-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
+                        <li><a href="kids-college.html" class="dropdown-item"><span class="dd-icon">🎓</span>Kids
+                                College</a></li>
+                        <li><a href="life-insurance.html" class="dropdown-item"><span class="dd-icon">🛡️</span>Life
+                                Insurance</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span class="dd-icon">🚀</span>6
+                                Steps to Financial Freedom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../Activities/Photos.html" class="dropdown-item"><span
+                                    class="dd-icon">📸</span>Photos</a></li>
+                        <li><a href="../../Activities/videos.html" class="dropdown-item"><span
+                                    class="dd-icon">🎥</span>Videos</a></li>
+                        <li><a href="../../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;" class="btn-nav-cta">Book Consultation <svg width="13"
+                            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-inner">
+                    <div>
+                        <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
+                                href="../../index.html#services">Services</a><span>›</span><span
+                                style="color:var(--accent-light)">Kids College Fund</span></div>
+                        <h1>Kids College Fund</h1>
+                        <p>Give your child the ultimate head start. Start planning for their college education today —
+                            so you can say yes when the moment arrives, without financial stress.</p>
+                        <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Book a Free
+                            Consultation</a>
+                    </div>
+                    <div class="page-hero-icon">🎓</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="service-layout">
+                <div class="service-content">
+                    <h2>Invest in Your Child's Brightest Future</h2>
+                    <p>College costs are rising every year — but with the right plan in place, you can fund your child's
+                        education without dipping into retirement savings, taking on debt, or compromising your
+                        financial goals. At Quantumleap Wealth, we help families build college savings plans that are
+                        smart, tax-efficient, and flexible.</p>
+                    <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start
+                        planning.</p>
+
+                    <h3>College Savings Options We Help You Navigate</h3>
+                    <div class="plan-options">
+                        <div class="plan-card">
+                            <div class="plan-icon">🏫</div>
+                            <h4>529 College Savings Plan</h4>
+                            <p>The most popular college savings vehicle. Tax-free growth and withdrawals when used for
+                                qualified educational expenses — and available in every state.</p>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-icon">📊</div>
+                            <h4>Coverdell ESA</h4>
+                            <p>Education Savings Accounts offer tax-free growth with more flexible investment options,
+                                including K-12 educational expenses.</p>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-icon">💼</div>
+                            <h4>UGMA / UTMA Custodial Accounts</h4>
+                            <p>Flexible investment accounts held in trust for your child. No contribution limits and
+                                broad investment options beyond education.</p>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-icon">🛡️</div>
+                            <h4>Life Insurance with Cash Value</h4>
+                            <p>Certain permanent life insurance policies can serve as a supplemental education funding
+                                vehicle with added protection benefits.</p>
+                        </div>
+                    </div>
+
+                    <h3>Key Benefits</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Tax-Free Growth &amp; Withdrawals</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Start Small — Grow Over Time</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Flexible Beneficiary Options</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>State Tax Deductions Available</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Financial Aid Impact Guidance</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div><span>Covers Tuition, Room &amp; Board, More</span>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div style="font-size:1.4rem;flex-shrink:0">📊</div>
+                        <p><strong>By the numbers:</strong> The average cost of a 4-year college education is projected
+                            to reach <strong>$200,000–$300,000</strong> by 2035. A family that starts saving $300/month
+                            when their child is born can accumulate over <strong>$120,000</strong> tax-free by age 18.
+                        </p>
+                    </div>
+                    <div class="content-cta">
+                        <div>
+                            <h3>Plant the Seed Today — Watch It Grow</h3>
+                            <p>Every day you wait is a compound interest day lost. Let's start building your child's
+                                college fund now.</p>
+                        </div>
+                        <a href="../../contact/contact.html" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0">Book
+                            Appointment Now →</a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>📅 Book a Free Consultation</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
+                                Start building your child's college fund today — it's never too early.</p>
+                            <div class="cfg"><label>Full Name</label><input type="text" placeholder="Your full name" />
+                            </div>
+                            <div class="cfg"><label>Email</label><input type="email" placeholder="your@email.com" />
+                            </div>
+                            <div class="cfg"><label>Phone</label><input type="tel" placeholder="(+1) 000-000-0000" />
+                            </div>
+                            <div class="cfg"><label>Child's Age</label><input type="text"
+                                    placeholder="e.g. 3 years old" /></div>
+                            <div class="cfg"><label>Message</label><textarea
+                                    placeholder="Share your education savings goals..."></textarea></div>
+                            <button class="sidebar-submit"
+                                onclick="alert('Thank you! We will contact you shortly.')">Send Message →</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>Our Other Services</h4>
+                        </div>
+                        <div class="sidebar-card-body" style="padding:10px 22px">
+                            <ul class="services-nav">
+                                <li><a href="investment-planning.html"><span>📈 Investment
+                                            Planning</span><span>›</span></a></li>
+                                <li><a href="living-will-trust.html"><span>📜 Living Will &amp;
+                                            Trust</span><span>›</span></a></li>
+                                <li><a href="tax-saving.html"><span>💰 Tax Savings</span><span>›</span></a></li>
+                                <li><a href="retirement-planning.html"><span>🏖️ Retirement
+                                            Planning</span><span>›</span></a></li>
+                                <li><a href="kids-college.html" class="active"><span>🎓 Kids College
+                                            Fund</span><span>›</span></a></li>
+                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span>›</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4>📞 Reach Us Directly</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <div
+                                style="display:flex;flex-direction:column;gap:12px;font-size:0.85rem;color:var(--text-muted)">
+                                <div>📞 <a href="tel:+14082033877" style="color:var(--primary);font-weight:600">(+1) 408-203-3877</a></div>
+                                <div>✉ <a href="mailto:Talam.prasad@gmail.com"
+                                        style="color:var(--primary);font-weight:600">Talam.prasad@gmail.com</a>
+                                </div>
+                                <div>📍 California, USA</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Quantumleap Wealth</h4>
+                    <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+                        wealth preservation.</p>
+                    <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                            href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../who_we_are/about.html">About Us</a></li>
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+                        <li><a href="../../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="investment-planning.html">Investment Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="tax-saving.html">Tax Savings</a></li>
+                        <li><a href="kids-college.html">Kids College Fund</a></li>
+                        <li><a href="living-will-trust.html">Living Will &amp; Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">✉ <a
+                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+                    <div class="footer-contact-item">📍 California, USA</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+                        href="../../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

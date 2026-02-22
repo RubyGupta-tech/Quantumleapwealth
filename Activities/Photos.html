@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Photos — Quantumleap Wealth Activities</title>
+    <meta name="description"
+        content="Browse photos from Quantumleap Wealth events, seminars, and community activities across California." />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/navbar.css" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+            padding: 90px 0 80px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(201, 168, 76, 0.28);
+            border-radius: 30px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 22px
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            margin-bottom: 16px
+        }
+
+        .page-hero h1 .highlight {
+            color: var(--accent-light)
+        }
+
+        .page-hero-sub {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.75
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 16px;
+            justify-content: center
+        }
+
+        .breadcrumb a {
+            color: var(--accent-light);
+            text-decoration: none
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.3)
+        }
+
+        /* ── Activities Tab Bar ── */
+        .activities-tabs {
+            background: #fff;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50
+        }
+
+        .activities-tabs-inner {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            max-width: 580px;
+            margin: 0 auto
+        }
+
+        .act-tab {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            letter-spacing: 0.04em;
+            text-transform: uppercase
+        }
+
+        .act-tab:hover {
+            color: var(--primary)
+        }
+
+        .act-tab.active {
+            color: var(--accent-dark);
+            border-bottom-color: var(--accent)
+        }
+
+        /* ── Filter Bar ── */
+        .filter-bar {
+            padding: 32px 0 24px;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .filter-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px
+        }
+
+        .filter-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .filter-btn {
+            padding: 7px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            background: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent)
+        }
+
+        .filter-count {
+            font-size: 0.78rem;
+            color: var(--text-muted)
+        }
+
+        /* ── Gallery Grid ── */
+        .gallery-section {
+            padding: 48px 0 80px;
+            background: var(--bg-light)
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px
+        }
+
+        /* Gallery Card */
+        .gallery-card {
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: linear-gradient(145deg, #eef2f8 0%, #dde4ef 100%);
+            border: 1px solid var(--border);
+            transition: transform 0.25s, box-shadow 0.25s
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 16px 50px rgba(4, 17, 31, 0.14)
+        }
+
+        /* row spanning for mosaic feel */
+        .gallery-card.tall {
+            grid-row: span 2
+        }
+
+        .gallery-card.wide {
+            grid-column: span 2
+        }
+
+        .gallery-card-inner {
+            aspect-ratio: 4/3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 180px
+        }
+
+        .gallery-card.tall .gallery-card-inner {
+            aspect-ratio: unset;
+            min-height: 376px
+        }
+
+        .gallery-card.wide .gallery-card-inner {
+            aspect-ratio: unset;
+            min-height: 180px
+        }
+
+        .gallery-placeholder-icon {
+            font-size: 2.5rem;
+            opacity: 0.35
+        }
+
+        .gallery-placeholder-text {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            opacity: 0.5
+        }
+
+        /* Overlay on hover */
+        .gallery-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(4, 17, 31, 0.75) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px
+        }
+
+        .gallery-card:hover .gallery-card-overlay {
+            opacity: 1
+        }
+
+        .gallery-overlay-text {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600
+        }
+
+        /* Coming soon ribbon */
+        .coming-ribbon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(201, 168, 76, 0.9);
+            color: #fff;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px)
+        }
+
+        /* Actual images (once client provides) */
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            position: absolute;
+            inset: 0
+        }
+
+        /* ── Upload CTA ── */
+        .upload-cta {
+            background: #fff;
+            border: 2px dashed rgba(201, 168, 76, 0.4);
+            border-radius: 16px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 40px
+        }
+
+        .upload-cta-icon {
+            font-size: 3rem;
+            margin-bottom: 14px
+        }
+
+        .upload-cta h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px
+        }
+
+        .upload-cta p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            max-width: 420px;
+            margin: 0 auto 24px;
+            line-height: 1.7
+        }
+
+        /* ── CTA Strip ── */
+        .photos-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            padding: 72px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .photos-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .photos-cta-inner {
+            position: relative;
+            z-index: 1
+        }
+
+        .photos-cta h2 {
+            color: #fff;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 12px
+        }
+
+        .photos-cta p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            line-height: 1.75
+        }
+
+        .photos-cta-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media(max-width:1100px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .gallery-card.wide {
+                grid-column: span 1
+            }
+        }
+
+        @media(max-width:768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .gallery-card.tall {
+                grid-row: span 1
+            }
+
+            .act-tab {
+                padding: 14px 18px;
+                font-size: 0.75rem
+            }
+        }
+
+        @media(max-width:480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr
+            }
+
+            .activities-tabs-inner {
+                justify-content: flex-start;
+                overflow-x: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉ Talam.prasad@gmail.com</a>
+                <div class="topbar-divider"></div><span>📍 California, USA</span>
+            </div>
+            <div class="topbar-right">
+                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="navbar-brand">
+                <img src="../../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
+                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
+                        class="brand-tagline">Financial Excellence</span></div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../who_we_are/about.html" class="dropdown-item"><span
+                                    class="dd-icon">👤</span>About Us</a></li>
+                        <li><a href="../../who_we_are/partners.html" class="dropdown-item"><span
+                                    class="dd-icon">🤝</span>Our Partners</a></li>
+                        <li><a href="../../who_we_are/disclaimer.html" class="dropdown-item"><span
+                                    class="dd-icon">📋</span>Our Disclaimer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown wide">
+                        <li><a href="../../images/services/investment-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">📈</span>Investment Planning</a></li>
+                        <li><a href="../../images/services/living-will-trust.html" class="dropdown-item"><span
+                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
+                        <li><a href="../../images/services/tax-saving.html" class="dropdown-item"><span
+                                    class="dd-icon">💰</span>Tax Savings</a></li>
+                        <li><a href="../../images/services/retirement-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
+                        <li><a href="../../images/services/kids-college.html" class="dropdown-item"><span
+                                    class="dd-icon">🎓</span>Kids College</a></li>
+                        <li><a href="../../images/services/life-insurance.html" class="dropdown-item"><span
+                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html"
+                                class="dropdown-item"><span class="dd-icon">🚀</span>6 Steps to Financial Freedom</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Activities <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="Photos.html" class="dropdown-item active"><span class="dd-icon">📸</span>Photos</a>
+                        </li>
+                        <li><a href="videos.html" class="dropdown-item"><span class="dd-icon">🎥</span>Videos</a></li>
+                        <li><a href="blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#"
+                        onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                        class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-inner">
+                    <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span
+                            style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
+                            style="color:var(--accent-light)">Photos</span></div>
+                    <div class="page-hero-badge">📸 Activities</div>
+                    <h1>Our <span class="highlight">Photo Gallery</span></h1>
+                    <p class="page-hero-sub">Moments captured from our events, seminars, community activities, and
+                        celebrations across California.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVITY TABS -->
+        <nav class="activities-tabs">
+            <div class="activities-tabs-inner">
+                <a href="Photos.html" class="act-tab active">📸 Photos</a>
+                <a href="videos.html" class="act-tab">🎥 Videos</a>
+                <a href="blogs.html" class="act-tab">✍️ Blog</a>
+            </div>
+        </nav>
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar">
+            <div class="container">
+                <div class="filter-bar-inner">
+                    <span class="filter-label">Filter By:</span>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" onclick="filterGallery('all',this)">All Photos</button>
+                        <button class="filter-btn" onclick="filterGallery('events',this)">Events</button>
+                        <button class="filter-btn" onclick="filterGallery('seminars',this)">Seminars</button>
+                        <button class="filter-btn" onclick="filterGallery('community',this)">Community</button>
+                        <button class="filter-btn" onclick="filterGallery('team',this)">Team</button>
+                    </div>
+                    <span class="filter-count" id="photo-count">Photos coming soon</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- GALLERY -->
+        <section class="gallery-section">
+            <div class="container">
+
+                <!-- Placeholder grid — replace each .gallery-card-inner with <img src="..."> when client sends photos -->
+                <div class="gallery-grid" id="gallery-grid">
+
+                    <div class="gallery-card tall" data-category="events">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="seminars">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="community">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
+                        </div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="team">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card wide" data-category="events">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="community">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
+                        </div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="seminars">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card tall" data-category="team">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="community">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
+                        </div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card wide" data-category="seminars">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                    <div class="gallery-card" data-category="team">
+                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
+                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
+                        <span class="coming-ribbon">Coming Soon</span>
+                    </div>
+
+                </div><!-- /gallery-grid -->
+
+                <!-- Upload prompt -->
+                <div class="upload-cta">
+                    <div class="upload-cta-icon">🖼️</div>
+                    <h3>Photos Coming Soon!</h3>
+                    <p>We're gathering our best moments to share with you. Check back soon — or send us your photos to
+                        feature here!</p>
+                    <a href="../../contact/contact.html" class="btn btn-primary">Share Your Photos With Us</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="photos-cta">
+            <div class="container">
+                <div class="photos-cta-inner">
+                    <h2>Ready to Be Part of Our Community?</h2>
+                    <p>Join hundreds of California families building wealth together. Book a FREE consultation and take
+                        your first step today.</p>
+                    <div class="photos-cta-btns">
+                        <a href="#"
+                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                            class="btn btn-primary">📅 Book Free Appointment</a>
+                        <a href="../../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Quantumleap Wealth</h4>
+                    <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+                        wealth preservation.</p>
+                    <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                            href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../who_we_are/about.html">About Us</a></li>
+                        <li><a href="../../who_we_are/partners.html">Our Partners</a></li>
+                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+                        <li><a href="../../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Activities</h4>
+                    <ul>
+                        <li><a href="Photos.html">Photos</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">✉ <a
+                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+                    <div class="footer-contact-item">📍 California, USA</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+                        href="../../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy
+                        Policy</a></span></div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        function filterGallery(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-card').forEach(card => {
+                if (cat === 'all' || card.dataset.category === cat) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

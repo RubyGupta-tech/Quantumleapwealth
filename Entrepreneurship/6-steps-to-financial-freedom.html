@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>6 Steps to Financial Freedom — Quantumleap Wealth</title>
+    <meta name="description"
+        content="Discover the 6 proven steps to financial freedom with Quantumleap Wealth — Increase Cash Flow, Manage Debt, Build an Emergency Fund, Protect Your Family, Build Wealth, and Preserve Your Legacy." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+        /* ── Hero ── */
+        .page-hero {
+            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+            padding: 90px 0 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .page-hero-glow {
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(201, 168, 76, 0.28);
+            border-radius: 30px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 22px
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            margin-bottom: 20px;
+            line-height: 1.15
+        }
+
+        .page-hero h1 .highlight {
+            color: var(--accent-light)
+        }
+
+        .page-hero-sub {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 36px;
+            line-height: 1.75
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 16px;
+            justify-content: center
+        }
+
+        .breadcrumb a {
+            color: var(--accent-light);
+            text-decoration: none
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.3)
+        }
+
+        /* ── Intro stats bar ── */
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 0;
+            padding: 40px 0;
+            background: #fff;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .intro-stat {
+            text-align: center
+        }
+
+        .intro-stat strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            line-height: 1
+        }
+
+        .intro-stat span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+            display: block
+        }
+
+        /* ── Steps Section ── */
+        .steps-section {
+            padding: 80px 0
+        }
+
+        .steps-section .section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px;
+            margin-bottom: 14px
+        }
+
+        .steps-intro {
+            max-width: 640px;
+            margin: 0 auto 64px;
+            text-align: center
+        }
+
+        .steps-intro .section-title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 16px
+        }
+
+        .steps-intro p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8
+        }
+
+        /* Step cards — alternating layout */
+        .step-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px
+        }
+
+        .step-block:last-child {
+            margin-bottom: 0
+        }
+
+        .step-block.reverse .step-visual {
+            order: 2
+        }
+
+        .step-block.reverse .step-text {
+            order: 1
+        }
+
+        .step-visual {
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative
+        }
+
+        .step-visual-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+            opacity: 0.97
+        }
+
+        .step-visual-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 50px 40px
+        }
+
+        .step-icon-large {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            display: block
+        }
+
+        .step-number-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 6px 18px;
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 14px
+        }
+
+        .step-visual-stat {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-light)
+        }
+
+        .step-visual-stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.82rem;
+            margin-top: 4px
+        }
+
+        .step-text .step-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 20px;
+            padding: 4px 14px;
+            display: inline-block;
+            margin-bottom: 14px
+        }
+
+        .step-text h2 {
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.25
+        }
+
+        .step-text p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.8;
+            margin-bottom: 18px
+        }
+
+        .step-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px
+        }
+
+        .step-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--text-muted)
+        }
+
+        .step-bullets li::before {
+            content: '✓';
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 900;
+            flex-shrink: 0;
+            margin-top: 1px
+        }
+
+        .step-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 2px;
+            transition: gap 0.2s
+        }
+
+        .step-link:hover {
+            gap: 14px
+        }
+
+        /* ── Partner CTA ── */
+        .partner-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .partner-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px
+        }
+
+        .partner-cta-inner {
+            position: relative;
+            z-index: 1
+        }
+
+        .partner-cta h2 {
+            color: #fff;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            margin-bottom: 16px
+        }
+
+        .partner-cta p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.97rem;
+            max-width: 560px;
+            margin: 0 auto 36px;
+            line-height: 1.75
+        }
+
+        .partner-cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        /* ── Steps divider ── */
+        .step-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin-bottom: 80px
+        }
+
+        @media(max-width:900px) {
+            .step-block {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 50px
+            }
+
+            .step-block.reverse .step-visual,
+            .step-block.reverse .step-text {
+                order: unset
+            }
+
+            .intro-stats {
+                gap: 30px
+            }
+
+            .partner-cta-btns {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+    <!-- Calendly popup widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
+                    Talam.prasad@gmail.com</a>
+                <div class="topbar-divider"></div><span>📍 California, USA</span>
+            </div>
+            <div class="topbar-right">
+                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
+                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
+                        class="brand-tagline">Financial Excellence</span></div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../who_we_are/about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a>
+                        </li>
+                        <li><a href="../who_we_are/partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
+                                Partners</a></li>
+                        <li><a href="../who_we_are/disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
+                                Disclaimer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown wide">
+                        <li><a href="../images/services/investment-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">📈</span>Investment Planning</a></li>
+                        <li><a href="../images/services/living-will-trust.html" class="dropdown-item"><span
+                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
+                        <li><a href="../images/services/tax-saving.html" class="dropdown-item"><span
+                                    class="dd-icon">💰</span>Tax Savings</a></li>
+                        <li><a href="../images/services/retirement-planning.html" class="dropdown-item"><span
+                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
+                        <li><a href="../images/services/kids-college.html" class="dropdown-item"><span
+                                    class="dd-icon">🎓</span>Kids College</a></li>
+                        <li><a href="../images/services/life-insurance.html" class="dropdown-item"><span
+                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Entrepreneurship <svg
+                            class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="6-steps-to-financial-freedom.html" class="dropdown-item"><span
+                                    class="dd-icon">🚀</span>6 Steps to Financial Freedom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <ul class="dropdown">
+                        <li><a href="../Activities/Photos.html" class="dropdown-item"><span
+                                    class="dd-icon">📸</span>Photos</a></li>
+                        <li><a href="../Activities/videos.html" class="dropdown-item"><span
+                                    class="dd-icon">🎥</span>Videos</a></li>
+                        <li><a href="../Activities/blogs.html" class="dropdown-item"><span
+                                    class="dd-icon">✍️</span>Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;" class="btn-nav-cta">Book Consultation <svg width="13"
+                            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-glow"></div>
+            <div class="container">
+                <div class="page-hero-inner">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                            style="color:rgba(255,255,255,0.45)">Entrepreneurship</span><span>›</span><span
+                            style="color:var(--accent-light)">6 Steps to Financial Freedom</span></div>
+                    <div class="page-hero-badge">🚀 Entrepreneurship</div>
+                    <h1>6 Steps to <span class="highlight">Financial Freedom</span></h1>
+                    <p class="page-hero-sub">A proven, step-by-step framework to move from financial stress to total
+                        financial independence — used by hundreds of Quantumleap Wealth clients across California.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                        <a href="../contact/contact.html" class="btn btn-primary">Book a Free Consultation</a>
+                        <a href="#step-1" class="btn btn-outline-white">Explore the Steps ↓</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRO STATS -->
+        <div class="intro-stats">
+            <div class="intro-stat"><strong>500+</strong><span>Clients Served</span></div>
+            <div class="intro-stat"><strong>6</strong><span>Proven Steps</span></div>
+            <div class="intro-stat"><strong>15+</strong><span>Years Experience</span></div>
+            <div class="intro-stat"><strong>FREE</strong><span>First Consultation</span></div>
+        </div>
+
+        <!-- STEPS SECTION -->
+        <section class="steps-section">
+            <div class="container">
+                <div class="steps-intro">
+                    <span class="section-label">The Framework</span>
+                    <h2 class="section-title">Your Complete Roadmap to Financial Independence</h2>
+                    <p>At Quantumleap Wealth, we've refined a 6-step financial planning framework designed specifically
+                        for working families who want to stop living paycheck to paycheck and start building real,
+                        lasting wealth. Follow these steps in order — every one matters.</p>
+                </div>
+
+                <!-- STEP 1: INCREASE CASH FLOW -->
+                <div class="step-block" id="step-1">
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">💵</span>
+                            <div class="step-number-badge">Step 01 / 06</div>
+                            <div class="step-visual-stat">+$500</div>
+                            <div class="step-visual-stat-label">Average monthly savings identified per client</div>
+                        </div>
+                    </div>
+                    <div class="step-text">
+                        <span class="step-tag">Step 01</span>
+                        <h2>Increase Cash Flow</h2>
+                        <p>Improving cash flow is an essential part of financial planning. We start by identifying
+                            expenses that can be reduced, eliminated, or optimized — then we identify opportunities to
+                            increase your revenue.</p>
+                        <p>Most families are surprised to find hundreds of dollars per month that can be redirected from
+                            wasteful spending toward wealth-building goals.</p>
+                        <ul class="step-bullets">
+                            <li>Identify and eliminate unnecessary recurring expenses</li>
+                            <li>Optimize insurance, subscriptions, and service contracts</li>
+                            <li>Find opportunities to increase household income</li>
+                            <li>Create a monthly cash flow plan you can actually follow</li>
+                        </ul>
+                        <a href="../contact/contact.html" class="step-link">Start your cash flow analysis →</a>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <!-- STEP 2: DEBT MANAGEMENT -->
+                <div class="step-block reverse" id="step-2">
+                    <div class="step-text">
+                        <span class="step-tag">Step 02</span>
+                        <h2>Debt Management</h2>
+                        <p>High-interest debt is the single biggest obstacle to financial freedom. We work with you to
+                            create a structured, sustainable plan to eliminate debt — starting with the most damaging
+                            and ending with the last dollar owed.</p>
+                        <p>We use proven methods (avalanche and snowball) to accelerate your debt payoff while
+                            protecting your credit score and freeing up cash for the future.</p>
+                        <ul class="step-bullets">
+                            <li>Map out all debts: credit cards, auto loans, student loans, mortgages</li>
+                            <li>Build a prioritized payoff strategy that saves you money on interest</li>
+                            <li>Explore consolidation and refinancing options</li>
+                            <li>Protect your credit score throughout the process</li>
+                        </ul>
+                        <a href="../contact/contact.html" class="step-link">Create your debt elimination plan →</a>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">🔗</span>
+                            <div class="step-number-badge">Step 02 / 06</div>
+                            <div class="step-visual-stat">$0</div>
+                            <div class="step-visual-stat-label">The goal — zero high-interest debt</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <!-- STEP 3: EMERGENCY FUND -->
+                <div class="step-block" id="step-3">
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">🛟</span>
+                            <div class="step-number-badge">Step 03 / 06</div>
+                            <div class="step-visual-stat">3–6 mo.</div>
+                            <div class="step-visual-stat-label">Net income in liquid savings</div>
+                        </div>
+                    </div>
+                    <div class="step-text">
+                        <span class="step-tag">Step 03</span>
+                        <h2>Emergency Fund</h2>
+                        <p>To properly plan and be prepared for emergencies, 3–6 months of net income should be in
+                            reserve and accessible in a bank account. Unfortunately, the only savings most people have
+                            is in their 401(k) or IRA — which is subject to restrictions and early withdrawal penalties.
+                        </p>
+                        <p>A proper emergency fund is your first line of defense. It prevents a single crisis from
+                            derailing your entire financial plan.</p>
+                        <ul class="step-bullets">
+                            <li>Target 3 months of expenses minimum (6 for self-employed)</li>
+                            <li>Keep funds liquid — high-yield savings account, not retirement accounts</li>
+                            <li>Automate contributions until the goal is reached</li>
+                            <li>Replenish immediately after any emergency use</li>
+                        </ul>
+                        <a href="../contact/contact.html" class="step-link">Build your safety net today →</a>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <!-- STEP 4: PROPER PROTECTION -->
+                <div class="step-block reverse" id="step-4">
+                    <div class="step-text">
+                        <span class="step-tag">Step 04</span>
+                        <h2>Proper Protection</h2>
+                        <p>The majority of Americans do not have enough life insurance — nor do they have the right type
+                            for their family's needs. Furthermore, as the cost of healthcare rises and we are living
+                            longer, most people are not prepared for the costs associated with chronic, critical, or
+                            terminal illness.</p>
+                        <p>Proper protection means your family's financial future is secure no matter what happens —
+                            illness, disability, or death.</p>
+                        <ul class="step-bullets">
+                            <li>Right-size your life insurance: term, whole, or universal</li>
+                            <li>Plan for critical illness and disability income protection</li>
+                            <li>Protect against long-term care costs in retirement</li>
+                            <li>Review and update beneficiaries across all policies</li>
+                        </ul>
+                        <a href="../images/services/life-insurance.html" class="step-link">Explore life insurance
+                            options →</a>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">🛡️</span>
+                            <div class="step-number-badge">Step 04 / 06</div>
+                            <div class="step-visual-stat">44%</div>
+                            <div class="step-visual-stat-label">of Americans have no life insurance</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <!-- STEP 5: BUILD WEALTH -->
+                <div class="step-block" id="step-5">
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">📈</span>
+                            <div class="step-number-badge">Step 05 / 06</div>
+                            <div class="step-visual-stat">3.9×</div>
+                            <div class="step-visual-stat-label">More wealth built with a financial advisor</div>
+                        </div>
+                    </div>
+                    <div class="step-text">
+                        <span class="step-tag">Step 05</span>
+                        <h2>Build Wealth</h2>
+                        <p>Long-term savings must outpace inflation and minimize taxation in order to achieve financial
+                            success. We educate clients on the many options available — and help them select the right
+                            vehicles for their situation.</p>
+                        <p>This is where compound interest becomes your greatest ally. Consistent, tax-smart investing
+                            over time creates wealth that lasts generations.</p>
+                        <ul class="step-bullets">
+                            <li>Maximize tax-advantaged accounts (401k, IRA, Roth)</li>
+                            <li>Build a diversified investment portfolio aligned to your goals</li>
+                            <li>Create passive income streams through dividends and real estate</li>
+                            <li>Use Indexed Universal Life (IUL) as a supplemental wealth tool</li>
+                        </ul>
+                        <a href="../images/services/investment-planning.html" class="step-link">Explore investment
+                            planning →</a>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <!-- STEP 6: PRESERVE WEALTH -->
+                <div class="step-block reverse" id="step-6">
+                    <div class="step-text">
+                        <span class="step-tag">Step 06</span>
+                        <h2>Preserve Wealth</h2>
+                        <p>A successful financial plan includes a strategy to reduce or eliminate estate taxes upon the
+                            transfer of wealth from one generation to another. We use the tools and strategies of the
+                            wealthy to help our clients keep their hard-earned money in the family.</p>
+                        <p>Wealth preservation means your legacy outlasts you — that the assets you built benefit your
+                            children, grandchildren, and causes you care about.</p>
+                        <ul class="step-bullets">
+                            <li>Create a Living Will and Trust to avoid probate</li>
+                            <li>Minimize estate taxes through strategic gifting and trusts</li>
+                            <li>Set up proper beneficiary designations across all accounts</li>
+                            <li>Use life insurance as a tax-free wealth transfer vehicle</li>
+                        </ul>
+                        <a href="../images/services/living-will-trust.html" class="step-link">Explore Living Will &amp;
+                            Trust planning →</a>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-visual-bg"></div>
+                        <div class="step-visual-content">
+                            <span class="step-icon-large">🏛️</span>
+                            <div class="step-number-badge">Step 06 / 06</div>
+                            <div class="step-visual-stat">Legacy</div>
+                            <div class="step-visual-stat-label">The ultimate financial freedom milestone</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PARTNER CTA -->
+        <section class="partner-cta">
+            <div class="container">
+                <div class="partner-cta-inner">
+                    <h2>Partner with Quantumleap Wealth. Build Your Future.</h2>
+                    <p>Join a community of dedicated professionals making a difference in the world of finance. Start
+                        building your future today — your first consultation is always free.</p>
+                    <div class="partner-cta-btns">
+                        <a href="../contact/contact.html" class="btn btn-primary">Book an Appointment</a>
+                        <a href="../contact/contact.html" class="btn btn-outline-white">Explore Business Opportunities</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Quantumleap Wealth</h4>
+                    <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+                        wealth preservation.</p>
+                    <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+                            href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../who_we_are/about.html">About Us</a></li>
+                        <li><a href="6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="../images/services/investment-planning.html">Investment Planning</a></li>
+                        <li><a href="../images/services/retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="../images/services/life-insurance.html">Life Insurance</a></li>
+                        <li><a href="../images/services/tax-saving.html">Tax Savings</a></li>
+                        <li><a href="../images/services/kids-college.html">Kids College Fund</a></li>
+                        <li><a href="../images/services/living-will-trust.html">Living Will &amp; Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                    <div class="footer-contact-item">✉ <a
+                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+                    <div class="footer-contact-item">📍 California, USA</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+                        href="../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
