@@ -21,6 +21,10 @@ body {
 .divider-text {
     color: #D4AF37 !important;
     font-weight: 800 !important;
+    font-size: 1.15rem !important;
+    /* Larger font */
+    text-transform: uppercase !important;
+    letter-spacing: 0.2em !important;
     text-shadow: none !important;
 }
 

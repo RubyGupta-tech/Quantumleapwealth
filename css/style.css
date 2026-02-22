@@ -107,12 +107,14 @@ img {
 /* ── Section Labels ── */
 .section-label {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 1.15rem;
+    /* Larger and more visible */
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 10px
+    font-weight: 800;
+    /* Bolder */
+    margin-bottom: 12px
 }
 
 .section-title {
@@ -251,17 +253,17 @@ img {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(201, 168, 76, 0.15);
-    border: 1px solid rgba(201, 168, 76, 0.35);
-    color: var(--accent-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 20px;
-    margin-bottom: 22px
+    gap: 12px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.05rem;
+    /* Larger */
+    font-weight: 800;
+    margin-bottom: 35px;
+    backdrop-filter: blur(8px)
 }
 
 .hero-title {
