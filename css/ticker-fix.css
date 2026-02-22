@@ -15,10 +15,10 @@ body {
     overflow: hidden !important;
     width: 100% !important;
     position: relative !important;
-    background: #0a2540 !important;
-    /* Professional Brand Blue */
-    margin: 40px 0 !important;
-    padding: 60px 0 !important;
+    background: transparent !important;
+    /* Inherit section-dark blue */
+    margin: 20px 0 !important;
+    padding: 20px 0 !important;
 }
 
 /* Professional Lateral Fades matching the dark background */
@@ -45,7 +45,7 @@ body {
 
 /* Force Gold Color */
 .divider-text {
-    background: var(--gold-metallic, linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #d4af37 50%, #fcf6ba 55%, #8a6d3b 100%)) !important;
+    background: var(--gold-metallic, linear-gradient(135deg, #a07a28 0%, #d4af37 50%, #a07a28 100%)) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -91,22 +91,25 @@ body {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: #fff !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    /* Brighter white for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 16px !important;
     padding: 20px !important;
-    margin: 0 20px !important;
-    width: 200px !important;
-    height: 100px !important;
+    margin: 0 15px !important;
+    width: 220px !important;
+    height: 110px !important;
     opacity: 1 !important;
     visibility: visible !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.3s ease !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 .logo-item:hover {
-    transform: translateY(-5px) !important;
+    transform: translateY(-8px) scale(1.05) !important;
+    background: #ffffff !important;
     border-color: #D4AF37 !important;
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.3) !important;
 }
 
 .logo-item img {
