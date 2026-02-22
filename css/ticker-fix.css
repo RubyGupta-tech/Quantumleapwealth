@@ -2,6 +2,21 @@
    NUCLEAR TICKER FIX (Restore Color & Motion)
    ══════════════════════════════════════ */
 
+/* Global Safety Net to prevent horizontal scroll */
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+}
+
+/* Force Ticker Container to clip everything */
+.logo-ticker-container {
+    overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
 /* Force Gold Color */
 .divider-text {
     color: #D4AF37 !important;

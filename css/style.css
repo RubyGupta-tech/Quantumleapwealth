@@ -1,7 +1,7 @@
 /* ==============================================================
    QUANTUMLEAP WEALTH — Global Design System + Homepage Styles
    ============================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ── CSS Variables ── */
 :root {
@@ -52,7 +52,9 @@ h4,
 h5 {
     font-family: 'Playfair Display', Georgia, serif;
     color: var(--primary);
-    line-height: 1.25
+    line-height: 1.25;
+    font-weight: 700;
+    /* Bold headings */
 }
 
 a {
@@ -115,7 +117,9 @@ img {
 
 .section-title {
     font-size: clamp(1.7rem, 3vw, 2.5rem);
-    margin-bottom: 16px
+    margin-bottom: 16px;
+    font-weight: 800;
+    /* Extra bold */
 }
 
 .section-sub {
@@ -261,10 +265,13 @@ img {
 }
 
 .hero-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 20px
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    /* Maximum bold for hero */
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em
 }
 
 .hero-title .highlight {
@@ -359,9 +366,10 @@ img {
 }
 
 .hero-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    color: #fff
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 8px
 }
 
 .hero-card-sub {
@@ -922,8 +930,10 @@ img {
 }
 
 .tcard-title {
-    font-size: 0.75rem;
-    color: var(--text-muted)
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 4px
 }
 
 /* ══════════════════════════════════════
