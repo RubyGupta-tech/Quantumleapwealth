@@ -750,7 +750,8 @@ img {
     /* Bold as requested */
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--primary);
+    color: var(--accent);
+    /* Changed to Gold as requested */
     font-size: 0.75rem;
     white-space: nowrap;
 }
