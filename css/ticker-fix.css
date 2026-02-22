@@ -50,8 +50,8 @@ body {
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     font-weight: 900 !important;
-    font-size: 1.25rem !important;
-    /* Slightly larger for emphasis */
+    font-size: 1.15rem !important;
+    /* Synced with other section labels */
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
