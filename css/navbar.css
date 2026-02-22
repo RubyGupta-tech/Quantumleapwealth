@@ -74,13 +74,17 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #ffffff;
-    box-shadow: 0 2px 20px rgba(10, 37, 64, 0.10);
-    transition: box-shadow 0.3s;
+    background: #f8fafc;
+    /* Professional Light Slate */
+    box-shadow: 0 2px 20px rgba(10, 37, 64, 0.08);
+    transition: background 0.3s, box-shadow 0.3s;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.05);
 }
 
 .navbar.scrolled {
-    box-shadow: 0 4px 32px rgba(10, 37, 64, 0.18);
+    background: rgba(248, 250, 252, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 32px rgba(10, 37, 64, 0.12);
 }
 
 .navbar-inner {
@@ -107,6 +111,8 @@
     width: auto;
     object-fit: contain;
     border-radius: 6px;
+    filter: drop-shadow(0 2px 4px rgba(10, 37, 64, 0.15));
+    /* Helps white parts of logo stand out on light bg */
 }
 
 .brand-text {
@@ -119,6 +125,7 @@
     font-size: 1.12rem;
     font-weight: 700;
     color: var(--primary);
+    /* Revert to Navy for visibility on light bg */
     letter-spacing: 0.01em;
 }
 
@@ -126,6 +133,7 @@
     display: block;
     font-size: 0.62rem;
     color: var(--accent);
+    /* Original Gold */
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 600;
@@ -152,6 +160,7 @@
     gap: 5px;
     padding: 8px 14px;
     color: var(--primary);
+    /* Navy links */
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
@@ -188,7 +197,7 @@
 }
 
 .nav-link:hover {
-    background: rgba(201, 168, 76, 0.06);
+    background: rgba(10, 37, 64, 0.05);
 }
 
 /* Dropdown arrow icon */
@@ -217,7 +226,7 @@
     border-radius: 12px;
     min-width: 220px;
     padding: 10px 6px;
-    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.14), 0 4px 16px rgba(10, 37, 64, 0.08);
+    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.12), 0 4px 16px rgba(10, 37, 64, 0.08);
     border: 1px solid rgba(201, 168, 76, 0.15);
     opacity: 0;
     visibility: hidden;
@@ -361,6 +370,7 @@
     width: 24px;
     height: 2.5px;
     background: var(--primary);
+    /* Navy for light bg */
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
 }
@@ -389,12 +399,13 @@
         position: fixed;
         inset: 0 0 0 auto;
         width: 300px;
-        background: #fff;
+        background: #ffffff;
+        /* Clean white mobile menu */
         flex-direction: column;
         align-items: stretch;
         padding: 80px 0 30px;
         gap: 0;
-        box-shadow: -6px 0 40px rgba(10, 37, 64, 0.14);
+        box-shadow: -6px 0 40px rgba(10, 37, 64, 0.1);
         transform: translateX(100%);
         transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
         overflow-y: auto;
