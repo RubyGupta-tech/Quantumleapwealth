@@ -10,18 +10,19 @@
     --accent: #c9a84c;
     --accent-light: #e8c96a;
     --accent-dark: #a07a28;
+    --gold-metallic: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #d4af37 50%, #fcf6ba 55%, #8a6d3b 100%);
     --bg-light: #f8f9fb;
     --bg-white: #ffffff;
     --text-dark: #1a1a2e;
     --text-muted: #6c757d;
-    --border: rgba(10, 37, 64, 0.10);
+    --border: rgba(10, 37, 64, 0.08);
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 20px;
-    --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.08);
-    --shadow-md: 0 8px 30px rgba(10, 37, 64, 0.12);
-    --shadow-lg: 0 20px 60px rgba(10, 37, 64, 0.14);
-    --tr: 0.25s ease;
+    --shadow-sm: 0 4px 12px rgba(10, 37, 64, 0.05);
+    --shadow-md: 0 12px 40px rgba(10, 37, 64, 0.1);
+    --shadow-lg: 0 30px 80px rgba(10, 37, 64, 0.12);
+    --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -79,7 +80,12 @@ img {
 }
 
 .section {
-    padding: 90px 0
+    padding: 110px 0;
+    /* More airy/premium spacing */
+    position: relative;
+    background-image: radial-gradient(rgba(10, 37, 64, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    /* Subtle architectural pattern */
 }
 
 .section-light {
@@ -108,20 +114,24 @@ img {
 .section-label {
     display: inline-block;
     font-size: 1.15rem;
-    /* Larger and more visible */
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    font-weight: 800;
-    /* Bolder */
-    margin-bottom: 12px
+    letter-spacing: 0.25em;
+    background: var(--gold-metallic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    /* Maximum Boldness as requested */
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .section-title {
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    margin-bottom: 16px;
-    font-weight: 800;
-    /* Extra bold */
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom: 24px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--primary);
 }
 
 .section-sub {
@@ -135,20 +145,18 @@ img {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 13px 28px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: all var(--tr)
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: #fff;
     box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35)
 }
 
@@ -339,21 +347,24 @@ img {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 20px;
-    padding: 32px;
-    color: #fff;
-    width: 100%;
-    max-width: 360px
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
 }
 
 .hero-card-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 24px
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.08);
 }
 
 .hero-card-icon {
@@ -442,14 +453,21 @@ img {
 
 .service-card {
     background: #fff;
-    border-radius: 16px;
-    padding: 32px 26px;
+    border-radius: 20px;
+    padding: 40px 32px;
     border: 1px solid var(--border);
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
     display: block;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
 }
 
 .service-card::before {

@@ -45,13 +45,16 @@ body {
 
 /* Force Gold Color */
 .divider-text {
-    color: #D4AF37 !important;
-    font-weight: 800 !important;
-    font-size: 1.15rem !important;
-    /* Larger font */
+    background: var(--gold-metallic, linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #d4af37 50%, #fcf6ba 55%, #8a6d3b 100%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900 !important;
+    font-size: 1.25rem !important;
+    /* Slightly larger for emphasis */
     text-transform: uppercase !important;
-    letter-spacing: 0.2em !important;
-    text-shadow: none !important;
+    letter-spacing: 0.25em !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
 }
 
 .divider-line {
