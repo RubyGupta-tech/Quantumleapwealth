@@ -15,8 +15,8 @@
 
   /* ---- Hamburger / Mobile Menu ---- */
   const hamburger = document.querySelector('.hamburger');
-  const navMenu   = document.querySelector('.nav-menu');
-  const overlay   = document.querySelector('.nav-overlay');
+  const navMenu = document.querySelector('.nav-menu');
+  const overlay = document.querySelector('.nav-overlay');
 
   function closeMenu() {
     if (!hamburger) return;
@@ -101,5 +101,17 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
+
+  /* ---- FAQ Accordion ---- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+      const answer = item.querySelector('.faq-answer');
+      const toggle = item.querySelector('.faq-toggle');
+      if (toggle) {
+        toggle.textContent = item.classList.contains('active') ? '−' : '+';
+      }
+    });
+  });
 
 })();

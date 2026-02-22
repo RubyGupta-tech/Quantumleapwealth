@@ -724,6 +724,132 @@ img {
 }
 
 /* ══════════════════════════════════════
+   OUR PRODUCT (FAQs & Insights)
+══════════════════════════════════════ */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 52px;
+}
+
+.faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    transition: all var(--tr);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--accent);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+.faq-toggle {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.faq-answer {
+    margin-top: 12px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.insights-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.insight-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all var(--tr);
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.insight-img-wrapper {
+    position: relative;
+    height: 180px;
+    background: var(--bg-light);
+}
+
+.insight-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.insight-content {
+    padding: 24px;
+}
+
+.insight-content h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: var(--primary);
+}
+
+.insight-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.insight-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap var(--tr);
+}
+
+.insight-link:hover {
+    color: var(--accent-dark);
+}
+
+/* ══════════════════════════════════════
    TESTIMONIALS
 ══════════════════════════════════════ */
 .testimonials-grid {
@@ -1107,6 +1233,11 @@ img {
         background: rgba(255, 255, 255, 0.08)
     }
 
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 32px
@@ -1139,6 +1270,10 @@ img {
     }
 
     .services-grid {
+        grid-template-columns: 1fr
+    }
+
+    .insights-column {
         grid-template-columns: 1fr
     }
 
