@@ -10,11 +10,37 @@ body {
     position: relative;
 }
 
-/* Force Ticker Container to clip everything */
+/* Force Ticker Container to clip everything and added matching background */
 .logo-ticker-container {
     overflow: hidden !important;
     width: 100% !important;
     position: relative !important;
+    background: #0a2540 !important;
+    /* Professional Brand Blue */
+    margin: 40px 0 !important;
+    padding: 60px 0 !important;
+}
+
+/* Professional Lateral Fades matching the dark background */
+.logo-ticker-container::before,
+.logo-ticker-container::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 250px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.logo-ticker-container::before {
+    left: 0 !important;
+    background: linear-gradient(to right, #0a2540, transparent) !important;
+}
+
+.logo-ticker-container::after {
+    right: 0 !important;
+    background: linear-gradient(to left, #0a2540, transparent) !important;
 }
 
 /* Force Gold Color */
