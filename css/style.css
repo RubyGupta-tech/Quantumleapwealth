@@ -243,8 +243,9 @@ img {
    HERO
 ══════════════════════════════════════ */
 .hero {
-    min-height: 93vh;
-    background: linear-gradient(135deg, rgba(4, 17, 31, 0.85) 0%, rgba(10, 37, 64, 0.8) 45%, rgba(13, 58, 110, 0.75) 100%), url('../images/Hero_section_image.png');
+    min-height: 480px;
+    max-height: 540px;
+    background: linear-gradient(135deg, rgba(4, 17, 31, 0.35) 0%, rgba(10, 37, 64, 0.3) 45%, rgba(13, 58, 110, 0.25) 100%), url('../images/sfo_skyline.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -273,13 +274,7 @@ img {
 }
 
 .hero-wave {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: var(--bg-light);
-    clip-path: ellipse(55% 100% at 50% 100%)
+    display: none;
 }
 
 .hero-inner {

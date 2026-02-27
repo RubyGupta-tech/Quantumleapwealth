@@ -137,21 +137,26 @@
 .brand-name {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    /* Refined size */
+    font-size: 1.25rem;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, transparent, var(--accent), transparent) 1;
+}
+
+.brand-name .brand-italic {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-size: 0.72em;
+    color: var(--accent);
 }
 
 .brand-tagline {
-    display: block;
-    font-size: 0.6rem;
-    /* Refined size */
-    color: var(--accent-light);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 600;
+    display: none;
 }
 
 /* ---- Nav Menu ---- */
