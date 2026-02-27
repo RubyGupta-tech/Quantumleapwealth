@@ -255,6 +255,10 @@ img {
     overflow: hidden
 }
 
+.hero-title {
+    font-size: 2.2rem;
+}
+
 .hero-bg-pattern {
     position: absolute;
     inset: 0;
@@ -1318,8 +1322,13 @@ img {
         display: none
     }
 
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+
     .hero {
-        min-height: 80vh
+        min-height: auto;
+        padding: 100px 0 80px;
     }
 
     .why-grid {
@@ -1344,6 +1353,10 @@ img {
 }
 
 @media(max-width:540px) {
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr 1fr
     }

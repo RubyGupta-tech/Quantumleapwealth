@@ -463,6 +463,8 @@
     .hamburger {
         display: flex;
         margin-right: 16px;
+        position: relative;
+        z-index: 1001;
     }
 
     .nav-menu {
@@ -479,6 +481,7 @@
         transform: translateX(100%);
         transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
         overflow-y: auto;
+        z-index: 1000;
     }
 
     .nav-menu.open {
