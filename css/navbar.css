@@ -502,7 +502,8 @@
     .dropdown,
     .dropdown.wide {
         position: static;
-        transform: none;
+        transform: none !important;
+        animation: none !important;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -521,6 +522,12 @@
     .dropdown::before,
     .dropdown::after {
         display: none;
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item.open>.dropdown {
+        transform: none !important;
+        animation: none !important;
     }
 
     .nav-item.open>.dropdown {
