@@ -1,676 +1,1301 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Life Insurance — Quantumleap Wealth</title>
+
+    <title>Life Insurance — Quantum Leap Financial Services</title>
+
     <meta name="description"
-        content="Protect your family's financial future with the right life insurance from Quantumleap Wealth. Expert guidance on term, whole, and universal life insurance in California." />
+
+        content="Protect your family's financial future with the right life insurance from Quantum Leap Financial Services. Expert guidance on term, whole, and universal life insurance in California." />
+
     <link rel="stylesheet" href="../../css/style.css" />
+
     <link rel="stylesheet" href="../../css/navbar.css" />
+
     <style>
+
         .page-hero {
+
             background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
+
             padding: 80px 0 70px;
+
             position: relative;
+
             overflow: hidden
+
         }
+
+
 
         .page-hero::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+
             background-size: 40px 40px
+
         }
+
+
 
         .page-hero-inner {
+
             position: relative;
+
             z-index: 1;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             flex-wrap: wrap;
+
             gap: 20px
+
         }
+
+
 
         .page-hero h1 {
+
             color: #fff;
+
             font-size: clamp(2rem, 4vw, 3rem);
+
             margin-bottom: 12px
+
         }
+
+
 
         .page-hero p {
+
             color: rgba(255, 255, 255, 0.68);
+
             font-size: 1rem;
+
             max-width: 560px;
+
             line-height: 1.7
+
         }
+
+
 
         .breadcrumb {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 0.78rem;
+
             color: rgba(255, 255, 255, 0.45);
+
             margin-bottom: 14px
+
         }
+
+
 
         .breadcrumb a {
+
             color: var(--accent-light);
+
             text-decoration: none
+
         }
+
+
 
         .breadcrumb span {
+
             color: rgba(255, 255, 255, 0.3)
+
         }
+
+
 
         .page-hero-icon {
+
             width: 100px;
+
             height: 100px;
+
             border-radius: 20px;
+
             background: rgba(255, 255, 255, 0.06);
+
             border: 1px solid rgba(255, 255, 255, 0.12);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 3rem;
+
             flex-shrink: 0
+
         }
+
+
 
         .service-layout {
+
             display: grid;
+
             grid-template-columns: 1fr 340px;
+
             gap: 40px;
+
             align-items: start;
+
             padding: 70px 0
+
         }
+
+
 
         .service-content h2 {
+
             font-size: 1.7rem;
+
             margin-bottom: 16px
+
         }
+
+
 
         .service-content h3 {
+
             font-size: 1.2rem;
+
             margin: 32px 0 14px
+
         }
+
+
 
         .service-content p {
+
             color: var(--text-muted);
+
             line-height: 1.8;
+
             margin-bottom: 16px;
+
             font-size: 0.95rem
+
         }
+
+
 
         .insurance-types {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 16px;
+
             margin: 20px 0 32px
+
         }
+
+
 
         .ins-card {
+
             display: flex;
+
             gap: 20px;
+
             background: var(--bg-light);
+
             border-radius: 12px;
+
             padding: 22px;
+
             border: 1px solid var(--border);
+
             border-left: 4px solid var(--accent);
+
             transition: box-shadow 0.2s
+
         }
+
+
 
         .ins-card:hover {
+
             box-shadow: var(--shadow-md)
+
         }
+
+
 
         .ins-icon {
+
             font-size: 2rem;
+
             flex-shrink: 0
+
         }
+
+
 
         .ins-card h4 {
+
             font-size: 0.97rem;
+
             color: var(--primary);
+
             margin-bottom: 5px
+
         }
+
+
 
         .ins-card p {
+
             font-size: 0.84rem;
+
             color: var(--text-muted);
+
             line-height: 1.6;
+
             margin: 0
+
         }
+
+
 
         .feature-list {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 14px;
+
             margin: 24px 0 32px
+
         }
+
+
 
         .feature-item {
+
             display: flex;
+
             align-items: flex-start;
+
             gap: 12px;
+
             background: var(--bg-light);
+
             border-radius: 10px;
+
             padding: 14px 16px;
+
             border: 1px solid var(--border);
+
             transition: border-color 0.2s
+
         }
+
+
 
         .feature-item:hover {
+
             border-color: var(--accent)
+
         }
+
+
 
         .feature-check {
+
             width: 28px;
+
             height: 28px;
+
             border-radius: 50%;
+
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+
             color: #fff;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 0.8rem;
+
             font-weight: 700;
+
             flex-shrink: 0
+
         }
+
+
 
         .feature-item span {
+
             font-size: 0.88rem;
+
             font-weight: 600;
+
             color: var(--primary);
+
             line-height: 1.4
+
         }
+
+
 
         .info-box {
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.04));
+
             border: 1px solid rgba(201, 168, 76, 0.25);
+
             border-radius: 10px;
+
             padding: 16px;
+
             display: flex;
+
             gap: 12px;
+
             align-items: flex-start;
+
             margin-bottom: 28px
+
         }
+
+
 
         .info-box p {
+
             font-size: 0.82rem;
+
             color: var(--text-muted);
+
             line-height: 1.6;
+
             margin: 0
+
         }
+
+
 
         .content-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             border-radius: 16px;
+
             padding: 36px 32px;
+
             color: #fff;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             flex-wrap: wrap;
+
             gap: 20px
+
         }
+
+
 
         .content-cta h3 {
+
             color: #fff;
+
             font-size: 1.15rem;
+
             margin-bottom: 6px
+
         }
+
+
 
         .content-cta p {
+
             color: rgba(255, 255, 255, 0.68);
+
             font-size: 0.88rem;
+
             margin: 0
+
         }
+
+
 
         .sidebar {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 24px
+
         }
+
+
 
         .sidebar-card {
+
             background: #fff;
+
             border-radius: 14px;
+
             overflow: hidden;
+
             border: 1px solid var(--border);
+
             box-shadow: var(--shadow-sm)
+
         }
+
+
 
         .sidebar-card-header {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 18px 22px
+
         }
+
+
 
         .sidebar-card-header h4 {
+
             color: #fff;
+
             font-size: 1rem;
+
             font-family: 'Playfair Display', serif
+
         }
+
+
 
         .sidebar-card-body {
+
             padding: 20px 22px
+
         }
+
+
 
         .services-nav {
+
             list-style: none
+
         }
+
+
 
         .services-nav li {
+
             border-bottom: 1px solid var(--border)
+
         }
+
+
 
         .services-nav li:last-child {
+
             border: none
+
         }
+
+
 
         .services-nav a {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             padding: 12px 0;
+
             color: var(--primary);
+
             text-decoration: none;
+
             font-size: 0.88rem;
+
             font-weight: 500;
+
             transition: color 0.2s, padding-left 0.2s
+
         }
+
+
 
         .services-nav a:hover {
+
             color: var(--accent);
+
             padding-left: 6px
+
         }
+
+
 
         .services-nav a.active {
+
             color: var(--accent);
+
             font-weight: 700
+
         }
+
+
 
         .cfg {
+
             margin-bottom: 14px
+
         }
+
+
 
         .cfg label {
+
             display: block;
+
             font-size: 0.75rem;
+
             color: var(--text-muted);
+
             margin-bottom: 5px;
+
             text-transform: uppercase;
+
             letter-spacing: 0.05em
+
         }
+
+
 
         .cfg input,
+
         .cfg textarea,
+
         .cfg select {
+
             width: 100%;
+
             padding: 10px 12px;
+
             border: 1.5px solid var(--border);
+
             border-radius: 8px;
+
             font-size: 0.86rem;
+
             outline: none;
+
             transition: border-color 0.2s;
+
             font-family: 'Inter', sans-serif;
+
             color: var(--text-dark);
+
             background: #fff
+
         }
+
+
 
         .cfg input:focus,
+
         .cfg textarea:focus,
+
         .cfg select:focus {
+
             border-color: var(--accent)
+
         }
+
+
 
         .cfg textarea {
+
             height: 80px;
+
             resize: vertical
+
         }
+
+
 
         .sidebar-submit {
+
             width: 100%;
+
             padding: 12px;
+
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+
             border: none;
+
             border-radius: 8px;
+
             color: #fff;
+
             font-weight: 700;
+
             font-size: 0.88rem;
+
             cursor: pointer;
+
             font-family: 'Inter', sans-serif;
+
             transition: opacity 0.2s
+
         }
+
+
 
         .sidebar-submit:hover {
+
             opacity: 0.9
+
         }
+
+
 
         @media(max-width:900px) {
+
             .service-layout {
+
                 grid-template-columns: 1fr;
+
                 padding: 50px 0
+
             }
+
+
 
             .feature-list {
+
                 grid-template-columns: 1fr
+
             }
+
+
 
             .content-cta {
+
                 flex-direction: column
+
             }
+
         }
+
     </style>
+
     <!-- Calendly popup widget -->
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 </head>
 
+
+
 <body>
-    <div class="topbar">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="topbar" role="complementary" aria-label="Company Contact Info">
+
         <div class="topbar-inner">
+
             <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
-                    Talam.prasad@gmail.com</a>
+
+                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉
+
+                    quantumlfs@gmail.com</a>
+
                 <div class="topbar-divider"></div><span>📍 California, USA</span>
+
             </div>
+
             <div class="topbar-right">
-                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
-                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
-            </div>
+
+                <div class="social-links" role="list">
+          <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
+          <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
+          <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
+          <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
         </div>
+
+            </div>
+
+        </div>
+
     </div>
+
     <header class="navbar">
-        <div class="navbar-inner">
-            <a href="../../index.html" class="navbar-brand"><img src="../../images/Quantumleap_logo.png"
-                    alt="Quantumleap Wealth Logo" class="brand-logo" />
-                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
-                        class="brand-tagline">Financial Excellence</span></div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../../who_we_are/about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
-                        <li><a href="../../who_we_are/partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
-                                Partners</a></li>
-                        <li><a href="../../who_we_are/disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
-                                Disclaimer</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Services <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown wide">
-                        <li><a href="investment-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">📈</span>Investment Planning</a></li>
-                        <li><a href="living-will-trust.html" class="dropdown-item"><span class="dd-icon">📜</span>Living
-                                Will &amp; Trust</a></li>
-                        <li><a href="tax-saving.html" class="dropdown-item"><span class="dd-icon">💰</span>Tax
-                                Savings</a></li>
-                        <li><a href="retirement-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
-                        <li><a href="kids-college.html" class="dropdown-item"><span class="dd-icon">🎓</span>Kids
-                                College</a></li>
-                        <li><a href="life-insurance.html" class="dropdown-item"><span class="dd-icon">🛡️</span>Life
-                                Insurance</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span class="dd-icon">🚀</span>6
-                                Steps to Financial Freedom</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../../Activities/Photos.html" class="dropdown-item"><span
-                                    class="dd-icon">📸</span>Photos</a></li>
-                        <li><a href="../../Activities/videos.html" class="dropdown-item"><span
-                                    class="dd-icon">🎥</span>Videos</a></li>
-                        <li><a href="../../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;" class="btn-nav-cta">Book Consultation <svg width="13"
-                            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                        </svg></a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
-                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    <div class="navbar-inner">
+      <a href="../../index.html" class="navbar-brand">
+        <img src="../../images/Quantumleap_logo.png" alt="Quantum Leap Financial Services Logo" class="brand-logo" />
+        <div class="brand-text">
+          <strong class="brand-name">Quantum Leap Financial Services</strong>
+          <span class="brand-tagline">Financial Excellence</span>
         </div>
-    </header>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../../who_we_are/about.html" class="dropdown-item" role="menuitem"><span class="dd-icon"
+                  aria-hidden="true">👤</span>About Us</a></li>
+            <li role="none"><a href="../../who_we_are/partners.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🤝</span>Our Partners</a></li>
+            <li role="none"><a href="../../who_we_are/disclaimer.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📋</span>Our Disclaimer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown active">
+          <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown wide" role="menu">
+            <li role="none"><a href="../../images/services/investment-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📈</span>Investment
+                Planning</a></li>
+            <li role="none"><a href="../../images/services/living-will-trust.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                Trust</a></li>
+            <li role="none"><a href="../../images/services/tax-saving.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">💰</span>Tax
+                Savings</a></li>
+            <li role="none"><a href="../../images/services/retirement-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🏖️</span>Retirement
+                Planning</a></li>
+            <li role="none"><a href="../../images/services/kids-college.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎓</span>Kids
+                College</a></li>
+            <li role="none"><a href="../../images/services/life-insurance.html" class="dropdown-item active" role="menuitem" aria-current="page"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                Insurance</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🚀</span>6 Steps to
+                Financial Freedom</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../../Activities/blogs.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a>
+            </li>
+            <li role="none"><a href="../../Activities/videos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎥</span>Video Gallery</a>
+            </li>
+            <li role="none"><a href="../../Activities/Photos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">📸</span>Photo Gallery</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="#"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+            class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg></a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+</header>
+
     <div class="nav-overlay" id="nav-overlay"></div>
-    <main>
+
+    <main id="main-content" role="main">
+
         <section class="page-hero">
+
             <div class="container">
+
                 <div class="page-hero-inner">
+
                     <div>
+
                         <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
+
                                 href="../../index.html#services">Services</a><span>›</span><span
+
                                 style="color:var(--accent-light)">Life Insurance</span></div>
+
                         <h1>Life Insurance</h1>
+
                         <p>Protect the people who matter most. The right life insurance policy ensures your family is
+
                             financially secure no matter what life brings — today, tomorrow, and beyond.</p>
+
                         <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Get a Free Quote</a>
+
                     </div>
+
                     <div class="page-hero-icon">🛡️</div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <div class="container">
+
             <div class="service-layout">
+
                 <div class="service-content">
+
                     <h2>The Right Protection for Every Stage of Life</h2>
+
                     <p>Life insurance is one of the most powerful financial tools available — yet it's often
-                        misunderstood or overlooked until it's too late. At Quantumleap Wealth, we cut through the
+
+                        misunderstood or overlooked until it's too late. At Quantum Leap Financial Services, we cut through the
+
                         complexity to help you find the right coverage at the right cost, built specifically around your
+
                         family's needs, financial obligations, and long-term goals.</p>
+
                     <p>From income replacement and mortgage protection to estate planning and wealth transfer, we ensure
+
                         the people you love are never left financially vulnerable.</p>
 
+
+
                     <h3>Types of Life Insurance We Offer</h3>
+
                     <div class="insurance-types">
+
                         <div class="ins-card">
+
                             <div class="ins-icon">⏱️</div>
+
                             <div>
+
                                 <h4>Term Life Insurance</h4>
+
                                 <p>Affordable, straightforward protection for a specific period — 10, 20, or 30 years.
+
                                     Ideal for income replacement, mortgage protection, and covering the years when your
+
                                     family needs it most.</p>
+
                             </div>
+
                         </div>
+
                         <div class="ins-card">
+
                             <div class="ins-icon">🏛️</div>
+
                             <div>
+
                                 <h4>Whole Life Insurance</h4>
+
                                 <p>Permanent coverage that never expires, with a guaranteed cash value component that
+
                                     grows over time. A cornerstone of long-term wealth preservation and estate planning.
+
                                 </p>
+
                             </div>
+
                         </div>
+
                         <div class="ins-card">
+
                             <div class="ins-icon">🔧</div>
+
                             <div>
+
                                 <h4>Universal Life Insurance</h4>
+
                                 <p>Flexible premiums and adjustable death benefits, with tax-advantaged cash value
+
                                     growth. Perfect for those who want permanent coverage with adaptability built in.
+
                                 </p>
+
                             </div>
+
                         </div>
+
                         <div class="ins-card">
+
                             <div class="ins-icon">📈</div>
+
                             <div>
+
                                 <h4>Indexed Universal Life (IUL)</h4>
+
                                 <p>Ties your cash value growth to a market index (like the S&amp;P 500), offering upside
+
                                     potential with downside protection. Increasingly popular as a retirement supplement.
+
                                 </p>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <h3>Key Benefits</h3>
+
                     <div class="feature-list">
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Income Replacement for Your Family</span>
+
                         </div>
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Mortgage &amp; Debt Protection</span>
+
                         </div>
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Tax-Free Death Benefit</span>
+
                         </div>
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Cash Value Growth (Whole/Universal)</span>
+
                         </div>
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Estate &amp; Legacy Planning Tool</span>
+
                         </div>
+
                         <div class="feature-item">
+
                             <div class="feature-check">✓</div><span>Business Succession Coverage</span>
+
                         </div>
+
                     </div>
+
                     <div class="info-box">
+
                         <div style="font-size:1.4rem;flex-shrink:0">⚠️</div>
+
                         <p><strong>Important:</strong> 44% of Americans have no life insurance at all, and many who do
+
                             are significantly underinsured. The cost of <strong>not</strong> having coverage can be
+
                             devastating to the ones you leave behind. Let us help you find the right policy today.</p>
+
                     </div>
+
                     <div class="content-cta">
+
                         <div>
+
                             <h3>Protect What Matters Most — Starting Today</h3>
+
                             <p>A 10-minute conversation with our advisor could save your family from decades of
+
                                 financial hardship. Don't wait.</p>
+
                         </div>
+
                         <a href="../../contact/contact.html" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0">Get My
+
                             Free Quote →</a>
+
                     </div>
+
                 </div>
+
                 <aside class="sidebar">
+
                     <div class="sidebar-card">
+
                         <div class="sidebar-card-header">
+
                             <h4>📅 Get a Free Quote</h4>
+
                         </div>
+
                         <div class="sidebar-card-body">
+
                             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">Tell
+
                                 us a bit about yourself and we'll help you find the best coverage at the best price.</p>
+
                             <div class="cfg"><label>Full Name</label><input type="text" placeholder="Your full name" />
+
                             </div>
+
                             <div class="cfg"><label>Date of Birth</label><input type="date" /></div>
+
                             <div class="cfg"><label>Coverage Type</label>
+
                                 <select>
+
                                     <option>Term Life Insurance</option>
+
                                     <option>Whole Life Insurance</option>
+
                                     <option>Universal Life Insurance</option>
+
                                     <option>Not Sure — Help Me Decide</option>
+
                                 </select>
+
                             </div>
+
                             <div class="cfg"><label>Phone</label><input type="tel" placeholder="(+1) 000-000-0000" />
+
                             </div>
+
                             <div class="cfg"><label>Message</label><textarea
+
                                     placeholder="Coverage amount, dependents, questions..."></textarea></div>
+
                             <button class="sidebar-submit"
+
                                 onclick="alert('Thank you! We will contact you shortly.')">Request Quote →</button>
+
                         </div>
+
                     </div>
+
                     <div class="sidebar-card">
+
                         <div class="sidebar-card-header">
+
                             <h4>Our Other Services</h4>
+
                         </div>
+
                         <div class="sidebar-card-body" style="padding:10px 22px">
+
                             <ul class="services-nav">
+
                                 <li><a href="investment-planning.html"><span>📈 Investment
+
                                             Planning</span><span>›</span></a></li>
+
                                 <li><a href="living-will-trust.html"><span>📜 Living Will &amp;
+
                                             Trust</span><span>›</span></a></li>
+
                                 <li><a href="tax-saving.html"><span>💰 Tax Savings</span><span>›</span></a></li>
+
                                 <li><a href="retirement-planning.html"><span>🏖️ Retirement
+
                                             Planning</span><span>›</span></a></li>
+
                                 <li><a href="kids-college.html"><span>🎓 Kids College Fund</span><span>›</span></a></li>
+
                                 <li><a href="life-insurance.html" class="active"><span>🛡️ Life
+
                                             Insurance</span><span>›</span></a></li>
+
                             </ul>
+
                         </div>
+
                     </div>
+
                     <div class="sidebar-card">
+
                         <div class="sidebar-card-header">
+
                             <h4>📞 Reach Us Directly</h4>
+
                         </div>
+
                         <div class="sidebar-card-body">
+
                             <div
+
                                 style="display:flex;flex-direction:column;gap:12px;font-size:0.85rem;color:var(--text-muted)">
+
                                 <div>📞 <a href="tel:+14082033877" style="color:var(--primary);font-weight:600">(+1) 408-203-3877</a></div>
-                                <div>✉ <a href="mailto:Talam.prasad@gmail.com"
-                                        style="color:var(--primary);font-weight:600">Talam.prasad@gmail.com</a>
+
+                                <div>✉ <a href="mailto:quantumlfs@gmail.com"
+
+                                        style="color:var(--primary);font-weight:600">quantumlfs@gmail.com</a>
+
                                 </div>
+
                                 <div>📍 California, USA</div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </aside>
+
             </div>
+
         </div>
+
     </main>
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo" role="contentinfo" role="contentinfo">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div>
-                    <h4>Quantumleap Wealth</h4>
+
+                    <h4>Quantum Leap Financial Services</h4>
+
                     <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+
                         wealth preservation.</p>
+
                     <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
+
                             href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
                 </div>
+
                 <div>
+
                     <h4>Quick Links</h4>
+
                     <ul>
+
                         <li><a href="../../index.html">Home</a></li>
+
                         <li><a href="../../who_we_are/about.html">About Us</a></li>
+
                         <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+
                         <li><a href="../../contact/contact.html">Contact</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Our Services</h4>
+
                     <ul>
+
                         <li><a href="investment-planning.html">Investment Planning</a></li>
+
                         <li><a href="retirement-planning.html">Retirement Planning</a></li>
+
                         <li><a href="life-insurance.html">Life Insurance</a></li>
+
                         <li><a href="tax-saving.html">Tax Savings</a></li>
+
                         <li><a href="kids-college.html">Kids College Fund</a></li>
+
                         <li><a href="living-will-trust.html">Living Will &amp; Trust</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Contact Us</h4>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+
                     <div class="footer-contact-item">✉ <a
-                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+
+                            href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a></div>
+
                     <div class="footer-contact-item">📍 California, USA</div>
+
                 </div>
+
             </div>
-            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+
+            <div class="footer-bottom"><span>© 2025 Quantum Leap Financial Services. All rights reserved.</span><span><a
+
                         href="../../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+
         </div>
+
     </footer>
+
     <script src="../../js/main.js"></script>
+
 </body>
 
+
+
 </html>
+

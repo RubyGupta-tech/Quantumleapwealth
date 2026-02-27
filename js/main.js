@@ -1,5 +1,5 @@
 // ============================================================
-// QUANTUMLEAP WEALTH — MAIN JS
+// QUANTUM LEAP FINANCIAL SERVICES — MAIN JS
 // ============================================================
 
 (function () {

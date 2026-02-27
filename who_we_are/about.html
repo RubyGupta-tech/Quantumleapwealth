@@ -1,109 +1,201 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>About Us — Quantumleap Wealth</title>
+
+    <title>About Us — Quantum Leap Financial Services</title>
+
     <meta name="description"
-        content="Meet Prasad, Founder & CEO of Quantumleap Wealth. Learn about our mission to empower families through wealth creation and personalized financial planning in California." />
+        content="Meet Prasad, Founder & CEO of Quantum Leap Financial Services. Learn about our mission to empower families through wealth creation and personalized financial planning in California." />
+
     <link rel="stylesheet" href="../css/style.css" />
+
     <link rel="stylesheet" href="../css/navbar.css" />
+
     <!-- Calendly popup widget -->
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         /* ── Hero ── */
+
         .page-hero {
+
             background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+
             padding: 90px 0 80px;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .page-hero::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .page-hero-inner {
+
             position: relative;
+
             z-index: 1;
+
             text-align: center
         }
 
+
+
         .page-hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: rgba(201, 168, 76, 0.12);
+
             border: 1px solid rgba(201, 168, 76, 0.28);
+
             border-radius: 30px;
+
             padding: 6px 18px;
+
             font-size: 0.78rem;
+
             font-weight: 700;
+
             color: var(--accent-light);
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             margin-bottom: 22px
         }
 
+
+
         .page-hero h1 {
+
             color: #fff;
+
             font-size: clamp(2rem, 4.5vw, 3.2rem);
+
             margin-bottom: 16px
         }
 
+
+
         .page-hero h1 .highlight {
+
             color: var(--accent-light)
         }
 
+
+
         .page-hero-sub {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 1rem;
+
             max-width: 580px;
+
             margin: 0 auto;
+
             line-height: 1.75
         }
 
+
+
         .breadcrumb {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 0.78rem;
+
             color: rgba(255, 255, 255, 0.45);
+
             margin-bottom: 16px;
+
             justify-content: center
         }
 
+
+
         .breadcrumb a {
+
             color: var(--accent-light);
+
             text-decoration: none
         }
 
+
+
         .breadcrumb span {
+
             color: rgba(255, 255, 255, 0.3)
         }
 
+
+
         /* ── Founder Section ── */
+
         .founder-section {
+
             padding: 90px 0
         }
 
+
+
         .founder-grid {
+
             display: grid;
+
             grid-template-columns: 420px 1fr;
+
             gap: 70px;
+
             align-items: start
         }
 
+
+
         /* Photo card */
+
         .founder-photo-wrap {
+
             position: relative
         }
+
+
 
         .founder-photo-card {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
@@ -111,61 +203,108 @@
             overflow: hidden;
             aspect-ratio: 4/5;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
             position: relative;
             box-shadow: 0 30px 80px rgba(4, 17, 31, 0.35)
+        }
+
+        .founder-photo-card>img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            z-index: 0
         }
 
         .founder-photo-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(201, 168, 76, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px
+            background: linear-gradient(to top, rgba(4, 17, 31, 0.85) 0%, rgba(4, 17, 31, 0.3) 40%, transparent 70%);
+            z-index: 1
         }
 
         .founder-avatar {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             text-align: center;
-            padding: 40px
+            padding: 30px 40px
         }
+
+
 
         .founder-avatar-circle {
+
             width: 160px;
+
             height: 160px;
+
             border-radius: 50%;
+
             background: rgba(255, 255, 255, 0.1);
+
             border: 4px solid rgba(201, 168, 76, 0.5);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 5rem;
+
             margin: 0 auto 20px;
-            box-shadow: 0 0 0 12px rgba(201, 168, 76, 0.08)
+
+            box-shadow: 0 0 0 12px rgba(201, 168, 76, 0.08);
+            overflow: hidden
         }
 
+        .founder-avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%
+        }
+
+
+
         .founder-avatar-name {
+
             color: #fff;
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.6rem;
+
             font-weight: 700;
+
             margin-bottom: 6px
         }
 
+
+
         .founder-avatar-title {
+
             color: var(--accent-light);
+
             font-size: 0.82rem;
+
             font-weight: 700;
+
             letter-spacing: 0.1em;
+
             text-transform: uppercase
         }
 
+
+
         .founder-badge-floating {
             position: absolute;
-            bottom: -18px;
-            right: -18px;
+            bottom: -30px;
+            right: 20px;
             background: #fff;
             border-radius: 16px;
             padding: 18px 22px;
@@ -173,777 +312,1406 @@
             border: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 14px
+            gap: 14px;
+            z-index: 5
         }
 
+
+
         .badge-icon {
+
             font-size: 1.8rem
         }
 
+
+
         .badge-text strong {
+
             display: block;
+
             font-size: 0.95rem;
+
             color: var(--primary)
         }
 
+
+
         .badge-text span {
+
             font-size: 0.75rem;
+
             color: var(--text-muted)
         }
 
+
+
         /* Founder bio */
+
         .founder-bio .section-label {
+
             display: inline-block;
+
             font-size: 0.72rem;
+
             font-weight: 700;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
+
             color: var(--accent);
+
             border-bottom: 2px solid var(--accent);
+
             padding-bottom: 4px;
+
             margin-bottom: 16px
         }
 
+
+
         .founder-bio h2 {
+
             font-size: clamp(1.6rem, 3vw, 2.2rem);
+
             color: var(--primary);
+
             margin-bottom: 8px;
+
             line-height: 1.2
         }
 
+
+
         .founder-bio .founder-title-tag {
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             color: var(--accent-dark);
+
             background: rgba(201, 168, 76, 0.1);
+
             border-radius: 20px;
+
             padding: 4px 16px;
+
             display: inline-block;
+
             margin-bottom: 24px
         }
 
+
+
         .founder-bio p {
+
             color: var(--text-muted);
+
             font-size: 0.93rem;
+
             line-height: 1.82;
+
             margin-bottom: 16px
         }
 
+
+
         .founder-bio p:last-of-type {
+
             margin-bottom: 28px
         }
 
+
+
         /* Vision / Mission cards */
+
         .vm-cards {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 16px;
+
             margin-bottom: 32px
         }
 
+
+
         .vm-card {
+
             border-radius: 14px;
+
             padding: 22px;
+
             border: 1px solid var(--border)
         }
 
+
+
         .vm-card.vision {
+
             background: linear-gradient(135deg, rgba(4, 17, 31, 0.05), rgba(13, 58, 110, 0.08))
         }
 
+
+
         .vm-card.mission {
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.07), rgba(201, 168, 76, 0.03))
         }
 
+
+
         .vm-card-icon {
+
             font-size: 1.6rem;
+
             margin-bottom: 10px
         }
 
+
+
         .vm-card h4 {
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             letter-spacing: 0.07em;
+
             text-transform: uppercase;
+
             color: var(--primary);
+
             margin-bottom: 6px
         }
 
+
+
         .vm-card p {
+
             font-size: 0.83rem;
+
             color: var(--text-muted);
+
             line-height: 1.6;
+
             margin: 0
         }
 
+
+
         .founder-ctas {
+
             display: flex;
+
             gap: 14px;
+
             flex-wrap: wrap
         }
 
+
+
         /* ── Stats Bar ── */
+
         .about-stats {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 70px 0
         }
 
+
+
         .about-stats-grid {
+
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             text-align: center;
+
             gap: 0
         }
 
+
+
         .about-stat {
+
             padding: 0 20px;
+
             border-right: 1px solid rgba(255, 255, 255, 0.1)
         }
 
+
+
         .about-stat:last-child {
+
             border: none
         }
 
+
+
         .about-stat-num {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 2.8rem;
+
             color: var(--accent-light);
+
             font-weight: 700;
+
             line-height: 1
         }
 
+
+
         .about-stat-label {
+
             font-size: 0.75rem;
+
             color: rgba(255, 255, 255, 0.55);
+
             text-transform: uppercase;
+
             letter-spacing: 0.1em;
+
             margin-top: 8px
         }
 
+
+
         /* ── Values Section ── */
+
         .values-section {
+
             padding: 90px 0;
+
             background: var(--bg-light)
         }
 
+
+
         .values-grid {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 28px;
+
             margin-top: 52px
         }
 
+
+
         .value-card {
+
             background: #fff;
+
             border-radius: 18px;
+
             padding: 36px 28px;
+
             border: 1px solid var(--border);
+
             transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+
             text-align: center
         }
 
+
+
         .value-card:hover {
+
             transform: translateY(-6px);
+
             box-shadow: var(--shadow-lg);
+
             border-color: var(--accent)
         }
 
+
+
         .value-icon {
+
             width: 68px;
+
             height: 68px;
+
             border-radius: 18px;
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.22));
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 2rem;
+
             margin: 0 auto 20px;
+
             transition: transform 0.25s
         }
 
+
+
         .value-card:hover .value-icon {
+
             transform: scale(1.1)
         }
 
+
+
         .value-card h3 {
+
             font-size: 1.05rem;
+
             color: var(--primary);
+
             margin-bottom: 10px
         }
 
+
+
         .value-card p {
+
             font-size: 0.86rem;
+
             color: var(--text-muted);
+
             line-height: 1.7;
+
             margin: 0
         }
 
+
+
         /* ── Partner Story ── */
+
         .partner-section {
+
             padding: 90px 0
         }
 
+
+
         .partner-grid {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 60px;
+
             align-items: center
         }
 
+
+
         .partner-visual {
+
             border-radius: 20px;
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 50px 40px;
+
             text-align: center;
+
             box-shadow: var(--shadow-lg)
         }
 
+
+
         .partner-visual-logo {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 2rem;
+
             color: #fff;
+
             font-weight: 700;
+
             margin-bottom: 8px
         }
 
+
+
         .partner-visual-sub {
+
             color: rgba(255, 255, 255, 0.6);
+
             font-size: 0.82rem;
+
             letter-spacing: 0.1em;
+
             text-transform: uppercase;
+
             margin-bottom: 32px
         }
 
+
+
         .partner-visual-items {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 14px
         }
 
+
+
         .partner-visual-item {
+
             display: flex;
+
             align-items: center;
+
             gap: 14px;
+
             background: rgba(255, 255, 255, 0.07);
+
             border-radius: 10px;
+
             padding: 14px 18px;
+
             text-align: left
         }
 
+
+
         .partner-visual-item .pvi-icon {
+
             font-size: 1.4rem;
+
             flex-shrink: 0
         }
 
+
+
         .partner-visual-item .pvi-text {
+
             color: #fff;
+
             font-size: 0.83rem;
+
             line-height: 1.4
         }
 
+
+
         .partner-text .section-label {
+
             display: inline-block;
+
             font-size: 0.72rem;
+
             font-weight: 700;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
+
             color: var(--accent);
+
             border-bottom: 2px solid var(--accent);
+
             padding-bottom: 4px;
+
             margin-bottom: 16px
         }
 
+
+
         .partner-text h2 {
+
             font-size: clamp(1.5rem, 2.8vw, 2rem);
+
             color: var(--primary);
+
             margin-bottom: 18px
         }
 
+
+
         .partner-text p {
+
             color: var(--text-muted);
+
             font-size: 0.93rem;
+
             line-height: 1.82;
+
             margin-bottom: 16px
         }
 
+
+
         /* ── CTA ── */
+
         .about-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 80px 0;
+
             text-align: center;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .about-cta::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .about-cta-inner {
+
             position: relative;
+
             z-index: 1
         }
 
+
+
         .about-cta h2 {
+
             color: #fff;
+
             font-size: clamp(1.7rem, 3vw, 2.4rem);
+
             margin-bottom: 16px
         }
 
+
+
         .about-cta p {
+
             color: rgba(255, 255, 255, 0.68);
+
             font-size: 0.97rem;
+
             max-width: 540px;
+
             margin: 0 auto 36px;
+
             line-height: 1.75
         }
 
+
+
         .about-cta-btns {
+
             display: flex;
+
             gap: 16px;
+
             justify-content: center;
+
             flex-wrap: wrap
         }
 
+
+
         @media(max-width:1000px) {
+
             .founder-grid {
+
                 grid-template-columns: 1fr
             }
 
+
+
             .founder-photo-wrap {
+
                 max-width: 360px;
+
                 margin: 0 auto
             }
+
         }
 
+
+
         @media(max-width:768px) {
+
             .about-stats-grid {
+
                 grid-template-columns: 1fr 1fr
             }
 
+
+
             .about-stat {
+
                 border-right: none;
+
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
                 padding: 20px
             }
 
+
+
             .about-stat:nth-child(2),
+
             .about-stat:last-child {
+
                 border: none
             }
 
+
+
             .values-grid {
+
                 grid-template-columns: 1fr
             }
+
+
 
             .partner-grid {
+
                 grid-template-columns: 1fr
             }
+
+
 
             .vm-cards {
+
                 grid-template-columns: 1fr
             }
 
+
+
             .about-cta-btns {
+
                 flex-direction: column;
+
                 align-items: center
             }
+
         }
     </style>
+
 </head>
 
+
+
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
 
     <!-- TOP BAR -->
-    <div class="topbar">
+
+    <div class="topbar" role="complementary" aria-label="Company Contact Info">
+
         <div class="topbar-inner">
+
             <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉
-                    Talam.prasad@gmail.com</a>
+
+                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉
+
+                    quantumlfs@gmail.com</a>
+
                 <div class="topbar-divider"></div><span>📍 California, USA</span>
+
             </div>
+
             <div class="topbar-right">
-                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
-                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
+                <div class="social-links" role="list">
+                    <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
+                    <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
+                    <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
+                    <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
+
+
     <!-- NAVBAR -->
+
     <header class="navbar">
         <div class="navbar-inner">
             <a href="../index.html" class="navbar-brand">
-                <img src="../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
-                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
-                        class="brand-tagline">Financial Excellence</span></div>
+                <img src="../images/Quantumleap_logo.png" alt="Quantum Leap Financial Services Logo"
+                    class="brand-logo" />
+                <div class="brand-text">
+                    <strong class="brand-name">Quantum Leap Financial Services</strong>
+                    <span class="brand-tagline">Financial Excellence</span>
+                </div>
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Who We Are <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <li class="nav-item has-dropdown active">
+                    <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
                             <polyline points="6 9 12 15 18 9" />
                         </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="about.html" class="dropdown-item active"><span class="dd-icon">👤</span>About
-                                Us</a></li>
-                        <li><a href="partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
-                                Partners</a></li>
-                        <li><a href="disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
-                                Disclaimer</a></li>
+                    <ul class="dropdown" role="menu">
+                        <li role="none"><a href="../who_we_are/about.html" class="dropdown-item active" role="menuitem"
+                                aria-current="page"><span class="dd-icon" aria-hidden="true">👤</span>About Us</a></li>
+                        <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">🤝</span>Our Partners</a></li>
+                        <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">📋</span>Our Disclaimer</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
                             <polyline points="6 9 12 15 18 9" />
                         </svg></a>
-                    <ul class="dropdown wide">
-                        <li><a href="../images/services/investment-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">📈</span>Investment Planning</a></li>
-                        <li><a href="../images/services/living-will-trust.html" class="dropdown-item"><span
-                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
-                        <li><a href="../images/services/tax-saving.html" class="dropdown-item"><span
-                                    class="dd-icon">💰</span>Tax Savings</a></li>
-                        <li><a href="../images/services/retirement-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
-                        <li><a href="../images/services/kids-college.html" class="dropdown-item"><span
-                                    class="dd-icon">🎓</span>Kids College</a></li>
-                        <li><a href="../images/services/life-insurance.html" class="dropdown-item"><span
-                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
+                    <ul class="dropdown wide" role="menu">
+                        <li role="none"><a href="../images/services/investment-planning.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">📈</span>Investment
+                                Planning</a></li>
+                        <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                                Trust</a></li>
+                        <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">💰</span>Tax
+                                Savings</a></li>
+                        <li role="none"><a href="../images/services/retirement-planning.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">🏖️</span>Retirement
+                                Planning</a></li>
+                        <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">🎓</span>Kids
+                                College</a></li>
+                        <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
+                                role="menuitem"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                                Insurance</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
                             <polyline points="6 9 12 15 18 9" />
                         </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span
-                                    class="dd-icon">🚀</span>6 Steps to Financial Freedom</a></li>
+                    <ul class="dropdown" role="menu">
+                        <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
+                                class="dropdown-item" role="menuitem"><span class="dd-icon"
+                                    aria-hidden="true">🚀</span>6 Steps to
+                                Financial Freedom</a></li>
                     </ul>
                 </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
                             <polyline points="6 9 12 15 18 9" />
                         </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Activities/Photos.html" class="dropdown-item"><span
-                                    class="dd-icon">📸</span>Photos</a></li>
-                        <li><a href="../Activities/videos.html" class="dropdown-item"><span
-                                    class="dd-icon">🎥</span>Videos</a></li>
-                        <li><a href="../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
+                    <ul class="dropdown" role="menu">
+                        <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"><span
+                                    class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a>
+                        </li>
+                        <li role="none"><a href="../Activities/videos.html" class="dropdown-item" role="menuitem"><span
+                                    class="dd-icon" aria-hidden="true">🎥</span>Video Gallery</a>
+                        </li>
+                        <li role="none"><a href="../Activities/Photos.html" class="dropdown-item" role="menuitem"><span
+                                    class="dd-icon" aria-hidden="true">📸</span>Photo Gallery</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#"
+                <li class="nav-item">
+                    <a href="#"
                         onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                         class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
-                        </svg></a></li>
+                        </svg></a>
+                </li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
-                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+                aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <main>
+
+
+    <main id="main-content" role="main">
+
+
 
         <!-- PAGE HERO -->
+
         <section class="page-hero">
+
             <div class="container">
+
                 <div class="page-hero-inner">
+
                     <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Who We Are</span><span>›</span><span
                             style="color:var(--accent-light)">About Us</span></div>
+
                     <div class="page-hero-badge">👤 Who We Are</div>
-                    <h1>About <span class="highlight">Quantumleap Wealth</span></h1>
+
+                    <h1>About <span class="highlight">Quantum Leap Financial Services</span></h1>
+
                     <p class="page-hero-sub">Dedicated to empowering families through wealth creation, personalized
+
                         financial education, and expert guidance — leaving no family behind.</p>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <!-- FOUNDER SECTION -->
+
         <section class="founder-section">
+
             <div class="container">
+
                 <div class="founder-grid">
 
+
+
                     <!-- Photo Card -->
+
                     <div class="founder-photo-wrap reveal">
+
                         <div class="founder-photo-card">
+                            <img src="../images/Anu_profile_pic.png" alt="Anu - Profile Photo">
                             <div class="founder-avatar">
-                                <div class="founder-avatar-circle">👨‍💼</div>
-                                <div class="founder-avatar-name">Prasad</div>
+                                <div class="founder-avatar-name">Anu</div>
                                 <div class="founder-avatar-title">Founder &amp; CEO</div>
                             </div>
                         </div>
+
                         <div class="founder-badge-floating">
+
                             <div class="badge-icon">🏆</div>
+
                             <div class="badge-text">
+
                                 <strong>California Top Advisor</strong>
+
                                 <span>Award-Winning Advisor 2024</span>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+
                     <!-- Bio -->
+
                     <div class="founder-bio reveal reveal-delay-2">
+
                         <span class="section-label">Meet Our Founder</span>
-                        <h2>Prasad</h2>
-                        <span class="founder-title-tag">Founder &amp; CEO, Quantumleap Wealth</span>
+                        <h2>Anu</h2>
+                        <span class="founder-title-tag">Founder &amp; CEO, Quantum Leap Financial Services</span>
 
-                        <p>Prasad brings decades of experience in financial planning, wealth management, and family
-                            financial education to Quantumleap Wealth. His background spans corporate finance,
-                            investment strategy, and regulatory compliance — skills that translate directly into
-                            life-changing financial guidance for the families he serves.</p>
+                        <h2>Built on Strategy. Driven by Purpose.</h2>
 
-                        <p>Witnessing the profound financial impact that unexpected events — job loss, illness, market
-                            downturns — have on ordinary families inspired Prasad to establish Quantumleap Wealth. His
-                            foundation was built on a simple, powerful promise: <strong>no family left behind</strong>.
+                        <p>At Quantum Leap Financial Services, we believe financial planning should be intentional,
+                            structured, and built for long-term security — not driven by trends or guesswork.</p>
+
+                        <p>I founded this firm with a simple mission: help families protect what they've built, grow
+                            wealth efficiently, and create a legacy that lasts generations.</p>
+
+                        <p>With a background rooted in analytical thinking and structured problem-solving, we approach
+                            financial planning differently. Every strategy we design is customized, data-driven, and
+                            aligned with your long-term vision — not just short-term market noise.</p>
+
+                        <p><strong>We specialize in:</strong></p>
+                        <ul
+                            style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.82; padding-left: 20px; margin-bottom: 16px;">
+                            <li>Tax-efficient wealth strategies</li>
+                            <li>Retirement income planning</li>
+                            <li>Life Protection - Term and Permanent</li>
+                            <li>College funding strategies</li>
+                            <li>Business and estate protection</li>
+                        </ul>
+
+                        <p><strong>Our philosophy is simple:</strong></p>
+                        <p><em>Protect first. Grow second. Optimize continuously.</em></p>
+
+                        <p>We don't believe in one-size-fits-all plans. We believe in financial blueprints tailored to
+                            your income, goals, and family priorities.</p>
+
+                        <h3 style="color: var(--primary); font-size: 1.2rem; margin-top: 28px; margin-bottom: 12px;">Our
+                            Commitment</h3>
+
+                        <p>When you work with us, you can expect:</p>
+                        <ul
+                            style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.82; padding-left: 20px; margin-bottom: 16px;">
+                            <li>Clear, transparent guidance</li>
+                            <li>Thoughtful strategy design</li>
+                            <li>Ongoing reviews and adjustments</li>
+                            <li>Long-term partnership — not a one-time transaction</li>
+                        </ul>
+
+                        <p>Financial confidence doesn't come from products.<br>
+                            <strong>It comes from having a structured plan and the right advisor walking beside
+                                you.</strong>
                         </p>
 
-                        <p>Prasad has since led initiatives in financial awareness, money management education, and
-                            personalized wealth planning — annually serving hundreds of families across California and
-                            beyond. His approach goes far beyond investment advice; he builds lasting financial
-                            confidence in every client he works with.</p>
 
-                        <p>Through strategic partnerships with world-class financial carriers and wealth solution
-                            providers, Quantumleap Wealth delivers top-tier solutions tailored to each client's unique
-                            situation — from fresh graduates to retirees.</p>
-
-                        <div class="vm-cards">
-                            <div class="vm-card vision">
-                                <div class="vm-card-icon">🔭</div>
-                                <h4>Our Vision</h4>
-                                <p>Pioneering the Financial Revolution — empowering every family to achieve lasting
-                                    financial freedom.</p>
-                            </div>
-                            <div class="vm-card mission">
-                                <div class="vm-card-icon">🎯</div>
-                                <h4>Our Mission</h4>
-                                <p>Creating Wealth for Families — through personalized planning, education, and expert
-                                    guidance.</p>
-                            </div>
-                        </div>
 
                         <div class="founder-ctas">
+
                             <a href="#"
                                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                 class="btn btn-primary">Book a Free Consultation</a>
+
                             <a href="../contact/contact.html" class="btn btn-outline">Get in Touch</a>
+
                         </div>
+
                     </div>
 
+
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- STATS BAR -->
+
         <div class="about-stats">
+
             <div class="container">
+
                 <div class="about-stats-grid">
+
                     <div class="about-stat reveal">
+
                         <div class="about-stat-num">500+</div>
+
                         <div class="about-stat-label">Families Served</div>
+
                     </div>
+
                     <div class="about-stat reveal reveal-delay-1">
+
                         <div class="about-stat-num">15+</div>
+
                         <div class="about-stat-label">Years Experience</div>
+
                     </div>
+
                     <div class="about-stat reveal reveal-delay-2">
+
                         <div class="about-stat-num">$50M+</div>
+
                         <div class="about-stat-label">Assets Managed</div>
+
                     </div>
+
                     <div class="about-stat reveal reveal-delay-3">
+
                         <div class="about-stat-num">FREE</div>
+
                         <div class="about-stat-label">First Consultation</div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
+
+
         <!-- VALUES SECTION -->
+
         <section class="values-section">
+
             <div class="container">
+
                 <div style="text-align:center">
+
                     <span class="section-label"
                         style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-bottom:14px">What
+
                         Drives Us</span>
+
                     <h2 class="section-title">Our Core Values</h2>
-                    <p class="section-sub">Everything we do at Quantumleap Wealth is guided by these principles — they
+
+                    <p class="section-sub">Everything we do at Quantum Leap Financial Services is guided by these
+                        principles — they
+
                         aren't just words, they're the foundation of every conversation, every plan, and every outcome
+
                         we create together.</p>
+
                 </div>
+
                 <div class="values-grid">
+
                     <div class="value-card reveal">
+
                         <div class="value-icon">🤝</div>
+
                         <h3>Trust &amp; Integrity</h3>
+
                         <p>We operate with complete transparency. Your financial future is sacred to us, and every
+
                             recommendation we make is in your best interest — full stop.</p>
+
                     </div>
+
                     <div class="value-card reveal reveal-delay-1">
+
                         <div class="value-icon">🎯</div>
+
                         <h3>Personalized Approach</h3>
+
                         <p>No two families are the same. Every strategy we build is custom-crafted around your specific
+
                             goals, timeline, risk tolerance, and life circumstances.</p>
+
                     </div>
+
                     <div class="value-card reveal reveal-delay-2">
+
                         <div class="value-icon">📚</div>
+
                         <h3>Financial Education</h3>
+
                         <p>We don't just build plans — we teach you how to understand them. An informed client is an
+
                             empowered client, and empowered clients build lasting wealth.</p>
+
                     </div>
+
                     <div class="value-card reveal">
+
                         <div class="value-icon">🏡</div>
+
                         <h3>Family First</h3>
+
                         <p>Our "No Family Left Behind" commitment means we serve clients at every income level. Great
+
                             financial advice should never be reserved for the wealthy.</p>
+
                     </div>
+
                     <div class="value-card reveal reveal-delay-1">
+
                         <div class="value-icon">🚀</div>
+
                         <h3>Long-Term Thinking</h3>
+
                         <p>Quick wins are fine; generational wealth is the goal. We plan not just for your retirement,
+
                             but for the legacy you want to leave your children and grandchildren.</p>
+
                     </div>
+
                     <div class="value-card reveal reveal-delay-2">
+
                         <div class="value-icon">⭐</div>
+
                         <h3>Excellence in Service</h3>
+
                         <p>98% client satisfaction isn't an accident — it's the result of going above and beyond at
+
                             every touchpoint, from the first consultation to ongoing portfolio reviews.</p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <!-- PARTNER STORY -->
+
         <section class="partner-section">
+
             <div class="container">
+
                 <div class="partner-grid">
+
                     <div class="partner-visual reveal">
-                        <div class="partner-visual-logo">Quantumleap Wealth</div>
+
+                        <div class="partner-visual-logo">Quantum Leap Financial Services</div>
+
                         <div class="partner-visual-sub">Strategic Partnerships</div>
+
                         <div class="partner-visual-items">
+
                             <div class="partner-visual-item">
+
                                 <div class="pvi-icon">💼</div>
+
                                 <div class="pvi-text"><strong style="color:var(--accent-light)">World-Class
+
                                         Carriers</strong><br />Top-tier insurance &amp; investment product providers
+
                                 </div>
+
                             </div>
+
                             <div class="partner-visual-item">
+
                                 <div class="pvi-icon">🌐</div>
+
                                 <div class="pvi-text"><strong style="color:var(--accent-light)">National
+
                                         Network</strong><br />Access to financial solutions across the USA</div>
+
                             </div>
+
                             <div class="partner-visual-item">
+
                                 <div class="pvi-icon">📊</div>
+
                                 <div class="pvi-text"><strong style="color:var(--accent-light)">Hegemon Group
+
                                         International</strong><br />Renowned financial services marketing partner</div>
+
                             </div>
+
                             <div class="partner-visual-item">
+
                                 <div class="pvi-icon">🎓</div>
+
                                 <div class="pvi-text"><strong style="color:var(--accent-light)">Financial
+
                                         Education</strong><br />Annual training &amp; awareness for hundreds of families
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                     <div class="partner-text reveal reveal-delay-2">
+
                         <span class="section-label">Our Story</span>
+
                         <h2>Building a Financial Revolution — One Family at a Time</h2>
-                        <p>Quantumleap Wealth was born from a deeply personal mission: to be the financial guide that
+
+                        <p>Quantum Leap Financial Services was born from a deeply personal mission: to be the financial
+                            guide that
+
                             every family deserves but rarely gets. In a landscape dominated by institutional advisors
+
                             serving only the affluent, we built something different — a firm that serves you.</p>
+
                         <p>Our strategic partnership with <strong>Hegemon Group International</strong>, a renowned
+
                             financial services marketing organization, allows us to facilitate the establishment of
+
                             financial agencies and distribution outlets — empowering our clients not just with
+
                             solutions, but with financial concepts and investment strategies that set them up for life.
+
                         </p>
-                        <p>Through our partnerships with world-class carriers and vendors, Quantumleap Wealth delivers
+
+                        <p>Through our partnerships with world-class carriers and vendors, Quantum Leap Financial
+                            Services delivers
+
                             top-tier wealth solutions that were once only available to the ultra-wealthy — now
+
                             accessible to Middle America.</p>
+
                         <p>We offer <strong>FREE consultation</strong> and provide personalized financial solutions to
+
                             help you make smart decisions around investments, insurance, estate planning, college
+
                             planning, retirement planning, and more.</p>
+
                         <a href="#"
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary" style="margin-top:12px">Start Your Free Consultation →</a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <!-- CTA -->
+
         <section class="about-cta">
+
             <div class="container">
+
                 <div class="about-cta-inner">
+
                     <h2>Ready to Start Your Wealth Journey?</h2>
-                    <p>Partner with Prasad and the Quantumleap Wealth team for a personalized financial plan built
+
+                    <p>Partner with Prasad and the Quantum Leap Financial Services team for a personalized financial
+                        plan built
+
                         around your life, your goals, and your future. Your first consultation is always free.</p>
+
                     <div class="about-cta-btns">
+
                         <a href="#"
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary">Book a Free Appointment</a>
+
                         <a href="../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
     </main>
 
+
+
     <!-- FOOTER -->
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo" role="contentinfo" role="contentinfo">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div>
-                    <h4>Quantumleap Wealth</h4>
+
+                    <h4>Quantum Leap Financial Services</h4>
+
                     <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+
                         wealth preservation.</p>
+
                     <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
                             href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
                 </div>
+
                 <div>
+
                     <h4>Quick Links</h4>
+
                     <ul>
+
                         <li><a href="../index.html">Home</a></li>
+
                         <li><a href="about.html">About Us</a></li>
+
                         <li><a href="partners.html">Our Partners</a></li>
+
                         <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+
                         <li><a href="../contact/contact.html">Contact</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Our Services</h4>
+
                     <ul>
+
                         <li><a href="../images/services/investment-planning.html">Investment Planning</a></li>
+
                         <li><a href="../images/services/retirement-planning.html">Retirement Planning</a></li>
+
                         <li><a href="../images/services/life-insurance.html">Life Insurance</a></li>
+
                         <li><a href="../images/services/tax-saving.html">Tax Savings</a></li>
+
                         <li><a href="../images/services/kids-college.html">Kids College Fund</a></li>
+
                         <li><a href="../images/services/living-will-trust.html">Living Will &amp; Trust</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Contact Us</h4>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
-                    <div class="footer-contact-item">✉ <a
-                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+
+                    <div class="footer-contact-item">✉ <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
+                    </div>
+
                     <div class="footer-contact-item">📍 California, USA</div>
+
                 </div>
+
             </div>
-            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+
+            <div class="footer-bottom"><span>© 2025 Quantum Leap Financial Services. All rights reserved.</span><span><a
                         href="disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+
         </div>
+
     </footer>
 
+
+
     <script src="../js/main.js"></script>
+
 </body>
+
+
 
 </html>

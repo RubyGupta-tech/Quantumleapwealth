@@ -1,5 +1,5 @@
 /* ==============================================================
-   QUANTUMLEAP WEALTH — Global Design System + Homepage Styles
+   QUANTUM LEAP FINANCIAL SERVICES — Global Design System + Homepage Styles
    ============================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -65,6 +65,32 @@ a {
 
 a:hover {
     color: var(--accent-dark)
+}
+
+/* ── Accessibility: Focus States ── */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* ── Accessibility: Skip to Content ── */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 24px;
+    z-index: 10001;
+    transition: top 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 img {
@@ -218,7 +244,10 @@ img {
 ══════════════════════════════════════ */
 .hero {
     min-height: 93vh;
-    background: linear-gradient(135deg, #04111f 0%, #0a2540 45%, #0d3a6e 100%);
+    background: linear-gradient(135deg, rgba(4, 17, 31, 0.85) 0%, rgba(10, 37, 64, 0.8) 45%, rgba(13, 58, 110, 0.75) 100%), url('../images/Hero_section_image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     position: relative;

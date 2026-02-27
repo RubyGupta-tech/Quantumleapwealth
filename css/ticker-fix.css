@@ -3,9 +3,8 @@
    ══════════════════════════════════════ */
 
 /* Global Safety Net to prevent horizontal scroll */
-html,
-body {
-    overflow-x: hidden !important;
+html {
+    overflow-x: hidden;
     width: 100%;
     position: relative;
 }

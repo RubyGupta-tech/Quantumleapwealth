@@ -1,892 +1,1639 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Blog — Quantumleap Wealth Activities</title>
+
+    <title>Blog — Quantum Leap Financial Services Activities</title>
+
     <meta name="description"
-        content="Read financial tips, wealth-building strategies, and community updates from the Quantumleap Wealth team." />
+        content="Read financial tips, wealth-building strategies, and community updates from the Quantum Leap Financial Services team." />
+
     <link rel="stylesheet" href="../../css/style.css" />
+
     <link rel="stylesheet" href="../../css/navbar.css" />
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         .page-hero {
+
             background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+
             padding: 90px 0 80px;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .page-hero::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .page-hero-inner {
+
             position: relative;
+
             z-index: 1;
+
             text-align: center
         }
 
+
+
         .page-hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: rgba(201, 168, 76, 0.12);
+
             border: 1px solid rgba(201, 168, 76, 0.28);
+
             border-radius: 30px;
+
             padding: 6px 18px;
+
             font-size: 0.78rem;
+
             font-weight: 700;
+
             color: var(--accent-light);
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             margin-bottom: 22px
         }
 
+
+
         .page-hero h1 {
+
             color: #fff;
+
             font-size: clamp(2rem, 4.5vw, 3.2rem);
+
             margin-bottom: 16px
         }
 
+
+
         .page-hero h1 .highlight {
+
             color: var(--accent-light)
         }
 
+
+
         .page-hero-sub {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 1rem;
+
             max-width: 600px;
+
             margin: 0 auto;
+
             line-height: 1.75
         }
 
+
+
         .breadcrumb {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 0.78rem;
+
             color: rgba(255, 255, 255, 0.45);
+
             margin-bottom: 16px;
+
             justify-content: center
         }
 
+
+
         .breadcrumb a {
+
             color: var(--accent-light);
+
             text-decoration: none
         }
 
+
+
         .breadcrumb span {
+
             color: rgba(255, 255, 255, 0.3)
         }
 
+
+
         /* ── Activity Tabs ── */
+
         .activities-tabs {
+
             background: #fff;
+
             border-bottom: 2px solid var(--border);
+
             position: sticky;
+
             top: 0;
+
             z-index: 50
         }
 
+
+
         .activities-tabs-inner {
+
             display: flex;
+
             gap: 0;
+
             justify-content: center;
+
             max-width: 580px;
+
             margin: 0 auto
         }
 
+
+
         .act-tab {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             padding: 16px 32px;
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             border-bottom: 3px solid transparent;
+
             transition: color 0.2s, border-color 0.2s;
+
             letter-spacing: 0.04em;
+
             text-transform: uppercase
         }
 
+
+
         .act-tab:hover {
+
             color: var(--primary)
         }
 
+
+
         .act-tab.active {
+
             color: var(--accent-dark);
+
             border-bottom-color: var(--accent)
         }
 
+
+
         /* ── Blog Section ── */
+
         .blog-section {
+
             padding: 60px 0 90px;
+
             background: var(--bg-light)
         }
 
+
+
         .blog-layout {
+
             display: grid;
+
             grid-template-columns: 1fr 300px;
+
             gap: 48px;
+
             align-items: start
         }
 
+
+
         /* Featured / hero post */
+
         .blog-featured {
+
             background: #fff;
+
             border-radius: 20px;
+
             overflow: hidden;
+
             border: 1px solid var(--border);
+
             margin-bottom: 32px;
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             min-height: 300px;
+
             transition: box-shadow 0.25s
         }
 
+
+
         .blog-featured:hover {
+
             box-shadow: 0 16px 50px rgba(4, 17, 31, 0.1)
         }
 
+
+
         .blog-featured-img {
+
             background: linear-gradient(145deg, #eef2f8, #dde4ef);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 4rem;
+
             min-height: 280px
         }
 
+
+
         .blog-featured-body {
+
             padding: 36px 32px;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center
         }
 
+
+
         .blog-tag {
+
             display: inline-block;
+
             font-size: 0.68rem;
+
             font-weight: 700;
+
             letter-spacing: 0.1em;
+
             text-transform: uppercase;
+
             color: var(--accent-dark);
+
             background: rgba(201, 168, 76, 0.1);
+
             border-radius: 20px;
+
             padding: 4px 12px;
+
             margin-bottom: 14px
         }
 
+
+
         .blog-featured-title {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.4rem;
+
             color: var(--primary);
+
             line-height: 1.3;
+
             margin-bottom: 12px
         }
 
+
+
         .blog-featured-excerpt {
+
             font-size: 0.88rem;
+
             color: var(--text-muted);
+
             line-height: 1.75;
+
             margin-bottom: 20px
         }
 
+
+
         .blog-featured-meta {
+
             display: flex;
+
             align-items: center;
+
             gap: 14px;
+
             font-size: 0.75rem;
+
             color: var(--text-muted)
         }
 
+
+
         .blog-featured-meta span {
+
             display: flex;
+
             align-items: center;
+
             gap: 4px
         }
 
+
+
         .blog-coming-badge {
+
             display: inline-block;
+
             background: rgba(201, 168, 76, 0.9);
+
             color: #fff;
+
             font-size: 0.65rem;
+
             font-weight: 700;
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             padding: 3px 10px;
+
             border-radius: 20px;
+
             margin-bottom: 10px
         }
 
+
+
         /* Blog grid of smaller posts */
+
         .blog-grid {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 22px;
+
             margin-bottom: 36px
         }
 
+
+
         .blog-card {
+
             background: #fff;
+
             border-radius: 16px;
+
             overflow: hidden;
+
             border: 1px solid var(--border);
+
             transition: transform 0.25s, box-shadow 0.25s
         }
 
+
+
         .blog-card:hover {
+
             transform: translateY(-5px);
+
             box-shadow: 0 16px 48px rgba(4, 17, 31, 0.1)
         }
 
+
+
         .blog-card-img {
+
             aspect-ratio: 16/9;
+
             background: linear-gradient(145deg, #eef2f8, #dde4ef);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 2.4rem;
+
             position: relative
         }
 
+
+
         .blog-card-body {
+
             padding: 20px 18px
         }
 
+
+
         .blog-card-title {
+
             font-size: 0.95rem;
+
             font-weight: 700;
+
             color: var(--primary);
+
             margin-bottom: 8px;
+
             line-height: 1.35
         }
 
+
+
         .blog-card-excerpt {
+
             font-size: 0.8rem;
+
             color: var(--text-muted);
+
             line-height: 1.7;
+
             margin-bottom: 14px
         }
 
+
+
         .blog-card-meta {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             font-size: 0.72rem;
+
             color: var(--text-muted)
         }
 
+
+
         .blog-read-more {
+
             color: var(--accent-dark);
+
             font-weight: 700;
+
             text-decoration: none;
+
             font-size: 0.78rem;
+
             display: flex;
+
             align-items: center;
+
             gap: 4px
         }
 
+
+
         .blog-read-more:hover {
+
             color: var(--accent)
         }
 
+
+
         /* ── Sidebar ── */
+
         .blog-sidebar {
+
             position: sticky;
+
             top: 90px;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 22px
         }
 
+
+
         .sidebar-card {
+
             background: #fff;
+
             border-radius: 16px;
+
             padding: 24px 20px;
+
             border: 1px solid var(--border)
         }
 
+
+
         .sidebar-card h3 {
+
             font-size: 0.88rem;
+
             color: var(--primary);
+
             margin-bottom: 16px;
+
             font-weight: 700
         }
 
+
+
         .sidebar-topics {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px
         }
 
+
+
         .topic-tag {
+
             display: inline-block;
+
             padding: 6px 14px;
+
             background: var(--bg-light);
+
             border: 1px solid var(--border);
+
             border-radius: 20px;
+
             font-size: 0.75rem;
+
             font-weight: 600;
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             transition: all 0.2s;
+
             cursor: pointer
         }
 
+
+
         .topic-tag:hover {
+
             background: var(--accent);
+
             color: #fff;
+
             border-color: var(--accent)
         }
 
+
+
         .sidebar-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             border-radius: 16px;
+
             padding: 30px 22px;
+
             text-align: center
         }
 
+
+
         .sidebar-cta h3 {
+
             color: #fff;
+
             font-size: 1rem;
+
             margin-bottom: 10px
         }
 
+
+
         .sidebar-cta p {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 0.8rem;
+
             line-height: 1.65;
+
             margin-bottom: 20px
         }
 
+
+
         .sidebar-cta .btn-sm {
+
             display: block;
+
             background: var(--accent);
+
             color: #fff;
+
             padding: 12px 18px;
+
             border-radius: 8px;
+
             font-size: 0.82rem;
+
             font-weight: 700;
+
             text-decoration: none;
+
             transition: opacity 0.2s;
+
             cursor: pointer;
+
             border: none;
+
             width: 100%
         }
 
+
+
         .sidebar-cta .btn-sm:hover {
+
             opacity: 0.88
         }
 
+
+
         .sidebar-recent li {
+
             padding: 10px 0;
+
             border-bottom: 1px solid var(--border);
+
             font-size: 0.82rem;
+
             color: var(--text-muted);
+
             list-style: none
         }
 
+
+
         .sidebar-recent li:last-child {
+
             border: none
         }
 
+
+
         .sidebar-recent a {
+
             color: var(--primary);
+
             text-decoration: none;
+
             font-weight: 600;
+
             display: block;
+
             margin-bottom: 3px
         }
 
+
+
         .sidebar-recent a:hover {
+
             color: var(--accent-dark)
         }
 
+
+
         .sidebar-recent span {
+
             font-size: 0.72rem;
+
             color: var(--text-muted)
         }
 
+
+
         /* Placeholder strip */
+
         .blog-coming-strip {
+
             background: #fff;
+
             border: 2px dashed rgba(201, 168, 76, 0.35);
+
             border-radius: 16px;
+
             padding: 44px 32px;
+
             text-align: center;
+
             margin-bottom: 32px
         }
 
+
+
         .blog-coming-strip-icon {
+
             font-size: 3rem;
+
             margin-bottom: 14px
         }
 
+
+
         .blog-coming-strip h3 {
+
             color: var(--primary);
+
             font-size: 1.1rem;
+
             margin-bottom: 8px
         }
 
+
+
         .blog-coming-strip p {
+
             color: var(--text-muted);
+
             font-size: 0.88rem;
+
             max-width: 460px;
+
             margin: 0 auto 22px;
+
             line-height: 1.7
         }
 
+
+
         /* CTA strip */
+
         .blog-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 72px 0;
+
             text-align: center;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .blog-cta::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .blog-cta-inner {
+
             position: relative;
+
             z-index: 1
         }
 
+
+
         .blog-cta h2 {
+
             color: #fff;
+
             font-size: clamp(1.6rem, 3vw, 2.2rem);
+
             margin-bottom: 12px
         }
 
+
+
         .blog-cta p {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 0.95rem;
+
             max-width: 500px;
+
             margin: 0 auto 30px;
+
             line-height: 1.75
         }
 
+
+
         .blog-cta-btns {
+
             display: flex;
+
             gap: 14px;
+
             justify-content: center;
+
             flex-wrap: wrap
         }
 
+
+
         @media(max-width:900px) {
+
             .blog-layout {
+
                 grid-template-columns: 1fr
             }
 
+
+
             .blog-sidebar {
+
                 position: static
             }
 
+
+
             .blog-featured {
+
                 grid-template-columns: 1fr
             }
+
         }
+
+
 
         @media(max-width:700px) {
+
             .blog-grid {
+
                 grid-template-columns: repeat(2, 1fr)
             }
+
         }
+
+
 
         @media(max-width:480px) {
+
             .blog-grid {
+
                 grid-template-columns: 1fr
             }
+
         }
     </style>
+
 </head>
 
+
+
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
 
     <!-- TOP BAR -->
-    <div class="topbar">
+
+    <div class="topbar" role="complementary" aria-label="Company Contact Info">
+
         <div class="topbar-inner">
+
             <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉ Talam.prasad@gmail.com</a>
+
+                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉ quantumlfs@gmail.com</a>
+
                 <div class="topbar-divider"></div><span>📍 California, USA</span>
+
             </div>
+
             <div class="topbar-right">
-                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
-                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
-            </div>
+
+                <div class="social-links" role="list">
+          <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
+          <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
+          <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
+          <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
         </div>
+
+            </div>
+
+        </div>
+
     </div>
 
+
+
     <!-- NAVBAR -->
+
     <header class="navbar">
-        <div class="navbar-inner">
-            <a href="../../index.html" class="navbar-brand">
-                <img src="../../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
-                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
-                        class="brand-tagline">Financial Excellence</span></div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Who We Are <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../../who_we_are/about.html" class="dropdown-item"><span
-                                    class="dd-icon">👤</span>About Us</a></li>
-                        <li><a href="../../who_we_are/partners.html" class="dropdown-item"><span
-                                    class="dd-icon">🤝</span>Our Partners</a></li>
-                        <li><a href="../../who_we_are/disclaimer.html" class="dropdown-item"><span
-                                    class="dd-icon">📋</span>Our Disclaimer</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown wide">
-                        <li><a href="../../images/services/investment-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">📈</span>Investment Planning</a></li>
-                        <li><a href="../../images/services/living-will-trust.html" class="dropdown-item"><span
-                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
-                        <li><a href="../../images/services/tax-saving.html" class="dropdown-item"><span
-                                    class="dd-icon">💰</span>Tax Savings</a></li>
-                        <li><a href="../../images/services/retirement-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
-                        <li><a href="../../images/services/kids-college.html" class="dropdown-item"><span
-                                    class="dd-icon">🎓</span>Kids College</a></li>
-                        <li><a href="../../images/services/life-insurance.html" class="dropdown-item"><span
-                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html"
-                                class="dropdown-item"><span class="dd-icon">🚀</span>6 Steps to Financial Freedom</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Activities <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="Photos.html" class="dropdown-item"><span class="dd-icon">📸</span>Photos</a></li>
-                        <li><a href="videos.html" class="dropdown-item"><span class="dd-icon">🎥</span>Videos</a></li>
-                        <li><a href="blogs.html" class="dropdown-item active"><span class="dd-icon">✍️</span>Blog</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="../../contact/contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#"
-                        onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                        class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                        </svg></a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
-                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/Quantumleap_logo.png" alt="Quantum Leap Financial Services Logo" class="brand-logo" />
+        <div class="brand-text">
+          <strong class="brand-name">Quantum Leap Financial Services</strong>
+          <span class="brand-tagline">Financial Excellence</span>
         </div>
-    </header>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../who_we_are/about.html" class="dropdown-item" role="menuitem"><span class="dd-icon"
+                  aria-hidden="true">👤</span>About Us</a></li>
+            <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🤝</span>Our Partners</a></li>
+            <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📋</span>Our Disclaimer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown wide" role="menu">
+            <li role="none"><a href="../images/services/investment-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📈</span>Investment
+                Planning</a></li>
+            <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                Trust</a></li>
+            <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">💰</span>Tax
+                Savings</a></li>
+            <li role="none"><a href="../images/services/retirement-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🏖️</span>Retirement
+                Planning</a></li>
+            <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎓</span>Kids
+                College</a></li>
+            <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                Insurance</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🚀</span>6 Steps to
+                Financial Freedom</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown active">
+          <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Activities/blogs.html" class="dropdown-item active" role="menuitem" aria-current="page"><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a>
+            </li>
+            <li role="none"><a href="../Activities/videos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎥</span>Video Gallery</a>
+            </li>
+            <li role="none"><a href="../Activities/Photos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">📸</span>Photo Gallery</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="#"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+            class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg></a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+</header>
+
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <main>
+
+
+    <main id="main-content" role="main">
+
+
 
         <!-- HERO -->
+
         <section class="page-hero">
+
             <div class="container">
+
                 <div class="page-hero-inner">
-                    <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span
-                            style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
-                            style="color:var(--accent-light)">Blog</span></div>
-                    <div class="page-hero-badge">✍️ Blog &amp; Insights</div>
-                    <h1>Financial <span class="highlight">Insights Blog</span></h1>
-                    <p class="page-hero-sub">Expert tips, strategies, and wealth-building insights from the Quantumleap
-                        Wealth team — written for California families.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- ACTIVITY TABS -->
-        <nav class="activities-tabs">
-            <div class="activities-tabs-inner">
-                <a href="Photos.html" class="act-tab">📸 Photos</a>
-                <a href="videos.html" class="act-tab">🎥 Videos</a>
-                <a href="blogs.html" class="act-tab active">✍️ Blog</a>
-            </div>
-        </nav>
+                    <nav class="activities-tabs">
 
-        <!-- BLOG CONTENT -->
-        <section class="blog-section">
-            <div class="container">
-                <div class="blog-layout">
+                        <div class="activities-tabs-inner">
 
-                    <!-- Main Column -->
-                    <div>
+                            <a href="Photos.html" class="act-tab">📸 Photos</a>
 
-                        <!-- Featured placeholder -->
-                        <div class="blog-featured reveal">
-                            <div class="blog-featured-img">✍️</div>
-                            <div class="blog-featured-body">
-                                <span class="blog-coming-badge">Coming Soon</span>
-                                <span class="blog-tag">Featured Article</span>
-                                <div class="blog-featured-title">Smart Financial Planning for California Families in
-                                    2025</div>
-                                <p class="blog-featured-excerpt">A comprehensive guide on building lasting wealth
-                                    through disciplined savings, strategic investments, and proper insurance coverage —
-                                    tailored for California families navigating today's economic landscape.</p>
-                                <div class="blog-featured-meta">
-                                    <span>📅 Article coming soon</span>
-                                    <span>⏱ 8 min read</span>
-                                    <span>✍️ Prasad</span>
-                                </div>
-                            </div>
+                            <a href="videos.html" class="act-tab">🎥 Videos</a>
+
+                            <a href="blogs.html" class="act-tab active">✍️ Blog</a>
+
                         </div>
 
-                        <!-- Coming soon strip -->
-                        <div class="blog-coming-strip">
-                            <div class="blog-coming-strip-icon">✍️</div>
-                            <h3>Articles Coming Soon!</h3>
-                            <p>Our team is working on insightful financial articles on investments, retirement planning,
-                                tax strategies, and more. Check back soon!</p>
-                            <a href="../../contact/contact.html" class="btn btn-primary">Get Notified When We Post</a>
+                    </nav>
+
+
+
+                    <!-- BLOG CONTENT -->
+
+                    <section class="blog-section">
+
+                        <div class="container">
+
+                            <div class="blog-layout">
+
+
+
+                                <!-- Main Column -->
+
+                                <div>
+
+
+
+                                    <!-- Featured placeholder -->
+
+                                    <div class="blog-featured reveal">
+
+                                        <div class="blog-featured-img">✍️</div>
+
+                                        <div class="blog-featured-body">
+
+                                            <span class="blog-coming-badge">Coming Soon</span>
+
+                                            <span class="blog-tag">Featured Article</span>
+
+                                            <div class="blog-featured-title">Smart Financial Planning for California
+                                                Families in
+
+                                                2025</div>
+
+                                            <p class="blog-featured-excerpt">A comprehensive guide on building lasting
+                                                wealth
+
+                                                through disciplined savings, strategic investments, and proper insurance
+                                                coverage —
+
+                                                tailored for California families navigating today's economic landscape.
+                                            </p>
+
+                                            <div class="blog-featured-meta">
+
+                                                <span>📅 Article coming soon</span>
+
+                                                <span>⏱ 8 min read</span>
+
+                                                <span>✍️ Prasad</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Coming soon strip -->
+
+                                    <div class="blog-coming-strip">
+
+                                        <div class="blog-coming-strip-icon">✍️</div>
+
+                                        <h3>Articles Coming Soon!</h3>
+
+                                        <p>Our team is working on insightful financial articles on investments,
+                                            retirement planning,
+
+                                            tax strategies, and more. Check back soon!</p>
+
+                                        <a href="../../contact/contact.html" class="btn btn-primary">Get Notified When
+                                            We Post</a>
+
+                                    </div>
+
+
+
+                                    <!-- Placeholder post grid -->
+
+                                    <div class="blog-grid">
+
+
+
+                                        <div class="blog-card reveal">
+
+                                            <div class="blog-card-img">💰<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">Investment</span>
+
+                                                <div class="blog-card-title">5 Investment Strategies Every Beginner
+                                                    Should Know
+
+                                                </div>
+
+                                                <p class="blog-card-excerpt">Essential investment basics to help you
+                                                    start your
+
+                                                    wealth-building journey the right way.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="blog-card reveal reveal-delay-1">
+
+                                            <div class="blog-card-img">🛡️<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">Insurance</span>
+
+                                                <div class="blog-card-title">Why Life Insurance Is Your Family's Safety
+                                                    Net</div>
+
+                                                <p class="blog-card-excerpt">Understanding the types of life insurance
+                                                    and choosing
+
+                                                    the right coverage for your loved ones.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="blog-card reveal reveal-delay-2">
+
+                                            <div class="blog-card-img">🏖️<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">Retirement</span>
+
+                                                <div class="blog-card-title">How to Retire Comfortably Before 60</div>
+
+                                                <p class="blog-card-excerpt">A step-by-step roadmap to early retirement
+                                                    through
+
+                                                    smart saving, investing, and planning.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="blog-card reveal">
+
+                                            <div class="blog-card-img">📋<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">Estate Planning</span>
+
+                                                <div class="blog-card-title">Living Will &amp; Trust — What Every Family
+                                                    Needs</div>
+
+                                                <p class="blog-card-excerpt">Why a proper estate plan protects your
+                                                    family and
+
+                                                    ensures your wishes are always honored.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="blog-card reveal reveal-delay-1">
+
+                                            <div class="blog-card-img">🎓<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">College Planning</span>
+
+                                                <div class="blog-card-title">Start Saving for College When Your Child Is
+                                                    Born</div>
+
+                                                <p class="blog-card-excerpt">The power of starting early with 529 plans
+                                                    and other
+
+                                                    education savings strategies.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="blog-card reveal reveal-delay-2">
+
+                                            <div class="blog-card-img">💸<span class="blog-coming-badge"
+                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
+
+                                            <div class="blog-card-body">
+
+                                                <span class="blog-tag">Tax Strategy</span>
+
+                                                <div class="blog-card-title">Legal Ways to Reduce Your Tax Bill Every
+                                                    Year</div>
+
+                                                <p class="blog-card-excerpt">Smart tax-saving strategies used by
+                                                    high-net-worth
+
+                                                    individuals that every family can apply.</p>
+
+                                                <div class="blog-card-meta">
+
+                                                    <span>📅 Coming soon</span>
+
+                                                    <a href="#" class="blog-read-more">Read More →</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div><!-- /blog-grid -->
+
+                                </div><!-- /main col -->
+
+
+
+                                <!-- Sidebar -->
+
+                                <aside class="blog-sidebar">
+
+
+
+                                    <!-- Search -->
+
+                                    <div class="sidebar-card">
+
+                                        <h3>🔍 Search Articles</h3>
+
+                                        <div style="display:flex;gap:8px">
+
+                                            <input type="text" placeholder="Search blog..."
+                                                style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.83rem;outline:none" />
+
+                                            <button
+                                                style="background:var(--accent);color:#fff;border:none;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:700">→</button>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Topics -->
+
+                                    <div class="sidebar-card">
+
+                                        <h3>🏷️ Topics</h3>
+
+                                        <div class="sidebar-topics">
+
+                                            <span class="topic-tag">Investment</span>
+
+                                            <span class="topic-tag">Retirement</span>
+
+                                            <span class="topic-tag">Insurance</span>
+
+                                            <span class="topic-tag">Tax Strategy</span>
+
+                                            <span class="topic-tag">Estate Planning</span>
+
+                                            <span class="topic-tag">College Fund</span>
+
+                                            <span class="topic-tag">Entrepreneurship</span>
+
+                                            <span class="topic-tag">Wealth Building</span>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- CTA -->
+
+                                    <div class="sidebar-cta">
+
+                                        <h3>📅 Free Consultation</h3>
+
+                                        <p>Have questions? Our team is available 24/7 to guide your financial journey.
+                                        </p>
+
+                                        <a href="#"
+                                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                            class="btn-sm">Book Appointment</a>
+
+                                    </div>
+
+
+
+                                    <!-- Recent (placeholder) -->
+
+                                    <div class="sidebar-card">
+
+                                        <h3>🕐 Recent Posts</h3>
+
+                                        <ul class="sidebar-recent" style="padding:0;margin:0">
+
+                                            <li><a href="#">Smart Financial Planning for 2025</a><span>Coming
+                                                    soon</span></li>
+
+                                            <li><a href="#">Why Life Insurance Matters</a><span>Coming soon</span></li>
+
+                                            <li><a href="#">How to Retire Before 60</a><span>Coming soon</span></li>
+
+                                            <li><a href="#">Living Will &amp; Trust Guide</a><span>Coming soon</span>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+
+
+                                </aside>
+
+                            </div><!-- /blog-layout -->
+
                         </div>
 
-                        <!-- Placeholder post grid -->
-                        <div class="blog-grid">
+                    </section>
 
-                            <div class="blog-card reveal">
-                                <div class="blog-card-img">💰<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">Investment</span>
-                                    <div class="blog-card-title">5 Investment Strategies Every Beginner Should Know
-                                    </div>
-                                    <p class="blog-card-excerpt">Essential investment basics to help you start your
-                                        wealth-building journey the right way.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
+
+
+                    <!-- CTA -->
+
+                    <section class="blog-cta">
+
+                        <div class="container">
+
+                            <div class="blog-cta-inner">
+
+                                <h2>Start Your Financial Freedom Journey Today</h2>
+
+                                <p>Don't wait — book a FREE 30-minute consultation with one of our Licensed Financial
+                                    Professionals
+
+                                    now.</p>
+
+                                <div class="blog-cta-btns">
+
+                                    <a href="#"
+                                        onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                        class="btn btn-primary">📅 Book Free Appointment</a>
+
+                                    <a href="../../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
+
                                 </div>
+
                             </div>
 
-                            <div class="blog-card reveal reveal-delay-1">
-                                <div class="blog-card-img">🛡️<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">Insurance</span>
-                                    <div class="blog-card-title">Why Life Insurance Is Your Family's Safety Net</div>
-                                    <p class="blog-card-excerpt">Understanding the types of life insurance and choosing
-                                        the right coverage for your loved ones.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog-card reveal reveal-delay-2">
-                                <div class="blog-card-img">🏖️<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">Retirement</span>
-                                    <div class="blog-card-title">How to Retire Comfortably Before 60</div>
-                                    <p class="blog-card-excerpt">A step-by-step roadmap to early retirement through
-                                        smart saving, investing, and planning.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog-card reveal">
-                                <div class="blog-card-img">📋<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">Estate Planning</span>
-                                    <div class="blog-card-title">Living Will &amp; Trust — What Every Family Needs</div>
-                                    <p class="blog-card-excerpt">Why a proper estate plan protects your family and
-                                        ensures your wishes are always honored.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog-card reveal reveal-delay-1">
-                                <div class="blog-card-img">🎓<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">College Planning</span>
-                                    <div class="blog-card-title">Start Saving for College When Your Child Is Born</div>
-                                    <p class="blog-card-excerpt">The power of starting early with 529 plans and other
-                                        education savings strategies.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog-card reveal reveal-delay-2">
-                                <div class="blog-card-img">💸<span class="blog-coming-badge"
-                                        style="position:absolute;top:10px;right:10px">Soon</span></div>
-                                <div class="blog-card-body">
-                                    <span class="blog-tag">Tax Strategy</span>
-                                    <div class="blog-card-title">Legal Ways to Reduce Your Tax Bill Every Year</div>
-                                    <p class="blog-card-excerpt">Smart tax-saving strategies used by high-net-worth
-                                        individuals that every family can apply.</p>
-                                    <div class="blog-card-meta">
-                                        <span>📅 Coming soon</span>
-                                        <a href="#" class="blog-read-more">Read More →</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- /blog-grid -->
-                    </div><!-- /main col -->
-
-                    <!-- Sidebar -->
-                    <aside class="blog-sidebar">
-
-                        <!-- Search -->
-                        <div class="sidebar-card">
-                            <h3>🔍 Search Articles</h3>
-                            <div style="display:flex;gap:8px">
-                                <input type="text" placeholder="Search blog..."
-                                    style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.83rem;outline:none" />
-                                <button
-                                    style="background:var(--accent);color:#fff;border:none;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:700">→</button>
-                            </div>
                         </div>
 
-                        <!-- Topics -->
-                        <div class="sidebar-card">
-                            <h3>🏷️ Topics</h3>
-                            <div class="sidebar-topics">
-                                <span class="topic-tag">Investment</span>
-                                <span class="topic-tag">Retirement</span>
-                                <span class="topic-tag">Insurance</span>
-                                <span class="topic-tag">Tax Strategy</span>
-                                <span class="topic-tag">Estate Planning</span>
-                                <span class="topic-tag">College Fund</span>
-                                <span class="topic-tag">Entrepreneurship</span>
-                                <span class="topic-tag">Wealth Building</span>
-                            </div>
-                        </div>
+                    </section>
 
-                        <!-- CTA -->
-                        <div class="sidebar-cta">
-                            <h3>📅 Free Consultation</h3>
-                            <p>Have questions? Our team is available 24/7 to guide your financial journey.</p>
-                            <a href="#"
-                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                                class="btn-sm">Book Appointment</a>
-                        </div>
 
-                        <!-- Recent (placeholder) -->
-                        <div class="sidebar-card">
-                            <h3>🕐 Recent Posts</h3>
-                            <ul class="sidebar-recent" style="padding:0;margin:0">
-                                <li><a href="#">Smart Financial Planning for 2025</a><span>Coming soon</span></li>
-                                <li><a href="#">Why Life Insurance Matters</a><span>Coming soon</span></li>
-                                <li><a href="#">How to Retire Before 60</a><span>Coming soon</span></li>
-                                <li><a href="#">Living Will &amp; Trust Guide</a><span>Coming soon</span></li>
-                            </ul>
-                        </div>
-
-                    </aside>
-                </div><!-- /blog-layout -->
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="blog-cta">
-            <div class="container">
-                <div class="blog-cta-inner">
-                    <h2>Start Your Financial Freedom Journey Today</h2>
-                    <p>Don't wait — book a FREE 30-minute consultation with one of our Licensed Financial Professionals
-                        now.</p>
-                    <div class="blog-cta-btns">
-                        <a href="#"
-                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                            class="btn btn-primary">📅 Book Free Appointment</a>
-                        <a href="../../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
+
+
     <!-- FOOTER -->
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo" role="contentinfo" role="contentinfo">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div>
-                    <h4>Quantumleap Wealth</h4>
+
+                    <h4>Quantum Leap Financial Services</h4>
+
                     <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+
                         wealth preservation.</p>
+
                     <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
                             href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
                 </div>
+
                 <div>
+
                     <h4>Quick Links</h4>
+
                     <ul>
+
                         <li><a href="../../index.html">Home</a></li>
+
                         <li><a href="../../who_we_are/about.html">About Us</a></li>
+
                         <li><a href="../../who_we_are/partners.html">Our Partners</a></li>
+
                         <li><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+
                         <li><a href="../../contact/contact.html">Contact</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Activities</h4>
+
                     <ul>
+
                         <li><a href="Photos.html">Photos</a></li>
+
                         <li><a href="videos.html">Videos</a></li>
+
                         <li><a href="blogs.html">Blog</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Contact Us</h4>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
-                    <div class="footer-contact-item">✉ <a
-                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+
+                    <div class="footer-contact-item">✉ <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
+                    </div>
+
                     <div class="footer-contact-item">📍 California, USA</div>
+
                 </div>
+
             </div>
-            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+
+            <div class="footer-bottom"><span>© 2025 Quantum Leap Financial Services. All rights reserved.</span><span><a
                         href="../../who_we_are/disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy
+
                         Policy</a></span></div>
+
         </div>
+
     </footer>
 
+
+
     <script src="../../js/main.js"></script>
+
 </body>
+
+
 
 </html>

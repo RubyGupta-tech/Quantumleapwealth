@@ -1,742 +1,1359 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Our Partners — Quantumleap Wealth</title>
+
+    <title>Our Partners — Quantum Leap Financial Services</title>
+
     <meta name="description"
-        content="Meet the Quantumleap Wealth team of Licensed Financial Professionals dedicated to helping California families build and protect their wealth." />
+        content="Meet the Quantum Leap Financial Services team of Licensed Financial Professionals dedicated to helping California families build and protect their wealth." />
+
     <link rel="stylesheet" href="../css/style.css" />
+
     <link rel="stylesheet" href="../css/navbar.css" />
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         /* ── Hero ── */
+
         .page-hero {
+
             background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+
             padding: 90px 0 80px;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .page-hero::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .page-hero-inner {
+
             position: relative;
+
             z-index: 1;
+
             text-align: center
         }
 
+
+
         .page-hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: rgba(201, 168, 76, 0.12);
+
             border: 1px solid rgba(201, 168, 76, 0.28);
+
             border-radius: 30px;
+
             padding: 6px 18px;
+
             font-size: 0.78rem;
+
             font-weight: 700;
+
             color: var(--accent-light);
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             margin-bottom: 22px
         }
 
+
+
         .page-hero h1 {
+
             color: #fff;
+
             font-size: clamp(2rem, 4.5vw, 3.2rem);
+
             margin-bottom: 16px
         }
 
+
+
         .page-hero h1 .highlight {
+
             color: var(--accent-light)
         }
 
+
+
         .page-hero-sub {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 1rem;
+
             max-width: 600px;
+
             margin: 0 auto;
+
             line-height: 1.75
         }
 
+
+
         .breadcrumb {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 0.78rem;
+
             color: rgba(255, 255, 255, 0.45);
+
             margin-bottom: 16px;
+
             justify-content: center
         }
 
+
+
         .breadcrumb a {
+
             color: var(--accent-light);
+
             text-decoration: none
         }
 
+
+
         .breadcrumb span {
+
             color: rgba(255, 255, 255, 0.3)
         }
 
+
+
         /* ── Intro ── */
+
         .partners-intro {
+
             padding: 72px 0 56px;
+
             text-align: center
         }
 
+
+
         .section-label {
+
             display: inline-block;
+
             font-size: 0.72rem;
+
             font-weight: 700;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
+
             color: var(--accent);
+
             border-bottom: 2px solid var(--accent);
+
             padding-bottom: 4px;
+
             margin-bottom: 14px
         }
+
+
 
         .section-title {
+
             font-size: clamp(1.7rem, 3vw, 2.3rem);
+
             color: var(--primary);
+
             margin-bottom: 14px
         }
 
+
+
         .section-sub {
+
             color: var(--text-muted);
+
             font-size: 0.97rem;
+
             max-width: 640px;
+
             margin: 0 auto;
+
             line-height: 1.8
         }
 
+
+
         /* ── Team Grid ── */
+
         .team-section {
+
             padding: 20px 0 90px;
+
             background: var(--bg-light)
         }
 
+
+
         .team-grid {
+
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 28px;
+
             margin-top: 52px
         }
 
+
+
         /* Team Card */
+
         .team-card {
+
             background: #fff;
+
             border-radius: 20px;
+
             overflow: hidden;
+
             border: 1px solid var(--border);
+
             transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+
             text-align: center
         }
 
+
+
         .team-card:hover {
+
             transform: translateY(-6px);
+
             box-shadow: 0 20px 60px rgba(4, 17, 31, 0.12);
+
             border-color: var(--accent)
         }
 
+
+
         .team-card-photo {
+
             width: 100%;
+
             aspect-ratio: 1/1;
+
             background: linear-gradient(145deg, #eef2f8 0%, #dde4ef 100%);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .team-card-photo img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
             object-position: center top;
+
             display: block
         }
 
+
+
         .team-card-photo .photo-placeholder {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             gap: 10px
         }
 
+
+
         .photo-placeholder-icon {
+
             width: 80px;
+
             height: 80px;
+
             border-radius: 50%;
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.35));
+
             border: 3px solid rgba(201, 168, 76, 0.4);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 2.4rem
         }
 
+
+
         .photo-placeholder-text {
+
             font-size: 0.7rem;
+
             color: var(--text-muted);
+
             font-weight: 600;
+
             letter-spacing: 0.06em;
+
             text-transform: uppercase;
+
             opacity: 0.6
         }
 
+
+
         .team-card-info {
+
             padding: 22px 18px 20px
         }
 
+
+
         .team-card-name {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1rem;
+
             font-weight: 700;
+
             color: var(--primary);
+
             margin-bottom: 5px;
+
             line-height: 1.2
         }
 
+
+
         .team-card-role {
+
             font-size: 0.75rem;
+
             font-weight: 700;
+
             color: var(--accent-dark);
+
             letter-spacing: 0.07em;
+
             text-transform: uppercase;
+
             margin-bottom: 14px
         }
 
+
+
         .team-card-social {
+
             display: flex;
+
             justify-content: center;
+
             gap: 8px
         }
 
+
+
         .team-card-social a {
+
             width: 30px;
+
             height: 30px;
+
             border-radius: 50%;
+
             background: var(--bg-light);
+
             border: 1px solid var(--border);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 0.72rem;
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             transition: background 0.2s, color 0.2s, border-color 0.2s
         }
 
+
+
         .team-card-social a:hover {
+
             background: var(--accent);
+
             color: #fff;
+
             border-color: var(--accent)
         }
 
+
+
         /* Coming-soon banner on placeholder cards */
+
         .team-card-photo .coming-badge {
+
             position: absolute;
+
             top: 12px;
+
             right: 12px;
+
             background: rgba(201, 168, 76, 0.9);
+
             color: #fff;
+
             font-size: 0.65rem;
+
             font-weight: 700;
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             padding: 4px 10px;
+
             border-radius: 20px
         }
 
+
+
         /* ── CTA Strip ── */
+
         .partners-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             padding: 80px 0;
+
             text-align: center;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .partners-cta::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .partners-cta-inner {
+
             position: relative;
+
             z-index: 1
         }
 
+
+
         .partners-cta h2 {
+
             color: #fff;
+
             font-size: clamp(1.6rem, 3vw, 2.3rem);
+
             margin-bottom: 14px
         }
 
+
+
         .partners-cta p {
+
             color: rgba(255, 255, 255, 0.68);
+
             font-size: 0.97rem;
+
             max-width: 520px;
+
             margin: 0 auto 34px;
+
             line-height: 1.75
         }
 
+
+
         .partners-cta-btns {
+
             display: flex;
+
             gap: 16px;
+
             justify-content: center;
+
             flex-wrap: wrap
         }
 
+
+
         @media(max-width:1100px) {
+
             .team-grid {
+
                 grid-template-columns: repeat(3, 1fr)
             }
+
         }
 
+
+
         @media(max-width:768px) {
+
             .team-grid {
+
                 grid-template-columns: repeat(2, 1fr)
             }
 
+
+
             .partners-cta-btns {
+
                 flex-direction: column;
+
                 align-items: center
             }
+
         }
+
+
 
         @media(max-width:480px) {
+
             .team-grid {
+
                 grid-template-columns: 1fr
             }
+
         }
     </style>
+
 </head>
 
+
+
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
 
     <!-- TOP BAR -->
-    <div class="topbar">
+
+    <div class="topbar" role="complementary" aria-label="Company Contact Info">
+
         <div class="topbar-inner">
+
             <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉ Talam.prasad@gmail.com</a>
+
+                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉ quantumlfs@gmail.com</a>
+
                 <div class="topbar-divider"></div><span>📍 California, USA</span>
+
             </div>
+
             <div class="topbar-right">
-                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
-                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
-            </div>
+
+                <div class="social-links" role="list">
+          <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
+          <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
+          <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
+          <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
         </div>
+
+            </div>
+
+        </div>
+
     </div>
 
+
+
     <!-- NAVBAR -->
+
     <header class="navbar">
-        <div class="navbar-inner">
-            <a href="../index.html" class="navbar-brand">
-                <img src="../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
-                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
-                        class="brand-tagline">Financial Excellence</span></div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Who We Are <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
-                        <li><a href="partners.html" class="dropdown-item active"><span class="dd-icon">🤝</span>Our
-                                Partners</a></li>
-                        <li><a href="disclaimer.html" class="dropdown-item"><span class="dd-icon">📋</span>Our
-                                Disclaimer</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown wide">
-                        <li><a href="../images/services/investment-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">📈</span>Investment Planning</a></li>
-                        <li><a href="../images/services/living-will-trust.html" class="dropdown-item"><span
-                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
-                        <li><a href="../images/services/tax-saving.html" class="dropdown-item"><span
-                                    class="dd-icon">💰</span>Tax Savings</a></li>
-                        <li><a href="../images/services/retirement-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
-                        <li><a href="../images/services/kids-college.html" class="dropdown-item"><span
-                                    class="dd-icon">🎓</span>Kids College</a></li>
-                        <li><a href="../images/services/life-insurance.html" class="dropdown-item"><span
-                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span
-                                    class="dd-icon">🚀</span>6 Steps to Financial Freedom</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Activities/Photos.html" class="dropdown-item"><span
-                                    class="dd-icon">📸</span>Photos</a></li>
-                        <li><a href="../Activities/videos.html" class="dropdown-item"><span
-                                    class="dd-icon">🎥</span>Videos</a></li>
-                        <li><a href="../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#"
-                        onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                        class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                        </svg></a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
-                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/Quantumleap_logo.png" alt="Quantum Leap Financial Services Logo" class="brand-logo" />
+        <div class="brand-text">
+          <strong class="brand-name">Quantum Leap Financial Services</strong>
+          <span class="brand-tagline">Financial Excellence</span>
         </div>
-    </header>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown active">
+          <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../who_we_are/about.html" class="dropdown-item" role="menuitem"><span class="dd-icon"
+                  aria-hidden="true">👤</span>About Us</a></li>
+            <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item active" role="menuitem" aria-current="page"><span
+                  class="dd-icon" aria-hidden="true">🤝</span>Our Partners</a></li>
+            <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📋</span>Our Disclaimer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown wide" role="menu">
+            <li role="none"><a href="../images/services/investment-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📈</span>Investment
+                Planning</a></li>
+            <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                Trust</a></li>
+            <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">💰</span>Tax
+                Savings</a></li>
+            <li role="none"><a href="../images/services/retirement-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🏖️</span>Retirement
+                Planning</a></li>
+            <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎓</span>Kids
+                College</a></li>
+            <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                Insurance</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🚀</span>6 Steps to
+                Financial Freedom</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a>
+            </li>
+            <li role="none"><a href="../Activities/videos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎥</span>Video Gallery</a>
+            </li>
+            <li role="none"><a href="../Activities/Photos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">📸</span>Photo Gallery</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="#"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+            class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg></a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+</header>
+
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <main>
+
+
+    <main id="main-content" role="main">
+
+
 
         <!-- HERO -->
+
         <section class="page-hero">
+
             <div class="container">
+
                 <div class="page-hero-inner">
+
                     <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Who We Are</span><span>›</span><span
                             style="color:var(--accent-light)">Our Partners</span></div>
+
                     <div class="page-hero-badge">🤝 Our Team</div>
+
                     <h1>Meet Our <span class="highlight">Partners</span></h1>
+
                     <p class="page-hero-sub">A dedicated team of Licensed Financial Professionals committed to helping
+
                         California families build lasting wealth and financial security.</p>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- INTRO -->
+
         <section class="partners-intro">
+
             <div class="container">
+
                 <span class="section-label">Our Team</span>
+
                 <h2 class="section-title">The People Behind Your Financial Success</h2>
-                <p class="section-sub">Every member of the Quantumleap Wealth team is a Licensed Financial Professional
+
+                <p class="section-sub">Every member of the Quantum Leap Financial Services team is a Licensed Financial
+                    Professional
+
                     personally vetted and trained by Prasad. Together we serve hundreds of families across California
+
                     with integrity, expertise, and genuine care.</p>
+
             </div>
+
         </section>
+
+
 
         <!-- TEAM GRID -->
+
         <section class="team-section">
+
             <div class="container">
+
                 <div class="team-grid">
 
+
+
                     <!-- TEAM MEMBER TEMPLATE — replace photo src and name/role when ready -->
+
                     <!-- To add a photo: replace the <div class="photo-placeholder"> with <img src="../images/team/name.jpg" alt="Name"/> -->
 
+
+
                     <div class="team-card reveal">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 1</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-card reveal reveal-delay-1">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 2</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-card reveal reveal-delay-2">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 3</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+
                     <div class="team-card reveal reveal-delay-3">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 4</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-card reveal">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 5</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-card reveal reveal-delay-1">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 6</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-card reveal reveal-delay-2">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 7</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+
                     <div class="team-card reveal reveal-delay-3">
+
                         <div class="team-card-photo">
+
                             <div class="photo-placeholder">
+
                                 <div class="photo-placeholder-icon">👤</div>
+
                                 <div class="photo-placeholder-text">Photo Coming Soon</div>
+
                             </div>
+
                             <span class="coming-badge">Coming Soon</span>
+
                         </div>
+
                         <div class="team-card-info">
+
                             <div class="team-card-name">Team Member 8</div>
+
                             <div class="team-card-role">Licensed Financial Professional</div>
+
                             <div class="team-card-social">
+
                                 <a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#"
                                     title="LinkedIn">in</a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                 </div><!-- /team-grid -->
+
             </div>
+
         </section>
 
+
+
         <!-- BOTTOM IMAGE + BOOK APPOINTMENT SECTION -->
+
         <section style="padding:0;background:#fff">
+
             <div style="display:grid;grid-template-columns:1fr 1fr;min-height:520px">
 
+
+
                 <!-- Left: Image -->
+
                 <div style="position:relative;overflow:hidden;min-height:420px">
-                    <img src="../images/Quantumleap_pic.jpg" alt="Quantumleap Wealth Team"
+
+                    <img src="../images/Quantumleap_pic.jpg" alt="Quantum Leap Financial Services Team"
                         style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" />
+
                     <!-- Gold overlay badge -->
+
                     <div
                         style="position:absolute;bottom:28px;left:28px;background:rgba(201,168,76,0.93);color:#fff;padding:14px 22px;border-radius:12px;backdrop-filter:blur(6px)">
+
                         <div
                             style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px">
-                            Quantumleap Wealth</div>
+
+                            Quantum Leap Financial Services</div>
+
                         <div style="font-size:1.1rem;font-weight:700;font-family:'Playfair Display',serif">California's
+
                             Trusted Team</div>
+
                     </div>
+
                 </div>
 
+
+
                 <!-- Right: CTA Content -->
+
                 <div
                     style="background:linear-gradient(135deg,#04111f 0%,#0a2540 60%,#0d3a6e 100%);padding:70px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+
                     <!-- Subtle dot pattern -->
+
                     <div
                         style="position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,76,0.08) 1px,transparent 1px);background-size:36px 36px;pointer-events:none">
+
                     </div>
+
                     <div style="position:relative;z-index:1">
+
                         <div
                             style="display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-light);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-bottom:20px">
+
                             Ready to Start?</div>
+
                         <h2 style="color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.25;margin-bottom:18px">
+
                             Do You Need the Best Help For Your Financial Goals?</h2>
+
                         <p style="color:rgba(255,255,255,0.68);font-size:0.95rem;line-height:1.8;margin-bottom:14px">Our
+
                             Licensed Financial Professionals are available 24/7 to answer your questions and guide you
+
                             toward smarter financial decisions.</p>
+
                         <p style="color:rgba(255,255,255,0.68);font-size:0.95rem;line-height:1.8;margin-bottom:32px">We
+
                             offer a <strong style="color:var(--accent-light)">FREE consultation</strong> and
+
                             personalized financial solutions around investments, insurance, estate planning, college
+
                             planning, retirement planning, and more.</p>
 
+
+
                         <!-- Phone highlight -->
+
                         <div
                             style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:16px 20px;margin-bottom:28px">
+
                             <div style="font-size:1.6rem">📞</div>
+
                             <div>
+
                                 <div
                                     style="font-size:0.7rem;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px">
+
                                     24/7 Available</div>
+
                                 <a href="tel:+14082033877"
                                     style="font-size:1.15rem;font-weight:700;color:var(--accent-light);text-decoration:none">(+1)
+
                                     408-203-3877</a>
+
                             </div>
+
                         </div>
 
+
+
                         <!-- Buttons -->
+
                         <div style="display:flex;gap:14px;flex-wrap:wrap">
+
                             <a href="#"
                                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                 class="btn btn-primary" style="font-size:0.92rem;padding:14px 28px">
+
                                 📅 Book an Appointment
+
                             </a>
+
                             <a href="../contact/contact.html" class="btn btn-outline-white"
                                 style="font-size:0.92rem;padding:14px 28px">
+
                                 Contact Us →
+
                             </a>
+
                         </div>
+
                     </div>
+
                 </div>
 
+
+
             </div>
+
         </section>
+
+
 
     </main>
 
+
+
     <style>
         @media(max-width:768px) {
+
             section>div[style*="grid-template-columns:1fr 1fr"] {
+
                 grid-template-columns: 1fr !important;
+
             }
 
+
+
             section>div>div[style*="padding:70px 60px"] {
+
                 padding: 50px 28px !important;
+
             }
+
         }
     </style>
 
+
+
     <!-- FOOTER -->
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo" role="contentinfo" role="contentinfo">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div>
-                    <h4>Quantumleap Wealth</h4>
+
+                    <h4>Quantum Leap Financial Services</h4>
+
                     <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+
                         wealth preservation.</p>
+
                     <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
                             href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
                 </div>
+
                 <div>
+
                     <h4>Quick Links</h4>
+
                     <ul>
+
                         <li><a href="../index.html">Home</a></li>
+
                         <li><a href="about.html">About Us</a></li>
+
                         <li><a href="partners.html">Our Partners</a></li>
+
                         <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+
                         <li><a href="../contact/contact.html">Contact</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Our Services</h4>
+
                     <ul>
+
                         <li><a href="../images/services/investment-planning.html">Investment Planning</a></li>
+
                         <li><a href="../images/services/retirement-planning.html">Retirement Planning</a></li>
+
                         <li><a href="../images/services/life-insurance.html">Life Insurance</a></li>
+
                         <li><a href="../images/services/tax-saving.html">Tax Savings</a></li>
+
                         <li><a href="../images/services/kids-college.html">Kids College Fund</a></li>
+
                         <li><a href="../images/services/living-will-trust.html">Living Will &amp; Trust</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Contact Us</h4>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
-                    <div class="footer-contact-item">✉ <a
-                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+
+                    <div class="footer-contact-item">✉ <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
+                    </div>
+
                     <div class="footer-contact-item">📍 California, USA</div>
+
                 </div>
+
             </div>
-            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+
+            <div class="footer-bottom"><span>© 2025 Quantum Leap Financial Services. All rights reserved.</span><span><a
                         href="disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+
         </div>
+
     </footer>
 
+
+
     <script src="../js/main.js"></script>
+
 </body>
+
+
 
 </html>

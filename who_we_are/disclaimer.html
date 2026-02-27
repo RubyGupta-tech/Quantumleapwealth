@@ -1,604 +1,1105 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Our Disclaimer — Quantumleap Wealth</title>
+
+    <title>Our Disclaimer — Quantum Leap Financial Services</title>
+
     <meta name="description"
-        content="Read the official disclaimer for Quantumleap Wealth. We are a financial marketing company connecting clients with licensed professionals across California." />
+        content="Read the official disclaimer for Quantum Leap Financial Services. We are a financial marketing company connecting clients with licensed professionals across California." />
+
     <link rel="stylesheet" href="../css/style.css" />
+
     <link rel="stylesheet" href="../css/navbar.css" />
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         .page-hero {
+
             background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+
             padding: 90px 0 80px;
+
             position: relative;
+
             overflow: hidden
         }
 
+
+
         .page-hero::before {
+
             content: '';
+
             position: absolute;
+
             inset: 0;
+
             background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
+
             background-size: 40px 40px
         }
 
+
+
         .page-hero-inner {
+
             position: relative;
+
             z-index: 1;
+
             text-align: center
         }
 
+
+
         .page-hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: rgba(201, 168, 76, 0.12);
+
             border: 1px solid rgba(201, 168, 76, 0.28);
+
             border-radius: 30px;
+
             padding: 6px 18px;
+
             font-size: 0.78rem;
+
             font-weight: 700;
+
             color: var(--accent-light);
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             margin-bottom: 22px
         }
 
+
+
         .page-hero h1 {
+
             color: #fff;
+
             font-size: clamp(2rem, 4.5vw, 3.2rem);
+
             margin-bottom: 16px
         }
 
+
+
         .page-hero h1 .highlight {
+
             color: var(--accent-light)
         }
 
+
+
         .page-hero-sub {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 1rem;
+
             max-width: 600px;
+
             margin: 0 auto;
+
             line-height: 1.75
         }
 
+
+
         .breadcrumb {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 0.78rem;
+
             color: rgba(255, 255, 255, 0.45);
+
             margin-bottom: 16px;
+
             justify-content: center
         }
 
+
+
         .breadcrumb a {
+
             color: var(--accent-light);
+
             text-decoration: none
         }
 
+
+
         .breadcrumb span {
+
             color: rgba(255, 255, 255, 0.3)
         }
 
+
+
         /* ── Disclaimer Content ── */
+
         .disclaimer-section {
+
             padding: 80px 0 90px;
+
             background: #fff
         }
 
+
+
         .disclaimer-layout {
+
             display: grid;
+
             grid-template-columns: 1fr 320px;
+
             gap: 60px;
+
             align-items: start
         }
 
+
+
         /* Main content */
+
         .disclaimer-content {
+
             background: #fff
         }
 
+
+
         .disclaimer-block {
+
             margin-bottom: 36px;
+
             padding-bottom: 36px;
+
             border-bottom: 1px solid var(--border)
         }
 
+
+
         .disclaimer-block:last-child {
+
             border: none;
+
             margin-bottom: 0;
+
             padding-bottom: 0
         }
 
+
+
         .disclaimer-block h2 {
+
             font-size: 1.15rem;
+
             color: var(--primary);
+
             margin-bottom: 14px;
+
             display: flex;
+
             align-items: center;
+
             gap: 10px
         }
 
+
+
         .disclaimer-block h2 .block-icon {
+
             width: 34px;
+
             height: 34px;
+
             border-radius: 10px;
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.28));
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 1rem;
+
             flex-shrink: 0
         }
 
+
+
         .disclaimer-block p {
+
             color: var(--text-muted);
+
             font-size: 0.93rem;
+
             line-height: 1.85;
+
             margin-bottom: 12px
         }
 
+
+
         .disclaimer-block p:last-child {
+
             margin: 0
         }
 
+
+
         /* Alert box */
+
         .disclaimer-alert {
+
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.07), rgba(201, 168, 76, 0.03));
+
             border: 1px solid rgba(201, 168, 76, 0.3);
+
             border-left: 4px solid var(--accent);
+
             border-radius: 12px;
+
             padding: 20px 22px;
+
             margin-bottom: 36px
         }
 
+
+
         .disclaimer-alert p {
+
             color: var(--text);
+
             font-size: 0.9rem;
+
             line-height: 1.75;
+
             margin: 0
         }
 
+
+
         .disclaimer-alert strong {
+
             color: var(--primary)
         }
 
+
+
         /* Sidebar */
+
         .disclaimer-sidebar {
+
             position: sticky;
+
             top: 100px;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 20px
         }
 
+
+
         .sidebar-card {
+
             background: var(--bg-light);
+
             border-radius: 16px;
+
             padding: 26px 22px;
+
             border: 1px solid var(--border)
         }
 
+
+
         .sidebar-card h3 {
+
             font-size: 0.9rem;
+
             color: var(--primary);
+
             margin-bottom: 16px;
+
             font-weight: 700
         }
 
+
+
         .sidebar-nav-list {
+
             list-style: none;
+
             padding: 0;
+
             margin: 0;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 6px
         }
 
+
+
         .sidebar-nav-list a {
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
+
             padding: 9px 12px;
+
             border-radius: 8px;
+
             font-size: 0.83rem;
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             transition: background 0.2s, color 0.2s;
+
             font-weight: 500
         }
 
+
+
         .sidebar-nav-list a:hover,
+
         .sidebar-nav-list a.active {
+
             background: rgba(201, 168, 76, 0.1);
+
             color: var(--accent-dark)
         }
 
+
+
         .sidebar-nav-list a .sn-icon {
+
             font-size: 0.9rem
         }
 
+
+
         .sidebar-cta {
+
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+
             border-radius: 16px;
+
             padding: 30px 22px;
+
             text-align: center
         }
 
+
+
         .sidebar-cta h3 {
+
             color: #fff;
+
             font-size: 1rem;
+
             margin-bottom: 10px
         }
 
+
+
         .sidebar-cta p {
+
             color: rgba(255, 255, 255, 0.65);
+
             font-size: 0.8rem;
+
             line-height: 1.65;
+
             margin-bottom: 20px
         }
 
+
+
         .sidebar-cta .btn-sm {
+
             display: block;
+
             background: var(--accent);
+
             color: #fff;
+
             padding: 12px 18px;
+
             border-radius: 8px;
+
             font-size: 0.82rem;
+
             font-weight: 700;
+
             text-decoration: none;
+
             transition: opacity 0.2s;
+
             cursor: pointer;
+
             border: none;
+
             width: 100%
         }
 
+
+
         .sidebar-cta .btn-sm:hover {
+
             opacity: 0.88
         }
 
+
+
         /* Last updated bar */
+
         .last-updated {
+
             background: var(--bg-light);
+
             border-top: 1px solid var(--border);
+
             padding: 14px 0;
+
             font-size: 0.8rem;
+
             color: var(--text-muted);
+
             text-align: center
         }
 
+
+
         @media(max-width:900px) {
+
             .disclaimer-layout {
+
                 grid-template-columns: 1fr
             }
 
+
+
             .disclaimer-sidebar {
+
                 position: static
             }
+
         }
     </style>
+
 </head>
 
+
+
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
 
     <!-- TOP BAR -->
-    <div class="topbar">
+
+    <div class="topbar" role="complementary" aria-label="Company Contact Info">
+
         <div class="topbar-inner">
+
             <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-                <div class="topbar-divider"></div><a href="mailto:Talam.prasad@gmail.com">✉ Talam.prasad@gmail.com</a>
+
+                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉ quantumlfs@gmail.com</a>
+
                 <div class="topbar-divider"></div><span>📍 California, USA</span>
+
             </div>
+
             <div class="topbar-right">
-                <div class="social-links"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
-                        href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
-            </div>
+
+                <div class="social-links" role="list">
+          <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
+          <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
+          <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
+          <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
         </div>
+
+            </div>
+
+        </div>
+
     </div>
 
+
+
     <!-- NAVBAR -->
+
     <header class="navbar">
-        <div class="navbar-inner">
-            <a href="../index.html" class="navbar-brand">
-                <img src="../images/Quantumleap_logo.png" alt="Quantumleap Wealth Logo" class="brand-logo" />
-                <div class="brand-text"><strong class="brand-name">Quantumleap Wealth</strong><span
-                        class="brand-tagline">Financial Excellence</span></div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link active">Who We Are <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="about.html" class="dropdown-item"><span class="dd-icon">👤</span>About Us</a></li>
-                        <li><a href="partners.html" class="dropdown-item"><span class="dd-icon">🤝</span>Our
-                                Partners</a></li>
-                        <li><a href="disclaimer.html" class="dropdown-item active"><span class="dd-icon">📋</span>Our
-                                Disclaimer</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown wide">
-                        <li><a href="../images/services/investment-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">📈</span>Investment Planning</a></li>
-                        <li><a href="../images/services/living-will-trust.html" class="dropdown-item"><span
-                                    class="dd-icon">📜</span>Living Will &amp; Trust</a></li>
-                        <li><a href="../images/services/tax-saving.html" class="dropdown-item"><span
-                                    class="dd-icon">💰</span>Tax Savings</a></li>
-                        <li><a href="../images/services/retirement-planning.html" class="dropdown-item"><span
-                                    class="dd-icon">🏖️</span>Retirement Planning</a></li>
-                        <li><a href="../images/services/kids-college.html" class="dropdown-item"><span
-                                    class="dd-icon">🎓</span>Kids College</a></li>
-                        <li><a href="../images/services/life-insurance.html" class="dropdown-item"><span
-                                    class="dd-icon">🛡️</span>Life Insurance</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item"><span
-                                    class="dd-icon">🚀</span>6 Steps to Financial Freedom</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown"><a href="#" class="nav-link">Activities <svg class="dd-arrow"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9" />
-                        </svg></a>
-                    <ul class="dropdown">
-                        <li><a href="../Activities/Photos.html" class="dropdown-item"><span
-                                    class="dd-icon">📸</span>Photos</a></li>
-                        <li><a href="../Activities/videos.html" class="dropdown-item"><span
-                                    class="dd-icon">🎥</span>Videos</a></li>
-                        <li><a href="../Activities/blogs.html" class="dropdown-item"><span class="dd-icon">✍️</span>Blog</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#"
-                        onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                        class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                        </svg></a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
-                aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/Quantumleap_logo.png" alt="Quantum Leap Financial Services Logo" class="brand-logo" />
+        <div class="brand-text">
+          <strong class="brand-name">Quantum Leap Financial Services</strong>
+          <span class="brand-tagline">Financial Excellence</span>
         </div>
-    </header>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown active">
+          <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../who_we_are/about.html" class="dropdown-item" role="menuitem"><span class="dd-icon"
+                  aria-hidden="true">👤</span>About Us</a></li>
+            <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🤝</span>Our Partners</a></li>
+            <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item active" role="menuitem" aria-current="page"><span
+                  class="dd-icon" aria-hidden="true">📋</span>Our Disclaimer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown wide" role="menu">
+            <li role="none"><a href="../images/services/investment-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📈</span>Investment
+                Planning</a></li>
+            <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                Trust</a></li>
+            <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">💰</span>Tax
+                Savings</a></li>
+            <li role="none"><a href="../images/services/retirement-planning.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🏖️</span>Retirement
+                Planning</a></li>
+            <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎓</span>Kids
+                College</a></li>
+            <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                Insurance</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html" class="dropdown-item" role="menuitem"><span
+                  class="dd-icon" aria-hidden="true">🚀</span>6 Steps to
+                Financial Freedom</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <ul class="dropdown" role="menu">
+            <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a>
+            </li>
+            <li role="none"><a href="../Activities/videos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">🎥</span>Video Gallery</a>
+            </li>
+            <li role="none"><a href="../Activities/Photos.html" class="dropdown-item" role="menuitem"><span class="dd-icon" aria-hidden="true">📸</span>Photo Gallery</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="#"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+            class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg></a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+</header>
+
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <main>
+
+
+    <main id="main-content" role="main">
+
+
 
         <!-- HERO -->
+
         <section class="page-hero">
+
             <div class="container">
+
                 <div class="page-hero-inner">
+
                     <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Who We Are</span><span>›</span><span
                             style="color:var(--accent-light)">Our Disclaimer</span></div>
+
                     <div class="page-hero-badge">📋 Legal</div>
+
                     <h1>Our <span class="highlight">Disclaimer</span></h1>
+
                     <p class="page-hero-sub">Please read this disclaimer carefully before using our services or relying
-                        on any information provided by Quantumleap Wealth.</p>
+
+                        on any information provided by Quantum Leap Financial Services.</p>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <!-- DISCLAIMER CONTENT -->
+
         <section class="disclaimer-section">
+
             <div class="container">
+
                 <div class="disclaimer-layout">
 
+
+
                     <!-- Main Content -->
+
                     <div class="disclaimer-content">
 
+
+
                         <!-- Alert box -->
+
                         <div class="disclaimer-alert">
-                            <p><strong>Important Notice:</strong> Quantumleap Wealth is a marketing company offering a
+
+                            <p><strong>Important Notice:</strong> Quantum Leap Financial Services is a marketing company
+                                offering a
+
                                 vast array of products and services through a network of independent affiliates. We
+
                                 facilitate connections between affiliates and consumers, but we do not directly provide
+
                                 insurance products, legal advice, or tax advice.</p>
+
                         </div>
+
+
 
                         <div class="disclaimer-block" id="informational">
+
                             <h2><span class="block-icon">ℹ️</span>Informational Purposes Only</h2>
+
                             <p>The information provided on our website, platforms, and communications is for
+
                                 informational purposes only and should not be construed as insurance, legal, or tax
+
                                 advice.</p>
+
                             <p>We encourage all consumers to consult with qualified professionals for advice tailored to
+
                                 their specific needs and individual circumstances before making any financial decisions.
+
                             </p>
+
                         </div>
+
+
 
                         <div class="disclaimer-block" id="affiliates">
+
                             <h2><span class="block-icon">🤝</span>Affiliate Products &amp; Services</h2>
-                            <p>Quantumleap Wealth does not endorse or guarantee the products or services offered by our
+
+                            <p>Quantum Leap Financial Services does not endorse or guarantee the products or services
+                                offered by our
+
                                 affiliates. Consumers are encouraged to conduct their own due diligence and thorough
+
                                 research before making any purchasing decisions.</p>
+
                             <p>While we carefully vet our affiliate partners, we cannot guarantee the quality, accuracy,
+
                                 or completeness of information provided by third-party affiliates.</p>
+
                         </div>
+
+
 
                         <div class="disclaimer-block" id="liability">
+
                             <h2><span class="block-icon">⚖️</span>Limitation of Liability</h2>
-                            <p>Quantumleap Wealth is not liable for any loss or damage arising from the use of products
+
+                            <p>Quantum Leap Financial Services is not liable for any loss or damage arising from the use
+                                of products
+
                                 or services provided by our affiliates. Any transactions conducted with affiliates are
+
                                 solely between the consumer and the affiliate.</p>
-                            <p>Quantumleap Wealth is not responsible for any disputes, issues, or damages that may arise
+
+                            <p>Quantum Leap Financial Services is not responsible for any disputes, issues, or damages
+                                that may arise
+
                                 from affiliate transactions or relationships. All financial decisions made based on
+
                                 information from our website are made at the consumer's own risk.</p>
+
                         </div>
+
+
 
                         <div class="disclaimer-block" id="modifications">
+
                             <h2><span class="block-icon">🔄</span>Right to Modify</h2>
+
                             <p>We reserve the right to modify, suspend, or discontinue any aspect of our affiliate
+
                                 marketing program at any time without prior notice.</p>
+
                             <p>Additionally, we reserve the right to update or change this disclaimer at any time.
+
                                 Continued use of our website and services following any such changes constitutes your
+
                                 acceptance of the revised disclaimer.</p>
+
                         </div>
+
+
 
                         <div class="disclaimer-block" id="terms">
+
                             <h2><span class="block-icon">📄</span>Terms &amp; Conditions Review</h2>
+
                             <p>Consumers should carefully review the terms and conditions of any products or services
-                                offered by Quantumleap Wealth affiliates before making a purchase or entering into any
+
+                                offered by Quantum Leap Financial Services affiliates before making a purchase or
+                                entering into any
+
                                 agreement.</p>
+
                             <p>If you have any questions about the terms, products, or services offered by our
+
                                 affiliates, please contact us directly before proceeding.</p>
+
                         </div>
 
+
+
                         <div class="disclaimer-block" id="free-consultation">
+
                             <h2><span class="block-icon">🎯</span>Free Consultation Available</h2>
+
                             <p>We offer FREE consultation and provide personalized financial solutions to help you make
+
                                 smart financial decisions around Investments, Insurance, Estate Planning, College
+
                                 Planning, Retirement Planning, and more.</p>
+
                             <p>Our Licensed Financial Professionals are available 24/7 to answer your questions. We
+
                                 believe every family deserves access to expert financial guidance — no cost, no
+
                                 commitment for your first consultation.</p>
+
                             <div style="margin-top:20px">
+
                                 <a href="#"
                                     onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                     class="btn btn-primary">📅 Book a Free Consultation</a>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="disclaimer-block" id="contact">
+
                             <h2><span class="block-icon">📬</span>Questions About This Disclaimer?</h2>
+
                             <p>If you have any questions, concerns, or require clarification about this disclaimer or
+
                                 our services, please do not hesitate to reach out to us.</p>
+
                             <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px">
+
                                 <div
                                     style="display:flex;align-items:center;gap:10px;background:var(--bg-light);border:1px solid var(--border);border-radius:10px;padding:12px 16px">
+
                                     <span style="font-size:1.2rem">📞</span>
+
                                     <a href="tel:+14082033877"
                                         style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">(+1)
+
                                         408-203-3877</a>
+
                                 </div>
+
                                 <div
                                     style="display:flex;align-items:center;gap:10px;background:var(--bg-light);border:1px solid var(--border);border-radius:10px;padding:12px 16px">
+
                                     <span style="font-size:1.2rem">✉</span>
-                                    <a href="mailto:Talam.prasad@gmail.com"
-                                        style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">Talam.prasad@gmail.com</a>
+
+                                    <a href="mailto:quantumlfs@gmail.com"
+                                        style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">quantumlfs@gmail.com</a>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                     </div><!-- /disclaimer-content -->
 
+
+
                     <!-- Sidebar -->
+
                     <aside class="disclaimer-sidebar">
 
+
+
                         <!-- Quick Nav -->
+
                         <div class="sidebar-card">
+
                             <h3>📋 On This Page</h3>
+
                             <ul class="sidebar-nav-list">
+
                                 <li><a href="#informational"><span class="sn-icon">ℹ️</span>Informational Purposes</a>
+
                                 </li>
+
                                 <li><a href="#affiliates"><span class="sn-icon">🤝</span>Affiliate Services</a></li>
+
                                 <li><a href="#liability"><span class="sn-icon">⚖️</span>Limitation of Liability</a></li>
+
                                 <li><a href="#modifications"><span class="sn-icon">🔄</span>Right to Modify</a></li>
+
                                 <li><a href="#terms"><span class="sn-icon">📄</span>Terms &amp; Conditions</a></li>
+
                                 <li><a href="#free-consultation"><span class="sn-icon">🎯</span>Free Consultation</a>
+
                                 </li>
+
                                 <li><a href="#contact"><span class="sn-icon">📬</span>Questions?</a></li>
+
                             </ul>
+
                         </div>
 
+
+
                         <!-- CTA card -->
+
                         <div class="sidebar-cta">
+
                             <h3>📅 24/7 Hour Available</h3>
+
                             <p>We offer FREE consultation and provide personalized financial solutions to help you make
+
                                 smart decisions.</p>
+
                             <a href="#"
                                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                 class="btn-sm">Book an Appointment</a>
+
                         </div>
 
+
+
                         <!-- Related pages -->
+
                         <div class="sidebar-card">
+
                             <h3>🔗 Related Pages</h3>
+
                             <ul class="sidebar-nav-list">
+
                                 <li><a href="about.html"><span class="sn-icon">👤</span>About Us</a></li>
+
                                 <li><a href="partners.html"><span class="sn-icon">🤝</span>Our Partners</a></li>
+
                                 <li><a href="../contact/contact.html"><span class="sn-icon">📞</span>Contact Us</a></li>
+
                                 <li><a href="../images/services/investment-planning.html"><span
                                             class="sn-icon">📈</span>Our Services</a></li>
+
                             </ul>
+
                         </div>
+
+
 
                     </aside>
 
+
+
                 </div><!-- /disclaimer-layout -->
+
             </div>
+
         </section>
 
+
+
         <!-- LAST UPDATED -->
+
         <div class="last-updated">
-            <div class="container">Last updated: February 2025 &nbsp;|&nbsp; © 2025 Quantumleap Wealth. All rights
-                reserved. &nbsp;|&nbsp; <a href="../contact/contact.html" style="color:var(--accent-dark)">Contact Us</a>
+
+            <div class="container">Last updated: February 2025 &nbsp;|&nbsp; © 2025 Quantum Leap Financial Services. All
+                rights
+
+                reserved. &nbsp;|&nbsp; <a href="../contact/contact.html" style="color:var(--accent-dark)">Contact
+                    Us</a>
+
             </div>
+
         </div>
+
+
 
     </main>
 
+
+
     <!-- FOOTER -->
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo" role="contentinfo" role="contentinfo">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div>
-                    <h4>Quantumleap Wealth</h4>
+
+                    <h4>Quantum Leap Financial Services</h4>
+
                     <p class="footer-brand-desc">Your trusted partner for financial planning, investment guidance, and
+
                         wealth preservation.</p>
+
                     <div class="footer-social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a
                             href="#" title="LinkedIn">in</a><a href="#" title="YouTube">▶</a></div>
+
                 </div>
+
                 <div>
+
                     <h4>Quick Links</h4>
+
                     <ul>
+
                         <li><a href="../index.html">Home</a></li>
+
                         <li><a href="about.html">About Us</a></li>
+
                         <li><a href="partners.html">Our Partners</a></li>
+
                         <li><a href="../Entrepreneurship/6-steps-to-financial-freedom.html">Entrepreneurship</a></li>
+
                         <li><a href="../contact/contact.html">Contact</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Our Services</h4>
+
                     <ul>
+
                         <li><a href="../images/services/investment-planning.html">Investment Planning</a></li>
+
                         <li><a href="../images/services/retirement-planning.html">Retirement Planning</a></li>
+
                         <li><a href="../images/services/life-insurance.html">Life Insurance</a></li>
+
                         <li><a href="../images/services/tax-saving.html">Tax Savings</a></li>
+
                         <li><a href="../images/services/kids-college.html">Kids College Fund</a></li>
+
                         <li><a href="../images/services/living-will-trust.html">Living Will &amp; Trust</a></li>
+
                     </ul>
+
                 </div>
+
                 <div>
+
                     <h4>Contact Us</h4>
+
                     <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
-                    <div class="footer-contact-item">✉ <a
-                            href="mailto:Talam.prasad@gmail.com">Talam.prasad@gmail.com</a></div>
+
+                    <div class="footer-contact-item">✉ <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
+                    </div>
+
                     <div class="footer-contact-item">📍 California, USA</div>
+
                 </div>
+
             </div>
-            <div class="footer-bottom"><span>© 2025 Quantumleap Wealth. All rights reserved.</span><span><a
+
+            <div class="footer-bottom"><span>© 2025 Quantum Leap Financial Services. All rights reserved.</span><span><a
                         href="disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span></div>
+
         </div>
+
     </footer>
 
+
+
     <script src="../js/main.js"></script>
+
 </body>
+
+
 
 </html>
