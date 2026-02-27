@@ -1,5 +1,5 @@
 /* ==============================================================
-   QUANTUM LEAP FINANCIAL SERVICES — Global Design System + Homepage Styles
+   QUANTUM LEAP WEALTH — Global Design System + Homepage Styles
    ============================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -187,13 +187,19 @@ img {
 }
 
 .btn-primary {
+    background: var(--accent);
+    color: #fff !important;
+    border: 2px solid var(--accent);
     box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35)
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
+    background: #b8922a;
+    /* Slightly darker gold on hover */
+    border-color: #b8922a;
     box-shadow: 0 6px 22px rgba(201, 168, 76, 0.48);
-    color: #fff
+    color: #fff !important;
 }
 
 .btn-outline-white {
@@ -205,6 +211,17 @@ img {
 .btn-outline-white:hover {
     background: #fff;
     color: var(--primary)
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #fff !important;
 }
 
 /* ── Reveal Animation ── */
