@@ -1114,10 +1114,10 @@
                     form.reset();
                 })
                 .catch(function (error) {
-                    console.error('Error!', error.message);
+                    console.error('Error!', error);
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                    alert("Oops! Something went wrong while sending your message. Please try checking your connection or contact us directly.");
+                    alert("EmailJS Error: " + (error.text || error.message || JSON.stringify(error)));
                 });
 
         }
