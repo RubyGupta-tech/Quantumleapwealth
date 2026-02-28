@@ -722,8 +722,7 @@
     <header class="navbar">
         <div class="navbar-inner">
             <a href="../../index.html" class="navbar-brand">
-                <img src="../../images/Quantumleap_logo.png" alt="Quantum Leap Wealth Logo"
-                    class="brand-logo" />
+                <img src="../../images/Quantumleap_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
                 <div class="brand-text">
                     <strong class="brand-name">Quantum Leap <span class="brand-italic">Wealth</span></strong>
                     <span class="brand-tagline">Financial Excellence</span>
@@ -1052,37 +1051,54 @@
 
                                 us a bit about yourself and we'll help you find the best coverage at the best price.</p>
 
-                            <div class="cfg"><label>Full Name</label><input type="text" placeholder="Your full name" />
-
-                            </div>
-
-                            <div class="cfg"><label>Date of Birth</label><input type="date" /></div>
-
-                            <div class="cfg"><label>Coverage Type</label>
-
-                                <select>
-
-                                    <option>Term Life Insurance</option>
-
-                                    <option>Whole Life Insurance</option>
-
-                                    <option>Universal Life Insurance</option>
-
-                                    <option>Not Sure — Help Me Decide</option>
-
-                                </select>
-
-                            </div>
-
-                            <div class="cfg"><label>Phone</label><input type="tel" placeholder="(+1) 000-000-0000" />
-
-                            </div>
-
-                            <div class="cfg"><label>Message</label><textarea
-                                    placeholder="Coverage amount, dependents, questions..."></textarea></div>
-
-                            <button class="sidebar-submit"
-                                onclick="alert('Thank you! We will contact you shortly.')">Request Quote →</button>
+                            <form id="contact-form" onsubmit="handleSubmit(event)">
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                                    <div><label style="font-size:0.8rem; font-weight:700;">First Name *</label><input
+                                            type="text" name="first_name" required placeholder="First name"
+                                            style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" />
+                                    </div>
+                                    <div><label style="font-size:0.8rem; font-weight:700;">Last Name *</label><input
+                                            type="text" name="last_name" required placeholder="Last name"
+                                            style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" />
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <label style="font-size:0.8rem; font-weight:700;">Email Address *</label>
+                                    <input type="email" name="user_email" required placeholder="your@email.com"
+                                        style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" />
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <label style="font-size:0.8rem; font-weight:700;">Phone Number</label>
+                                    <input type="tel" name="user_phone" placeholder="(+1) 000-000-0000"
+                                        style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" />
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
+                                    <select name="service"
+                                        style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
+                                        <option value="">— Select a service —</option>
+                                        <option>Investment Planning</option>
+                                        <option>Living Will & Trust</option>
+                                        <option>Tax Savings</option>
+                                        <option>Retirement Planning</option>
+                                        <option>Kids College Fund</option>
+                                        <option>Life Insurance</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <label style="font-size:0.8rem; font-weight:700;">Your Message *</label>
+                                    <textarea name="message" required placeholder="Tell us about your goals..."
+                                        style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ddd; margin-top:4px; min-height: 80px;"></textarea>
+                                </div>
+                                <button type="submit" class="form-submit"
+                                    style="width: 100%; padding: 14px; background: #c9a84c; color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer;">Secure
+                                    Your Future →</button>
+                            </form>
+                            <div class="form-success" id="form-success"
+                                style="display: none; background: #e0faea; color: #166534; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; border: 1px solid #166534;">
+                                ✅ Message Sent! We'll contact you shortly.</div>
 
                         </div>
 
@@ -1245,6 +1261,12 @@
 
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("2PSwxHV81J7_l7Nsm");
+        })();
+    </script>
     <script src="../../js/main.js"></script>
 
 </body>

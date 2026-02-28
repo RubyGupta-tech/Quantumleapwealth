@@ -115,3 +115,66 @@
   });
 
 })();
+
+window.handleSubmit = function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector('.form-submit');
+  const originalText = submitBtn.textContent;
+
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  const SERVICE_ID = 'service_7bd9xhg';
+  const ADMIN_TEMPLATE_ID = 'template_8bopej4';
+  const AUTO_REPLY_TEMPLATE_ID = 'template_vaf4xrs';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVUXsk5cp5koV_SDg94fq5wEpshQtykf1PAdXzuYXwwPIqurG0Shb6JWc01zpCCPCjgQ/exec';
+
+  let userNameHidden = form.querySelector('input[name="user_name"]');
+  if (!userNameHidden) {
+    userNameHidden = document.createElement('input');
+    userNameHidden.type = 'hidden';
+    userNameHidden.name = 'user_name';
+    form.appendChild(userNameHidden);
+  }
+  userNameHidden.value = form.first_name.value + ' ' + form.last_name.value;
+
+  let timeHidden = form.querySelector('input[name="time"]');
+  if (!timeHidden) {
+    timeHidden = document.createElement('input');
+    timeHidden.type = 'hidden';
+    timeHidden.name = 'time';
+    form.appendChild(timeHidden);
+  }
+  timeHidden.value = new Date().toLocaleString();
+
+  emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form)
+    .then(function () {
+      return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
+    })
+    .then(function () {
+      const formData = new FormData(form);
+      const encodedData = new URLSearchParams(formData);
+      return fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: encodedData, mode: 'no-cors' });
+    })
+    .then(function () {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      form.style.display = 'none';
+
+      let successMsg = form.parentElement.querySelector('.form-success');
+      if (successMsg) {
+        successMsg.style.display = 'block';
+      } else {
+        alert("✅ Thank you! Your message has been sent. We'll reach out within 24 hours.");
+      }
+      form.reset();
+    })
+    .catch(function (error) {
+      console.error('Error!', error);
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      alert("EmailJS Error: " + (error.text || error.message || JSON.stringify(error)));
+    });
+};
