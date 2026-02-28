@@ -643,10 +643,7 @@
             header.addEventListener('click', () => {
                 const card = header.parentElement;
 
-                // Close other cards
-                document.querySelectorAll('.calc-card').forEach(c => {
-                    if (c !== card) c.classList.remove('active');
-                });
+
 
                 // Toggle clicked card
                 card.classList.toggle('active');
