@@ -1114,8 +1114,10 @@
                     return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
                 })
                 .then(function () {
-                    // 3. Save Lead to Google Sheet (using no-cors to bypass Google's strict CORS rules)
-                    return fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
+                    // 3. Save Lead to Google Sheet (using URLSearchParams to ensure Google reads the headers correctly)
+                    const formData = new FormData(form);
+                    const encodedData = new URLSearchParams(formData);
+                    return fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: encodedData, mode: 'no-cors' });
                 })
                 .then(function () {
                     // Success! Reset everything layout.
