@@ -1094,15 +1094,15 @@
             const AUTO_REPLY_TEMPLATE_ID = 'template_vaf4xrs';
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9Ztw_jFfQ-nntJWg9JHEgPPdECGcmijLyPDSSTXYEwWidTpli7CqQjAhk4xfDvDPFWA/exec';
 
-            // 1. Save Lead to Google Sheet
-            fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    // 2. Send Notification to Admin via EmailJS
-                    return emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form);
+            // 1. Send Notification to Admin via EmailJS
+            emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form)
+                .then(function () {
+                    // 2. Send Auto-Reply to Client via EmailJS
+                    return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
                 })
                 .then(function () {
-                    // 3. Send Auto-Reply to Client via EmailJS
-                    return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
+                    // 3. Save Lead to Google Sheet (using no-cors to bypass Google's strict CORS rules)
+                    return fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
                 })
                 .then(function () {
                     // Success! Reset everything layout.
