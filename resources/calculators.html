@@ -277,6 +277,43 @@
             box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
         }
 
+        /* ── Partners Grid ── */
+        .partner-card {
+            background: var(--bg-light, #f5f7fa);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(10, 37, 64, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(10, 37, 64, 0.1);
+            border-color: #c9a84c;
+        }
+
+        .partner-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(201, 168, 76, 0.1);
+            color: #b8922a;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            transition: all 0.2s;
+        }
+
+        .partner-card a:hover {
+            background: #c9a84c;
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             .page-hero h1 {
                 font-size: 1.8rem;
@@ -575,6 +612,116 @@
                 considered financial advice. Actual returns may vary. Consult with a licensed financial advisor at
                 Quantum Leap Wealth
                 for personalized planning.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRATEGIC PARTNERS ── -->
+    <section class="partners-section" style="padding: 60px 0; background: #fff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary, #0a2540);">Our
+                    Strategic <span style="color: #c9a84c;">Partners</span></h2>
+                <p style="color: var(--text-muted, #6b7c8d); max-width: 600px; margin: 10px auto 0;">We collaborate with
+                    industry-leading financial institutions to bring you best-in-class products and solutions.</p>
+            </div>
+
+            <div class="partners-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1060px; margin: 0 auto;">
+
+                <!-- Partner 1 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/American_product.png" alt="American Equity/National"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">American</h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Access top-tier annuities and life insurance products to secure your retirement income and
+                        protect your legacy.</p>
+                    <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
+                <!-- Partner 2 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/annexus_product.png" alt="Annexus"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Annexus</h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Explore innovative retirement solutions and smart market indices designed to protect and
+                        aggressively grow your wealth.</p>
+                    <a href="https://www.annexus.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
+                <!-- Partner 3 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/corebridge_product.png" alt="Corebridge Financial"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Corebridge
+                        Financial</h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Benefit from comprehensive retirement and insurance solutions tailored for long-term financial
+                        stability and growth.</p>
+                    <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
+                <!-- Partner 4 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/Fidelity_product.png" alt="Fidelity Investments"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Fidelity
+                        Investments</h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Manage your investments with world-class brokerage, mutual funds, and holistic active wealth
+                        management services.</p>
+                    <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
+                <!-- Partner 5 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Nationwide</h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Protect your family and assets with industry-leading insurance and diverse retirement planning
+                        products.</p>
+                    <a href="https://www.nationwide.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
+                <!-- Partner 6 -->
+                <div class="partner-card">
+                    <div
+                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="../images/product_images/northamerican_product.png" alt="North American"
+                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                    </div>
+                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">North American
+                    </h4>
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Secure your legacy with reliable life insurance and annuity products from a highly trusted and
+                        established provider.</p>
+                    <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+
             </div>
         </div>
     </section>
