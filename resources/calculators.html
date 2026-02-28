@@ -42,10 +42,37 @@
             margin: 0 auto;
         }
 
-        /* ── Calculator Grid ── */
-        .calc-section {
-            padding: 40px 0 20px;
+        /* ── Resources Layout ── */
+        .resources-section {
+            padding: 50px 0;
             background: var(--bg-light, #f5f7fa);
+        }
+
+        .resources-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .resources-left {
+            flex: 0 0 42%;
+            max-width: 42%;
+        }
+
+        .resources-right {
+            flex: 1;
+        }
+
+        @media (max-width: 992px) {
+            .resources-layout {
+                flex-direction: column;
+            }
+
+            .resources-left,
+            .resources-right {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
         }
 
         .calc-list {
@@ -437,293 +464,323 @@
         </div>
     </section>
 
-    <!-- ── CALCULATORS ── -->
-    <section class="calc-section">
+    <!-- ── RESOURCES CONTENT ── -->
+    <section class="resources-section">
         <div class="container">
-            <div class="calc-list">
+            <div class="resources-layout">
 
-                <!-- Term Insurance Calculator -->
-                <div class="calc-card">
-                    <div class="calc-card-header">
-                        <div class="calc-header-left">
-                            <span class="icon">🛡️</span> Term Insurance Calculator
-                        </div>
-                        <span class="chevron">▼</span>
+                <!-- LEFT COLUMN: Calculators -->
+                <div class="resources-left">
+                    <div style="margin-bottom: 24px;">
+                        <h2
+                            style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary, #0a2540);">
+                            Financial <span style="color: #c9a84c;">Calculators</span></h2>
+                        <p style="color: var(--text-muted, #6b7c8d); font-size: 0.9rem; margin-top: 6px;">Calculate your
+                            retirement, insurance, and investment needs.</p>
                     </div>
-                    <div class="calc-card-body">
-                        <div class="calc-field">
-                            <label>Your Current Age</label>
-                            <input type="number" id="ti-age" placeholder="e.g. 30" min="18" max="70">
+                    <div class="calc-list">
+
+                        <!-- Term Insurance Calculator -->
+                        <div class="calc-card">
+                            <div class="calc-card-header">
+                                <div class="calc-header-left">
+                                    <span class="icon">🛡️</span> Term Insurance Calculator
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="calc-card-body">
+                                <div class="calc-field">
+                                    <label>Your Current Age</label>
+                                    <input type="number" id="ti-age" placeholder="e.g. 30" min="18" max="70">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Annual Income ($)</label>
+                                    <input type="number" id="ti-income" placeholder="e.g. 75000">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Coverage Term (Years)</label>
+                                    <select id="ti-term">
+                                        <option value="10">10 Years</option>
+                                        <option value="15">15 Years</option>
+                                        <option value="20" selected>20 Years</option>
+                                        <option value="25">25 Years</option>
+                                        <option value="30">30 Years</option>
+                                    </select>
+                                </div>
+                                <div class="calc-field">
+                                    <label>Coverage Multiplier</label>
+                                    <select id="ti-multiplier">
+                                        <option value="8">8x Income</option>
+                                        <option value="10" selected>10x Income</option>
+                                        <option value="12">12x Income</option>
+                                        <option value="15">15x Income</option>
+                                    </select>
+                                </div>
+                                <button class="calc-btn" onclick="calcTermInsurance()">Calculate Coverage</button>
+                                <div class="calc-result" id="ti-result">
+                                    <div class="calc-result-label">Recommended Coverage</div>
+                                    <div class="calc-result-value" id="ti-coverage">$0</div>
+                                    <div class="calc-result-sub" id="ti-monthly">Estimated Monthly Premium: $0</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="calc-field">
-                            <label>Annual Income ($)</label>
-                            <input type="number" id="ti-income" placeholder="e.g. 75000">
+
+                        <!-- Retirement Calculator -->
+                        <div class="calc-card">
+                            <div class="calc-card-header">
+                                <div class="calc-header-left">
+                                    <span class="icon">🏖️</span> Retirement Savings Calculator
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="calc-card-body">
+                                <div class="calc-field">
+                                    <label>Current Age</label>
+                                    <input type="number" id="ret-age" placeholder="e.g. 30" min="18" max="70">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Desired Retirement Age</label>
+                                    <input type="number" id="ret-retire" placeholder="e.g. 65" min="50" max="80">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Monthly Savings ($)</label>
+                                    <input type="number" id="ret-monthly" placeholder="e.g. 500">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Expected Annual Return (%)</label>
+                                    <select id="ret-rate">
+                                        <option value="5">5% (Conservative)</option>
+                                        <option value="7" selected>7% (Moderate)</option>
+                                        <option value="9">9% (Aggressive)</option>
+                                        <option value="11">11% (High Growth)</option>
+                                    </select>
+                                </div>
+                                <button class="calc-btn" onclick="calcRetirement()">Calculate Savings</button>
+                                <div class="calc-result" id="ret-result">
+                                    <div class="calc-result-label">Estimated Retirement Fund</div>
+                                    <div class="calc-result-value" id="ret-total">$0</div>
+                                    <div class="calc-result-sub" id="ret-invested">Total Invested: $0</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="calc-field">
-                            <label>Coverage Term (Years)</label>
-                            <select id="ti-term">
-                                <option value="10">10 Years</option>
-                                <option value="15">15 Years</option>
-                                <option value="20" selected>20 Years</option>
-                                <option value="25">25 Years</option>
-                                <option value="30">30 Years</option>
-                            </select>
+
+                        <!-- College Fund Calculator -->
+                        <div class="calc-card">
+                            <div class="calc-card-header">
+                                <div class="calc-header-left">
+                                    <span class="icon">🎓</span> College Fund Calculator
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="calc-card-body">
+                                <div class="calc-field">
+                                    <label>Child's Current Age</label>
+                                    <input type="number" id="col-age" placeholder="e.g. 5" min="0" max="17">
+                                </div>
+                                <div class="calc-field">
+                                    <label>College Start Age</label>
+                                    <input type="number" id="col-start" placeholder="e.g. 18" min="16" max="22"
+                                        value="18">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Estimated Annual College Cost ($)</label>
+                                    <input type="number" id="col-cost" placeholder="e.g. 30000" value="30000">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Years of College</label>
+                                    <select id="col-years">
+                                        <option value="2">2 Years</option>
+                                        <option value="4" selected>4 Years</option>
+                                        <option value="5">5 Years</option>
+                                        <option value="6">6 Years (Graduate)</option>
+                                    </select>
+                                </div>
+                                <button class="calc-btn" onclick="calcCollege()">Calculate Fund Needed</button>
+                                <div class="calc-result" id="col-result">
+                                    <div class="calc-result-label">Total Fund Needed</div>
+                                    <div class="calc-result-value" id="col-total">$0</div>
+                                    <div class="calc-result-sub" id="col-monthly-save">Monthly Savings Needed: $0</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="calc-field">
-                            <label>Coverage Multiplier</label>
-                            <select id="ti-multiplier">
-                                <option value="8">8x Income</option>
-                                <option value="10" selected>10x Income</option>
-                                <option value="12">12x Income</option>
-                                <option value="15">15x Income</option>
-                            </select>
+
+                        <!-- Investment Growth Calculator -->
+                        <div class="calc-card">
+                            <div class="calc-card-header">
+                                <div class="calc-header-left">
+                                    <span class="icon">📈</span> Investment Growth Calculator
+                                </div>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="calc-card-body">
+                                <div class="calc-field">
+                                    <label>Initial Investment ($)</label>
+                                    <input type="number" id="inv-initial" placeholder="e.g. 10000">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Monthly Contribution ($)</label>
+                                    <input type="number" id="inv-monthly" placeholder="e.g. 200">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Investment Period (Years)</label>
+                                    <input type="number" id="inv-years" placeholder="e.g. 20" min="1" max="50">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Expected Annual Return (%)</label>
+                                    <select id="inv-rate">
+                                        <option value="4">4% (Bonds)</option>
+                                        <option value="7" selected>7% (Balanced)</option>
+                                        <option value="10">10% (Growth Stocks)</option>
+                                        <option value="12">12% (Aggressive)</option>
+                                    </select>
+                                </div>
+                                <button class="calc-btn" onclick="calcInvestment()">Calculate Growth</button>
+                                <div class="calc-result" id="inv-result">
+                                    <div class="calc-result-label">Future Value</div>
+                                    <div class="calc-result-value" id="inv-total">$0</div>
+                                    <div class="calc-result-sub" id="inv-gain">Total Gain: $0</div>
+                                </div>
+                            </div>
                         </div>
-                        <button class="calc-btn" onclick="calcTermInsurance()">Calculate Coverage</button>
-                        <div class="calc-result" id="ti-result">
-                            <div class="calc-result-label">Recommended Coverage</div>
-                            <div class="calc-result-value" id="ti-coverage">$0</div>
-                            <div class="calc-result-sub" id="ti-monthly">Estimated Monthly Premium: $0</div>
-                        </div>
+
+                    </div>
+
+                    <div class="calc-disclaimer" style="margin-top: 24px; text-align: left;">
+                        <strong>Disclaimer:</strong> These calculators provide estimates for educational purposes only
+                        and
+                        should not be
+                        considered financial advice. Actual returns may vary. Consult with a licensed financial advisor
+                        at
+                        Quantum Leap Wealth
+                        for personalized planning.
                     </div>
                 </div>
 
-                <!-- Retirement Calculator -->
-                <div class="calc-card">
-                    <div class="calc-card-header">
-                        <div class="calc-header-left">
-                            <span class="icon">🏖️</span> Retirement Savings Calculator
-                        </div>
-                        <span class="chevron">▼</span>
+                <!-- RIGHT COLUMN: Partners -->
+                <div class="resources-right">
+                    <div style="margin-bottom: 24px;">
+                        <h2
+                            style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary, #0a2540);">
+                            Strategic <span style="color: #c9a84c;">Partners</span></h2>
+                        <p style="color: var(--text-muted, #6b7c8d); font-size: 0.9rem; margin-top: 6px;">We collaborate
+                            with
+                            industry-leading financial institutions to bring you best-in-class products and solutions.
+                        </p>
                     </div>
-                    <div class="calc-card-body">
-                        <div class="calc-field">
-                            <label>Current Age</label>
-                            <input type="number" id="ret-age" placeholder="e.g. 30" min="18" max="70">
+
+                    <div class="partners-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+
+                        <!-- Partner 1 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/American_product.png" alt="American Equity/National"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">American
+                            </h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Access top-tier annuities and life insurance products to secure your retirement income
+                                and
+                                protect your legacy.</p>
+                            <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
-                        <div class="calc-field">
-                            <label>Desired Retirement Age</label>
-                            <input type="number" id="ret-retire" placeholder="e.g. 65" min="50" max="80">
+
+                        <!-- Partner 2 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/annexus_product.png" alt="Annexus"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Annexus
+                            </h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Explore innovative retirement solutions and smart market indices designed to protect and
+                                aggressively grow your wealth.</p>
+                            <a href="https://www.annexus.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
-                        <div class="calc-field">
-                            <label>Monthly Savings ($)</label>
-                            <input type="number" id="ret-monthly" placeholder="e.g. 500">
+
+                        <!-- Partner 3 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/corebridge_product.png" alt="Corebridge Financial"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">
+                                Corebridge
+                                Financial</h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Benefit from comprehensive retirement and insurance solutions tailored for long-term
+                                financial
+                                stability and growth.</p>
+                            <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More
+                                →</a>
                         </div>
-                        <div class="calc-field">
-                            <label>Expected Annual Return (%)</label>
-                            <select id="ret-rate">
-                                <option value="5">5% (Conservative)</option>
-                                <option value="7" selected>7% (Moderate)</option>
-                                <option value="9">9% (Aggressive)</option>
-                                <option value="11">11% (High Growth)</option>
-                            </select>
+
+                        <!-- Partner 4 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/Fidelity_product.png" alt="Fidelity Investments"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Fidelity
+                                Investments</h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Manage your investments with world-class brokerage, mutual funds, and holistic active
+                                wealth
+                                management services.</p>
+                            <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
-                        <button class="calc-btn" onclick="calcRetirement()">Calculate Savings</button>
-                        <div class="calc-result" id="ret-result">
-                            <div class="calc-result-label">Estimated Retirement Fund</div>
-                            <div class="calc-result-value" id="ret-total">$0</div>
-                            <div class="calc-result-sub" id="ret-invested">Total Invested: $0</div>
+
+                        <!-- Partner 5 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">
+                                Nationwide</h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Protect your family and assets with industry-leading insurance and diverse retirement
+                                planning
+                                products.</p>
+                            <a href="https://www.nationwide.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
+
+                        <!-- Partner 6 -->
+                        <div class="partner-card">
+                            <div
+                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <img src="../images/product_images/northamerican_product.png" alt="North American"
+                                    style="max-height: 100%; max-width: 80%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">North
+                                American
+                            </h4>
+                            <p
+                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                                Secure your legacy with reliable life insurance and annuity products from a highly
+                                trusted and
+                                established provider.</p>
+                            <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More
+                                →</a>
+                        </div>
+
                     </div>
-                </div>
+                </div> <!-- end resources-right -->
 
-                <!-- College Fund Calculator -->
-                <div class="calc-card">
-                    <div class="calc-card-header">
-                        <div class="calc-header-left">
-                            <span class="icon">🎓</span> College Fund Calculator
-                        </div>
-                        <span class="chevron">▼</span>
-                    </div>
-                    <div class="calc-card-body">
-                        <div class="calc-field">
-                            <label>Child's Current Age</label>
-                            <input type="number" id="col-age" placeholder="e.g. 5" min="0" max="17">
-                        </div>
-                        <div class="calc-field">
-                            <label>College Start Age</label>
-                            <input type="number" id="col-start" placeholder="e.g. 18" min="16" max="22" value="18">
-                        </div>
-                        <div class="calc-field">
-                            <label>Estimated Annual College Cost ($)</label>
-                            <input type="number" id="col-cost" placeholder="e.g. 30000" value="30000">
-                        </div>
-                        <div class="calc-field">
-                            <label>Years of College</label>
-                            <select id="col-years">
-                                <option value="2">2 Years</option>
-                                <option value="4" selected>4 Years</option>
-                                <option value="5">5 Years</option>
-                                <option value="6">6 Years (Graduate)</option>
-                            </select>
-                        </div>
-                        <button class="calc-btn" onclick="calcCollege()">Calculate Fund Needed</button>
-                        <div class="calc-result" id="col-result">
-                            <div class="calc-result-label">Total Fund Needed</div>
-                            <div class="calc-result-value" id="col-total">$0</div>
-                            <div class="calc-result-sub" id="col-monthly-save">Monthly Savings Needed: $0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Investment Growth Calculator -->
-                <div class="calc-card">
-                    <div class="calc-card-header">
-                        <div class="calc-header-left">
-                            <span class="icon">📈</span> Investment Growth Calculator
-                        </div>
-                        <span class="chevron">▼</span>
-                    </div>
-                    <div class="calc-card-body">
-                        <div class="calc-field">
-                            <label>Initial Investment ($)</label>
-                            <input type="number" id="inv-initial" placeholder="e.g. 10000">
-                        </div>
-                        <div class="calc-field">
-                            <label>Monthly Contribution ($)</label>
-                            <input type="number" id="inv-monthly" placeholder="e.g. 200">
-                        </div>
-                        <div class="calc-field">
-                            <label>Investment Period (Years)</label>
-                            <input type="number" id="inv-years" placeholder="e.g. 20" min="1" max="50">
-                        </div>
-                        <div class="calc-field">
-                            <label>Expected Annual Return (%)</label>
-                            <select id="inv-rate">
-                                <option value="4">4% (Bonds)</option>
-                                <option value="7" selected>7% (Balanced)</option>
-                                <option value="10">10% (Growth Stocks)</option>
-                                <option value="12">12% (Aggressive)</option>
-                            </select>
-                        </div>
-                        <button class="calc-btn" onclick="calcInvestment()">Calculate Growth</button>
-                        <div class="calc-result" id="inv-result">
-                            <div class="calc-result-label">Future Value</div>
-                            <div class="calc-result-value" id="inv-total">$0</div>
-                            <div class="calc-result-sub" id="inv-gain">Total Gain: $0</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="calc-disclaimer">
-                <strong>Disclaimer:</strong> These calculators provide estimates for educational purposes only and
-                should not be
-                considered financial advice. Actual returns may vary. Consult with a licensed financial advisor at
-                Quantum Leap Wealth
-                for personalized planning.
-            </div>
-        </div>
-    </section>
-
-    <!-- ── STRATEGIC PARTNERS ── -->
-    <section class="partners-section" style="padding: 20px 0 60px; background: #f5f7fa;">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary, #0a2540);">Our
-                    Strategic <span style="color: #c9a84c;">Partners</span></h2>
-                <p style="color: var(--text-muted, #6b7c8d); max-width: 600px; margin: 10px auto 0;">We collaborate with
-                    industry-leading financial institutions to bring you best-in-class products and solutions.</p>
-            </div>
-
-            <div class="partners-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1060px; margin: 0 auto;">
-
-                <!-- Partner 1 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/American_product.png" alt="American Equity/National"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">American</h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Access top-tier annuities and life insurance products to secure your retirement income and
-                        protect your legacy.</p>
-                    <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-                <!-- Partner 2 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/annexus_product.png" alt="Annexus"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Annexus</h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Explore innovative retirement solutions and smart market indices designed to protect and
-                        aggressively grow your wealth.</p>
-                    <a href="https://www.annexus.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-                <!-- Partner 3 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/corebridge_product.png" alt="Corebridge Financial"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Corebridge
-                        Financial</h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Benefit from comprehensive retirement and insurance solutions tailored for long-term financial
-                        stability and growth.</p>
-                    <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-                <!-- Partner 4 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/Fidelity_product.png" alt="Fidelity Investments"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Fidelity
-                        Investments</h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Manage your investments with world-class brokerage, mutual funds, and holistic active wealth
-                        management services.</p>
-                    <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-                <!-- Partner 5 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Nationwide</h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Protect your family and assets with industry-leading insurance and diverse retirement planning
-                        products.</p>
-                    <a href="https://www.nationwide.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-                <!-- Partner 6 -->
-                <div class="partner-card">
-                    <div
-                        style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                        <img src="../images/product_images/northamerican_product.png" alt="North American"
-                            style="max-height: 100%; max-width: 80%; object-fit: contain;">
-                    </div>
-                    <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">North American
-                    </h4>
-                    <p
-                        style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                        Secure your legacy with reliable life insurance and annuity products from a highly trusted and
-                        established provider.</p>
-                    <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More →</a>
-                </div>
-
-            </div>
-        </div>
+            </div> <!-- end resources-layout -->
+        </div> <!-- end container -->
     </section>
 
     <!-- ── CTA ── -->
