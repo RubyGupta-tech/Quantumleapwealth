@@ -1094,6 +1094,19 @@
             const AUTO_REPLY_TEMPLATE_ID = 'template_vaf4xrs';
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9Ztw_jFfQ-nntJWg9JHEgPPdECGcmijLyPDSSTXYEwWidTpli7CqQjAhk4xfDvDPFWA/exec';
 
+            // Dynamically create the missing variables for the EmailJS template
+            const userNameHidden = document.createElement('input');
+            userNameHidden.type = 'hidden';
+            userNameHidden.name = 'user_name';
+            userNameHidden.value = form.first_name.value + ' ' + form.last_name.value;
+            form.appendChild(userNameHidden);
+
+            const timeHidden = document.createElement('input');
+            timeHidden.type = 'hidden';
+            timeHidden.name = 'time';
+            timeHidden.value = new Date().toLocaleString();
+            form.appendChild(timeHidden);
+
             // 1. Send Notification to Admin via EmailJS
             emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form)
                 .then(function () {
