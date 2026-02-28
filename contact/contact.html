@@ -1092,14 +1092,20 @@
             const SERVICE_ID = 'service_7bd9xhg';
             const ADMIN_TEMPLATE_ID = 'template_8bopej4';
             const AUTO_REPLY_TEMPLATE_ID = 'template_vaf4xrs';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9Ztw_jFfQ-nntJWg9JHEgPPdECGcmijLyPDSSTXYEwWidTpli7CqQjAhk4xfDvDPFWA/exec';
 
-            // 1. Send Notification to Admin
-            emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form)
+            // 1. Save Lead to Google Sheet
+            fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // 2. Send Notification to Admin via EmailJS
+                    return emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form);
+                })
                 .then(function () {
-                    // 2. Send Auto-Reply to Client
+                    // 3. Send Auto-Reply to Client via EmailJS
                     return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
                 })
                 .then(function () {
+                    // Success! Reset everything layout.
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                     form.style.display = 'none';
@@ -1108,7 +1114,7 @@
                     form.reset();
                 })
                 .catch(function (error) {
-                    console.error('FAILED...', error);
+                    console.error('Error!', error.message);
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                     alert("Oops! Something went wrong while sending your message. Please try checking your connection or contact us directly.");
