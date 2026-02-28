@@ -47,26 +47,21 @@
             background: var(--bg-light, #f5f7fa);
         }
 
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            max-width: 1060px;
+        .calc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 860px;
             margin: 0 auto;
         }
 
         .calc-card {
             background: #fff;
             border-radius: 14px;
-            box-shadow: 0 6px 28px rgba(10, 37, 64, 0.08);
+            box-shadow: 0 4px 16px rgba(10, 37, 64, 0.06);
             border: 1px solid rgba(10, 37, 64, 0.06);
             overflow: hidden;
             transition: all 0.3s;
-        }
-
-        .calc-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(10, 37, 64, 0.14);
         }
 
         .calc-card-header {
@@ -78,6 +73,19 @@
             font-weight: 700;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s;
+        }
+
+        .calc-card-header:hover {
+            background: linear-gradient(135deg, #123354, #225a94);
+        }
+
+        .calc-header-left {
+            display: flex;
+            align-items: center;
             gap: 12px;
         }
 
@@ -85,8 +93,36 @@
             font-size: 1.5rem;
         }
 
+        .calc-card-header .chevron {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .calc-card.active .calc-card-header .chevron {
+            transform: rotate(180deg);
+        }
+
         .calc-card-body {
             padding: 24px;
+            display: none;
+            border-top: 1px solid rgba(10, 37, 64, 0.06);
+        }
+
+        .calc-card.active .calc-card-body {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .calc-field {
@@ -242,10 +278,6 @@
         }
 
         @media (max-width: 768px) {
-            .calc-grid {
-                grid-template-columns: 1fr;
-            }
-
             .page-hero h1 {
                 font-size: 1.8rem;
             }
@@ -371,12 +403,15 @@
     <!-- ── CALCULATORS ── -->
     <section class="calc-section">
         <div class="container">
-            <div class="calc-grid">
+            <div class="calc-list">
 
                 <!-- Term Insurance Calculator -->
                 <div class="calc-card">
                     <div class="calc-card-header">
-                        <span class="icon">🛡️</span> Term Insurance Calculator
+                        <div class="calc-header-left">
+                            <span class="icon">🛡️</span> Term Insurance Calculator
+                        </div>
+                        <span class="chevron">▼</span>
                     </div>
                     <div class="calc-card-body">
                         <div class="calc-field">
@@ -418,7 +453,10 @@
                 <!-- Retirement Calculator -->
                 <div class="calc-card">
                     <div class="calc-card-header">
-                        <span class="icon">🏖️</span> Retirement Savings Calculator
+                        <div class="calc-header-left">
+                            <span class="icon">🏖️</span> Retirement Savings Calculator
+                        </div>
+                        <span class="chevron">▼</span>
                     </div>
                     <div class="calc-card-body">
                         <div class="calc-field">
@@ -454,7 +492,10 @@
                 <!-- College Fund Calculator -->
                 <div class="calc-card">
                     <div class="calc-card-header">
-                        <span class="icon">🎓</span> College Fund Calculator
+                        <div class="calc-header-left">
+                            <span class="icon">🎓</span> College Fund Calculator
+                        </div>
+                        <span class="chevron">▼</span>
                     </div>
                     <div class="calc-card-body">
                         <div class="calc-field">
@@ -490,7 +531,10 @@
                 <!-- Investment Growth Calculator -->
                 <div class="calc-card">
                     <div class="calc-card-header">
-                        <span class="icon">📈</span> Investment Growth Calculator
+                        <div class="calc-header-left">
+                            <span class="icon">📈</span> Investment Growth Calculator
+                        </div>
+                        <span class="chevron">▼</span>
                     </div>
                     <div class="calc-card-body">
                         <div class="calc-field">
@@ -594,6 +638,21 @@
 
     <!-- ── SCRIPTS ── -->
     <script>
+        // Accordion Toggle
+        document.querySelectorAll('.calc-card-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+
+                // Close other cards
+                document.querySelectorAll('.calc-card').forEach(c => {
+                    if (c !== card) c.classList.remove('active');
+                });
+
+                // Toggle clicked card
+                card.classList.toggle('active');
+            });
+        });
+
         // Format currency
         function fmt(n) {
             return '$' + Math.round(n).toLocaleString('en-US');
