@@ -1,0 +1,96 @@
+<div class="navbar-inner">
+    <a href="{rel}index.html" class="navbar-brand">
+        <img src="{rel}images/Quantumleap_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
+        <div class="brand-text">
+            <strong class="brand-name">Quantum Leap Wealth</strong>
+            <span class="brand-tagline">Financial Excellence</span>
+        </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="{rel}index.html" class="nav-link{active_home}" {aria_home}>Home</a></li>
+        <li class="nav-item has-dropdown{active_about}">
+            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+            <ul class="dropdown" role="menu">
+                <li role="none"><a href="{rel}who_we_are/about.html" class="dropdown-item{active_about_us}"
+                        role="menuitem" {aria_about_us}><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
+                </li>
+                <li role="none"><a href="{rel}who_we_are/partners.html" class="dropdown-item{active_partners}"
+                        role="menuitem" {aria_partners}><span class="dd-icon" aria-hidden="true">🤝</span>Our
+                        Partners</a></li>
+                <li role="none"><a href="{rel}who_we_are/disclaimer.html" class="dropdown-item{active_disclaimer}"
+                        role="menuitem" {aria_disclaimer}><span class="dd-icon" aria-hidden="true">📋</span>Our
+                        Disclaimer</a></li>
+            </ul>
+        </li>
+        <li class="nav-item has-dropdown{active_services}">
+            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+            <ul class="dropdown wide" role="menu">
+                <li role="none"><a href="{rel}images/services/investment-planning.html"
+                        class="dropdown-item{active_inv}" role="menuitem" {aria_inv}><span class="dd-icon"
+                            aria-hidden="true">📈</span>Investment Planning</a></li>
+                <li role="none"><a href="{rel}images/services/living-will-trust.html" class="dropdown-item{active_will}"
+                        role="menuitem" {aria_will}><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
+                        Trust</a></li>
+                <li role="none"><a href="{rel}images/services/tax-saving.html" class="dropdown-item{active_tax}"
+                        role="menuitem" {aria_tax}><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
+                </li>
+                <li role="none"><a href="{rel}images/services/retirement-planning.html"
+                        class="dropdown-item{active_ret}" role="menuitem" {aria_ret}><span class="dd-icon"
+                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
+                <li role="none"><a href="{rel}images/services/kids-college.html" class="dropdown-item{active_kids}"
+                        role="menuitem" {aria_kids}><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
+                </li>
+                <li role="none"><a href="{rel}images/services/life-insurance.html" class="dropdown-item{active_life}"
+                        role="menuitem" {aria_life}><span class="dd-icon" aria-hidden="true">🛡️</span>Life
+                        Insurance</a></li>
+            </ul>
+        </li>
+        <li class="nav-item has-dropdown{active_entre}">
+            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+            <ul class="dropdown" role="menu">
+                <li role="none"><a href="{rel}Entrepreneurship/6-steps-to-financial-freedom.html"
+                        class="dropdown-item{active_freedom}" role="menuitem" {aria_freedom}><span class="dd-icon"
+                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
+            </ul>
+        </li>
+        <li class="nav-item has-dropdown{active_media}">
+            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+            <ul class="dropdown" role="menu">
+                <li role="none"><a href="{rel}Activities/blogs.html" class="dropdown-item{active_blogs}" role="menuitem"
+                        {aria_blogs}><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
+                <li role="none"><a href="{rel}Activities/videos.html" class="dropdown-item{active_videos}"
+                        role="menuitem" {aria_videos}><span class="dd-icon" aria-hidden="true">🎥</span>Video
+                        Gallery</a></li>
+                <li role="none"><a href="{rel}Activities/Photos.html" class="dropdown-item{active_photos}"
+                        role="menuitem" {aria_photos}><span class="dd-icon" aria-hidden="true">📸</span>Photo
+                        Gallery</a></li>
+            </ul>
+        </li>
+        <li class="nav-item"><a href="{rel}contact/contact.html" class="nav-link{active_contact}"
+                {aria_contact}>Contact</a></li>
+        <li class="nav-item">
+            <a href="#"
+                onclick="Calendly.initPopupWidget({{url:'https://calendly.com/webserviesbygupta/30min'}});return false;"
+                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+        </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+    </button>
+</div>
