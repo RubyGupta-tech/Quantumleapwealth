@@ -57,6 +57,9 @@ def sync_components(filepath):
     active_videos = " active" if "videos.html" in parts else ""
     active_photos = " active" if "Photos.html" in parts else ""
 
+    active_resources = " active" if "resources" in parts else ""
+    active_calculators = " active" if "calculators.html" in parts else ""
+
     active_contact = " active" if "contact" in parts else ""
 
     new_inner = NEW_NAVBAR_INNER_TEMPLATE.format(
@@ -93,6 +96,9 @@ def sync_components(filepath):
         aria_videos=' aria-current="page"' if active_videos else '',
         active_photos=active_photos,
         aria_photos=' aria-current="page"' if active_photos else '',
+        active_resources=active_resources,
+        active_calculators=active_calculators,
+        aria_calculators=' aria-current="page"' if active_calculators else '',
         active_contact=active_contact,
         aria_contact=' aria-current="page"' if active_contact else ''
     )
