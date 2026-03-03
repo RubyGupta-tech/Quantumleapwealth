@@ -58,7 +58,7 @@ def sync_components(filepath):
     active_photos = " active" if "Photos.html" in parts else ""
 
     active_resources = " active" if "resources" in parts else ""
-    active_calculators = " active" if "calculators.html" in parts else ""
+    active_calculators = " active" if "resources.html" in parts else ""
 
     active_contact = " active" if "contact" in parts else ""
 
