@@ -213,6 +213,23 @@ img {
     color: var(--primary)
 }
 
+.btn-light-gold {
+    background: var(--accent);
+    color: #fff !important;
+    font-weight: 700;
+    border: 2px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.btn-light-gold:hover {
+    background: #b8922a;
+    /* Slightly darker gold on hover, matching primary */
+    border-color: #b8922a;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(201, 168, 76, 0.48);
+}
+
 .btn-outline {
     border: 2px solid var(--primary);
     color: var(--primary);
