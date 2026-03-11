@@ -1433,6 +1433,43 @@ img {
     /* Added shadow for readability over photos */
 }
 
+/* Services Slide specific styles */
+.slide-services-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.slide-service-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 14px 10px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.slide-service-box:hover {
+    background: rgba(201, 168, 76, 0.15);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
 .slider-dots {
     position: absolute;
     bottom: -30px;
