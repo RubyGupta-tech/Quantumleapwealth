@@ -99,7 +99,7 @@
     position: relative;
 }
 
-/* ---- Brand / Logo — Dynamic Featured Style ---- */
+/* ---- Brand / Logo — Floating Sticker Style ---- */
 .navbar-brand {
     display: flex !important;
     align-items: center !important;
@@ -107,20 +107,16 @@
     text-decoration: none !important;
     flex-shrink: 0 !important;
 
-    /* Dynamic background for the logo container */
-    background: linear-gradient(135deg, #021124 0%, #0a2540 50%, #1a4a7a 100%) !important;
+    /* Remove background container so logo floats purely as a sticker */
+    background: transparent !important;
     height: auto !important;
     padding: 12px 24px !important;
     margin-right: 24px !important;
     position: relative !important;
     z-index: 10 !important;
 
-    /* Special shape and glow to make it stand out */
-    border-radius: 0 0 24px 24px !important;
-    /* Drops down from top */
-    box-shadow: 0 8px 32px rgba(10, 37, 64, 0.25),
-        0 0 20px rgba(201, 168, 76, 0.15) !important;
-    border-bottom: 3px solid var(--accent, #c9a84c) !important;
+    border: none !important;
+    box-shadow: none !important;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
@@ -132,18 +128,17 @@
     object-fit: contain !important;
     position: relative !important;
     z-index: 10 !important;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) !important;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) !important;
     transition: transform 0.4s ease, filter 0.4s ease !important;
 }
 
 .navbar-brand:hover {
     transform: translateY(4px);
-    box-shadow: 0 12px 40px rgba(10, 37, 64, 0.4),
-        0 0 30px rgba(201, 168, 76, 0.3) !important;
 }
 
 .navbar-brand:hover .brand-logo {
     transform: scale(1.04);
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 16px rgba(201, 168, 76, 0.4)) !important;
 }
 
 /* Hide brand text — logo image contains the name */

@@ -1,28 +1,38 @@
 from PIL import Image
-import sys
 
-def remove_background_better(input_path, output_path):
+def remove_background(input_path, output_path):
+    # Open image and ensure it has an alpha channel
     img = Image.open(input_path).convert("RGBA")
+    
+    # Get image data
     datas = img.getdata()
-    newData = []
+    new_data = []
     
     for item in datas:
-        # Check if the pixel is dark enough to be the background
-        # Option 1 (Emerald) background is dark green (r<50, g<100, b<50)
-        # Option 2 (Ruby) background is dark red (r<100, g<50, b<50)
-        # We'll use a general approach to remove very dark/vibrant background pixels
-        if (item[0] < 80 and item[1] < 120 and item[2] < 80) or \
-           (item[0] < 120 and item[1] < 60 and item[2] < 60) or \
-           (item[0] < 60 and item[1] < 60 and item[2] < 60):
-            newData.append((255, 255, 255, 0)) # Fully transparent
+        # We want to remove the WHITE/LIGHT GRAY background completely
+        # Anything close to white (R>200, G>200, B>200) becomes fully transparent
+        if item[0] > 200 and item[1] > 200 and item[2] > 200:
+            # Change all white/light pixels to 100% transparent
+            new_data.append((255, 255, 255, 0))
+        # Remove any dark navy blue background artifacts as well
+        # In case the previous step accidentally left navy blocks
+        elif item[0] < 40 and item[1] < 60 and item[2] < 90:
+            new_data.append((255, 255, 255, 0))
         else:
-            newData.append(item)
+            # Keep the actual logo pixels (gold/white text)
+            new_data.append(item)
             
-    img.putdata(newData)
+    img.putdata(new_data)
+    
+    # Crop the image to its bounding box so it's a tight layout (true sticker)
+    bbox = img.getbbox()
+    if bbox:
+        img = img.crop(bbox)
+        
     img.save(output_path, "PNG")
-    print(f"Saved transparent logo to {output_path}")
+    print(f"Successfully processed true transparent logo: {output_path}")
 
-img_in = sys.argv[1]
+img_in = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\QWL_logo_original.png"
 img_out = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\QWL_logo.png"
 
-remove_background_better(img_in, img_out)
+remove_background(img_in, img_out)
