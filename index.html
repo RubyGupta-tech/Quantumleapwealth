@@ -1685,6 +1685,11 @@
         resetTimer();
       };
 
+      window.changeSlide = function (n) {
+        showSlide(slideIndex + n);
+        resetTimer();
+      };
+
       if (slides.length > 0) {
         showSlide(0);
         startTimer();
