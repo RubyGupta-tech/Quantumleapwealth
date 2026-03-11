@@ -1303,15 +1303,24 @@ img {
 
 .hero-text-col {
     padding-right: 20px;
+    position: relative;
+    z-index: 20;
+    /* Keep text and buttons above dropping elements */
+    padding-bottom: 40px;
+    /* Space to prevent buttons from hiding behind the pillars below */
 }
 
 .hero-subtitle {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin-bottom: 16px;
+    letter-spacing: 0.15em;
+    font-size: 1.1rem;
+    /* Made significantly larger */
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: inline-block;
+    padding-top: 20px;
+    /* Give it breathing room from the top bar */
 }
 
 .hero-title {
@@ -1321,16 +1330,19 @@ img {
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(to right, transparent, var(--accent), transparent) 1;
     display: inline-block;
-    letter-spacing: 0.06em;
-    font-weight: 700;
-    line-height: 1.2;
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    line-height: 1.25;
+    font-size: 3.2rem;
+    /* Reduced from massive default to be more readable */
 }
 
 .hero-description {
-    margin: 18px 0 28px;
+    margin: 18px 0 36px;
     max-width: 560px;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    /* Slightly larger for readability */
     line-height: 1.6;
     letter-spacing: 0.01em;
 }
@@ -1338,8 +1350,11 @@ img {
 .hero-buttons {
     display: flex;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 30;
+    /* Force buttons to be clickable above absolutely anything below */
 }
 
 /* Dynamic Slider Layout */
@@ -1409,10 +1424,13 @@ img {
 
 .slide-overlay h3 {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    /* Increased size significantly */
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.03em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    /* Added shadow for readability over photos */
 }
 
 .slider-dots {
