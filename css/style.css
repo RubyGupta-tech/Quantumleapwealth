@@ -1314,27 +1314,27 @@ img {
     color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    font-size: 1.1rem;
-    /* Made significantly larger */
+    font-size: 0.85rem;
+    /* Reduced size as requested */
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: inline-block;
-    padding-top: 20px;
-    /* Give it breathing room from the top bar */
+    padding-top: 10px;
+    /* Reduced to stop touching the top section too much */
 }
 
 .hero-title {
     text-align: left !important;
     text-transform: uppercase;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(to right, transparent, var(--accent), transparent) 1;
     display: inline-block;
     letter-spacing: 0.04em;
     font-weight: 800;
-    line-height: 1.25;
-    font-size: 3.2rem;
-    /* Reduced from massive default to be more readable */
+    line-height: 1.3;
+    font-size: 2.6rem;
+    /* Significantly reduced from 3.2rem */
 }
 
 .hero-description {
