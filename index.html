@@ -141,6 +141,93 @@
   <main id="main-content" role="main">
 
     <!-- ══════════════════════════════
+     UPCOMING EVENT ALERT
+══════════════════════════════ -->
+    <style>
+      @keyframes slideDownAlert {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes pulseAlertBtn {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        }
+
+        70% {
+          box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+
+      .event-alert-banner {
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 90;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        animation: slideDownAlert 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .event-alert-btn {
+        background: #fff;
+        color: var(--primary);
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s;
+        animation: pulseAlertBtn 2s infinite;
+      }
+
+      .event-alert-btn:hover {
+        background: var(--bg-light);
+        text-decoration: none;
+        color: var(--primary-mid);
+        animation: none;
+      }
+
+      .event-alert-close {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        opacity: 0.7;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .event-alert-close:hover {
+        opacity: 1;
+      }
+    </style>
+    <div class="event-alert-banner" id="eventAlertBanner">
+      <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>
+      <a href="#events" class="event-alert-btn">View Details</a>
+      <button class="event-alert-close" aria-label="Dismiss Alert"
+        onclick="document.getElementById('eventAlertBanner').style.display='none'">&times;</button>
+    </div>
+
+    <!-- ══════════════════════════════
      HERO
 ══════════════════════════════ -->
     <section class="hero" id="home"
@@ -560,6 +647,232 @@
 
 
     <!-- ══════════════════════════════
+     SERVICES
+══════════════════════════════ -->
+    <section class="section section-light" id="services">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-title">Our Best Services</h2>
+          <p class="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at
+            every stage of life.</p>
+        </div>
+        <div class="services-grid">
+          <a href="images/services/investment-planning.html" class="service-card reveal reveal-delay-1">
+            <div class="service-icon">📈</div>
+            <h3>Investment Planning</h3>
+            <p>Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum
+              growth.</p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+          <a href="images/services/living-will-trust.html" class="service-card reveal reveal-delay-2">
+            <div class="service-icon">📜</div>
+            <h3>Living Will &amp; Trust</h3>
+            <p>Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and
+              clarity.</p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+          <a href="images/services/tax-saving.html" class="service-card reveal reveal-delay-3">
+            <div class="service-icon">💰</div>
+            <h3>Tax Savings</h3>
+            <p>Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally.
+            </p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+          <a href="images/services/retirement-planning.html" class="service-card reveal reveal-delay-1">
+            <div class="service-icon">🏖️</div>
+            <h3>Retirement Planning</h3>
+            <p>Plan the retirement you deserve — comfortable, secure, and financially independent from day one.</p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+          <a href="images/services/kids-college.html" class="service-card reveal reveal-delay-2">
+            <div class="service-icon">🎓</div>
+            <h3>Kids College Fund</h3>
+            <p>Invest in your child's future today with education savings plans tailored to your family's timeline and
+              goals.</p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+          <a href="images/services/life-insurance.html" class="service-card reveal reveal-delay-3">
+            <div class="service-icon">🛡️</div>
+            <h3>Life Insurance</h3>
+            <p>Comprehensive coverage that protects your loved ones financially while building long-term asset value.
+            </p>
+            <span class="card-arrow">Learn more →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════ -->
+    <!--<section class="section" id="why-us">
+      <div class="container">
+        <div class="why-grid">
+          <div class="reveal">
+            <div class="why-image-bg">
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <span class="section-label">Why Choose Us</span>
+            <h2 class="section-title">We Bring Real Value<br>to Your Money</h2>
+            <p class="section-sub" style="margin-bottom:0">We go beyond advice — we partner with you to build, protect,
+              and grow your financial future with integrity and expertise.</p>
+            <div class="why-list">
+              <div class="why-item">
+                <div class="why-item-icon">✓</div>
+                <div>
+                  <h4>Personalized Strategies</h4>
+                  <p>No cookie-cutter plans. Every solution is built around your unique goals, timeline, and risk
+                    profile.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-item-icon">🤝</div>
+                <div>
+                  <h4>Trusted &amp; Transparent</h4>
+                  <p>We operate with full transparency — no hidden fees, no surprises. Just clear, honest financial
+                    guidance.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-item-icon">📱</div>
+                <div>
+                  <h4>Always Accessible</h4>
+                  <p>Your advisor is always just a call away. We prioritize responsive, ongoing support throughout our
+                    partnership.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-item-icon">♾️</div>
+                <div>
+                  <h4>Long-Term Partnership</h4>
+                  <p>We grow with you — from your first investment to a fully secure retirement. We're in it for the
+                    long run.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- ══════════════════════════════
+     WHY CHOOSE US — BLUE BAR
+══════════════════════════════ -->
+    <section style="background: linear-gradient(135deg, #0a2540, #1a4a7a); padding: 50px 0;">
+      <div class="container" style="max-width: 1000px;">
+        <h2
+          style="text-align:center; color:#fff; font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:36px; display:inline-block; padding-bottom:12px; border-bottom:2px solid transparent; border-image:linear-gradient(to right, transparent, var(--accent), transparent) 1; width:100%;">
+          Why Choose Us?</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+          <div
+            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+            <div style="font-size:2.2rem; margin-bottom:14px;">🎯</div>
+            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Expert Guidance</h4>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Licensed professionals providing
+              personalized financial strategies tailored to your goals.</p>
+          </div>
+          <div
+            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+            <div style="font-size:2.2rem; margin-bottom:14px;">📋</div>
+            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Comprehensive Solutions</h4>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">From insurance to real estate —
+              all your financial needs under one trusted roof.</p>
+          </div>
+          <div
+            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+            <div style="font-size:2.2rem; margin-bottom:14px;">📈</div>
+            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Proven Results</h4>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Trusted by hundreds of families
+              to build, protect, and grow their wealth for generations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+     HOW IT WORKS
+══════════════════════════════ -->
+    <section class="section section-light" id="process">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="divider-container">
+            <div class="divider-line"></div>
+            <span class="divider-text">Our Process</span>
+            <div class="divider-line"></div>
+          </div>
+          <h2 class="section-title">How We Work With You</h2>
+          <p class="section-sub">A simple, 4-step journey to financial security and wealth growth.</p>
+        </div>
+        <div class="process-steps">
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-num">01</div>
+            <h4>Free Consultation</h4>
+            <p>We start with a no-obligation conversation to understand your current financial situation and goals.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-num">02</div>
+            <h4>Financial Analysis</h4>
+            <p>We analyze your assets, income, risk tolerance, and future needs to build a complete picture.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-3">
+            <div class="step-num">03</div>
+            <h4>Custom Strategy</h4>
+            <p>We craft a personalized financial plan covering investments, insurance, retirement, and taxes.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-4">
+            <div class="step-num">04</div>
+            <h4>Ongoing Support</h4>
+            <p>We monitor, adjust, and stay by your side as your life and financial goals evolve over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ══════════════════════════════
+     OUR PRODUCT (FAQs & Insights)
+══════════════════════════════ -->
+    <section class="section section-light" id="products">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="divider-container">
+            <div class="divider-line"></div>
+            <span class="divider-text">Our Product</span>
+            <div class="divider-line"></div>
+          </div>
+          <h2 class="section-title">Strategic Partner <span class="highlight">Network</span></h2>
+          <p class="section-sub">We collaborate with industry-leading financial institutions to bring you the
+            best-in-class products and solutions.</p>
+        </div>
+      </div>
+
+      <div class="logo-ticker-container">
+        <div class="logo-ticker-track">
+          <!-- Set 1 -->
+          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
+          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
+          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
+          </div>
+          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
+          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
+              alt="Nationwide Product" /></div>
+          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
+              alt="North American Product" /></div>
+          <!-- Set 2 (Duplicate for smooth loop) -->
+          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
+          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
+          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
+          </div>
+          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
+          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
+              alt="Nationwide Product" /></div>
+          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
+              alt="North American Product" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
      EVENTS
 ══════════════════════════════ -->
     <style>
@@ -972,231 +1285,6 @@
       });
     </script>
 
-    <!-- ══════════════════════════════
-     SERVICES
-══════════════════════════════ -->
-    <section class="section section-light" id="services">
-      <div class="container">
-        <div class="text-center reveal">
-          <span class="section-label">What We Offer</span>
-          <h2 class="section-title">Our Best Services</h2>
-          <p class="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at
-            every stage of life.</p>
-        </div>
-        <div class="services-grid">
-          <a href="images/services/investment-planning.html" class="service-card reveal reveal-delay-1">
-            <div class="service-icon">📈</div>
-            <h3>Investment Planning</h3>
-            <p>Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum
-              growth.</p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-          <a href="images/services/living-will-trust.html" class="service-card reveal reveal-delay-2">
-            <div class="service-icon">📜</div>
-            <h3>Living Will &amp; Trust</h3>
-            <p>Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and
-              clarity.</p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-          <a href="images/services/tax-saving.html" class="service-card reveal reveal-delay-3">
-            <div class="service-icon">💰</div>
-            <h3>Tax Savings</h3>
-            <p>Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally.
-            </p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-          <a href="images/services/retirement-planning.html" class="service-card reveal reveal-delay-1">
-            <div class="service-icon">🏖️</div>
-            <h3>Retirement Planning</h3>
-            <p>Plan the retirement you deserve — comfortable, secure, and financially independent from day one.</p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-          <a href="images/services/kids-college.html" class="service-card reveal reveal-delay-2">
-            <div class="service-icon">🎓</div>
-            <h3>Kids College Fund</h3>
-            <p>Invest in your child's future today with education savings plans tailored to your family's timeline and
-              goals.</p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-          <a href="images/services/life-insurance.html" class="service-card reveal reveal-delay-3">
-            <div class="service-icon">🛡️</div>
-            <h3>Life Insurance</h3>
-            <p>Comprehensive coverage that protects your loved ones financially while building long-term asset value.
-            </p>
-            <span class="card-arrow">Learn more →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════
-     WHY CHOOSE US
-══════════════════════════════ -->
-    <!--<section class="section" id="why-us">
-      <div class="container">
-        <div class="why-grid">
-          <div class="reveal">
-            <div class="why-image-bg">
-            </div>
-          </div>
-          <div class="reveal reveal-delay-2">
-            <span class="section-label">Why Choose Us</span>
-            <h2 class="section-title">We Bring Real Value<br>to Your Money</h2>
-            <p class="section-sub" style="margin-bottom:0">We go beyond advice — we partner with you to build, protect,
-              and grow your financial future with integrity and expertise.</p>
-            <div class="why-list">
-              <div class="why-item">
-                <div class="why-item-icon">✓</div>
-                <div>
-                  <h4>Personalized Strategies</h4>
-                  <p>No cookie-cutter plans. Every solution is built around your unique goals, timeline, and risk
-                    profile.</p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">🤝</div>
-                <div>
-                  <h4>Trusted &amp; Transparent</h4>
-                  <p>We operate with full transparency — no hidden fees, no surprises. Just clear, honest financial
-                    guidance.</p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">📱</div>
-                <div>
-                  <h4>Always Accessible</h4>
-                  <p>Your advisor is always just a call away. We prioritize responsive, ongoing support throughout our
-                    partnership.</p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">♾️</div>
-                <div>
-                  <h4>Long-Term Partnership</h4>
-                  <p>We grow with you — from your first investment to a fully secure retirement. We're in it for the
-                    long run.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-
-    <!-- ══════════════════════════════
-     WHY CHOOSE US — BLUE BAR
-══════════════════════════════ -->
-    <section style="background: linear-gradient(135deg, #0a2540, #1a4a7a); padding: 50px 0;">
-      <div class="container" style="max-width: 1000px;">
-        <h2
-          style="text-align:center; color:#fff; font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:36px; display:inline-block; padding-bottom:12px; border-bottom:2px solid transparent; border-image:linear-gradient(to right, transparent, var(--accent), transparent) 1; width:100%;">
-          Why Choose Us?</h2>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
-            <div style="font-size:2.2rem; margin-bottom:14px;">🎯</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Expert Guidance</h4>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Licensed professionals providing
-              personalized financial strategies tailored to your goals.</p>
-          </div>
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
-            <div style="font-size:2.2rem; margin-bottom:14px;">📋</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Comprehensive Solutions</h4>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">From insurance to real estate —
-              all your financial needs under one trusted roof.</p>
-          </div>
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
-            <div style="font-size:2.2rem; margin-bottom:14px;">📈</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Proven Results</h4>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Trusted by hundreds of families
-              to build, protect, and grow their wealth for generations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════
-     HOW IT WORKS
-══════════════════════════════ -->
-    <section class="section section-light" id="process">
-      <div class="container">
-        <div class="text-center reveal">
-          <div class="divider-container">
-            <div class="divider-line"></div>
-            <span class="divider-text">Our Process</span>
-            <div class="divider-line"></div>
-          </div>
-          <h2 class="section-title">How We Work With You</h2>
-          <p class="section-sub">A simple, 4-step journey to financial security and wealth growth.</p>
-        </div>
-        <div class="process-steps">
-          <div class="step-card reveal reveal-delay-1">
-            <div class="step-num">01</div>
-            <h4>Free Consultation</h4>
-            <p>We start with a no-obligation conversation to understand your current financial situation and goals.</p>
-          </div>
-          <div class="step-card reveal reveal-delay-2">
-            <div class="step-num">02</div>
-            <h4>Financial Analysis</h4>
-            <p>We analyze your assets, income, risk tolerance, and future needs to build a complete picture.</p>
-          </div>
-          <div class="step-card reveal reveal-delay-3">
-            <div class="step-num">03</div>
-            <h4>Custom Strategy</h4>
-            <p>We craft a personalized financial plan covering investments, insurance, retirement, and taxes.</p>
-          </div>
-          <div class="step-card reveal reveal-delay-4">
-            <div class="step-num">04</div>
-            <h4>Ongoing Support</h4>
-            <p>We monitor, adjust, and stay by your side as your life and financial goals evolve over time.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ══════════════════════════════
-     OUR PRODUCT (FAQs & Insights)
-══════════════════════════════ -->
-    <section class="section section-light" id="products">
-      <div class="container">
-        <div class="text-center reveal">
-          <div class="divider-container">
-            <div class="divider-line"></div>
-            <span class="divider-text">Our Product</span>
-            <div class="divider-line"></div>
-          </div>
-          <h2 class="section-title">Strategic Partner <span class="highlight">Network</span></h2>
-          <p class="section-sub">We collaborate with industry-leading financial institutions to bring you the
-            best-in-class products and solutions.</p>
-        </div>
-      </div>
-
-      <div class="logo-ticker-container">
-        <div class="logo-ticker-track">
-          <!-- Set 1 -->
-          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
-          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
-          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
-          </div>
-          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
-          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
-              alt="Nationwide Product" /></div>
-          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
-              alt="North American Product" /></div>
-          <!-- Set 2 (Duplicate for smooth loop) -->
-          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
-          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
-          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
-          </div>
-          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
-          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
-              alt="Nationwide Product" /></div>
-          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
-              alt="North American Product" /></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="testimonials">
       <div class="container">
