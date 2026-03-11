@@ -1619,8 +1619,8 @@ img {
 
     .hero {
         min-height: auto;
-        padding: 120px 0 60px;
-        /* Adjusted padding to account for the new event banner and prevent top clipping */
+        padding: 180px 0 60px;
+        /* Greatly increased top padding so the text clears the banner and header */
     }
 
     .why-grid {

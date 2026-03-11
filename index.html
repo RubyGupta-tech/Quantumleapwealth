@@ -177,8 +177,9 @@
         text-align: center;
         font-size: 0.9rem;
         font-weight: 600;
-        position: relative;
-        z-index: 90;
+        position: sticky;
+        top: 0;
+        z-index: 1001;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -220,6 +221,11 @@
         opacity: 1;
       }
 
+      /* Adjust navbar when alert is visible */
+      .navbar {
+        top: 40px !important;
+      }
+
       @media (max-width: 600px) {
         .event-alert-banner {
           flex-direction: column;
@@ -237,13 +243,21 @@
           top: 10px;
           right: 10px;
         }
+
+        .navbar {
+          top: 90px !important;
+        }
+
+        .hero {
+          padding-top: 220px !important;
+        }
       }
     </style>
     <div class="event-alert-banner" id="eventAlertBanner">
       <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>
       <a href="#events" class="event-alert-btn">View Details</a>
       <button class="event-alert-close" aria-label="Dismiss Alert"
-        onclick="document.getElementById('eventAlertBanner').style.display='none'">&times;</button>
+        onclick="document.getElementById('eventAlertBanner').style.display='none'; document.querySelector('.navbar').style.top='0px';">&times;</button>
     </div>
 
     <!-- ══════════════════════════════
