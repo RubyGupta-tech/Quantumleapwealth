@@ -219,6 +219,25 @@
       .event-alert-close:hover {
         opacity: 1;
       }
+
+      @media (max-width: 600px) {
+        .event-alert-banner {
+          flex-direction: column;
+          font-size: 0.8rem;
+          padding: 15px 35px 15px 15px;
+          gap: 10px;
+        }
+
+        .event-alert-btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        .event-alert-close {
+          top: 10px;
+          right: 10px;
+        }
+      }
     </style>
     <div class="event-alert-banner" id="eventAlertBanner">
       <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>

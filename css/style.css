@@ -1466,6 +1466,22 @@ img {
     gap: 12px;
 }
 
+@media (max-width: 600px) {
+    .slide-services-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .slide-services-container {
+        padding: 15px;
+    }
+
+    .slide-service-box {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+}
+
 .slide-service-box {
     background: var(--primary);
     border: 1px solid rgba(255, 255, 255, 0.1);
