@@ -94,69 +94,50 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px 0 0;
-    /* No left padding to allow logo blue bg to hit edge */
-    height: 84px;
-    /* Slightly taller for better logo visibility */
+    padding: 0 24px 0 12px;
+    height: 80px;
+    position: relative;
 }
 
-/* ---- Brand / Logo ---- */
+/* ---- Brand / Logo — Transparent Sticker Style ---- */
 .navbar-brand {
     display: flex !important;
     align-items: center !important;
-    gap: 15px !important;
+    justify-content: center !important;
     text-decoration: none !important;
     flex-shrink: 0 !important;
-    background: #0a2540 !important;
-    /* Hardcoded Professional Navy Blue */
-    height: 64px !important;
-    /* Centered with top/bottom space */
-    padding: 0 35px 0 20px !important;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%) !important;
-    /* Elegant slanted edge */
-    margin-right: 15px !important;
-    border-radius: 0 4px 4px 0 !important;
-    /* Subtle rounding for a premium feel */
+    background: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin-right: 24px !important;
     position: relative !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
 }
 
 .brand-logo {
-    height: 58px !important;
-    /* Increased for readability */
+    height: 140px !important;
     width: auto !important;
+    max-width: 300px !important;
     object-fit: contain !important;
-    /* Original logo colors preserved */
-    margin-right: 12px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
 }
 
-.brand-text {
-    line-height: 1.15;
+.navbar-brand:hover .brand-logo {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 10px rgba(201, 168, 76, 0.4)) !important;
 }
 
-.brand-name {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(to right, transparent, var(--accent), transparent) 1;
-}
-
-.brand-name .brand-italic {
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    font-size: 0.72em;
-    color: var(--accent);
-}
-
+/* Hide brand text — logo image contains the name */
+.brand-text,
+.brand-name,
 .brand-tagline {
-    display: none;
+    display: none !important;
 }
 
 /* ---- Nav Menu ---- */
@@ -432,32 +413,16 @@
    ============================================================ */
 @media (max-width: 960px) {
     .navbar-inner {
-        padding: 0 16px 0 0;
-        /* Keep logo touching edge */
+        padding: 0 16px 0 8px;
     }
 
     .navbar-brand {
-        background: #0a2540 !important;
-        /* Force blue on mobile */
-        height: 56px !important;
-        /* Increased for mobile readability */
-        padding: 0 25px 0 16px !important;
-        clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%) !important;
-        margin-right: 10px !important;
-        border-radius: 0 4px 4px 0 !important;
+        margin-right: 8px !important;
     }
 
     .brand-logo {
-        height: 46px !important;
-        /* Increased for mobile readability */
-    }
-
-    .brand-name {
-        font-size: 1rem;
-    }
-
-    .brand-tagline {
-        font-size: 0.58rem;
+        height: 80px !important;
+        max-width: 180px !important;
     }
 
     .hamburger {
@@ -578,11 +543,8 @@
         padding: 0 16px;
     }
 
-    .brand-name {
-        font-size: 1rem;
-    }
-
-    .brand-tagline {
-        font-size: 0.56rem;
+    .brand-logo {
+        height: 60px !important;
+        max-width: 150px !important;
     }
 }
