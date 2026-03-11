@@ -99,46 +99,38 @@
     position: relative;
 }
 
-/* ---- Brand / Logo — Floating Sticker Style ---- */
+/* ---- Brand / Logo — Transparent Sticker Style ---- */
 .navbar-brand {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
     flex-shrink: 0 !important;
-
-    /* Remove background container so logo floats purely as a sticker */
-    background: transparent !important;
+    background: none !important;
     height: auto !important;
-    padding: 12px 24px !important;
+    padding: 0 !important;
     margin-right: 24px !important;
     position: relative !important;
     z-index: 10 !important;
-
-    border: none !important;
-    box-shadow: none !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 .brand-logo {
-    height: 120px !important;
-    /* Large and attractive */
+    height: 140px !important;
     width: auto !important;
-    max-width: 280px !important;
+    max-width: 300px !important;
     object-fit: contain !important;
     position: relative !important;
     z-index: 10 !important;
-    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) !important;
-    transition: transform 0.4s ease, filter 0.4s ease !important;
-}
-
-.navbar-brand:hover {
-    transform: translateY(4px);
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
 }
 
 .navbar-brand:hover .brand-logo {
-    transform: scale(1.04);
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 16px rgba(201, 168, 76, 0.4)) !important;
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 10px rgba(201, 168, 76, 0.4)) !important;
 }
 
 /* Hide brand text — logo image contains the name */
@@ -426,13 +418,10 @@
 
     .navbar-brand {
         margin-right: 8px !important;
-        padding: 8px 16px !important;
-        border-radius: 0 0 16px 16px !important;
     }
 
     .brand-logo {
-        height: 64px !important;
-        /* Smaller for mobile to prevent huge overlap */
+        height: 80px !important;
         max-width: 180px !important;
     }
 
