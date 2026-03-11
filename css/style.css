@@ -1619,6 +1619,10 @@ img {
 
     .hero {
         min-height: auto;
+        max-height: none;
+        /* Let the hero section expand to fit its content */
+        overflow: visible;
+        /* Ensure the slider isn't clipped */
         padding: 180px 0 60px;
         /* Greatly increased top padding so the text clears the banner and header */
     }
