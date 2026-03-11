@@ -1601,12 +1601,26 @@ img {
 
     .hero-slider-col {
         max-width: 100%;
-        margin-top: 20px;
+        margin-top: 30px;
+        min-height: 250px;
+        /* Reduced minimum height for mobile */
+    }
+
+    .dynamic-slider {
+        height: 280px;
+        /* Force a smaller height on mobile to prevent overflow */
+        border-radius: 12px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 1.3rem;
+        /* Smaller text on image overlays for mobile */
     }
 
     .hero {
         min-height: auto;
-        padding: 100px 0 80px;
+        padding: 120px 0 60px;
+        /* Adjusted padding to account for the new event banner and prevent top clipping */
     }
 
     .why-grid {
