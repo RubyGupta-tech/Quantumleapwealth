@@ -305,17 +305,37 @@
         z-index: 0;
         pointer-events: none;
       }
-      .orb-1 { width: 500px; height: 500px; background: rgba(201,168,76, 0.15); top: 10%; right: 40%; }
-      .orb-2 { width: 600px; height: 600px; background: rgba(56,189,248, 0.1); bottom: -10%; left: 30%; animation-delay: 2s; }
+
+      .orb-1 {
+        width: 500px;
+        height: 500px;
+        background: rgba(201, 168, 76, 0.15);
+        top: 10%;
+        right: 40%;
+      }
+
+      .orb-2 {
+        width: 600px;
+        height: 600px;
+        background: rgba(56, 189, 248, 0.1);
+        bottom: -10%;
+        left: 30%;
+        animation-delay: 2s;
+      }
 
       @keyframes floatOrb {
-        0% { transform: translate(0, 0) scale(1); }
-        100% { transform: translate(40px, -40px) scale(1.1); }
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+          transform: translate(40px, -40px) scale(1.1);
+        }
       }
 
       /* Premium Glassmorphism Data Card */
       .hero-glass-card {
-        background: 
+        background:
           linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85)),
           url('images/hero_prosperity.png') center/cover no-repeat;
         background-blend-mode: multiply;
@@ -323,22 +343,38 @@
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-top: 1px solid rgba(201, 168, 76, 0.2);
-        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255,255,255,0.02);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
         padding: 40px;
         border-radius: 20px;
         position: relative;
         overflow: hidden;
       }
-      
+
       .hero-glass-card::before {
         content: '';
         position: absolute;
-        top: 0; left: -100%; width: 50%; height: 100%;
-        background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.03), transparent);
         transform: skewX(-20deg);
         animation: glassShine 8s linear infinite 3s;
       }
-      @keyframes glassShine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
+
+      @keyframes glassShine {
+        0% {
+          left: -100%;
+        }
+
+        20% {
+          left: 200%;
+        }
+
+        100% {
+          left: 200%;
+        }
+      }
 
       /* Left Side Visual Design - Prosperity & Growth (Option 1) */
       .hero-bg-design-left {
@@ -1819,7 +1855,7 @@
     </script>
 
 
-    <section class="section" id="testimonials">
+    <!--<section class="section" id="testimonials">
       <div class="container">
         <div class="text-center reveal">
           <span class="section-label">Client Stories</span>
@@ -1866,7 +1902,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- ══════════════════════════════
      ABOUT US
@@ -2064,7 +2100,7 @@
         }
       }
     </style>
-    <section class="home-about" id="about-us">
+    <!--<section class="home-about" id="about-us">
       <div class="container">
         <div class="home-about-grid">
           <div class="home-about-content reveal">
@@ -2100,7 +2136,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- ══════════════════════════════
      BUSINESS OPPORTUNITY
