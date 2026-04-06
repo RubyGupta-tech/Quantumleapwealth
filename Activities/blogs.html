@@ -15,9 +15,9 @@
     <meta name="description"
         content="Read financial tips, wealth-building strategies, and community updates from the Quantum Leap Wealth team." />
 
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
-    <link rel="stylesheet" href="../../css/navbar.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
@@ -25,40 +25,21 @@
 
     <style>
         .page-hero {
-
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
-
-            padding: 60px 0 40px;
-
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('../images/blogs_bg_light_v2.png');
+            background-size: cover;
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
-            overflow: hidden
-        }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
 
 
 
         .page-hero-inner {
-
             position: relative;
-
             z-index: 1;
-
-            text-align: center
         }
 
 
@@ -95,69 +76,45 @@
 
 
         .page-hero h1 {
-
-            color: #fff;
-
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-
-            margin-bottom: 16px
+            color: var(--primary);
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            margin-bottom: 16px;
+            text-shadow: none;
+            line-height: 1.15;
         }
-
-
 
         .page-hero h1 .highlight {
-
-            color: var(--accent-light)
+            color: var(--accent-dark);
         }
 
-
-
         .page-hero-sub {
-
-            color: rgba(255, 255, 255, 0.65);
-
-            font-size: 1rem;
-
+            color: var(--text-dark);
+            font-size: 1.05rem;
             max-width: 600px;
-
-            margin: 0 auto;
-
-            line-height: 1.75
+            margin: 0 0 36px 0;
+            line-height: 1.75;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
+            font-size: 0.8rem;
+            color: var(--primary);
             margin-bottom: 16px;
-
-            justify-content: center
+            font-weight: 600;
         }
-
-
 
         .breadcrumb a {
-
-            color: var(--accent-light);
-
-            text-decoration: none
+            color: var(--text-muted);
+            text-decoration: none;
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border);
         }
 
 
@@ -250,6 +207,78 @@
 
 
 
+        /* Subscription Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            width: 95%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .modal-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         .blog-layout {
 
             display: grid;
@@ -266,61 +295,46 @@
         /* Featured / hero post */
 
         .blog-featured {
-
-            background: #fff;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            border: 1px solid var(--border);
-
-            margin-bottom: 32px;
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
-            min-height: 300px;
-
-            transition: box-shadow 0.25s
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s ease;
         }
-
-
 
         .blog-featured:hover {
-
-            box-shadow: 0 16px 50px rgba(4, 17, 31, 0.1)
+            box-shadow: var(--shadow-lg);
         }
 
-
-
+        .blog-featured-cta {
+            margin-top: auto;
+            padding-top: 20px;
+        }
         .blog-featured-img {
-
-            background: linear-gradient(145deg, #eef2f8, #dde4ef);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 4rem;
-
-            min-height: 280px
+            height: 100%;
+            overflow: hidden;
         }
 
+        .blog-featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
+        .blog-featured:hover .blog-featured-img img {
+            transform: scale(1.05);
+        }
 
-        .blog-featured-body {
-
-            padding: 36px 32px;
-
+        .blog-featured-content {
+            padding: 40px 48px;
             display: flex;
-
             flex-direction: column;
-
-            justify-content: center
+            justify-content: center;
         }
 
 
@@ -1003,102 +1017,7 @@
 
     <!-- NAVBAR -->
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item active" role="menuitem"
-                         aria-current="page"><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -1111,30 +1030,27 @@
         <!-- HERO -->
 
         <section class="page-hero">
-
             <div class="container">
-
                 <div class="page-hero-inner">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span style="color:var(--primary)">Media & Blog</span></div>
+                    <div class="page-hero-badge">✍️ Media Insights</div>
+                    <h1>Financial <span class="highlight">Insights</span></h1>
+                    <p class="page-hero-sub">Read our latest wealth-building strategies, actionable financial tips, and community media updates from the experts.</p>
+                </div>
+            </div>
+        </section>
 
-                    <nav class="activities-tabs">
+        <!-- ACTIVITY TABS -->
+        <nav class="activities-tabs">
+            <div class="activities-tabs-inner">
+                <a href="Photos.html" class="act-tab">📸 Photos</a>
+                <a href="videos.html" class="act-tab">🎥 Videos</a>
+                <a href="blogs.html" class="act-tab active">✍️ Blog</a>
+            </div>
+        </nav>
 
-                        <div class="activities-tabs-inner">
-
-                            <a href="Photos.html" class="act-tab">📸 Photos</a>
-
-                            <a href="videos.html" class="act-tab">🎥 Videos</a>
-
-                            <a href="blogs.html" class="act-tab active">✍️ Blog</a>
-
-                        </div>
-
-                    </nav>
-
-
-
-                    <!-- BLOG CONTENT -->
-
-                    <section class="blog-section">
+        <!-- BLOG CONTENT -->
+        <section class="blog-section">
 
                         <div class="container">
 
@@ -1151,38 +1067,19 @@
                                     <!-- Featured placeholder -->
 
                                     <div class="blog-featured reveal">
-
-                                        <div class="blog-featured-img"
-                                            style="background-image: url('../images/will-vs-trust.jpg'); background-size: 100% 100%; background-repeat: no-repeat; background-position: center; min-height: 280px; display: block;">
+                                        <div class="blog-featured-img">
+                                            <a href="life-insurance-safety-net.html" style="width:100%; height:100%; display:block;">
+                                                <img src="../images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net" style="width:100%; height:450px; object-fit:cover;" />
+                                            </a>
                                         </div>
-
-                                        <div class="blog-featured-body">
-
-                                            <span class="blog-tag">Estate Planning</span>
-
-                                            <div class="blog-featured-title">Will vs. Trust: What Do You Really Need?
+                                        <div class="blog-featured-content">
+                                            <div class="blog-tag">Featured Post</div>
+                                            <h2 class="blog-featured-title">Why Life Insurance Is Your Family's Safety Net</h2>
+                                            <p class="blog-featured-excerpt">Discover why life insurance is one of the most important financial foundations for your family's future, providing immediate protection and long-term peace of mind.</p>
+                                            <div class="blog-featured-cta">
+                                                <a href="life-insurance-safety-net.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                             </div>
-
-                                            <p class="blog-featured-excerpt">A comprehensive breakdown of the
-                                                differences between a Last Will & Testament and a Revocable Living Trust
-                                                — and why skipping probate court is crucial for your family.</p>
-
-                                            <div class="blog-featured-meta">
-
-                                                <span>📅 February 2026</span>
-
-                                                <span>⏱ 5 min read</span>
-
-                                                <span>✍️ Estate Planning Team</span>
-
-                                            </div>
-
-                                            <a href="will-vs-trust.html" class="btn btn-primary"
-                                                style="margin-top: 20px; text-decoration: none; display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff; font-weight: bold; border-radius: 6px; width: fit-content;">Read
-                                                Article</a>
-
                                         </div>
-
                                     </div>
 
 
@@ -1200,207 +1097,101 @@
 
                                             tax strategies, and more. Check back soon!</p>
 
-                                        <a href="../../contact/contact.html" class="btn btn-primary">Get Notified When
-                                            We Post</a>
+                                        <button id="openModalBtn" class="btn btn-primary" style="border:none; cursor:pointer">Get Notified When We Post</button>
 
                                     </div>
 
 
 
                                     <!-- Placeholder post grid -->
-
-                                    <div class="blog-grid">
-
-
-
-                                        <div class="blog-card reveal">
-
-                                            <div class="blog-card-img">💰<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">Investment</span>
-
-                                                <div class="blog-card-title">5 Investment Strategies Every Beginner
-                                                    Should Know
-
-                                                </div>
-
-                                                <p class="blog-card-excerpt">Essential investment basics to help you
-                                                    start your
-
-                                                    wealth-building journey the right way.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
-                                                </div>
-
+                                    <!-- BLOG_GRID_START -->
+                                    <div class="blog-grid" id="blogGrid">
+                                        <div class="blog-card reveal" style="display:flex; flex-direction:column;">
+                                            <div class="blog-card-img">
+                                                <a href="life-insurance-safety-net.html">
+                                                    <img src="../images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                </a>
                                             </div>
-
-                                        </div>
-
-
-
-                                        <div class="blog-card reveal reveal-delay-1">
-
-                                            <div class="blog-card-img">🛡️<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">Insurance</span>
-
-                                                <div class="blog-card-title">Why Life Insurance Is Your Family's Safety
-                                                    Net</div>
-
-                                                <p class="blog-card-excerpt">Understanding the types of life insurance
-                                                    and choosing
-
-                                                    the right coverage for your loved ones.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
+                                            <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
+                                                <div class="blog-card-meta" style="margin-bottom: 10px; font-size: 0.85rem; color: #666;">
+                                                    <span>Mar 19, 2026</span>
+                                                    <span>•</span>
+                                                    <span>2 min read</span>
                                                 </div>
-
-                                            </div>
-
-                                        </div>
-
-
-
-                                        <div class="blog-card reveal reveal-delay-2">
-
-                                            <div class="blog-card-img">🏖️<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">Retirement</span>
-
-                                                <div class="blog-card-title">How to Retire Comfortably Before 60</div>
-
-                                                <p class="blog-card-excerpt">A step-by-step roadmap to early retirement
-                                                    through
-
-                                                    smart saving, investing, and planning.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
+                                                <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
+                                                    <a href="life-insurance-safety-net.html" style="text-decoration: none; color: inherit;">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a>
+                                                </h3>
+                                                <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
+                                                <div style="margin-top:auto">
+                                                    <a href="life-insurance-safety-net.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
-
                                             </div>
-
                                         </div>
-
-
-
-                                        <div class="blog-card reveal">
-
-                                            <div class="blog-card-img">📋<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">Estate Planning</span>
-
-                                                <div class="blog-card-title">Living Will &amp; Trust — What Every Family
-                                                    Needs</div>
-
-                                                <p class="blog-card-excerpt">Why a proper estate plan protects your
-                                                    family and
-
-                                                    ensures your wishes are always honored.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
+                                        <div class="blog-card reveal" style="display:flex; flex-direction:column;">
+                                            <div class="blog-card-img">
+                                                <a href="retire-comfortably-before-60.html">
+                                                    <img src="../images/retirement_hero.png" alt="How to Retire Comfortably Before 60 — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                </a>
+                                            </div>
+                                            <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
+                                                <div class="blog-card-meta" style="margin-bottom: 10px; font-size: 0.85rem; color: #666;">
+                                                    <span>Mar 19, 2026</span>
+                                                    <span>•</span>
+                                                    <span>2 min read</span>
                                                 </div>
-
-                                            </div>
-
-                                        </div>
-
-
-
-                                        <div class="blog-card reveal reveal-delay-1">
-
-                                            <div class="blog-card-img">🎓<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">College Planning</span>
-
-                                                <div class="blog-card-title">Start Saving for College When Your Child Is
-                                                    Born</div>
-
-                                                <p class="blog-card-excerpt">The power of starting early with 529 plans
-                                                    and other
-
-                                                    education savings strategies.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
+                                                <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
+                                                    <a href="retire-comfortably-before-60.html" style="text-decoration: none; color: inherit;">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a>
+                                                </h3>
+                                                <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Here are three essential steps to position yourself for a comfortable early retirement....</p>
+                                                <div style="margin-top:auto">
+                                                    <a href="retire-comfortably-before-60.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
-
                                             </div>
-
                                         </div>
-
-
-
-                                        <div class="blog-card reveal reveal-delay-2">
-
-                                            <div class="blog-card-img">💸<span class="blog-coming-badge"
-                                                    style="position:absolute;top:10px;right:10px">Soon</span></div>
-
-                                            <div class="blog-card-body">
-
-                                                <span class="blog-tag">Tax Strategy</span>
-
-                                                <div class="blog-card-title">Legal Ways to Reduce Your Tax Bill Every
-                                                    Year</div>
-
-                                                <p class="blog-card-excerpt">Smart tax-saving strategies used by
-                                                    high-net-worth
-
-                                                    individuals that every family can apply.</p>
-
-                                                <div class="blog-card-meta">
-
-                                                    <span>📅 Coming soon</span>
-
-                                                    <a href="#" class="blog-read-more">Read More →</a>
-
+                                        <div class="blog-card reveal" style="display:flex; flex-direction:column;">
+                                            <div class="blog-card-img">
+                                                <a href="start-saving-college.html">
+                                                    <img src="../images/college_saving_hero.png" alt="Start Saving for College When Your Child Is Born — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                </a>
+                                            </div>
+                                            <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
+                                                <div class="blog-card-meta" style="margin-bottom: 10px; font-size: 0.85rem; color: #666;">
+                                                    <span>Mar 19, 2026</span>
+                                                    <span>•</span>
+                                                    <span>2 min read</span>
                                                 </div>
-
+                                                <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
+                                                    <a href="start-saving-college.html" style="text-decoration: none; color: inherit;">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a>
+                                                </h3>
+                                                <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
+                                                <div style="margin-top:auto">
+                                                    <a href="start-saving-college.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                </div>
                                             </div>
-
                                         </div>
-
-
-
-                                    </div><!-- /blog-grid -->
+                                        <div class="blog-card reveal" style="display:flex; flex-direction:column;">
+                                            <div class="blog-card-img">
+                                                <a href="will-vs-trust.html">
+                                                    <img src="../images/will_vs_trust_hero.png" alt="Will vs. Trust: What Do I Need? — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                </a>
+                                            </div>
+                                            <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
+                                                <div class="blog-card-meta" style="margin-bottom: 10px; font-size: 0.85rem; color: #666;">
+                                                    <span>Mar 19, 2026</span>
+                                                    <span>•</span>
+                                                    <span>2 min read</span>
+                                                </div>
+                                                <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
+                                                    <a href="will-vs-trust.html" style="text-decoration: none; color: inherit;">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a>
+                                                </h3>
+                                                <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
+                                                <div style="margin-top:auto">
+                                                    <a href="will-vs-trust.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- BLOG_GRID_END -->
 
                                 </div><!-- /main col -->
 
@@ -1420,10 +1211,10 @@
 
                                         <div style="display:flex;gap:8px">
 
-                                            <input type="text" placeholder="Search blog..."
+                                            <input type="text" id="blogSearchInput" placeholder="Search blog..."
                                                 style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.83rem;outline:none" />
 
-                                            <button
+                                            <button id="blogSearchBtn"
                                                 style="background:var(--accent);color:#fff;border:none;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:700">→</button>
 
                                         </div>
@@ -1482,23 +1273,15 @@
                                     <!-- Recent (placeholder) -->
 
                                     <div class="sidebar-card">
-
                                         <h3>🕐 Recent Posts</h3>
-
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
-
-                                            <li><a href="#">Smart Financial Planning for 2025</a><span>Coming
-                                                    soon</span></li>
-
-                                            <li><a href="#">Why Life Insurance Matters</a><span>Coming soon</span></li>
-
-                                            <li><a href="#">How to Retire Before 60</a><span>Coming soon</span></li>
-
-                                            <li><a href="#">Living Will &amp; Trust Guide</a><span>Coming soon</span>
-                                            </li>
-
+                                            <!-- SIDEBAR_RECENT_START -->
+                                            <li><a href="life-insurance-safety-net.html">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="retire-comfortably-before-60.html">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="start-saving-college.html">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="will-vs-trust.html">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <!-- SIDEBAR_RECENT_END -->
                                         </ul>
-
                                     </div>
 
 
@@ -1609,7 +1392,256 @@
 
 
 
-    <script src="../../js/main.js"></script>
+    <!-- Subscription Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Never Miss an Update</h2>
+                <p>Sign up to receive instant email notifications whenever we publish new financial insights and wealth-building strategies.</p>
+            </div>
+            <form id="modalSignupForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="modalName" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="modalEmail" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                    <input type="checkbox" id="modalConsent" name="consent" required style="width: auto; margin: 0;">
+                    <label for="modalConsent" style="font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+                        I agree to receive blog update notifications via email.
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                    Subscribe Now
+                </button>
+            </form>
+            <div id="modalSuccessMsg" style="display:none; text-align:center; padding: 20px;">
+                <div style="font-size: 3rem; margin-bottom: 20px;">🎉</div>
+                <h3 style="color: var(--primary); margin-bottom: 10px;">You're Subscribed!</h3>
+                <p>Thank you for joining our community. You'll be the first to know when we post new content.</p>
+                <button class="btn btn-outline" id="closeSuccessBtn" style="margin-top: 20px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification logic -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("2PSwxHV81J7_l7Nsm");
+        })();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('signupModal');
+            const openBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.querySelector('.close-modal');
+            const signupForm = document.getElementById('modalSignupForm');
+            const successMsg = document.getElementById('modalSuccessMsg');
+            const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+
+            // Open modal
+            if (openBtn) {
+                openBtn.onclick = function() {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scroll
+                }
+            }
+
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                // Reset form on close
+                setTimeout(() => {
+                    signupForm.style.display = 'block';
+                    successMsg.style.display = 'none';
+                    signupForm.reset();
+                }, 300);
+            }
+
+            if (closeBtn) closeBtn.onclick = closeModal;
+            if (closeSuccessBtn) closeSuccessBtn.onclick = closeModal;
+
+            // Close on outside click
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+
+            // Form submission via EmailJS
+            if (signupForm) {
+                signupForm.onsubmit = async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = signupForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Subscribing...';
+
+                    const SERVICE_ID = 'service_7bd9xhg';
+                    const ADMIN_TEMPLATE_ID = 'template_8bopej4';
+                    
+                    // Add hidden fields for EmailJS template expectation
+                    const userNameHidden = document.createElement('input');
+                    userNameHidden.type = 'hidden';
+                    userNameHidden.name = 'user_name';
+                    userNameHidden.value = document.getElementById('modalName').value;
+                    signupForm.appendChild(userNameHidden);
+
+                    // Add 'user_email' for template
+                    const userEmailHidden = document.createElement('input');
+                    userEmailHidden.type = 'hidden';
+                    userEmailHidden.name = 'user_email';
+                    userEmailHidden.value = document.getElementById('modalEmail').value;
+                    signupForm.appendChild(userEmailHidden);
+
+                    const serviceHidden = document.createElement('input');
+                    serviceHidden.type = 'hidden';
+                    serviceHidden.name = 'service';
+                    serviceHidden.value = 'Blog Subscription (Modal)';
+                    signupForm.appendChild(serviceHidden);
+
+                    const messageHidden = document.createElement('input');
+                    messageHidden.type = 'hidden';
+                    messageHidden.name = 'message';
+                    messageHidden.value = 'User subscribed to blog notifications via the blog page modal.';
+                    signupForm.appendChild(messageHidden);
+
+                    try {
+                        await emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, signupForm);
+                        signupForm.style.display = 'none';
+                        successMsg.style.display = 'block';
+                    } catch (error) {
+                        console.error('EmailJS Error:', error);
+                        alert('Oops! There was a problem. Please try again later.');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script src="../js/main.js?v=2"></script>
+
+    <script>
+        // --- Blog Search Functionality ---
+        const searchInput = document.getElementById('blogSearchInput');
+        const searchBtn = document.getElementById('blogSearchBtn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const featuredPost = document.querySelector('.blog-featured');
+        const recentItems = document.querySelectorAll('.sidebar-recent li');
+        const comingStrip = document.querySelector('.blog-coming-strip');
+        const blogGrid = document.getElementById('blogGrid');
+        
+        // Add a "No Results" message container if it doesn't exist
+        let noResultsMsg = document.getElementById('searchNoResults');
+        if (!noResultsMsg && blogGrid) {
+            noResultsMsg = document.createElement('div');
+            noResultsMsg.id = 'searchNoResults';
+            noResultsMsg.style.display = 'none';
+            noResultsMsg.style.padding = '40px 20px';
+            noResultsMsg.style.textAlign = 'center';
+            noResultsMsg.style.gridColumn = '1 / -1';
+            noResultsMsg.innerHTML = '<h3 style="color:#666">No articles found matching your search.</h3><p style="color:#888">Try different keywords or browse our topics.</p>';
+            blogGrid.appendChild(noResultsMsg);
+        }
+
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            let matchesFound = 0;
+            
+            // Filter grid cards
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(query) || excerpt.includes(query)) {
+                    card.style.display = 'flex';
+                    matchesFound++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Filter featured post
+            let featuredMatch = false;
+            if (featuredPost) {
+                const fTitle = featuredPost.querySelector('.blog-featured-title').textContent.toLowerCase();
+                const fExcerpt = featuredPost.querySelector('.blog-featured-excerpt').textContent.toLowerCase();
+                
+                if (fTitle.includes(query) || fExcerpt.includes(query)) {
+                    featuredPost.style.display = 'flex';
+                    featuredMatch = true;
+                    matchesFound++;
+                } else {
+                    featuredPost.style.display = 'none';
+                }
+            }
+
+            // Filter sidebar recent items
+            recentItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Hide/Show "Coming Soon" strip based on query
+            if (comingStrip) {
+                // Hide it if we are searching (unless we have 0 matches and want it as a fallback)
+                if (query.length > 0) {
+                    comingStrip.style.display = 'none';
+                } else {
+                    comingStrip.style.display = 'block';
+                }
+            }
+
+            // Show "No Results" if needed
+            if (noResultsMsg) {
+                if (query.length > 0 && matchesFound === 0) {
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+        }
+
+        if (searchBtn && searchInput) {
+            // Force a search on click (provide feedback)
+            searchBtn.addEventListener('click', () => {
+                searchBtn.style.opacity = '0.7';
+                setTimeout(() => searchBtn.style.opacity = '1', 100);
+                performSearch();
+            });
+
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') performSearch();
+            });
+            
+            // Search as typing
+            searchInput.addEventListener('input', performSearch);
+        }
+
+        // --- Topic Tag Filtering ---
+        const topicTags = document.querySelectorAll('.topic-tag');
+        topicTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const topic = tag.textContent.trim();
+                searchInput.value = topic;
+                performSearch();
+                // Scroll to results
+                document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 
 </body>
 

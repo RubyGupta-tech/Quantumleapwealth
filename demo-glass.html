@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 2 - Glassmorphism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-glass { 
+            height: 100vh; 
+            background: url('images/partners_bg_light.png') center/cover no-repeat;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+        }
+        .hero-glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.4); /* Dark overlay to make glass pop */
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            max-width: 750px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+        .floating-badge {
+            position: absolute; 
+            top: -20px; 
+            right: -20px;
+            background: #0f172a; 
+            color: #c9a84c;
+            padding: 12px 24px; 
+            border-radius: 50px;
+            font-weight: 800; 
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px -3px rgba(0,0,0,0.5);
+            border: 1px solid #c9a84c;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -1px; }
+        p { font-size: 1.15rem; color: #f8fafc; margin-bottom: 40px; line-height: 1.7; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .btn { 
+            padding: 18px 46px; 
+            background: #c9a84c; 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 700; 
+            border-radius: 50px; 
+            display: inline-block; 
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px -5px rgba(201, 168, 76, 0.4);
+        }
+        .btn:hover { background: #b0923b; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="hero-glass">
+        <div class="glass-panel">
+            <div class="floating-badge">★ FIDUCIARY EXCELLENCE</div>
+            <h1>Next-Generation<br>Wealth Architecture</h1>
+            <p>Quantum Leap Wealth delivers institutional-grade financial intelligence through an intimate, highly personalized advisory experience.</p>
+            <a href="#" class="btn">Explore The Platform</a>
+        </div>
+    </div>
+</body>
+</html>

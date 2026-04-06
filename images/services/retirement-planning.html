@@ -21,29 +21,14 @@
 
     <style>
         .page-hero {
-
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
-
-            padding: 80px 0 70px;
-
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('../../images/retirement_bg_light.png');
+            background-size: cover;
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
-            overflow: hidden
-        }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
 
 
@@ -68,98 +53,91 @@
 
 
         .page-hero h1 {
-
-            color: #fff;
-
+            color: var(--primary);
             font-size: clamp(2rem, 4vw, 3rem);
-
-            margin-bottom: 12px
+            margin-bottom: 12px;
+            text-shadow: none;
         }
 
 
 
         .page-hero p {
-
-            color: rgba(255, 255, 255, 0.68);
-
-            font-size: 1rem;
-
+            color: var(--text-dark);
+            font-size: 1.05rem;
             max-width: 560px;
-
-            line-height: 1.7
+            line-height: 1.7;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
-            margin-bottom: 14px
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+            font-weight: 600;
         }
 
 
 
         .breadcrumb a {
-
-            color: var(--accent-light);
-
+            color: var(--text-muted);
             text-decoration: none
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border)
         }
 
 
 
-        .page-hero-icon {
 
-            width: 100px;
 
-            height: 100px;
 
-            border-radius: 20px;
 
-            background: rgba(255, 255, 255, 0.06);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            display: flex;
-
+        /* ── Split Layout ── */
+        .content-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-
-            justify-content: center;
-
-            font-size: 3rem;
-
-            flex-shrink: 0
+            margin-bottom: 50px;
         }
 
+        .content-split.reverse {
+            margin-top: 50px;
+        }
 
+        .content-img-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .content-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        @media(max-width:800px) {
+            .content-split { grid-template-columns: 1fr; gap: 30px; }
+            .content-split.reverse .content-split-text { order: 2; }
+            .content-split.reverse .content-img-wrap { order: 1; }
+        }
 
         .service-layout {
-
             display: grid;
-
             grid-template-columns: 1fr 340px;
-
             gap: 40px;
-
             align-items: start;
-
-            padding: 70px 0
+            padding: 70px 0;
         }
 
 
@@ -715,102 +693,7 @@
 
     </div>
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../../index.html" class="navbar-brand">
-        <img src="../../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../../images/services/retirement-planning.html"
-                        class="dropdown-item active" role="menuitem"  aria-current="page"><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -840,10 +723,7 @@
 
                     </div>
 
-                    <div class="page-hero-icon">🏖️</div>
-
                 </div>
-
             </div>
 
         </section>
@@ -856,107 +736,71 @@
 
                 <div class="service-content">
 
-                    <h2>Build a Future You Can Count On</h2>
-
-                    <p>At Quantum Leap Wealth, retirement planning is not a one-size-fits-all formula. It's
-                        a deeply
-
-                        personal process that considers your desired lifestyle, income needs, health, family, and
-
-                        long-term legacy. We start building your retirement roadmap from wherever you are today —
-
-                        whether you're 30 years away or 3 years away from your retirement date.</p>
-
-                    <p>Our advisors help you navigate 401(k)s, IRAs, Social Security optimization, pension integration,
-
-                        and income drawdown strategies to ensure your money lasts as long as you do.</p>
-
-
-
-                    <h3>Retirement Planning Phases</h3>
-
-                    <div class="retire-phases">
-
-                        <div class="phase-card">
-
-                            <div class="phase-icon">🌱</div>
-
-                            <h4>Accumulation Phase</h4>
-
-                            <p>Building your retirement nest egg through disciplined saving, smart investing, and
-
-                                tax-advantaged accounts during your working years.</p>
-
+                    <!-- Block 1: Future Comfort -->
+                    <div class="content-split">
+                        <div class="content-split-text">
+                            <h2>Build a Future You Can Count On</h2>
+                            <p>At Quantum Leap Wealth, retirement planning is not a one-size-fits-all formula. It's a deeply personal process that considers your desired lifestyle, income needs, health, family, and long-term legacy. We start building your retirement roadmap from wherever you are today — whether you're 30 years away or 3 years away from your retirement date.</p>
+                            <p>Our advisors help you navigate 401(k)s, IRAs, Social Security optimization, pension integration, and income drawdown strategies to ensure your money lasts as long as you do.</p>
                         </div>
-
-                        <div class="phase-card">
-
-                            <div class="phase-icon">⚖️</div>
-
-                            <h4>Preservation Phase</h4>
-
-                            <p>As retirement nears, we shift focus to protecting what you've built, reducing risk
-
-                                exposure, and locking in gains.</p>
-
+                        <div class="content-img-wrap">
+                            <img src="../../images/retire_future_light.png" alt="Retirement Future Wealth and Comfort" />
                         </div>
-
-                        <div class="phase-card">
-
-                            <div class="phase-icon">💸</div>
-
-                            <h4>Distribution Phase</h4>
-
-                            <p>A smart income drawdown plan ensures your money flows to you tax-efficiently for decades
-
-                                without running out.</p>
-
-                        </div>
-
                     </div>
 
 
 
-                    <h3>What We Cover</h3>
-
-                    <div class="feature-list">
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>401(k) &amp; IRA Optimization</span>
-
+                    <!-- Block 2: Planning Phases -->
+                    <div class="content-split" style="align-items: flex-start;">
+                        <div class="content-img-wrap" style="position: sticky; top: 120px;">
+                            <img src="../../images/retire_phases_light.png" alt="Retirement Strategy Roadmap Target" style="aspect-ratio: 3/4;" />
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Social Security Timing Strategy</span>
-
+                        <div class="content-split-text">
+                            <h3>Retirement Planning Phases</h3>
+                            <div class="retire-phases" style="grid-template-columns: 1fr;">
+                                <div class="phase-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="phase-icon" style="margin-bottom: 0;">🌱</div>
+                                    <div>
+                                        <h4>Accumulation Phase</h4>
+                                        <p>Building your retirement nest egg through disciplined saving, smart investing, and tax-advantaged accounts during your working years.</p>
+                                    </div>
+                                </div>
+                                <div class="phase-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="phase-icon" style="margin-bottom: 0;">⚖️</div>
+                                    <div>
+                                        <h4>Preservation Phase</h4>
+                                        <p>As retirement nears, we shift focus to protecting what you've built, reducing risk exposure, and locking in gains.</p>
+                                    </div>
+                                </div>
+                                <div class="phase-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="phase-icon" style="margin-bottom: 0;">💸</div>
+                                    <div>
+                                        <h4>Distribution Phase</h4>
+                                        <p>A smart income drawdown plan ensures your money flows to you tax-efficiently for decades without running out.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="feature-item">
 
-                            <div class="feature-check">✓</div><span>Pension &amp; Annuity Integration</span>
 
+                    <!-- Block 3: Coverage -->
+                    <div class="content-split">
+                        <div class="content-split-text">
+                            <h3>What We Cover</h3>
+                            <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
+                                <div class="feature-item"><div class="feature-check">✓</div><span>401(k) &amp; IRA Optimization</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Social Security Timing Strategy</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Pension &amp; Annuity Integration</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Healthcare &amp; Long-Term Care Planning</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Inflation-Proof Income Strategies</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Legacy &amp; Estate Planning Integration</span></div>
+                            </div>
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Healthcare &amp; Long-Term Care Planning</span>
-
+                        <div class="content-img-wrap" style="position: sticky; top: 120px;">
+                            <img src="../../images/retire_coverage_light.png" alt="Comprehensive Retirement Shield" style="aspect-ratio: 3/4;" />
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Inflation-Proof Income Strategies</span>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Legacy &amp; Estate Planning Integration</span>
-
-                        </div>
-
                     </div>
 
                     <div class="info-box">
@@ -1008,7 +852,6 @@
                         <div class="sidebar-card-body">
 
                             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
-
                                 Let's start building your retirement roadmap today.</p>\n<form id="contact-form" onsubmit="handleSubmit(event)">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
                                 <div><label style="font-size:0.8rem; font-weight:700;">First Name *</label><input type="text" name="first_name" required placeholder="First name" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" /></div>
@@ -1032,6 +875,7 @@
                                     <option>Retirement Planning</option>
                                     <option>Kids College Fund</option>
                                     <option>Life Insurance</option>
+                                    <option>Blog Updates Subscription</option>
                                     <option>General Inquiry</option>
                                 </select>
                             </div>
@@ -1176,7 +1020,13 @@
     </div>
 </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>\n    <script type="text/javascript">\n        (function() {\n            emailjs.init("2PSwxHV81J7_l7Nsm");\n        })();\n    </script>\n    <script src="../../js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("2PSwxHV81J7_l7Nsm");
+        })();
+    </script>
+    <script src="../../js/main.js?v=2"></script>
 
 </body>
 

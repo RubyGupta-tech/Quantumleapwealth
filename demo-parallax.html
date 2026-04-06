@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 3 - Cinematic Parallax</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; background: #000; }
+        .hero-cinema { 
+            height: 100vh; 
+            position: relative; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .bg-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('images/partners_bg_light.png') center/cover no-repeat;
+            /* The Ken Burns elegant slow zoom effect */
+            animation: kenburns 25s ease-out forwards;
+            z-index: 1;
+        }
+        .overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.4));
+            z-index: 2;
+        }
+        .content {
+            position: relative; z-index: 3; text-align: center; color: white;
+            opacity: 0; 
+            animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+            max-width: 900px; padding: 0 20px;
+        }
+        h1 { font-size: 5rem; line-height: 1.05; margin-bottom: 24px; font-weight: 800; letter-spacing: -2px; }
+        h1 span { color: transparent; -webkit-text-stroke: 1px #c9a84c; font-weight: 800; }
+        p { font-size: 1.25rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; display: inline-block; max-width: 600px; }
+        .btn { 
+            padding: 18px 46px; 
+            background: transparent; 
+            color: #c9a84c; 
+            text-decoration: none; 
+            font-weight: 700; 
+            border-radius: 50px; 
+            border: 2px solid #c9a84c; 
+            transition: all 0.4s; 
+            display: inline-block;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+        .btn:hover { background: #c9a84c; color: white; transform: translateY(-3px); box-shadow: 0 15px 30px -10px rgba(201, 168, 76, 0.5); }
+        
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="hero-cinema">
+        <div class="bg-img"></div>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Master Your<br><span>Financial Destiny</span></h1>
+            <br>
+            <p>Quantum Leap Wealth offers elite, highly-curated advisory intelligence designed exclusively for the modern investor.</p>
+            <br>
+            <a href="#" class="btn">Step Inside</a>
+        </div>
+    </div>
+</body>
+</html>

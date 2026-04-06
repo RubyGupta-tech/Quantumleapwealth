@@ -71,15 +71,14 @@
 
 /* ---- Main Navbar ---- */
 .navbar {
-    position: sticky !important;
-    top: 0 !important;
-    width: 100% !important;
-    z-index: 9999 !important;
-    background: #ffffff;
-    /* Clean White Background */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #ffffff; /* Clean White Background */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: background 0.3s, box-shadow 0.3s;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(10, 37, 64, 0.05);
 }
 
 .navbar.scrolled {
@@ -89,58 +88,103 @@
 }
 
 .navbar-inner {
-    max-width: 1240px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px 0 12px;
+    padding: 0 40px 0 20px;
     height: 80px;
     position: relative;
 }
 
-/* ---- Brand / Logo — Transparent Sticker Style ---- */
+/* ---- Brand / Logo Block (Default/Desktop) ---- */
 .navbar-brand {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    flex-shrink: 0 !important;
-    background: none !important;
-    height: auto !important;
-    padding: 0 !important;
-    margin-right: 24px !important;
-    position: relative !important;
-    z-index: 10 !important;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    height: auto;
+    padding: 0;
+    margin-right: 20px;
+    position: relative;
+    z-index: 10;
+    gap: 12px;
 }
 
 .brand-logo {
-    height: 140px !important;
-    width: auto !important;
-    max-width: 300px !important;
-    object-fit: contain !important;
-    position: relative !important;
-    z-index: 10 !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) !important;
-    transition: transform 0.3s ease, filter 0.3s ease !important;
+    height: 70px;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.01em;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+/* Golden Fade Underline for Text */
+.brand-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.brand-wealth {
+    font-size: 0.65em;
+    color: var(--accent);
+    font-weight: 800;
+    margin-left: 6px;
+    transition: color 0.3s ease;
+}
+
+/* Brand Hover Interaction */
+.navbar-brand:hover .brand-text {
+    color: var(--accent-dark);
+}
 .navbar-brand:hover .brand-logo {
-    transform: scale(1.05);
-    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 10px rgba(201, 168, 76, 0.4)) !important;
+    transform: scale(1.02);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
 }
 
-/* Hide brand text — logo image contains the name */
-.brand-text,
-.brand-name,
-.brand-tagline {
+/* Legacy Visibility Cleanup */
+.brand-name, .brand-tagline { display: none !important; }
+
+/* Mobile Side Nav Brand (Aggressively hidden on desktop) */
+.mobile-brand-container {
     display: none !important;
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+    background: #fafbfc;
 }
 
-/* ---- Nav Menu ---- */
+.mobile-brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+/* ---- Nav Menu (Desktop Style) ---- */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -154,177 +198,79 @@
     position: relative;
 }
 
-/* Nav Links */
 .nav-link {
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 8px 14px;
     color: var(--primary);
-    /* Navy links */
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
+    transition: all 0.2s;
     white-space: nowrap;
-    cursor: pointer;
-    position: relative;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 3px;
-    left: 14px;
-    right: 14px;
-    height: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-    transform: scaleX(0);
-    transition: transform 0.25s ease;
-    transform-origin: left;
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-dark);
+    background: rgba(10, 37, 64, 0.04);
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent-light);
-    /* Lighter gold for better visibility */
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    transform: scaleX(1);
-    background: var(--accent-light);
-}
-
-.nav-link:hover {
-    background: rgba(10, 37, 64, 0.08);
-    /* Slightly deeper hover bg */
-}
-
-/* Dropdown arrow icon */
 .nav-link .dd-arrow {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    transition: transform 0.25s;
-    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s;
     opacity: 0.7;
 }
 
-.nav-item.open>.nav-link .dd-arrow,
-.nav-item:hover>.nav-link .dd-arrow {
+.nav-item:hover > .nav-link .dd-arrow {
     transform: rotate(180deg);
-    opacity: 1;
 }
 
-/* ---- Dropdown ---- */
+/* ---- Dropdowns (Desktop Style) ---- */
 .dropdown {
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(10px);
     background: #ffffff;
     border-radius: 12px;
     min-width: 220px;
-    padding: 10px 6px;
-    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.12), 0 4px 16px rgba(10, 37, 64, 0.08);
-    border: 1px solid rgba(201, 168, 76, 0.15);
+    padding: 10px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    border: 1px solid rgba(201, 168, 76, 0.1);
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
-    list-style: none;
+    transition: all 0.25s cubic-bezier(.4, 0, .2, 1);
+    z-index: 100;
 }
 
-/* Arrow pointer on dropdown */
-.dropdown::before {
-    content: '';
-    position: absolute;
-    top: -7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 7px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    background: #ffffff;
-}
-
-.dropdown::after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 8px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    background: rgba(201, 168, 76, 0.25);
-    z-index: -1;
-}
-
-/* Show on hover/focus */
-.nav-item:hover>.dropdown,
-.nav-item.open>.dropdown {
+.nav-item:hover > .dropdown {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
     transform: translateX(-50%) translateY(0);
 }
 
-/* ---- Professional Dropdown Animation ---- */
-@keyframes dropdown-fade-in {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-.nav-item:hover .dropdown {
-    animation: dropdown-fade-in 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Wide dropdown for Services (2-col) */
 .dropdown.wide {
-    min-width: 420px;
+    min-width: 440px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 14px 10px;
+    gap: 5px;
 }
 
-/* Dropdown Items */
 .dropdown-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 9px 14px;
+    gap: 12px;
+    padding: 10px 14px;
     color: var(--primary);
     text-decoration: none;
-    font-size: 0.84rem;
+    font-size: 0.85rem;
     font-weight: 500;
     border-radius: 8px;
-    transition: background 0.18s, color 0.18s, padding-left 0.18s;
-    position: relative;
-}
-
-.dropdown-item .dd-icon {
-    width: 30px;
-    height: 30px;
-    background: rgba(201, 168, 76, 0.10);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-    transition: background 0.18s;
+    transition: all 0.2s;
 }
 
 .dropdown-item:hover {
@@ -333,218 +279,126 @@
     padding-left: 18px;
 }
 
-.dropdown-item:hover .dd-icon {
-    background: rgba(201, 168, 76, 0.22);
-}
-
 /* ---- CTA Button ---- */
 .btn-nav-cta {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 10px 22px;
+    gap: 8px;
+    padding: 10px 24px;
     background: linear-gradient(135deg, var(--accent), #b8922a);
     color: #fff !important;
-    font-size: 0.84rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
-    border-radius: 25px;
+    border-radius: 30px;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-    box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35);
-    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
 }
 
 .btn-nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(201, 168, 76, 0.48);
-    opacity: 0.93;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.45);
 }
 
-.btn-nav-cta::after {
-    display: none !important;
-}
-
-/* no underline */
-
-/* ---- Hamburger (Mobile) ---- */
+/* ---- Hamburger (Mobile Toggle) ---- */
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
     background: none;
     border: none;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.hamburger:hover {
-    background: rgba(10, 37, 64, 0.06);
+    z-index: 1001;
 }
 
 .hamburger span {
     display: block;
-    width: 24px;
-    height: 2.5px;
+    width: 25px;
+    height: 2px;
     background: var(--primary);
-    /* Navy for light bg */
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: all 0.3s;
 }
 
-.hamburger.open span:nth-child(1) {
-    transform: translateY(7.5px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-    transform: translateY(-7.5px) rotate(-45deg);
-}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   RESPONSIVE — MOBILE MENU
+   RESPONSIVE — BREAKPOINT: 960px
    ============================================================ */
 @media (max-width: 960px) {
     .navbar-inner {
-        padding: 0 16px 0 8px;
-    }
-
-    .navbar-brand {
-        margin-right: 8px !important;
-    }
-
-    .brand-logo {
-        height: 80px !important;
-        max-width: 180px !important;
+        padding: 0 16px;
     }
 
     .hamburger {
         display: flex;
-        margin-right: 16px;
-        position: relative;
-        z-index: 1001;
+    }
+
+    .mobile-brand-container {
+        display: block !important; /* Reveal in side nav only */
     }
 
     .nav-menu {
         position: fixed;
         inset: 0 0 0 auto;
-        width: 300px;
+        width: 320px;
         background: #ffffff;
-        /* Clean white mobile menu */
         flex-direction: column;
         align-items: stretch;
-        padding: 80px 0 30px;
+        padding: 90px 0 40px;
         gap: 0;
-        box-shadow: -6px 0 40px rgba(10, 37, 64, 0.1);
+        box-shadow: -10px 0 50px rgba(0,0,0,0.15);
         transform: translateX(100%);
-        transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         overflow-y: auto;
         z-index: 1000;
     }
 
     .nav-menu.open {
-        transform: none;
+        transform: translateX(0);
     }
 
     .nav-link {
-        padding: 13px 22px;
-        justify-content: space-between;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.05);
         border-radius: 0;
-        border-bottom: 1px solid rgba(10, 37, 64, 0.06);
+        justify-content: space-between;
     }
 
-    .nav-link::after {
-        display: none;
-    }
-
-    .dropdown,
-    .dropdown.wide {
+    .dropdown, .dropdown.wide {
         position: static;
-        transform: none !important;
-        animation: none !important;
+        display: none;
+        background: #fcfdfe;
         opacity: 1;
         visibility: visible;
-        pointer-events: auto;
+        transform: none;
         box-shadow: none;
         border: none;
-        border-radius: 0;
+        padding: 5px 0;
         min-width: 0;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
+        width: 100%;
+    }
+
+    .nav-item.active .dropdown {
         display: block;
-        background: rgba(10, 37, 64, 0.03);
-        transition: max-height 0.3s ease;
-    }
-
-    .dropdown::before,
-    .dropdown::after {
-        display: none;
-    }
-
-    .nav-item:hover .dropdown,
-    .nav-item.open>.dropdown {
-        transform: none !important;
-        animation: none !important;
-    }
-
-    .nav-item.open>.dropdown {
-        max-height: 600px;
-        padding: 6px 0;
-        visibility: visible;
-        opacity: 1;
     }
 
     .dropdown-item {
-        padding: 10px 36px;
+        padding: 12px 40px;
         border-radius: 0;
-        font-size: 0.83rem;
-    }
-
-    .dropdown-item:hover {
-        padding-left: 40px;
     }
 
     .btn-nav-cta {
-        margin: 16px 22px 0;
+        margin: 25px 24px 0;
         justify-content: center;
-    }
-
-    .nav-overlay {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        transition: opacity 0.3s;
-        pointer-events: none;
-        z-index: 999;
-    }
-
-    .nav-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
     }
 }
 
-@media (max-width: 540px) {
-    .topbar-left {
-        display: none;
-    }
-
-    .navbar-inner {
-        padding: 0 16px;
-    }
-
-    .brand-logo {
-        height: 60px !important;
-        max-width: 150px !important;
-    }
+@media (max-width: 480px) {
+    .brand-logo { height: 55px; }
+    .brand-text { font-size: 1.1rem; }
+    .nav-menu { width: 85%; }
 }

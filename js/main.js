@@ -5,89 +5,132 @@
 (function () {
   'use strict';
 
-  /* ---- Sticky Navbar scroll class ---- */
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 30);
-    }, { passive: true });
+  /* ---- Navbar Injection & Initialization ---- */
+  function injectNavbar() {
+    const placeholder = document.getElementById('navbar-placeholder');
+    if (!placeholder) {
+      // If no placeholder, try to initialize functions anyway (fallback)
+      initNavbarFunctions();
+      return;
+    }
+
+    // Calculate relative path depth
+    let depth = Math.max(0, window.location.pathname.split('/').filter(Boolean).length - 1);
+    // Explicitly handle root/index
+    const isIndex = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+    let rel = depth > 0 ? '../'.repeat(depth) : '';
+
+    fetch(rel + 'components/navbar.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Navbar fetch failed');
+        return response.text();
+      })
+      .then(html => {
+        placeholder.innerHTML = html.replace(/\{rel\}/g, rel);
+        initNavbarFunctions(); // Initialize interactivity after injection
+      })
+      .catch(err => console.error(err));
   }
 
-  /* ---- Hamburger / Mobile Menu ---- */
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  const overlay = document.querySelector('.nav-overlay');
+  function initNavbarFunctions() {
+    /* ---- Sticky Navbar scroll class ---- */
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
+      }, { passive: true });
+    }
 
-  function closeMenu() {
-    if (!hamburger) return;
-    hamburger.classList.remove('open');
-    navMenu && navMenu.classList.remove('open');
-    overlay && overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+    /* ---- Hamburger / Mobile Menu ---- */
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.nav-overlay');
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('open');
-      navMenu.classList.toggle('open', isOpen);
-      overlay && overlay.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-  }
-  overlay && overlay.addEventListener('click', closeMenu);
+    function closeMenu() {
+      if (!hamburger) return;
+      hamburger.classList.remove('open');
+      navMenu && navMenu.classList.remove('open');
+      overlay && overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-  /* ---- Mobile Dropdown Accordions ---- */
-  document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
-    const link = item.querySelector('.nav-link');
-    if (!link) return;
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        navMenu.classList.toggle('open', isOpen);
+        overlay && overlay.classList.toggle('active', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+    overlay && overlay.addEventListener('click', closeMenu);
 
-    link.addEventListener('click', function (e) {
-      // Only accordion on mobile
-      if (window.innerWidth > 960) return;
-      e.preventDefault();
-      const isOpen = item.classList.toggle('open');
-      // Close siblings
-      item.closest('.nav-menu').querySelectorAll('.nav-item.has-dropdown').forEach(sib => {
-        if (sib !== item) sib.classList.remove('open');
+    /* ---- Mobile Dropdown Accordions ---- */
+    document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (!link) return;
+
+      // Ensure we don't attach multiple listeners if re-initialized
+      const newLink = link.cloneNode(true);
+      link.parentNode.replaceChild(newLink, link);
+      
+      newLink.addEventListener('click', function (e) {
+        if (window.innerWidth > 960) return;
+        e.preventDefault();
+        const isOpen = item.classList.toggle('open');
+        item.closest('.nav-menu').querySelectorAll('.nav-item.has-dropdown').forEach(sib => {
+          if (sib !== item) sib.classList.remove('open');
+        });
       });
     });
-  });
 
-  /* ---- Close menu on nav link click (mobile) ---- */
-  navMenu && navMenu.querySelectorAll('.dropdown-item').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  /* ---- Close dropdown on outside click (desktop) ---- */
-  document.addEventListener('click', function (e) {
-    if (window.innerWidth <= 960) return;
-    document.querySelectorAll('.nav-item.has-dropdown.open').forEach(item => {
-      if (!item.contains(e.target)) item.classList.remove('open');
+    /* ---- Close menu on nav link click (mobile) ---- */
+    navMenu && navMenu.querySelectorAll('.dropdown-item').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
-  });
 
-  /* ---- Keyboard nav (Escape closes dropdowns) ---- */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
-      closeMenu();
-    }
-  });
-
-  /* ---- Active page highlight ---- */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
-    const href = link.getAttribute('href') || '';
-    if (href && (href === currentPath || href.endsWith('/' + currentPath))) {
-      link.classList.add('active');
-      // Also mark parent nav-item if dropdown child
-      const parent = link.closest('.nav-item');
-      if (parent) {
-        const parentLink = parent.querySelector(':scope > .nav-link');
-        if (parentLink) parentLink.classList.add('active');
+    /* ---- Active page highlight ---- */
+    const currentPaths = window.location.pathname.split('/').filter(Boolean);
+    const currentFile = currentPaths.pop() || 'index.html';
+    
+    document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      // Clean up href to just the filename for comparison
+      const linkFile = href.split('/').pop();
+      
+      if (linkFile && (linkFile === currentFile || (currentFile === '' && linkFile === 'index.html'))) {
+        link.classList.add('active');
+        const parent = link.closest('.nav-item');
+        if (parent) {
+          const parentLink = parent.querySelector(':scope > .nav-link');
+          if (parentLink) parentLink.classList.add('active');
+        }
       }
-    }
-  });
+    });
+
+    /* ---- Close dropdown on outside click (desktop) ---- */
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth <= 960) return;
+      document.querySelectorAll('.nav-item.has-dropdown.open').forEach(item => {
+        if (!item.contains(e.target)) item.classList.remove('open');
+      });
+    });
+
+    /* ---- Keyboard nav ---- */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
+        closeMenu();
+      }
+    });
+  }
+
+  // Start the process reliably
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectNavbar);
+  } else {
+    injectNavbar();
+  }
+
 
   /* ---- Scroll-reveal micro-animation ---- */
   if ('IntersectionObserver' in window) {
@@ -138,7 +181,9 @@ window.handleSubmit = function (e) {
     userNameHidden.name = 'user_name';
     form.appendChild(userNameHidden);
   }
-  userNameHidden.value = form.first_name.value + ' ' + form.last_name.value;
+  const firstName = form.first_name ? form.first_name.value : '';
+  const lastName = form.last_name ? form.last_name.value : '';
+  userNameHidden.value = (firstName + ' ' + lastName).trim();
 
   let timeHidden = form.querySelector('input[name="time"]');
   if (!timeHidden) {
@@ -178,3 +223,32 @@ window.handleSubmit = function (e) {
       alert("EmailJS Error: " + (error.text || error.message || JSON.stringify(error)));
     });
 };
+
+// --- SUBSCRIPTION MODAL LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('signupModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModal');
+
+    if (openBtn && modal) {
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+        });
+
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});

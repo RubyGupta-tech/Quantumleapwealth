@@ -26,13 +26,19 @@
     <style>
         .page-hero {
 
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+            background: linear-gradient(rgba(10, 37, 64, 0.82), rgba(10, 37, 64, 0.82)), url('../images/hero_activities_videos.png');
 
-            padding: 60px 0 40px;
+            background-size: cover;
+
+            background-position: center;
+
+            padding: 90px 0 70px; /* Increased padding for more visibility */
 
             position: relative;
 
-            overflow: hidden
+            overflow: hidden;
+
+            border-bottom: 3px solid var(--accent)
         }
 
 
@@ -457,9 +463,6 @@
             align-items: start
         }
 
-
-
-        .video-featured-info {}
 
 
 
@@ -929,102 +932,7 @@
 
     <!-- NAVBAR -->
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item active"
-                        role="menuitem"  aria-current="page"><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -1471,7 +1379,7 @@
 
 
 
-    <script src="../../js/main.js"></script>
+    <script src="../../js/main.js?v=2"></script>
 
     <script>
 

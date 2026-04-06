@@ -15,7 +15,7 @@
     <style>
         /* ── Page Hero ── */
         .page-hero {
-            background: linear-gradient(135deg, rgba(4, 17, 31, 0.8), rgba(10, 37, 64, 0.75), rgba(13, 58, 110, 0.7)),
+            background: linear-gradient(135deg, rgba(4, 17, 31, 0.4), rgba(10, 37, 64, 0.3), rgba(13, 58, 110, 0.3)),
                 url('../images/Home_page_QLW1.png');
             background-size: cover;
             background-position: center;
@@ -33,13 +33,15 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.4rem;
             margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Added for legibility against brighter background */
         }
 
         .page-hero p {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             max-width: 560px;
             margin: 0 auto;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Added for legibility against brighter background */
         }
 
         /* ── Resources Layout ── */
@@ -319,7 +321,7 @@
         .partner-card {
             background: #ffffff;
             border-radius: 12px;
-            padding: 24px;
+            padding: 18px;
             text-align: center;
             border: 1px solid rgba(10, 37, 64, 0.08);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
@@ -335,13 +337,27 @@
             border-color: #c9a84c;
         }
 
+        .partner-card h4 {
+            color: var(--primary, #0a2540);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .partner-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted, #6b7c8d);
+            line-height: 1.55;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
         .partner-card a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: rgba(201, 168, 76, 0.1);
             color: #b8922a;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             border-radius: 6px;
             text-decoration: none;
             border: 1px solid rgba(201, 168, 76, 0.3);
@@ -383,102 +399,7 @@
     </div>
 
     <!-- ── NAVBAR ── -->
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link active">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <!-- ── HERO ── -->
     <section class="page-hero">
@@ -693,111 +614,79 @@
                     </div>
 
                     <div class="partners-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px;">
 
                         <!-- Partner 1 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/American_product.png" alt="American Equity/National"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">American
-                            </h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Access top-tier annuities and life insurance products to secure your retirement income
-                                and
-                                protect your legacy.</p>
+                            <h4>American</h4>
+                            <p>Access top-tier annuities and life insurance products to secure your retirement income.</p>
                             <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
 
                         <!-- Partner 2 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/annexus_product.png" alt="Annexus"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Annexus
-                            </h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Explore innovative retirement solutions and smart market indices designed to protect and
-                                aggressively grow your wealth.</p>
+                            <h4>Annexus</h4>
+                            <p>Explore innovative retirement solutions designed to protect and aggressively grow your wealth.</p>
                             <a href="https://www.annexus.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
 
                         <!-- Partner 3 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/corebridge_product.png" alt="Corebridge Financial"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">
-                                Corebridge
-                                Financial</h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Benefit from comprehensive retirement and insurance solutions tailored for long-term
-                                financial
-                                stability and growth.</p>
-                            <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More
-                                →</a>
+                            <h4>Corebridge</h4>
+                            <p>Benefit from retirement and insurance solutions tailored for long-term stability.</p>
+                            <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
 
                         <!-- Partner 4 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/Fidelity_product.png" alt="Fidelity Investments"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">Fidelity
-                                Investments</h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Manage your investments with world-class brokerage, mutual funds, and holistic active
-                                wealth
-                                management services.</p>
+                            <h4>Fidelity</h4>
+                            <p>Manage your investments with world-class brokerage and holistic wealth management.</p>
                             <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
 
                         <!-- Partner 5 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">
-                                Nationwide</h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Protect your family and assets with industry-leading insurance and diverse retirement
-                                planning
-                                products.</p>
+                            <h4>Nationwide</h4>
+                            <p>Protect your family and assets with industry-leading insurance and diverse planning products.</p>
                             <a href="https://www.nationwide.com/" target="_blank" rel="noopener">Learn More →</a>
                         </div>
 
                         <!-- Partner 6 -->
                         <div class="partner-card">
                             <div
-                                style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
                                 <img src="../images/product_images/northamerican_product.png" alt="North American"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
-                            <h4 style="color: var(--primary, #0a2540); margin-bottom: 10px; font-size: 1.1rem;">North
-                                American
-                            </h4>
-                            <p
-                                style="font-size: 0.9rem; color: var(--text-muted, #6b7c8d); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-                                Secure your legacy with reliable life insurance and annuity products from a highly
-                                trusted and
-                                established provider.</p>
-                            <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More
-                                →</a>
+                            <h4>North American</h4>
+                            <p>Secure your legacy with reliable life insurance and annuity products from a trusted provider.</p>
+                            <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
                         </div>
 
                     </div>
@@ -873,6 +762,7 @@
 </footer>
 
     <!-- ── SCRIPTS ── -->
+    <script src="../js/main.js?v=2"></script>
     <script>
         // Accordion Toggle
         document.querySelectorAll('.calc-card-header').forEach(header => {

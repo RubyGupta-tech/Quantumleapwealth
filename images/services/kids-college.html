@@ -21,29 +21,14 @@
 
     <style>
         .page-hero {
-
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
-
-            padding: 80px 0 70px;
-
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('../../images/kids_college_bg_light_v2.png');
+            background-size: cover;
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
-            overflow: hidden
-        }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
 
 
@@ -68,98 +53,91 @@
 
 
         .page-hero h1 {
-
-            color: #fff;
-
+            color: var(--primary);
             font-size: clamp(2rem, 4vw, 3rem);
-
-            margin-bottom: 12px
+            margin-bottom: 12px;
+            text-shadow: none;
         }
 
 
 
         .page-hero p {
-
-            color: rgba(255, 255, 255, 0.68);
-
-            font-size: 1rem;
-
+            color: var(--text-dark);
+            font-size: 1.05rem;
             max-width: 560px;
-
-            line-height: 1.7
+            line-height: 1.7;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
-            margin-bottom: 14px
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+            font-weight: 600;
         }
 
 
 
         .breadcrumb a {
-
-            color: var(--accent-light);
-
+            color: var(--text-muted);
             text-decoration: none
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border)
         }
 
 
 
-        .page-hero-icon {
 
-            width: 100px;
 
-            height: 100px;
 
-            border-radius: 20px;
 
-            background: rgba(255, 255, 255, 0.06);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            display: flex;
-
+        /* ── Split Layout ── */
+        .content-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-
-            justify-content: center;
-
-            font-size: 3rem;
-
-            flex-shrink: 0
+            margin-bottom: 50px;
         }
 
+        .content-split.reverse {
+            margin-top: 50px;
+        }
 
+        .content-img-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .content-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        @media(max-width:800px) {
+            .content-split { grid-template-columns: 1fr; gap: 30px; }
+            .content-split.reverse .content-split-text { order: 2; }
+            .content-split.reverse .content-img-wrap { order: 1; }
+        }
 
         .service-layout {
-
             display: grid;
-
             grid-template-columns: 1fr 340px;
-
             gap: 40px;
-
             align-items: start;
-
-            padding: 70px 0
+            padding: 70px 0;
         }
 
 
@@ -713,102 +691,7 @@
 
     </div>
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../../index.html" class="navbar-brand">
-        <img src="../../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../../images/services/kids-college.html" class="dropdown-item active"
-                        role="menuitem"  aria-current="page"><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -838,10 +721,7 @@
 
                     </div>
 
-                    <div class="page-hero-icon">🎓</div>
-
                 </div>
-
             </div>
 
         </section>
@@ -854,119 +734,78 @@
 
                 <div class="service-content">
 
-                    <h2>Invest in Your Child's Brightest Future</h2>
-
-                    <p>College costs are rising every year — but with the right plan in place, you can fund your child's
-
-                        education without dipping into retirement savings, taking on debt, or compromising your
-
-                        financial goals. At Quantum Leap Wealth, we help families build college savings
-                        plans that are
-
-                        smart, tax-efficient, and flexible.</p>
-
-                    <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start
-
-                        planning.</p>
-
-
-
-                    <h3>College Savings Options We Help You Navigate</h3>
-
-                    <div class="plan-options">
-
-                        <div class="plan-card">
-
-                            <div class="plan-icon">🏫</div>
-
-                            <h4>529 College Savings Plan</h4>
-
-                            <p>The most popular college savings vehicle. Tax-free growth and withdrawals when used for
-
-                                qualified educational expenses — and available in every state.</p>
-
+                    <!-- Block 1: The Future -->
+                    <div class="content-split">
+                        <div class="content-split-text">
+                            <h2>Invest in Your Child's Brightest Future</h2>
+                            <p>College costs are rising every year — but with the right plan in place, you can fund your child's education without dipping into retirement savings, taking on debt, or compromising your financial goals. At Quantum Leap Wealth, we help families build college savings plans that are smart, tax-efficient, and flexible.</p>
+                            <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start planning.</p>
                         </div>
-
-                        <div class="plan-card">
-
-                            <div class="plan-icon">📊</div>
-
-                            <h4>Coverdell ESA</h4>
-
-                            <p>Education Savings Accounts offer tax-free growth with more flexible investment options,
-
-                                including K-12 educational expenses.</p>
-
+                        <div class="content-img-wrap">
+                            <img src="../../images/college_future_light.png" alt="Children Educational Future Options" />
                         </div>
-
-                        <div class="plan-card">
-
-                            <div class="plan-icon">💼</div>
-
-                            <h4>UGMA / UTMA Custodial Accounts</h4>
-
-                            <p>Flexible investment accounts held in trust for your child. No contribution limits and
-
-                                broad investment options beyond education.</p>
-
-                        </div>
-
-                        <div class="plan-card">
-
-                            <div class="plan-icon">🛡️</div>
-
-                            <h4>Life Insurance with Cash Value</h4>
-
-                            <p>Certain permanent life insurance policies can serve as a supplemental education funding
-
-                                vehicle with added protection benefits.</p>
-
-                        </div>
-
                     </div>
 
 
 
-                    <h3>Key Benefits</h3>
-
-                    <div class="feature-list">
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Tax-Free Growth &amp; Withdrawals</span>
-
+                    <!-- Block 2: Savings Options -->
+                    <div class="content-split" style="align-items: flex-start;">
+                        <div class="content-img-wrap" style="position: sticky; top: 120px;">
+                            <img src="../../images/college_savings_plan_light.png" alt="Children's College Savings Plans Portfolio" style="aspect-ratio: 3/4;" />
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Start Small — Grow Over Time</span>
-
+                        <div class="content-split-text">
+                            <h3>College Savings Options We Help You Navigate</h3>
+                            <div class="plan-options" style="grid-template-columns: 1fr;">
+                                <div class="plan-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="plan-icon" style="margin-bottom: 0;">🏫</div>
+                                    <div>
+                                        <h4>529 College Savings Plan</h4>
+                                        <p>The most popular college savings vehicle. Tax-free growth and withdrawals when used for qualified educational expenses — and available in every state.</p>
+                                    </div>
+                                </div>
+                                <div class="plan-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="plan-icon" style="margin-bottom: 0;">📊</div>
+                                    <div>
+                                        <h4>Coverdell ESA</h4>
+                                        <p>Education Savings Accounts offer tax-free growth with more flexible investment options, including K-12 educational expenses.</p>
+                                    </div>
+                                </div>
+                                <div class="plan-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="plan-icon" style="margin-bottom: 0;">💼</div>
+                                    <div>
+                                        <h4>UGMA / UTMA Custodial Accounts</h4>
+                                        <p>Flexible investment accounts held in trust for your child. No contribution limits and broad investment options beyond education.</p>
+                                    </div>
+                                </div>
+                                <div class="plan-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
+                                    <div class="plan-icon" style="margin-bottom: 0;">🛡️</div>
+                                    <div>
+                                        <h4>Life Insurance with Cash Value</h4>
+                                        <p>Certain permanent life insurance policies can serve as a supplemental education funding vehicle with added protection benefits.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="feature-item">
 
-                            <div class="feature-check">✓</div><span>Flexible Beneficiary Options</span>
 
+                    <!-- Block 3: Key Benefits -->
+                    <div class="content-split">
+                        <div class="content-split-text">
+                            <h3>Key Benefits</h3>
+                            <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Tax-Free Growth &amp; Withdrawals</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Start Small — Grow Over Time</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Flexible Beneficiary Options</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>State Tax Deductions Available</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Financial Aid Impact Guidance</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Covers Tuition, Room &amp; Board, More</span></div>
+                            </div>
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>State Tax Deductions Available</span>
-
+                        <div class="content-img-wrap" style="position: sticky; top: 120px;">
+                            <img src="../../images/college_benefits_light.png" alt="Graduation Diploma and Benefits" style="aspect-ratio: 3/4;" />
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Financial Aid Impact Guidance</span>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Covers Tuition, Room &amp; Board, More</span>
-
-                        </div>
-
                     </div>
 
                     <div class="info-box">
@@ -1017,7 +856,6 @@
                         <div class="sidebar-card-body">
 
                             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
-
                                 Start building your child's college fund today — it's never too early.</p>\n<form id="contact-form" onsubmit="handleSubmit(event)">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
                                 <div><label style="font-size:0.8rem; font-weight:700;">First Name *</label><input type="text" name="first_name" required placeholder="First name" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" /></div>
@@ -1041,6 +879,7 @@
                                     <option>Retirement Planning</option>
                                     <option>Kids College Fund</option>
                                     <option>Life Insurance</option>
+                                    <option>Blog Updates Subscription</option>
                                     <option>General Inquiry</option>
                                 </select>
                             </div>
@@ -1184,7 +1023,13 @@
     </div>
 </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>\n    <script type="text/javascript">\n        (function() {\n            emailjs.init("2PSwxHV81J7_l7Nsm");\n        })();\n    </script>\n    <script src="../../js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("2PSwxHV81J7_l7Nsm");
+        })();
+    </script>
+    <script src="../../js/main.js?v=2"></script>
 
 </body>
 

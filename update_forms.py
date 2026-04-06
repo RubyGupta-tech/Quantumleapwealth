@@ -25,6 +25,7 @@ form_html = """<form id=\"contact-form\" onsubmit=\"handleSubmit(event)\">
                                     <option>Retirement Planning</option>
                                     <option>Kids College Fund</option>
                                     <option>Life Insurance</option>
+                                    <option>Blog Updates Subscription</option>
                                     <option>General Inquiry</option>
                                 </select>
                             </div>

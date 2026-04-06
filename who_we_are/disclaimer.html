@@ -25,139 +25,81 @@
 
     <style>
         .page-hero {
-
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
-
-            padding: 90px 0 80px;
-
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0) 45%), url('../images/disclaimer_bg_light.png');
+            background-size: cover;
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
-            overflow: hidden
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
-        }
-
-
 
         .page-hero-inner {
-
             position: relative;
-
             z-index: 1;
-
-            text-align: center
         }
 
 
 
         .page-hero-badge {
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 8px;
-
-            background: rgba(201, 168, 76, 0.12);
-
-            border: 1px solid rgba(201, 168, 76, 0.28);
-
+            background: rgba(4, 17, 31, 0.05);
+            border: 1px solid rgba(4, 17, 31, 0.1);
             border-radius: 30px;
-
             padding: 6px 18px;
-
             font-size: 0.78rem;
-
             font-weight: 700;
-
-            color: var(--accent-light);
-
+            color: var(--primary);
             letter-spacing: 0.08em;
-
             text-transform: uppercase;
-
             margin-bottom: 22px
         }
 
 
 
         .page-hero h1 {
-
-            color: #fff;
-
+            color: var(--primary);
             font-size: clamp(2rem, 4.5vw, 3.2rem);
-
-            margin-bottom: 16px
+            margin-bottom: 16px;
+            text-shadow: none;
         }
 
-
-
         .page-hero h1 .highlight {
-
-            color: var(--accent-light)
+            color: var(--accent-dark);
         }
 
 
 
         .page-hero-sub {
-
-            color: rgba(255, 255, 255, 0.65);
-
-            font-size: 1rem;
-
+            color: var(--text-dark);
+            font-size: 1.05rem;
             max-width: 600px;
-
-            margin: 0 auto;
-
-            line-height: 1.75
+            line-height: 1.75;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
+            font-size: 0.8rem;
+            color: var(--primary);
             margin-bottom: 16px;
-
-            justify-content: center
+            font-weight: 600;
         }
 
-
-
         .breadcrumb a {
-
-            color: var(--accent-light);
-
+            color: var(--text-muted);
             text-decoration: none
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border)
         }
 
 
@@ -570,102 +512,7 @@
 
     <!-- NAVBAR -->
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item active"
-                        role="menuitem"  aria-current="page"><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -684,8 +531,8 @@
                 <div class="page-hero-inner">
 
                     <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
-                            style="color:rgba(255,255,255,0.45)">Who We Are</span><span>›</span><span
-                            style="color:var(--accent-light)">Our Disclaimer</span></div>
+                            style="color:var(--text-muted)">Who We Are</span><span>›</span><span
+                            style="color:var(--primary)">Our Disclaimer</span></div>
 
                     <div class="page-hero-badge">📋 Legal</div>
 
@@ -1074,7 +921,7 @@
 
 
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js?v=2"></script>
 
 </body>
 

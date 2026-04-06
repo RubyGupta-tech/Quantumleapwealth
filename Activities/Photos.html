@@ -26,13 +26,19 @@
     <style>
         .page-hero {
 
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 55%, #0d3a6e 100%);
+            background: linear-gradient(rgba(10, 37, 64, 0.4), rgba(10, 37, 64, 0.4)), url('../images/hero_photos_v2.png');
 
-            padding: 60px 0 40px;
+            background-size: cover;
+
+            background-position: center;
+
+            padding: 90px 0 70px; /* Increased padding for more visibility */
 
             position: relative;
 
-            overflow: hidden
+            overflow: hidden;
+
+            border-bottom: 3px solid var(--accent)
         }
 
 
@@ -100,7 +106,9 @@
 
             font-size: clamp(2rem, 4.5vw, 3.2rem);
 
-            margin-bottom: 16px
+            margin-bottom: 16px;
+
+            text-shadow: 0 2px 10px rgba(10, 37, 64, 0.5)
         }
 
 
@@ -114,7 +122,7 @@
 
         .page-hero-sub {
 
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.9);
 
             font-size: 1rem;
 
@@ -122,7 +130,9 @@
 
             margin: 0 auto;
 
-            line-height: 1.75
+            line-height: 1.75;
+
+            text-shadow: 0 1px 5px rgba(10, 37, 64, 0.4)
         }
 
 
@@ -344,7 +354,7 @@
 
             padding: 48px 0 80px;
 
-            background: var(--bg-light)
+            background: var(--bg-white)
         }
 
 
@@ -372,7 +382,7 @@
 
             cursor: pointer;
 
-            background: linear-gradient(145deg, #eef2f8 0%, #dde4ef 100%);
+            background: #f8f9fb;
 
             border: 1px solid var(--border);
 
@@ -385,7 +395,7 @@
 
             transform: translateY(-4px) scale(1.01);
 
-            box-shadow: 0 16px 50px rgba(4, 17, 31, 0.14)
+            box-shadow: 0 12px 40px rgba(201, 168, 76, 0.15)
         }
 
 
@@ -447,31 +457,6 @@
 
 
 
-        .gallery-placeholder-icon {
-
-            font-size: 2.5rem;
-
-            opacity: 0.35
-        }
-
-
-
-        .gallery-placeholder-text {
-
-            font-size: 0.72rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
-
-            text-transform: uppercase;
-
-            color: var(--text-muted);
-
-            opacity: 0.5
-        }
-
-
 
         /* Overlay on hover */
 
@@ -514,38 +499,8 @@
 
 
 
-        /* Coming soon ribbon */
 
-        .coming-ribbon {
-
-            position: absolute;
-
-            top: 12px;
-
-            right: 12px;
-
-            background: rgba(201, 168, 76, 0.9);
-
-            color: #fff;
-
-            font-size: 0.62rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
-
-            text-transform: uppercase;
-
-            padding: 4px 10px;
-
-            border-radius: 20px;
-
-            backdrop-filter: blur(4px)
-        }
-
-
-
-        /* Actual images (once client provides) */
+        /* Actual images */
 
         .gallery-card img {
 
@@ -806,102 +761,7 @@
 
     <!-- NAVBAR -->
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item active"
-                        role="menuitem"  aria-current="page"><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -979,9 +839,11 @@
 
                         <button class="filter-btn" onclick="filterGallery('team',this)">Team</button>
 
+                        <button class="filter-btn" onclick="filterGallery('topgun',this)">Top Gun 2026</button>
+
                     </div>
 
-                    <span class="filter-count" id="photo-count">Photos coming soon</span>
+                    <span class="filter-count" id="photo-count">216 Photos Found</span>
 
                 </div>
 
@@ -1001,172 +863,297 @@
 
                 <!-- Placeholder grid — replace each .gallery-card-inner with <img src="..."> when client sends photos -->
 
-                <div class="gallery-grid" id="gallery-grid">
-
-
-
+                                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Events -->
                     <div class="gallery-card tall" data-category="events">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0010.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Success Seminar</span></div>
                     </div>
-
-
-
                     <div class="gallery-card" data-category="seminars">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241018_202837875.RAW-01.COVER.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Financial Workshop</span></div>
                     </div>
-
-
-
-                    <div class="gallery-card" data-category="community">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
-
-                        </div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                    <div class="gallery-card wide" data-category="community">
+                        <div class="gallery-card-inner"><img src="../images/gellery/20250510_210602.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Wealth Building</span></div>
                     </div>
-
-
-
                     <div class="gallery-card" data-category="team">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_021255679.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Our Dedicated Team</span></div>
                     </div>
-
-
-
-                    <div class="gallery-card wide" data-category="events">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
-                    </div>
-
-
-
-                    <div class="gallery-card" data-category="community">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
-
-                        </div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
-                    </div>
-
-
-
-                    <div class="gallery-card" data-category="seminars">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
-                    </div>
-
-
-
-                    <div class="gallery-card tall" data-category="team">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
-                    </div>
-
-
-
                     <div class="gallery-card" data-category="events">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Event Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0027.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Networking Session</span></div>
                     </div>
-
-
-
+                    <div class="gallery-card tall" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241018_210126202.RAW-01.COVER.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Investing Basics</span></div>
+                    </div>
                     <div class="gallery-card" data-category="community">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Photo</span>
-
-                        </div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/20250511_144210.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Local Engagement</span></div>
                     </div>
-
-
-
-                    <div class="gallery-card wide" data-category="seminars">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Seminar Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                    <div class="gallery-card wide" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0031.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Awards Night</span></div>
                     </div>
-
-
-
                     <div class="gallery-card" data-category="team">
-
-                        <div class="gallery-card-inner"><span class="gallery-placeholder-icon">📸</span><span
-                                class="gallery-placeholder-text">Photo Coming Soon</span></div>
-
-                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Photo</span></div>
-
-                        <span class="coming-ribbon">Coming Soon</span>
-
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_003604704.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Client Success Dinner</span></div>
                     </div>
-
-
-
+                    <div class="gallery-card tall" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241018_210752030.RAW-01.COVER.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Advanced Wealth Strategies</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="community">
+                        <div class="gallery-card-inner"><img src="../images/gellery/20250511_144212.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Celebration</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0071.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Business Orientation</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241018_213058671.RAW-01.MP.COVER.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Wealth Mastery Series</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="team">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_033750926.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Collaboration</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0090.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Annual Conference</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="community">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241019_200342404.RAW-01.COVER.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Giving Back</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241019_200406366.RAW-01.MP.COVER.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Retirement Planning 101</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0143.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Incentive Trip</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="team">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_035039590.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Team Building</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="community">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241020_013826418.RAW-01.COVER.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Youth Financial Literacy</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0149.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Leadership Summit</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241020_034006286.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Tax Efficiency Seminar</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="team">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_175327140.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Partner Appreciation</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241018-WA0167.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Gala Dinner</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="community">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241020_153014536.jpg" alt="Community"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Community Support</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241019-WA0015.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Morning briefing</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="seminars">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20241021_015830976.MP.jpg" alt="Seminar"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Asset Protection Class</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="team">
+                        <div class="gallery-card-inner"><img src="../images/gellery/PXL_20250511_175423137.jpg" alt="Team"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Our Success Family</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241019-WA0057.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Special Event</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="events">
+                        <div class="gallery-card-inner"><img src="../images/gellery/IMG-20241019-WA0097.jpg" alt="Event"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Final Farewell</span></div>
+                    </div>
+                
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1513.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1517.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1520.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1529.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1533.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1536.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1542.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1565.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1567.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1595.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/GC4A1703.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18154.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18166.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18167.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18198.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18203.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18204.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18206.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18208.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18210.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18213.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18215.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18218.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18219.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18222.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18231.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18243.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18255.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18296.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18299.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18306.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18341.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18343.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18346.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18348.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card tall" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW18352.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19211.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19276.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19282.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19284.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card wide" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19287.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
+                    <div class="gallery-card" data-category="topgun">
+                        <div class="gallery-card-inner"><img src="../images/gellery/2026 Top Gun/LPW19292.jpg" alt="Top Gun 2026"></div>
+                        <div class="gallery-card-overlay"><span class="gallery-overlay-text">Top Gun 2026</span></div>
+                    </div>
                 </div><!-- /gallery-grid -->
 
 
@@ -1177,9 +1164,9 @@
 
                     <div class="upload-cta-icon">🖼️</div>
 
-                    <h3>Photos Coming Soon!</h3>
+                    <h3>More Photos Coming Soon!</h3>
 
-                    <p>We're gathering our best moments to share with you. Check back soon — or send us your photos to
+                    <p>We're constantly adding new memories. Check back often — or share your own photos with us to
 
                         feature here!</p>
 
@@ -1290,7 +1277,7 @@
 
 
 
-    <script src="../../js/main.js"></script>
+    <script src="../../js/main.js?v=2"></script>
 
     <script>
 

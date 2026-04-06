@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
   <meta name="description"
     content="Quantum Leap Wealth offers expert financial services: investment planning, retirement, life insurance, tax savings, and business opportunities in California USA." />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/navbar-v3.css?v=1.2" />
   <link rel="stylesheet" href="css/ticker-fix.css" />
   <!-- Calendly popup widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
@@ -264,99 +264,450 @@
     <!-- ══════════════════════════════
      HERO
 ══════════════════════════════ -->
-    <section class="hero" id="home"
-      style="text-align:center; display:flex; align-items:center; justify-content:center;">
-      <div class="hero-bg-pattern"></div>
-      <div class="hero-glow"></div>
-      <div class="container" style="position:relative;z-index:1;">
-        <div class="hero-grid">
+    <style>
+      .hero-split-section {
+        display: flex;
+        height: calc(100vh - 180px);
+        /* Strictly lock to one screen minus navbar height */
+        min-height: 600px;
+        /* Safety floor for very small screens */
+        width: 100%;
+        background: radial-gradient(circle at 20% 50%, #1e293b 0%, #0f172a 100%);
+        position: relative;
+        padding-top: 0;
+        overflow: hidden;
+      }
 
-          <!-- Left Column: Text & CTA -->
-          <div class="hero-text-col">
-            <p class="hero-subtitle">Trusted Financial Excellence</p>
-            <h1 class="hero-title">
-              Building Your <span class="highlight">Future</span>,<br />Growing Your <span
-                class="highlight">Wealth</span>
-            </h1>
-            <p class="hero-description">
-              Integrated Financial & Real Estate Solutions — personalized strategies to protect, grow, and manage your
-              wealth for generations.
-            </p>
-            <div class="hero-buttons">
-              <a href="#services" class="btn btn-primary">Learn More</a>
-              <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn btn-light-gold">Get Consultation</a>
+      /* Background Pattern Overlay */
+      .hero-split-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(rgba(232, 198, 120, 0.08) 1.5px, transparent 1.5px);
+        background-size: 40px 40px;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Left Side Visual Design - Prosperity & Growth (Option 1) */
+      .hero-bg-design-left {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        background:
+          radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0f172a 85%),
+          url('images/hero_prosperity.png?v=1') center/cover no-repeat;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.7;
+        /* Increased for better visibility of the gold elements */
+        border-radius: 50%;
+        box-shadow: 0 0 100px 50px #0f172a inset;
+      }
+
+      @keyframes rotateDesign {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media(max-width: 992px) {
+        .hero-split-section {
+          flex-direction: column;
+          height: auto;
+          min-height: auto;
+        }
+      }
+
+      .hero-split-left {
+        flex: 1 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4% 8%;
+        position: relative;
+        z-index: 2;
+      }
+
+      @media(max-width: 992px) {
+        .hero-split-left {
+          padding: 40px 20px;
+          width: 100%;
+        }
+      }
+
+      .hero-split-left-content {
+        max-width: 600px;
+        width: 100%;
+        animation: fadeUpIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        position: relative;
+        z-index: 5;
+      }
+
+      .hero-split-right {
+        flex: 1 1 50%;
+        position: relative;
+        min-height: 50vh;
+        z-index: 1;
+      }
+
+      @media(max-width: 992px) {
+        .hero-split-right {
+          min-height: 400px;
+          width: 100%;
+        }
+      }
+
+      /* Gradient blending */
+      .hero-split-right::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, #0f172a 0%, transparent 15%);
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      @media(max-width: 992px) {
+        .hero-split-right::after {
+          background: linear-gradient(to bottom, #0f172a 0%, transparent 20%);
+        }
+      }
+
+      .hero-split-title {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      /* Masked Line Reveal */
+      .hero-title-line {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 4px;
+        width: 100%;
+        /* Ensure full width availability */
+      }
+
+      @keyframes textReveal {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      /* Premium Typing Animation */
+      .hero-title-line .reveal-inner {
+        display: inline-block;
+        /* Changed to inline-block for width animation */
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid transparent;
+        /* The Cursor */
+        width: 0;
+        animation:
+          typing 1.5s steps(30, end) forwards,
+          cursor-blink 0.8s step-end infinite;
+      }
+
+      .hero-title-line:nth-child(2) .reveal-inner {
+        animation-delay: 1.8s;
+        /* Wait for Line 1 to finish */
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+          border-color: transparent;
+        }
+
+        /* Remove cursor at end */
+      }
+
+      @keyframes cursor-blink {
+
+        0%,
+        100% {
+          border-color: transparent;
+        }
+
+        50% {
+          border-color: #e8c678;
+        }
+      }
+
+      /* Active typing state to handle cursor color while typing */
+      .hero-title-line .reveal-inner[data-typing="active"] {
+        border-color: #e8c678;
+      }
+
+      @keyframes fadeUpIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Golden Shimmer Effect */
+      .shimmer-text {
+        background: linear-gradient(to right,
+            #e8c678 20%,
+            #fff 40%,
+            #fff 60%,
+            #e8c678 80%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmerGold 4s linear infinite;
+        font-weight: 900;
+        display: inline;
+      }
+
+      .hero-title-line:nth-child(1) .reveal-inner {
+        animation: typing 0.8s steps(30, end) forwards, cursor-blink 0.4s step-end 2;
+      }
+
+      .hero-title-line:nth-child(2) .reveal-inner {
+        animation: typing 0.8s steps(30, end) 0.6s forwards, cursor-blink 0.4s step-end 3;
+      }
+
+      @keyframes shimmerGold {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .hero-split-desc {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 25px;
+        line-height: 1.6;
+        max-width: 540px;
+        animation: fadeUpIn 0.8s ease 1.2s forwards;
+        /* Much faster entrance */
+        opacity: 0;
+      }
+
+      .hero-split-highlights {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+
+      /* Highlights Staggered Entrance & Hover */
+      .hero-split-hl {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        font-weight: 600;
+        font-size: 0.95rem;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        /* Star hidden for animation */
+        animation: fadeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        cursor: pointer;
+        will-change: transform, opacity;
+      }
+
+      .hero-split-hl:hover {
+        transform: translateY(-5px) scale(1.05);
+        background: rgba(201, 168, 76, 0.12);
+        border-color: rgba(201, 168, 76, 0.5);
+        box-shadow: 0 10px 25px rgba(201, 168, 76, 0.2);
+        color: #e8c678;
+      }
+
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media(max-width: 600px) {
+        .hero-split-hl {
+          font-size: 0.85rem;
+          padding: 10px;
+        }
+      }
+
+      .hero-split-hl-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-split-hl:hover .hero-split-hl-icon {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      .hero-split-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        animation: fadeUpIn 0.8s ease 2.5s forwards;
+        /* Buttons appear by 2.5s */
+        opacity: 0;
+      }
+
+      .hero-split-buttons .btn {
+        padding: 16px 36px;
+        font-size: 1.05rem;
+        border-radius: 50px;
+      }
+    </style>
+
+    <section class="hero-split-section" id="home">
+      <!-- Background Design Element -->
+      <div class="hero-bg-design-left"></div>
+
+      <!-- 50% LEFT TEXT COLUMN -->
+      <div class="hero-split-left">
+        <div class="hero-split-left-content">
+          <h1 class="hero-split-title">
+            <div class="hero-title-line">
+              <span class="reveal-inner">Built on <span class="shimmer-text">Strategy.</span></span>
+            </div>
+            <div class="hero-title-line">
+              <span class="reveal-inner">Driven by <span class="shimmer-text">Purpose.</span></span>
+            </div>
+          </h1>
+
+          <p class="hero-split-desc">
+            At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for
+            long-term security — not driven by trends or guesswork.
+          </p>
+
+          <div class="hero-split-highlights">
+            <div class="hero-split-hl" style="animation-delay: 1.8s;">
+              <div class="hero-split-hl-icon">💰</div>Tax-Efficient
+            </div>
+            <div class="hero-split-hl" style="animation-delay: 1.9s;">
+              <div class="hero-split-hl-icon">🏖️</div>Retirement
+            </div>
+            <div class="hero-split-hl" style="animation-delay: 2.0s;">
+              <div class="hero-split-hl-icon">🛡️</div>Life Protection
+            </div>
+            <div class="hero-split-hl" style="animation-delay: 2.1s;">
+              <div class="hero-split-hl-icon">🎓</div>College Funding
             </div>
           </div>
 
-          <!-- Right Column: Dynamic Slider -->
-          <div class="hero-slider-col">
-            <div class="dynamic-slider">
-              <!-- Slide 1 -->
-              <div class="slide active">
-                <div class="slide-content" style="background: white; flex-direction: column; padding: 20px;">
-                  <img src="images/QWL_logo_original.png" alt="Quantum Leap Wealth" class="slide-logo"
-                    style="margin-bottom: 20px;" />
-                  <p
-                    style="color: var(--primary); font-size: 1.15rem; font-weight: 600; text-align: center; max-width: 85%; margin: 0 auto;">
-                    Comprehensive Wealth Management & Real Estate Investment Strategies</p>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="slide">
-                <div class="slide-content">
-                  <img src="images/Anu_profile_pic.png" alt="Expert Leadership" class="slide-bg"
-                    style="object-position: top center;" />
-                  <div class="slide-overlay">
-                    <h3>Expert Leadership You Can Trust</h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="slide">
-                <div class="slide-content">
-                  <img src="images/prasad_family_pic.png" alt="Secure Your Family" class="slide-bg"
-                    style="object-position: top center;" />
-                  <div class="slide-overlay">
-                    <h3>Securing Your Family's Legacy</h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4: Services Grid -->
-              <div class="slide">
-                <div class="slide-content" style="background: linear-gradient(135deg, #f8f9fa, #e2e8f0);">
-                  <div class="slide-services-container">
-                    <h3
-                      style="color:var(--primary); text-align:center; font-size:1.6rem; font-weight: 800; margin-bottom:16px;">
-                      Our Expertise</h3>
-                    <div class="slide-services-grid">
-                      <div class="slide-service-box">📈 Investment Planning</div>
-                      <div class="slide-service-box">🏖️ Retirement</div>
-                      <div class="slide-service-box">🛡️ Life Insurance</div>
-                      <div class="slide-service-box">💰 Tax Savings</div>
-                      <div class="slide-service-box">🎓 Kids College</div>
-                      <div class="slide-service-box">📜 Will & Trust</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Slider Controls -->
-            <div class="slider-dots">
-              <span class="dot active" onclick="currentSlide(0)"></span>
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
+          <div class="hero-split-buttons">
+            <a href="who_we_are/about.html" class="btn btn-primary"
+              style="box-shadow:0 10px 20px rgba(201,168,76,0.2); white-space:nowrap;">Our Story</a>
+            <a href="#"
+              onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+              class="btn btn-light-gold"
+              style="white-space:nowrap; background:transparent; color:white; border:1px solid rgba(255,255,255,0.4);">Consultation</a>
           </div>
-
         </div>
       </div>
-      <div class="hero-wave"></div>
+
+      <!-- 50% RIGHT SLIDER COLUMN (EDGE-TO-EDGE) -->
+      <div class="hero-split-right">
+        <!-- Legacy slider structural container injected & expanded -->
+        <div class="dynamic-slider"
+          style="width: 100%; height: 100%; position: absolute; inset: 0; overflow: hidden; border-radius: 0; border: none; box-shadow: none;">
+
+          <!-- Slide 1 -->
+          <div class="slide active" style="height: 100%;">
+            <div class="slide-content"
+              style="background: white; flex-direction: column; padding: 20px; height: 100%; justify-content: center;">
+              <img src="images/QWL_logo_original.png" alt="Quantum Leap Wealth" class="slide-logo"
+                style="margin-bottom: 20px; max-width: 260px;" />
+              <p
+                style="color: var(--primary); font-size: 1.15rem; font-weight: 600; text-align: center; max-width: 80%; margin: 0 auto;">
+                Comprehensive Wealth Management & Real Estate Investment Strategies
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide" style="height: 100%;">
+            <div class="slide-content" style="height: 100%;">
+              <img src="images/Anu_profile_pic.png" alt="Expert Leadership" class="slide-bg"
+                style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
+              <div class="slide-overlay"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
+                <h3 style="font-size: 1.5rem; color: white;">Expert Leadership You Can Trust</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide" style="height: 100%;">
+            <div class="slide-content" style="height: 100%;">
+              <img src="images/prasad_family_pic.png" alt="Secure Your Family" class="slide-bg"
+                style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
+              <div class="slide-overlay"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
+                <h3 style="font-size: 1.5rem; color: white;">Securing Your Family's Legacy</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Services Grid -->
+          <div class="slide" style="height: 100%;">
+            <div class="slide-content"
+              style="background: linear-gradient(135deg, #f8f9fa, #e2e8f0); height: 100%; justify-content: center;">
+              <div class="slide-services-container" style="width: 100%; padding: 0 5%;">
+                <h3
+                  style="color:var(--primary); text-align:center; font-size:1.5rem; font-weight: 800; margin-bottom:15px;">
+                  Our Expertise</h3>
+                <div class="slide-services-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📈 Investment Planning</div>
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🏖️ Retirement</div>
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🛡️ Life Insurance</div>
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">💰 Tax Savings</div>
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🎓 Kids College</div>
+                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📜 Will & Trust</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-dots" style="bottom: 30px; z-index: 20;">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ══════════════════════════════

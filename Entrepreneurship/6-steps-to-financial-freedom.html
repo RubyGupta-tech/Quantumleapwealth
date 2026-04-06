@@ -23,167 +23,85 @@
         /* ── Hero ── */
 
         .page-hero {
-            background: linear-gradient(135deg, rgba(4, 17, 31, 0.4) 0%, rgba(10, 37, 64, 0.3) 55%, rgba(13, 58, 110, 0.4) 100%), url('../images/6step.png');
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%), url('../images/6steps_bg_light.png');
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #04111f;
-
-            padding: 60px 0 40px;
-
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
             overflow: hidden;
-
-            text-align: center
-        }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
-        }
-
-
-
-        .page-hero-glow {
-
-            position: absolute;
-
-            top: -120px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            width: 700px;
-
-            height: 700px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
-
-            pointer-events: none
+            border-bottom: 3px solid var(--accent);
         }
 
 
 
         .page-hero-inner {
-
             position: relative;
-
-            z-index: 1
+            z-index: 1;
         }
 
 
 
         .page-hero-badge {
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 8px;
-
-            background: rgba(201, 168, 76, 0.12);
-
-            border: 1px solid rgba(201, 168, 76, 0.28);
-
+            background: rgba(4, 17, 31, 0.05);
+            border: 1px solid rgba(4, 17, 31, 0.1);
             border-radius: 30px;
-
             padding: 6px 18px;
-
             font-size: 0.78rem;
-
             font-weight: 700;
-
-            color: var(--accent-light);
-
+            color: var(--primary);
             letter-spacing: 0.08em;
-
             text-transform: uppercase;
-
             margin-bottom: 22px
         }
 
 
 
         .page-hero h1 {
-
-            color: #fff;
-
+            color: var(--primary);
             font-size: clamp(2.2rem, 5vw, 3.4rem);
-
             margin-bottom: 20px;
-
-            line-height: 1.15
+            line-height: 1.15;
+            text-shadow: none;
         }
 
-
-
         .page-hero h1 .highlight {
-
-            color: var(--accent-light)
+            color: var(--accent-dark);
         }
 
 
 
         .page-hero-sub {
-
-            color: rgba(255, 255, 255, 0.65);
-
+            color: var(--text-dark);
             font-size: 1.05rem;
-
             max-width: 600px;
-
-            margin: 0 auto 36px;
-
-            line-height: 1.75
+            margin: 0 0 36px 0;
+            line-height: 1.75;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
+            font-size: 0.8rem;
+            color: var(--primary);
             margin-bottom: 16px;
-
-            justify-content: center
+            font-weight: 600;
         }
 
-
-
         .breadcrumb a {
-
-            color: var(--accent-light);
-
+            color: var(--text-muted);
             text-decoration: none
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border)
         }
 
 
@@ -352,20 +270,32 @@
 
 
         .step-visual {
-
             border-radius: 20px;
-
-            overflow: hidden;
-
             min-height: 300px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
 
-            position: relative
+        .step-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            filter: blur(25px);
+            opacity: 0.35;
+            border-radius: 20px;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .step-visual:hover::after {
+            filter: blur(35px);
+            opacity: 0.6;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
         }
 
 
@@ -715,9 +645,7 @@
 
 
             .step-block.reverse .step-visual,
-
             .step-block.reverse .step-text {
-
                 order: unset
             }
 
@@ -790,102 +718,7 @@
 
     <!-- NAVBAR -->
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../index.html" class="navbar-brand">
-        <img src="../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../images/services/life-insurance.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item active" role="menuitem"  aria-current="page"><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -906,8 +739,8 @@
                 <div class="page-hero-inner">
 
                     <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
-                            style="color:rgba(255,255,255,0.45)">Entrepreneurship</span><span>›</span><span
-                            style="color:var(--accent-light)">6 Steps to Financial Freedom</span></div>
+                            style="color:var(--text-muted)">Entrepreneurship</span><span>›</span><span
+                            style="color:var(--primary)">6 Steps to Financial Freedom</span></div>
 
                     <div class="page-hero-badge">🚀 Entrepreneurship</div>
 
@@ -917,11 +750,11 @@
 
                         financial independence — used by hundreds of Quantum Leap Wealth clients across California.</p>
 
-                    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                    <div style="display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap">
 
                         <a href="../contact/contact.html" class="btn btn-primary">Book a Free Consultation</a>
 
-                        <a href="#step-1" class="btn btn-outline-white">Explore the Steps ↓</a>
+                        <a href="#step-1" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);">Explore the Steps ↓</a>
 
                     </div>
 
@@ -1371,7 +1204,7 @@
 
 
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js?v=2"></script>
 
 </body>
 

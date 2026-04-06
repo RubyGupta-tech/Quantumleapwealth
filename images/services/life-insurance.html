@@ -21,29 +21,14 @@
 
     <style>
         .page-hero {
-
-            background: linear-gradient(135deg, #04111f 0%, #0a2540 60%, #0d3a6e 100%);
-
-            padding: 80px 0 70px;
-
+            background-color: #f8fafc;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('../../images/life_insurance_bg_light.png');
+            background-size: cover;
+            background-position: center right;
+            padding: 100px 0 90px;
             position: relative;
-
-            overflow: hidden
-        }
-
-
-
-        .page-hero::before {
-
-            content: '';
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image: radial-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px);
-
-            background-size: 40px 40px
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
 
 
@@ -68,84 +53,48 @@
 
 
         .page-hero h1 {
-
-            color: #fff;
-
+            color: var(--primary);
             font-size: clamp(2rem, 4vw, 3rem);
-
-            margin-bottom: 12px
+            margin-bottom: 12px;
+            text-shadow: none;
         }
 
 
 
         .page-hero p {
-
-            color: rgba(255, 255, 255, 0.68);
-
-            font-size: 1rem;
-
+            color: var(--text-dark);
+            font-size: 1.05rem;
             max-width: 560px;
-
-            line-height: 1.7
+            line-height: 1.7;
+            font-weight: 500;
         }
 
 
 
         .breadcrumb {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
-            font-size: 0.78rem;
-
-            color: rgba(255, 255, 255, 0.45);
-
-            margin-bottom: 14px
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+            font-weight: 600;
         }
 
 
 
         .breadcrumb a {
-
-            color: var(--accent-light);
-
+            color: var(--text-muted);
             text-decoration: none
         }
 
-
-
         .breadcrumb span {
-
-            color: rgba(255, 255, 255, 0.3)
+            color: var(--border)
         }
 
 
 
-        .page-hero-icon {
 
-            width: 100px;
-
-            height: 100px;
-
-            border-radius: 20px;
-
-            background: rgba(255, 255, 255, 0.06);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 3rem;
-
-            flex-shrink: 0
-        }
 
 
 
@@ -208,63 +157,118 @@
 
 
 
-        .ins-card {
-
+        .content-split {
             display: flex;
-
-            gap: 20px;
-
-            background: var(--bg-light);
-
-            border-radius: 12px;
-
-            padding: 22px;
-
-            border: 1px solid var(--border);
-
-            border-left: 4px solid var(--accent);
-
-            transition: box-shadow 0.2s
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
-
-
-        .ins-card:hover {
-
-            box-shadow: var(--shadow-md)
+        .content-split.reverse {
+            flex-direction: row-reverse;
         }
 
-
-
-        .ins-icon {
-
-            font-size: 2rem;
-
-            flex-shrink: 0
+        .content-split-text {
+            flex: 1;
         }
 
-
-
-        .ins-card h4 {
-
-            font-size: 0.97rem;
-
+        .content-split-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
             color: var(--primary);
-
-            margin-bottom: 5px
         }
 
+        .content-split-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            color: var(--primary);
+        }
 
-
-        .ins-card p {
-
-            font-size: 0.84rem;
-
+        .content-split-text p {
             color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
 
-            line-height: 1.6;
+        .content-img-wrap {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
 
-            margin: 0
+        .content-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .content-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        .process-inline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 24px;
+        }
+
+        .process-inline-step {
+            display: flex;
+            gap: 16px;
+            position: relative;
+            padding-bottom: 24px;
+        }
+
+        .process-inline-step::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .process-inline-step:last-child::before {
+            display: none;
+        }
+
+        .pstep-num {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--bg-light), #fff);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 5px rgba(201, 168, 76, 0.12);
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .pstep-body h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .pstep-body p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0;
         }
 
 
@@ -660,7 +664,14 @@
                 padding: 50px 0
             }
 
+            .content-split {
+                flex-direction: column;
+                gap: 20px;
+            }
 
+            .content-split.reverse {
+                flex-direction: column;
+            }
 
             .feature-list {
 
@@ -719,102 +730,7 @@
 
     </div>
 
-    <header class="navbar">
-<div class="navbar-inner">
-    <a href="../../index.html" class="navbar-brand">
-        <img src="../../images/QWL_logo.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="../../index.html" class="nav-link" >Home</a></li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../who_we_are/about.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">👤</span>About Us</a>
-                </li>
-                <li role="none"><a href="../../who_we_are/partners.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🤝</span>Our
-                        Partners</a></li>
-                <li role="none"><a href="../../who_we_are/disclaimer.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📋</span>Our
-                        Disclaimer</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown active">
-            <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown wide" role="menu">
-                <li role="none"><a href="../../images/services/investment-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">📈</span>Investment Planning</a></li>
-                <li role="none"><a href="../../images/services/living-will-trust.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📜</span>Living Will &amp;
-                        Trust</a></li>
-                <li role="none"><a href="../../images/services/tax-saving.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">💰</span>Tax Savings</a>
-                </li>
-                <li role="none"><a href="../../images/services/retirement-planning.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🏖️</span>Retirement Planning</a></li>
-                <li role="none"><a href="../../images/services/kids-college.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎓</span>Kids College</a>
-                </li>
-                <li role="none"><a href="../../images/services/life-insurance.html" class="dropdown-item active"
-                        role="menuitem"  aria-current="page"><span class="dd-icon" aria-hidden="true">🛡️</span>Life
-                        Insurance</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Entrepreneurship/6-steps-to-financial-freedom.html"
-                        class="dropdown-item" role="menuitem" ><span class="dd-icon"
-                            aria-hidden="true">🚀</span>6 Steps to Financial Freedom</a></li>
-            </ul>
-        </li>
-        <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg></a>
-            <ul class="dropdown" role="menu">
-                <li role="none"><a href="../../Activities/blogs.html" class="dropdown-item" role="menuitem"
-                        ><span class="dd-icon" aria-hidden="true">✍️</span>Blog Articles</a></li>
-                <li role="none"><a href="../../Activities/videos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">🎥</span>Video
-                        Gallery</a></li>
-                <li role="none"><a href="../../Activities/Photos.html" class="dropdown-item"
-                        role="menuitem" ><span class="dd-icon" aria-hidden="true">📸</span>Photo
-                        Gallery</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="../../resources/resources.html" class="nav-link">Resources</a>
-        </li>
-        <li class="nav-item"><a href="../../contact/contact.html" class="nav-link"
-                >Contact</a></li>
-        <li class="nav-item">
-            <a href="#"
-                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
-        </li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
-</header>
+    <header class="navbar" id="navbar-placeholder"></header>
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -843,10 +759,7 @@
 
                     </div>
 
-                    <div class="page-hero-icon">🛡️</div>
-
                 </div>
-
             </div>
 
         </section>
@@ -859,174 +772,104 @@
 
                 <div class="service-content">
 
-                    <h2>The Right Protection for Every Stage of Life</h2>
-
-                    <p>Life insurance is one of the most powerful financial tools available — yet it's often
-
-                        misunderstood or overlooked until it's too late. At Quantum Leap Wealth, we cut
-                        through the
-
-                        complexity to help you find the right coverage at the right cost, built specifically around your
-
-                        family's needs, financial obligations, and long-term goals.</p>
-
-                    <p>From income replacement and mortgage protection to estate planning and wealth transfer, we ensure
-
-                        the people you love are never left financially vulnerable.</p>
-
-
-
-                    <h3>Types of Life Insurance We Offer</h3>
-
-                    <div class="insurance-types">
-
-                        <div class="ins-card">
-
-                            <div class="ins-icon">⏱️</div>
-
-                            <div>
-
-                                <h4>Term Life Insurance</h4>
-
-                                <p>Affordable, straightforward protection for a specific period — 10, 20, or 30 years.
-
-                                    Ideal for income replacement, mortgage protection, and covering the years when your
-
-                                    family needs it most.</p>
-
-                            </div>
-
+                    <!-- Block 1: The Right Protection -->
+                    <div class="content-split">
+                        <div class="content-split-text">
+                            <h2>The Right Protection for Every Stage of Life</h2>
+                            <p>Life insurance is one of the most powerful financial tools available — yet it's often misunderstood or overlooked until it's too late. At Quantum Leap Wealth, we cut through the complexity to help you find the right coverage at the right cost, built specifically around your family's needs, financial obligations, and long-term goals.</p>
+                            <p>From income replacement and mortgage protection to estate planning and wealth transfer, we ensure the people you love are never left financially vulnerable.</p>
                         </div>
-
-                        <div class="ins-card">
-
-                            <div class="ins-icon">🏛️</div>
-
-                            <div>
-
-                                <h4>Whole Life Insurance</h4>
-
-                                <p>Permanent coverage that never expires, with a guaranteed cash value component that
-
-                                    grows over time. A cornerstone of long-term wealth preservation and estate planning.
-
-                                </p>
-
-                            </div>
-
+                        <div class="content-img-wrap">
+                            <img src="../../images/life_protection_light.png" alt="Life Insurance Protection Metaphor" />
                         </div>
-
-                        <div class="ins-card">
-
-                            <div class="ins-icon">🔧</div>
-
-                            <div>
-
-                                <h4>Universal Life Insurance</h4>
-
-                                <p>Flexible premiums and adjustable death benefits, with tax-advantaged cash value
-
-                                    growth. Perfect for those who want permanent coverage with adaptability built in.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="ins-card">
-
-                            <div class="ins-icon">📈</div>
-
-                            <div>
-
-                                <h4>Indexed Universal Life (IUL)</h4>
-
-                                <p>Ties your cash value growth to a market index (like the S&amp;P 500), offering upside
-
-                                    potential with downside protection. Increasingly popular as a retirement supplement.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
                     </div>
 
-
-
-                    <h3>Key Benefits</h3>
-
-                    <div class="feature-list">
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Income Replacement for Your Family</span>
-
+                    <!-- Block 2: Types of Insurance -->
+                    <div class="content-split">
+                        <div class="content-img-wrap">
+                            <img src="../../images/life_family_light.png" alt="Family Legacy Metaphor" />
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Mortgage &amp; Debt Protection</span>
-
+                        <div class="content-split-text">
+                            <h3>Types of Life Insurance We Offer</h3>
+                            <p>We provide a comprehensive suite of life insurance solutions designed to fit both temporary needs and permanent legacy goals.</p>
+                            <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
+                                <div class="feature-item">
+                                    <div class="feature-check" style="font-size:1.2rem; background:transparent; width:auto;">⏱️</div>
+                                    <span><strong>Term Life:</strong> Affordable protection for 10-30 years.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-check" style="font-size:1.2rem; background:transparent; width:auto;">🏛️</div>
+                                    <span><strong>Whole Life:</strong> Permanent coverage with guaranteed cash value.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-check" style="font-size:1.2rem; background:transparent; width:auto;">🔧</div>
+                                    <span><strong>Universal Life:</strong> Flexible premiums and adjustable benefits.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-check" style="font-size:1.2rem; background:transparent; width:auto;">📈</div>
+                                    <span><strong>Indexed Universal Life (IUL):</strong> Market-linked cash growth.</span>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Tax-Free Death Benefit</span>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Cash Value Growth (Whole/Universal)</span>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Estate &amp; Legacy Planning Tool</span>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <div class="feature-check">✓</div><span>Business Succession Coverage</span>
-
-                        </div>
-
                     </div>
 
-                    <div class="info-box">
+                    <!-- Block 3: Process / Benefits -->
+                    <div class="content-split" style="align-items: flex-start;">
+                        <div class="content-split-text">
+                            <h3>Key Benefits of Coverage</h3>
+                            <p>A properly structured life insurance policy provides far more than just a death benefit.</p>
+                            
+                            <div class="process-inline">
+                                <div class="process-inline-step">
+                                    <div class="pstep-num">01</div>
+                                    <div class="pstep-body">
+                                        <h4>Income Replacement</h4>
+                                        <p>Ensure your family can maintain their standard of living, pay daily expenses, and cover significant future costs like college tuition.</p>
+                                    </div>
+                                </div>
+                                <div class="process-inline-step">
+                                    <div class="pstep-num">02</div>
+                                    <div class="pstep-body">
+                                        <h4>Debt &amp; Mortgage Protection</h4>
+                                        <p>Prevent your loved ones from inheriting financial burdens by instantly covering mortgages, loans, and final expenses.</p>
+                                    </div>
+                                </div>
+                                <div class="process-inline-step">
+                                    <div class="pstep-num">03</div>
+                                    <div class="pstep-body">
+                                        <h4>Tax-Advantaged Growth</h4>
+                                        <p>Utilize the cash value component of permanent policies as a powerful, tax-sheltered vehicle for retirement supplementation.</p>
+                                    </div>
+                                </div>
+                                <div class="process-inline-step" style="padding-bottom: 0px;">
+                                    <div class="pstep-num">04</div>
+                                    <div class="pstep-body">
+                                        <h4>Generational Wealth Transfer</h4>
+                                        <p>Pass on your legacy with maximum efficiency. Life insurance payouts provide a tax-free inheritance to your beneficiaries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-img-wrap" style="position: sticky; top: 120px;">
+                            <img src="../../images/life_process_light.png" alt="Life Insurance Process Architecture" style="aspect-ratio: 3/4;" />
+                        </div>
+                    </div>
 
+                    <div class="info-box" style="margin-bottom:32px; margin-top:20px;">
                         <div style="font-size:1.4rem;flex-shrink:0">⚠️</div>
-
                         <p><strong>Important:</strong> 44% of Americans have no life insurance at all, and many who do
-
                             are significantly underinsured. The cost of <strong>not</strong> having coverage can be
-
                             devastating to the ones you leave behind. Let us help you find the right policy today.</p>
-
                     </div>
 
                     <div class="content-cta">
-
                         <div>
-
                             <h3>Protect What Matters Most — Starting Today</h3>
-
                             <p>A 10-minute conversation with our advisor could save your family from decades of
-
                                 financial hardship. Don't wait.</p>
-
                         </div>
-
                         <a href="../../contact/contact.html" class="btn btn-primary"
-                            style="white-space:nowrap;flex-shrink:0">Get My
-
-                            Free Quote →</a>
-
+                            style="white-space:nowrap;flex-shrink:0">Get My Free Quote →</a>
                     </div>
 
                 </div>
@@ -1080,6 +923,7 @@
                                         <option>Retirement Planning</option>
                                         <option>Kids College Fund</option>
                                         <option>Life Insurance</option>
+                                        <option>Blog Updates Subscription</option>
                                         <option>General Inquiry</option>
                                     </select>
                                 </div>
@@ -1236,7 +1080,7 @@
             emailjs.init("2PSwxHV81J7_l7Nsm");
         })();
     </script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/main.js?v=2"></script>
 
 </body>
 
