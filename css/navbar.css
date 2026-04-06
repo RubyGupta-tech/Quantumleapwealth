@@ -124,36 +124,28 @@
 
 .brand-text {
     font-family: 'Playfair Display', serif;
-    font-size: 1.45rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: var(--primary);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     position: relative;
-    white-space: nowrap;
-    transition: all 0.3s ease;
     display: flex;
-    align-items: center;
-    line-height: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.05;
+    transition: all 0.3s ease;
 }
 
-/* Golden Fade Underline for Text */
+/* Golden Fade Underline for Text - Removed for stacked layout to keep it clean */
 .brand-text::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
 .brand-wealth {
-    font-size: 0.65em;
+    font-size: 1em;
     color: var(--accent);
     font-weight: 800;
-    margin-left: 6px;
+    margin-left: 0;
     transition: color 0.3s ease;
 }
 
@@ -162,8 +154,8 @@
     color: var(--accent-dark);
 }
 .navbar-brand:hover .brand-logo {
-    transform: scale(1.02);
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
 }
 
 /* Legacy Visibility Cleanup */

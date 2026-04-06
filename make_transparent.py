@@ -9,17 +9,12 @@ def remove_background(input_path, output_path):
     new_data = []
     
     for item in datas:
-        # We want to remove the WHITE/LIGHT GRAY background completely
-        # Anything close to white (R>200, G>200, B>200) becomes fully transparent
-        if item[0] > 200 and item[1] > 200 and item[2] > 200:
-            # Change all white/light pixels to 100% transparent
-            new_data.append((255, 255, 255, 0))
-        # Remove any dark navy blue background artifacts as well
-        # In case the previous step accidentally left navy blocks
-        elif item[0] < 40 and item[1] < 60 and item[2] < 90:
+        # Strictly target PURE WHITE or extremely light background colors (like R,G,B > 240)
+        # We do not want to accidentally bleed into gold or navy.
+        if item[0] > 240 and item[1] > 240 and item[2] > 240:
             new_data.append((255, 255, 255, 0))
         else:
-            # Keep the actual logo pixels (gold/white text)
+            # Keep ALL actual logo colors exactly the same
             new_data.append(item)
             
     img.putdata(new_data)
@@ -32,7 +27,7 @@ def remove_background(input_path, output_path):
     img.save(output_path, "PNG")
     print(f"Successfully processed true transparent logo: {output_path}")
 
-img_in = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\QWL_logo_original.png"
-img_out = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\QWL_logo.png"
+img_in = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\gellery\QLW_logo_pic.png"
+img_out = r"C:\Users\ruby4\New folder\Quantumleapwealth\images\gellery\QLW_logo_pic_transparent.png"
 
 remove_background(img_in, img_out)
