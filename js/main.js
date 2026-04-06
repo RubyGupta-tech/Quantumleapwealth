@@ -20,7 +20,7 @@
     const isIndex = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
     let rel = depth > 0 ? '../'.repeat(depth) : '';
 
-    fetch(rel + 'components/navbar.html')
+    fetch(rel + 'components/navbar.html?v=' + new Date().getTime())
       .then(response => {
         if (!response.ok) throw new Error('Navbar fetch failed');
         return response.text();
