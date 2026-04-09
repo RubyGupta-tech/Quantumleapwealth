@@ -1362,7 +1362,141 @@
 
     <!-- ══════════════════════════════
      HOW IT WORKS
-══════════════════════════════ -->
+    ══════════════════════════════ -->
+    <style>
+      /* Premium Vertical Scroll Timeline */
+      .process-timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 60px auto 0;
+        padding: 20px 0;
+      }
+      
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(10, 37, 64, 0.1);
+        transform: translateX(-50%);
+      }
+      
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 80px;
+        z-index: 2;
+      }
+      
+      .timeline-left {
+        flex: 1;
+        text-align: right;
+        padding-right: 60px;
+        opacity: 0;
+        transform: translateX(-80px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .timeline-right {
+        flex: 1;
+        text-align: left;
+        padding-left: 60px;
+        opacity: 0;
+        transform: translateX(80px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+      }
+      
+      /* Active state when scrolling into view */
+      .timeline-item.active .timeline-left {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .timeline-item.active .timeline-right {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .timeline-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 70px;
+        background: white;
+        border: 2px solid var(--navy);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        color: var(--navy);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        z-index: 3;
+        transition: all 0.8s ease;
+      }
+      
+      .timeline-item.active .timeline-center {
+        border-color: var(--gold);
+        color: var(--gold);
+        box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+      }
+      
+      .tl-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        color: var(--navy);
+        margin-bottom: 0;
+      }
+      
+      .tl-desc {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+      
+      /* Mobile Timeline Layout */
+      @media (max-width: 768px) {
+        .process-timeline {
+          margin-top: 40px;
+        }
+        .timeline-line {
+          left: 40px;
+        }
+        
+        .timeline-item {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-left: 100px;
+          margin-bottom: 50px;
+        }
+        
+        .timeline-center {
+          left: 40px;
+        }
+        
+        .timeline-left {
+          text-align: left;
+          padding-right: 0;
+          padding-bottom: 10px;
+          transform: translateX(40px); /* Both slide from right on mobile */
+        }
+        
+        .timeline-right {
+          padding-left: 0;
+          transform: translateX(40px); /* Both slide from right on mobile */
+        }
+        .tl-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
     <section class="section section-light" id="process">
       <div class="container">
         <div class="text-center reveal">
@@ -1374,28 +1508,70 @@
           <h2 class="section-title">How We Work With You</h2>
           <p class="section-sub">A simple, 4-step journey to financial security and wealth growth.</p>
         </div>
-        <div class="process-steps">
-          <div class="step-card reveal reveal-delay-1">
-            <div class="step-num">01</div>
-            <h4>Free Consultation</h4>
-            <p>We start with a no-obligation conversation to understand your current financial situation and goals.</p>
+        
+        <div class="process-timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-item">
+            <div class="timeline-left"><h3 class="tl-title">Free Consultation</h3></div>
+            <div class="timeline-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="timeline-right">
+              <p class="tl-desc">We start with a no-obligation conversation to understand your current financial situation, challenges, and long-term goals.</p>
+            </div>
           </div>
-          <div class="step-card reveal reveal-delay-2">
-            <div class="step-num">02</div>
-            <h4>Financial Analysis</h4>
-            <p>We analyze your assets, income, risk tolerance, and future needs to build a complete picture.</p>
+          
+          <div class="timeline-item">
+            <div class="timeline-left"><h3 class="tl-title">Financial Analysis</h3></div>
+            <div class="timeline-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+            </div>
+            <div class="timeline-right">
+              <p class="tl-desc">We analyze your assets, income, risk tolerance, and future needs using proprietary tools to build a complete, transparent picture.</p>
+            </div>
           </div>
-          <div class="step-card reveal reveal-delay-3">
-            <div class="step-num">03</div>
-            <h4>Custom Strategy</h4>
-            <p>We craft a personalized financial plan covering investments, insurance, retirement, and taxes.</p>
+          
+          <div class="timeline-item">
+            <div class="timeline-left"><h3 class="tl-title">Custom Strategy</h3></div>
+            <div class="timeline-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <div class="timeline-right">
+              <p class="tl-desc">We craft a personalized financial plan covering multi-asset investments, life insurance protection, retirement, and tax optimization.</p>
+            </div>
           </div>
-          <div class="step-card reveal reveal-delay-4">
-            <div class="step-num">04</div>
-            <h4>Ongoing Support</h4>
-            <p>We monitor, adjust, and stay by your side as your life and financial goals evolve over time.</p>
+          
+          <div class="timeline-item">
+            <div class="timeline-left"><h3 class="tl-title">Ongoing Support</h3></div>
+            <div class="timeline-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="timeline-right">
+              <p class="tl-desc">Your life changes, and so should your strategy. We monitor, adjust, and stay by your side as your family and wealth evolve over time.</p>
+            </div>
           </div>
         </div>
+      </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          if ('IntersectionObserver' in window) {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const obsy = new IntersectionObserver((entries) => {
+              entries.forEach(e => {
+                if (e.isIntersecting) {
+                  e.target.classList.add('active');
+                } else {
+                  // Scrolling away reverses the animation!
+                  e.target.classList.remove('active');
+                }
+              });
+            }, { threshold: 0.3 });
+            timelineItems.forEach(item => obsy.observe(item));
+          }
+        });
+      </script>
       </div>
     </section>
     <!-- ══════════════════════════════
