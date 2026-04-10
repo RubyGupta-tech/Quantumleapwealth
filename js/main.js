@@ -157,6 +157,23 @@
     });
   });
 
+  /* ---- Floating Action Button (FAB) Toggle ---- */
+  const fabContainer = document.querySelector('.fab-container');
+  const fabToggle = document.querySelector('.fab-toggle');
+  if (fabToggle && fabContainer) {
+    fabToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fabContainer.classList.toggle('open');
+    });
+
+    // Close FAB when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!fabContainer.contains(e.target)) {
+        fabContainer.classList.remove('open');
+      }
+    });
+  }
+
 })();
 
 window.handleSubmit = function (e) {
