@@ -1,0 +1,122 @@
+/* ══════════════════════════════════════
+   NUCLEAR TICKER FIX (Restore Color & Motion)
+   ══════════════════════════════════════ */
+
+/* Global Safety Net to prevent horizontal scroll */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Force Ticker Container to clip everything and added matching background */
+.logo-ticker-container {
+    overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+    background: #0a2540 !important;
+    /* Standalone Professional Blue Strip */
+    margin: 40px 0 !important;
+    padding: 60px 0 !important;
+}
+
+/* Professional Lateral Fades matching the dark background */
+.logo-ticker-container::before,
+.logo-ticker-container::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 250px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.logo-ticker-container::before {
+    left: 0 !important;
+    background: linear-gradient(to right, #0a2540, transparent) !important;
+}
+
+.logo-ticker-container::after {
+    right: 0 !important;
+    background: linear-gradient(to left, #0a2540, transparent) !important;
+}
+
+/* Force Gold Color */
+.divider-text {
+    background: var(--gold-metallic, linear-gradient(135deg, #a07a28 0%, #d4af37 50%, #a07a28 100%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    /* Synced with other section labels */
+    text-transform: uppercase !important;
+    letter-spacing: 0.25em !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+}
+
+.divider-line {
+    background: linear-gradient(to var(--dir, right), #D4AF37, transparent) !important;
+}
+
+/* Force Smooth Marquee Animation */
+.logo-ticker-track {
+    display: flex !important;
+    width: max-content !important;
+    min-width: 200% !important;
+    animation: marquee-glide 18s linear infinite !important;
+    /* Slower for professional feel */
+    animation-play-state: running !important;
+    will-change: transform !important;
+}
+
+.logo-ticker-track:hover {
+    animation-play-state: paused !important;
+}
+
+@keyframes marquee-glide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Visibility & Original Color Restoration */
+.logo-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    /* Brighter white for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin: 0 15px !important;
+    width: 220px !important;
+    height: 110px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.logo-item:hover {
+    transform: translateY(-8px) scale(1.05) !important;
+    background: #ffffff !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.3) !important;
+}
+
+.logo-item img {
+    max-width: 85% !important;
+    max-height: 70% !important;
+    object-fit: contain !important;
+    filter: none !important;
+    /* Restore Original Colors */
+    opacity: 1 !important;
+    transition: transform 0.3s ease !important;
+}

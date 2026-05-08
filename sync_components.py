@@ -125,6 +125,28 @@ def sync_components(filepath):
     if 'skip-link' not in new_content:
         new_content = re.sub(r'(<body.*?>)', r'\1\n  <a href="#main-content" class="skip-link">Skip to main content</a>', new_content)
 
+    # Add/Update Google Analytics (GA4) Tag
+    ga_tag = """  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RWBTCCG9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3RWBTCCG9V');
+  </script>"""
+    
+    # If a GA tag already exists, replace it to ensure it's up to date
+    if 'googletagmanager.com/gtag/js' in new_content:
+        # Match the whole GA block we previously inserted
+        ga_pattern = re.compile(r'  <!-- Google Analytics \(GA4\) -->.*?gtag\(\'config\', \'G-.*?\'\);.*?<\/script>', re.DOTALL)
+        new_content = ga_pattern.sub(ga_tag, new_content)
+    else:
+        # Insert GA tag right after <head>
+        if '<head>' in new_content:
+            new_content = new_content.replace('<head>', '<head>\n' + ga_tag)
+        elif '<head ' in new_content:
+             new_content = re.sub(r'(<head.*?>)', r'\1\n' + ga_tag, new_content)
+
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(new_content)
     print(f"Updated {filepath}")

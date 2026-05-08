@@ -1,0 +1,291 @@
+/* ============================================================
+   QUANTUM LEAP WEALTH — NAVBAR & DROPDOWN STYLES (V3 - PREMIUM)
+   ============================================================ */
+
+:root {
+    --nav-height: 85px;
+    --navy: #0a2540;
+    --gold: #c9a84c;
+    --gold-dark: #b8922a;
+}
+
+/* ---- Top Info Bar ---- */
+.topbar {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.topbar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+}
+.topbar-left, .topbar-right { display: flex; gap: 20px; }
+.topbar a { color: #e2c061; text-decoration: none; }
+
+/* ---- Main Navbar ---- */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+    height: var(--nav-height);
+}
+
+.navbar-inner {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%; /* Push to the corners */
+    height: 100%;
+}
+
+/* ---- Brand Identity (Shared) ---- */
+.navbar-brand, .mobile-brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    z-index: 10;
+}
+
+.brand-logo {
+    height: 85px; /* Restored to a more standard proportion for a stacked logo */
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover .brand-logo, .mobile-brand-link:hover .brand-logo {
+    transform: scale(1.08); /* Smoother interaction */
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.1));
+}
+
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.05;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left center;
+}
+
+.brand-top {
+    font-size: 1em;
+}
+
+.brand-wealth-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.brand-wealth-row::before,
+.brand-wealth-row::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+}
+
+.brand-wealth-row::before {
+    background: linear-gradient(to right, transparent, var(--gold));
+}
+
+.brand-wealth-row::after {
+    background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.brand-wealth {
+    font-size: 0.55em;
+    color: var(--gold);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+}
+
+.navbar-brand:hover .brand-text, .mobile-brand-link:hover .brand-text {
+    transform: scale(1.02); /* Very subtle interaction so it stays clean */
+    color: var(--navy); 
+}
+
+.navbar-brand:hover .brand-wealth, .mobile-brand-link:hover .brand-wealth {
+    color: var(--navy); /* Pop wealth back to navy for contrast */
+}
+
+/* Visibility Control */
+.mobile-brand-container { display: none !important; } /* Hidden on Desktop */
+
+/* ---- Nav Menu (Desktop) ---- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.nav-item { position: relative; }
+
+.nav-link {
+    padding: 10px 18px;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold-dark);
+    background: rgba(10, 37, 64, 0.04);
+}
+
+.dd-arrow { width: 12px; height: 12px; transition: transform 0.3s; opacity: 0.7; }
+.nav-item:hover .dd-arrow { transform: rotate(180deg); }
+
+/* ---- Dropdowns (Desktop) ---- */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background: #ffffff;
+    border-radius: 12px;
+    min-width: 240px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.15);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+    z-index: 1000;
+    list-style: none;
+}
+
+.nav-item:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+    pointer-events: auto;
+}
+
+.dropdown.wide { min-width: 480px; display: grid; grid-template-columns: 1fr 1fr; }
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover { background: rgba(10, 37, 64, 0.04); color: var(--gold); }
+.dd-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: rgba(201, 168, 76, 0.08); border-radius: 6px; }
+
+/* ---- CTA Button ---- */
+.btn-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #fff !important;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
+}
+.btn-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(201, 168, 76, 0.45); }
+
+/* ---- Hamburger (Mobile Only) ---- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 10001;
+}
+.hamburger span { width: 28px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+/* ============================================================
+   RESPONSIVE — MOBILE (1100px) - Increased to prevent menu overlap
+   ============================================================ */
+@media (max-width: 1100px) {
+    .navbar { height: 75px; }
+    .hamburger { display: flex; }
+
+    .mobile-brand-container {
+        display: block !important;
+        padding: 30px 24px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+        background: #fcfdfe;
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 330px;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 100px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 10000;
+        box-shadow: -15px 0 60px rgba(0,0,0,0.2);
+        overflow-y: auto;
+    }
+
+    .nav-menu.open { transform: translateX(0); }
+
+    .nav-link {
+        padding: 18px 24px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.04);
+        border-radius: 0;
+        justify-content: space-between;
+    }
+
+    .dropdown { display: none; position: static; transform: none; width: 100%; padding: 0; box-shadow: none; border: none; opacity: 1; visibility: visible; }
+    .nav-item.active .dropdown { display: block; }
+}
+
+@media (max-width: 480px) {
+    .brand-logo { height: 50px; }
+    .brand-text { font-size: 1.1rem; }
+    .nav-menu { width: 88%; }
+}

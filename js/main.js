@@ -176,69 +176,65 @@
 
 })();
 
-window.handleSubmit = function (e) {
+window.handleSubmit = async function (e) {
   e.preventDefault();
 
   const form = e.target;
-  const submitBtn = form.querySelector('.form-submit');
-  const originalText = submitBtn.textContent;
+  const submitBtn = form.querySelector('.form-submit') || form.querySelector('button[type="submit"]') || form.querySelector('input[type="submit"]');
+  const originalText = submitBtn ? (submitBtn.textContent || submitBtn.value) : 'Submit';
 
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
+  if (submitBtn) {
+    if (submitBtn.tagName === 'INPUT') submitBtn.value = 'Sending...';
+    else submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+  }
 
-  const SERVICE_ID = 'service_7bd9xhg';
-  const ADMIN_TEMPLATE_ID = 'template_8bopej4';
-  const AUTO_REPLY_TEMPLATE_ID = 'template_vaf4xrs';
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVUXsk5cp5koV_SDg94fq5wEpshQtykf1PAdXzuYXwwPIqurG0Shb6JWc01zpCCPCjgQ/exec';
+  const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? 'http://localhost:3000/api/contact' 
+    : '/api/contact';
 
-  let userNameHidden = form.querySelector('input[name="user_name"]');
-  if (!userNameHidden) {
-    userNameHidden = document.createElement('input');
-    userNameHidden.type = 'hidden';
-    userNameHidden.name = 'user_name';
-    form.appendChild(userNameHidden);
-  }
-  const firstName = form.first_name ? form.first_name.value : '';
-  const lastName = form.last_name ? form.last_name.value : '';
-  userNameHidden.value = (firstName + ' ' + lastName).trim();
-
-  let timeHidden = form.querySelector('input[name="time"]');
-  if (!timeHidden) {
-    timeHidden = document.createElement('input');
-    timeHidden.type = 'hidden';
-    timeHidden.name = 'time';
-    form.appendChild(timeHidden);
-  }
-  timeHidden.value = new Date().toLocaleString();
-
-  emailjs.sendForm(SERVICE_ID, ADMIN_TEMPLATE_ID, form)
-    .then(function () {
-      return emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, form);
-    })
-    .then(function () {
-      const formData = new FormData(form);
-      const encodedData = new URLSearchParams(formData);
-      return fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: encodedData, mode: 'no-cors' });
-    })
-    .then(function () {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      form.style.display = 'none';
-
-      let successMsg = form.parentElement.querySelector('.form-success');
-      if (successMsg) {
-        successMsg.style.display = 'block';
-      } else {
-        alert("✅ Thank you! Your message has been sent. We'll reach out within 24 hours.");
-      }
-      form.reset();
-    })
-    .catch(function (error) {
-      console.error('Error!', error);
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      alert("EmailJS Error: " + (error.text || error.message || JSON.stringify(error)));
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || 'Failed to submit form');
+    }
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new URLSearchParams(formData), mode: 'no-cors' });
+    } catch (sheetErr) {
+      console.warn("Google Sheets backup failed, but CRM saved successfully.", sheetErr);
+    }
+
+    form.style.display = 'none';
+    let successMsg = form.parentElement.querySelector('.form-success');
+    if (successMsg) {
+      successMsg.style.display = 'block';
+    } else {
+      alert("✅ Thank you! Your message has been sent securely. We'll reach out within 24 hours.");
+    }
+    form.reset();
+
+  } catch (error) {
+    console.error('API Submission Error:', error);
+    alert("Error submitting form: " + error.message + " - Please make sure the Next.js dev server is running on port 3000.");
+  } finally {
+    if (submitBtn) {
+      if (submitBtn.tagName === 'INPUT') submitBtn.value = originalText;
+      else submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  }
 };
 
 // --- SUBSCRIPTION MODAL LOGIC ---

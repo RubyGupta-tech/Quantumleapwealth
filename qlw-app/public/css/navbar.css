@@ -1,0 +1,396 @@
+/* ============================================================
+   QUANTUM LEAP WEALTH — NAVBAR & DROPDOWN STYLES
+   ============================================================ */
+
+/* ---- Top Info Bar ---- */
+.topbar {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topbar a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.topbar a:hover {
+    color: #fff;
+}
+
+.topbar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 24px;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-right .social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.topbar-right .social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s;
+}
+
+.topbar-right .social-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.topbar-divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ---- Main Navbar ---- */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #ffffff; /* Clean White Background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: background 0.3s, box-shadow 0.3s;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+}
+
+.navbar.scrolled {
+    background: rgba(248, 250, 252, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 32px rgba(10, 37, 64, 0.12);
+}
+
+.navbar-inner {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 0 20px;
+    height: 80px;
+    position: relative;
+}
+
+/* ---- Brand / Logo Block (Default/Desktop) ---- */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    height: auto;
+    padding: 0;
+    margin-right: 20px;
+    position: relative;
+    z-index: 10;
+    gap: 12px;
+}
+
+.brand-logo {
+    height: 70px;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.05;
+    transition: all 0.3s ease;
+}
+
+/* Golden Fade Underline for Text - Removed for stacked layout to keep it clean */
+.brand-text::after {
+    display: none;
+}
+
+.brand-wealth {
+    font-size: 1em;
+    color: var(--accent);
+    font-weight: 800;
+    margin-left: 0;
+    transition: color 0.3s ease;
+}
+
+/* Brand Hover Interaction */
+.navbar-brand:hover .brand-text {
+    color: var(--accent-dark);
+}
+.navbar-brand:hover .brand-logo {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Legacy Visibility Cleanup */
+.brand-name, .brand-tagline { display: none !important; }
+
+/* Mobile Side Nav Brand (Aggressively hidden on desktop) */
+.mobile-brand-container {
+    display: none !important;
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+    background: #fafbfc;
+}
+
+.mobile-brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+/* ---- Nav Menu (Desktop Style) ---- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-dark);
+    background: rgba(10, 37, 64, 0.04);
+}
+
+.nav-link .dd-arrow {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s;
+    opacity: 0.7;
+}
+
+.nav-item:hover > .nav-link .dd-arrow {
+    transform: rotate(180deg);
+}
+
+/* ---- Dropdowns (Desktop Style) ---- */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #ffffff;
+    border-radius: 12px;
+    min-width: 220px;
+    padding: 10px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(.4, 0, .2, 1);
+    z-index: 100;
+}
+
+.nav-item:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown.wide {
+    min-width: 440px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+    background: rgba(10, 37, 64, 0.04);
+    color: var(--accent);
+    padding-left: 18px;
+}
+
+/* ---- CTA Button ---- */
+.btn-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--accent), #b8922a);
+    color: #fff !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.45);
+}
+
+/* ---- Hamburger (Mobile Toggle) ---- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   RESPONSIVE — BREAKPOINT: 960px
+   ============================================================ */
+@media (max-width: 960px) {
+    .navbar-inner {
+        padding: 0 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-brand-container {
+        display: block !important; /* Reveal in side nav only */
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 320px;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 90px 0 40px;
+        gap: 0;
+        box-shadow: -10px 0 50px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+        border-radius: 0;
+        justify-content: space-between;
+    }
+
+    .dropdown, .dropdown.wide {
+        position: static;
+        display: none;
+        background: #fcfdfe;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding: 5px 0;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .nav-item.active .dropdown {
+        display: block;
+    }
+
+    .dropdown-item {
+        padding: 12px 40px;
+        border-radius: 0;
+    }
+
+    .btn-nav-cta {
+        margin: 25px 24px 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo { height: 55px; }
+    .brand-text { font-size: 1.1rem; }
+    .nav-menu { width: 85%; }
+}
