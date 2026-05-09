@@ -7,7 +7,8 @@ export default function LeadRow({ lead, isArchivedView }) {
   const router = useRouter();
   const [isUpdating, setIsUpdating] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
   // State for the expanded panel
   const [isExpanded, setIsExpanded] = useState(false);
   const [notes, setNotes] = useState(lead.notes || "");
@@ -59,8 +60,8 @@ export default function LeadRow({ lead, isArchivedView }) {
   };
 
   const handleDelete = async () => {
-    if (!confirm("Are you sure you want to permanently delete this record? This action cannot be undone.")) return;
     setIsDeleting(true);
+    setShowDeleteModal(false);
     try {
       const res = await fetch(`/api/leads/${lead.id}`, { method: "DELETE" });
       if (res.ok) router.refresh();
@@ -164,7 +165,7 @@ export default function LeadRow({ lead, isArchivedView }) {
               📦
             </button>
             <button 
-              onClick={handleDelete}
+              onClick={() => setShowDeleteModal(true)}
               disabled={isUpdating}
               style={{ padding: "6px", background: "none", border: "none", cursor: "pointer", color: "#fca5a5" }}
               title="Delete"
@@ -240,6 +241,68 @@ export default function LeadRow({ lead, isArchivedView }) {
                 >
                   {isSavingDetails ? "Saving..." : "Save Details"}
                 </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      )}
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && (
+        <tr>
+          <td colSpan="6" style={{ padding: 0, border: "none" }}>
+            {/* Full-screen overlay */}
+            <div style={{
+              position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.5)",
+              zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center"
+            }}>
+              {/* Modal Card */}
+              <div style={{
+                backgroundColor: "white", borderRadius: "16px", padding: "36px",
+                maxWidth: "420px", width: "90%", boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
+                textAlign: "center", animation: "fadeIn 0.2s ease"
+              }}>
+                {/* Icon */}
+                <div style={{
+                  width: "64px", height: "64px", borderRadius: "50%",
+                  backgroundColor: "#fef2f2", display: "flex", alignItems: "center",
+                  justifyContent: "center", margin: "0 auto 20px", fontSize: "2rem"
+                }}>🗑️</div>
+
+                <h3 style={{ margin: "0 0 12px", color: "#0a2540", fontSize: "1.25rem", fontWeight: "700" }}>
+                  Delete Record?
+                </h3>
+                <p style={{ margin: "0 0 8px", color: "#475569", fontSize: "0.95rem", lineHeight: 1.6 }}>
+                  Are you sure you want to permanently delete
+                </p>
+                <p style={{ margin: "0 0 28px", color: "#0a2540", fontWeight: "700", fontSize: "1rem" }}>
+                  {lead.name}
+                </p>
+                <p style={{ margin: "-16px 0 28px", color: "#ef4444", fontSize: "0.85rem", fontWeight: "500" }}>
+                  ⚠️ This action cannot be undone.
+                </p>
+
+                <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
+                  <button
+                    onClick={() => setShowDeleteModal(false)}
+                    style={{
+                      flex: 1, padding: "12px", backgroundColor: "white",
+                      border: "1px solid #e2e8f0", borderRadius: "8px",
+                      color: "#475569", fontWeight: "600", cursor: "pointer", fontSize: "0.95rem"
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleDelete}
+                    style={{
+                      flex: 1, padding: "12px", backgroundColor: "#ef4444",
+                      border: "none", borderRadius: "8px",
+                      color: "white", fontWeight: "700", cursor: "pointer", fontSize: "0.95rem"
+                    }}
+                  >
+                    Yes, Delete
+                  </button>
+                </div>
               </div>
             </div>
           </td>
