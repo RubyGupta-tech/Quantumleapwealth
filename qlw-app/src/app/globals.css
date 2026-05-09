@@ -27,14 +27,14 @@ body {
 
 .form-success {
   display: none;
-  background-color: #059669; /* Bright Emerald Green */
-  color: #ffffff; /* White Text */
+  background-color: #c9a84c; /* Brand Gold */
+  color: #ffffff;
   padding: 16px 20px;
   border-radius: 8px;
   font-weight: 600;
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(201, 168, 76, 0.3);
   font-size: 1.05rem;
 }
 
