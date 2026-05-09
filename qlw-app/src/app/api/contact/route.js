@@ -83,6 +83,16 @@ export async function POST(request) {
           <!-- Divider -->
           <hr style="border:none;border-top:2px solid #c9a84c;margin:24px 0;opacity:0.3;"/>
 
+          <!-- Signature -->
+          <p style="color:#475569;line-height:1.8;margin:0 0 20px;">
+            Best regards,<br/>
+            <strong style="color:#0a2540;">Anuradha &amp; Prasad</strong><br/>
+            <span style="color:#c9a84c;font-weight:600;">Quantum Leap Wealth</span>
+          </p>
+
+          <!-- Divider -->
+          <hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;"/>
+
           <!-- Contact Info -->
           <table style="width:100%;border-collapse:collapse;">
             <tr>
