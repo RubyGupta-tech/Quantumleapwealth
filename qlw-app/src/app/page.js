@@ -1413,26 +1413,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          if ('IntersectionObserver' in window) {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            const obsy = new IntersectionObserver((entries) => {
-              entries.forEach(e => {
-                if (e.isIntersecting) {
-                  e.target.classList.add('active');
-                } else {
-                  // Scrolling away reverses the animation!
-                  e.target.classList.remove('active');
-                }
-              });
-            }, { threshold: 0.3 });
-            timelineItems.forEach(item => obsy.observe(item));
-          }
-        });
-      </script>
-      </div>
     </section>
     <!-- ══════════════════════════════
      OUR PRODUCT (FAQs & Insights)

@@ -45,3 +45,17 @@ body {
     padding: 72px 16px 24px 16px !important;
   }
 }
+
+/* Process Timeline Fix — make steps always visible (Next.js strips inline scripts) */
+.timeline-item {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* Scroll reveal fix — always show revealed items */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
