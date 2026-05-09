@@ -19,48 +19,52 @@ export default async function LeadsInbox({ searchParams }) {
 
   return (
     <div>
-      <div style={{ marginBottom: "40px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <div>
-          <h1 style={{ margin: "0 0 8px 0", color: "#0a2540", fontFamily: "'Inter', sans-serif" }}>
-            {isArchivedView ? "Archived Leads" : "Leads Inbox"}
-          </h1>
-          <p style={{ margin: 0, color: "#6b7c8d", fontSize: "0.95rem" }}>
-            {isArchivedView ? "View all archived inquiries." : "Manage all incoming contact forms and messages."}
-          </p>
+      <div style={{ marginBottom: "32px" }}>
+        {/* Title row */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "16px", marginBottom: "20px" }}>
+          <div>
+            <h1 style={{ margin: "0 0 8px 0", color: "#0a2540", fontFamily: "'Inter', sans-serif" }}>
+              {isArchivedView ? "📦 Archived Leads" : "📥 Leads Inbox"}
+            </h1>
+            <p style={{ margin: 0, color: "#6b7c8d", fontSize: "0.95rem" }}>
+              {isArchivedView ? "View all archived inquiries. Click Restore to move them back." : "Manage all incoming contact forms and messages."}
+            </p>
+          </div>
         </div>
-        
-        <div style={{ display: "flex", backgroundColor: "#f1f5f9", padding: "4px", borderRadius: "8px" }}>
+
+        {/* Tab Toggle */}
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
           <Link 
             href="/admin/leads" 
             style={{
-              padding: "8px 16px",
-              borderRadius: "6px",
+              padding: "10px 20px",
+              borderRadius: "8px",
               textDecoration: "none",
               fontSize: "0.9rem",
-              fontWeight: "600",
-              color: !isArchivedView ? "#0a2540" : "#64748b",
-              backgroundColor: !isArchivedView ? "white" : "transparent",
-              boxShadow: !isArchivedView ? "0 2px 4px rgba(0,0,0,0.05)" : "none",
+              fontWeight: "700",
+              color: !isArchivedView ? "white" : "#64748b",
+              backgroundColor: !isArchivedView ? "#0a2540" : "#f1f5f9",
+              border: `2px solid ${!isArchivedView ? "#0a2540" : "#e2e8f0"}`,
               transition: "all 0.2s"
             }}
           >
-            Active Inbox
+            ✅ Active Inbox
           </Link>
           <Link 
             href="/admin/leads?archived=true" 
             style={{
-              padding: "8px 16px",
-              borderRadius: "6px",
+              padding: "10px 20px",
+              borderRadius: "8px",
               textDecoration: "none",
               fontSize: "0.9rem",
-              fontWeight: "600",
-              color: isArchivedView ? "#0a2540" : "#64748b",
-              backgroundColor: isArchivedView ? "white" : "transparent",
-              boxShadow: isArchivedView ? "0 2px 4px rgba(0,0,0,0.05)" : "none",
+              fontWeight: "700",
+              color: isArchivedView ? "white" : "#64748b",
+              backgroundColor: isArchivedView ? "#0a2540" : "#f1f5f9",
+              border: `2px solid ${isArchivedView ? "#0a2540" : "#e2e8f0"}`,
               transition: "all 0.2s"
             }}
           >
-            Archive
+            📦 View Archived
           </Link>
         </div>
       </div>
