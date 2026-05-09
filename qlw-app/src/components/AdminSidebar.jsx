@@ -7,8 +7,10 @@ export default function AdminSidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -108,7 +110,9 @@ export default function AdminSidebar() {
     </>
   );
 
-  if (isMobile) {
+  // Before mount, always render desktop sidebar to match server HTML
+  if (!mounted || !isMobile) {
+
     return (
       <>
         {/* Mobile Top Bar */}
@@ -153,7 +157,7 @@ export default function AdminSidebar() {
     );
   }
 
-  // Desktop: always-visible sidebar
+  // Desktop: always-visible sidebar (also shown before mount to avoid hydration mismatch)
   return (
     <aside style={{
       width: "260px", backgroundColor: "#0a2540", color: "white",

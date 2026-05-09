@@ -37,3 +37,11 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   font-size: 1.05rem;
 }
+
+/* Admin Dashboard Responsive Styles */
+@media (max-width: 767px) {
+  .admin-main-content {
+    margin-left: 0 !important;
+    padding: 72px 16px 24px 16px !important;
+  }
+}
