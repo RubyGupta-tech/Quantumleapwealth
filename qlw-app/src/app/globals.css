@@ -27,15 +27,17 @@ body {
 
 .form-success {
   display: none;
-  background-color: #c9a84c; /* Brand Gold */
-  color: #ffffff;
-  padding: 16px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  margin-top: 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(201, 168, 76, 0.3);
-  font-size: 1.05rem;
+  background: #c9a84c !important;         /* Brand Gold — overrides inline styles */
+  background-color: #c9a84c !important;
+  color: #ffffff !important;              /* White text */
+  padding: 16px 20px !important;
+  border-radius: 8px !important;
+  border: none !important;               /* Remove any green border */
+  font-weight: 600 !important;
+  margin-top: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 6px rgba(201, 168, 76, 0.3) !important;
+  font-size: 1.05rem !important;
 }
 
 /* Admin Dashboard Responsive Styles */
