@@ -159,20 +159,17 @@ export default function LeadRow({ lead, isArchivedView }) {
             <button 
               onClick={handleArchiveToggle}
               disabled={isUpdating}
-              title={lead.isArchived ? "Unarchive" : "Archive"}
+              title={lead.isArchived ? "Restore from Archive" : "Archive this lead"}
               style={{ 
-                padding: "5px 10px", 
-                background: lead.isArchived ? "#f0fdf4" : "#f8fafc", 
-                border: `1px solid ${lead.isArchived ? "#86efac" : "#e2e8f0"}`, 
-                borderRadius: "6px",
+                padding: "6px 8px", 
+                background: "none",
+                border: "none",
                 cursor: "pointer", 
-                color: lead.isArchived ? "#166534" : "#6b7c8d",
-                fontSize: "0.75rem",
-                fontWeight: "600",
-                whiteSpace: "nowrap"
+                color: "#6b7c8d",
+                fontSize: "1.1rem"
               }}
             >
-              {lead.isArchived ? "📤 Restore" : "📦 Archive"}
+              {lead.isArchived ? "📤" : "📦"}
             </button>
             <button 
               onClick={() => setShowDeleteModal(true)}

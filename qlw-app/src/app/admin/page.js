@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import LeadRow from "@/components/LeadRow";
 import DashboardExportButton from "@/components/DashboardExportButton";
+import Link from "next/link";
 
 export const dynamic = 'force-dynamic';
 
@@ -56,7 +57,11 @@ export default async function AdminDashboard() {
           <h1 style={{ margin: "0 0 8px 0", color: "#0a2540", fontFamily: "'Inter', sans-serif" }}>Dashboard</h1>
           <p style={{ margin: 0, color: "#6b7c8d", fontSize: "0.95rem" }}>Welcome back! Here is an overview of your recent leads.</p>
         </div>
-        <DashboardExportButton leads={allActiveLeads} />
+        <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
+          <Link href="/admin/leads" style={{ padding: "8px 16px", borderRadius: "8px", textDecoration: "none", fontSize: "0.85rem", fontWeight: "600", color: "#0a2540", backgroundColor: "#f1f5f9", border: "2px solid #e2e8f0" }}>✅ Active Inbox</Link>
+          <Link href="/admin/leads?archived=true" style={{ padding: "8px 16px", borderRadius: "8px", textDecoration: "none", fontSize: "0.85rem", fontWeight: "600", color: "#64748b", backgroundColor: "#f1f5f9", border: "2px solid #e2e8f0" }}>📦 View Archived</Link>
+          <DashboardExportButton leads={allActiveLeads} />
+        </div>
       </div>
 
       {/* Stats Cards */}
