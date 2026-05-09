@@ -12,6 +12,15 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/resources/calculators.html',
+        destination: '/resources/resources',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
