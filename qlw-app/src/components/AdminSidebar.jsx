@@ -109,9 +109,10 @@ export default function AdminSidebar() {
       </div>
     </>
   );
+  // Show mobile only after mount (to avoid hydration mismatch) AND on small screens
+  const showMobile = mounted && isMobile;
 
-  // Before mount, always render desktop sidebar to match server HTML
-  if (!mounted || !isMobile) {
+  if (showMobile) {
 
     return (
       <>
