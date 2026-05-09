@@ -1,5 +1,8 @@
+import ScrollAnimator from "@/components/ScrollAnimator";
+
 export default function HomePage() {
   return (
+    <>
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
     <!-- ══════════════════════════════
@@ -2238,5 +2241,7 @@ export default function HomePage() {
     </section>
 
   ` }} />
+    <ScrollAnimator />
+    </>
   );
 }
