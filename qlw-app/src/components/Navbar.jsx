@@ -32,6 +32,21 @@ export default function Navbar() {
                   Quantum Leap <span className="brand-wealth">Wealth</span>
                 </span>
               </Link>
+              <button 
+                className="mobile-close-btn" 
+                onClick={() => {
+                  const hamburger = document.getElementById('hamburger');
+                  const navMenu = document.getElementById('nav-menu');
+                  const overlay = document.getElementById('nav-overlay');
+                  hamburger?.classList.remove('open');
+                  navMenu?.classList.remove('open');
+                  overlay?.classList.remove('active');
+                  document.body.style.overflow = '';
+                }}
+                aria-label="Close menu"
+              >
+                &times;
+              </button>
             </li>
             <li className="nav-item">
               <Link href="/" className="nav-link">
@@ -303,6 +318,16 @@ export default function Navbar() {
             aria-label="Open menu"
             aria-expanded="false"
             aria-controls="nav-menu"
+            onClick={(e) => {
+              e.preventDefault();
+              const hamburger = e.currentTarget;
+              const navMenu = document.getElementById('nav-menu');
+              const overlay = document.getElementById('nav-overlay');
+              const isOpen = hamburger.classList.toggle('open');
+              navMenu?.classList.toggle('open', isOpen);
+              overlay?.classList.toggle('active', isOpen);
+              document.body.style.overflow = isOpen ? 'hidden' : '';
+            }}
           >
             <span></span>
             <span></span>
@@ -310,7 +335,19 @@ export default function Navbar() {
           </button>
         </div>
       </header>
-      <div className="nav-overlay" id="nav-overlay"></div>
+      <div 
+        className="nav-overlay" 
+        id="nav-overlay"
+        onClick={() => {
+          const hamburger = document.getElementById('hamburger');
+          const navMenu = document.getElementById('nav-menu');
+          const overlay = document.getElementById('nav-overlay');
+          hamburger?.classList.remove('open');
+          navMenu?.classList.remove('open');
+          overlay?.classList.remove('active');
+          document.body.style.overflow = '';
+        }}
+      ></div>
     </>
   );
 }

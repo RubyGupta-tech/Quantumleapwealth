@@ -1025,7 +1025,7 @@ export default function HomePage() {
             every stage of life.</p>
         </div>
         <div class="services-grid">
-          <a href="images/services//images/services/investment-planning" class="flip-card reveal reveal-delay-1"
+          <a href="/images/services/investment-planning" class="flip-card reveal reveal-delay-1"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1043,7 +1043,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services//images/services/living-will-trust" class="flip-card reveal reveal-delay-2"
+          <a href="/images/services/living-will-trust" class="flip-card reveal reveal-delay-2"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1061,7 +1061,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services//images/services/tax-saving" class="flip-card reveal reveal-delay-3"
+          <a href="/images/services/tax-saving" class="flip-card reveal reveal-delay-3"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1079,7 +1079,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services//images/services/retirement-planning" class="flip-card reveal reveal-delay-1"
+          <a href="/images/services/retirement-planning" class="flip-card reveal reveal-delay-1"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1096,7 +1096,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services//images/services/kids-college" class="flip-card reveal reveal-delay-2"
+          <a href="/images/services/kids-college" class="flip-card reveal reveal-delay-2"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1114,7 +1114,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services//images/services/life-insurance" class="flip-card reveal reveal-delay-3"
+          <a href="/images/services/life-insurance" class="flip-card reveal reveal-delay-3"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
