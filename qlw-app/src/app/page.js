@@ -37,17 +37,19 @@ export default function HomePage() {
     }
 
     // ---- Events Slider Initialization (Legacy script fallback) ----
-    if (typeof window.renderEvents === 'function') {
-      window.renderEvents();
-    } else {
-      // If script is in dangerouslySetInnerHTML, we might need a small delay or check
+    const initEvents = () => {
+      if (typeof window.renderEvents === 'function') {
+        window.renderEvents();
+        return true;
+      }
+      return false;
+    };
+
+    if (!initEvents()) {
       const checkEvents = setInterval(() => {
-        if (typeof window.renderEvents === 'function') {
-          window.renderEvents();
-          clearInterval(checkEvents);
-        }
+        if (initEvents()) clearInterval(checkEvents);
       }, 100);
-      setTimeout(() => clearInterval(checkEvents), 3000);
+      setTimeout(() => clearInterval(checkEvents), 5000);
     }
 
     return () => {

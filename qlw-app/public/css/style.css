@@ -2067,7 +2067,41 @@ img {
   }
 }
 
-/* 2. Fix Business Opportunity truncation on mobile */
+/* 2. Fix Section Truncations on Mobile */
+@media (max-width: 1000px) {
+  .why-grid, 
+  .founder-grid, 
+  .partner-grid, 
+  .services-grid, 
+  .process-steps, 
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .why-image-wrap {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .why-badge {
+    right: 0;
+    bottom: -10px;
+  }
+  
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  
+  .hero-sub, .hero-ctas, .hero-stats {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+}
+
+/* 3. Fix Business Opportunity truncation on mobile */
 @media (max-width: 768px) {
   .opp-inner {
     grid-template-columns: 1fr !important;
@@ -2079,7 +2113,7 @@ img {
   }
 }
 
-/* 3. Fix 27-inch Monitor Sizing for Hero and Expertise */
+/* 4. Fix 27-inch Monitor Sizing for Hero and Expertise */
 @media (min-width: 1600px) {
   .hero-split-left-content {
     max-width: 900px !important;
