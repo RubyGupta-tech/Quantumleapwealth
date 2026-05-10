@@ -1,11 +1,12 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     // Close mobile menu on route change
@@ -17,19 +18,13 @@ export default function Navbar() {
     navMenu?.classList.remove('open');
     overlay?.classList.remove('active');
     document.body.style.overflow = '';
+    setActiveDropdown(null);
   }, [pathname]);
 
-  const toggleDropdown = (e) => {
+  const toggleDropdown = (name, e) => {
     if (typeof window !== 'undefined' && window.innerWidth <= 960) {
       e.preventDefault();
-      const parent = e.currentTarget.parentElement;
-      const isOpen = parent.classList.toggle('open');
-      
-      // Close other dropdowns
-      const siblings = parent.parentElement.querySelectorAll('.nav-item.has-dropdown');
-      siblings.forEach(sib => {
-        if (sib !== parent) sib.classList.remove('open');
-      });
+      setActiveDropdown(activeDropdown === name ? null : name);
     }
   };
 
@@ -66,8 +61,8 @@ export default function Navbar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link" onClick={toggleDropdown}>
+            <li className={`nav-item has-dropdown ${activeDropdown === 'about' ? 'open' : ''}`}>
+              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('about', e)}>
                 About{" "}
                 <svg
                   className="dd-arrow"
@@ -118,8 +113,8 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link" onClick={toggleDropdown}>
+            <li className={`nav-item has-dropdown ${activeDropdown === 'services' ? 'open' : ''}`}>
+              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('services', e)}>
                 Services{" "}
                 <svg
                   className="dd-arrow"
@@ -206,8 +201,8 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link" onClick={toggleDropdown}>
+            <li className={`nav-item has-dropdown ${activeDropdown === 'entrepreneurship' ? 'open' : ''}`}>
+              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('entrepreneurship', e)}>
                 Entrepreneurship{" "}
                 <svg
                   className="dd-arrow"
@@ -234,8 +229,8 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link" onClick={toggleDropdown}>
+            <li className={`nav-item has-dropdown ${activeDropdown === 'media' ? 'open' : ''}`}>
+              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('media', e)}>
                 Media{" "}
                 <svg
                   className="dd-arrow"
