@@ -22,7 +22,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const toggleDropdown = (name, e) => {
-    if (typeof window !== 'undefined' && window.innerWidth <= 960) {
+    if (typeof window !== 'undefined' && window.innerWidth <= 1100) {
       e.preventDefault();
       setActiveDropdown(activeDropdown === name ? null : name);
     }
