@@ -35,20 +35,64 @@ export async function POST(request) {
 
     // 3. Admin notification email HTML
     const adminEmailHtml = `
-      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
-        <h2 style="color:#0a2540;border-bottom:3px solid #c9a84c;padding-bottom:10px;">
-          🔔 New Lead — Quantum Leap Wealth
-        </h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Service Interest:</strong> ${service || "Not provided"}</p>
-        <p><strong>Message:</strong><br/>${message || "No message"}</p>
-        <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;"/>
-        <p style="color:#6b7c8d;font-size:0.9rem;">
-          <em>This lead has been saved to your 
-          <a href="https://www.quantumleapwealth.com/admin">CRM Dashboard</a>.</em>
-        </p>
+      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
+        
+        <!-- Header with logo -->
+        <div style="background:#0a2540;padding:24px 32px;display:flex;align-items:center;gap:16px;">
+          <img src="https://www.quantumleapwealth.com/images/QWL_logo_backup.png" alt="Logo"
+            style="height:50px;width:auto;background:white;padding:6px 10px;border-radius:8px;" />
+          <div>
+            <h1 style="color:#c9a84c;font-size:1rem;margin:0;letter-spacing:1px;text-transform:uppercase;">Quantum Leap Wealth</h1>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin:4px 0 0;">CRM Dashboard Notification</p>
+          </div>
+        </div>
+
+        <!-- Alert Banner -->
+        <div style="background:#fef9ec;border-left:4px solid #c9a84c;padding:14px 24px;">
+          <p style="margin:0;color:#92400e;font-weight:700;font-size:0.95rem;">🔔 New Lead Received!</p>
+        </div>
+
+        <!-- Lead Details -->
+        <div style="padding:28px 32px;">
+          <table style="width:100%;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid #f1f5f9;">
+              <td style="padding:12px 0;color:#6b7c8d;font-size:0.85rem;width:130px;font-weight:600;">Name</td>
+              <td style="padding:12px 0;color:#0a2540;font-weight:700;">${name}</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f1f5f9;">
+              <td style="padding:12px 0;color:#6b7c8d;font-size:0.85rem;font-weight:600;">Email</td>
+              <td style="padding:12px 0;"><a href="mailto:${email}" style="color:#0284c7;text-decoration:none;">${email}</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid #f1f5f9;">
+              <td style="padding:12px 0;color:#6b7c8d;font-size:0.85rem;font-weight:600;">Phone</td>
+              <td style="padding:12px 0;color:#0a2540;">${phone || "Not provided"}</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f1f5f9;">
+              <td style="padding:12px 0;color:#6b7c8d;font-size:0.85rem;font-weight:600;">Service Interest</td>
+              <td style="padding:12px 0;color:#0a2540;">${service || "Not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 0;color:#6b7c8d;font-size:0.85rem;font-weight:600;vertical-align:top;">Message</td>
+              <td style="padding:12px 0;color:#475569;line-height:1.6;">${message || "No message provided"}</td>
+            </tr>
+          </table>
+
+          <!-- CTA Button -->
+          <div style="text-align:center;margin-top:28px;">
+            <a href="https://www.quantumleapwealth.com/admin/leads"
+               style="background:#0a2540;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:700;font-size:0.95rem;display:inline-block;">
+              View in CRM Dashboard →
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="background:#f8fafc;padding:20px 32px;text-align:center;border-top:1px solid #e2e8f0;">
+          <p style="margin:0 0 4px;color:#0a2540;font-weight:700;font-size:0.9rem;">Quantum Leap Wealth</p>
+          <p style="margin:0;color:#94a3b8;font-size:0.8rem;">
+            📞 (+1) 408-203-3877 &nbsp;|&nbsp; ✉️ quantumlfs@gmail.com &nbsp;|&nbsp; 📍 California, USA
+          </p>
+        </div>
       </div>
     `;
 
