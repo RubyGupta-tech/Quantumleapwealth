@@ -324,9 +324,15 @@
     }
     .dropdown-item {
         color: var(--navy) !important;
-        font-weight: 500;
-        padding: 14px 28px;
-        border-bottom: 1px solid rgba(10, 37, 64, 0.03);
+        font-weight: 600;
+        padding: 16px 24px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+        display: flex;
+        align-items: center;
+    }
+    .dropdown-item:active {
+        background: rgba(201, 168, 76, 0.1);
     }
     .nav-item.open > .nav-link .dd-arrow {
         transform: rotate(180deg);

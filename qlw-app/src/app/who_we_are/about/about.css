@@ -1,13 +1,29 @@
 /* ── About Page Styles ── */
 .page-hero {
     background-color: #f8fafc;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%), url('/images/about_bg_light_v2.png') !important;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%), url('/images/about_bg_light_v2.png') !important;
     background-size: cover;
-    background-position: center right;
-    padding: 100px 0 90px;
+    background-position: center;
+    padding: 80px 0 60px;
     position: relative;
     overflow: hidden;
     border-bottom: 3px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 60px 0 40px;
+        text-align: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/images/about_bg_light_v2.png') !important;
+    }
+    .page-hero-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .breadcrumb {
+        justify-content: center;
+    }
 }
 
 .page-hero-inner {
