@@ -28,12 +28,12 @@ export default function HomePage() {
     window.currentSlide = function(n) {
       showSlide(n);
       clearInterval(slideInterval);
-      slideInterval = setInterval(nextSlide, 2000);
+      slideInterval = setInterval(nextSlide, 4000);
     };
 
     if (slides.length > 0) {
       showSlide(0);
-      slideInterval = setInterval(nextSlide, 2000);
+      slideInterval = setInterval(nextSlide, 4000);
     }
 
     // ---- Events Slider Initialization (Legacy script fallback) ----
