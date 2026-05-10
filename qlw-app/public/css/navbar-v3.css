@@ -279,7 +279,7 @@
     .nav-menu {
         position: fixed;
         inset: 0 0 0 auto;
-        width: 300px;
+        width: 260px; /* Slimmer width to reduce empty space */
         background: #ffffff;
         flex-direction: column;
         align-items: stretch;
