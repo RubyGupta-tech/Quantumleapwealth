@@ -6,21 +6,32 @@ export default function Page() {
   useEffect(() => {
     // Scroll reveals
     const reveals = document.querySelectorAll('.reveal');
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    
+    // Safety check: if IntersectionObserver is not supported or slow, just show everything
+    if (!window.IntersectionObserver) {
+      reveals.forEach(el => el.classList.add('active'));
+    } else {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-    reveals.forEach(el => revealObserver.observe(el));
+      reveals.forEach(el => revealObserver.observe(el));
+      
+      // Fallback: Show all after 3 seconds if still not revealed
+      setTimeout(() => {
+        reveals.forEach(el => el.classList.add('active'));
+      }, 3000);
+    }
 
     // Calendly script loading
     const link = document.createElement('link');

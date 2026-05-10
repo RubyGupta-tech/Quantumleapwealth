@@ -91,55 +91,61 @@ export default function ContactPage() {
               obligations — just a genuine conversation about your financial future.
             </p>
             
-            <form onSubmit={handleSubmit} id="contact-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label>First Name *</label>
-                  <input type="text" name="first_name" required placeholder="First name" />
+            {!isSuccess ? (
+              <form onSubmit={handleSubmit} id="contact-form">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="first_name" required placeholder="First name" />
+                  </div>
+                  <div className="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="last_name" required placeholder="Last name" />
+                  </div>
                 </div>
                 <div className="form-group">
-                  <label>Last Name *</label>
-                  <input type="text" name="last_name" required placeholder="Last name" />
+                  <label>Email Address *</label>
+                  <input type="email" name="user_email" required placeholder="your@email.com" />
                 </div>
-              </div>
-              <div className="form-group">
-                <label>Email Address *</label>
-                <input type="email" name="user_email" required placeholder="your@email.com" />
-              </div>
-              <div className="form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="user_phone" placeholder="(+1) 000-000-0000" />
-              </div>
-              <div className="form-group">
-                <label>Service of Interest</label>
-                <select name="service">
-                  <option value="">— Select a service —</option>
-                  <option>Investment Planning</option>
-                  <option>Living Will & Trust</option>
-                  <option>Tax Savings</option>
-                  <option>Retirement Planning</option>
-                  <option>Kids College Fund</option>
-                  <option>Life Insurance</option>
-                  <option>6 Steps to Financial Freedom</option>
-                  <option>Blog Updates Subscription</option>
-                  <option>General Inquiry</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label>Your Message *</label>
-                <textarea required name="message" placeholder="Tell us about your financial goals..."></textarea>
-              </div>
-              
-              {error && <p style={{ color: "#ef4444", marginBottom: "16px", fontSize: "0.9rem" }}>{error}</p>}
-              
-              <button type="submit" className="form-submit" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message — It's Free →"}
-              </button>
-            </form>
-
-            {isSuccess && (
+                <div className="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" name="user_phone" placeholder="(+1) 000-000-0000" />
+                </div>
+                <div className="form-group">
+                  <label>Service of Interest</label>
+                  <select name="service">
+                    <option value="">— Select a service —</option>
+                    <option>Investment Planning</option>
+                    <option>Living Will & Trust</option>
+                    <option>Tax Savings</option>
+                    <option>Retirement Planning</option>
+                    <option>Kids College Fund</option>
+                    <option>Life Insurance</option>
+                    <option>6 Steps to Financial Freedom</option>
+                    <option>Blog Updates Subscription</option>
+                    <option>General Inquiry</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label>Your Message *</label>
+                  <textarea required name="message" placeholder="Tell us about your financial goals..."></textarea>
+                </div>
+                
+                {error && <p style={{ color: "#ef4444", marginBottom: "16px", fontSize: "0.9rem" }}>{error}</p>}
+                
+                <button type="submit" className="form-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message — It's Free →"}
+                </button>
+              </form>
+            ) : (
               <div className="form-success" style={{ display: "block" }}>
                 ✅ Thank you! Your message has been sent. We'll reach out within 24 hours.
+                <button 
+                  onClick={() => setIsSuccess(false)}
+                  style={{ display: 'block', margin: '20px auto 0', background: 'rgba(255,255,255,0.2)', border: '1px solid #fff', color: '#fff', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  Send another message
+                </button>
               </div>
             )}
           </div>

@@ -305,7 +305,7 @@ export default function Page() {
 
                                 <li><a href="/contact"><span class="sn-icon">📞</span>Contact Us</a></li>
 
-                                <li><a href="/images/services//images/services/investment-planning"><span
+                                <li><a href="/images/services/investment-planning"><span
                                             class="sn-icon">📈</span>Our Services</a></li>
 
                             </ul>

@@ -1328,7 +1328,7 @@ img {
    FOOTER
 ══════════════════════════════════════ */
 .footer {
-    background: #0a2540;
+    background: linear-gradient(180deg, #0a2540 0%, #051424 100%);
     color: rgba(255, 255, 255, 0.55);
     padding: 70px 0 28px;
     font-size: 0.85rem;

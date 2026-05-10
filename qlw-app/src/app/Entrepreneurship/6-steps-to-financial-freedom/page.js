@@ -265,8 +265,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services//images/services/life-insurance" class="step-link">Explore life insurance
-
+                        <a href="/images/services/life-insurance" class="step-link">Explore life insurance
                             options →</a>
 
                     </div>
@@ -321,8 +320,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services//images/services/investment-planning" class="step-link">Explore investment
-
+                        <a href="/images/services/investment-planning" class="step-link">Explore investment
                             planning →</a>
 
                     </div>
@@ -367,8 +365,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services//images/services/living-will-trust" class="step-link">Explore Living Will &amp;
-
+                        <a href="/images/services/living-will-trust" class="step-link">Explore Living Will &amp;
                             Trust planning →</a>
 
                     </div>

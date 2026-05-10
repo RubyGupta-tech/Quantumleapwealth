@@ -315,11 +315,11 @@ export default function Navbar() {
           <button
             className="hamburger"
             id="hamburger"
+            type="button"
             aria-label="Open menu"
             aria-expanded="false"
             aria-controls="nav-menu"
             onClick={(e) => {
-              e.preventDefault();
               const hamburger = e.currentTarget;
               const navMenu = document.getElementById('nav-menu');
               const overlay = document.getElementById('nav-overlay');
