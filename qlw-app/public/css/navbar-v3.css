@@ -319,7 +319,8 @@
         display: block; 
         opacity: 1;
         visibility: visible;
-        max-height: 1000px;
+        max-height: none; /* Allow it to grow naturally on mobile */
+        overflow: visible;
     }
     .dropdown-item {
         color: var(--navy) !important;

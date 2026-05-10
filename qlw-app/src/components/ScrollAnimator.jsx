@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollAnimator() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
 
@@ -39,7 +42,7 @@ export default function ScrollAnimator() {
       timelineObserver.disconnect();
       revealObserver.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return null; // This component renders nothing — it just runs JS
 }
