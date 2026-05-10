@@ -1,4 +1,4 @@
-import "../article.css"";
+import "../article.css";
 export default function Page() {
   return (
     <div dangerouslySetInnerHTML={{ __html: `
@@ -61,3 +61,4 @@ export default function Page() {
     ` }} />
   );
 }
+
