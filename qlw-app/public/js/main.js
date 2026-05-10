@@ -5,130 +5,22 @@
 (function () {
   'use strict';
 
-  /* ---- Navbar Injection & Initialization ---- */
-  function injectNavbar() {
-    const placeholder = document.getElementById('navbar-placeholder');
-    if (!placeholder) {
-      // If no placeholder, try to initialize functions anyway (fallback)
-      initNavbarFunctions();
-      return;
-    }
-
-    // Calculate relative path depth
-    let depth = Math.max(0, window.location.pathname.split('/').filter(Boolean).length - 1);
-    // Explicitly handle root/index
-    const isIndex = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
-    let rel = depth > 0 ? '../'.repeat(depth) : '';
-
-    fetch(rel + 'components/navbar.html?v=' + new Date().getTime())
-      .then(response => {
-        if (!response.ok) throw new Error('Navbar fetch failed');
-        return response.text();
-      })
-      .then(html => {
-        placeholder.innerHTML = html.replace(/\{rel\}/g, rel);
-        initNavbarFunctions(); // Initialize interactivity after injection
-      })
-      .catch(err => console.error(err));
-  }
-
-  function initNavbarFunctions() {
-    /* ---- Sticky Navbar scroll class ---- */
+  /* ---- Navbar Functions (LEGACY REMOVED - NOW IN React Navbar.jsx) ---- */
+  // We keep only scroll class for sticky effect if needed, but safer to handle in React.
+  function initStickyNavbar() {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
       window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 30);
       }, { passive: true });
     }
-
-    /* ---- Hamburger / Mobile Menu ---- */
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const overlay = document.querySelector('.nav-overlay');
-
-    function closeMenu() {
-      if (!hamburger) return;
-      hamburger.classList.remove('open');
-      navMenu && navMenu.classList.remove('open');
-      overlay && overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', () => {
-        const isOpen = hamburger.classList.toggle('open');
-        navMenu.classList.toggle('open', isOpen);
-        overlay && overlay.classList.toggle('active', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
-    }
-    overlay && overlay.addEventListener('click', closeMenu);
-
-    /* ---- Mobile Dropdown Accordions ---- */
-    document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
-      const link = item.querySelector('.nav-link');
-      if (!link) return;
-
-      // Ensure we don't attach multiple listeners if re-initialized
-      const newLink = link.cloneNode(true);
-      link.parentNode.replaceChild(newLink, link);
-      
-      newLink.addEventListener('click', function (e) {
-        if (window.innerWidth > 960) return;
-        e.preventDefault();
-        const isOpen = item.classList.toggle('open');
-        item.closest('.nav-menu').querySelectorAll('.nav-item.has-dropdown').forEach(sib => {
-          if (sib !== item) sib.classList.remove('open');
-        });
-      });
-    });
-
-    /* ---- Close menu on nav link click (mobile) ---- */
-    navMenu && navMenu.querySelectorAll('.dropdown-item').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    /* ---- Active page highlight ---- */
-    const currentPaths = window.location.pathname.split('/').filter(Boolean);
-    const currentFile = currentPaths.pop() || 'index.html';
-    
-    document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
-      const href = link.getAttribute('href') || '';
-      // Clean up href to just the filename for comparison
-      const linkFile = href.split('/').pop();
-      
-      if (linkFile && (linkFile === currentFile || (currentFile === '' && linkFile === 'index.html'))) {
-        link.classList.add('active');
-        const parent = link.closest('.nav-item');
-        if (parent) {
-          const parentLink = parent.querySelector(':scope > .nav-link');
-          if (parentLink) parentLink.classList.add('active');
-        }
-      }
-    });
-
-    /* ---- Close dropdown on outside click (desktop) ---- */
-    document.addEventListener('click', function (e) {
-      if (window.innerWidth <= 960) return;
-      document.querySelectorAll('.nav-item.has-dropdown.open').forEach(item => {
-        if (!item.contains(e.target)) item.classList.remove('open');
-      });
-    });
-
-    /* ---- Keyboard nav ---- */
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
-        closeMenu();
-      }
-    });
   }
 
   // Start the process reliably
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectNavbar);
+    document.addEventListener('DOMContentLoaded', initStickyNavbar);
   } else {
-    injectNavbar();
+    initStickyNavbar();
   }
 
 

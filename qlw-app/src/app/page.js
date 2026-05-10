@@ -1,6 +1,59 @@
+"use client";
+import { useEffect } from "react";
 import ScrollAnimator from "@/components/ScrollAnimator";
 
 export default function HomePage() {
+  useEffect(() => {
+    // ---- Hero Slider Initialization ----
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.dynamic-slider .slide');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    let slideInterval;
+
+    function showSlide(n) {
+      if (slides.length === 0) return;
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slideIndex = n;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      if (slides[slideIndex]) slides[slideIndex].classList.add('active');
+      if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(slideIndex + 1);
+    }
+
+    window.currentSlide = function(n) {
+      showSlide(n);
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 5000);
+    };
+
+    if (slides.length > 0) {
+      showSlide(0);
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // ---- Events Slider Initialization (Legacy script fallback) ----
+    if (typeof window.renderEvents === 'function') {
+      window.renderEvents();
+    } else {
+      // If script is in dangerouslySetInnerHTML, we might need a small delay or check
+      const checkEvents = setInterval(() => {
+        if (typeof window.renderEvents === 'function') {
+          window.renderEvents();
+          clearInterval(checkEvents);
+        }
+      }, 100);
+      setTimeout(() => clearInterval(checkEvents), 3000);
+    }
+
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, []);
   return (
     <>
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
@@ -1785,7 +1838,7 @@ export default function HomePage() {
 
       function startAutoSlide(id) { clearInterval(sliderIntervals[id]); sliderIntervals[id] = setInterval(() => slideEvents(id, 1), 4000); }
 
-      function renderEvents() {
+      window.renderEvents = function() {
         const today = new Date(); today.setHours(0, 0, 0, 0);
         const up = eventsData.filter(e => new Date(e.date) >= today).sort((a, b) => new Date(a.date) - new Date(b.date));
         const past = eventsData.filter(e => new Date(e.date) < today).sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -1815,7 +1868,7 @@ export default function HomePage() {
         }
       }
 
-      document.addEventListener('DOMContentLoaded', renderEvents);
+      window.renderEvents(); // Initial call
       window.addEventListener('resize', () => {
         document.querySelectorAll('.events-slider').forEach(s => { s.dataset.index = '0'; s.style.transform = 'translateX(0)'; });
         ['events-upcoming', 'events-past'].forEach(id => updateDots(id));

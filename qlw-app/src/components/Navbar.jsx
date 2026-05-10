@@ -2,9 +2,23 @@
 import Link from "next/link";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  useEffect(() => {
+    // Close mobile menu on route change
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('nav-overlay');
+    
+    hamburger?.classList.remove('open');
+    navMenu?.classList.remove('open');
+    overlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  }, [pathname]);
+
   if (pathname?.startsWith("/admin")) return null;
   return (
     <>
