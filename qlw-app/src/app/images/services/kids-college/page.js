@@ -1,7 +1,7 @@
 import "../service.css";
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
         <section class="page-hero hero-college">
 
@@ -11,8 +11,8 @@ export default function Page() {
 
                     <div>
 
-                        <div class="breadcrumb"><a href="..//">Home</a><span>›</span><a
-                                href="..//#services">Services</a><span>›</span><span
+                        <div class="breadcrumb"><a href="/">Home</a><span>›</span><a
+                                href="/#services">Services</a><span>›</span><span
                                 style="color:var(--accent-light)">Kids College Fund</span></div>
 
                         <h1>Kids College Fund</h1>
@@ -21,7 +21,7 @@ export default function Page() {
 
                             so you can say yes when the moment arrives, without financial stress.</p>
 
-                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="/contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -48,7 +48,7 @@ export default function Page() {
                             <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start planning.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="..//images/college_future_light.png" alt="Children Educational Future Options" />
+                            <img src="/images/college_future_light.png" alt="Children Educational Future Options" />
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@ export default function Page() {
                     <!-- Block 2: Savings Options -->
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/college_savings_plan_light.png" alt="Children's College Savings Plans Portfolio" style="aspect-ratio: 3/4;" />
+                            <img src="/images/college_savings_plan_light.png" alt="Children's College Savings Plans Portfolio" style="aspect-ratio: 3/4;" />
                         </div>
                         <div class="content-split-text">
                             <h3>College Savings Options We Help You Navigate</h3>
@@ -110,7 +110,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/college_benefits_light.png" alt="Graduation Diploma and Benefits" style="aspect-ratio: 3/4;" />
+                            <img src="/images/college_benefits_light.png" alt="Graduation Diploma and Benefits" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -140,7 +140,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="..//contact" class="btn btn-primary"
+                        <a href="/contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Book
 
                             Appointment Now →</a>
@@ -211,25 +211,25 @@ export default function Page() {
 
                             <ul class="services-nav">
 
-                                <li><a href="investment-planning.html"><span>📈 Investment
+                                <li><a href="/images/services/investment-planning"><span>📈 Investment
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="living-will-trust.html"><span>📜 Living Will &amp;
+                                <li><a href="/images/services/living-will-trust"><span>📜 Living Will &amp;
 
                                             Trust</span><span>›</span></a></li>
 
-                                <li><a href="tax-saving.html"><span>💰 Tax Savings</span><span>›</span></a></li>
+                                <li><a href="/images/services/tax-saving"><span>💰 Tax Savings</span><span>›</span></a></li>
 
-                                <li><a href="retirement-planning.html"><span>🏖️ Retirement
+                                <li><a href="/images/services/retirement-planning"><span>🏖️ Retirement
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="kids-college.html" class="active"><span>🎓 Kids College
+                                <li><a href="/images/services/kids-college" class="active"><span>🎓 Kids College
 
                                             Fund</span><span>›</span></a></li>
 
-                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span>›</span></a></li>
+                                <li><a href="/images/services/life-insurance"><span>🛡️ Life Insurance</span><span>›</span></a></li>
 
                             </ul>
 

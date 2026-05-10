@@ -1,7 +1,7 @@
 import "../service.css";
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -17,9 +17,9 @@ export default function Page() {
 
                         <div class="breadcrumb">
 
-                            <a href="..//">Home</a><span>›</span>
+                            <a href="/">Home</a><span>›</span>
 
-                            <a href="..//#services">Services</a><span>›</span>
+                            <a href="/#services">Services</a><span>›</span>
 
                             <span style="color:var(--accent-light)">Living Will &amp; Trust</span>
 
@@ -31,7 +31,7 @@ export default function Page() {
 
                             honored and your loved ones are protected long after you're gone.</p>
 
-                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="/contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -62,14 +62,14 @@ export default function Page() {
                             <p>A Living Will and Trust is one of the most powerful and compassionate gifts you can give your family. It removes uncertainty, prevents costly probate delays, and gives you control over life's most important decisions.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="..//images/living_legacy_light.png" alt="Family Legacy Protection Shield" />
+                            <img src="/images/living_legacy_light.png" alt="Family Legacy Protection Shield" />
                         </div>
                     </div>
 
                     <!-- Block 2: Definitions Grid -->
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/living_trust_shield_light.png" alt="Legal Trust and Security Seal" style="aspect-ratio: 3/4;" />
+                            <img src="/images/living_trust_shield_light.png" alt="Legal Trust and Security Seal" style="aspect-ratio: 3/4;" />
                         </div>
                         <div class="content-split-text">
                             <h3>What is a Living Will &amp; Trust?</h3>
@@ -100,7 +100,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/living_benefits_light.png" alt="Wealth Management Peace of Mind Compass" style="aspect-ratio: 3/4;" />
+                            <img src="/images/living_benefits_light.png" alt="Wealth Management Peace of Mind Compass" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -189,7 +189,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="..//contact" class="btn btn-primary"
+                        <a href="/contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Book
 
                             Appointment Now →</a>
@@ -268,23 +268,23 @@ export default function Page() {
 
                             <ul class="services-nav">
 
-                                <li><a href="investment-planning.html"><span>📈 Investment
+                                <li><a href="/images/services/investment-planning"><span>📈 Investment
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="living-will-trust.html" class="active"><span>📜 Living Will &amp;
+                                <li><a href="/images/services/living-will-trust" class="active"><span>📜 Living Will &amp;
 
                                             Trust</span><span>›</span></a></li>
 
-                                <li><a href="tax-saving.html"><span>💰 Tax Savings</span><span>›</span></a></li>
+                                <li><a href="/images/services/tax-saving"><span>💰 Tax Savings</span><span>›</span></a></li>
 
-                                <li><a href="retirement-planning.html"><span>🏖️ Retirement
+                                <li><a href="/images/services/retirement-planning"><span>🏖️ Retirement
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="kids-college.html"><span>🎓 Kids College Fund</span><span>›</span></a></li>
+                                <li><a href="/images/services/kids-college"><span>🎓 Kids College Fund</span><span>›</span></a></li>
 
-                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span>›</span></a></li>
+                                <li><a href="/images/services/life-insurance"><span>🛡️ Life Insurance</span><span>›</span></a></li>
 
                             </ul>
 

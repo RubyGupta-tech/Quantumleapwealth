@@ -2,7 +2,7 @@ import "./photos.css";
 
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -14,7 +14,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="..//">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
                             style="color:var(--accent-light)">Photos</span></div>
 
@@ -40,11 +40,11 @@ export default function Page() {
 
             <div class="activities-tabs-inner">
 
-                <a href="Photos.html" class="act-tab active">📸 Photos</a>
+                <a href="/Activities/Photos" class="act-tab active">📸 Photos</a>
 
-                <a href="videos.html" class="act-tab">🎥 Videos</a>
+                <a href="/Activities/videos" class="act-tab">🎥 Videos</a>
 
-                <a href="blogs.html" class="act-tab">✍️ Blog</a>
+                <a href="/Activities/blogs" class="act-tab">✍️ Blog</a>
 
             </div>
 
@@ -405,7 +405,7 @@ export default function Page() {
 
                         feature here!</p>
 
-                    <a href="..//contact" class="btn btn-primary">Share Your Photos With Us</a>
+                    <a href="/contact" class="btn btn-primary">Share Your Photos With Us</a>
 
                 </div>
 
@@ -437,7 +437,7 @@ export default function Page() {
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary">📅 Book Free Appointment</a>
 
-                        <a href="..//contact" class="btn btn-outline-white">Contact Us</a>
+                        <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 
                     </div>
 

@@ -2,7 +2,7 @@ import "./disclaimer.css";
 
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -299,13 +299,13 @@ export default function Page() {
 
                             <ul class="sidebar-nav-list">
 
-                                <li><a href="about.html"><span class="sn-icon">👤</span>About Us</a></li>
+                                <li><a href="/who_we_are/about"><span class="sn-icon">👤</span>About Us</a></li>
 
-                                <li><a href="partners.html"><span class="sn-icon">🤝</span>Our Partners</a></li>
+                                <li><a href="/who_we_are/partners"><span class="sn-icon">🤝</span>Our Partners</a></li>
 
                                 <li><a href="/contact"><span class="sn-icon">📞</span>Contact Us</a></li>
 
-                                <li><a href="/images/services/investment-planning.html"><span
+                                <li><a href="/images/services//images/services/investment-planning"><span
                                             class="sn-icon">📈</span>Our Services</a></li>
 
                             </ul>

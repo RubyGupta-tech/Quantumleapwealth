@@ -1,7 +1,7 @@
 import "../service.css";
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
         <section class="page-hero hero-tax">
 
@@ -11,8 +11,8 @@ export default function Page() {
 
                     <div>
 
-                        <div class="breadcrumb"><a href="..//">Home</a><span>›</span><a
-                                href="..//#services">Services</a><span>›</span><span
+                        <div class="breadcrumb"><a href="/">Home</a><span>›</span><a
+                                href="/#services">Services</a><span>›</span><span
                                 style="color:var(--accent-light)">Tax Savings</span></div>
 
                         <h1>Tax Savings</h1>
@@ -21,7 +21,7 @@ export default function Page() {
 
                             strategies are designed to legally minimize your tax burden year after year.</p>
 
-                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="/contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -48,14 +48,14 @@ export default function Page() {
                             <p>Whether you're a salaried employee, a business owner, or an investor, we design tax strategies uniquely tailored to your income structure, goals, and life stage.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="..//images/tax_wealth_light.png" alt="Wealth Preservation and Growth" />
+                            <img src="/images/tax_wealth_light.png" alt="Wealth Preservation and Growth" />
                         </div>
                     </div>
 
                     <!-- Block 2: Strategies -->
                     <div class="content-split">
                         <div class="content-img-wrap">
-                            <img src="..//images/tax_strategies_light.png" alt="Tax Strategy Architecture" />
+                            <img src="/images/tax_strategies_light.png" alt="Tax Strategy Architecture" />
                         </div>
                         <div class="content-split-text">
                             <h3>Our Tax Savings Strategies</h3>
@@ -106,7 +106,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/tax_benefits_light.png" alt="Tax Saving Benefits and Precision Compass" style="aspect-ratio: 3/4;" />
+                            <img src="/images/tax_benefits_light.png" alt="Tax Saving Benefits and Precision Compass" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -134,7 +134,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="..//contact" class="btn btn-primary"
+                        <a href="/contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Book
 
                             Appointment Now →</a>
@@ -205,25 +205,25 @@ export default function Page() {
 
                             <ul class="services-nav">
 
-                                <li><a href="investment-planning.html"><span>📈 Investment
+                                <li><a href="/images/services/investment-planning"><span>📈 Investment
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="living-will-trust.html"><span>📜 Living Will &amp;
+                                <li><a href="/images/services/living-will-trust"><span>📜 Living Will &amp;
 
                                             Trust</span><span>›</span></a></li>
 
-                                <li><a href="tax-saving.html" class="active"><span>💰 Tax
+                                <li><a href="/images/services/tax-saving" class="active"><span>💰 Tax
 
                                             Savings</span><span>›</span></a></li>
 
-                                <li><a href="retirement-planning.html"><span>🏖️ Retirement
+                                <li><a href="/images/services/retirement-planning"><span>🏖️ Retirement
 
                                             Planning</span><span>›</span></a></li>
 
-                                <li><a href="kids-college.html"><span>🎓 Kids College Fund</span><span>›</span></a></li>
+                                <li><a href="/images/services/kids-college"><span>🎓 Kids College Fund</span><span>›</span></a></li>
 
-                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span>›</span></a></li>
+                                <li><a href="/images/services/life-insurance"><span>🛡️ Life Insurance</span><span>›</span></a></li>
 
                             </ul>
 

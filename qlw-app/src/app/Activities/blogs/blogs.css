@@ -1,7 +1,7 @@
 /* ── Blogs Page Styles ── */
 .page-hero {
     background-color: #f8fafc;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('/images/blogs_bg_light_v2.png');
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%), url('/images/blogs_bg_light_v2.png') !important;
     background-size: cover;
     background-position: center right;
     padding: 100px 0 90px;

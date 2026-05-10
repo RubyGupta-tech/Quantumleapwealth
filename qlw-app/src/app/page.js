@@ -965,7 +965,7 @@ export default function HomePage() {
     </style>
     <!--<div class="container">
       <div class="service-pillars">
-        <a href="Entrepreneurship/6-steps-to-financial-freedom.html" class="pillar-card reveal reveal-delay-1"
+        <a href="Entrepreneurship//Entrepreneurship/6-steps-to-financial-freedom" class="pillar-card reveal reveal-delay-1"
           style="text-decoration:none; color:inherit; display:flex; flex-direction:column; align-items:center;">
           <div class="pillar-icon">🚀</div>
           <h4>Entrepreneurship</h4>
@@ -1025,7 +1025,7 @@ export default function HomePage() {
             every stage of life.</p>
         </div>
         <div class="services-grid">
-          <a href="images/services/investment-planning.html" class="flip-card reveal reveal-delay-1"
+          <a href="images/services//images/services/investment-planning" class="flip-card reveal reveal-delay-1"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1043,7 +1043,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services/living-will-trust.html" class="flip-card reveal reveal-delay-2"
+          <a href="images/services//images/services/living-will-trust" class="flip-card reveal reveal-delay-2"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1061,7 +1061,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services/tax-saving.html" class="flip-card reveal reveal-delay-3"
+          <a href="images/services//images/services/tax-saving" class="flip-card reveal reveal-delay-3"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1079,7 +1079,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services/retirement-planning.html" class="flip-card reveal reveal-delay-1"
+          <a href="images/services//images/services/retirement-planning" class="flip-card reveal reveal-delay-1"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1096,7 +1096,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services/kids-college.html" class="flip-card reveal reveal-delay-2"
+          <a href="images/services//images/services/kids-college" class="flip-card reveal reveal-delay-2"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -1114,7 +1114,7 @@ export default function HomePage() {
             </div>
           </a>
 
-          <a href="images/services/life-insurance.html" class="flip-card reveal reveal-delay-3"
+          <a href="images/services//images/services/life-insurance" class="flip-card reveal reveal-delay-3"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -2185,7 +2185,7 @@ export default function HomePage() {
                 <div class="opp-perk-icon">✓</div>Mentorship from top producers
               </div>
             </div>
-            <a href="Entrepreneurship/6-steps-to-financial-freedom.html" class="btn btn-primary">Learn About the 6 Steps
+            <a href="Entrepreneurship//Entrepreneurship/6-steps-to-financial-freedom" class="btn btn-primary">Learn About the 6 Steps
               →</a>
           </div>
           <div class="reveal reveal-delay-2">

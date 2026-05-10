@@ -1,7 +1,7 @@
 import "../service.css";
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -17,11 +17,11 @@ export default function Page() {
 
                         <div class="breadcrumb">
 
-                            <a href="..//">Home</a>
+                            <a href="/">Home</a>
 
                             <span>›</span>
 
-                            <a href="..//#services">Services</a>
+                            <a href="/#services">Services</a>
 
                             <span>›</span>
 
@@ -35,7 +35,7 @@ export default function Page() {
 
                             growth, minimize risk, and secure long-term financial independence.</p>
 
-                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="/contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -67,14 +67,14 @@ export default function Page() {
                             <p>From securing your retirement to funding your children's education, we design investment plans that grow with you, adapt to market changes, and always keep your long-term vision at the center of every decision.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="..//images/invest_growth_light.png" alt="Wealth Growth Chart" />
+                            <img src="/images/invest_growth_light.png" alt="Wealth Growth Chart" />
                         </div>
                     </div>
 
                     <!-- Block 2: Strategic Goal Planning -->
                     <div class="content-split">
                         <div class="content-img-wrap">
-                            <img src="..//images/invest_strategy_light.png" alt="Strategic Investment Chess Piece" />
+                            <img src="/images/invest_strategy_light.png" alt="Strategic Investment Chess Piece" />
                         </div>
                         <div class="content-split-text">
                             <h3>Why Choose Investment Planning?</h3>
@@ -130,7 +130,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="..//images/invest_process_light.png" alt="Investment Process Roadmap" style="aspect-ratio: 3/4;" />
+                            <img src="/images/invest_process_light.png" alt="Investment Process Roadmap" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="..//contact" class="btn btn-primary"
+                        <a href="/contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0;">Book
 
                             Appointment Now →</a>
@@ -249,23 +249,23 @@ export default function Page() {
 
                             <ul class="services-nav">
 
-                                <li><a href="investment-planning.html" class="active"><span>📈 Investment
+                                <li><a href="/images/services/investment-planning" class="active"><span>📈 Investment
 
                                             Planning</span><span class="nav-icon">›</span></a></li>
 
-                                <li><a href="living-will-trust.html"><span>📜 Living Will &amp; Trust</span><span
+                                <li><a href="/images/services/living-will-trust"><span>📜 Living Will &amp; Trust</span><span
                                             class="nav-icon">›</span></a></li>
 
-                                <li><a href="tax-saving.html"><span>💰 Tax Savings</span><span
+                                <li><a href="/images/services/tax-saving"><span>💰 Tax Savings</span><span
                                             class="nav-icon">›</span></a></li>
 
-                                <li><a href="retirement-planning.html"><span>🏖️ Retirement Planning</span><span
+                                <li><a href="/images/services/retirement-planning"><span>🏖️ Retirement Planning</span><span
                                             class="nav-icon">›</span></a></li>
 
-                                <li><a href="kids-college.html"><span>🎓 Kids College Fund</span><span
+                                <li><a href="/images/services/kids-college"><span>🎓 Kids College Fund</span><span
                                             class="nav-icon">›</span></a></li>
 
-                                <li><a href="life-insurance.html"><span>🛡️ Life Insurance</span><span
+                                <li><a href="/images/services/life-insurance"><span>🛡️ Life Insurance</span><span
                                             class="nav-icon">›</span></a></li>
 
                             </ul>

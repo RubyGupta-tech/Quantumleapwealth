@@ -2,7 +2,7 @@ import "./videos.css";
 
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -14,7 +14,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="..//">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
                             style="color:var(--accent-light)">Videos</span></div>
 
@@ -40,11 +40,11 @@ export default function Page() {
 
             <div class="activities-tabs-inner">
 
-                <a href="Photos.html" class="act-tab">📸 Photos</a>
+                <a href="/Activities/Photos" class="act-tab">📸 Photos</a>
 
-                <a href="videos.html" class="act-tab active">🎥 Videos</a>
+                <a href="/Activities/videos" class="act-tab active">🎥 Videos</a>
 
-                <a href="blogs.html" class="act-tab">✍️ Blog</a>
+                <a href="/Activities/blogs" class="act-tab">✍️ Blog</a>
 
             </div>
 
@@ -336,7 +336,7 @@ export default function Page() {
 
                         video link with us and we'll add it to the gallery instantly!</p>
 
-                    <a href="..//contact" class="btn btn-primary">Share a Video Link</a>
+                    <a href="/contact" class="btn btn-primary">Share a Video Link</a>
 
                 </div>
 
@@ -368,7 +368,7 @@ export default function Page() {
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary">📅 Book Free Appointment</a>
 
-                        <a href="..//contact" class="btn btn-outline-white">Contact Us</a>
+                        <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 
                     </div>
 

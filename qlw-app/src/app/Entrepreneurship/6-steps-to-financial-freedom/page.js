@@ -2,7 +2,7 @@ import "./6steps.css";
 
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -265,7 +265,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services/life-insurance.html" class="step-link">Explore life insurance
+                        <a href="/images/services//images/services/life-insurance" class="step-link">Explore life insurance
 
                             options →</a>
 
@@ -321,7 +321,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services/investment-planning.html" class="step-link">Explore investment
+                        <a href="/images/services//images/services/investment-planning" class="step-link">Explore investment
 
                             planning →</a>
 
@@ -367,7 +367,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="/images/services/living-will-trust.html" class="step-link">Explore Living Will &amp;
+                        <a href="/images/services//images/services/living-will-trust" class="step-link">Explore Living Will &amp;
 
                             Trust planning →</a>
 

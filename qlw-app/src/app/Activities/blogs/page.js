@@ -2,7 +2,7 @@ import "./blogs.css";
 
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
 
 
@@ -22,9 +22,9 @@ export default function Page() {
         <!-- ACTIVITY TABS -->
         <nav class="activities-tabs">
             <div class="activities-tabs-inner">
-                <a href="Photos.html" class="act-tab">📸 Photos</a>
-                <a href="videos.html" class="act-tab">🎥 Videos</a>
-                <a href="blogs.html" class="act-tab active">✍️ Blog</a>
+                <a href="/Activities/Photos" class="act-tab">📸 Photos</a>
+                <a href="/Activities/videos" class="act-tab">🎥 Videos</a>
+                <a href="/Activities/blogs" class="act-tab active">✍️ Blog</a>
             </div>
         </nav>
 
@@ -47,7 +47,7 @@ export default function Page() {
 
                                     <div class="blog-featured reveal">
                                         <div class="blog-featured-img">
-                                            <a href="life-insurance-safety-net.html" style="width:100%; height:100%; display:block;">
+                                            <a href="/Activities/life-insurance-safety-net" style="width:100%; height:100%; display:block;">
                                                 <img src="/images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net" style="width:100%; height:450px; object-fit:cover;" />
                                             </a>
                                         </div>
@@ -56,7 +56,7 @@ export default function Page() {
                                             <h2 class="blog-featured-title">Why Life Insurance Is Your Family's Safety Net</h2>
                                             <p class="blog-featured-excerpt">Discover why life insurance is one of the most important financial foundations for your family's future, providing immediate protection and long-term peace of mind.</p>
                                             <div class="blog-featured-cta">
-                                                <a href="life-insurance-safety-net.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                <a href="/Activities/life-insurance-safety-net" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@ export default function Page() {
                                     <div class="blog-grid" id="blogGrid">
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
-                                                <a href="life-insurance-safety-net.html">
+                                                <a href="/Activities/life-insurance-safety-net">
                                                     <img src="/images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
@@ -98,17 +98,17 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="life-insurance-safety-net.html" style="text-decoration: none; color: inherit;">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/life-insurance-safety-net" style="text-decoration: none; color: inherit;">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
-                                                    <a href="life-insurance-safety-net.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                    <a href="/Activities/life-insurance-safety-net" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
-                                                <a href="retire-comfortably-before-60.html">
+                                                <a href="/Activities/retire-comfortably-before-60">
                                                     <img src="/images/retirement_hero.png" alt="How to Retire Comfortably Before 60 — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
@@ -119,17 +119,17 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="retire-comfortably-before-60.html" style="text-decoration: none; color: inherit;">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/retire-comfortably-before-60" style="text-decoration: none; color: inherit;">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Here are three essential steps to position yourself for a comfortable early retirement....</p>
                                                 <div style="margin-top:auto">
-                                                    <a href="retire-comfortably-before-60.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                    <a href="/Activities/retire-comfortably-before-60" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
-                                                <a href="start-saving-college.html">
+                                                <a href="/Activities/start-saving-college">
                                                     <img src="/images/college_saving_hero.png" alt="Start Saving for College When Your Child Is Born — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
@@ -140,17 +140,17 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="start-saving-college.html" style="text-decoration: none; color: inherit;">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/start-saving-college" style="text-decoration: none; color: inherit;">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
-                                                    <a href="start-saving-college.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                    <a href="/Activities/start-saving-college" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
-                                                <a href="will-vs-trust.html">
+                                                <a href="/Activities/will-vs-trust">
                                                     <img src="/images/will_vs_trust_hero.png" alt="Will vs. Trust: What Do I Need? — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
@@ -161,11 +161,11 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="will-vs-trust.html" style="text-decoration: none; color: inherit;">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/will-vs-trust" style="text-decoration: none; color: inherit;">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
-                                                    <a href="will-vs-trust.html" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
+                                                    <a href="/Activities/will-vs-trust" class="blog-read-more" style="color: var(--accent); font-weight: 600; text-decoration: none;">Read Article →</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,10 +255,10 @@ export default function Page() {
                                         <h3>🕐 Recent Posts</h3>
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
                                             <!-- SIDEBAR_RECENT_START -->
-                                            <li><a href="life-insurance-safety-net.html">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="retire-comfortably-before-60.html">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="start-saving-college.html">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="will-vs-trust.html">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a><span>Mar 19</span></li>
                                             <!-- SIDEBAR_RECENT_END -->
                                         </ul>
                                     </div>
@@ -296,7 +296,7 @@ export default function Page() {
                                         onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                         class="btn btn-primary">📅 Book Free Appointment</a>
 
-                                    <a href="..//contact" class="btn btn-outline-white">Contact Us</a>
+                                    <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 
                                 </div>
 

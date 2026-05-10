@@ -1,7 +1,7 @@
 import "../article.css";
 export default function Page() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: `
+    <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
         <section class="article-hero">
             <div class="container">
                 <h1>How to Retire Comfortably Before 60</h1>
@@ -16,7 +16,7 @@ export default function Page() {
         <section class="article-content">
             <div class="container">
                 <div class="article-body">
-                    <a href="blogs.html" class="back-link">← Back to Blogs</a>
+                    <a href="/Activities/blogs" class="back-link">← Back to Blogs</a>
 
                     <img src="/images/retirement_hero.png"
                         alt="How to Retire Comfortably Before 60" />
