@@ -169,6 +169,12 @@
     color: #fff;
 }
 
+.sidebar-card-header h4 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
 .services-nav a {
     display: flex;
     align-items: center;

@@ -156,7 +156,8 @@ export default function Page() {
                         <div class="sidebar-card-body">
 
                             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
-                                Let's start building your retirement roadmap today.</p>\\n<form id="contact-form" onsubmit="handleSubmit(event)">
+                                Let's start building your retirement roadmap today.</p>
+<form id="contact-form" onsubmit="handleSubmit(event)">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
                                 <div><label style="font-size:0.8rem; font-weight:700;">First Name *</label><input type="text" name="first_name" required placeholder="First name" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" /></div>
                                 <div><label style="font-size:0.8rem; font-weight:700;">Last Name *</label><input type="text" name="last_name" required placeholder="Last name" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" /></div>
@@ -189,7 +190,8 @@ export default function Page() {
                             </div>
                             <button type="submit" class="form-submit" style="width: 100%; padding: 14px; background: #c9a84c; color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer;">Secure Your Future →</button>
                         </form>
-                        <div class="form-success" id="form-success" style="display: none; background: #e0faea; color: #166534; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; border: 1px solid #166534;">✅ Message Sent! We'll contact you shortly.</div>\\n</div>
+                        <div class="form-success" id="form-success" style="display: none; background: #e0faea; color: #166534; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; border: 1px solid #166534;">✅ Message Sent! We'll contact you shortly.</div>
+</div>
 
                     </div>
 
@@ -270,5 +272,6 @@ export default function Page() {
     ` }} />
   );
 }
+
 
 
