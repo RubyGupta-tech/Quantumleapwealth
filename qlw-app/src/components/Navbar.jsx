@@ -19,6 +19,20 @@ export default function Navbar() {
     document.body.style.overflow = '';
   }, [pathname]);
 
+  const toggleDropdown = (e) => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 960) {
+      e.preventDefault();
+      const parent = e.currentTarget.parentElement;
+      const isOpen = parent.classList.toggle('open');
+      
+      // Close other dropdowns
+      const siblings = parent.parentElement.querySelectorAll('.nav-item.has-dropdown');
+      siblings.forEach(sib => {
+        if (sib !== parent) sib.classList.remove('open');
+      });
+    }
+  };
+
   if (pathname?.startsWith("/admin")) return null;
   return (
     <>
@@ -53,7 +67,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link">
+              <a href="#" className="nav-link" onClick={toggleDropdown}>
                 About{" "}
                 <svg
                   className="dd-arrow"
@@ -105,7 +119,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link">
+              <a href="#" className="nav-link" onClick={toggleDropdown}>
                 Services{" "}
                 <svg
                   className="dd-arrow"
@@ -193,7 +207,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link">
+              <a href="#" className="nav-link" onClick={toggleDropdown}>
                 Entrepreneurship{" "}
                 <svg
                   className="dd-arrow"
@@ -221,7 +235,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#" className="nav-link">
+              <a href="#" className="nav-link" onClick={toggleDropdown}>
                 Media{" "}
                 <svg
                   className="dd-arrow"
