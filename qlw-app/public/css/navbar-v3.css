@@ -239,6 +239,7 @@
     pointer-events: auto !important; /* Ensure it's clickable */
 }
 .hamburger span { width: 28px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: 0.3s; pointer-events: none; }
+.hamburger.open span { background: #fff; }
 .hamburger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }

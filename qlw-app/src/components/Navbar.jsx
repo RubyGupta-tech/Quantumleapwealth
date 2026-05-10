@@ -46,21 +46,6 @@ export default function Navbar() {
                   Quantum Leap <span className="brand-wealth">Wealth</span>
                 </span>
               </Link>
-              <button 
-                className="mobile-close-btn" 
-                onClick={() => {
-                  const hamburger = document.getElementById('hamburger');
-                  const navMenu = document.getElementById('nav-menu');
-                  const overlay = document.getElementById('nav-overlay');
-                  hamburger?.classList.remove('open');
-                  navMenu?.classList.remove('open');
-                  overlay?.classList.remove('active');
-                  document.body.style.overflow = '';
-                }}
-                aria-label="Close menu"
-              >
-                &times;
-              </button>
             </li>
             <li className="nav-item">
               <Link href="/" className="nav-link">
