@@ -255,7 +255,7 @@
         display: flex !important;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 24px;
+        padding: 12px 20px;
         border-bottom: 1px solid rgba(10, 37, 64, 0.08);
         background: #ffffff;
     }
@@ -264,7 +264,7 @@
         background: none;
         border: none;
         color: var(--navy);
-        font-size: 2.5rem;
+        font-size: 2rem;
         cursor: pointer;
         padding: 0;
         line-height: 1;
@@ -279,7 +279,7 @@
     .nav-menu {
         position: fixed;
         inset: 0 0 0 auto;
-        width: 330px;
+        width: 300px;
         background: #ffffff;
         flex-direction: column;
         align-items: stretch;
@@ -294,11 +294,11 @@
     .nav-menu.open { transform: translateX(0); }
 
     .nav-link {
-        padding: 14px 20px;
+        padding: 12px 20px;
         border-bottom: 1px solid rgba(10, 37, 64, 0.04);
         border-radius: 0;
         justify-content: space-between;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
     .dropdown { 
@@ -331,12 +331,14 @@
     .dropdown-item {
         color: var(--navy) !important;
         font-weight: 500;
-        padding: 12px 24px;
-        font-size: 0.85rem;
+        padding: 10px 24px;
+        font-size: 0.82rem;
         border-bottom: 1px solid rgba(10, 37, 64, 0.03);
         display: flex;
         align-items: center;
+        gap: 0;
     }
+    .dd-icon { display: none !important; }
     .dropdown-item:active {
         background: rgba(201, 168, 76, 0.1);
     }
