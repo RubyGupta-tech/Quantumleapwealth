@@ -103,7 +103,7 @@ export async function POST(request) {
         <!-- Header (Table structure for better Dark Mode support) -->
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#0a2540;">
           <tr>
-            <td align="center" style="padding:40px 20px; background-color:#0a2540;" bgcolor="#0a2540">
+            <td align="center" style="padding:40px 20px; background-color:#0a2540" bgcolor="#0a2540">
               <div style="background-color:#ffffff; padding:12px 16px; border-radius:12px; display:inline-block; margin-bottom:16px;">
                 <img 
                   src="https://www.quantumleapwealth.com/images/QWL_logo_original.png"
