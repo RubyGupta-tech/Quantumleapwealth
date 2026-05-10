@@ -142,10 +142,9 @@ export default function Page() {
 
 
 
-        <!-- FOUNDER'S VISION SECTION -->
         <section class="family-story-section" style="padding: 90px 0; background: #fff;">
             <div class="container">
-                <div class="founder-grid" style="grid-template-columns: 1fr 450px; align-items: center;">
+                <div class="founder-grid mission-grid" style="align-items: center;">
                     <div class="family-text reveal">
                         <span class="section-label">Our Mission</span>
                         <h2>A Vision Rooted in Service</h2>
