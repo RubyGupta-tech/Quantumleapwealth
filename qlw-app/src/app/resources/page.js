@@ -1,6 +1,123 @@
+"use client";
+import { useEffect } from "react";
 import "./resources.css";
 
 export default function Page() {
+  useEffect(() => {
+    // Accordion Toggle for Calculators
+    const headers = document.querySelectorAll('.calc-card-header');
+    headers.forEach(header => {
+      header.onclick = () => {
+        const card = header.parentElement;
+        card.classList.toggle('active');
+      };
+    });
+
+    // Format currency
+    window.fmt = (n) => {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    };
+
+    // Term Insurance Calculator
+    window.calcTermInsurance = () => {
+      const ageInput = document.getElementById('ti-age');
+      const incomeInput = document.getElementById('ti-income');
+      const age = parseInt(ageInput.value);
+      const income = parseFloat(incomeInput.value);
+      const term = parseInt(document.getElementById('ti-term').value);
+      const mult = parseInt(document.getElementById('ti-multiplier').value);
+      
+      if (!age || !income) return alert('Please fill in all fields.');
+      
+      const coverage = income * mult;
+      const baseRate = 0.15 + (age - 25) * 0.008;
+      const monthlyPremium = (coverage / 1000) * baseRate;
+      
+      document.getElementById('ti-coverage').textContent = window.fmt(coverage);
+      document.getElementById('ti-monthly').textContent = 'Estimated Monthly Premium: ' + window.fmt(monthlyPremium);
+      document.getElementById('ti-result').classList.add('show');
+    };
+
+    // Retirement Calculator
+    window.calcRetirement = () => {
+      const age = parseInt(document.getElementById('ret-age').value);
+      const retire = parseInt(document.getElementById('ret-retire').value);
+      const monthly = parseFloat(document.getElementById('ret-monthly').value);
+      const rate = parseFloat(document.getElementById('ret-rate').value) / 100;
+      
+      if (!age || !retire || !monthly) return alert('Please fill in all fields.');
+      
+      const years = retire - age;
+      const monthlyRate = rate / 12;
+      const months = years * 12;
+      const fv = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+      const totalInvested = monthly * months;
+      
+      document.getElementById('ret-total').textContent = window.fmt(fv);
+      document.getElementById('ret-invested').textContent = 'Total Invested: ' + window.fmt(totalInvested) + '  |  Growth: ' + window.fmt(fv - totalInvested);
+      document.getElementById('ret-result').classList.add('show');
+    };
+
+    // College Fund Calculator
+    window.calcCollege = () => {
+      const childAge = parseInt(document.getElementById('col-age').value);
+      const startAge = parseInt(document.getElementById('col-start').value);
+      const annualCost = parseFloat(document.getElementById('col-cost').value);
+      const years = parseInt(document.getElementById('col-years').value);
+      
+      if (isNaN(childAge) || !annualCost) return alert('Please fill in all fields.');
+      
+      const yearsToSave = startAge - childAge;
+      const inflation = 0.04; 
+      const futureCost = annualCost * Math.pow(1 + inflation, yearsToSave);
+      const totalNeeded = futureCost * years;
+      const rate = 0.06 / 12; 
+      const months = yearsToSave * 12;
+      const monthlySave = totalNeeded * rate / (Math.pow(1 + rate, months) - 1);
+      
+      document.getElementById('col-total').textContent = window.fmt(totalNeeded);
+      document.getElementById('col-monthly-save').textContent = 'Monthly Savings Needed: ' + window.fmt(monthlySave);
+      document.getElementById('col-result').classList.add('show');
+    };
+
+    // Investment Growth Calculator
+    window.calcInvestment = () => {
+      const initial = parseFloat(document.getElementById('inv-initial').value) || 0;
+      const monthly = parseFloat(document.getElementById('inv-monthly').value) || 0;
+      const years = parseInt(document.getElementById('inv-years').value);
+      const rate = parseFloat(document.getElementById('inv-rate').value) / 100;
+      
+      if (!years) return alert('Please fill in all fields.');
+      
+      const monthlyRate = rate / 12;
+      const months = years * 12;
+      const fvInitial = initial * Math.pow(1 + monthlyRate, months);
+      const fvMonthly = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+      const total = fvInitial + fvMonthly;
+      const totalInvested = initial + (monthly * months);
+      
+      document.getElementById('inv-total').textContent = window.fmt(total);
+      document.getElementById('inv-gain').textContent = 'Total Invested: ' + window.fmt(totalInvested) + '  |  Gain: ' + window.fmt(total - totalInvested);
+      document.getElementById('inv-result').classList.add('show');
+    };
+
+    // Load Calendly
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
 
@@ -42,7 +159,7 @@ export default function Page() {
                                     <input type="number" id="ti-age" placeholder="e.g. 30" min="18" max="70">
                                 </div>
                                 <div class="calc-field">
-                                    <label>Annual Income (\$)</label>
+                                    <label>Annual Income ($)</label>
                                     <input type="number" id="ti-income" placeholder="e.g. 75000">
                                 </div>
                                 <div class="calc-field">
@@ -67,8 +184,8 @@ export default function Page() {
                                 <button class="calc-btn" onclick="calcTermInsurance()">Calculate Coverage</button>
                                 <div class="calc-result" id="ti-result">
                                     <div class="calc-result-label">Recommended Coverage</div>
-                                    <div class="calc-result-value" id="ti-coverage">\$0</div>
-                                    <div class="calc-result-sub" id="ti-monthly">Estimated Monthly Premium: \$0</div>
+                                    <div class="calc-result-value" id="ti-coverage">$0</div>
+                                    <div class="calc-result-sub" id="ti-monthly">Estimated Monthly Premium: $0</div>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +208,7 @@ export default function Page() {
                                     <input type="number" id="ret-retire" placeholder="e.g. 65" min="50" max="80">
                                 </div>
                                 <div class="calc-field">
-                                    <label>Monthly Savings (\$)</label>
+                                    <label>Monthly Savings ($)</label>
                                     <input type="number" id="ret-monthly" placeholder="e.g. 500">
                                 </div>
                                 <div class="calc-field">
@@ -106,8 +223,8 @@ export default function Page() {
                                 <button class="calc-btn" onclick="calcRetirement()">Calculate Savings</button>
                                 <div class="calc-result" id="ret-result">
                                     <div class="calc-result-label">Estimated Retirement Fund</div>
-                                    <div class="calc-result-value" id="ret-total">\$0</div>
-                                    <div class="calc-result-sub" id="ret-invested">Total Invested: \$0</div>
+                                    <div class="calc-result-value" id="ret-total">$0</div>
+                                    <div class="calc-result-sub" id="ret-invested">Total Invested: $0</div>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +248,7 @@ export default function Page() {
                                         value="18">
                                 </div>
                                 <div class="calc-field">
-                                    <label>Estimated Annual College Cost (\$)</label>
+                                    <label>Estimated Annual College Cost ($)</label>
                                     <input type="number" id="col-cost" placeholder="e.g. 30000" value="30000">
                                 </div>
                                 <div class="calc-field">
@@ -146,8 +263,8 @@ export default function Page() {
                                 <button class="calc-btn" onclick="calcCollege()">Calculate Fund Needed</button>
                                 <div class="calc-result" id="col-result">
                                     <div class="calc-result-label">Total Fund Needed</div>
-                                    <div class="calc-result-value" id="col-total">\$0</div>
-                                    <div class="calc-result-sub" id="col-monthly-save">Monthly Savings Needed: \$0</div>
+                                    <div class="calc-result-value" id="col-total">$0</div>
+                                    <div class="calc-result-sub" id="col-monthly-save">Monthly Savings Needed: $0</div>
                                 </div>
                             </div>
                         </div>
@@ -162,11 +279,11 @@ export default function Page() {
                             </div>
                             <div class="calc-card-body">
                                 <div class="calc-field">
-                                    <label>Initial Investment (\$)</label>
+                                    <label>Initial Investment ($)</label>
                                     <input type="number" id="inv-initial" placeholder="e.g. 10000">
                                 </div>
                                 <div class="calc-field">
-                                    <label>Monthly Contribution (\$)</label>
+                                    <label>Monthly Contribution ($)</label>
                                     <input type="number" id="inv-monthly" placeholder="e.g. 200">
                                 </div>
                                 <div class="calc-field">
@@ -185,8 +302,8 @@ export default function Page() {
                                 <button class="calc-btn" onclick="calcInvestment()">Calculate Growth</button>
                                 <div class="calc-result" id="inv-result">
                                     <div class="calc-result-label">Future Value</div>
-                                    <div class="calc-result-value" id="inv-total">\$0</div>
-                                    <div class="calc-result-sub" id="inv-gain">Total Gain: \$0</div>
+                                    <div class="calc-result-value" id="inv-total">$0</div>
+                                    <div class="calc-result-sub" id="inv-gain">Total Gain: $0</div>
                                 </div>
                             </div>
                         </div>
@@ -309,104 +426,6 @@ export default function Page() {
     </section>
 
     <!-- ── FOOTER ── -->
-    <script>
-        // Accordion Toggle for Calculators
-        document.querySelectorAll('.calc-card-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const card = header.parentElement;
-                // Toggle clicked card
-                card.classList.toggle('active');
-            });
-        });
-
-        // Format currency
-        function fmt(n) {
-            return '$' + Math.round(n).toLocaleString('en-US');
-        }
-
-        // Term Insurance Calculator
-        function calcTermInsurance() {
-            const ageInput = document.getElementById('ti-age');
-            const incomeInput = document.getElementById('ti-income');
-            const age = parseInt(ageInput.value);
-            const income = parseFloat(incomeInput.value);
-            const term = parseInt(document.getElementById('ti-term').value);
-            const mult = parseInt(document.getElementById('ti-multiplier').value);
-            
-            if (!age || !income) return alert('Please fill in all fields.');
-            
-            const coverage = income * mult;
-            const baseRate = 0.15 + (age - 25) * 0.008;
-            const monthlyPremium = (coverage / 1000) * baseRate;
-            
-            document.getElementById('ti-coverage').textContent = fmt(coverage);
-            document.getElementById('ti-monthly').textContent = 'Estimated Monthly Premium: ' + fmt(monthlyPremium);
-            document.getElementById('ti-result').classList.add('show');
-        }
-
-        // Retirement Calculator
-        function calcRetirement() {
-            const age = parseInt(document.getElementById('ret-age').value);
-            const retire = parseInt(document.getElementById('ret-retire').value);
-            const monthly = parseFloat(document.getElementById('ret-monthly').value);
-            const rate = parseFloat(document.getElementById('ret-rate').value) / 100;
-            
-            if (!age || !retire || !monthly) return alert('Please fill in all fields.');
-            
-            const years = retire - age;
-            const monthlyRate = rate / 12;
-            const months = years * 12;
-            const fv = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-            const totalInvested = monthly * months;
-            
-            document.getElementById('ret-total').textContent = fmt(fv);
-            document.getElementById('ret-invested').textContent = 'Total Invested: ' + fmt(totalInvested) + '  |  Growth: ' + fmt(fv - totalInvested);
-            document.getElementById('ret-result').classList.add('show');
-        }
-
-        // College Fund Calculator
-        function calcCollege() {
-            const childAge = parseInt(document.getElementById('col-age').value);
-            const startAge = parseInt(document.getElementById('col-start').value);
-            const annualCost = parseFloat(document.getElementById('col-cost').value);
-            const years = parseInt(document.getElementById('col-years').value);
-            
-            if (isNaN(childAge) || !annualCost) return alert('Please fill in all fields.');
-            
-            const yearsToSave = startAge - childAge;
-            const inflation = 0.04; 
-            const futureCost = annualCost * Math.pow(1 + inflation, yearsToSave);
-            const totalNeeded = futureCost * years;
-            const rate = 0.06 / 12; 
-            const months = yearsToSave * 12;
-            const monthlySave = totalNeeded * rate / (Math.pow(1 + rate, months) - 1);
-            
-            document.getElementById('col-total').textContent = fmt(totalNeeded);
-            document.getElementById('col-monthly-save').textContent = 'Monthly Savings Needed: ' + fmt(monthlySave);
-            document.getElementById('col-result').classList.add('show');
-        }
-
-        // Investment Growth Calculator
-        function calcInvestment() {
-            const initial = parseFloat(document.getElementById('inv-initial').value) || 0;
-            const monthly = parseFloat(document.getElementById('inv-monthly').value) || 0;
-            const years = parseInt(document.getElementById('inv-years').value);
-            const rate = parseFloat(document.getElementById('inv-rate').value) / 100;
-            
-            if (!years) return alert('Please fill in all fields.');
-            
-            const monthlyRate = rate / 12;
-            const months = years * 12;
-            const fvInitial = initial * Math.pow(1 + monthlyRate, months);
-            const fvMonthly = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-            const total = fvInitial + fvMonthly;
-            const totalInvested = initial + (monthly * months);
-            
-            document.getElementById('inv-total').textContent = fmt(total);
-            document.getElementById('inv-gain').textContent = 'Total Invested: ' + fmt(totalInvested) + '  |  Gain: ' + fmt(total - totalInvested);
-            document.getElementById('inv-result').classList.add('show');
-        }
-    </script>
     ` }} />
   );
 }
