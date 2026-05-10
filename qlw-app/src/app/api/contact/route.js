@@ -100,74 +100,50 @@ export async function POST(request) {
     const userEmailHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
         
-        <!-- Header (Reverted to Centered Layout) -->
-        <div style="background:#0a2540;padding:28px 32px;text-align:center;">
+        <!-- Header (Centered Layout with Richer Navy) -->
+        <div style="background:#05192d;padding:32px 32px;text-align:center;">
           <img 
             src="https://www.quantumleapwealth.com/images/QWL_logo_original.png"
             alt="Quantum Leap Wealth Logo"
-            style="height:65px;width:auto;background:white;padding:10px 14px;border-radius:10px;"
+            style="height:65px;width:auto;background:#ffffff;padding:12px 16px;border-radius:12px;"
           />
-          <h1 style="color:#c9a84c;font-size:1.1rem;margin:12px 0 0;letter-spacing:1px;text-transform:uppercase;">
+          <h1 style="color:#c9a84c;font-size:1.2rem;margin:16px 0 0;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">
             Quantum Leap Wealth
           </h1>
         </div>
 
         <!-- Body -->
-        <div style="padding:32px;">
-          <h2 style="color:#0a2540;margin:0 0 16px;">Thank You, ${firstName || name}! 🎉</h2>
-          <p style="color:#475569;line-height:1.7;margin:0 0 16px;">
+        <div style="padding:40px 32px;">
+          <h2 style="color:#05192d;margin:0 0 20px;font-size:1.5rem;">Thank You, ${firstName || name}! 🎉</h2>
+          <p style="color:#475569;line-height:1.8;margin:0 0 16px;font-size:1rem;">
             We have received your inquiry and our team will get back to you within <strong>24 hours</strong>.
           </p>
-          ${service ? `<p style="color:#475569;line-height:1.7;margin:0 0 16px;">We noted your interest in: <strong style="color:#0a2540;">${service}</strong></p>` : ""}
-          <p style="color:#475569;line-height:1.7;margin:0 0 24px;">
+          ${service ? `<p style="color:#475569;line-height:1.8;margin:0 0 16px;font-size:1rem;">We noted your interest in: <strong style="color:#05192d;">${service}</strong></p>` : ""}
+          <p style="color:#475569;line-height:1.8;margin:0 0 32px;font-size:1rem;">
             In the meantime, feel free to explore our services at 
-            <a href="https://www.quantumleapwealth.com" style="color:#c9a84c;">quantumleapwealth.com</a>.
+            <a href="https://www.quantumleapwealth.com" style="color:#c9a84c;text-decoration:none;font-weight:bold;">quantumleapwealth.com</a>.
           </p>
 
-          <!-- Divider -->
-          <hr style="border:none;border-top:2px solid #c9a84c;margin:24px 0;opacity:0.3;"/>
+          <!-- Signature & Footer -->
+          <div style="border-top:2px solid #c9a84c;padding-top:24px;">
+            <p style="color:#475569;line-height:1.6;margin:0 0 20px;font-size:1.1rem;">
+              Best regards,<br/>
+              <strong style="color:#05192d;font-size:1.2rem;">Anuradha &amp; Prasad</strong><br/>
+              <span style="color:#c9a84c;font-weight:bold;">Quantum Leap Wealth</span>
+            </p>
 
-          <!-- Signature -->
-          <p style="color:#475569;line-height:1.8;margin:0 0 20px;">
-            Best regards,<br/>
-            <strong style="color:#0a2540;">Anuradha &amp; Prasad</strong><br/>
-            <span style="color:#c9a84c;font-weight:600;">Quantum Leap Wealth</span>
-          </p>
-
-          <!-- Divider -->
-          <hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;"/>
-
-          <!-- Contact Info -->
-          <table style="width:100%;border-collapse:collapse;">
-            <tr>
-              <td style="padding:8px 0;color:#0a2540;font-weight:700;width:32px;">📞</td>
-              <td style="padding:8px 0;color:#475569;">
-                <a href="tel:+14082033877" style="color:#475569;text-decoration:none;">(+1) 408-203-3877</a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:8px 0;color:#0a2540;font-weight:700;">✉️</td>
-              <td style="padding:8px 0;color:#475569;">
-                <a href="mailto:quantumlfs@gmail.com" style="color:#475569;text-decoration:none;">quantumlfs@gmail.com</a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:8px 0;color:#0a2540;font-weight:700;">🌐</td>
-              <td style="padding:8px 0;color:#475569;">
-                <a href="https://www.quantumleapwealth.com" style="color:#c9a84c;text-decoration:none;">www.quantumleapwealth.com</a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:8px 0;color:#0a2540;font-weight:700;">📍</td>
-              <td style="padding:8px 0;color:#475569;">California, USA — Serving clients nationwide</td>
-            </tr>
-          </table>
+            <div style="color:#6b7c8d;font-size:0.95rem;line-height:1.8;">
+              <p style="margin:4px 0;">📞 <strong>(+1) 408-203-3877</strong></p>
+              <p style="margin:4px 0;">✉️ <a href="mailto:quantumlfs@gmail.com" style="color:#6b7c8d;text-decoration:none;">quantumlfs@gmail.com</a></p>
+              <p style="margin:4px 0;">🌐 <a href="https://www.quantumleapwealth.com" style="color:#6b7c8d;text-decoration:none;">www.quantumleapwealth.com</a></p>
+              <p style="margin:4px 0;">📍 California, USA</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Footer -->
-        <div style="background:#f8fafc;padding:20px 32px;text-align:center;border-top:1px solid #e2e8f0;">
-          <p style="margin:0;color:#94a3b8;font-size:0.8rem;">
-            This is an automated confirmation. Please do not reply to this email.<br/>
+        <!-- Very Bottom Copyright -->
+        <div style="background:#f8fafc;padding:16px;text-align:center;border-top:1px solid #e2e8f0;">
+          <p style="margin:0;color:#94a3b8;font-size:0.75rem;">
             © ${new Date().getFullYear()} Quantum Leap Wealth. All rights reserved.
           </p>
         </div>
