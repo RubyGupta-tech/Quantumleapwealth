@@ -131,20 +131,28 @@ export async function POST(request) {
           </p>
 
           <!-- Signature & Footer -->
-          <div style="border-top:2px solid #c9a84c;padding-top:24px;">
-            <p style="color:#475569;line-height:1.6;margin:0 0 20px;font-size:1.1rem;">
-              Best regards,<br/>
-              <strong style="color:#05192d;font-size:1.2rem;">Anuradha &amp; Prasad</strong><br/>
-              <span style="color:#c9a84c;font-weight:bold;">Quantum Leap Wealth</span>
-            </p>
+          <hr style="border:none; border-top:2px solid #c9a84c; margin:32px 0 24px 0;" />
+          
+          <p style="color:#475569; line-height:1.6; margin:0 0 20px; font-size:1.1rem;">
+            Best regards,<br/>
+            <strong style="color:#05192d; font-size:1.2rem;">Anuradha &amp; Prasad</strong><br/>
+            <span style="color:#c9a84c; font-weight:bold;">Quantum Leap Wealth</span>
+          </p>
 
-            <div style="color:#6b7c8d;font-size:0.95rem;line-height:1.8;">
-              <p style="margin:4px 0;">📞 <strong>(+1) 408-203-3877</strong></p>
-              <p style="margin:4px 0;">✉️ <a href="mailto:quantumlfs@gmail.com" style="color:#6b7c8d;text-decoration:none;">quantumlfs@gmail.com</a></p>
-              <p style="margin:4px 0;">🌐 <a href="https://www.quantumleapwealth.com" style="color:#6b7c8d;text-decoration:none;">www.quantumleapwealth.com</a></p>
-              <p style="margin:4px 0;">📍 California, USA</p>
-            </div>
-          </div>
+          <table border="0" cellspacing="0" cellpadding="0" style="color:#6b7c8d; font-size:0.95rem; line-height:1.8;">
+            <tr>
+              <td style="padding-bottom:5px;"><strong>Phone:</strong> (+1) 408-203-3877</td>
+            </tr>
+            <tr>
+              <td style="padding-bottom:5px;"><strong>Email:</strong> <a href="mailto:quantumlfs@gmail.com" style="color:#6b7c8d; text-decoration:none;">quantumlfs@gmail.com</a></td>
+            </tr>
+            <tr>
+              <td style="padding-bottom:5px;"><strong>Website:</strong> <a href="https://www.quantumleapwealth.com" style="color:#6b7c8d; text-decoration:none;">www.quantumleapwealth.com</a></td>
+            </tr>
+            <tr>
+              <td><strong>Location:</strong> California, USA</td>
+            </tr>
+          </table>
         </div>
 
         <!-- Very Bottom Copyright -->
