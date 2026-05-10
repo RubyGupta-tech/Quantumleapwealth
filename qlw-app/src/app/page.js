@@ -724,7 +724,7 @@ export default function HomePage() {
                 <h3
                   style="color:var(--primary); text-align:center; font-size:1.5rem; font-weight: 800; margin-bottom:15px;">
                   Our Expertise</h3>
-                <div class="slide-services-grid" style="grid-template-columns: 1fr 1fr; gap: 12px; display: grid;">
+                <div class="slide-services-grid">
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📈 Investment Planning</div>
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🏖️ Retirement</div>
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🛡️ Life Insurance</div>
@@ -1003,6 +1003,50 @@ export default function HomePage() {
         color: #fff;
       }
 
+      .why-choose-section {
+        background: linear-gradient(135deg, #0a2540, #1a4a7a); 
+        padding: 60px 0;
+      }
+      .why-choose-title {
+        text-align:center; 
+        color:#fff; 
+        font-family:'Playfair Display',serif; 
+        font-size:1.8rem; 
+        margin-bottom:36px; 
+        display:inline-block; 
+        padding-bottom:12px; 
+        border-bottom:2px solid transparent; 
+        border-image:linear-gradient(to right, transparent, var(--accent), transparent) 1; 
+        width:100%;
+      }
+      .why-choose-grid {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 24px;
+      }
+      .why-choose-grid > div {
+        text-align:center; 
+        padding:28px 20px; 
+        background:rgba(255,255,255,0.08); 
+        border-radius:12px; 
+        backdrop-filter:blur(4px); 
+        transition:all 0.3s;
+      }
+      .slide-services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 900px) {
+        .why-choose-grid {
+          grid-template-columns: 1fr;
+        }
+        .slide-services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 700px) {
         .dual-branch-grid {
           grid-template-columns: 1fr;
@@ -1195,28 +1239,23 @@ export default function HomePage() {
     <!-- ══════════════════════════════
      WHY CHOOSE US — BLUE BAR
 ══════════════════════════════ -->
-    <section style="background: linear-gradient(135deg, #0a2540, #1a4a7a); padding: 50px 0;">
+    <section class="why-choose-section">
       <div class="container" style="max-width: 1000px;">
-        <h2
-          style="text-align:center; color:#fff; font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:36px; display:inline-block; padding-bottom:12px; border-bottom:2px solid transparent; border-image:linear-gradient(to right, transparent, var(--accent), transparent) 1; width:100%;">
-          Why Choose Us?</h2>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+        <h2 class="why-choose-title">Why Choose Us?</h2>
+        <div class="why-choose-grid">
+          <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">🎯</div>
             <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Expert Guidance</h4>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Licensed professionals providing
               personalized financial strategies tailored to your goals.</p>
           </div>
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+          <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">📋</div>
             <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Comprehensive Solutions</h4>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">From insurance to real estate —
               all your financial needs under one trusted roof.</p>
           </div>
-          <div
-            style="text-align:center; padding:28px 20px; background:rgba(255,255,255,0.08); border-radius:12px; backdrop-filter:blur(4px); transition:all 0.3s;">
+          <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">📈</div>
             <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Proven Results</h4>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Trusted by hundreds of families
