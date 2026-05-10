@@ -1138,7 +1138,7 @@ export default function HomePage() {
     <!-- ══════════════════════════════
      WHY CHOOSE US
 ══════════════════════════════ -->
-    <!--<section class="section" id="why-us">
+    <section class="section" id="why-us">
       <div class="container">
         <div class="why-grid">
           <div class="reveal">
@@ -1845,6 +1845,7 @@ export default function HomePage() {
         buildSlider('events-past', past, true);
         const tabs = document.querySelectorAll('.events-tab');
         tabs[0].textContent = \`📅 Upcoming Events (\${up.length})\`;
+        tabs[0].textContent = \`📅 Upcoming Events (\${up.length})\`;
         tabs[1].textContent = \`📋 Past Events (\${past.length})\`;
       }
 
@@ -1874,7 +1875,7 @@ export default function HomePage() {
     </script>
 
 
-    <!--<section class="section" id="testimonials">
+    <section class="section" id="testimonials">
       <div class="container">
         <div class="text-center reveal">
           <span class="section-label">Client Stories</span>
@@ -1898,7 +1899,7 @@ export default function HomePage() {
           <div class="tcard reveal reveal-delay-2">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p class="tcard-text">"I was skeptical at first, but after one session I knew this was different. They built
-              a tax savings strategy that saved me over \$9,000 last year alone. Incredible!"</p>
+              a tax savings strategy that saved me over $9,000 last year alone. Incredible!"</p>
             <div class="tcard-author">
               <div class="tcard-avatar">SP</div>
               <div>
@@ -1909,19 +1910,19 @@ export default function HomePage() {
           </div>
           <div class="tcard reveal reveal-delay-3">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p class="tcard-text">"The team is always available, always professional. They helped us set up college
-              funds for both our kids and a life insurance plan that also builds real wealth."</p>
+            <p class="tcard-text">"The college planning strategy Prasad built for my daughter was a lifesaver. We now
+              have a clear path to funding her education without drowning in debt."</p>
             <div class="tcard-author">
-              <div class="tcard-avatar">MJ</div>
+              <div class="tcard-avatar">MA</div>
               <div>
-                <div class="tcard-name">Michael &amp; Jennifer Adams</div>
-                <div class="tcard-title">California Residents</div>
+                <div class="tcard-name">Michael A.</div>
+                <div class="tcard-title">Parent, San Jose</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>-->
+    </section>
 
     <!-- ══════════════════════════════
      ABOUT US
@@ -2119,7 +2120,7 @@ export default function HomePage() {
         }
       }
     </style>
-    <!--<section class="home-about" id="about-us">
+    <section class="home-about" id="about-us">
       <div class="container">
         <div class="home-about-grid">
           <div class="home-about-content reveal">
@@ -2155,7 +2156,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </section>-->
+    </section>
 
     <!-- ══════════════════════════════
      BUSINESS OPPORTUNITY
