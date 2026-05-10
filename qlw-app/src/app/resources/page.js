@@ -309,6 +309,104 @@ export default function Page() {
     </section>
 
     <!-- ── FOOTER ── -->
+    <script>
+        // Accordion Toggle for Calculators
+        document.querySelectorAll('.calc-card-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                // Toggle clicked card
+                card.classList.toggle('active');
+            });
+        });
+
+        // Format currency
+        function fmt(n) {
+            return '$' + Math.round(n).toLocaleString('en-US');
+        }
+
+        // Term Insurance Calculator
+        function calcTermInsurance() {
+            const ageInput = document.getElementById('ti-age');
+            const incomeInput = document.getElementById('ti-income');
+            const age = parseInt(ageInput.value);
+            const income = parseFloat(incomeInput.value);
+            const term = parseInt(document.getElementById('ti-term').value);
+            const mult = parseInt(document.getElementById('ti-multiplier').value);
+            
+            if (!age || !income) return alert('Please fill in all fields.');
+            
+            const coverage = income * mult;
+            const baseRate = 0.15 + (age - 25) * 0.008;
+            const monthlyPremium = (coverage / 1000) * baseRate;
+            
+            document.getElementById('ti-coverage').textContent = fmt(coverage);
+            document.getElementById('ti-monthly').textContent = 'Estimated Monthly Premium: ' + fmt(monthlyPremium);
+            document.getElementById('ti-result').classList.add('show');
+        }
+
+        // Retirement Calculator
+        function calcRetirement() {
+            const age = parseInt(document.getElementById('ret-age').value);
+            const retire = parseInt(document.getElementById('ret-retire').value);
+            const monthly = parseFloat(document.getElementById('ret-monthly').value);
+            const rate = parseFloat(document.getElementById('ret-rate').value) / 100;
+            
+            if (!age || !retire || !monthly) return alert('Please fill in all fields.');
+            
+            const years = retire - age;
+            const monthlyRate = rate / 12;
+            const months = years * 12;
+            const fv = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+            const totalInvested = monthly * months;
+            
+            document.getElementById('ret-total').textContent = fmt(fv);
+            document.getElementById('ret-invested').textContent = 'Total Invested: ' + fmt(totalInvested) + '  |  Growth: ' + fmt(fv - totalInvested);
+            document.getElementById('ret-result').classList.add('show');
+        }
+
+        // College Fund Calculator
+        function calcCollege() {
+            const childAge = parseInt(document.getElementById('col-age').value);
+            const startAge = parseInt(document.getElementById('col-start').value);
+            const annualCost = parseFloat(document.getElementById('col-cost').value);
+            const years = parseInt(document.getElementById('col-years').value);
+            
+            if (isNaN(childAge) || !annualCost) return alert('Please fill in all fields.');
+            
+            const yearsToSave = startAge - childAge;
+            const inflation = 0.04; 
+            const futureCost = annualCost * Math.pow(1 + inflation, yearsToSave);
+            const totalNeeded = futureCost * years;
+            const rate = 0.06 / 12; 
+            const months = yearsToSave * 12;
+            const monthlySave = totalNeeded * rate / (Math.pow(1 + rate, months) - 1);
+            
+            document.getElementById('col-total').textContent = fmt(totalNeeded);
+            document.getElementById('col-monthly-save').textContent = 'Monthly Savings Needed: ' + fmt(monthlySave);
+            document.getElementById('col-result').classList.add('show');
+        }
+
+        // Investment Growth Calculator
+        function calcInvestment() {
+            const initial = parseFloat(document.getElementById('inv-initial').value) || 0;
+            const monthly = parseFloat(document.getElementById('inv-monthly').value) || 0;
+            const years = parseInt(document.getElementById('inv-years').value);
+            const rate = parseFloat(document.getElementById('inv-rate').value) / 100;
+            
+            if (!years) return alert('Please fill in all fields.');
+            
+            const monthlyRate = rate / 12;
+            const months = years * 12;
+            const fvInitial = initial * Math.pow(1 + monthlyRate, months);
+            const fvMonthly = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+            const total = fvInitial + fvMonthly;
+            const totalInvested = initial + (monthly * months);
+            
+            document.getElementById('inv-total').textContent = fmt(total);
+            document.getElementById('inv-gain').textContent = 'Total Invested: ' + fmt(totalInvested) + '  |  Gain: ' + fmt(total - totalInvested);
+            document.getElementById('inv-result').classList.add('show');
+        }
+    </script>
     ` }} />
   );
 }
