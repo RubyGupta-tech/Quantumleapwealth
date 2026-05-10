@@ -652,7 +652,7 @@ export default function HomePage() {
           <!-- Slide 3 -->
           <div class="slide" style="height: 100%;">
             <div class="slide-content" style="height: 100%;">
-              <img src="images/prasad_family_pic.png" alt="Secure Your Family" class="slide-bg"
+              <img src="images/Anu_Homepage_pic.png" alt="Secure Your Family" class="slide-bg"
                 style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
               <div class="slide-overlay"
                 style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
@@ -1910,7 +1910,7 @@ export default function HomePage() {
           </div>
           <div class="tcard reveal reveal-delay-3">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p class="tcard-text">"The college planning strategy Prasad built for my daughter was a lifesaver. We now
+            <p class="tcard-text">"The college planning strategy Anuradha built for my daughter was a lifesaver. We now
               have a clear path to funding her education without drowning in debt."</p>
             <div class="tcard-author">
               <div class="tcard-avatar">MA</div>

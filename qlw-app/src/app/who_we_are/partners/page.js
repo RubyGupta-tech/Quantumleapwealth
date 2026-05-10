@@ -47,7 +47,7 @@ export default function Page() {
                 <p class="section-sub">Every member of the Quantum Leap Wealth team is a Licensed Financial
                     Professional
 
-                    personally vetted and trained by Prasad. Together we serve hundreds of families across California
+                    personally vetted and trained by Anuradha. Together we serve hundreds of families across California
 
                     with integrity, expertise, and genuine care.</p>
 

@@ -135,7 +135,7 @@ export async function POST(request) {
           
           <p style="color:#475569; line-height:1.6; margin:0 0 20px; font-size:1.1rem;">
             Best regards,<br/>
-            <strong style="color:#05192d; font-size:1.2rem;">Anuradha &amp; Prasad</strong><br/>
+            <strong style="color:#05192d; font-size:1.2rem;">Anuradha</strong><br/>
             <span style="color:#c9a84c; font-weight:bold;">Quantum Leap Wealth</span>
           </p>
 

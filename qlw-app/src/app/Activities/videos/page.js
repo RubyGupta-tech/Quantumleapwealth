@@ -306,7 +306,7 @@ export default function Page() {
 
                             <div class="video-card-title">Meet Our Team — Who We Are &amp; Why We Do This</div>
 
-                            <p class="video-card-desc">Prasad and the Quantum Leap Wealth team share their mission and
+                            <p class="video-card-desc">Anuradha and the Quantum Leap Wealth team share their mission and
 
                                 story.</p>
 

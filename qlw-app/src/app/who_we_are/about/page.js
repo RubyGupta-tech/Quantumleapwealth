@@ -55,13 +55,7 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div class="founder-badge-floating">
-                            <div class="badge-icon">🏆</div>
-                            <div class="badge-text">
-                                <strong>California Top Advisor</strong>
-                                <span>Award-Winning Advisor 2024</span>
-                            </div>
-                        </div>
+
                     </div>
 
 
@@ -146,37 +140,16 @@ export default function Page() {
 
 
 
-        <div class="about-stats">
-            <div class="container">
-                <div class="about-stats-grid">
-                    <div class="about-stat reveal">
-                        <div class="about-stat-num">500+</div>
-                        <div class="about-stat-label">Families Served</div>
-                    </div>
-                    <div class="about-stat reveal reveal-delay-1">
-                        <div class="about-stat-num">15+</div>
-                        <div class="about-stat-label">Years Experience</div>
-                    </div>
-                    <div class="about-stat reveal reveal-delay-2">
-                        <div class="about-stat-num">$50M+</div>
-                        <div class="about-stat-label">Assets Managed</div>
-                    </div>
-                    <div class="about-stat reveal reveal-delay-3">
-                        <div class="about-stat-num">FREE</div>
-                        <div class="about-stat-label">First Consultation</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- FAMILY STORY SECTION -->
+
+        <!-- FOUNDER'S VISION SECTION -->
         <section class="family-story-section" style="padding: 90px 0; background: #fff;">
             <div class="container">
                 <div class="founder-grid" style="grid-template-columns: 1fr 450px; align-items: center;">
                     <div class="family-text reveal">
-                        <span class="section-label">The Family Behind the Firm</span>
-                        <h2>A Mission Rooted in Legacy</h2>
-                        <p>Quantum Leap Wealth isn't just a business; it's a family legacy. Prasad and Anuradha built this firm on the belief that every family deserves the same high-end financial strategies used by the ultra-wealthy.</p>
+                        <span class="section-label">Our Mission</span>
+                        <h2>A Vision Rooted in Service</h2>
+                        <p>Quantum Leap Wealth was built on the belief that every family deserves the same high-end financial strategies used by the ultra-wealthy.</p>
                         <p>Our goal is to ensure that "No Family is Left Behind." We treat your family's future with the same care, dedication, and long-term vision that we apply to our own.</p>
                         <div style="display: flex; gap: 20px; margin-top: 30px;">
                             <div style="flex: 1; padding: 20px; background: var(--bg-light); border-radius: 12px; border-left: 4px solid var(--accent);">
@@ -191,7 +164,7 @@ export default function Page() {
                     </div>
                     <div class="family-photo-wrap reveal reveal-delay-2">
                         <div class="founder-photo-card" style="aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 8px solid rgba(201,168,76,0.2);">
-                            <img src="/images/prasad_family_pic.png" alt="Prasad and Family" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/images/Anu_profile_pic.png" alt="Anuradha - Founder" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </div>
@@ -345,15 +318,7 @@ export default function Page() {
 
                             </div>
 
-                            <div class="partner-visual-item">
 
-                                <div class="pvi-icon">📊</div>
-
-                                <div class="pvi-text"><strong style="color:var(--accent-light)">Hegemon Group
-
-                                        International</strong><br />Renowned financial services marketing partner</div>
-
-                            </div>
 
                             <div class="partner-visual-item">
 
@@ -384,15 +349,7 @@ export default function Page() {
 
                             serving only the affluent, we built something different — a firm that serves you.</p>
 
-                        <p>Our strategic partnership with <strong>Hegemon Group International</strong>, a renowned
-
-                            financial services marketing organization, allows us to facilitate the establishment of
-
-                            financial agencies and distribution outlets — empowering our clients not just with
-
-                            solutions, but with financial concepts and investment strategies that set them up for life.
-
-                        </p>
+                        <p>We empower our clients not just with solutions, but with financial concepts and investment strategies that set them up for life.</p>
 
                         <p>Through our partnerships with world-class carriers and vendors, Quantum Leap Financial
                             Services delivers
@@ -431,7 +388,7 @@ export default function Page() {
 
                     <h2>Ready to Start Your Wealth Journey?</h2>
 
-                    <p>Partner with Prasad and the Quantum Leap Wealth team for a personalized financial
+                    <p>Partner with Anuradha and the Quantum Leap Wealth team for a personalized financial
                         plan built
 
                         around your life, your goals, and your future. Your first consultation is always free.</p>
@@ -486,7 +443,7 @@ export default function Page() {
                     </div>
                     <div class="value-card reveal reveal-delay-2" style="text-align: left; padding: 40px;">
                         <div style="color: var(--accent); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; margin-bottom: 20px;">"The college planning strategy Prasad built for my daughter was a lifesaver. We now have a clear path to funding her education without drowning in debt."</p>
+                        <p style="font-style: italic; margin-bottom: 20px;">"The college planning strategy Anuradha built for my daughter was a lifesaver. We now have a clear path to funding her education without drowning in debt."</p>
                         <div style="display: flex; align-items: center; gap: 12px;">
                             <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">MA</div>
                             <div>
