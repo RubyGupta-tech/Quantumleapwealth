@@ -253,7 +253,7 @@
         display: block !important;
         padding: 30px 24px;
         border-bottom: 1px solid rgba(10, 37, 64, 0.08);
-        background: #fcfdfe;
+        background: #ffffff; /* Removed light blue tint */
     }
 
     .nav-menu {

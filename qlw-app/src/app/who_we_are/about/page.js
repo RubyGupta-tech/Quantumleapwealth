@@ -148,49 +148,28 @@ export default function Page() {
 
         <!-- STATS BAR -->
 
-        <!--<div class="about-stats">
-
+        <div class="about-stats">
             <div class="container">
-
                 <div class="about-stats-grid">
-
                     <div class="about-stat reveal">
-
                         <div class="about-stat-num">500+</div>
-
                         <div class="about-stat-label">Families Served</div>
-
                     </div>
-
                     <div class="about-stat reveal reveal-delay-1">
-
                         <div class="about-stat-num">15+</div>
-
                         <div class="about-stat-label">Years Experience</div>
-
                     </div>
-
                     <div class="about-stat reveal reveal-delay-2">
-
-                        <div class="about-stat-num">\$50M+</div>
-
+                        <div class="about-stat-num">$50M+</div>
                         <div class="about-stat-label">Assets Managed</div>
-
                     </div>
-
                     <div class="about-stat reveal reveal-delay-3">
-
                         <div class="about-stat-num">FREE</div>
-
                         <div class="about-stat-label">First Consultation</div>
-
                     </div>
-
                 </div>
-
             </div>
-
-        </div>-->
+        </div>
 
 
 

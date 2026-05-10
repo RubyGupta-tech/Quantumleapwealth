@@ -669,7 +669,7 @@ export default function HomePage() {
                 <h3
                   style="color:var(--primary); text-align:center; font-size:1.5rem; font-weight: 800; margin-bottom:15px;">
                   Our Expertise</h3>
-                <div class="slide-services-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="slide-services-grid" style="grid-template-columns: 1fr 1fr; gap: 12px; display: grid;">
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📈 Investment Planning</div>
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🏖️ Retirement</div>
                   <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🛡️ Life Insurance</div>
@@ -2185,7 +2185,7 @@ export default function HomePage() {
                 <div class="opp-perk-icon">✓</div>Mentorship from top producers
               </div>
             </div>
-            <a href="Entrepreneurship//Entrepreneurship/6-steps-to-financial-freedom" class="btn btn-primary">Learn About the 6 Steps
+            <a href="/Entrepreneurship/6-steps-to-financial-freedom" class="btn btn-primary">Learn About the 6 Steps
               →</a>
           </div>
           <div class="reveal reveal-delay-2">

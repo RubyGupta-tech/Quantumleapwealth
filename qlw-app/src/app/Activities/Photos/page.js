@@ -449,6 +449,31 @@ export default function Page() {
 
 
 
+        <script>
+            function filterGallery(category, btn) {
+                const items = document.querySelectorAll('.gallery-card');
+                const buttons = document.querySelectorAll('.filter-btn');
+                let count = 0;
+
+                // Update buttons
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter items
+                items.forEach(item => {
+                    const itemCat = item.getAttribute('data-category');
+                    if (category === 'all' || itemCat === category) {
+                        item.style.display = 'block';
+                        count++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Update count
+                document.getElementById('photo-count').textContent = count + ' Photos Found';
+            }
+        </script>
     ` }} />
   );
 }

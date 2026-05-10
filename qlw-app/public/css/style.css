@@ -1331,7 +1331,8 @@ img {
     background: #030d18;
     color: rgba(255, 255, 255, 0.55);
     padding: 70px 0 28px;
-    font-size: 0.85rem
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-grid {
