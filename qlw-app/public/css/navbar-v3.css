@@ -304,7 +304,9 @@
         display: none; 
         position: static; 
         transform: none; 
-        width: 100%; 
+        width: 100% !important; 
+        min-width: 0 !important;
+        grid-template-columns: 1fr !important;
         padding: 0; 
         box-shadow: none; 
         border: none; 
