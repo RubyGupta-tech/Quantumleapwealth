@@ -1,10 +1,46 @@
+"use client";
+import { useEffect } from "react";
 import "./blogs.css";
 
 export default function Page() {
+  useEffect(() => {
+    // Scroll reveals
+    const reveals = document.querySelectorAll('.reveal');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Calendly script loading
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.head.contains(link)) document.head.removeChild(link);
+      if (document.body.contains(script)) document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
-
-
 
         <!-- HERO -->
 
@@ -35,13 +71,9 @@ export default function Page() {
 
                             <div class="blog-layout">
 
-
-
                                 <!-- Main Column -->
 
                                 <div>
-
-
 
                                     <!-- Featured placeholder -->
 
@@ -61,8 +93,6 @@ export default function Page() {
                                         </div>
                                     </div>
 
-
-
                                     <!-- Coming soon strip -->
 
                                     <div class="blog-coming-strip">
@@ -80,10 +110,7 @@ export default function Page() {
 
                                     </div>
 
-
-
                                     <!-- Placeholder post grid -->
-                                    <!-- BLOG_GRID_START -->
                                     <div class="blog-grid" id="blogGrid">
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
@@ -170,17 +197,12 @@ export default function Page() {
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- BLOG_GRID_END -->
 
                                 </div><!-- /main col -->
-
-
 
                                 <!-- Sidebar -->
 
                                 <aside class="blog-sidebar">
-
-
 
                                     <!-- Search -->
 
@@ -199,8 +221,6 @@ export default function Page() {
                                         </div>
 
                                     </div>
-
-
 
                                     <!-- Topics -->
 
@@ -230,8 +250,6 @@ export default function Page() {
 
                                     </div>
 
-
-
                                     <!-- CTA -->
 
                                     <div class="sidebar-cta">
@@ -247,23 +265,17 @@ export default function Page() {
 
                                     </div>
 
-
-
                                     <!-- Recent (placeholder) -->
 
                                     <div class="sidebar-card">
                                         <h3>🕐 Recent Posts</h3>
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
-                                            <!-- SIDEBAR_RECENT_START -->
                                             <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a><span>Mar 19</span></li>
                                             <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a><span>Mar 19</span></li>
                                             <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a><span>Mar 19</span></li>
                                             <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <!-- SIDEBAR_RECENT_END -->
                                         </ul>
                                     </div>
-
-
 
                                 </aside>
 
@@ -272,8 +284,6 @@ export default function Page() {
                         </div>
 
                     </section>
-
-
 
                     <!-- CTA -->
 
@@ -287,7 +297,6 @@ export default function Page() {
 
                                 <p>Don't wait — book a FREE 30-minute consultation with one of our Licensed Financial
                                     Professionals
-
                                     now.</p>
 
                                 <div class="blog-cta-btns">
@@ -305,8 +314,6 @@ export default function Page() {
                         </div>
 
                     </section>
-
-
 
     ` }} />
   );
