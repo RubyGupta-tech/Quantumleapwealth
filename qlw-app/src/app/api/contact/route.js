@@ -168,7 +168,7 @@ export async function POST(request) {
       resend.emails.send({
         from: "Quantum Leap Wealth <noreply@quantumleapwealth.com>",
         to: [email],
-        subject: "We received your inquiry — Quantum Leap Wealth",
+        subject: "Inquiry Confirmation: Quantum Leap Wealth",
         html: userEmailHtml,
       }),
     ]);
