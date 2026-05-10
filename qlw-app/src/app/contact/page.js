@@ -54,7 +54,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="container" style={{ marginTop: "-30px", position: "relative", z-index: 2 }}>
+      <div className="container" style={{ marginTop: "-30px", position: "relative", zIndex: 2 }}>
         <div className="contact-cards">
           <div className="contact-info-card">
             <div className="ci-icon">📞</div>
