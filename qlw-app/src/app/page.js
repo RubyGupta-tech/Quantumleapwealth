@@ -28,12 +28,12 @@ export default function HomePage() {
     window.currentSlide = function(n) {
       showSlide(n);
       clearInterval(slideInterval);
-      slideInterval = setInterval(nextSlide, 5000);
+      slideInterval = setInterval(nextSlide, 4000);
     };
 
     if (slides.length > 0) {
       showSlide(0);
-      slideInterval = setInterval(nextSlide, 5000);
+      slideInterval = setInterval(nextSlide, 4000);
     }
 
     // ---- Events Slider Initialization (Legacy script fallback) ----
@@ -684,6 +684,7 @@ export default function HomePage() {
             <div class="slide-content"
               style="background: white; flex-direction: column; padding: 20px; height: 100%; justify-content: center;">
               <img src="images/QWL_logo_original.png" alt="Quantum Leap Wealth" class="slide-logo"
+                loading="eager"
                 style="margin-bottom: 20px; max-width: 260px;" />
               <p
                 style="color: var(--primary); font-size: 1.15rem; font-weight: 600; text-align: center; max-width: 80%; margin: 0 auto;">
@@ -696,6 +697,7 @@ export default function HomePage() {
           <div class="slide" style="height: 100%;">
             <div class="slide-content" style="height: 100%;">
               <img src="images/Anu_profile_pic.png" alt="Expert Leadership" class="slide-bg"
+                loading="eager"
                 style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
               <div class="slide-overlay"
                 style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
@@ -708,6 +710,7 @@ export default function HomePage() {
           <div class="slide" style="height: 100%;">
             <div class="slide-content" style="height: 100%;">
               <img src="images/Anu_Homepage_pic.png" alt="Secure Your Family" class="slide-bg"
+                loading="eager"
                 style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
               <div class="slide-overlay"
                 style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
