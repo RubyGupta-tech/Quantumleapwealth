@@ -2,6 +2,7 @@ import Script from "next/script";
 import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollAnimator from "@/components/ScrollAnimator";
 import "./globals.css";
 
 export const metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         <Topbar />
         <Navbar />
         <main id="main-content" role="main">
+          <ScrollAnimator />
           {children}
         </main>
         <Footer />

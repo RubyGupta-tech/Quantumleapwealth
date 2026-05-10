@@ -305,7 +305,7 @@
         position: static; 
         transform: none; 
         width: 100%; 
-        padding: 0 10px; 
+        padding: 0; 
         box-shadow: none; 
         border: none; 
         opacity: 0; 
@@ -313,14 +313,19 @@
         max-height: 0;
         overflow: hidden;
         transition: all 0.4s ease;
-        background: rgba(10, 37, 64, 0.02);
+        background: #f8f9fb; /* Light solid background for mobile submenus */
     }
     .nav-item.open > .dropdown { 
         display: block; 
         opacity: 1;
         visibility: visible;
         max-height: 1000px;
-        padding-bottom: 10px;
+    }
+    .dropdown-item {
+        color: var(--navy) !important;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.03);
     }
     .nav-item.open > .nav-link .dd-arrow {
         transform: rotate(180deg);
