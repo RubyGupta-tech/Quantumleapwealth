@@ -1,3 +1,5 @@
+import "./6steps.css";
+
 export default function Page() {
   return (
     <div dangerouslySetInnerHTML={{ __html: `
@@ -14,7 +16,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:var(--text-muted)">Entrepreneurship</span><span>›</span><span
                             style="color:var(--primary)">6 Steps to Financial Freedom</span></div>
 
@@ -28,7 +30,7 @@ export default function Page() {
 
                     <div style="display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap">
 
-                        <a href="../contact/contact.html" class="btn btn-primary">Book a Free Consultation</a>
+                        <a href="/contact" class="btn btn-primary">Book a Free Consultation</a>
 
                         <a href="#step-1" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);">Explore the Steps ↓</a>
 
@@ -85,7 +87,7 @@ export default function Page() {
                 <div class="step-block" id="step-1">
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/cashflow.png" alt="Increase Cash Flow"
+                        <img src="/images/6-Steps/cashflow.png" alt="Increase Cash Flow"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -117,7 +119,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../contact/contact.html" class="step-link">Start your cash flow analysis →</a>
+                        <a href="/contact" class="step-link">Start your cash flow analysis →</a>
 
                     </div>
 
@@ -161,12 +163,12 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../contact/contact.html" class="step-link">Create your debt elimination plan →</a>
+                        <a href="/contact" class="step-link">Create your debt elimination plan →</a>
 
                     </div>
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/Debt.png" alt="Debt Management"
+                        <img src="/images/6-Steps/Debt.png" alt="Debt Management"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -183,7 +185,7 @@ export default function Page() {
                 <div class="step-block" id="step-3">
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/EmergencyFund.png" alt="Emergency Fund"
+                        <img src="/images/6-Steps/EmergencyFund.png" alt="Emergency Fund"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -217,7 +219,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../contact/contact.html" class="step-link">Build your safety net today →</a>
+                        <a href="/contact" class="step-link">Build your safety net today →</a>
 
                     </div>
 
@@ -263,14 +265,14 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../images/services/life-insurance.html" class="step-link">Explore life insurance
+                        <a href="/images/services/life-insurance.html" class="step-link">Explore life insurance
 
                             options →</a>
 
                     </div>
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/proctation.png" alt="Proper Protection"
+                        <img src="/images/6-Steps/proctation.png" alt="Proper Protection"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -287,7 +289,7 @@ export default function Page() {
                 <div class="step-block" id="step-5">
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/BuildWealth.png" alt="Build Wealth"
+                        <img src="/images/6-Steps/BuildWealth.png" alt="Build Wealth"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -319,7 +321,7 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../images/services/investment-planning.html" class="step-link">Explore investment
+                        <a href="/images/services/investment-planning.html" class="step-link">Explore investment
 
                             planning →</a>
 
@@ -365,14 +367,14 @@ export default function Page() {
 
                         </ul>
 
-                        <a href="../images/services/living-will-trust.html" class="step-link">Explore Living Will &amp;
+                        <a href="/images/services/living-will-trust.html" class="step-link">Explore Living Will &amp;
 
                             Trust planning →</a>
 
                     </div>
 
                     <div class="step-visual">
-                        <img src="../images/6-Steps/Preserwealth.png" alt="Preserve Wealth"
+                        <img src="/images/6-Steps/Preserwealth.png" alt="Preserve Wealth"
                             style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
                     </div>
 
@@ -402,9 +404,9 @@ export default function Page() {
 
                     <div class="partner-cta-btns">
 
-                        <a href="../contact/contact.html" class="btn btn-primary">Book an Appointment</a>
+                        <a href="/contact" class="btn btn-primary">Book an Appointment</a>
 
-                        <a href="../contact/contact.html" class="btn btn-outline-white">Explore Business
+                        <a href="/contact" class="btn btn-outline-white">Explore Business
                             Opportunities</a>
 
                     </div>

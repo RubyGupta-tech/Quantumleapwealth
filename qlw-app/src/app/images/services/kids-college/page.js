@@ -10,8 +10,8 @@ export default function Page() {
 
                     <div>
 
-                        <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
-                                href="../../index.html#services">Services</a><span>›</span><span
+                        <div class="breadcrumb"><a href="..//">Home</a><span>›</span><a
+                                href="..//#services">Services</a><span>›</span><span
                                 style="color:var(--accent-light)">Kids College Fund</span></div>
 
                         <h1>Kids College Fund</h1>
@@ -20,7 +20,7 @@ export default function Page() {
 
                             so you can say yes when the moment arrives, without financial stress.</p>
 
-                        <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -47,7 +47,7 @@ export default function Page() {
                             <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start planning.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="../../images/college_future_light.png" alt="Children Educational Future Options" />
+                            <img src="..//images/college_future_light.png" alt="Children Educational Future Options" />
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@ export default function Page() {
                     <!-- Block 2: Savings Options -->
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="../../images/college_savings_plan_light.png" alt="Children's College Savings Plans Portfolio" style="aspect-ratio: 3/4;" />
+                            <img src="..//images/college_savings_plan_light.png" alt="Children's College Savings Plans Portfolio" style="aspect-ratio: 3/4;" />
                         </div>
                         <div class="content-split-text">
                             <h3>College Savings Options We Help You Navigate</h3>
@@ -109,7 +109,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="../../images/college_benefits_light.png" alt="Graduation Diploma and Benefits" style="aspect-ratio: 3/4;" />
+                            <img src="..//images/college_benefits_light.png" alt="Graduation Diploma and Benefits" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -139,7 +139,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="../../contact/contact.html" class="btn btn-primary"
+                        <a href="..//contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Book
 
                             Appointment Now →</a>

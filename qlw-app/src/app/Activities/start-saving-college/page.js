@@ -17,7 +17,7 @@ export default function Page() {
                 <div class="article-body">
                     <a href="blogs.html" class="back-link">← Back to Blogs</a>
 
-                        <img src="../images/college_saving_hero.png"
+                        <img src="/images/college_saving_hero.png"
                             alt="Start Saving for College When Your Child Is Born" />
 
                         <p>One of the greatest gifts you can give your child is a debt-free start to their adult life.

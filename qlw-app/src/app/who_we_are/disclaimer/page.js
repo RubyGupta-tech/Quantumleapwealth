@@ -12,7 +12,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:var(--text-muted)">Who We Are</span><span>›</span><span
                             style="color:var(--primary)">Our Disclaimer</span></div>
 
@@ -301,9 +301,9 @@ export default function Page() {
 
                                 <li><a href="partners.html"><span class="sn-icon">🤝</span>Our Partners</a></li>
 
-                                <li><a href="../contact/contact.html"><span class="sn-icon">📞</span>Contact Us</a></li>
+                                <li><a href="/contact"><span class="sn-icon">📞</span>Contact Us</a></li>
 
-                                <li><a href="../images/services/investment-planning.html"><span
+                                <li><a href="/images/services/investment-planning.html"><span
                                             class="sn-icon">📈</span>Our Services</a></li>
 
                             </ul>
@@ -331,7 +331,7 @@ export default function Page() {
             <div class="container">Last updated: February 2025 &nbsp;|&nbsp; © 2025 Quantum Leap Wealth. All
                 rights
 
-                reserved. &nbsp;|&nbsp; <a href="../contact/contact.html" style="color:var(--accent-dark)">Contact
+                reserved. &nbsp;|&nbsp; <a href="/contact" style="color:var(--accent-dark)">Contact
                     Us</a>
 
             </div>

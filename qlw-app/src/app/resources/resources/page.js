@@ -221,7 +221,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/American_product.png" alt="American Equity/National"
+                                <img src="/images/product_images/American_product.png" alt="American Equity/National"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>American</h4>
@@ -233,7 +233,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/annexus_product.png" alt="Annexus"
+                                <img src="/images/product_images/annexus_product.png" alt="Annexus"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>Annexus</h4>
@@ -245,7 +245,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/corebridge_product.png" alt="Corebridge Financial"
+                                <img src="/images/product_images/corebridge_product.png" alt="Corebridge Financial"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>Corebridge</h4>
@@ -257,7 +257,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/Fidelity_product.png" alt="Fidelity Investments"
+                                <img src="/images/product_images/Fidelity_product.png" alt="Fidelity Investments"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>Fidelity</h4>
@@ -269,7 +269,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
+                                <img src="/images/product_images/nationwide_product._pic.jpg" alt="Nationwide"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>Nationwide</h4>
@@ -281,7 +281,7 @@ export default function Page() {
                         <div class="partner-card">
                             <div
                                 style="height: 45px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
-                                <img src="../images/product_images/northamerican_product.png" alt="North American"
+                                <img src="/images/product_images/northamerican_product.png" alt="North American"
                                     style="max-height: 100%; max-width: 80%; object-fit: contain;">
                             </div>
                             <h4>North American</h4>

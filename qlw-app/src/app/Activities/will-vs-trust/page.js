@@ -17,7 +17,7 @@ export default function Page() {
                 <div class="article-body">
                     <a href="blogs.html" class="back-link">← Back to Blogs</a>
 
-                    <img src="../images/will_vs_trust_hero.png"
+                    <img src="/images/will_vs_trust_hero.png"
                         alt="Will vs. Trust: What Do You Really Need?" />
 
                     <p>When it comes to estate planning, the most common question we hear from families is: <strong>"Do

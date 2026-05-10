@@ -17,7 +17,7 @@ export default function Page() {
                 <div class="article-body">
                     <a href="blogs.html" class="back-link">← Back to Blogs</a>
 
-                    <img src="../images/retirement_hero.png"
+                    <img src="/images/retirement_hero.png"
                         alt="How to Retire Comfortably Before 60" />
 
                     <p>Retiring before age 60, often referred to as "early retirement," is a dream for many, but it

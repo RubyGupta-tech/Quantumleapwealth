@@ -17,7 +17,7 @@ export default function Page() {
                 <div class="article-body">
                     <a href="blogs.html" class="back-link">← Back to Blogs</a>
 
-                        <img src="../images/life_insurance_hero.png"
+                        <img src="/images/life_insurance_hero.png"
                             alt="Why Life Insurance Is Your Family's Safety Net" />
 
                         <p>At its core, life insurance isn't just a financial product—it's an act of love. It represents a

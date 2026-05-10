@@ -10,8 +10,8 @@ export default function Page() {
 
                     <div>
 
-                        <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
-                                href="../../index.html#services">Services</a><span>›</span><span
+                        <div class="breadcrumb"><a href="..//">Home</a><span>›</span><a
+                                href="..//#services">Services</a><span>›</span><span
                                 style="color:var(--accent-light)">Retirement Planning</span></div>
 
                         <h1>Retirement Planning</h1>
@@ -20,7 +20,7 @@ export default function Page() {
 
                             retirement plan so you can live the life you've always envisioned, on your terms.</p>
 
-                        <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Book a Free
+                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Book a Free
 
                             Consultation</a>
 
@@ -47,7 +47,7 @@ export default function Page() {
                             <p>Our advisors help you navigate 401(k)s, IRAs, Social Security optimization, pension integration, and income drawdown strategies to ensure your money lasts as long as you do.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="../../images/retire_future_light.png" alt="Retirement Future Wealth and Comfort" />
+                            <img src="..//images/retire_future_light.png" alt="Retirement Future Wealth and Comfort" />
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@ export default function Page() {
                     <!-- Block 2: Planning Phases -->
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="../../images/retire_phases_light.png" alt="Retirement Strategy Roadmap Target" style="aspect-ratio: 3/4;" />
+                            <img src="..//images/retire_phases_light.png" alt="Retirement Strategy Roadmap Target" style="aspect-ratio: 3/4;" />
                         </div>
                         <div class="content-split-text">
                             <h3>Retirement Planning Phases</h3>
@@ -102,7 +102,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="../../images/retire_coverage_light.png" alt="Comprehensive Retirement Shield" style="aspect-ratio: 3/4;" />
+                            <img src="..//images/retire_coverage_light.png" alt="Comprehensive Retirement Shield" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@ export default function Page() {
 
                         </div>
 
-                        <a href="../../contact/contact.html" class="btn btn-primary"
+                        <a href="..//contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Book
 
                             Appointment Now →</a>

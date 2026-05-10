@@ -608,7 +608,7 @@ export default function HomePage() {
           </div>
 
           <div class="hero-split-buttons">
-            <a href="who_we_are/about.html" class="btn btn-primary"
+            <a href="/who_we_are/about" class="btn btn-primary"
               style="box-shadow:0 10px 20px rgba(201,168,76,0.2); white-space:nowrap;">Our Story</a>
             <a href="#"
               onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
@@ -2144,7 +2144,7 @@ export default function HomePage() {
                 <div class="home-about-hl-icon">🎓</div>College Funding
               </div>
             </div>
-            <a href="who_we_are/about.html" class="btn-outline-gold">Learn More About Us →</a>
+            <a href="/who_we_are/about" class="btn-outline-gold">Learn More About Us →</a>
           </div>
           <div class="home-about-img-wrap reveal reveal-delay-2">
             <div class="home-about-img-frame">

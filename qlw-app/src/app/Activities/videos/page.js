@@ -12,7 +12,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="..//">Home</a><span>›</span><span
                             style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
                             style="color:var(--accent-light)">Videos</span></div>
 
@@ -334,7 +334,7 @@ export default function Page() {
 
                         video link with us and we'll add it to the gallery instantly!</p>
 
-                    <a href="../../contact/contact.html" class="btn btn-primary">Share a Video Link</a>
+                    <a href="..//contact" class="btn btn-primary">Share a Video Link</a>
 
                 </div>
 
@@ -366,7 +366,7 @@ export default function Page() {
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary">📅 Book Free Appointment</a>
 
-                        <a href="../../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
+                        <a href="..//contact" class="btn btn-outline-white">Contact Us</a>
 
                     </div>
 

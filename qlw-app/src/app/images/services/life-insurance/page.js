@@ -10,8 +10,8 @@ export default function Page() {
 
                     <div>
 
-                        <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a
-                                href="../../index.html#services">Services</a><span>›</span><span
+                        <div class="breadcrumb"><a href="..//">Home</a><span>›</span><a
+                                href="..//#services">Services</a><span>›</span><span
                                 style="color:var(--accent-light)">Life Insurance</span></div>
 
                         <h1>Life Insurance</h1>
@@ -20,7 +20,7 @@ export default function Page() {
 
                             financially secure no matter what life brings — today, tomorrow, and beyond.</p>
 
-                        <a href="../../contact/contact.html" class="btn btn-primary" style="margin-top:22px">Get a Free
+                        <a href="..//contact" class="btn btn-primary" style="margin-top:22px">Get a Free
                             Quote</a>
 
                     </div>
@@ -46,14 +46,14 @@ export default function Page() {
                             <p>From income replacement and mortgage protection to estate planning and wealth transfer, we ensure the people you love are never left financially vulnerable.</p>
                         </div>
                         <div class="content-img-wrap">
-                            <img src="../../images/life_protection_light.png" alt="Life Insurance Protection Metaphor" />
+                            <img src="..//images/life_protection_light.png" alt="Life Insurance Protection Metaphor" />
                         </div>
                     </div>
 
                     <!-- Block 2: Types of Insurance -->
                     <div class="content-split">
                         <div class="content-img-wrap">
-                            <img src="../../images/life_family_light.png" alt="Family Legacy Metaphor" />
+                            <img src="..//images/life_family_light.png" alt="Family Legacy Metaphor" />
                         </div>
                         <div class="content-split-text">
                             <h3>Types of Life Insurance We Offer</h3>
@@ -117,7 +117,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div class="content-img-wrap" style="position: sticky; top: 120px;">
-                            <img src="../../images/life_process_light.png" alt="Life Insurance Process Architecture" style="aspect-ratio: 3/4;" />
+                            <img src="..//images/life_process_light.png" alt="Life Insurance Process Architecture" style="aspect-ratio: 3/4;" />
                         </div>
                     </div>
 
@@ -134,7 +134,7 @@ export default function Page() {
                             <p>A 10-minute conversation with our advisor could save your family from decades of
                                 financial hardship. Don't wait.</p>
                         </div>
-                        <a href="../../contact/contact.html" class="btn btn-primary"
+                        <a href="..//contact" class="btn btn-primary"
                             style="white-space:nowrap;flex-shrink:0">Get My Free Quote →</a>
                     </div>
 

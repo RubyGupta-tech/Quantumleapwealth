@@ -1,3 +1,5 @@
+import "./about.css";
+
 export default function Page() {
   return (
     <div dangerouslySetInnerHTML={{ __html: `
@@ -12,7 +14,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:var(--text-muted)">Who We Are</span><span>›</span><span
                             style="color:var(--primary)">About Us</span></div>
 
@@ -46,7 +48,7 @@ export default function Page() {
                     <div class="founder-photo-wrap reveal">
 
                         <div class="founder-photo-card">
-                            <img src="../images/Anu_profile_pic.png" alt="Anuradha - Profile Photo">
+                            <img src="/images/Anu_profile_pic.png" alt="Anuradha - Profile Photo">
                             <div class="founder-avatar">
                                 <div class="founder-avatar-name">Anuradha</div>
                                 <div class="founder-avatar-title">Founder &amp; CEO</div>
@@ -128,7 +130,7 @@ export default function Page() {
                                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                                 class="btn btn-primary">Book a Free Consultation</a>
 
-                            <a href="../contact/contact.html" class="btn btn-outline">Get in Touch</a>
+                            <a href="/contact" class="btn btn-outline">Get in Touch</a>
 
                         </div>
 
@@ -434,7 +436,7 @@ export default function Page() {
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
                             class="btn btn-primary">Book a Free Appointment</a>
 
-                        <a href="../contact/contact.html" class="btn btn-outline-white">Contact Us</a>
+                        <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 
                     </div>
 

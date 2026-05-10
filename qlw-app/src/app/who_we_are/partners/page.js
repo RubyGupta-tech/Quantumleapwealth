@@ -1,3 +1,5 @@
+import "./partners.css";
+
 export default function Page() {
   return (
     <div dangerouslySetInnerHTML={{ __html: `
@@ -12,7 +14,7 @@ export default function Page() {
 
                 <div class="page-hero-inner">
 
-                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span
+                    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
                             style="color:var(--text-muted)">Who We Are</span><span>›</span><span
                             style="color:var(--primary)">Our Partners</span></div>
 
@@ -67,7 +69,7 @@ export default function Page() {
 
                     <!-- TEAM MEMBER TEMPLATE — replace photo src and name/role when ready -->
 
-                    <!-- To add a photo: replace the <div class="photo-placeholder"> with <img src="../images/team/name.jpg" alt="Name"/> -->
+                    <!-- To add a photo: replace the <div class="photo-placeholder"> with <img src="/images/team/name.jpg" alt="Name"/> -->
 
 
 
@@ -371,7 +373,7 @@ export default function Page() {
 
                 <div style="position:relative;overflow:hidden;min-height:420px">
 
-                    <img src="../images/Quantumleap_pic.jpg" alt="Quantum Leap Wealth Team"
+                    <img src="/images/Quantumleap_pic.jpg" alt="Quantum Leap Wealth Team"
                         style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" />
 
                     <!-- Gold overlay badge -->
@@ -470,7 +472,7 @@ export default function Page() {
 
                             </a>
 
-                            <a href="../contact/contact.html" class="btn btn-outline-white"
+                            <a href="/contact" class="btn btn-outline-white"
                                 style="font-size:0.92rem;padding:14px 28px">
 
                                 Contact Us →

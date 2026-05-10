@@ -1,0 +1,221 @@
+/* ── Partners Page Styles ── */
+.page-hero {
+    background-color: #f8fafc;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%), url('/images/partners_bg_light.png');
+    background-size: cover;
+    background-position: center right;
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--accent);
+}
+
+.page-hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(4, 17, 31, 0.05);
+    border: 1px solid rgba(4, 17, 31, 0.1);
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 22px
+}
+
+.page-hero h1 {
+    color: var(--primary);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin-bottom: 16px;
+    text-shadow: none;
+}
+
+.page-hero h1 .highlight {
+    color: var(--accent-dark);
+}
+
+.page-hero-sub {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    max-width: 600px;
+    line-height: 1.75;
+    font-weight: 500;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none
+}
+
+.breadcrumb span {
+    color: var(--border)
+}
+
+.partners-intro {
+    padding: 72px 0 56px;
+    text-align: center
+}
+
+.team-section {
+    padding: 20px 0 90px;
+    background: var(--bg-light)
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 52px
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    text-align: center
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(4, 17, 31, 0.12);
+    border-color: var(--accent)
+}
+
+.team-card-photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: linear-gradient(145deg, #eef2f8 0%, #dde4ef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden
+}
+
+.team-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block
+}
+
+.team-card-info {
+    padding: 22px 18px 20px
+}
+
+.team-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 5px;
+    line-height: 1.2
+}
+
+.team-card-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 14px
+}
+
+.team-card-social {
+    display: flex;
+    justify-content: center;
+    gap: 8px
+}
+
+.team-card-social a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s
+}
+
+.team-card-social a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent)
+}
+
+.partners-cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden
+}
+
+.partners-cta h2 {
+    color: #fff;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin-bottom: 14px
+}
+
+.partners-cta p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.97rem;
+    max-width: 520px;
+    margin: 0 auto 34px;
+    line-height: 1.75
+}
+
+.partners-cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+@media(max-width:1100px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+@media(max-width:768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+    .partners-cta-btns {
+        flex-direction: column;
+        align-items: center
+    }
+}
+
+@media(max-width:480px) {
+    .team-grid {
+        grid-template-columns: 1fr
+    }
+}
