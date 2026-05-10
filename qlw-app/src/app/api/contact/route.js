@@ -100,19 +100,16 @@ export async function POST(request) {
     const userEmailHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
         
-        <!-- Header (Matching Admin Style exactly for better color consistency) -->
-        <div style="background:#0a2540;padding:24px 32px;display:flex;align-items:center;gap:16px;">
+        <!-- Header (Reverted to Centered Layout) -->
+        <div style="background:#0a2540;padding:32px 32px;text-align:center;">
           <img 
             src="https://www.quantumleapwealth.com/images/QWL_logo_original.png"
             alt="Quantum Leap Wealth Logo"
-            style="height:50px;width:auto;background:#ffffff;padding:6px 10px;border-radius:8px;"
+            style="height:65px;width:auto;background:#ffffff;padding:12px 16px;border-radius:12px;"
           />
-          <div>
-            <h1 style="color:#c9a84c;font-size:1.1rem;margin:0;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">
-              Quantum Leap Wealth
-            </h1>
-            <p style="color:rgba(255,255,255,0.7);font-size:0.8rem;margin:4px 0 0;">Customer Confirmation</p>
-          </div>
+          <h1 style="color:#c9a84c;font-size:1.2rem;margin:16px 0 0;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">
+            Quantum Leap Wealth
+          </h1>
         </div>
 
         <!-- Body -->
