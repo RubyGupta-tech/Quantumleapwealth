@@ -264,7 +264,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/contact/contact" className="nav-link">
+              <Link href="/contact" className="nav-link">
                 Contact
               </Link>
             </li>
