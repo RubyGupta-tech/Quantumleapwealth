@@ -1,3 +1,4 @@
+import "../service.css"";
 export default function Page() {
   return (
     <div dangerouslySetInnerHTML={{ __html: `
@@ -6,7 +7,7 @@ export default function Page() {
 
         <!-- ── PAGE HERO ── -->
 
-        <section class="page-hero">
+        <section class="page-hero hero-trust">
 
             <div class="container">
 
@@ -336,3 +337,4 @@ export default function Page() {
     ` }} />
   );
 }
+
