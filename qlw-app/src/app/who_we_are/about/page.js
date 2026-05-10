@@ -409,53 +409,6 @@ export default function Page() {
 
         </section>
 
-
-
-        <!-- TESTIMONIALS SECTION -->
-        <section class="about-testimonials" style="padding: 90px 0; background: var(--bg-light);">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 50px;">
-                    <span class="section-label">Success Stories</span>
-                    <h2>What Our Clients Say</h2>
-                </div>
-                <div class="values-grid">
-                    <div class="value-card reveal" style="text-align: left; padding: 40px;">
-                        <div style="color: var(--accent); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; margin-bottom: 20px;">"Quantum Leap Wealth completely transformed how I think about money. My retirement fund has grown 18% this year and I sleep better knowing my family is protected."</p>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">RK</div>
-                            <div>
-                                <strong style="display: block; font-size: 0.9rem; color: var(--primary);">Rajesh Kumar</strong>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">IT Professional, California</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="value-card reveal reveal-delay-1" style="text-align: left; padding: 40px;">
-                        <div style="color: var(--accent); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; margin-bottom: 20px;">"I was skeptical at first, but after one session I knew this was different. They built a tax savings strategy that saved me over $9,000 last year alone."</p>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">SP</div>
-                            <div>
-                                <strong style="display: block; font-size: 0.9rem; color: var(--primary);">Sarah P.</strong>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">Small Business Owner</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="value-card reveal reveal-delay-2" style="text-align: left; padding: 40px;">
-                        <div style="color: var(--accent); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; margin-bottom: 20px;">"The college planning strategy Anuradha built for my daughter was a lifesaver. We now have a clear path to funding her education without drowning in debt."</p>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">MA</div>
-                            <div>
-                                <strong style="display: block; font-size: 0.9rem; color: var(--primary);">Michael A.</strong>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">Parent, San Jose</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     ` }} />
   );
 }
