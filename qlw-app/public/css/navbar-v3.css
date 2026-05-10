@@ -304,7 +304,7 @@
     .dropdown, .dropdown.wide { 
         display: none; 
         position: static; 
-        transform: none !important; 
+        transform: translateY(-10px) !important; 
         width: 100% !important; 
         min-width: 0 !important;
         grid-template-columns: 1fr !important;
@@ -315,18 +315,20 @@
         visibility: hidden;
         max-height: 0;
         overflow: hidden;
-        transition: all 0.4s ease;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         background: #f8f9fb;
     }
     .nav-item.open > .dropdown, .nav-item.open > .dropdown.wide { 
         display: block; 
         opacity: 1;
         visibility: visible;
-        max-height: none;
+        max-height: 500px;
+        transform: translateY(0) !important;
         overflow: visible;
-        box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+        box-shadow: inset 0 2px 15px rgba(10, 37, 64, 0.08);
         margin-bottom: 2px;
-        background: #fdfdfd;
+        background: #ffffff;
+        border-left: 3px solid var(--accent);
     }
     .dropdown-item {
         color: var(--navy) !important;
