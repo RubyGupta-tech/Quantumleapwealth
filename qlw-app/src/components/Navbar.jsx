@@ -87,7 +87,7 @@ export default function Navbar() {
                     About Us
                   </Link>
                 </li>
-                <li role="none">
+                {/* <li role="none">
                   <Link
                     href="/who_we_are/partners"
                     className="dropdown-item"
@@ -98,7 +98,7 @@ export default function Navbar() {
                     </span>
                     Our Partners
                   </Link>
-                </li>
+                </li> */}
                 <li role="none">
                   <Link
                     href="/who_we_are/disclaimer"
@@ -255,7 +255,7 @@ export default function Navbar() {
                     Blog Articles
                   </Link>
                 </li>
-                <li role="none">
+                {/* <li role="none">
                   <Link
                     href="/Activities/videos"
                     className="dropdown-item"
@@ -266,7 +266,7 @@ export default function Navbar() {
                     </span>
                     Video Gallery
                   </Link>
-                </li>
+                </li> */}
                 <li role="none">
                   <Link
                     href="/Activities/Photos"
