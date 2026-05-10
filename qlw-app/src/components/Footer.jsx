@@ -49,6 +49,15 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/resources">Resources</Link>
+              </li>
+              <li>
+                <Link href="/Activities/blogs">Blog Articles</Link>
+              </li>
+              <li>
+                <Link href="/Activities/Photos">Photo Gallery</Link>
+              </li>
+              <li>
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>

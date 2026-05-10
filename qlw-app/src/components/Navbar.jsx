@@ -259,7 +259,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <Link href="/resources/resources" className="nav-link">
+              <Link href="/resources" className="nav-link">
                 Resources
               </Link>
             </li>
