@@ -7,6 +7,19 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    // Handle sticky navbar
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     // Close mobile menu on route change
@@ -31,7 +44,7 @@ export default function Navbar() {
   if (pathname?.startsWith("/admin")) return null;
   return (
     <>
-      <header className="navbar">
+      <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
           <Link href="/" className="navbar-brand">
             <img

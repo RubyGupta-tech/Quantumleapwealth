@@ -39,9 +39,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${dancingScript.variable}`}>
       <head>
-        {/* Google Analytics (GA4) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3RWBTCCG9V" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Google Analytics (GA4) - Loaded after page is interactive */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3RWBTCCG9V" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -69,7 +69,6 @@ export default function RootLayout({ children }) {
         </main>
         <FloatingContact />
         <Footer />
-        <Script src="/js/main.js" strategy="lazyOnload" />
       </body>
     </html>
   );
