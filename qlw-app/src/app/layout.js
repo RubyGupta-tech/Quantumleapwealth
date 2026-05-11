@@ -3,6 +3,7 @@ import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimator from "@/components/ScrollAnimator";
+import FloatingContact from "@/components/FloatingContact";
 import "./globals.css";
 
 export const metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
           <ScrollAnimator />
           {children}
         </main>
+        <FloatingContact />
         <Footer />
         <Script src="/js/main.js" strategy="lazyOnload" />
       </body>
