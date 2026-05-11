@@ -412,7 +412,7 @@ export default function HomePage() {
                   </div>
                   <div className="opp-form-group">
                     <label>Your Message *</label>
-                    <textarea name="message" required placeholder="Tell us about your goals..." style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1.5px solid var(--border)', background: 'var(--bg-light)', color: 'var(--text-dark)', outline: 'none', transition: '0.2s', fontFamily: "'Inter', sans-serif", resize: 'vertical', minHeight: '100px' }}></textarea>
+                    <textarea name="message" required placeholder="Tell us about your goals..." style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1.5px solid var(--border)', background: 'var(--bg-light)', color: 'var(--text-dark)', outline: 'none', transition: '0.2s', fontFamily: "var(--font-inter)", resize: 'vertical', minHeight: '100px' }}></textarea>
                   </div>
                   <button type="submit" className="opp-submit form-submit">Send Message →</button>
                 </form>
