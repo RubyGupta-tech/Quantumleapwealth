@@ -220,7 +220,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="slider-dots" style={{ bottom: '30px', z-index: 20 }}>
+            <div className="slider-dots" style={{ bottom: '30px', zIndex: 20 }}>
               {[0, 1, 2, 3].map(i => (
                 <span key={i} className={`dot ${slideIndex === i ? 'active' : ''}`} onClick={() => goToHeroSlide(i)}></span>
               ))}
