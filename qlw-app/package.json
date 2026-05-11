@@ -2,11 +2,6 @@
   "name": "qlw-app",
   "version": "0.1.0",
   "private": true,
-  "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
