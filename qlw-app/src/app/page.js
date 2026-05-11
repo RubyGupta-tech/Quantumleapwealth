@@ -18,6 +18,7 @@ export default function HomePage() {
   const [eventTab, setEventTab] = useState('upcoming');
   const [eventSlideIndex, setEventSlideIndex] = useState(0);
   const [alertVisible, setAlertVisible] = useState(true);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const slideInterval = useRef(null);
   const eventInterval = useRef(null);
 
@@ -85,7 +86,7 @@ export default function HomePage() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
-        document.getElementById('form-success').style.display = 'block';
+        setFormSubmitted(true);
         e.target.reset();
       }
     } catch (error) {
@@ -103,7 +104,7 @@ export default function HomePage() {
             setAlertVisible(false);
             const navbar = document.querySelector('.navbar');
             if (navbar) navbar.style.top = '0px';
-          }}>&times;</button>
+          }}>×</button>
         </div>
       )}
 
@@ -416,9 +417,11 @@ export default function HomePage() {
                   </div>
                   <button type="submit" className="opp-submit form-submit">Send Message →</button>
                 </form>
-                <div className="form-success" id="form-success" style={{ display: 'none', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))', border: '1px solid rgba(34, 197, 94, 0.3)', borderRadius: '10px', padding: '20px', textAlign: 'center', color: '#166534', fontWeight: '600', marginTop: '15px' }}>
-                  ✅ Thank you! Your message has been sent. We'll reach out within 24 hours.
-                </div>
+                {formSubmitted && (
+                  <div className="form-success" id="form-success" style={{ display: 'block', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))', border: '1px solid rgba(34, 197, 94, 0.3)', borderRadius: '10px', padding: '20px', textAlign: 'center', color: '#166534', fontWeight: '600', marginTop: '15px' }}>
+                    ✅ Thank you! Your message has been sent. We'll reach out within 24 hours.
+                  </div>
+                )}
               </div>
             </div>
           </div>
