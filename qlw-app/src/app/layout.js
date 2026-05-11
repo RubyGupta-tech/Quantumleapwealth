@@ -56,14 +56,9 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         
-        {/* Calendly - Loaded only when needed or deferred */}
-        <link 
-          rel="stylesheet" 
-          href="https://assets.calendly.com/assets/external/widget.css" 
-          media="print" 
-          onLoad="this.media='all'" 
-        />
-        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+        {/* Calendly - Restored to afterInteractive for functional popup widget */}
+        <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>

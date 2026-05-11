@@ -324,6 +324,8 @@ export default function Navbar() {
                     window.Calendly.initPopupWidget({
                       url: "https://calendly.com/webserviesbygupta/30min",
                     });
+                  } else {
+                    window.open("https://calendly.com/webserviesbygupta/30min", "_blank");
                   }
                 }}
                 className="btn-nav-cta"
