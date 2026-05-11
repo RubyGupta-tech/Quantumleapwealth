@@ -41,6 +41,10 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
+        {/* Critical Asset Preloading for LCP */}
+        <link rel="preload" href="/images/QWL_logo_original.png" as="image" />
+        <link rel="preload" href="/images/hero_prosperity.png" as="image" />
+        
         {/* Google Analytics (GA4) - Loaded after page is interactive */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-3RWBTCCG9V" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
