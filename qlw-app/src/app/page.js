@@ -94,7 +94,17 @@ export default function HomePage() {
   };
 
   return (
-    <>
+    <div className="home-container">
+      {/* Critical CSS for LCP Optimization */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .hero-split-section { display: flex; min-height: 600px; height: calc(100vh - 180px); width: 100%; background: #0f172a; position: relative; overflow: hidden; }
+        .hero-split-left { flex: 1 1 50%; display: flex; align-items: center; justify-content: center; padding: 4% 8%; position: relative; z-index: 2; }
+        .hero-glass-card { background: #0a2540; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; backdrop-filter: blur(16px); }
+        .hero-split-title { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; color: white; font-family: var(--font-playfair); font-weight: 800; }
+        .hero-split-left-content { max-width: 600px; width: 100%; animation: fadeUpIn 0.3s ease-out forwards; }
+        @keyframes fadeUpIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @media(max-width: 992px) { .hero-split-section { flex-direction: column; height: auto; } .hero-split-left { padding: 40px 20px; width: 100%; } }
+      `}} />
       {alertVisible && (
         <div className="event-alert-banner" id="eventAlertBanner">
           <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>
@@ -429,7 +439,7 @@ export default function HomePage() {
       </section>
 
       <ScrollAnimator />
-    </>
+    </div>
   );
 }
 
