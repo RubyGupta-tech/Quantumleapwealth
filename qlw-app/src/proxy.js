@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware(request) {
+export function proxy(request) {
   // Only apply to /admin routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
     // Check for the secure authentication cookie
