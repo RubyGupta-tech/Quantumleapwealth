@@ -250,7 +250,7 @@
 .hero-split-left-content {
   max-width: 600px;
   width: 100%;
-  animation: fadeUpIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeUpIn 0.3s ease-out forwards;
   position: relative;
   z-index: 5;
 }
@@ -308,12 +308,15 @@
   border-right: 3px solid transparent;
   width: 0;
   animation:
-    typing 1.5s steps(30, end) forwards,
-    cursor-blink 0.8s step-end infinite;
+    typing 0.6s steps(30, end) forwards;
+}
+
+.hero-title-line:nth-child(1) .reveal-inner {
+  animation-delay: 0.1s;
 }
 
 .hero-title-line:nth-child(2) .reveal-inner {
-  animation-delay: 1.8s;
+  animation-delay: 0.5s;
 }
 
 @keyframes typing {
@@ -347,11 +350,11 @@
 }
 
 .hero-title-line:nth-child(1) .reveal-inner {
-  animation: typing 0.8s steps(30, end) forwards, cursor-blink 0.4s step-end 2;
+  animation: typing 0.4s steps(30, end) forwards, cursor-blink 0.4s step-end 1;
 }
 
 .hero-title-line:nth-child(2) .reveal-inner {
-  animation: typing 0.8s steps(30, end) 0.6s forwards, cursor-blink 0.4s step-end 3;
+  animation: typing 0.4s steps(30, end) 0.3s forwards, cursor-blink 0.4s step-end 1;
 }
 
 @keyframes shimmerGold {
@@ -364,7 +367,7 @@
   margin-bottom: 25px;
   line-height: 1.6;
   max-width: 540px;
-  animation: fadeUpIn 0.8s ease 1.2s forwards;
+  animation: fadeUpIn 0.5s ease 0.8s forwards;
   opacity: 0;
 }
 

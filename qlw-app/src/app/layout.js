@@ -37,6 +37,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${dancingScript.variable}`}>
       <head>
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Google Analytics (GA4) - Loaded after page is interactive */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-3RWBTCCG9V" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
