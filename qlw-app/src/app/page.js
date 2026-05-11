@@ -78,7 +78,6 @@ export default function HomePage() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     
-    // Simulating the handleSubmit from legacy script
     try {
       const response = await fetch('/api/leads', {
         method: 'POST',
@@ -167,7 +166,7 @@ export default function HomePage() {
                   style={{ marginBottom: '20px', maxWidth: '260px', height: 'auto' }} 
                 />
                 <p style={{ color: 'var(--primary)', fontSize: '1.15rem', fontWeight: 600, textAlign: 'center', maxWidth: '80%', margin: '0 auto' }}>
-                  Comprehensive Wealth Management & Real Estate Investment Strategies
+                  Comprehensive Wealth Management &amp; Real Estate Investment Strategies
                 </p>
               </div>
             </div>
@@ -199,7 +198,7 @@ export default function HomePage() {
                   className="slide-bg"
                 />
                 <div className="slide-overlay" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%)', bottom: 0, paddingBottom: '40px', position: 'absolute', width: '100%', textAlign: 'center' }}>
-                  <h2 style={{ fontSize: '1.5rem', color: 'white' }}>Securing Your Family's Legacy</h2>
+                  <h2 style={{ fontSize: '1.5rem', color: 'white' }}>Securing Your Family&apos;s Legacy</h2>
                 </div>
               </div>
             </div>
@@ -215,7 +214,7 @@ export default function HomePage() {
                     <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>🛡️ Life Insurance</div>
                     <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>💰 Tax Savings</div>
                     <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>🎓 Kids College</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>📜 Will & Trust</div>
+                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>📜 Will &amp; Trust</div>
                   </div>
                 </div>
               </div>
@@ -241,7 +240,7 @@ export default function HomePage() {
           <div className="services-grid">
             <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Investment Planning" delay="1" 
               desc="Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum growth." />
-            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will & Trust" delay="2" 
+            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will &amp; Trust" delay="2" 
               desc="Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and clarity." />
             <ServiceCard href="/images/services/tax-saving" img="/images/LifeProtection_pics.png" title="Tax Savings" delay="3" 
               desc="Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally." />
@@ -364,12 +363,12 @@ export default function HomePage() {
           <div className="opp-inner">
             <div className="opp-text reveal">
               <span className="section-label">Opportunity</span>
-              <h2>Looking for a Business & Career Opportunity?</h2>
+              <h2>Looking for a Business &amp; Career Opportunity?</h2>
               <p>Join our growing network of financial professionals. We provide world-class training, proven systems, and a proven path to financial independence.</p>
               <div className="opp-perks">
-                <OppPerk text="Full training & licensing support" />
+                <OppPerk text="Full training &amp; licensing support" />
                 <OppPerk text="Flexible part-time or full-time" />
-                <OppPerk text="Competitive commissions & bonuses" />
+                <OppPerk text="Competitive commissions &amp; bonuses" />
                 <OppPerk text="Work from anywhere in the USA" />
                 <OppPerk text="Mentorship from top producers" />
               </div>
@@ -402,7 +401,7 @@ export default function HomePage() {
                     <select name="service">
                       <option value="">— Select a service —</option>
                       <option>Investment Planning</option>
-                      <option>Living Will & Trust</option>
+                      <option>Living Will &amp; Trust</option>
                       <option>Tax Savings</option>
                       <option>Retirement Planning</option>
                       <option>Kids College Fund</option>
@@ -419,7 +418,7 @@ export default function HomePage() {
                 </form>
                 {formSubmitted && (
                   <div className="form-success" id="form-success" style={{ display: 'block', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))', border: '1px solid rgba(34, 197, 94, 0.3)', borderRadius: '10px', padding: '20px', textAlign: 'center', color: '#166534', fontWeight: '600', marginTop: '15px' }}>
-                    ✅ Thank you! Your message has been sent. We'll reach out within 24 hours.
+                    ✅ Thank you! Your message has been sent. We&apos;ll reach out within 24 hours.
                   </div>
                 )}
               </div>
