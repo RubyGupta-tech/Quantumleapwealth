@@ -27,8 +27,8 @@ body {
 
 .form-success {
   display: none;
-  background: #c9a84c !important;         /* Brand Gold — overrides inline styles */
-  background-color: #c9a84c !important;
+  background: #947621 !important;         /* Brand Gold (Darkened for contrast) */
+  background-color: #947621 !important;
   color: #ffffff !important;              /* White text */
   padding: 16px 20px !important;
   border-radius: 8px !important;
@@ -50,9 +50,9 @@ body {
 
 /* Process Timeline: active state also styled via globals for gold effect */
 .timeline-item.active .timeline-center {
-  border-color: #c9a84c;
-  color: #c9a84c;
-  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+  border-color: #947621;
+  color: #947621;
+  box-shadow: 0 8px 25px rgba(148, 118, 33, 0.3);
 }
 
 /* Floating Contact Widget */

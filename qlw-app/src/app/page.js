@@ -685,6 +685,8 @@ export default function HomePage() {
               style="background: white; flex-direction: column; padding: 20px; height: 100%; justify-content: center;">
               <img src="images/QWL_logo_original.png" alt="Quantum Leap Wealth" class="slide-logo"
                 loading="eager"
+                width="260"
+                height="260"
                 style="margin-bottom: 20px; max-width: 260px;" />
               <p
                 style="color: var(--primary); font-size: 1.15rem; font-weight: 600; text-align: center; max-width: 80%; margin: 0 auto;">
@@ -698,10 +700,12 @@ export default function HomePage() {
             <div class="slide-content" style="height: 100%;">
               <img src="images/Anu_profile_pic.png" alt="Expert Leadership" class="slide-bg"
                 loading="eager"
+                width="645"
+                height="863"
                 style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
               <div class="slide-overlay"
                 style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
-                <h3 style="font-size: 1.5rem; color: white;">Expert Leadership You Can Trust</h3>
+                <h2 style="font-size: 1.5rem; color: white;">Expert Leadership You Can Trust</h2>
               </div>
             </div>
           </div>
@@ -711,10 +715,12 @@ export default function HomePage() {
             <div class="slide-content" style="height: 100%;">
               <img src="images/Anu_Homepage_pic.png" alt="Secure Your Family" class="slide-bg"
                 loading="eager"
+                width="645"
+                height="863"
                 style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
               <div class="slide-overlay"
                 style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
-                <h3 style="font-size: 1.5rem; color: white;">Securing Your Family's Legacy</h3>
+                <h2 style="font-size: 1.5rem; color: white;">Securing Your Family's Legacy</h2>
               </div>
             </div>
           </div>
@@ -1131,7 +1137,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/financial_pics.png" alt="Investment Planning" />
+                <img src="images/financial_pics.png" alt="Investment Planning" width="558" height="386" />
                 <div class="front-content">
                   <h3>Investment Planning</h3>
                 </div>
@@ -1149,7 +1155,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/will&Trust_pics.png" alt="Living Will &amp; Trust" />
+                <img src="images/will&Trust_pics.png" alt="Living Will &amp; Trust" width="547" height="378" />
                 <div class="front-content">
                   <h3>Living Will &amp; Trust</h3>
                 </div>
@@ -1167,7 +1173,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/LifeProtection_pics.png" alt="Tax Savings" />
+                <img src="images/LifeProtection_pics.png" alt="Tax Savings" width="557" height="384" />
                 <div class="front-content">
                   <h3>Tax Savings</h3>
                 </div>
@@ -1185,7 +1191,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/ritermentplanning_pics.png" alt="Retirement Planning" />
+                <img src="images/ritermentplanning_pics.png" alt="Retirement Planning" width="552" height="381" />
                 <div class="front-content">
                   <h3>Retirement Planning</h3>
                 </div>
@@ -1202,7 +1208,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/kids_college_planning.png" alt="Kids College Fund" />
+                <img src="images/kids_college_planning.png" alt="Kids College Fund" width="547" height="378" />
                 <div class="front-content">
                   <h3>Kids College Fund</h3>
                 </div>
@@ -1220,7 +1226,7 @@ export default function HomePage() {
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/LifeProtection_PermanentInsurance_pics.png" alt="Life Insurance" />
+                <img src="images/LifeProtection_PermanentInsurance_pics.png" alt="Life Insurance" width="551" height="380" />
                 <div class="front-content">
                   <h3>Life Insurance</h3>
                 </div>
@@ -1248,19 +1254,19 @@ export default function HomePage() {
         <div class="why-choose-grid">
           <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">🎯</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Expert Guidance</h4>
+            <h3 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Expert Guidance</h3>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Licensed professionals providing
               personalized financial strategies tailored to your goals.</p>
           </div>
           <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">📋</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Comprehensive Solutions</h4>
+            <h3 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Comprehensive Solutions</h3>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">From insurance to real estate —
               all your financial needs under one trusted roof.</p>
           </div>
           <div>
             <div style="font-size:2.2rem; margin-bottom:14px;">📈</div>
-            <h4 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Proven Results</h4>
+            <h3 style="color:#fff; font-size:1rem; margin-bottom:8px; font-weight:700;">Proven Results</h3>
             <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.5;">Trusted by hundreds of families
               to build, protect, and grow their wealth for generations.</p>
           </div>

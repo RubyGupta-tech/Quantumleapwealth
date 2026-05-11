@@ -38,6 +38,8 @@ export default function Navbar() {
               src="/images/QWL_logo_original.png?v=1.0"
               alt="Quantum Leap Wealth Logo"
               className="brand-logo"
+              width="85"
+              height="85"
             />
             <span className="brand-text">
               Quantum Leap <span className="brand-wealth">Wealth</span>
@@ -50,6 +52,8 @@ export default function Navbar() {
                   src="/images/QWL_logo_original.png?v=1.0"
                   alt="Quantum Leap Wealth Logo"
                   className="brand-logo"
+                  width="85"
+                  height="85"
                 />
                 <span className="brand-text">
                   Quantum Leap <span className="brand-wealth">Wealth</span>

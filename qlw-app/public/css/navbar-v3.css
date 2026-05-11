@@ -5,7 +5,7 @@
 :root {
     --nav-height: 85px;
     --navy: #0a2540;
-    --gold: #c9a84c;
+    --gold: #947621; /* Darkened for accessibility/contrast (was #c9a84c) */
     --gold-dark: #b8922a;
 }
 
