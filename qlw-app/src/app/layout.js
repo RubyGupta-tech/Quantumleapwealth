@@ -6,11 +6,9 @@ import Footer from "@/components/Footer";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import FloatingContact from "@/components/FloatingContact";
 
-// Global CSS Imports - Next.js will bundle and optimize these
+// Global CSS Imports - Consolidated into style.css for better performance
 import "./globals.css";
 import "../../public/css/style.css";
-import "../../public/css/navbar-v3.css";
-import "../../public/css/ticker-fix.css";
 
 const inter = Inter({
   subsets: ["latin"],

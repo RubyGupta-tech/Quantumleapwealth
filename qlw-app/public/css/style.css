@@ -2155,3 +2155,499 @@ img {
   }
 }
 
+/* ============================================================
+   QUANTUM LEAP WEALTH — NAVBAR & DROPDOWN STYLES (V3 - PREMIUM)
+   ============================================================ */
+
+:root {
+    --nav-height: 85px;
+    --navy: #0a2540;
+    --gold: #947621; /* Darkened for accessibility/contrast (was #c9a84c) */
+    --gold-dark: #b8922a;
+}
+
+/* ---- Top Info Bar ---- */
+.topbar {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.topbar-inner {
+    max-width: 1440px; /* Cap width for ultra-wide monitors */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+}
+.topbar-left, .topbar-right { display: flex; gap: 20px; }
+.topbar a { color: #e2c061; text-decoration: none; }
+
+/* ---- Main Navbar ---- */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+    height: var(--nav-height);
+}
+
+.navbar-inner {
+    max-width: 1440px; /* Cap width for 27" monitors */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 100%;
+}
+
+/* ---- Brand Identity (Shared) ---- */
+.navbar-brand, .mobile-brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    z-index: 10;
+}
+
+.brand-logo {
+    height: 85px; /* Restored to a more standard proportion for a stacked logo */
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover .brand-logo, .mobile-brand-link:hover .brand-logo {
+    transform: scale(1.08); /* Smoother interaction */
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.1));
+}
+
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.05;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left center;
+}
+
+.brand-top {
+    font-size: 1em;
+}
+
+.brand-wealth-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.brand-wealth-row::before,
+.brand-wealth-row::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+}
+
+.brand-wealth-row::before {
+    background: linear-gradient(to right, transparent, var(--gold));
+}
+
+.brand-wealth-row::after {
+    background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.brand-wealth {
+    font-size: 0.55em;
+    color: var(--gold);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+}
+
+.navbar-brand:hover .brand-text, .mobile-brand-link:hover .brand-text {
+    transform: scale(1.02); /* Very subtle interaction so it stays clean */
+    color: var(--navy); 
+}
+
+.navbar-brand:hover .brand-wealth, .mobile-brand-link:hover .brand-wealth {
+    color: var(--navy); /* Pop wealth back to navy for contrast */
+}
+
+/* Visibility Control */
+.mobile-brand-container { display: none !important; } /* Hidden on Desktop */
+
+/* ---- Nav Menu (Desktop) ---- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.nav-item { position: relative; }
+
+.nav-link {
+    padding: 10px 18px;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold-dark);
+    background: rgba(10, 37, 64, 0.04);
+}
+
+.dd-arrow { width: 12px; height: 12px; transition: transform 0.3s; opacity: 0.7; }
+.nav-item:hover .dd-arrow { transform: rotate(180deg); }
+
+/* ---- Dropdowns (Desktop) ---- */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background: #ffffff;
+    border-radius: 12px;
+    min-width: 240px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.15);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+    z-index: 1000;
+    list-style: none;
+}
+
+.nav-item:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+    pointer-events: auto;
+}
+
+.dropdown.wide { min-width: 480px; display: grid; grid-template-columns: 1fr 1fr; }
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover { background: rgba(10, 37, 64, 0.04); color: var(--gold); }
+.dd-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: rgba(201, 168, 76, 0.08); border-radius: 6px; }
+
+/* ---- CTA Button ---- */
+.btn-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #fff !important;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
+}
+.btn-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(201, 168, 76, 0.45); }
+
+/* ---- Hamburger (Mobile Only) ---- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 10002; /* Higher z-index to stay above other elements */
+    pointer-events: auto !important; /* Ensure it's clickable */
+}
+.hamburger span { width: 28px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: 0.3s; pointer-events: none; }
+.hamburger.open span { background: #fff; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+/* ============================================================
+   RESPONSIVE — MOBILE (1100px) - Increased to prevent menu overlap
+   ============================================================ */
+@media (max-width: 1100px) {
+    .navbar { height: 75px; }
+    .hamburger { display: flex; }
+
+    .mobile-brand-container {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+        background: #ffffff;
+    }
+
+    .mobile-close-btn {
+        background: none;
+        border: none;
+        color: var(--navy);
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    .mobile-close-btn:hover {
+        opacity: 1;
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 220px; /* Even slimmer width */
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 0;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 10000;
+        box-shadow: -15px 0 60px rgba(0,0,0,0.2);
+        overflow-y: auto;
+    }
+
+    .nav-menu.open { transform: translateX(0); }
+
+    .nav-link {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.04);
+        border-radius: 0;
+        justify-content: space-between;
+        font-size: 0.85rem;
+    }
+
+    .dropdown, .dropdown.wide { 
+        display: none; 
+        position: static; 
+        transform: translateY(-10px) !important; 
+        width: 100% !important; 
+        min-width: 0 !important;
+        grid-template-columns: 1fr !important;
+        padding: 0; 
+        box-shadow: none; 
+        border: none; 
+        opacity: 0; 
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #f8f9fb;
+    }
+    .nav-item.open > .dropdown, .nav-item.open > .dropdown.wide { 
+        display: block; 
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        transform: translateY(0) !important;
+        overflow: visible;
+        box-shadow: inset 0 2px 15px rgba(10, 37, 64, 0.08);
+        margin-bottom: 2px;
+        background: #ffffff;
+        border-left: 3px solid var(--accent);
+    }
+    .dropdown-item {
+        color: var(--navy) !important;
+        font-weight: 500;
+        padding: 8px 16px;
+        font-size: 0.78rem;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.03);
+        display: flex;
+        align-items: center;
+        gap: 0;
+        width: 100% !important;
+    }
+    .dd-icon { display: none !important; }
+    .dropdown-item:active {
+        background: rgba(201, 168, 76, 0.1);
+    }
+    .nav-item.open > .nav-link .dd-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Nav Overlay */
+    .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 37, 64, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo { height: 50px; }
+    .brand-text { font-size: 1.1rem; }
+    .nav-menu { width: 88%; }
+}
+/* ══════════════════════════════════════
+   NUCLEAR TICKER FIX (Restore Color & Motion)
+   ══════════════════════════════════════ */
+
+/* Global Safety Net to prevent horizontal scroll */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Force Ticker Container to clip everything and added matching background */
+.logo-ticker-container {
+    overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+    background: #0a2540 !important;
+    /* Standalone Professional Blue Strip */
+    margin: 40px 0 !important;
+    padding: 60px 0 !important;
+}
+
+/* Professional Lateral Fades matching the dark background */
+.logo-ticker-container::before,
+.logo-ticker-container::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 250px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.logo-ticker-container::before {
+    left: 0 !important;
+    background: linear-gradient(to right, #0a2540, transparent) !important;
+}
+
+.logo-ticker-container::after {
+    right: 0 !important;
+    background: linear-gradient(to left, #0a2540, transparent) !important;
+}
+
+/* Force Gold Color */
+.divider-text {
+    background: var(--gold-metallic, linear-gradient(135deg, #a07a28 0%, #d4af37 50%, #a07a28 100%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    /* Synced with other section labels */
+    text-transform: uppercase !important;
+    letter-spacing: 0.25em !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+}
+
+.divider-line {
+    background: linear-gradient(to var(--dir, right), #D4AF37, transparent) !important;
+}
+
+/* Force Smooth Marquee Animation */
+.logo-ticker-track {
+    display: flex !important;
+    width: max-content !important;
+    min-width: 200% !important;
+    animation: marquee-glide 18s linear infinite !important;
+    /* Slower for professional feel */
+    animation-play-state: running !important;
+    will-change: transform !important;
+}
+
+.logo-ticker-track:hover {
+    animation-play-state: paused !important;
+}
+
+@keyframes marquee-glide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Visibility & Original Color Restoration */
+.logo-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    /* Brighter white for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin: 0 15px !important;
+    width: 220px !important;
+    height: 110px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.logo-item:hover {
+    transform: translateY(-8px) scale(1.05) !important;
+    background: #ffffff !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.3) !important;
+}
+
+.logo-item img {
+    max-width: 85% !important;
+    max-height: 70% !important;
+    object-fit: contain !important;
+    filter: none !important;
+    /* Restore Original Colors */
+    opacity: 1 !important;
+    transition: transform 0.3s ease !important;
+}
