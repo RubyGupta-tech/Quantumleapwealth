@@ -163,6 +163,7 @@ export default function HomePage() {
                   height={260} 
                   className="slide-logo" 
                   priority
+                  fetchPriority="high"
                   style={{ marginBottom: '20px', maxWidth: '260px', height: 'auto' }} 
                 />
                 <p style={{ color: 'var(--primary)', fontSize: '1.15rem', fontWeight: 600, textAlign: 'center', maxWidth: '80%', margin: '0 auto' }}>
