@@ -87,9 +87,9 @@ export default function AdminSidebar() {
 
       {/* Footer Buttons */}
       <div style={{ padding: "20px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", flexDirection: "column", gap: "15px" }}>
-        <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "0.9rem" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "0.9rem" }}>
           <span>🌍</span> Back to Website
-        </a>
+        </Link>
         <button
           onClick={async () => {
             await fetch('/api/auth/logout', { method: 'POST' });

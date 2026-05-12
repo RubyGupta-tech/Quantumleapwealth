@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import "./contact.css";
 
 export default function ContactPage() {
@@ -44,14 +45,11 @@ export default function ContactPage() {
         <div className="container">
           <div className="page-hero-inner">
             <div className="breadcrumb">
-              <a href="/">Home</a><span>›</span>
+              <Link href="/">Home</Link><span>›</span>
               <span style={{ color: "var(--primary)", fontWeight: 600 }}>Contact</span>
             </div>
             <h1>Get in Touch</h1>
-            <p>
-              We offer free consultations. Whether you have a quick question or are ready to start your
-              financial journey — our team is here, ready to help.
-            </p>
+            <p>Ready to take the next step? We&apos;ll help you bridge the gap between where you are and where you want to be.</p>
           </div>
         </div>
       </section>
@@ -151,7 +149,7 @@ export default function ContactPage() {
               </form>
             ) : (
               <div className="form-success" style={{ display: "block" }}>
-                ✅ Thank you! Your message has been sent. We'll reach out within 24 hours.
+                ✅ Thank you! Your message has been sent. We&apos;ll reach out within 24 hours.
                 <button 
                   onClick={() => setIsSuccess(false)}
                   style={{ display: 'block', margin: '20px auto 0', background: 'rgba(255,255,255,0.2)', border: '1px solid #fff', color: '#fff', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem' }}
@@ -164,7 +162,7 @@ export default function ContactPage() {
 
           {/* INFO SIDE */}
           <div className="contact-info-side">
-            <h2>We're Here to Help</h2>
+            <h2>We&apos;re Here to Help</h2>
             <p>Our advisors are committed to guiding you toward financial clarity and confidence. Reach out through any of the channels below.</p>
 
             <div className="info-detail">

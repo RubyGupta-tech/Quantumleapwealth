@@ -236,7 +236,7 @@ export default function Page() {
                   </div>
                   <div className="calc-card-body">
                     <div className="calc-field">
-                      <label>Child's Current Age</label>
+                      <label>Child&apos;s Current Age</label>
                       <input type="number" id="col-age" placeholder="e.g. 5" min="0" max="17" />
                     </div>
                     <div className="calc-field">

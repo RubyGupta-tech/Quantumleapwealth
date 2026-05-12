@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
@@ -118,7 +119,7 @@ export default function LoginPage() {
         </form>
 
         <div style={{ marginTop: '24px', fontSize: '0.85rem', color: '#94a3b8' }}>
-          <a href="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>← Back to Website</a>
+          <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>← Back to Website</Link>
         </div>
       </div>
     </div>
