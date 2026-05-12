@@ -230,6 +230,19 @@
   }
 }
 
+/* ══════════════════════════════
+   LARGE SCREEN OPTIMIZATIONS (27in+ / Ultra-Wide)
+   ══════════════════════════════ */
+@media(min-width: 1600px) {
+  .hero-split-left { padding: 4% 12% !important; }
+  .hero-split-left-content { max-width: 800px !important; }
+  .hero-split-title { font-size: 4.5rem !important; }
+  .hero-split-desc { font-size: 1.3rem !important; max-width: 650px !important; }
+  .hero-split-hl { font-size: 1.1rem !important; padding: 16px 24px !important; }
+  .hero-split-buttons .btn { padding: 20px 48px !important; font-size: 1.2rem !important; }
+  .hero-ambient-orb { transform: scale(1.5); }
+}
+
 .hero-split-left {
   flex: 1 1 50%;
   display: flex;
@@ -911,3 +924,11 @@
 
 @media (max-width: 900px) { .events-slide { min-width: 50%; } }
 @media (max-width: 600px) { .events-slide { min-width: 100%; } .events-tabs { flex-direction: column; align-items: center; } }
+
+/* Ultra-Wide Sections */
+@media (min-width: 1600px) {
+  .section { padding: 150px 0; }
+  .section-title { font-size: 3.5rem; }
+  .section-sub { font-size: 1.2rem; max-width: 800px; }
+  .container { max-width: 1500px; }
+}

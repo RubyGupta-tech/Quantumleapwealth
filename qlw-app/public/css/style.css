@@ -1648,6 +1648,14 @@ img {
     box-shadow: 0 6px 16px rgba(201, 168, 76, 0.3);
 }
 
+/* Large Monitor Scaling */
+@media (min-width: 1600px) {
+    .container { max-width: 1440px; }
+    .slide-services-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .slide-service-box { padding: 20px 24px; font-size: 1.1rem; }
+    .slide-services-container h3 { font-size: 2rem !important; margin-bottom: 25px !important; }
+}
+
 .slider-dots {
     position: absolute;
     bottom: -30px;

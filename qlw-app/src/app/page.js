@@ -229,15 +229,15 @@ export default function HomePage() {
             {/* Slide 4 */}
             <div className={`slide ${slideIndex === 3 ? 'active' : ''}`} style={{ height: '100%' }}>
               <div className="slide-content" style={{ background: 'linear-gradient(135deg, #f8f9fa, #e2e8f0)', height: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-                <div className="slide-services-container" style={{ width: '100%', padding: '0 5%' }}>
-                  <h3 style={{ color: 'var(--primary)', textAlign: 'center', fontSize: '1.5rem', fontWeight: 800, marginBottom: '15px' }}>Our Expertise</h3>
+                <div className="slide-services-container" style={{ width: '100%', padding: '0 8%', maxWidth: '1000px' }}>
+                  <h3 style={{ color: 'var(--primary)', textAlign: 'center', fontSize: 'clamp(1.2rem, 2vw, 2.2rem)', fontWeight: 800, marginBottom: '25px' }}>Our Expertise</h3>
                   <div className="slide-services-grid">
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>📈 Investment Planning</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>🏖️ Retirement</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>🛡️ Life Insurance</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>💰 Tax Savings</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>🎓 Kids College</div>
-                    <div className="slide-service-box" style={{ padding: '12px', fontSize: '0.9rem' }}>📜 Will &amp; Trust</div>
+                    <div className="slide-service-box">📈 Investment Planning</div>
+                    <div className="slide-service-box">🏖️ Retirement</div>
+                    <div className="slide-service-box">🛡️ Life Insurance</div>
+                    <div className="slide-service-box">💰 Tax Savings</div>
+                    <div className="slide-service-box">🎓 Kids College</div>
+                    <div className="slide-service-box">📜 Will &amp; Trust</div>
                   </div>
                 </div>
               </div>
