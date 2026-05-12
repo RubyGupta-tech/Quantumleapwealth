@@ -73,13 +73,16 @@ export default function HomePage() {
     });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     
     try {
-      const response = await fetch('/api/leads', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -87,9 +90,16 @@ export default function HomePage() {
       if (response.ok) {
         setFormSubmitted(true);
         e.target.reset();
+      } else {
+        const err = await response.json();
+        console.error("Form submission error:", err);
+        alert("There was an issue sending your message. Please try again or call us directly.");
       }
     } catch (error) {
-      console.error("Form error:", error);
+      console.error("Form network error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -425,7 +435,13 @@ export default function HomePage() {
                     <label>Your Message *</label>
                     <textarea name="message" required placeholder="Tell us about your goals..." style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1.5px solid var(--border)', background: 'var(--bg-light)', color: 'var(--text-dark)', outline: 'none', transition: '0.2s', fontFamily: "var(--font-inter)", resize: 'vertical', minHeight: '100px' }}></textarea>
                   </div>
-                  <button type="submit" className="opp-submit form-submit">Send Message →</button>
+                  <button 
+                    type="submit" 
+                    className="opp-submit form-submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message →"}
+                  </button>
                 </form>
                 {formSubmitted && (
                   <div className="form-success" id="form-success" style={{ display: 'block', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))', border: '1px solid rgba(34, 197, 94, 0.3)', borderRadius: '10px', padding: '20px', textAlign: 'center', color: '#166534', fontWeight: '600', marginTop: '15px' }}>
