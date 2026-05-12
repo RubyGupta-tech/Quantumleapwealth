@@ -25,12 +25,14 @@ export default function ContactPage() {
       if (response.ok) {
         setIsSuccess(true);
         e.target.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         const err = await response.json();
-        setError(err.error || "Something went wrong. Please try again.");
+        throw new Error(err.error || "Server responded with an error.");
       }
     } catch (err) {
-      setError("Failed to connect to the server. Please check your internet.");
+      console.error("Submission error:", err);
+      setError("We encountered a technical issue sending your message. Please try again or use the link below to email us directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -131,7 +133,17 @@ export default function ContactPage() {
                   <textarea required name="message" placeholder="Tell us about your financial goals..."></textarea>
                 </div>
                 
-                {error && <p style={{ color: "#ef4444", marginBottom: "16px", fontSize: "0.9rem" }}>{error}</p>}
+                {error && (
+                  <div style={{ marginBottom: "20px" }}>
+                    <p style={{ color: "#ef4444", marginBottom: "8px", fontSize: "0.9rem", fontWeight: "500" }}>{error}</p>
+                    <a 
+                      href="mailto:quantumlfs@gmail.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
+                      style={{ color: "var(--primary)", fontSize: "0.85rem", textDecoration: "underline", fontWeight: "600" }}
+                    >
+                      Click here to email us directly instead →
+                    </a>
+                  </div>
+                )}
                 
                 <button type="submit" className="form-submit" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message — It's Free →"}

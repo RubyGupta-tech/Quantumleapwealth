@@ -93,15 +93,17 @@ export default function HomePage() {
       } else {
         const err = await response.json();
         console.error("Form submission error:", err);
-        alert("There was an issue sending your message. Please try again or call us directly.");
+        setError("Technical issue. Please try again or click the link below.");
       }
     } catch (error) {
       console.error("Form network error:", error);
-      alert("Network error. Please check your connection and try again.");
+      setError("Network error. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const [error, setError] = useState("");
 
   return (
     <div className="home-container">
@@ -443,6 +445,17 @@ export default function HomePage() {
                     {isSubmitting ? "Sending..." : "Send Message →"}
                   </button>
                 </form>
+                {error && (
+                  <div style={{ marginTop: "15px", textAlign: "center" }}>
+                    <p style={{ color: "#ef4444", fontSize: "0.85rem", marginBottom: "5px" }}>{error}</p>
+                    <a 
+                      href="mailto:quantumlfs@gmail.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
+                      style={{ color: "#fff", fontSize: "0.8rem", textDecoration: "underline", opacity: 0.8 }}
+                    >
+                      Email us directly instead →
+                    </a>
+                  </div>
+                )}
                 {formSubmitted && (
                   <div className="form-success" id="form-success" style={{ display: 'block', background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))', border: '1px solid rgba(34, 197, 94, 0.3)', borderRadius: '10px', padding: '20px', textAlign: 'center', color: '#166534', fontWeight: '600', marginTop: '15px' }}>
                     ✅ Thank you! Your message has been sent. We&apos;ll reach out within 24 hours.

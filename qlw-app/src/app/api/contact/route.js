@@ -22,10 +22,16 @@ export async function POST(request) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
-    // 1. Save to PostgreSQL CRM Database
-    const newLead = await prisma.lead.create({
-      data: { name, email, phone, service, message, source },
-    });
+    // 1. Save to PostgreSQL CRM Database (Wrapped in try/catch to ensure emails still send if DB fails)
+    let leadId = "db-fail";
+    try {
+      const newLead = await prisma.lead.create({
+        data: { name, email, phone, service, message, source },
+      });
+      leadId = newLead.id;
+    } catch (dbError) {
+      console.error("Database save failed, but proceeding with emails:", dbError);
+    }
 
     // 2. Get admin notification email from DB or fallback
     const dbEmailSetting = await prisma.setting.findUnique({
@@ -185,7 +191,7 @@ export async function POST(request) {
     console.log("Admin email result:", adminResult.status, adminResult.value?.data || adminResult.reason);
     console.log("Client email result:", clientResult.status, clientResult.value?.data || clientResult.reason);
 
-    return NextResponse.json({ success: true, leadId: newLead.id });
+    return NextResponse.json({ success: true, leadId });
   } catch (error) {
     console.error("API /contact error:", error);
     return NextResponse.json(
