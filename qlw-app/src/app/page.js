@@ -19,6 +19,11 @@ export default function HomePage() {
   const [eventSlideIndex, setEventSlideIndex] = useState(0);
   const [alertVisible, setAlertVisible] = useState(true);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const slideInterval = useRef(null);
   const eventInterval = useRef(null);
 
@@ -117,8 +122,8 @@ export default function HomePage() {
         @keyframes fadeUpIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
         @media(max-width: 992px) { .hero-split-section { flex-direction: column; height: auto; } .hero-split-left { padding: 40px 20px; width: 100%; } }
       `}} />
-      {alertVisible && (
-        <div className="event-alert-banner" id="eventAlertBanner">
+      {isMounted && alertVisible && (
+        <div className="event-alert-banner" id="eventAlertBanner" suppressHydrationWarning>
           <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>
           <a href="#events" className="event-alert-btn">View Details</a>
           <button className="event-alert-close" aria-label="Dismiss Alert" onClick={() => {
