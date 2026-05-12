@@ -7,13 +7,22 @@ export default function LeadsTableClient({ initialLeads, isArchivedView, emptyMe
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredLeads = initialLeads.filter((lead) => {
+    if (!searchTerm) return true;
     const searchLower = searchTerm.toLowerCase();
+    
+    // Safety check for all fields
+    const name = (lead.name || "").toLowerCase();
+    const email = (lead.email || "").toLowerCase();
+    const phone = (lead.phone || "").toLowerCase();
+    const service = (lead.service || "").toLowerCase();
+    const tags = (lead.tags || "").toLowerCase();
+
     return (
-      lead.name.toLowerCase().includes(searchLower) ||
-      lead.email.toLowerCase().includes(searchLower) ||
-      (lead.phone && lead.phone.toLowerCase().includes(searchLower)) ||
-      (lead.service && lead.service.toLowerCase().includes(searchLower)) ||
-      (lead.tags && lead.tags.toLowerCase().includes(searchLower))
+      name.includes(searchLower) ||
+      email.includes(searchLower) ||
+      phone.includes(searchLower) ||
+      service.includes(searchLower) ||
+      tags.includes(searchLower)
     );
   });
 
@@ -62,23 +71,48 @@ export default function LeadsTableClient({ initialLeads, isArchivedView, emptyMe
           <div style={{ fontWeight: "600", color: "#0a2540", whiteSpace: "nowrap" }}>
             Total: {filteredLeads.length}
           </div>
-          <div style={{ position: "relative", width: "100%", maxWidth: "350px" }}>
-            <span style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#94a3b8" }}>🔍</span>
-            <input 
-              type="text" 
-              placeholder="Search by name, email, phone, or tags..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+          <div style={{ position: "relative", width: "100%", maxWidth: "450px", display: "flex", gap: "8px" }}>
+            <div style={{ position: "relative", flex: 1 }}>
+              <span style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#94a3b8" }}>🔍</span>
+              <input 
+                type="text" 
+                placeholder="Search by name, email, phone..." 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{
+                  width: "100%",
+                  padding: "10px 10px 10px 35px",
+                  borderRadius: "8px",
+                  border: "1px solid #cbd5e1",
+                  fontSize: "0.9rem",
+                  outline: "none",
+                  boxSizing: "border-box",
+                  backgroundColor: "#fff"
+                }}
+              />
+              {searchTerm && (
+                <button 
+                  onClick={() => setSearchTerm("")}
+                  style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "#94a3b8", cursor: "pointer", fontSize: "1.1rem" }}
+                >
+                  ×
+                </button>
+              )}
+            </div>
+            <button 
               style={{
-                width: "100%",
-                padding: "10px 10px 10px 35px",
+                padding: "0 16px",
+                backgroundColor: "#0a2540",
+                color: "white",
+                border: "none",
                 borderRadius: "8px",
-                border: "1px solid #cbd5e1",
-                fontSize: "0.9rem",
-                outline: "none",
-                boxSizing: "border-box"
+                fontSize: "0.85rem",
+                fontWeight: "600",
+                cursor: "pointer"
               }}
-            />
+            >
+              Search
+            </button>
           </div>
         </div>
         
