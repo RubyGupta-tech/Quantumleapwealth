@@ -85,7 +85,7 @@ export default function HomePage() {
     setIsSubmitting(true);
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -113,7 +113,8 @@ export default function HomePage() {
   return (
     <div className="home-container">
       {/* Critical CSS for LCP Optimization */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hero-split-section { display: flex; min-height: 600px; height: calc(100vh - 180px); width: 100%; background: #0f172a; position: relative; overflow: hidden; }
         .hero-split-left { flex: 1 1 50%; display: flex; align-items: center; justify-content: center; padding: 4% 8%; position: relative; z-index: 2; }
         .hero-glass-card { background: #0a2540; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; backdrop-filter: blur(16px); }
@@ -182,18 +183,52 @@ export default function HomePage() {
           <div className="dynamic-slider" style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, overflow: 'hidden' }}>
             {/* Slide 1 */}
             <div className={`slide ${slideIndex === 0 ? 'active' : ''}`} style={{ height: '100%' }}>
-              <div className="slide-content" style={{ background: 'white', flexDirection: 'column', padding: '20px', height: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-                <Image 
-                  src="/images/QWL_logo_original.png" 
-                  alt="Quantum Leap Wealth" 
-                  width={260} 
-                  height={260} 
-                  className="slide-logo" 
-                  priority
-                  fetchPriority="high"
-                  style={{ marginBottom: '20px', maxWidth: '260px', height: 'auto' }} 
-                />
-                <p style={{ color: 'var(--primary)', fontSize: '1.15rem', fontWeight: 600, textAlign: 'center', maxWidth: '80%', margin: '0 auto' }}>
+              <div className="slide-content" style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fdfbf7 50%, #f7f1e3 100%)', 
+                flexDirection: 'column', 
+                padding: '40px 20px', 
+                height: '100%', 
+                justifyContent: 'center', 
+                display: 'flex', 
+                alignItems: 'center' 
+              }}>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.95)',
+                  padding: '20px 30px',
+                  borderRadius: '16px',
+                  boxShadow: '0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04)',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: '30px',
+                  width: '90%',
+                  maxWidth: '440px',
+                  transition: 'transform 0.3s ease'
+                }}>
+                  <Image
+                    src="/images/Logo1_transparent.png"
+                    alt="Quantum Leap Wealth"
+                    width={400}
+                    height={244}
+                    className="slide-logo"
+                    priority
+                    fetchPriority="high"
+                    style={{ width: '100%', maxWidth: '400px', height: 'auto', display: 'block' }}
+                  />
+                </div>
+                <p style={{ 
+                  color: '#0a2540', 
+                  fontFamily: 'var(--font-playfair)',
+                  fontSize: '1.2rem', 
+                  fontWeight: '700', 
+                  textAlign: 'center', 
+                  maxWidth: '85%', 
+                  margin: '0 auto',
+                  letterSpacing: '0.3px',
+                  lineHeight: '1.4',
+                  borderTop: '2px solid rgba(201, 168, 76, 0.3)',
+                  paddingTop: '20px'
+                }}>
                   Comprehensive Wealth Management &amp; Real Estate Investment Strategies
                 </p>
               </div>
@@ -202,11 +237,11 @@ export default function HomePage() {
             {/* Slide 2 */}
             <div className={`slide ${slideIndex === 1 ? 'active' : ''}`} style={{ height: '100%' }}>
               <div className="slide-content" style={{ height: '100%', position: 'relative' }}>
-                <Image 
-                  src="/images/Anu_profile_pic.png" 
-                  alt="Expert Leadership" 
+                <Image
+                  src="/images/Anu_profile_pic.png"
+                  alt="Expert Leadership"
                   fill
-                  style={{ objectPosition: 'top center', objectFit: 'cover' }} 
+                  style={{ objectPosition: 'top center', objectFit: 'cover' }}
                   className="slide-bg"
                 />
                 <div className="slide-overlay" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%)', bottom: 0, paddingBottom: '40px', position: 'absolute', width: '100%', textAlign: 'center' }}>
@@ -218,11 +253,11 @@ export default function HomePage() {
             {/* Slide 3 */}
             <div className={`slide ${slideIndex === 2 ? 'active' : ''}`} style={{ height: '100%' }}>
               <div className="slide-content" style={{ height: '100%', position: 'relative' }}>
-                <Image 
-                  src="/images/Anu_Homepage_pic.png" 
-                  alt="Secure Your Family" 
+                <Image
+                  src="/images/Anu_Homepage_pic.png"
+                  alt="Secure Your Family"
                   fill
-                  style={{ objectPosition: 'top center', objectFit: 'cover' }} 
+                  style={{ objectPosition: 'top center', objectFit: 'cover' }}
                   className="slide-bg"
                 />
                 <div className="slide-overlay" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%)', bottom: 0, paddingBottom: '40px', position: 'absolute', width: '100%', textAlign: 'center' }}>
@@ -266,17 +301,17 @@ export default function HomePage() {
             <p className="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at every stage of life.</p>
           </div>
           <div className="services-grid">
-            <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Investment Planning" delay="1" 
+            <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Investment Planning" delay="1"
               desc="Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum growth." />
-            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will &amp; Trust" delay="2" 
+            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will &amp; Trust" delay="2"
               desc="Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and clarity." />
-            <ServiceCard href="/images/services/tax-saving" img="/images/LifeProtection_pics.png" title="Tax Savings" delay="3" 
+            <ServiceCard href="/images/services/tax-saving" img="/images/LifeProtection_pics.png" title="Tax Savings" delay="3"
               desc="Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally." />
-            <ServiceCard href="/images/services/retirement-planning" img="/images/ritermentplanning_pics.png" title="Retirement Planning" delay="1" 
+            <ServiceCard href="/images/services/retirement-planning" img="/images/ritermentplanning_pics.png" title="Retirement Planning" delay="1"
               desc="Plan the retirement you deserve — comfortable, secure, and financially independent from day one." />
-            <ServiceCard href="/images/services/kids-college" img="/images/kids_college_planning.png" title="Kids College Fund" delay="2" 
+            <ServiceCard href="/images/services/kids-college" img="/images/kids_college_planning.png" title="Kids College Fund" delay="2"
               desc="Invest in your child's future today with education savings plans tailored to your family's timeline and goals." />
-            <ServiceCard href="/images/services/life-insurance" img="/images/LifeProtection_PermanentInsurance_pics.png" title="Life Insurance" delay="3" 
+            <ServiceCard href="/images/services/life-insurance" img="/images/LifeProtection_PermanentInsurance_pics.png" title="Life Insurance" delay="3"
               desc="Comprehensive coverage that protects your loved ones financially while building long-term asset value." />
           </div>
         </div>
@@ -357,7 +392,7 @@ export default function HomePage() {
               <button className={`events-tab ${eventTab === 'past' ? 'active' : ''}`} onClick={() => { setEventTab('past'); setEventSlideIndex(0); }}>📋 Past Events ({pastEvents.length})</button>
             </div>
           </div>
-          
+
           <div className="events-panel active">
             {activeEvents.length > 0 ? (
               <div className="events-slider-wrap">
@@ -442,8 +477,8 @@ export default function HomePage() {
                     <label>Your Message *</label>
                     <textarea name="message" required placeholder="Tell us about your goals..." style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1.5px solid var(--border)', background: 'var(--bg-light)', color: 'var(--text-dark)', outline: 'none', transition: '0.2s', fontFamily: "var(--font-inter)", resize: 'vertical', minHeight: '100px' }}></textarea>
                   </div>
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="opp-submit form-submit"
                     disabled={isSubmitting}
                   >
@@ -453,7 +488,7 @@ export default function HomePage() {
                 {error && (
                   <div style={{ marginTop: "15px", textAlign: "center" }}>
                     <p style={{ color: "#ef4444", fontSize: "0.85rem", marginBottom: "5px" }}>{error}</p>
-                    <a 
+                    <a
                       href="mailto:quantumlfs@gmail.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
                       style={{ color: "#fff", fontSize: "0.8rem", textDecoration: "underline", opacity: 0.8 }}
                     >

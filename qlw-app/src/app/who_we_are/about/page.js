@@ -339,18 +339,26 @@ export default function Page() {
 
                         <span class="section-label">Our Story</span>
 
-                        <h2>Building a Financial Revolution — One Family at a Time</h2>
+                        <h2>Building a Financial Revolution - One Family at a Time</h2>
 
                         <p>Quantum Leap Wealth was born from a deeply personal mission: to be the financial
                             guide that
 
                             every family deserves but rarely gets. In a landscape dominated by institutional advisors
 
-                            serving only the affluent, we built something different — a firm that serves you.</p>
+                            serving only the affluent, we built something different - a firm that serves you.</p>
 
-                        <p>We empower our clients not just with solutions, but with financial concepts and investment strategies that set them up for life.</p>
+                        <p>Our strategic partnership with <strong>Hegemon Group International</strong>, a renowned
 
-                        <p>Through our partnerships with world-class carriers and vendors, Quantum Leap Financial
+                            financial services marketing organization, allows us to facilitate the establishment of
+
+                            financial agencies and distribution outlets - empowering our clients not just with
+
+                            solutions, but with financial concepts and investment strategies that set them up for life.
+
+                        </p>
+
+                        <p>Through our partnerships with world-class carriers and vendors, Quantum Leap Wealth
                             Services delivers
 
                             top-tier wealth solutions that were once only available to the ultra-wealthy — now
