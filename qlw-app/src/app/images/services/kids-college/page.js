@@ -1,4 +1,4 @@
-import "../service.css";
+﻿import "../service.css";
 export default function Page() {
   return (
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
@@ -252,8 +252,8 @@ export default function Page() {
                             <div
                                 style="display:flex;flex-direction:column;gap:12px;font-size:0.85rem;color:var(--text-muted)">
 
-                                <div>📞 <a href="tel:+14082033877" style="color:var(--primary);font-weight:600">(+1)
-                                        408-203-3877</a></div>
+                                <div>📞 <a href="tel:+12182777773" style="color:var(--primary);font-weight:600">(+1)
+                                        218-277-7773 (PIN: 41966)</a></div>
 
                                 <div>✉ <a href="mailto:quantumlfs@gmail.com"
                                         style="color:var(--primary);font-weight:600">quantumlfs@gmail.com</a>

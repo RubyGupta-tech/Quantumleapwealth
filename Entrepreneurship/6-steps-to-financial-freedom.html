@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -625,6 +625,94 @@
             flex-wrap: wrap
         }
 
+        /* ── Split Partner CTA Grid & Opportunity Styles ── */
+        .partner-cta-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            text-align: left;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .partner-cta-left .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 4px;
+            margin-bottom: 16px;
+        }
+
+        .partner-cta-left h2 {
+            color: #fff;
+            font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .partner-cta-left p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .opp-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .opp-perk {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.88rem;
+        }
+
+        .opp-perk-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.15);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .partner-cta-right {
+            text-align: left;
+        }
+
+        .partner-cta-right h2 {
+            color: #fff;
+            font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .partner-cta-right p {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .partner-cta-grid .partner-cta-btns {
+            justify-content: flex-start;
+        }
+
 
 
         /* ── Steps divider ── */
@@ -674,6 +762,20 @@
                 align-items: center
             }
 
+            .partner-cta-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .partner-cta-right {
+                text-align: center;
+            }
+            .partner-cta-grid .partner-cta-btns {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
         }
     </style>
 
@@ -694,38 +796,7 @@
 
     <!-- TOP BAR -->
 
-    <div class="topbar" role="complementary" aria-label="Company Contact Info">
-
-        <div class="topbar-inner">
-
-            <div class="topbar-left"><a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
-
-                <div class="topbar-divider"></div><a href="mailto:quantumlfs@gmail.com">✉
-
-                    quantumlfs@gmail.com</a>
-
-                <div class="topbar-divider"></div><span>📍 California, USA</span>
-
-            </div>
-
-            <div class="topbar-right">
-
-                <div class="social-links" role="list">
-                    <a href="#" title="Facebook" aria-label="Follow us on Facebook" role="listitem">f</a>
-                    <a href="#" title="Instagram" aria-label="Follow us on Instagram" role="listitem">ig</a>
-                    <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn" role="listitem">in</a>
-                    <a href="#" title="YouTube" aria-label="Follow us on YouTube" role="listitem">▶</a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- NAVBAR -->
+    
 
     <header class="navbar" id="navbar-placeholder"></header>
 
@@ -1125,21 +1196,38 @@
 
             <div class="container">
 
-                <div class="partner-cta-inner">
+                <div class="partner-cta-grid">
 
-                    <h2>Partner with Quantum Leap Wealth. Build Your Future.</h2>
+                    <div class="partner-cta-left">
+                        <span class="section-label">Opportunity</span>
+                        <h2>Looking for a Business &amp; Career Opportunity?</h2>
+                        <p>Join our growing network of financial professionals. We provide world-class training, proven systems, and a proven path to financial independence.</p>
+                        <div class="opp-perks">
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Full training &amp; licensing support
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Flexible part-time or full-time
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Competitive commissions &amp; bonuses
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Work from anywhere in the USA
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Mentorship from top producers
+                            </div>
+                        </div>
+                    </div>
 
-                    <p>Join a community of dedicated professionals making a difference in the world of finance. Start
-
-                        building your future today — your first consultation is always free.</p>
-
-                    <div class="partner-cta-btns">
-
-                        <a href="../contact/contact.html" class="btn btn-primary">Book an Appointment</a>
-
-                        <a href="../contact/contact.html" class="btn btn-outline-white">Explore Business
-                            Opportunities</a>
-
+                    <div class="partner-cta-right">
+                        <h2>Partner with Quantum Leap Wealth. Build Your Future.</h2>
+                        <p>Join a community of dedicated professionals making a difference in the world of finance. Start building your future today — your first consultation is always free.</p>
+                        <div class="partner-cta-btns">
+                            <a href="../contact/contact.html" class="btn btn-primary">Book an Appointment</a>
+                            <a href="../contact/contact.html" class="btn btn-outline-white">Explore Business Opportunities</a>
+                        </div>
                     </div>
 
                 </div>
@@ -1194,7 +1282,7 @@
             </div>
             <div>
                 <h4>Contact Us</h4>
-                <div class="footer-contact-item">📞 <a href="tel:+14082033877">(+1) 408-203-3877</a></div>
+                <div class="footer-contact-item">📞 <a href="tel:+12182777773">(+1) 218-277-7773 (PIN: 41966)</a></div>
                 <div class="footer-contact-item">✉ <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
                 </div>
                 <div class="footer-contact-item">📍 California, USA</div>

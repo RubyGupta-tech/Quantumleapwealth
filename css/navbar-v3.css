@@ -159,7 +159,30 @@
 
 .nav-link:hover, .nav-link.active {
     color: var(--gold-dark);
-    background: rgba(10, 37, 64, 0.04);
+    background: rgba(201, 168, 76, 0.08); /* soft gold tint */
+}
+
+/* Premium active/hover indicator line for desktop */
+@media (min-width: 1101px) {
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 18px;
+        right: 18px;
+        height: 3px;
+        background-color: var(--gold);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        transform: scaleX(1);
+    }
 }
 
 .dd-arrow { width: 12px; height: 12px; transition: transform 0.3s; opacity: 0.7; }
@@ -207,6 +230,15 @@
 }
 
 .dropdown-item:hover { background: rgba(10, 37, 64, 0.04); color: var(--gold); }
+.dropdown-item.active {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+.dropdown-item.active .dd-icon {
+    background: rgba(201, 168, 76, 0.2);
+    color: var(--gold-dark);
+}
 .dd-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: rgba(201, 168, 76, 0.08); border-radius: 6px; }
 
 /* ---- CTA Button ---- */
@@ -278,6 +310,19 @@
         border-bottom: 1px solid rgba(10, 37, 64, 0.04);
         border-radius: 0;
         justify-content: space-between;
+    }
+
+    .nav-link.active {
+        border-left: 4px solid var(--gold) !important;
+        background: rgba(201, 168, 76, 0.06) !important;
+        color: var(--gold-dark) !important;
+        padding-left: 20px !important;
+    }
+
+    .dropdown-item.active {
+        background: rgba(201, 168, 76, 0.08) !important;
+        border-left: 3px solid var(--gold) !important;
+        padding-left: 20px !important;
     }
 
     .dropdown { display: none; position: static; transform: none; width: 100%; padding: 0; box-shadow: none; border: none; opacity: 1; visibility: visible; }

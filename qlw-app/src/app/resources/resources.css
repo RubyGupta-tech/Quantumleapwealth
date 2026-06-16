@@ -164,3 +164,13 @@
         max-width: 100%;
     }
 }
+
+.calc-card-body-static {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    background: #fff;
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
+    display: block;
+}

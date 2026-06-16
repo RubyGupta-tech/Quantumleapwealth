@@ -207,7 +207,30 @@
 
 .nav-link:hover, .nav-link.active {
     color: var(--accent-dark);
-    background: rgba(10, 37, 64, 0.04);
+    background: rgba(201, 168, 76, 0.08); /* soft gold tint */
+}
+
+/* Premium active/hover indicator line for desktop */
+@media (min-width: 961px) {
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 14px;
+        right: 14px;
+        height: 3px;
+        background-color: var(--accent);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        transform: scaleX(1);
+    }
 }
 
 .nav-link .dd-arrow {
@@ -269,6 +292,11 @@
     background: rgba(10, 37, 64, 0.04);
     color: var(--accent);
     padding-left: 18px;
+}
+.dropdown-item.active {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--accent-dark);
+    font-weight: 600;
 }
 
 /* ---- CTA Button ---- */
@@ -358,6 +386,19 @@
         border-bottom: 1px solid rgba(10, 37, 64, 0.05);
         border-radius: 0;
         justify-content: space-between;
+    }
+
+    .nav-link.active {
+        border-left: 4px solid var(--accent) !important;
+        background: rgba(201, 168, 76, 0.06) !important;
+        color: var(--accent-dark) !important;
+        padding-left: 20px !important;
+    }
+
+    .dropdown-item.active {
+        background: rgba(201, 168, 76, 0.08) !important;
+        border-left: 3px solid var(--accent) !important;
+        padding-left: 20px !important;
     }
 
     .dropdown, .dropdown.wide {

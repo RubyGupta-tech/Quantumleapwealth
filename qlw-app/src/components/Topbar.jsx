@@ -1,15 +1,15 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Topbar() {
   const pathname = usePathname();
-  if (pathname?.startsWith("/admin")) return null;
+  if (pathname?.startsWith("/admin") || pathname === "/") return null;
   return (
     <div className="topbar" role="complementary" aria-label="Company Contact Info">
       <div className="topbar-inner">
         <div className="topbar-left">
-          <a href="tel:+14082033877">📞 (+1) 408-203-3877</a>
+          <a href="tel:+12182777773">📞 (+1) 218-277-7773 (PIN: 41966)</a>
           <div className="topbar-divider"></div>
           <a href="mailto:quantumlfs@gmail.com">✉ quantumlfs@gmail.com</a>
           <div className="topbar-divider"></div>

@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 
@@ -96,7 +96,7 @@ export async function POST(request) {
         <div style="background:#f8fafc;padding:20px 32px;text-align:center;border-top:1px solid #e2e8f0;">
           <p style="margin:0 0 4px;color:#0a2540;font-weight:700;font-size:0.9rem;">Quantum Leap Wealth</p>
           <p style="margin:0;color:#94a3b8;font-size:0.8rem;">
-            📞 (+1) 408-203-3877 &nbsp;|&nbsp; ✉️ quantumlfs@gmail.com &nbsp;|&nbsp; 📍 California, USA
+            📞 (+1) 218-277-7773 (PIN: 41966) &nbsp;|&nbsp; ✉️ quantumlfs@gmail.com &nbsp;|&nbsp; 📍 California, USA
           </p>
         </div>
       </div>
@@ -147,7 +147,7 @@ export async function POST(request) {
 
           <table border="0" cellspacing="0" cellpadding="0" style="color:#6b7c8d; font-size:0.95rem; line-height:1.8;">
             <tr>
-              <td style="padding-bottom:5px;"><strong>Phone:</strong> (+1) 408-203-3877</td>
+              <td style="padding-bottom:5px;"><strong>Phone:</strong> (+1) 218-277-7773 (PIN: 41966)</td>
             </tr>
             <tr>
               <td style="padding-bottom:5px;"><strong>Email:</strong> <a href="mailto:quantumlfs@gmail.com" style="color:#6b7c8d; text-decoration:none;">quantumlfs@gmail.com</a></td>

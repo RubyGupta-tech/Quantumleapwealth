@@ -1,4 +1,4 @@
-import "./partners.css";
+﻿import "./partners.css";
 
 export default function Page() {
   return (
@@ -449,10 +449,10 @@ export default function Page() {
 
                                     24/7 Available</div>
 
-                                <a href="tel:+14082033877"
+                                <a href="tel:+12182777773"
                                     style="font-size:1.15rem;font-weight:700;color:var(--accent-light);text-decoration:none">(+1)
 
-                                    408-203-3877</a>
+                                    218-277-7773 (PIN: 41966)</a>
 
                             </div>
 

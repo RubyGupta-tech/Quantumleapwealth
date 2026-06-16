@@ -1,4 +1,4 @@
-import "./disclaimer.css";
+﻿import "./disclaimer.css";
 
 export default function Page() {
   return (
@@ -208,10 +208,10 @@ export default function Page() {
 
                                     <span style="font-size:1.2rem">📞</span>
 
-                                    <a href="tel:+14082033877"
+                                    <a href="tel:+12182777773"
                                         style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">(+1)
 
-                                        408-203-3877</a>
+                                        218-277-7773 (PIN: 41966)</a>
 
                                 </div>
 

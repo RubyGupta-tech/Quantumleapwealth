@@ -391,21 +391,38 @@ export default function Page() {
 
             <div class="container">
 
-                <div class="partner-cta-inner">
+                <div class="partner-cta-grid">
 
-                    <h2>Partner with Quantum Leap Wealth. Build Your Future.</h2>
+                    <div class="partner-cta-left">
+                        <span class="section-label">Opportunity</span>
+                        <h2>Looking for a Business &amp; Career Opportunity?</h2>
+                        <p>Join our growing network of financial professionals. We provide world-class training, proven systems, and a proven path to financial independence.</p>
+                        <div class="opp-perks">
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Full training &amp; licensing support
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Flexible part-time or full-time
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Competitive commissions &amp; bonuses
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Work from anywhere in the USA
+                            </div>
+                            <div class="opp-perk">
+                                <div class="opp-perk-icon">✓</div>Mentorship from top producers
+                            </div>
+                        </div>
+                    </div>
 
-                    <p>Join a community of dedicated professionals making a difference in the world of finance. Start
-
-                        building your future today — your first consultation is always free.</p>
-
-                    <div class="partner-cta-btns">
-
-                        <a href="/contact" class="btn btn-primary">Book an Appointment</a>
-
-                        <a href="/contact" class="btn btn-outline-white">Explore Business
-                            Opportunities</a>
-
+                    <div class="partner-cta-right">
+                        <h2>Partner with Quantum Leap Wealth. Build Your Future.</h2>
+                        <p>Join a community of dedicated professionals making a difference in the world of finance. Start building your future today — your first consultation is always free.</p>
+                        <div class="partner-cta-btns">
+                            <a href="/contact" class="btn btn-primary">Book an Appointment</a>
+                            <a href="/contact" class="btn btn-outline-white">Explore Business Opportunities</a>
+                        </div>
                     </div>
 
                 </div>

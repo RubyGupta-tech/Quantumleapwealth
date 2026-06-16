@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import Link from "next/link";
 import "./contact.css";
@@ -60,7 +60,7 @@ export default function ContactPage() {
             <div className="ci-icon">📞</div>
             <h4>Call Us</h4>
             <p>
-              <a href="tel:+14082033877">(+1) 408-203-3877</a>
+              <a href="tel:+12182777773">(+1) 218-277-7773 (PIN: 41966)</a>
             </p>
           </div>
           <div className="contact-info-card">
@@ -169,7 +169,7 @@ export default function ContactPage() {
               <div className="info-detail-icon">📞</div>
               <div className="info-detail-text">
                 <h4>Phone</h4>
-                <p><a href="tel:+14082033877">(+1) 408-203-3877</a></p>
+                <p><a href="tel:+12182777773">(+1) 218-277-7773 (PIN: 41966)</a></p>
               </div>
             </div>
 

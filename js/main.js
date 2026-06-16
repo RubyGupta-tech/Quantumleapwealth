@@ -89,20 +89,32 @@
     });
 
     /* ---- Active page highlight ---- */
-    const currentPaths = window.location.pathname.split('/').filter(Boolean);
-    const currentFile = currentPaths.pop() || 'index.html';
-    
+    function normalizeUrl(url) {
+      let clean = url.split('#')[0].split('?')[0];
+      clean = clean.replace(/\/+$/, '');
+      if (clean.endsWith('/index.html')) {
+        clean = clean.substring(0, clean.length - 11);
+      }
+      return clean;
+    }
+
+    const currentUrl = normalizeUrl(window.location.href);
+
     document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
-      const href = link.getAttribute('href') || '';
-      // Clean up href to just the filename for comparison
-      const linkFile = href.split('/').pop();
-      
-      if (linkFile && (linkFile === currentFile || (currentFile === '' && linkFile === 'index.html'))) {
+      const href = link.href;
+      if (!href) return;
+
+      const rawHref = link.getAttribute('href') || '';
+      if (rawHref.startsWith('#') || rawHref.startsWith('javascript:')) return;
+
+      if (normalizeUrl(href) === currentUrl) {
         link.classList.add('active');
-        const parent = link.closest('.nav-item');
-        if (parent) {
-          const parentLink = parent.querySelector(':scope > .nav-link');
-          if (parentLink) parentLink.classList.add('active');
+        const parentNavItem = link.closest('.nav-item');
+        if (parentNavItem) {
+          const parentLink = parentNavItem.querySelector(':scope > .nav-link');
+          if (parentLink && parentLink !== link) {
+            parentLink.classList.add('active');
+          }
         }
       }
     });

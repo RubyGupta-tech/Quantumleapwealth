@@ -81,12 +81,12 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/" className="nav-link">
+              <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>
                 Home
               </Link>
             </li>
             <li className={`nav-item has-dropdown ${activeDropdown === 'about' ? 'open' : ''}`}>
-              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('about', e)}>
+              <a href="#" className={`nav-link ${pathname?.startsWith("/who_we_are") ? "active" : ""}`} onClick={(e) => toggleDropdown('about', e)}>
                 About{" "}
                 <svg
                   className="dd-arrow"
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/who_we_are/about"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/who_we_are/about" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -114,7 +114,7 @@ export default function Navbar() {
                 {/* <li role="none">
                   <Link
                     href="/who_we_are/partners"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/who_we_are/partners" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -126,7 +126,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/who_we_are/disclaimer"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/who_we_are/disclaimer" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -138,7 +138,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className={`nav-item has-dropdown ${activeDropdown === 'services' ? 'open' : ''}`}>
-              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('services', e)}>
+              <a href="#" className={`nav-link ${pathname?.startsWith("/images/services") ? "active" : ""}`} onClick={(e) => toggleDropdown('services', e)}>
                 Services{" "}
                 <svg
                   className="dd-arrow"
@@ -154,7 +154,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/investment-planning"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/investment-planning" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -166,7 +166,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/living-will-trust"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/living-will-trust" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -178,7 +178,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/tax-saving"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/tax-saving" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -190,7 +190,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/retirement-planning"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/retirement-planning" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -202,7 +202,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/kids-college"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/kids-college" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -214,7 +214,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/images/services/life-insurance"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/images/services/life-insurance" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -226,7 +226,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className={`nav-item has-dropdown ${activeDropdown === 'entrepreneurship' ? 'open' : ''}`}>
-              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('entrepreneurship', e)}>
+              <a href="#" className={`nav-link ${pathname?.startsWith("/Entrepreneurship") ? "active" : ""}`} onClick={(e) => toggleDropdown('entrepreneurship', e)}>
                 Entrepreneurship{" "}
                 <svg
                   className="dd-arrow"
@@ -242,7 +242,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/Entrepreneurship/6-steps-to-financial-freedom"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/Entrepreneurship/6-steps-to-financial-freedom" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -254,7 +254,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className={`nav-item has-dropdown ${activeDropdown === 'media' ? 'open' : ''}`}>
-              <a href="#" className="nav-link" onClick={(e) => toggleDropdown('media', e)}>
+              <a href="#" className={`nav-link ${pathname?.startsWith("/Activities") ? "active" : ""}`} onClick={(e) => toggleDropdown('media', e)}>
                 Media{" "}
                 <svg
                   className="dd-arrow"
@@ -270,7 +270,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/Activities/blogs"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/Activities/blogs" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -282,7 +282,7 @@ export default function Navbar() {
                 {/* <li role="none">
                   <Link
                     href="/Activities/videos"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/Activities/videos" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -294,7 +294,7 @@ export default function Navbar() {
                 <li role="none">
                   <Link
                     href="/Activities/Photos"
-                    className="dropdown-item"
+                    className={`dropdown-item ${pathname === "/Activities/Photos" ? "active" : ""}`}
                     role="menuitem"
                   >
                     <span className="dd-icon" aria-hidden="true">
@@ -306,12 +306,12 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <Link href="/resources" className="nav-link">
+              <Link href="/resources" className={`nav-link ${pathname === "/resources" ? "active" : ""}`}>
                 Resources
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/contact" className="nav-link">
+              <Link href="/contact" className={`nav-link ${pathname === "/contact" ? "active" : ""}`}>
                 Contact
               </Link>
             </li>

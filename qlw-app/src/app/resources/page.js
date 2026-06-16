@@ -142,6 +142,23 @@ export default function Page() {
               </div>
               <div className="calc-list">
 
+                {/* Abacus Wizard Login Card */}
+                <div className="calc-card" style={{ border: "1.5px solid #c9a84c", marginBottom: "8px" }}>
+                  <div className="calc-card-header-static" style={{ padding: "12px 20px", background: "linear-gradient(135deg, #0a2540, #1a4a7a)", color: "#fff", fontFamily: "'Playfair Display', serif", fontSize: "1.02rem", fontWeight: "700", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div className="calc-header-left">
+                      <span className="icon" style={{ fontSize: "1.3rem", marginRight: "10px" }}>🔮</span> FNA (Financial Need Analysis)
+                    </div>
+                  </div>
+                  <div className="calc-card-body-static">
+                    <p style={{ fontSize: "0.82rem", color: "#6b7c8d", marginBottom: "12px", lineHeight: "1.45" }}>
+                      Access your custom financial planning dashboard, run advanced scenarios, and manage your wealth forecasts.
+                    </p>
+                    <a href="https://abacuswizard.com/login" target="_blank" rel="noopener" className="calc-btn" style={{ textDecoration: "none", textAlign: "center", display: "inline-block", width: "auto", padding: "10px 20px", fontSize: "0.8rem", borderRadius: "6px" }}>
+                      Access FNA
+                    </a>
+                  </div>
+                </div>
+
                 {/* Term Insurance Calculator */}
                 <div className={`calc-card ${activeCalc === 0 ? 'active' : ''}`}>
                   <div className="calc-card-header" onClick={() => toggleCalc(0)}>
@@ -371,7 +388,7 @@ export default function Page() {
                   </div>
                   <h4>Nationwide</h4>
                   <p>Protect your family and assets with industry-leading insurance and diverse planning products.</p>
-                  <a href="https://www.nationwide.com/" target="_blank" rel="noopener">Learn More →</a>
+                  <a href="https://www.nationwidenewheights.com/" target="_blank" rel="noopener">Learn More →</a>
                 </div>
 
                 {/* Partner 6 */}

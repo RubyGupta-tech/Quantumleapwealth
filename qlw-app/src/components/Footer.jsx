@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -98,7 +98,7 @@ export default function Footer() {
           <div>
             <h4>Contact Us</h4>
             <div className="footer-contact-item">
-              📞 <a href="tel:+14082033877">(+1) 408-203-3877</a>
+              📞 <a href="tel:+12182777773">(+1) 218-277-7773 (PIN: 41966)</a>
             </div>
             <div className="footer-contact-item">
               ✉{" "}

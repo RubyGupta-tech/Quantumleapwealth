@@ -123,17 +123,7 @@ export default function HomePage() {
         @keyframes fadeUpIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
         @media(max-width: 992px) { .hero-split-section { flex-direction: column; height: auto; } .hero-split-left { padding: 40px 20px; width: 100%; } }
       `}} />
-      {isMounted && alertVisible && (
-        <div className="event-alert-banner" id="eventAlertBanner" suppressHydrationWarning>
-          <span>🎉 <strong>Upcoming Event:</strong> Free Retirement Planning Webinar on Mar 15th!</span>
-          <a href="#events" className="event-alert-btn">View Details</a>
-          <button className="event-alert-close" aria-label="Dismiss Alert" onClick={() => {
-            setAlertVisible(false);
-            const navbar = document.querySelector('.navbar');
-            if (navbar) navbar.style.top = '0px';
-          }}>×</button>
-        </div>
-      )}
+
 
       {/* HERO SECTION */}
       <section className="hero-split-section" id="home">
@@ -301,7 +291,7 @@ export default function HomePage() {
             <p className="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at every stage of life.</p>
           </div>
           <div className="services-grid">
-            <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Investment Planning" delay="1"
+            <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Financial Needs Analysis" backTitle="Comprehensive Financial Needs Analysis" delay="1"
               desc="Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum growth." />
             <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will &amp; Trust" delay="2"
               desc="Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and clarity." />
@@ -423,33 +413,18 @@ export default function HomePage() {
       {/* OPPORTUNITY SECTION */}
       <section className="opp-section" id="opportunity">
         <div className="container">
-          <div className="opp-inner">
-            <div className="opp-text reveal">
-              <span className="section-label">Opportunity</span>
-              <h2>Looking for a Business &amp; Career Opportunity?</h2>
-              <p>Join our growing network of financial professionals. We provide world-class training, proven systems, and a proven path to financial independence.</p>
-              <div className="opp-perks">
-                <OppPerk text="Full training &amp; licensing support" />
-                <OppPerk text="Flexible part-time or full-time" />
-                <OppPerk text="Competitive commissions &amp; bonuses" />
-                <OppPerk text="Work from anywhere in the USA" />
-                <OppPerk text="Mentorship from top producers" />
-              </div>
-              <a href="/Entrepreneurship/6-steps-to-financial-freedom" className="btn btn-primary">Learn About the 6 Steps →</a>
-            </div>
-            <div className="reveal reveal-delay-2">
+          <div className="opp-inner" style={{ gridTemplateColumns: '1fr', maxWidth: '800px', margin: '0 auto' }}>
+            <div className="reveal">
               <div className="opp-card">
                 <h3>Get In Touch Today</h3>
-                <form id="contact-form" onSubmit={handleFormSubmit}>
-                  <div className="opp-form-group" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                    <div>
-                      <label>First Name *</label>
-                      <input type="text" name="first_name" required placeholder="First name" />
-                    </div>
-                    <div>
-                      <label>Last Name *</label>
-                      <input type="text" name="last_name" required placeholder="Last name" />
-                    </div>
+                <form id="contact-form" className="contact-form-grid" onSubmit={handleFormSubmit}>
+                  <div className="opp-form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="first_name" required placeholder="First name" />
+                  </div>
+                  <div className="opp-form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="last_name" required placeholder="Last name" />
                   </div>
                   <div className="opp-form-group">
                     <label>Email Address *</label>
@@ -459,7 +434,7 @@ export default function HomePage() {
                     <label>Phone Number</label>
                     <input type="tel" name="user_phone" placeholder="(+1) 000-000-0000" />
                   </div>
-                  <div className="opp-form-group">
+                  <div className="opp-form-group grid-span-2">
                     <label>Service of Interest</label>
                     <select name="service">
                       <option value="">— Select a service —</option>
@@ -473,17 +448,20 @@ export default function HomePage() {
                       <option>General Inquiry</option>
                     </select>
                   </div>
-                  <div className="opp-form-group">
+                  <div className="opp-form-group grid-span-2">
                     <label>Your Message *</label>
                     <textarea name="message" required placeholder="Tell us about your goals..." style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1.5px solid var(--border)', background: 'var(--bg-light)', color: 'var(--text-dark)', outline: 'none', transition: '0.2s', fontFamily: "var(--font-inter)", resize: 'vertical', minHeight: '100px' }}></textarea>
                   </div>
-                  <button
-                    type="submit"
-                    className="opp-submit form-submit"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message →"}
-                  </button>
+                  <div className="grid-span-2">
+                    <button
+                      type="submit"
+                      className="opp-submit form-submit"
+                      disabled={isSubmitting}
+                      style={{ marginTop: 0 }}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message →"}
+                    </button>
+                  </div>
                 </form>
                 {error && (
                   <div style={{ marginTop: "15px", textAlign: "center" }}>
@@ -513,7 +491,7 @@ export default function HomePage() {
 }
 
 // Sub-components for cleaner structure
-function ServiceCard({ href, img, title, desc, delay }) {
+function ServiceCard({ href, img, title, backTitle, desc, delay }) {
   return (
     <a href={href} className={`flip-card reveal reveal-delay-${delay}`} style={{ textDecoration: 'none' }}>
       <div className="flip-card-inner">
@@ -522,7 +500,7 @@ function ServiceCard({ href, img, title, desc, delay }) {
           <div className="front-content"><h3>{title}</h3></div>
         </div>
         <div className="flip-card-back">
-          <h3>{title}</h3>
+          <h3>{backTitle || title}</h3>
           <p>{desc}</p>
           <span className="card-arrow">Learn more →</span>
         </div>

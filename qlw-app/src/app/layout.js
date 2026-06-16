@@ -1,6 +1,5 @@
 import { Inter, Playfair_Display, Dancing_Script } from "next/font/google";
 import Script from "next/script";
-import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimator from "@/components/ScrollAnimator";
@@ -58,7 +57,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
-        <Topbar />
         <Navbar />
         <main id="main-content" role="main">
           <ScrollAnimator />
