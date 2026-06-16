@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ScrollAnimator from "@/components/ScrollAnimator";
@@ -163,7 +163,7 @@ export default function HomePage() {
               <a href="/who_we_are/about" className="btn btn-primary" style={{ boxShadow: "0 10px 20px rgba(201,168,76,0.2)", whiteSpace: "nowrap" }}>Our Story</a>
               <a href="#" onClick={(e) => {
                 e.preventDefault();
-                if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/webserviesbygupta/30min' });
+                if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
               }} className="btn btn-light-gold" style={{ whiteSpace: "nowrap", background: "transparent", color: "white", border: "1px solid rgba(255,255,255,0.4)" }}>Consultation</a>
             </div>
           </div>
@@ -576,7 +576,7 @@ function EventCard({ event, isPast }) {
           ) : (
             <a href="#" className="event-btn event-btn-register" onClick={(e) => {
               e.preventDefault();
-              if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/webserviesbygupta/30min' });
+              if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
             }}>Register Now →</a>
           )}
         </div>

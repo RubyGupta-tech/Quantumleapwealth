@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Script from "next/script";
@@ -322,10 +322,10 @@ export default function Navbar() {
                   e.preventDefault();
                   if (typeof window !== "undefined" && window.Calendly) {
                     window.Calendly.initPopupWidget({
-                      url: "https://calendly.com/webserviesbygupta/30min",
+                      url: "https://calendly.com/quantumleapwealth/30min",
                     });
                   } else {
-                    window.open("https://calendly.com/webserviesbygupta/30min", "_blank");
+                    window.open("https://calendly.com/quantumleapwealth/30min", "_blank");
                   }
                 }}
                 className="btn-nav-cta"

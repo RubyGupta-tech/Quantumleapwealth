@@ -465,7 +465,7 @@ export default function Page() {
                         <div style="display:flex;gap:14px;flex-wrap:wrap">
 
                             <a href="#"
-                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                                 class="btn btn-primary" style="font-size:0.92rem;padding:14px 28px">
 
                                 📅 Book an Appointment

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from "react";
 import "./resources.css";
 
@@ -414,7 +414,7 @@ export default function Page() {
           <a href="#"
             onClick={(e) => {
               e.preventDefault();
-              window.Calendly.initPopupWidget({ url: 'https://calendly.com/webserviesbygupta/30min' });
+              window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
             }}
             className="cta-btn">📅 Book a Free Consultation</a>
         </div>

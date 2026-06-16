@@ -1,4 +1,4 @@
-import "./videos.css";
+﻿import "./videos.css";
 
 export default function Page() {
   return (
@@ -365,7 +365,7 @@ export default function Page() {
                     <div class="videos-cta-btns">
 
                         <a href="#"
-                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                             class="btn btn-primary">📅 Book Free Appointment</a>
 
                         <a href="/contact" class="btn btn-outline-white">Contact Us</a>

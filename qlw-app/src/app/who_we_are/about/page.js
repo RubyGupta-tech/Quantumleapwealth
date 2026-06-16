@@ -1,4 +1,4 @@
-import "./about.css";
+﻿import "./about.css";
 
 export default function Page() {
   return (
@@ -121,7 +121,7 @@ export default function Page() {
                         <div class="founder-ctas">
 
                             <a href="#"
-                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                                 class="btn btn-primary">Book a Free Consultation</a>
 
                             <a href="/contact" class="btn btn-outline">Get in Touch</a>
@@ -372,7 +372,7 @@ export default function Page() {
                             planning, retirement planning, and more.</p>
 
                         <a href="#"
-                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                             class="btn btn-primary" style="margin-top:12px">Start Your Free Consultation →</a>
 
                     </div>
@@ -403,7 +403,7 @@ export default function Page() {
                     <div class="about-cta-btns">
 
                         <a href="#"
-                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                            onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                             class="btn btn-primary">Book a Free Appointment</a>
 
                         <a href="/contact" class="btn btn-outline-white">Contact Us</a>

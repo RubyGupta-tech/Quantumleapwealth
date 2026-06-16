@@ -184,7 +184,7 @@ export default function Page() {
                             <div style="margin-top:20px">
 
                                 <a href="#"
-                                    onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                    onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                                     class="btn btn-primary">📅 Book a Free Consultation</a>
 
                             </div>
@@ -284,7 +284,7 @@ export default function Page() {
                                 smart decisions.</p>
 
                             <a href="#"
-                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                                 class="btn-sm">Book an Appointment</a>
 
                         </div>

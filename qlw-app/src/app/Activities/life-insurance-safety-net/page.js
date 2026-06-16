@@ -1,4 +1,4 @@
-import "../article.css";
+﻿import "../article.css";
 export default function Page() {
   return (
     <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: `
@@ -62,7 +62,7 @@ export default function Page() {
                                 needs
                                 to stay protected.</p>
                             <a href="#"
-                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/webserviesbygupta/30min'});return false;"
+                                onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
                                 class="btn-gold">Schedule a Free Strategy Session</a>
                         </div>
                     </div>
