@@ -245,9 +245,6 @@ export default function Page() {
                                 <div>📞 <a href="tel:+12182777773" style="color:var(--primary);font-weight:600">(+1)
                                         218-277-7773 (PIN: 41966)</a></div>
 
-                                <div>📞 <a href="tel:+12182777773" style="color:var(--primary);font-weight:600">(+1)
-                                        218-277-7773 (PIN: 41966)</a></div>
-
                                 <div>✉ <a href="mailto:connect@quantumleapwealth.com"
                                         style="color:var(--primary);font-weight:600">connect@quantumleapwealth.com</a>
 
