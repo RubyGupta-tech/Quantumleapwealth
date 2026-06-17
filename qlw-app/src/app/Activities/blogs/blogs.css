@@ -303,3 +303,34 @@
         grid-template-columns: 1fr;
     }
 }
+
+.blog-cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+    padding: 72px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 60px;
+}
+
+.blog-cta h2 {
+    color: #fff;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 12px;
+}
+
+.blog-cta p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.blog-cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
