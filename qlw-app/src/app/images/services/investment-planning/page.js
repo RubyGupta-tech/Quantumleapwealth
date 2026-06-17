@@ -251,9 +251,7 @@ export default function Page() {
 
                             <ul class="services-nav">
 
-                                <li><a href="/images/services/investment-planning" class="active"><span>📈 Investment
-
-                                            Planning</span><span class="nav-icon">›</span></a></li>
+                                <li><a href="/images/services/investment-planning" class="active"><span>📈 Financial Needs Analysis</span><span class="nav-icon">›</span></a></li>
 
                                 <li><a href="/images/services/living-will-trust"><span>📜 Living Will &amp; Trust</span><span
                                             class="nav-icon">›</span></a></li>
