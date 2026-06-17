@@ -1,4 +1,4 @@
-﻿import "./photos.css";
+import "./photos.css";
 
 export default function Page() {
   return (
@@ -15,8 +15,8 @@ export default function Page() {
                 <div class="page-hero-inner">
 
                     <div class="breadcrumb"><a href="/">Home</a><span>›</span><span
-                            style="color:rgba(255,255,255,0.45)">Activities</span><span>›</span><span
-                            style="color:var(--accent-light)">Photos</span></div>
+                            style="color:var(--text-muted)">Activities</span><span>›</span><span
+                            style="color:var(--primary)">Photos</span></div>
 
                     <div class="page-hero-badge">📸 Activities</div>
 
