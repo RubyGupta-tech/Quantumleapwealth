@@ -1,4 +1,4 @@
-﻿import "./photos.css";
+import "./photos.css";
 
 export default function Page() {
   return (
@@ -41,9 +41,7 @@ export default function Page() {
             <div class="activities-tabs-inner">
 
                 <a href="/Activities/Photos" class="act-tab active">📸 Photos</a>
-
-                <a href="/Activities/videos" class="act-tab">🎥 Videos</a>
-
+                <a href="/Activities/videos" class="act-tab" style="display: none;">🎥 Videos</a>
                 <a href="/Activities/blogs" class="act-tab">✍️ Blog</a>
 
             </div>

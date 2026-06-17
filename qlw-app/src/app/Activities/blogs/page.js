@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect } from "react";
 import "./blogs.css";
 
@@ -70,7 +70,7 @@ export default function Page() {
         <nav class="activities-tabs">
             <div class="activities-tabs-inner">
                 <a href="/Activities/Photos" class="act-tab">📸 Photos</a>
-                <a href="/Activities/videos" class="act-tab">🎥 Videos</a>
+                <a href="/Activities/videos" class="act-tab" style="display: none;">🎥 Videos</a>
                 <a href="/Activities/blogs" class="act-tab active">✍️ Blog</a>
             </div>
         </nav>
