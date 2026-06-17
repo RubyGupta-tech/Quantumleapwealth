@@ -67,7 +67,7 @@ export default function Page() {
 
 
 
-                    <!-- TEAM MEMBER TEMPLATE — replace photo src and name/role when ready -->
+                    <!-- TEAM MEMBER TEMPLATE - replace photo src and name/role when ready -->
 
                     <!-- To add a photo: replace the <div class="photo-placeholder"> with <img src="/images/team/name.jpg" alt="Name"/> -->
 

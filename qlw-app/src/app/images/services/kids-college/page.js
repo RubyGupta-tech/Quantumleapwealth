@@ -17,7 +17,7 @@ export default function Page() {
 
                         <h1>Kids College Fund</h1>
 
-                        <p>Give your child the ultimate head start. Start planning for their college education today —
+                        <p>Give your child the ultimate head start. Start planning for their college education today -
 
                             so you can say yes when the moment arrives, without financial stress.</p>
 
@@ -44,8 +44,8 @@ export default function Page() {
                     <div class="content-split">
                         <div class="content-split-text">
                             <h2>Invest in Your Child's Brightest Future</h2>
-                            <p>College costs are rising every year — but with the right plan in place, you can fund your child's education without dipping into retirement savings, taking on debt, or compromising your financial goals. At Quantum Leap Wealth, we help families build college savings plans that are smart, tax-efficient, and flexible.</p>
-                            <p>Whether your child is a newborn or a teenager, it's never too early — or too late — to start planning.</p>
+                            <p>College costs are rising every year - but with the right plan in place, you can fund your child's education without dipping into retirement savings, taking on debt, or compromising your financial goals. At Quantum Leap Wealth, we help families build college savings plans that are smart, tax-efficient, and flexible.</p>
+                            <p>Whether your child is a newborn or a teenager, it's never too early - or too late - to start planning.</p>
                         </div>
                         <div class="content-img-wrap">
                             <img src="/images/college_future_light.png" alt="Children Educational Future Options" />
@@ -66,7 +66,7 @@ export default function Page() {
                                     <div class="plan-icon" style="margin-bottom: 0;">🏫</div>
                                     <div>
                                         <h4>529 College Savings Plan</h4>
-                                        <p>The most popular college savings vehicle. Tax-free growth and withdrawals when used for qualified educational expenses — and available in every state.</p>
+                                        <p>The most popular college savings vehicle. Tax-free growth and withdrawals when used for qualified educational expenses - and available in every state.</p>
                                     </div>
                                 </div>
                                 <div class="plan-card" style="text-align: left; display: flex; gap: 15px; align-items: flex-start;">
@@ -102,7 +102,7 @@ export default function Page() {
                             <h3>Key Benefits</h3>
                             <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
                                 <div class="feature-item"><div class="feature-check">✓</div><span>Tax-Free Growth &amp; Withdrawals</span></div>
-                                <div class="feature-item"><div class="feature-check">✓</div><span>Start Small — Grow Over Time</span></div>
+                                <div class="feature-item"><div class="feature-check">✓</div><span>Start Small - Grow Over Time</span></div>
                                 <div class="feature-item"><div class="feature-check">✓</div><span>Flexible Beneficiary Options</span></div>
                                 <div class="feature-item"><div class="feature-check">✓</div><span>State Tax Deductions Available</span></div>
                                 <div class="feature-item"><div class="feature-check">✓</div><span>Financial Aid Impact Guidance</span></div>
@@ -120,7 +120,7 @@ export default function Page() {
 
                         <p><strong>By the numbers:</strong> The average cost of a 4-year college education is projected
 
-                            to reach <strong>\$200,000–\$300,000</strong> by 2035. A family that starts saving \$300/month
+                            to reach <strong>\$200,000-\$300,000</strong> by 2035. A family that starts saving \$300/month
 
                             when their child is born can accumulate over <strong>\$120,000</strong> tax-free by age 18.
 
@@ -132,7 +132,7 @@ export default function Page() {
 
                         <div>
 
-                            <h3>Plant the Seed Today — Watch It Grow</h3>
+                            <h3>Plant the Seed Today - Watch It Grow</h3>
 
                             <p>Every day you wait is a compound interest day lost. Let's start building your child's
 
@@ -162,7 +162,7 @@ export default function Page() {
                         <div class="sidebar-card-body">
 
                             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
-                                Start building your child's college fund today — it's never too early.</p>
+                                Start building your child's college fund today - it's never too early.</p>
 <form id="contact-form" onsubmit="handleSubmit(event)">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
                                 <div><label style="font-size:0.8rem; font-weight:700;">First Name *</label><input type="text" name="first_name" required placeholder="First name" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;" /></div>
@@ -179,7 +179,7 @@ export default function Page() {
                             <div style="margin-bottom: 12px;">
                                 <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                 <select name="service" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
-                                    <option value="">— Select a service —</option>
+                                    <option value="">- Select a service -</option>
                                     <option>Financial Needs Analysis</option>
                                     <option>Living Will & Trust</option>
                                     <option>Tax Savings</option>

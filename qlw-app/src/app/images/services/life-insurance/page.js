@@ -19,7 +19,7 @@ export default function Page() {
 
                         <p>Protect the people who matter most. The right life insurance policy ensures your family is
 
-                            financially secure no matter what life brings — today, tomorrow, and beyond.</p>
+                            financially secure no matter what life brings - today, tomorrow, and beyond.</p>
 
                         <a href="/contact" class="btn btn-primary" style="margin-top:22px">Get a Free
                             Quote</a>
@@ -43,7 +43,7 @@ export default function Page() {
                     <div class="content-split">
                         <div class="content-split-text">
                             <h2>The Right Protection for Every Stage of Life</h2>
-                            <p>Life insurance is one of the most powerful financial tools available — yet it's often misunderstood or overlooked until it's too late. At Quantum Leap Wealth, we cut through the complexity to help you find the right coverage at the right cost, built specifically around your family's needs, financial obligations, and long-term goals.</p>
+                            <p>Life insurance is one of the most powerful financial tools available - yet it's often misunderstood or overlooked until it's too late. At Quantum Leap Wealth, we cut through the complexity to help you find the right coverage at the right cost, built specifically around your family's needs, financial obligations, and long-term goals.</p>
                             <p>From income replacement and mortgage protection to estate planning and wealth transfer, we ensure the people you love are never left financially vulnerable.</p>
                         </div>
                         <div class="content-img-wrap">
@@ -131,7 +131,7 @@ export default function Page() {
 
                     <div class="content-cta">
                         <div>
-                            <h3>Protect What Matters Most — Starting Today</h3>
+                            <h3>Protect What Matters Most - Starting Today</h3>
                             <p>A 10-minute conversation with our advisor could save your family from decades of
                                 financial hardship. Don't wait.</p>
                         </div>
@@ -183,7 +183,7 @@ export default function Page() {
                                     <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                     <select name="service"
                                         style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
-                                        <option value="">— Select a service —</option>
+                                        <option value="">- Select a service -</option>
                                         <option>Financial Needs Analysis</option>
                                         <option>Living Will & Trust</option>
                                         <option>Tax Savings</option>

@@ -88,7 +88,7 @@ export default function ContactPage() {
             <h2>Book a Free Consultation</h2>
             <p>
               Fill out the form below and one of our expert advisors will get back to you within 24 hours. No
-              obligations — just a genuine conversation about your financial future.
+              obligations - just a genuine conversation about your financial future.
             </p>
             
             {!isSuccess ? (
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 <div className="form-group">
                   <label>Service of Interest</label>
                   <select name="service">
-                    <option value="">— Select a service —</option>
+                    <option value="">- Select a service -</option>
                     <option>Financial Needs Analysis</option>
                     <option>Living Will & Trust</option>
                     <option>Tax Savings</option>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                 )}
                 
                 <button type="submit" className="form-submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message — It's Free →"}
+                  {isSubmitting ? "Sending..." : "Send Message - It's Free →"}
                 </button>
               </form>
             ) : (
@@ -191,8 +191,8 @@ export default function ContactPage() {
 
             <div className="hours-table">
               <h4>📅 Office Hours</h4>
-              <div className="hours-row"><span>Monday – Friday</span><span>9:00 AM – 6:00 PM EST</span></div>
-              <div className="hours-row"><span>Saturday</span><span>10:00 AM – 4:00 PM EST</span></div>
+              <div className="hours-row"><span>Monday - Friday</span><span>9:00 AM - 6:00 PM EST</span></div>
+              <div className="hours-row"><span>Saturday</span><span>10:00 AM - 4:00 PM EST</span></div>
               <div className="hours-row"><span>Sunday</span><span>By Appointment Only</span></div>
             </div>
 

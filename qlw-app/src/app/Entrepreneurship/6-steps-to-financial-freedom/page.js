@@ -1,4 +1,4 @@
-import "./6steps.css";
+﻿import "./6steps.css";
 
 export default function Page() {
   return (
@@ -26,7 +26,7 @@ export default function Page() {
 
                     <p class="page-hero-sub">A proven, step-by-step framework to move from financial stress to total
 
-                        financial independence — used by hundreds of Quantum Leap Wealth clients across California.</p>
+                        financial independence - used by hundreds of Quantum Leap Wealth clients across California.</p>
 
                     <div style="display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap">
 
@@ -76,7 +76,7 @@ export default function Page() {
 
                         for working families who want to stop living paycheck to paycheck and start building real,
 
-                        lasting wealth. Follow these steps in order — every one matters.</p>
+                        lasting wealth. Follow these steps in order - every one matters.</p>
 
                 </div>
 
@@ -99,7 +99,7 @@ export default function Page() {
 
                         <p>Improving cash flow is an essential part of financial planning. We start by identifying
 
-                            expenses that can be reduced, eliminated, or optimized — then we identify opportunities to
+                            expenses that can be reduced, eliminated, or optimized - then we identify opportunities to
 
                             increase your revenue.</p>
 
@@ -143,7 +143,7 @@ export default function Page() {
 
                         <p>High-interest debt is the single biggest obstacle to financial freedom. We work with you to
 
-                            create a structured, sustainable plan to eliminate debt — starting with the most damaging
+                            create a structured, sustainable plan to eliminate debt - starting with the most damaging
 
                             and ending with the last dollar owed.</p>
 
@@ -195,11 +195,11 @@ export default function Page() {
 
                         <h2>Emergency Fund</h2>
 
-                        <p>To properly plan and be prepared for emergencies, 3–6 months of net income should be in
+                        <p>To properly plan and be prepared for emergencies, 3-6 months of net income should be in
 
                             reserve and accessible in a bank account. Unfortunately, the only savings most people have
 
-                            is in their 401(k) or IRA — which is subject to restrictions and early withdrawal penalties.
+                            is in their 401(k) or IRA - which is subject to restrictions and early withdrawal penalties.
 
                         </p>
 
@@ -211,7 +211,7 @@ export default function Page() {
 
                             <li>Target 3 months of expenses minimum (6 for self-employed)</li>
 
-                            <li>Keep funds liquid — high-yield savings account, not retirement accounts</li>
+                            <li>Keep funds liquid - high-yield savings account, not retirement accounts</li>
 
                             <li>Automate contributions until the goal is reached</li>
 
@@ -241,7 +241,7 @@ export default function Page() {
 
                         <h2>Proper Protection</h2>
 
-                        <p>The majority of Americans do not have enough life insurance — nor do they have the right type
+                        <p>The majority of Americans do not have enough life insurance - nor do they have the right type
 
                             for their family's needs. Furthermore, as the cost of healthcare rises and we are living
 
@@ -249,7 +249,7 @@ export default function Page() {
 
                             terminal illness.</p>
 
-                        <p>Proper protection means your family's financial future is secure no matter what happens —
+                        <p>Proper protection means your family's financial future is secure no matter what happens -
 
                             illness, disability, or death.</p>
 
@@ -300,7 +300,7 @@ export default function Page() {
 
                         <p>Long-term savings must outpace inflation and minimize taxation in order to achieve financial
 
-                            success. We educate clients on the many options available — and help them select the right
+                            success. We educate clients on the many options available - and help them select the right
 
                             vehicles for their situation.</p>
 
@@ -349,7 +349,7 @@ export default function Page() {
 
                             wealthy to help our clients keep their hard-earned money in the family.</p>
 
-                        <p>Wealth preservation means your legacy outlasts you — that the assets you built benefit your
+                        <p>Wealth preservation means your legacy outlasts you - that the assets you built benefit your
 
                             children, grandchildren, and causes you care about.</p>
 
@@ -418,7 +418,7 @@ export default function Page() {
 
                     <div class="partner-cta-right">
                         <h2>Partner with Quantum Leap Wealth. Build Your Future.</h2>
-                        <p>Join a community of dedicated professionals making a difference in the world of finance. Start building your future today — your first consultation is always free.</p>
+                        <p>Join a community of dedicated professionals making a difference in the world of finance. Start building your future today - your first consultation is always free.</p>
                         <div class="partner-cta-btns">
                             <a href="/contact" class="btn btn-primary">Book an Appointment</a>
                             <a href="/contact" class="btn btn-outline-white">Explore Business Opportunities</a>

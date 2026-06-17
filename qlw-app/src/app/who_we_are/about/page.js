@@ -23,7 +23,7 @@ export default function Page() {
                     <h1>About <span class="highlight">Quantum Leap Wealth</span></h1>
 
                     <p class="page-hero-sub">Dedicated to empowering families through wealth creation, personalized
-                        financial education, and expert guidance — leaving no family behind.</p>
+                        financial education, and expert guidance - leaving no family behind.</p>
 
                 </div>
 
@@ -71,7 +71,7 @@ export default function Page() {
                         <h2>Built on Strategy. Driven by Purpose.</h2>
 
                         <p>At Quantum Leap Wealth, we believe financial planning should be intentional,
-                            structured, and built for long-term security — not driven by trends or guesswork.</p>
+                            structured, and built for long-term security - not driven by trends or guesswork.</p>
 
                         <p>I founded this firm with a simple mission: help families protect what they've built, grow
                             wealth efficiently, and create a legacy that lasts generations.</p>
@@ -79,7 +79,7 @@ export default function Page() {
                         <p>With a background rooted in analytical thinking and structured problem-solving, we
                             approach
                             financial planning differently. Every strategy we design is customized, data-driven, and
-                            aligned with your long-term vision — not just short-term market noise.</p>
+                            aligned with your long-term vision - not just short-term market noise.</p>
 
                         <p><strong>We specialize in:</strong></p>
                         <ul
@@ -108,7 +108,7 @@ export default function Page() {
                             <li>Clear, transparent guidance</li>
                             <li>Thoughtful strategy design</li>
                             <li>Ongoing reviews and adjustments</li>
-                            <li>Long-term partnership — not a one-time transaction</li>
+                            <li>Long-term partnership - not a one-time transaction</li>
                         </ul>
 
                         <p>Financial confidence doesn't come from products.<br>
@@ -189,7 +189,7 @@ export default function Page() {
                     <h2 class="section-title">Our Core Values</h2>
 
                     <p class="section-sub">Everything we do at Quantum Leap Wealth is guided by these
-                        principles — they
+                        principles - they
 
                         aren't just words, they're the foundation of every conversation, every plan, and every outcome
 
@@ -207,7 +207,7 @@ export default function Page() {
 
                         <p>We operate with complete transparency. Your financial future is sacred to us, and every
 
-                            recommendation we make is in your best interest — full stop.</p>
+                            recommendation we make is in your best interest - full stop.</p>
 
                     </div>
 
@@ -229,7 +229,7 @@ export default function Page() {
 
                         <h3>Financial Education</h3>
 
-                        <p>We don't just build plans — we teach you how to understand them. An informed client is an
+                        <p>We don't just build plans - we teach you how to understand them. An informed client is an
 
                             empowered client, and empowered clients build lasting wealth.</p>
 
@@ -265,7 +265,7 @@ export default function Page() {
 
                         <h3>Excellence in Service</h3>
 
-                        <p>98% client satisfaction isn't an accident — it's the result of going above and beyond at
+                        <p>98% client satisfaction isn't an accident - it's the result of going above and beyond at
 
                             every touchpoint, from the first consultation to ongoing portfolio reviews.</p>
 
@@ -361,7 +361,7 @@ export default function Page() {
                         <p>Through our partnerships with world-class carriers and vendors, Quantum Leap Wealth
                             Services delivers
 
-                            top-tier wealth solutions that were once only available to the ultra-wealthy — now
+                            top-tier wealth solutions that were once only available to the ultra-wealthy - now
 
                             accessible to Middle America.</p>
 

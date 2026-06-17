@@ -116,7 +116,7 @@ export default function Page() {
 
                             <div class="video-featured-title">Quantum Leap Wealth Annual Community Seminar 2025</div>
 
-                            <p class="video-featured-desc">A full recording of our flagship financial planning seminar —
+                            <p class="video-featured-desc">A full recording of our flagship financial planning seminar -
 
                                 covering investment strategies, retirement planning, and wealth-building frameworks for
 
@@ -184,7 +184,7 @@ export default function Page() {
 
                             <span class="video-tag">Seminar</span>
 
-                            <div class="video-card-title">Understanding Life Insurance — Full Seminar</div>
+                            <div class="video-card-title">Understanding Life Insurance - Full Seminar</div>
 
                             <p class="video-card-desc">A complete breakdown of term vs. whole life insurance for
 
@@ -304,7 +304,7 @@ export default function Page() {
 
                             <span class="video-tag">Team</span>
 
-                            <div class="video-card-title">Meet Our Team — Who We Are &amp; Why We Do This</div>
+                            <div class="video-card-title">Meet Our Team - Who We Are &amp; Why We Do This</div>
 
                             <p class="video-card-desc">Anuradha and the Quantum Leap Wealth team share their mission and
 

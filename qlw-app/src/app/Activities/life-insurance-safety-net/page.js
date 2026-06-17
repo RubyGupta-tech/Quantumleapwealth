@@ -21,7 +21,7 @@ export default function Page() {
                         <img src="/images/life_insurance_hero.png"
                             alt="Why Life Insurance Is Your Family's Safety Net" />
 
-                        <p>At its core, life insurance isn't just a financial product—it's an act of love. It represents a
+                        <p>At its core, life insurance isn't just a financial product-it's an act of love. It represents a
                             promise that your family's future will be protected, no matter what happens to you. For
                             many,
                             it's the most critical component of a comprehensive financial plan.</p>

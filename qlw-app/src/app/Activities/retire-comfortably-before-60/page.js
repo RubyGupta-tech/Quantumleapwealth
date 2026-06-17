@@ -22,7 +22,7 @@ export default function Page() {
                         alt="How to Retire Comfortably Before 60" />
 
                     <p>Retiring before age 60, often referred to as "early retirement," is a dream for many, but it
-                        requires a meticulous financial strategy. The key isn't just saving more—it's about building
+                        requires a meticulous financial strategy. The key isn't just saving more-it's about building
                         multiple income streams and managing your biggest expenses before you stop working.</p>
 
                     <p>Here are three essential steps to position yourself for a comfortable early retirement.</p>

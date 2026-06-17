@@ -17,7 +17,7 @@ export default function Page() {
 
                         <h1>Retirement Planning</h1>
 
-                        <p>Your retirement should be your reward — not a worry. We help you build a bulletproof
+                        <p>Your retirement should be your reward - not a worry. We help you build a bulletproof
 
                             retirement plan so you can live the life you've always envisioned, on your terms.</p>
 
@@ -44,7 +44,7 @@ export default function Page() {
                     <div class="content-split">
                         <div class="content-split-text">
                             <h2>Build a Future You Can Count On</h2>
-                            <p>At Quantum Leap Wealth, retirement planning is not a one-size-fits-all formula. It's a deeply personal process that considers your desired lifestyle, income needs, health, family, and long-term legacy. We start building your retirement roadmap from wherever you are today — whether you're 30 years away or 3 years away from your retirement date.</p>
+                            <p>At Quantum Leap Wealth, retirement planning is not a one-size-fits-all formula. It's a deeply personal process that considers your desired lifestyle, income needs, health, family, and long-term legacy. We start building your retirement roadmap from wherever you are today - whether you're 30 years away or 3 years away from your retirement date.</p>
                             <p>Our advisors help you navigate 401(k)s, IRAs, Social Security optimization, pension integration, and income drawdown strategies to ensure your money lasts as long as you do.</p>
                         </div>
                         <div class="content-img-wrap">
@@ -113,9 +113,9 @@ export default function Page() {
 
                         <p><strong>Key insight:</strong> Retiring at 65 today means you may need your money to last
 
-                            <strong>25–30 years</strong>. A well-structured retirement plan is the single most important
+                            <strong>25-30 years</strong>. A well-structured retirement plan is the single most important
 
-                            investment you can make. Start now — the earlier you begin, the more your money works for
+                            investment you can make. Start now - the earlier you begin, the more your money works for
 
                             you.
                         </p>
@@ -128,7 +128,7 @@ export default function Page() {
 
                             <h3>Your Dream Retirement Starts with One Conversation</h3>
 
-                            <p>Let us map out exactly how you get from today to your ideal retirement — stress-free and
+                            <p>Let us map out exactly how you get from today to your ideal retirement - stress-free and
 
                                 on schedule.</p>
 
@@ -173,7 +173,7 @@ export default function Page() {
                             <div style="margin-bottom: 12px;">
                                 <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                 <select name="service" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
-                                    <option value="">— Select a service —</option>
+                                    <option value="">- Select a service -</option>
                                     <option>Financial Needs Analysis</option>
                                     <option>Living Will & Trust</option>
                                     <option>Tax Savings</option>

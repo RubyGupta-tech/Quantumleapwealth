@@ -63,7 +63,7 @@ export default function Page() {
                     <div class="content-split">
                         <div class="content-split-text">
                             <h2>Smart Financial Needs Analysis for a Prosperous Future</h2>
-                            <p>At Quantum Leap Wealth, we believe that investing is not just about picking the right stocks — it's about building a comprehensive, personalized strategy that aligns every dollar you invest with your life goals. Whether you're just starting out or looking to optimize an existing portfolio, our expert advisors are here to guide you every step of the way.</p>
+                            <p>At Quantum Leap Wealth, we believe that investing is not just about picking the right stocks - it's about building a comprehensive, personalized strategy that aligns every dollar you invest with your life goals. Whether you're just starting out or looking to optimize an existing portfolio, our expert advisors are here to guide you every step of the way.</p>
                             <p>From securing your retirement to funding your children's education, we design investment plans that grow with you, adapt to market changes, and always keep your long-term vision at the center of every decision.</p>
                         </div>
                         <div class="content-img-wrap">
@@ -78,7 +78,7 @@ export default function Page() {
                         </div>
                         <div class="content-split-text">
                             <h3>Why Choose Financial Needs Analysis?</h3>
-                            <p>Investment planning goes beyond simply selecting assets. It creates a structured path to financial independence by aligning each investment with your short- and long-term objectives — protecting what you've built while growing what you need for the future.</p>
+                            <p>Investment planning goes beyond simply selecting assets. It creates a structured path to financial independence by aligning each investment with your short- and long-term objectives - protecting what you've built while growing what you need for the future.</p>
 
                             <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
                                 <div class="feature-item"><div class="feature-check">✓</div><span>Personalized Goal Setting</span></div>
@@ -96,7 +96,7 @@ export default function Page() {
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-split-text">
                             <h3>Our Financial Needs Analysis Process</h3>
-                            <p>We follow a proven, structured approach to help you build wealth confidently and consistently — no guesswork, no cookie-cutter solutions.</p>
+                            <p>We follow a proven, structured approach to help you build wealth confidently and consistently - no guesswork, no cookie-cutter solutions.</p>
 
                             <div class="process-inline">
                                 <div class="process-inline-step">
@@ -110,14 +110,14 @@ export default function Page() {
                                     <div class="pstep-num">02</div>
                                     <div class="pstep-body">
                                         <h4>One-on-One Deep Dive</h4>
-                                        <p>Our advisor sits with you in a focused session to map out a complete picture of your financial life — risk tolerance, time horizon, tax situation, and growth expectations.</p>
+                                        <p>Our advisor sits with you in a focused session to map out a complete picture of your financial life - risk tolerance, time horizon, tax situation, and growth expectations.</p>
                                     </div>
                                 </div>
                                 <div class="process-inline-step">
                                     <div class="pstep-num">03</div>
                                     <div class="pstep-body">
                                         <h4>Choose Your Best Plan</h4>
-                                        <p>We present a customized investment strategy — a diversified, tax-efficient portfolio plan designed specifically for your goals, timeline, and risk profile.</p>
+                                        <p>We present a customized investment strategy - a diversified, tax-efficient portfolio plan designed specifically for your goals, timeline, and risk profile.</p>
                                     </div>
                                 </div>
                                 <div class="process-inline-step" style="padding-bottom: 0px;">
@@ -144,7 +144,7 @@ export default function Page() {
 
                             accumulate an average of <strong>3.9x more wealth</strong> over 15 years compared to those
 
-                            who invest without professional guidance. Start today — every month counts.</p>
+                            who invest without professional guidance. Start today - every month counts.</p>
 
                     </div>
 
@@ -213,7 +213,7 @@ export default function Page() {
                             <div style="margin-bottom: 12px;">
                                 <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                 <select name="service" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
-                                    <option value="">— Select a service —</option>
+                                    <option value="">- Select a service -</option>
                                     <option>Financial Needs Analysis</option>
                                     <option>Living Will & Trust</option>
                                     <option>Tax Savings</option>

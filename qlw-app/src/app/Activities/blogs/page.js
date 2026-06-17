@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect } from "react";
 import "./blogs.css";
 
@@ -126,7 +126,7 @@ export default function Page() {
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
                                                 <a href="/Activities/life-insurance-safety-net">
-                                                    <img src="/images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                    <img src="/images/life_insurance_hero.png" alt="Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
                                             <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
@@ -136,7 +136,7 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="/Activities/life-insurance-safety-net" style="text-decoration: none; color: inherit;">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/life-insurance-safety-net" style="text-decoration: none; color: inherit;">Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
@@ -147,7 +147,7 @@ export default function Page() {
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
                                                 <a href="/Activities/retire-comfortably-before-60">
-                                                    <img src="/images/retirement_hero.png" alt="How to Retire Comfortably Before 60 — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                    <img src="/images/retirement_hero.png" alt="How to Retire Comfortably Before 60 - Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
                                             <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
@@ -157,7 +157,7 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="/Activities/retire-comfortably-before-60" style="text-decoration: none; color: inherit;">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/retire-comfortably-before-60" style="text-decoration: none; color: inherit;">How to Retire Comfortably Before 60 - Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Here are three essential steps to position yourself for a comfortable early retirement....</p>
                                                 <div style="margin-top:auto">
@@ -168,7 +168,7 @@ export default function Page() {
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
                                                 <a href="/Activities/start-saving-college">
-                                                    <img src="/images/college_saving_hero.png" alt="Start Saving for College When Your Child Is Born — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                    <img src="/images/college_saving_hero.png" alt="Start Saving for College When Your Child Is Born - Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
                                             <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
@@ -178,7 +178,7 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="/Activities/start-saving-college" style="text-decoration: none; color: inherit;">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/start-saving-college" style="text-decoration: none; color: inherit;">Start Saving for College When Your Child Is Born - Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
@@ -189,7 +189,7 @@ export default function Page() {
                                         <div class="blog-card reveal" style="display:flex; flex-direction:column;">
                                             <div class="blog-card-img">
                                                 <a href="/Activities/will-vs-trust">
-                                                    <img src="/images/will_vs_trust_hero.png" alt="Will vs. Trust: What Do I Need? — Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
+                                                    <img src="/images/will_vs_trust_hero.png" alt="Will vs. Trust: What Do I Need? - Quantum Leap Wealth" style="object-fit:cover; height:200px; width:100%;" />
                                                 </a>
                                             </div>
                                             <div class="blog-card-content" style="flex-grow:1; display:flex; flex-direction:column; padding: 24px 24px 32px;">
@@ -199,7 +199,7 @@ export default function Page() {
                                                     <span>2 min read</span>
                                                 </div>
                                                 <h3 class="blog-card-title" style="margin-bottom: 12px; font-size: 1.25rem;">
-                                                    <a href="/Activities/will-vs-trust" style="text-decoration: none; color: inherit;">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a>
+                                                    <a href="/Activities/will-vs-trust" style="text-decoration: none; color: inherit;">Will vs. Trust: What Do I Need? - Quantum Leap Wealth</a>
                                                 </h3>
                                                 <p class="blog-card-excerpt" style="margin-bottom: 20px; color: #555; line-height: 1.6;">Latest post from Quantum Leap Wealth.</p>
                                                 <div style="margin-top:auto">
@@ -281,10 +281,10 @@ export default function Page() {
                                     <div class="sidebar-card">
                                         <h3>🕐 Recent Posts</h3>
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
-                                            <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born — Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? — Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 - Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born - Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? - Quantum Leap Wealth</a><span>Mar 19</span></li>
                                         </ul>
                                     </div>
 
@@ -306,7 +306,7 @@ export default function Page() {
 
                                 <h2>Start Your Financial Freedom Journey Today</h2>
 
-                                <p>Don't wait — book a FREE 30-minute consultation with one of our Licensed Financial
+                                <p>Don't wait - book a FREE 30-minute consultation with one of our Licensed Financial
                                     Professionals
                                     now.</p>
 

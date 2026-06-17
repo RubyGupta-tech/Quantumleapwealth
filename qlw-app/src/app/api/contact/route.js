@@ -171,12 +171,12 @@ export async function POST(request) {
     `;
 
 
-    // 5. Send both emails using verified domain — independently so one failure doesn't block the other
+    // 5. Send both emails using verified domain - independently so one failure doesn't block the other
     const [adminResult, clientResult] = await Promise.allSettled([
       resend.emails.send({
         from: "Quantum Leap Wealth <noreply@quantumleapwealth.com>",
         to: [notificationEmail],
-        subject: `🔔 New Lead: ${name} — ${service || "General Inquiry"}`,
+        subject: `🔔 New Lead: ${name} - ${service || "General Inquiry"}`,
         html: adminEmailHtml,
       }),
       resend.emails.send({

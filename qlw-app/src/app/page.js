@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ScrollAnimator from "@/components/ScrollAnimator";
@@ -143,7 +143,7 @@ export default function HomePage() {
             </h1>
             <p className="hero-split-desc">
               At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for
-              long-term security — not driven by trends or guesswork.
+              long-term security - not driven by trends or guesswork.
             </p>
             <div className="hero-split-highlights">
               <div className="hero-split-hl" style={{ animationDelay: "1.8s" }}>
@@ -298,7 +298,7 @@ export default function HomePage() {
             <ServiceCard href="/images/services/tax-saving" img="/images/LifeProtection_pics.png" title="Tax Savings" delay="3"
               desc="Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally." />
             <ServiceCard href="/images/services/retirement-planning" img="/images/ritermentplanning_pics.png" title="Retirement Planning" delay="1"
-              desc="Plan the retirement you deserve — comfortable, secure, and financially independent from day one." />
+              desc="Plan the retirement you deserve - comfortable, secure, and financially independent from day one." />
             <ServiceCard href="/images/services/kids-college" img="/images/kids_college_planning.png" title="Kids College Fund" delay="2"
               desc="Invest in your child's future today with education savings plans tailored to your family's timeline and goals." />
             <ServiceCard href="/images/services/life-insurance" img="/images/LifeProtection_PermanentInsurance_pics.png" title="Life Insurance" delay="3"
@@ -313,7 +313,7 @@ export default function HomePage() {
           <h2 className="why-choose-title">Why Choose Us?</h2>
           <div className="why-choose-grid">
             <WhyChooseItem icon="🎯" title="Expert Guidance" desc="Licensed professionals providing personalized financial strategies tailored to your goals." />
-            <WhyChooseItem icon="📋" title="Comprehensive Solutions" desc="From insurance to real estate — all your financial needs under one trusted roof." />
+            <WhyChooseItem icon="📋" title="Comprehensive Solutions" desc="From insurance to real estate - all your financial needs under one trusted roof." />
             <WhyChooseItem icon="📈" title="Proven Results" desc="Trusted by hundreds of families to build, protect, and grow their wealth for generations." />
           </div>
         </div>
@@ -437,7 +437,7 @@ export default function HomePage() {
                   <div className="opp-form-group grid-span-2">
                     <label>Service of Interest</label>
                     <select name="service">
-                      <option value="">— Select a service —</option>
+                      <option value="">- Select a service -</option>
                       <option>Financial Needs Analysis</option>
                       <option>Living Will &amp; Trust</option>
                       <option>Tax Savings</option>

@@ -44,7 +44,7 @@ export default function Page() {
                     <div class="content-split">
                         <div class="content-split-text">
                             <h2>Keep More of Your Hard-Earned Money</h2>
-                            <p>At Quantum Leap Wealth, we believe every dollar matters. The difference between a good financial plan and a great one often comes down to tax efficiency. Our advisors work year-round — not just at tax season — to identify every legal opportunity to reduce your tax liability and accelerate your wealth-building journey.</p>
+                            <p>At Quantum Leap Wealth, we believe every dollar matters. The difference between a good financial plan and a great one often comes down to tax efficiency. Our advisors work year-round - not just at tax season - to identify every legal opportunity to reduce your tax liability and accelerate your wealth-building journey.</p>
                             <p>Whether you're a salaried employee, a business owner, or an investor, we design tax strategies uniquely tailored to your income structure, goals, and life stage.</p>
                         </div>
                         <div class="content-img-wrap">
@@ -118,7 +118,7 @@ export default function Page() {
 
                                 per year</strong> due to missed deductions and poor planning. Our clients typically save
 
-                            2–4x the cost of our advisory fee in tax savings alone.</p>
+                            2-4x the cost of our advisory fee in tax savings alone.</p>
 
                     </div>
 
@@ -126,7 +126,7 @@ export default function Page() {
 
                         <div>
 
-                            <h3>Stop Overpaying — Start Saving Smarter</h3>
+                            <h3>Stop Overpaying - Start Saving Smarter</h3>
 
                             <p>Let our tax planning specialists build a year-round strategy tailored to your income and
 
@@ -173,7 +173,7 @@ export default function Page() {
                             <div style="margin-bottom: 12px;">
                                 <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                 <select name="service" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
-                                    <option value="">— Select a service —</option>
+                                    <option value="">- Select a service -</option>
                                     <option>Financial Needs Analysis</option>
                                     <option>Living Will & Trust</option>
                                     <option>Tax Savings</option>

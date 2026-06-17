@@ -177,7 +177,7 @@ export default function Page() {
 
                             <p>Our Licensed Financial Professionals are available 24/7 to answer your questions. We
 
-                                believe every family deserves access to expert financial guidance — no cost, no
+                                believe every family deserves access to expert financial guidance - no cost, no
 
                                 commitment for your first consultation.</p>
 

@@ -7,7 +7,7 @@ export default function Footer() {
   if (pathname?.startsWith("/admin")) return null;
   return (
     <>
-      {/* PRE-FOOTER CTA BANNER — above footer */}
+      {/* PRE-FOOTER CTA BANNER - above footer */}
       
 
       <footer className="footer" role="contentinfo">

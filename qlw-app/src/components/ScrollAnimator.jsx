@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -44,5 +44,5 @@ export default function ScrollAnimator() {
     };
   }, [pathname]);
 
-  return null; // This component renders nothing — it just runs JS
+  return null; // This component renders nothing - it just runs JS
 }

@@ -1,4 +1,4 @@
-import "./photos.css";
+﻿import "./photos.css";
 
 export default function Page() {
   return (
@@ -94,7 +94,7 @@ export default function Page() {
 
 
 
-                <!-- Placeholder grid — replace each .gallery-card-inner with <img src="..."> when client sends photos -->
+                <!-- Placeholder grid - replace each .gallery-card-inner with <img src="..."> when client sends photos -->
 
                                 <div class="gallery-grid" id="gallery-grid">
                     <!-- Events -->
@@ -399,7 +399,7 @@ export default function Page() {
 
                     <h3>More Photos Coming Soon!</h3>
 
-                    <p>We're constantly adding new memories. Check back often — or share your own photos with us to
+                    <p>We're constantly adding new memories. Check back often - or share your own photos with us to
 
                         feature here!</p>
 
