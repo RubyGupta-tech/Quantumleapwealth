@@ -37,7 +37,7 @@ export async function POST(request) {
     const dbEmailSetting = await prisma.setting.findUnique({
       where: { key: "notification_email" },
     });
-    const notificationEmail = dbEmailSetting?.value || "quantumlfs@gmail.com";
+    const notificationEmail = dbEmailSetting?.value || "connect@quantumleapwealth.com";
 
     // 3. Admin notification email HTML
     const adminEmailHtml = `
@@ -45,7 +45,7 @@ export async function POST(request) {
         
         <!-- Header with logo -->
         <div style="background:#0a2540;padding:24px 32px;display:flex;align-items:center;gap:16px;">
-          <img src="https://www.quantumleapwealth.com/images/QWL_logo_backup.png" alt="Logo"
+          <img src="https://www.quantumleapwealth.com/images/icon.png" alt="Logo"
             style="height:50px;width:auto;background:white;padding:6px 10px;border-radius:8px;" />
           <div>
             <h1 style="color:#c9a84c;font-size:1rem;margin:0;letter-spacing:1px;text-transform:uppercase;">Quantum Leap Wealth</h1>
@@ -96,7 +96,7 @@ export async function POST(request) {
         <div style="background:#f8fafc;padding:20px 32px;text-align:center;border-top:1px solid #e2e8f0;">
           <p style="margin:0 0 4px;color:#0a2540;font-weight:700;font-size:0.9rem;">Quantum Leap Wealth</p>
           <p style="margin:0;color:#94a3b8;font-size:0.8rem;">
-            📞 (+1) 218-277-7773 (PIN: 41966) &nbsp;|&nbsp; ✉️ quantumlfs@gmail.com &nbsp;|&nbsp; 📍 California, USA
+            📞 (+1) 218-277-7773 (PIN: 41966) &nbsp;|&nbsp; ✉️ connect@quantumleapwealth.com &nbsp;|&nbsp; 📍 California, USA
           </p>
         </div>
       </div>
@@ -112,7 +112,7 @@ export async function POST(request) {
             <td align="center" style="padding:40px 20px; background-color:#0a2540" bgcolor="#0a2540">
               <div style="background-color:#ffffff; padding:12px 16px; border-radius:12px; display:inline-block; margin-bottom:16px;">
                 <img 
-                  src="https://www.quantumleapwealth.com/images/QWL_logo_original.png"
+                  src="https://www.quantumleapwealth.com/images/icon.png"
                   alt="Quantum Leap Wealth Logo"
                   style="height:65px; width:auto; display:block; border:0;"
                 />
@@ -150,7 +150,7 @@ export async function POST(request) {
               <td style="padding-bottom:5px;"><strong>Phone:</strong> (+1) 218-277-7773 (PIN: 41966)</td>
             </tr>
             <tr>
-              <td style="padding-bottom:5px;"><strong>Email:</strong> <a href="mailto:quantumlfs@gmail.com" style="color:#6b7c8d; text-decoration:none;">quantumlfs@gmail.com</a></td>
+              <td style="padding-bottom:5px;"><strong>Email:</strong> <a href="mailto:connect@quantumleapwealth.com" style="color:#6b7c8d; text-decoration:none;">connect@quantumleapwealth.com</a></td>
             </tr>
             <tr>
               <td style="padding-bottom:5px;"><strong>Website:</strong> <a href="https://www.quantumleapwealth.com" style="color:#6b7c8d; text-decoration:none;">www.quantumleapwealth.com</a></td>

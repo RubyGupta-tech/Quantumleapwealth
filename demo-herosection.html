@@ -1,505 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DEMO — Hero Concept | Quantum Leap Wealth</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Bebas+Neue&display=swap"
-        rel="stylesheet" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEMO 3 — Corporate Vision Concept | Quantum Leap Wealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; font-family: 'Inter', sans-serif; background: #081a3f; }
 
-        html,
-        body {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-        }
+    .demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: #c9a84c; color: #0a1628; text-align: center;
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 6px;
+    }
 
-        /* ─────────────────────────────────
-       DEMO NOTICE
-    ───────────────────────────────── */
-        .demo-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            background: linear-gradient(90deg, #c9a84c, #e6c55a, #c9a84c);
-            color: #0a1628;
-            text-align: center;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding: 6px;
-        }
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      padding-top: 28px; display: flex; flex-direction: column;
+      justify-content: center; overflow: hidden;
+      background-color: #060d1f; /* Extremely deep navy/black */
+      background: radial-gradient(circle at 50% 50%, #0b1a38 0%, #050a14 100%);
+    }
 
-        /* ─────────────────────────────────
-       HERO — 100vh, dark navy
-    ───────────────────────────────── */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            padding-top: 28px;
-            /* demo bar height */
-            background: #090f1e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+    /* Layered Background Elements */
+    .bg-glow {
+      position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0;
+    }
+    .bg-glow-blue {
+      width: 800px; height: 800px; background: rgba(56, 130, 246, 0.2);
+      top: -200px; left: -200px;
+    }
+    .bg-glow-gold {
+      width: 600px; height: 600px; background: rgba(201, 168, 76, 0.15);
+      bottom: -100px; right: 10vw;
+    }
 
-        /* ─────────────────────────────────
-       BACKGROUND ORBITS — CLEAN RINGS
-    ───────────────────────────────── */
-        .orbits {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
+    .poly {
+      position: absolute; z-index: 1;
+      backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    }
+    .poly-1 {
+      width: 70vw; height: 120vh; top: -10vh; left: -15vw;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.4));
+      border-right: 1px solid rgba(255,255,255,0.1);
+      clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    }
+    .poly-2 {
+      width: 50vw; height: 100vh; bottom: 0; right: -5vw;
+      background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(0,0,0,0.6));
+      border-left: 1px solid rgba(201,168,76,0.2);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .poly-3 {
+      width: 400px; height: 400px; top: 15vh; right: 15vw;
+      background: linear-gradient(135deg, rgba(56, 130, 246, 0.08), transparent);
+      border: 1px solid rgba(56, 130, 246, 0.2);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .poly-4 {
+      width: 250px; height: 250px; bottom: 25vh; left: 35vw;
+      background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent);
+      border: 1px solid rgba(201,168,76,0.3);
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
 
-        .orbit-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.06);
-            animation: floatOrbit 25s linear infinite;
-        }
+    .quantum-grid {
+      position: absolute; inset: 0; z-index: 2;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
 
-        .r1 {
-            width: 800px;
-            height: 800px;
-            top: -200px;
-            right: -200px;
-            border-color: rgba(201, 168, 76, 0.3);
-            /* gold ring */
-            background:
-                radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #090f1e 80%),
-                url('images/hero_prosperity.png') center/cover no-repeat;
-            box-shadow: 0 0 80px 40px #090f1e inset;
-            mix-blend-mode: screen;
-            opacity: 0.9;
-            animation-duration: 60s;
-        }
+    /* NAVBAR */
+    .nav {
+      position: absolute; top: 50px; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%;
+    }
+    .nav-logo {
+      background: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; text-decoration: none;
+    }
+    .nav-logo img { height: 45px; width: auto; display: block; }
+    
+    .brand-text {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      font-weight: 800; color: #0a2540; display: flex;
+      flex-direction: column; align-items: center; line-height: 1.05;
+    }
+    .brand-wealth {
+      font-size: 0.55em; color: #c9a84c; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.15em; margin-top: 4px;
+      display: flex; align-items: center; width: 100%; gap: 8px;
+    }
+    .brand-wealth::before, .brand-wealth::after { content: ''; flex: 1; height: 1.5px; }
+    .brand-wealth::before { background: linear-gradient(to right, transparent, #c9a84c); }
+    .brand-wealth::after { background: linear-gradient(to left, transparent, #c9a84c); }
+    
+    .nav-right { display: flex; align-items: center; gap: 40px; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a {
+      color: #ffffff; text-decoration: none; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 0.7; }
+    
+    .nav-login {
+      background: #ffffff; color: #0b1d42; padding: 10px 28px;
+      font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none; transition: all 0.2s;
+    }
+    .nav-login:hover { background: #e0e0e0; }
 
-        .r2 {
-            width: 1200px;
-            height: 1200px;
-            bottom: -400px;
-            left: -300px;
-            border-color: rgba(56, 130, 246, 0.2);
-            /* blue ring */
-            background:
-                radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #090f1e 85%),
-                url('images/hero_prosperity.png') center/cover no-repeat;
-            box-shadow: 0 0 120px 60px #090f1e inset;
-            mix-blend-mode: screen;
-            opacity: 0.8;
-            animation-duration: 80s;
-            animation-direction: reverse;
-        }
+    /* MAIN TEXT CONTENT */
+    .hero-layout {
+      position: relative; z-index: 10; width: 100%; padding: 0 6%;
+      display: flex; flex-direction: row; align-items: center; gap: 40px;
+      justify-content: space-between;
+    }
+    
+    .hero-image {
+      flex: 0 0 35%;
+      display: flex; justify-content: flex-end;
+      padding-right: 2%;
+    }
+    .hero-image img {
+      width: 100%; max-width: 380px; height: auto; object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+      border-radius: 16px; /* Smooth corners if it's a solid photo */
+    }
 
-        .r3 {
-            width: 600px;
-            height: 600px;
-            top: 30%;
-            left: 40%;
-            border-color: rgba(255, 255, 255, 0.05);
-            /* faint white ring */
-            animation-duration: 25s;
-        }
+    .hero-content {
+      flex: 0 1 60%;
+      min-width: 0; /* Prevents nowrap text from pushing the image */
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    
+    .hgi-line1 {
+      font-size: clamp(2.5rem, 3.8vw, 6rem); font-weight: 700; color: #ffffff;
+      letter-spacing: 0.05em; line-height: 1.1; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hgi-line2 {
+      font-size: clamp(3.5rem, 5.2vw, 8.5rem); font-weight: 900; color: #ffffff;
+      font-style: italic; letter-spacing: 0.03em; line-height: 1.1;
+      text-transform: uppercase; margin-bottom: 25px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      white-space: nowrap;
+    }
+    .hgi-line3 {
+      font-size: clamp(1.2rem, 2.3vw, 3.5rem); font-weight: 500; color: #ffffff;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-        @keyframes floatOrbit {
-            0% {
-                transform: rotate(0deg) translate(50px) rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg) translate(50px) rotate(-360deg);
-            }
-        }
-
-        /* Subtle Grid Overlay */
-        .grid-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
-            background-size: 70px 70px;
-        }
-
-        /* ─────────────────────────────────
-       NAVBAR
-    ───────────────────────────────── */
-        .nav {
-            position: absolute;
-            top: 34px;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 56px;
-        }
-
-        .nav-logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #c9a84c;
-        }
-
-        .nav-cta {
-            background: transparent;
-            border: 1.5px solid rgba(201, 168, 76, 0.6);
-            color: #c9a84c;
-            padding: 9px 22px;
-            font-size: 0.76rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.25s;
-        }
-
-        .nav-cta:hover {
-            background: #c9a84c;
-            color: #090f1e;
-        }
-
-        /* ─────────────────────────────────
-       HERO CONTENT — LEFT logo / RIGHT text
-    ───────────────────────────────── */
-        .hero-body {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 60px;
-            padding: 0 60px;
-            width: 100%;
-        }
-
-        /* LEFT: Static logo card */
-        .logo-wrap {
-            flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 20px;
-            padding: 36px 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow:
-                0 0 0 1px rgba(201, 168, 76, 0.3),
-                0 30px 70px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo-wrap img {
-            width: 280px;
-            height: auto;
-            display: block;
-        }
-
-        /* RIGHT: Text column */
-        .hero-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-        }
-
-        /* Bold tagline */
-        .tagline {
-            font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            line-height: 1.15;
-        }
-
-        .tagline .gold {
-            color: #c9a84c;
-        }
-
-        .tagline .dash {
-            color: #c9a84c;
-            margin: 0 14px;
-            opacity: 0.8;
-        }
-
-        /* Sub-tagline */
-        .sub-tagline {
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-top: -20px;
-        }
-
-        /* CTA Buttons */
-        .hero-btns {
-            display: flex;
-            gap: 16px;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #c9a84c, #e6c55a);
-            color: #090f1e;
-            font-weight: 800;
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 14px 32px;
-            border-radius: 4px;
-            text-decoration: none;
-            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
-            transition: all 0.25s;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 36px rgba(201, 168, 76, 0.5);
-            color: #090f1e;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 13px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-            transition: all 0.25s;
-        }
-
-        .btn-outline:hover {
-            border-color: rgba(255, 255, 255, 0.6);
-            color: #fff;
-        }
-
-        /* ─────────────────────────────────
-       BOTTOM TAGLINE STRIP
-    ───────────────────────────────── */
-        .bottom-strip {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 20;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(201, 168, 76, 0.25);
-            padding: 18px 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .strip-text {
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .strip-text .dash {
-            color: #c9a84c;
-            margin: 0 12px;
-        }
-
-        .strip-right {
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.35);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav {
-                padding: 0 20px;
-            }
-
-            .hero-body {
-                padding: 0 20px;
-                gap: 28px;
-            }
-
-            .logo-wrap {
-                padding: 24px 32px;
-            }
-
-            .logo-wrap img {
-                width: 200px;
-            }
-
-            .bottom-strip {
-                padding: 14px 20px;
-            }
-
-            .strip-text {
-                font-size: 0.7rem;
-                white-space: normal;
-            }
-
-            .strip-right {
-                display: none;
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-right { gap: 20px; }
+      .hero-layout { flex-direction: column-reverse; text-align: center; gap: 30px; }
+      .hero-content { align-items: center; }
+      .hgi-line2 { font-size: 3.5rem; }
+      .hero-image { flex: 0 0 auto; width: 80%; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="demo-bar">⚠️ DEMO 3 - Corporate Vision Concept</div>
 
-    <div class="demo-bar">⚠️ DEMO — Not Live — Preview</div>
+  <section class="hero">
+    <!-- Abstract Layered Glass & Glow Background -->
+    <div class="bg-glow bg-glow-blue"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+    
+    <div class="poly poly-1"></div>
+    <div class="poly poly-2"></div>
+    <div class="poly poly-3"></div>
+    <div class="poly poly-4"></div>
 
-    <section class="hero">
+    <div class="quantum-grid"></div>
 
-        <!-- ORBITS BACKGROUND -->
-        <div class="orbits">
-            <div class="orbit-ring r1"></div>
-            <div class="orbit-ring r2"></div>
-            <div class="orbit-ring r3"></div>
-        </div>
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="nav-logo">
+        <img src="images/icon.png" alt="Quantum Leap Wealth" />
+        <span class="brand-text">Quantum Leap <span class="brand-wealth">Wealth</span></span>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Strategies</a></li>
+          <li><a href="#">Opportunity</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="contact/contact.html">Contact</a></li>
+        </ul>
+        <a href="#" class="nav-login">Login</a>
+      </div>
+    </nav>
 
-        <!-- GRID -->
-        <div class="grid-overlay"></div>
+    <!-- HERO CONTENT WITH IMAGE -->
+    <div class="hero-layout">
+      <!-- LEFT: Text -->
+      <div class="hero-content">
+        <div class="hgi-line1">Educate Today</div>
+        <div class="hgi-line2">Elevate Tomorrow</div>
+        <div class="hgi-line3">Empower Forever</div>
+      </div>
 
-        <!-- NAVBAR -->
-        <nav class="nav">
-            <div class="nav-logo">
-                <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth" />
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="who_we_are/about.html">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="contact/contact.html">Contact</a></li>
-            </ul>
-            <a href="#" onclick="openCal();return false;" class="nav-cta">Book Consultation</a>
-        </nav>
-
-        <!-- MAIN CONTENT -->
-        <div class="hero-body">
-
-            <!-- LEFT: Logo — static, no animation -->
-            <div class="logo-wrap">
-                <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth" />
-            </div>
-
-            <!-- RIGHT: Text -->
-            <div class="hero-text">
-                <div class="tagline">
-                    Educate Today
-                    <span class="dash">—</span>
-                    Elevate Tomorrow
-                    <span class="dash">—</span>
-                    Empower Forever
-                </div>
-                <div class="sub-tagline">Your Trusted Financial Partner</div>
-                <div class="hero-btns">
-                    <a href="who_we_are/about.html" class="btn-gold">Our Story</a>
-                    <a href="#" onclick="openCal();return false;" class="btn-outline">Free Consultation</a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Bottom strip -->
-        <div class="bottom-strip">
-            <span class="strip-text">
-
-                <span class="dash"></span>
-
-                <span class="dash"></span>
-
-            </span>
-            <span class="strip-right">Quantum Leap Wealth © 2025</span>
-        </div>
-
-    </section>
-
-    <!-- Calendly Modal (simple iframe, no widget JS) -->
-    <div id="cal-modal"
-        style="display:none;position:fixed;inset:0;z-index:99999;align-items:center;justify-content:center;padding:16px;">
-        <div onclick="closeCal()"
-            style="position:absolute;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);"></div>
-        <div
-            style="position:relative;z-index:1;background:linear-gradient(150deg,#0f1a2e,#1a2540);border:1px solid rgba(201,168,76,0.25);border-radius:20px;width:100%;max-width:900px;height:80vh;max-height:650px;display:flex;flex-direction:column;overflow:hidden;">
-            <div
-                style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.08);">
-                <h3 style="margin:0;color:#fff;font-size:1rem;">📅 Book a <span style="color:#c9a84c;">Free
-                        Consultation</span></h3>
-                <button onclick="closeCal()"
-                    style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:50%;color:#aaa;width:32px;height:32px;cursor:pointer;font-size:0.9rem;">✕</button>
-            </div>
-            <div style="flex:1;">
-                <iframe id="cal-frame" src="" width="100%" height="100%" style="border:none;"></iframe>
-            </div>
-        </div>
+      <!-- RIGHT: Anu Image -->
+      <div class="hero-image">
+        <img src="images/Anu_Homepage_pic.png" alt="Anu" />
+      </div>
     </div>
-
-    <script>
-        function openCal() {
-            var m = document.getElementById('cal-modal');
-            m.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            var f = document.getElementById('cal-frame');
-            if (!f.src) f.src = 'https://calendly.com/quantumleapwealth/30min?hide_gdpr_banner=1&primary_color=c9a84c';
-        }
-        function closeCal() {
-            document.getElementById('cal-modal').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCal(); });
-    </script>
-
+  </section>
 </body>
-
 </html>

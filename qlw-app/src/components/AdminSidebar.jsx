@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -42,7 +42,7 @@ export default function AdminSidebar() {
         )}
         <div style={{ backgroundColor: "white", padding: "6px 12px", borderRadius: "8px", display: "flex", justifyContent: "center" }}>
           <img
-            src="/images/QWL_logo_backup.png?v=2.0"
+            src="/images/icon.png"
             alt="Quantum Leap Wealth Logo"
             style={{ width: "100%", maxWidth: "110px", height: "auto", display: "block" }}
           />
@@ -124,7 +124,7 @@ export default function AdminSidebar() {
           borderBottom: "1px solid rgba(255,255,255,0.1)", height: "56px"
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <img src="/images/QWL_logo_backup.png?v=2.0" alt="Logo" style={{ height: "32px", width: "auto", backgroundColor: "white", borderRadius: "4px", padding: "2px" }} />
+            <img src="/images/icon.png" alt="Logo" style={{ height: "32px", width: "auto", backgroundColor: "white", borderRadius: "4px", padding: "2px" }} />
             <span style={{ color: "#c9a84c", fontWeight: "700", fontSize: "1rem", fontFamily: "'Playfair Display', serif" }}>Admin Portal</span>
           </div>
           <button

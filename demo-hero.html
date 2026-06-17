@@ -157,10 +157,29 @@
       padding: 0 56px;
     }
 
-    .nav-logo img {
-      height: 50px;
-      width: auto;
+    .nav-logo {
+      background: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; text-decoration: none;
     }
+    .nav-logo img { height: 45px; width: auto; display: block; }
+    
+    .brand-text {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      font-weight: 800; color: #0a2540; display: flex;
+      flex-direction: column; align-items: center; line-height: 1.05;
+    }
+    .brand-wealth {
+      font-size: 0.55em; color: #c9a84c; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.15em; margin-top: 4px;
+      display: flex; align-items: center; width: 100%; gap: 8px;
+    }
+    .brand-wealth::before, .brand-wealth::after { content: ''; flex: 1; height: 1.5px; }
+    .brand-wealth::before { background: linear-gradient(to right, transparent, #c9a84c); }
+    .brand-wealth::after { background: linear-gradient(to left, transparent, #c9a84c); }
 
     .nav-links {
       display: flex;
@@ -414,7 +433,8 @@
     <!-- NAVBAR -->
     <nav class="nav">
       <div class="nav-logo">
-        <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth" />
+        <img src="images/icon.png" alt="Quantum Leap Wealth" />
+        <span class="brand-text">Quantum Leap <span class="brand-wealth">Wealth</span></span>
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -430,7 +450,7 @@
 
       <!-- LEFT: Logo — static, no animation -->
       <div class="logo-wrap">
-        <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth" />
+        <img src="images/Logo1.png" alt="Quantum Leap Wealth" />
       </div>
 
       <!-- RIGHT: Text -->
@@ -442,7 +462,7 @@
           <span class="dash">—</span>
           Empower Forever
         </div>
-        <div class="sub-tagline">Your Trusted Financial Partner</div>
+
         <div class="hero-btns">
           <a href="who_we_are/about.html" class="btn-gold">Our Story</a>
           <a href="#" onclick="openCal();return false;" class="btn-outline">Free Consultation</a>

@@ -96,18 +96,18 @@
     margin-top: 4px;
 }
 
-.brand-wealth-row::before,
-.brand-wealth-row::after {
+.brand-wealth::before,
+.brand-wealth::after {
     content: '';
     flex: 1;
     height: 1.5px;
 }
 
-.brand-wealth-row::before {
+.brand-wealth::before {
     background: linear-gradient(to right, transparent, var(--gold));
 }
 
-.brand-wealth-row::after {
+.brand-wealth::after {
     background: linear-gradient(to left, transparent, var(--gold));
 }
 
@@ -118,6 +118,11 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
 }
 
 .navbar-brand:hover .brand-text, .mobile-brand-link:hover .brand-text {

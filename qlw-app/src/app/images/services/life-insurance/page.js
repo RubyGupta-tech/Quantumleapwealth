@@ -184,7 +184,7 @@ export default function Page() {
                                     <select name="service"
                                         style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
                                         <option value="">— Select a service —</option>
-                                        <option>Investment Planning</option>
+                                        <option>Financial Needs Analysis</option>
                                         <option>Living Will & Trust</option>
                                         <option>Tax Savings</option>
                                         <option>Retirement Planning</option>
@@ -265,8 +265,8 @@ export default function Page() {
                                 <div>📞 <a href="tel:+12182777773" style="color:var(--primary);font-weight:600">(+1)
                                         218-277-7773 (PIN: 41966)</a></div>
 
-                                <div>✉ <a href="mailto:quantumlfs@gmail.com"
-                                        style="color:var(--primary);font-weight:600">quantumlfs@gmail.com</a>
+                                <div>✉ <a href="mailto:connect@quantumleapwealth.com"
+                                        style="color:var(--primary);font-weight:600">connect@quantumleapwealth.com</a>
 
                                 </div>
 

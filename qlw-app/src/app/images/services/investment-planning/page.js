@@ -25,11 +25,11 @@ export default function Page() {
 
                             <span>›</span>
 
-                            <span style="color:var(--accent-light)">Investment Planning</span>
+                            <span style="color:var(--accent-light)">Financial Needs Analysis</span>
 
                         </div>
 
-                        <h1>Investment Planning</h1>
+                        <h1>Financial Needs Analysis</h1>
 
                         <p>We empower individuals and families with strategic investment solutions designed to maximize
 
@@ -62,7 +62,7 @@ export default function Page() {
                     <!-- Block 1: Wealth Growth -->
                     <div class="content-split">
                         <div class="content-split-text">
-                            <h2>Smart Investment Planning for a Prosperous Future</h2>
+                            <h2>Smart Financial Needs Analysis for a Prosperous Future</h2>
                             <p>At Quantum Leap Wealth, we believe that investing is not just about picking the right stocks — it's about building a comprehensive, personalized strategy that aligns every dollar you invest with your life goals. Whether you're just starting out or looking to optimize an existing portfolio, our expert advisors are here to guide you every step of the way.</p>
                             <p>From securing your retirement to funding your children's education, we design investment plans that grow with you, adapt to market changes, and always keep your long-term vision at the center of every decision.</p>
                         </div>
@@ -77,7 +77,7 @@ export default function Page() {
                             <img src="/images/invest_strategy_light.png" alt="Strategic Investment Chess Piece" />
                         </div>
                         <div class="content-split-text">
-                            <h3>Why Choose Investment Planning?</h3>
+                            <h3>Why Choose Financial Needs Analysis?</h3>
                             <p>Investment planning goes beyond simply selecting assets. It creates a structured path to financial independence by aligning each investment with your short- and long-term objectives — protecting what you've built while growing what you need for the future.</p>
 
                             <div class="feature-list" style="grid-template-columns: 1fr; margin-bottom: 0;">
@@ -95,7 +95,7 @@ export default function Page() {
                     <!-- Block 3: The Process Roadmap -->
                     <div class="content-split" style="align-items: flex-start;">
                         <div class="content-split-text">
-                            <h3>Our Investment Planning Process</h3>
+                            <h3>Our Financial Needs Analysis Process</h3>
                             <p>We follow a proven, structured approach to help you build wealth confidently and consistently — no guesswork, no cookie-cutter solutions.</p>
 
                             <div class="process-inline">
@@ -214,7 +214,7 @@ export default function Page() {
                                 <label style="font-size:0.8rem; font-weight:700;">Service of Interest</label>
                                 <select name="service" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-top:4px;">
                                     <option value="">— Select a service —</option>
-                                    <option>Investment Planning</option>
+                                    <option>Financial Needs Analysis</option>
                                     <option>Living Will & Trust</option>
                                     <option>Tax Savings</option>
                                     <option>Retirement Planning</option>
@@ -299,8 +299,8 @@ export default function Page() {
                                 <div>📞 <a href="tel:+12182777773" style="color:var(--primary);font-weight:600;">(+1)
                                         218-277-7773 (PIN: 41966)</a></div>
 
-                                <div>✉ <a href="mailto:quantumlfs@gmail.com"
-                                        style="color:var(--primary);font-weight:600;">quantumlfs@gmail.com</a>
+                                <div>✉ <a href="mailto:connect@quantumleapwealth.com"
+                                        style="color:var(--primary);font-weight:600;">connect@quantumleapwealth.com</a>
 
                                 </div>
 

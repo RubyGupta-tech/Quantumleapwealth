@@ -220,8 +220,8 @@ export default function Page() {
 
                                     <span style="font-size:1.2rem">✉</span>
 
-                                    <a href="mailto:quantumlfs@gmail.com"
-                                        style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">quantumlfs@gmail.com</a>
+                                    <a href="mailto:connect@quantumleapwealth.com"
+                                        style="color:var(--primary);font-weight:600;text-decoration:none;font-size:0.9rem">connect@quantumleapwealth.com</a>
 
                                 </div>
 

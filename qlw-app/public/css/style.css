@@ -1399,7 +1399,7 @@ img {
 }
 
 .footer-social {
-    display: flex;
+    display: none; /* Hidden until client provides links */
     gap: 10px
 }
 
@@ -2284,18 +2284,18 @@ img {
     margin-top: 4px;
 }
 
-.brand-wealth-row::before,
-.brand-wealth-row::after {
+.brand-wealth::before,
+.brand-wealth::after {
     content: '';
     flex: 1;
     height: 1.5px;
 }
 
-.brand-wealth-row::before {
+.brand-wealth::before {
     background: linear-gradient(to right, transparent, var(--gold));
 }
 
-.brand-wealth-row::after {
+.brand-wealth::after {
     background: linear-gradient(to left, transparent, var(--gold));
 }
 
@@ -2306,6 +2306,11 @@ img {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
 }
 
 .navbar-brand:hover .brand-text, .mobile-brand-link:hover .brand-text {
@@ -2727,3 +2732,24 @@ html {
     opacity: 1 !important;
     transition: transform 0.3s ease !important;
 }
+
+/* -- PRE-FOOTER CTA BANNER -- */
+.qlw-cta-banner{position:relative;background:linear-gradient(110deg,#060e1e 0%,#0a1628 40%,#0d1f3c 70%,#091422 100%);padding:52px 0;overflow:hidden}
+.qlw-cta-bg-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent,transparent 38px,rgba(201,168,76,.06) 38px,rgba(201,168,76,.06) 40px);animation:qlwCtaScroll 18s linear infinite;pointer-events:none}
+.qlw-cta-banner::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(201,168,76,.07),transparent);animation:qlwCtaSweep 5s ease-in-out infinite;pointer-events:none}
+.qlw-cta-banner::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,transparent,#c9a84c,transparent)}
+.qlw-cta-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.qlw-cta-left{flex:1}
+.qlw-cta-heading{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 14px;line-height:1}
+.qlw-cta-bold{font-size:2.2rem;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.qlw-cta-italic{font-size:2rem;font-weight:400;font-style:italic;color:#c9a84c;letter-spacing:.04em;text-transform:uppercase}
+.qlw-cta-sub{font-size:.93rem;color:rgba(255,255,255,.62);line-height:1.7;max-width:620px;margin:0}
+.qlw-cta-right{flex-shrink:0}
+.qlw-cta-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#c9a84c 0%,#e6c55a 50%,#c9a84c 100%);background-size:200% 200%;color:#0a1628;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:4px;border:none;cursor:pointer;white-space:nowrap;box-shadow:0 8px 28px rgba(201,168,76,.35);transition:all .3s ease;animation:qlwBtnShimmer 3s ease infinite}
+.qlw-cta-btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,168,76,.55);color:#0a1628}
+.qlw-cta-btn svg{transition:transform .25s}
+.qlw-cta-btn:hover svg{transform:translateX(4px)}
+@keyframes qlwCtaScroll{from{background-position-x:0}to{background-position-x:40px}}
+@keyframes qlwCtaSweep{0%{left:-100%}50%{left:120%}100%{left:120%}}
+@keyframes qlwBtnShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(max-width:768px){.qlw-cta-inner{flex-direction:column;align-items:flex-start;padding:0 24px;gap:28px}.qlw-cta-bold{font-size:1.6rem}.qlw-cta-italic{font-size:1.45rem}}

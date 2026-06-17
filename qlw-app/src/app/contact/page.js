@@ -67,7 +67,7 @@ export default function ContactPage() {
             <div className="ci-icon">✉</div>
             <h4>Email Us</h4>
             <p>
-              <a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a>
+              <a href="mailto:connect@quantumleapwealth.com">connect@quantumleapwealth.com</a>
             </p>
           </div>
           <div className="contact-info-card">
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   <label>Service of Interest</label>
                   <select name="service">
                     <option value="">— Select a service —</option>
-                    <option>Investment Planning</option>
+                    <option>Financial Needs Analysis</option>
                     <option>Living Will & Trust</option>
                     <option>Tax Savings</option>
                     <option>Retirement Planning</option>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                   <div style={{ marginBottom: "20px" }}>
                     <p style={{ color: "#ef4444", marginBottom: "8px", fontSize: "0.9rem", fontWeight: "500" }}>{error}</p>
                     <a 
-                      href="mailto:quantumlfs@gmail.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
+                      href="mailto:connect@quantumleapwealth.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
                       style={{ color: "var(--primary)", fontSize: "0.85rem", textDecoration: "underline", fontWeight: "600" }}
                     >
                       Click here to email us directly instead →
@@ -177,7 +177,7 @@ export default function ContactPage() {
               <div className="info-detail-icon">✉</div>
               <div className="info-detail-text">
                 <h4>Email</h4>
-                <p><a href="mailto:quantumlfs@gmail.com">quantumlfs@gmail.com</a></p>
+                <p><a href="mailto:connect@quantumleapwealth.com">connect@quantumleapwealth.com</a></p>
               </div>
             </div>
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ScrollAnimator from "@/components/ScrollAnimator";
@@ -196,7 +196,7 @@ export default function HomePage() {
                   transition: 'transform 0.3s ease'
                 }}>
                   <Image
-                    src="/images/Logo1_transparent.png"
+                    src="/images/Logo1.png"
                     alt="Quantum Leap Wealth"
                     width={400}
                     height={244}
@@ -262,7 +262,7 @@ export default function HomePage() {
                 <div className="slide-services-container" style={{ width: '100%', padding: '0 8%', maxWidth: '1000px' }}>
                   <h3 style={{ color: 'var(--primary)', textAlign: 'center', fontSize: 'clamp(1.2rem, 2vw, 2.2rem)', fontWeight: 800, marginBottom: '25px' }}>Our Expertise</h3>
                   <div className="slide-services-grid">
-                    <div className="slide-service-box">📈 Investment Planning</div>
+                    <div className="slide-service-box">📈 Financial Needs Analysis</div>
                     <div className="slide-service-box">🏖️ Retirement</div>
                     <div className="slide-service-box">🛡️ Life Insurance</div>
                     <div className="slide-service-box">💰 Tax Savings</div>
@@ -438,7 +438,7 @@ export default function HomePage() {
                     <label>Service of Interest</label>
                     <select name="service">
                       <option value="">— Select a service —</option>
-                      <option>Investment Planning</option>
+                      <option>Financial Needs Analysis</option>
                       <option>Living Will &amp; Trust</option>
                       <option>Tax Savings</option>
                       <option>Retirement Planning</option>
@@ -467,7 +467,7 @@ export default function HomePage() {
                   <div style={{ marginTop: "15px", textAlign: "center" }}>
                     <p style={{ color: "#ef4444", fontSize: "0.85rem", marginBottom: "5px" }}>{error}</p>
                     <a
-                      href="mailto:quantumlfs@gmail.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
+                      href="mailto:connect@quantumleapwealth.com?subject=Contact Inquiry&body=Hi Quantum Leap Wealth team, I'm reaching out via the website fallback."
                       style={{ color: "#fff", fontSize: "0.8rem", textDecoration: "underline", opacity: 0.8 }}
                     >
                       Email us directly instead →

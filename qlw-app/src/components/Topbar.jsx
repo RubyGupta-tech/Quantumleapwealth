@@ -11,7 +11,7 @@ export default function Topbar() {
         <div className="topbar-left">
           <a href="tel:+12182777773">📞 (+1) 218-277-7773 (PIN: 41966)</a>
           <div className="topbar-divider"></div>
-          <a href="mailto:quantumlfs@gmail.com">✉ quantumlfs@gmail.com</a>
+          <a href="mailto:connect@quantumleapwealth.com">✉ connect@quantumleapwealth.com</a>
           <div className="topbar-divider"></div>
           <span>📍 California, USA</span>
         </div>

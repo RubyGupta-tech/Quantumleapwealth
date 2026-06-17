@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="navbar-inner">
           <Link href="/" className="navbar-brand">
             <img
-              src="/images/Logo1.png?v=1.0"
+              src="/images/icon.png"
               alt="Quantum Leap Wealth Logo"
               className="brand-logo"
               width="85"
@@ -69,7 +69,7 @@ export default function Navbar() {
             <li className="mobile-brand-container">
               <Link href="/" className="mobile-brand-link">
                 <img
-                  src="/images/Logo1.png?v=1.0"
+                  src="/images/icon.png"
                   alt="Quantum Leap Wealth Logo"
                   className="brand-logo"
                   width="85"
@@ -160,7 +160,7 @@ export default function Navbar() {
                     <span className="dd-icon" aria-hidden="true">
                       📈
                     </span>
-                    Investment Planning
+                    Financial Needs Analysis
                   </Link>
                 </li>
                 <li role="none">
