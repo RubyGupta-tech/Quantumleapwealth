@@ -146,6 +146,39 @@
       min-width: 0; /* Prevents nowrap text from pushing the image */
       display: flex; flex-direction: column; align-items: flex-start;
     }
+
+    .hero-desc {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      max-width: 600px;
+      line-height: 1.6;
+      margin: 20px 0 30px;
+      white-space: normal;
+    }
+
+    .hero-actions {
+      display: flex; gap: 15px; flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c9a84c, #b3913a);
+      color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700;
+      text-transform: uppercase; text-decoration: none; font-size: 0.95rem;
+      letter-spacing: 0.05em; transition: all 0.3s;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 10px 20px rgba(201, 168, 76, 0.3); transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 700;
+      text-transform: uppercase; text-decoration: none; font-size: 0.95rem;
+      letter-spacing: 0.05em; transition: all 0.3s;
+    }
+    .btn-outline:hover {
+      border-color: #fff; background: rgba(255, 255, 255, 0.1); transform: translateY(-2px);
+    }
     
     .hgi-line1 {
       font-size: clamp(2.5rem, 3.8vw, 6rem); font-weight: 700; color: #ffffff;
@@ -214,9 +247,15 @@
     <div class="hero-layout">
       <!-- LEFT: Text -->
       <div class="hero-content">
+        <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth Logo" style="max-width: 280px; margin-bottom: 25px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));" />
         <div class="hgi-line1">Educate Today</div>
         <div class="hgi-line2">Elevate Tomorrow</div>
         <div class="hgi-line3">Empower Forever</div>
+        <p class="hero-desc">At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for long-term security - not driven by trends or guesswork.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Our Story</a>
+          <a href="contact/contact.html" class="btn-outline">Get in Touch</a>
+        </div>
       </div>
 
       <!-- RIGHT: Anu Image -->
