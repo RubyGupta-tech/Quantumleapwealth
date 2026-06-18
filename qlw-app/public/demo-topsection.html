@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEMO 4 — Corporate Vision Concept | Quantum Leap Wealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; font-family: 'Inter', sans-serif; background: #081a3f; }
+
+    .demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: #c9a84c; color: #0a1628; text-align: center;
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 6px;
+    }
+
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      padding-top: 28px; display: flex; flex-direction: column;
+      justify-content: center; overflow: hidden;
+      background-color: #060d1f;
+      background: radial-gradient(circle at 50% 50%, #0b1a38 0%, #050a14 100%);
+    }
+
+    /* Layered Background Elements */
+    .bg-glow { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; }
+    .bg-glow-blue { width: 800px; height: 800px; background: rgba(56, 130, 246, 0.2); top: -200px; left: -200px; }
+    .bg-glow-gold { width: 600px; height: 600px; background: rgba(201, 168, 76, 0.15); bottom: -100px; right: 10vw; }
+
+    .poly { position: absolute; z-index: 1; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+    .poly-1 { width: 70vw; height: 120vh; top: -10vh; left: -15vw; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.4)); border-right: 1px solid rgba(255,255,255,0.1); clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%); }
+    .poly-2 { width: 50vw; height: 100vh; bottom: 0; right: -5vw; background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(0,0,0,0.6)); border-left: 1px solid rgba(201,168,76,0.2); border-top: 1px solid rgba(201,168,76,0.2); clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%); }
+    .poly-3 { width: 400px; height: 400px; top: 15vh; right: 15vw; background: linear-gradient(135deg, rgba(56, 130, 246, 0.08), transparent); border: 1px solid rgba(56, 130, 246, 0.2); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+    .poly-4 { width: 250px; height: 250px; bottom: 25vh; left: 35vw; background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent); border: 1px solid rgba(201,168,76,0.3); clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); }
+
+    .quantum-grid {
+      position: absolute; inset: 0; z-index: 2;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+
+    /* NAVBAR */
+    .nav { position: absolute; top: 50px; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 6%; }
+    .nav-logo { background: #ffffff; padding: 8px 16px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 45px; width: auto; display: block; }
+    .brand-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; color: #0a2540; display: flex; flex-direction: column; align-items: center; line-height: 1.05; }
+    .brand-wealth { font-size: 0.55em; color: #c9a84c; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 4px; display: flex; align-items: center; width: 100%; gap: 8px; }
+    .brand-wealth::before, .brand-wealth::after { content: ''; flex: 1; height: 1.5px; }
+    .brand-wealth::before { background: linear-gradient(to right, transparent, #c9a84c); }
+    .brand-wealth::after { background: linear-gradient(to left, transparent, #c9a84c); }
+    .nav-right { display: flex; align-items: center; gap: 40px; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { color: #ffffff; text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 0.7; }
+    .nav-login { background: #ffffff; color: #0b1d42; padding: 10px 28px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+    .nav-login:hover { background: #e0e0e0; }
+
+    /* MAIN TEXT CONTENT */
+    .hero-layout {
+      position: relative; z-index: 10; width: 100%; padding: 0 6%;
+      display: flex; flex-direction: row; align-items: center; gap: 60px;
+      justify-content: space-between; margin-top: 40px;
+    }
+    
+    .hero-content {
+      flex: 0 1 50%; min-width: 0;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+
+    .hgi-tagline {
+      font-size: clamp(2.5rem, 4vw, 5rem); font-weight: 800; color: #ffffff;
+      letter-spacing: 0.05em; line-height: 1.2; text-transform: uppercase;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero-right-col {
+      flex: 0 1 45%;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+
+    .hero-desc {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+      max-width: 100%;
+      line-height: 1.6;
+      margin: 0 0 25px;
+    }
+
+    .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, #c9a84c, #b3913a);
+      color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700;
+      text-transform: uppercase; text-decoration: none; font-size: 0.95rem;
+      letter-spacing: 0.05em; transition: all 0.3s; text-align: center;
+    }
+    .btn-primary:hover { box-shadow: 0 10px 20px rgba(201, 168, 76, 0.3); transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 700;
+      text-transform: uppercase; text-decoration: none; font-size: 0.95rem;
+      letter-spacing: 0.05em; transition: all 0.3s; text-align: center;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-right { gap: 20px; }
+      .hero-layout { flex-direction: column; text-align: center; gap: 30px; }
+      .hero-content { align-items: center; }
+      .hero-right-col { align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">⚠️ DEMO 4 - Top Section Alternative Concept</div>
+
+  <section class="hero">
+    <div class="bg-glow bg-glow-blue"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+    <div class="poly poly-1"></div>
+    <div class="poly poly-2"></div>
+    <div class="poly poly-3"></div>
+    <div class="poly poly-4"></div>
+    <div class="quantum-grid"></div>
+
+    <nav class="nav">
+      <div class="nav-logo">
+        <img src="images/icon.png" alt="Quantum Leap Wealth" />
+        <span class="brand-text">Quantum Leap <span class="brand-wealth">Wealth</span></span>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Entrepreneurship</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="contact/contact.html">Contact</a></li>
+        </ul>
+        <a href="#" class="nav-login">Login</a>
+      </div>
+    </nav>
+
+    <div class="hero-layout">
+      <!-- LEFT: Logo and Tagline -->
+      <div class="hero-content">
+        <img src="images/Logo1_transparent.png" alt="Quantum Leap Wealth Logo" style="width: 100%; max-width: 500px; margin-bottom: 30px; background-color: rgba(255,255,255,0.95); padding: 25px; border-radius: 16px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));" />
+        <div class="hgi-tagline">
+          <div>Educate Today</div>
+          <div style="font-style: italic; color: #c9a84c;">Elevate Tomorrow</div>
+          <div>Empower Forever</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Anu Image, Text, Buttons -->
+      <div class="hero-right-col">
+        <img src="images/Anu_Homepage_pic.png" alt="Anu" style="max-width: 320px; border-radius: 16px; margin-bottom: 25px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); width: 100%; object-fit: contain;" />
+        <p class="hero-desc">At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for long-term security - not driven by trends or guesswork.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Our Story</a>
+          <a href="contact/contact.html" class="btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
