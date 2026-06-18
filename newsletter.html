@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Our Newsletter | Quantum Leap Wealth</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .newsletter-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #090f1e, #1a2540);
+      padding: 100px 20px;
+    }
+    .newsletter-box {
+      background: #fff;
+      padding: 50px 40px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .newsletter-box h1 {
+      color: #0b1d42;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .newsletter-box p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .nl-form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .nl-form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    .nl-form-group input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .nl-btn {
+      width: 100%;
+      padding: 16px;
+      background: #c9a84c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .nl-btn:hover {
+      background: #b5953e;
+    }
+  </style>
+</head>
+<body>
+  <div class="newsletter-page">
+    <div class="newsletter-box">
+      <h1>Join our newsletter</h1>
+      <p>Stay updated with our latest financial insights.</p>
+      <form id="nl-form">
+        <div class="nl-form-group">
+          <label>First Name</label>
+          <input type="text" name="firstName" id="nl-firstName" required placeholder="Enter your first name" />
+        </div>
+        <div class="nl-form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" id="nl-email" required placeholder="Enter your email" />
+        </div>
+        <button type="submit" class="nl-btn">Subscribe</button>
+      </form>
+      <script>
+        document.getElementById('nl-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const firstName = document.getElementById('nl-firstName').value;
+          const email = document.getElementById('nl-email').value;
+          
+          try {
+            const res = await fetch('http://localhost:3000/api/newsletter', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ firstName, email })
+            });
+            if (res.ok) {
+              window.location.href = 'newsletter-success.html';
+            } else {
+              alert('Something went wrong. Please try again.');
+            }
+          } catch (err) {
+            console.error(err);
+            alert('Something went wrong. Please check if the Next.js server is running.');
+          }
+        });
+      </script>
+      <div style="margin-top: 20px;">
+        <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

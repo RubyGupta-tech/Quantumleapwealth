@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ScrollAnimator from "@/components/ScrollAnimator";
@@ -370,42 +370,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* EVENTS SECTION */}
-      <section className="events-section" id="events">
+      {/* NEWSLETTER SECTION */}
+      <section className="events-section" id="newsletter" style={{ padding: '100px 0', textAlign: 'center', background: '#ffffff', color: '#0b1d42' }}>
         <div className="container">
-          <div className="events-header reveal">
-            <span className="section-label">Events</span>
-            <h2 className="section-title">Stay Connected With Us</h2>
-            <p className="section-sub" style={{ margin: '0 auto' }}>Join our financial workshops, webinars, and community events to take the next step in your financial journey.</p>
-            <div className="events-tabs">
-              <button className={`events-tab ${eventTab === 'upcoming' ? 'active' : ''}`} onClick={() => { setEventTab('upcoming'); setEventSlideIndex(0); }}>📅 Upcoming Events ({upcomingEvents.length})</button>
-              <button className={`events-tab ${eventTab === 'past' ? 'active' : ''}`} onClick={() => { setEventTab('past'); setEventSlideIndex(0); }}>📋 Past Events ({pastEvents.length})</button>
-            </div>
+          <div className="events-header reveal" style={{ marginBottom: '40px' }}>
+            <span className="section-label" style={{ color: '#c9a84c', fontWeight: '800' }}>Newsletter</span>
+            <h2 className="section-title" style={{ color: '#0b1d42' }}>Stay Connected With Us</h2>
+            <p className="section-sub" style={{ margin: '0 auto', maxWidth: '600px', color: '#555' }}>Subscribe to our weekly newsletter.</p>
           </div>
-
-          <div className="events-panel active">
-            {activeEvents.length > 0 ? (
-              <div className="events-slider-wrap">
-                <div className="events-slider" style={{ transform: `translateX(-${(100 / visibleEventCount) * eventSlideIndex}%)` }}>
-                  {activeEvents.map((ev, i) => (
-                    <EventCard key={i} event={ev} isPast={eventTab === 'past'} />
-                  ))}
-                </div>
-                <div className="events-nav-arrows">
-                  <button className="events-arrow" onClick={() => slideEvents(-1)}>‹</button>
-                  <button className="events-arrow" onClick={() => slideEvents(1)}>›</button>
-                </div>
-              </div>
-            ) : (
-              <p style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '40px 0', fontSize: '0.95rem' }}>No events to display in this category yet.</p>
-            )}
-            {activeEvents.length > 0 && (
-              <div className="events-dots">
-                {Array.from({ length: maxEventIndex + 1 }).map((_, i) => (
-                  <button key={i} className={`events-dot ${eventSlideIndex === i ? 'active' : ''}`} onClick={() => setEventSlideIndex(i)}></button>
-                ))}
-              </div>
-            )}
+          <div className="reveal">
+            <a href="/newsletter" className="btn-primary" style={{ display: 'inline-block', padding: '15px 35px', borderRadius: '4px', fontWeight: '800', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', background: '#c9a84c', color: '#fff', border: 'none', boxShadow: '0 10px 20px rgba(201,168,76,0.3)' }}>Subscribe Now</a>
           </div>
         </div>
       </section>

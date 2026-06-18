@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -25,6 +25,7 @@ export default function AdminSidebar() {
   const menuItems = [
     { name: "Dashboard", icon: "📊", path: "/admin" },
     { name: "Leads Inbox", icon: "📥", path: "/admin/leads" },
+    { name: "Subscribers", icon: "📬", path: "/admin/subscribers" },
     { name: "Clients", icon: "👥", path: "/admin/clients" },
     { name: "Settings", icon: "⚙️", path: "/admin/settings" },
   ];

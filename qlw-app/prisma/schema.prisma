@@ -29,3 +29,11 @@ model Setting {
   value     String
   updatedAt DateTime @updatedAt
 }
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  firstName String
+  email     String   @unique
+  source    String   @default("Website Form")
+  createdAt DateTime @default(now())
+}
