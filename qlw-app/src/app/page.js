@@ -115,8 +115,15 @@ export default function HomePage() {
       {/* Critical CSS for LCP Optimization */}
       <style dangerouslySetInnerHTML={{
         __html: `
-        .hero-split-section { display: flex; min-height: 600px; height: calc(100vh - 180px); width: 100%; background: #0f172a; position: relative; overflow: hidden; }
+        .hero-split-section { display: flex; height: auto; min-height: auto; width: 100%; background: radial-gradient(circle at 20% 50%, #061020 0%, #030810 100%); position: relative; overflow: hidden; padding: 60px 0 20px 0; }
         .hero-split-left { flex: 1 1 50%; display: flex; align-items: center; justify-content: center; padding: 4% 8%; position: relative; z-index: 2; }
+        @media(max-width: 1200px) {
+          .hero-split-section { flex-direction: column; }
+          .hero-split-left { padding: 40px 20px !important; width: 100%; }
+          .hero-split-right { padding: 40px 20px !important; width: 100%; }
+          .hero-split-right > div { flex-direction: column; max-width: 500px !important; }
+          .hero-split-right > div > div { width: 100% !important; }
+        }
         .hero-glass-card { background: #0a2540; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; backdrop-filter: blur(16px); }
         .hero-split-title { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; color: white; font-family: var(--font-playfair); font-weight: 800; }
         .hero-split-left-content { max-width: 600px; width: 100%; animation: fadeUpIn 0.3s ease-out forwards; }
@@ -127,156 +134,109 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <section className="hero-split-section" id="home">
-        <div className="hero-ambient-orb orb-1"></div>
-        <div className="hero-ambient-orb orb-2"></div>
-        <div className="hero-bg-design-left"></div>
-
-        <div className="hero-split-left">
-          <div className="hero-split-left-content hero-glass-card">
-            <h1 className="hero-split-title">
-              <div className="hero-title-line">
-                <span className="reveal-inner">Built on <span className="shimmer-text">Strategy.</span></span>
-              </div>
-              <div className="hero-title-line">
-                <span className="reveal-inner">Driven by <span className="shimmer-text">Purpose.</span></span>
-              </div>
-            </h1>
-            <p className="hero-split-desc">
-              At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for
-              long-term security - not driven by trends or guesswork.
+        <div className="hero-split-left" style={{ alignItems: 'center', textAlign: 'left', padding: '0 5% 0 8%' }}>
+          <div className="hero-split-left-content" style={{ background: 'transparent', padding: '0', boxShadow: 'none', backdropFilter: 'none', maxWidth: '700px', width: '100%' }}>
+            <p style={{ color: '#e8c678', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px', fontSize: '0.8rem' }}>
+              WELCOME TO QUANTUM LEAP WEALTH
             </p>
-            <div className="hero-split-highlights">
-              <div className="hero-split-hl" style={{ animationDelay: "1.8s" }}>
-                <div className="hero-split-hl-icon">💰</div>Tax-Efficient
-              </div>
-              <div className="hero-split-hl" style={{ animationDelay: "1.9s" }}>
-                <div className="hero-split-hl-icon">🏖️</div>Retirement
-              </div>
-              <div className="hero-split-hl" style={{ animationDelay: "2.0s" }}>
-                <div className="hero-split-hl-icon">🛡️</div>Life Protection
-              </div>
-              <div className="hero-split-hl" style={{ animationDelay: "2.1s" }}>
-                <div className="hero-split-hl-icon">🎓</div>College Funding
-              </div>
-            </div>
-            <div className="hero-split-buttons">
-              <a href="/who_we_are/about" className="btn btn-primary" style={{ boxShadow: "0 10px 20px rgba(201,168,76,0.2)", whiteSpace: "nowrap" }}>Our Story</a>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', color: 'white', fontFamily: "'Playfair Display', serif", fontWeight: '800', lineHeight: '1.1', marginBottom: '15px' }}>
+              Helping Families Build,<br /> Protect & Preserve <span style={{ color: '#e8c678' }}>Wealth</span>
+            </h1>
+            <p style={{ color: 'white', fontWeight: '600', fontSize: '0.95rem', marginBottom: '15px', wordSpacing: '2px' }}>
+              Retirement Planning <span style={{ color: '#e8c678', margin: '0 5px' }}>•</span> Wealth Strategies <span style={{ color: '#e8c678', margin: '0 5px' }}>•</span> Financial Education
+            </p>
+            <div style={{ width: '60px', height: '2px', background: '#e8c678', marginBottom: '20px' }}></div>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '25px', maxWidth: '600px' }}>
+              At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+            </p>
+
+            <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', flexWrap: 'wrap' }}>
               <a href="#" onClick={(e) => {
                 e.preventDefault();
                 if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
-              }} className="btn btn-light-gold" style={{ whiteSpace: "nowrap", background: "transparent", color: "white", border: "1px solid rgba(255,255,255,0.4)" }}>Consultation</a>
+              }} className="btn btn-primary" style={{ background: 'linear-gradient(135deg, #e8c678, #c9a84c)', color: '#0a2540', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '10px', border: 'none', padding: '12px 24px', fontSize: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem' }}>📅</span> BOOK DISCOVERY CALL
+              </a>
+              <a href="/who_we_are/about" className="btn btn-primary" style={{ background: 'transparent', color: 'white', border: '2px solid rgba(255,255,255,0.3)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 24px', fontSize: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', color: '#e8c678' }}>▷</span> EXPLORE OUR SERVICES
+              </a>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px', marginBottom: '20px' }}>
+              <div style={{ textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '10px' }}>
+                <span style={{ display: 'block', marginBottom: '8px' }}>
+                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+                  </svg>
+                </span>
+                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>EDUCATE TODAY</h4>
+                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Build Knowledge</p>
+              </div>
+              <div style={{ textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '10px' }}>
+                <span style={{ display: 'block', marginBottom: '8px' }}>
+                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path>
+                  </svg>
+                </span>
+                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>ELEVATE TOMORROW</h4>
+                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Create Opportunities</p>
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <span style={{ display: 'block', marginBottom: '8px' }}>
+                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                  </svg>
+                </span>
+                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>EMPOWER FOREVER</h4>
+                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Leave a Lasting Impact</p>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <div style={{ height: '2px', width: '60px', background: 'linear-gradient(to right, rgba(232,198,120,0), rgba(232,198,120,1))' }}></div>
+              <p style={{ fontFamily: "'Great Vibes', 'Playfair Display', serif", fontStyle: 'italic', fontSize: '1.8rem', color: '#e8c678', margin: '0' }}>
+                Where Vision Becomes Wealth
+              </p>
+              <div style={{ height: '2px', width: '60px', background: 'linear-gradient(to right, rgba(232,198,120,1), rgba(232,198,120,0))' }}></div>
             </div>
           </div>
         </div>
 
-        <div className="hero-split-right">
-          <div className="dynamic-slider" style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, overflow: 'hidden' }}>
-            {/* Slide 1 */}
-            <div className={`slide ${slideIndex === 0 ? 'active' : ''}`} style={{ height: '100%' }}>
-              <div className="slide-content" style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fdfbf7 50%, #f7f1e3 100%)', 
-                flexDirection: 'column', 
-                padding: '40px 20px', 
-                height: '100%', 
-                justifyContent: 'center', 
-                display: 'flex', 
-                alignItems: 'center' 
-              }}>
-                <div style={{
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  padding: '20px 30px',
-                  borderRadius: '16px',
-                  boxShadow: '0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04)',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: '30px',
-                  width: '90%',
-                  maxWidth: '440px',
-                  transition: 'transform 0.3s ease'
-                }}>
-                  <Image
-                    src="/images/Logo1.png"
-                    alt="Quantum Leap Wealth"
-                    width={400}
-                    height={244}
-                    className="slide-logo"
-                    priority
-                    fetchPriority="high"
-                    style={{ width: '100%', maxWidth: '400px', height: 'auto', display: 'block' }}
-                  />
-                </div>
-                <p style={{ 
-                  color: '#0a2540', 
-                  fontFamily: 'var(--font-playfair)',
-                  fontSize: '1.2rem', 
-                  fontWeight: '700', 
-                  textAlign: 'center', 
-                  maxWidth: '85%', 
-                  margin: '0 auto',
-                  letterSpacing: '0.3px',
-                  lineHeight: '1.4',
-                  borderTop: '2px solid rgba(201, 168, 76, 0.3)',
-                  paddingTop: '20px'
-                }}>
-                  Comprehensive Wealth Management &amp; Real Estate Investment Strategies
-                </p>
-              </div>
+        <div className="hero-split-right" style={{ padding: '0 5% 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: '#061020', borderRadius: '16px', overflow: 'hidden', display: 'flex', width: '100%', maxWidth: '600px', height: '550px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ width: '45%', position: 'relative', background: '#e2e8f0' }}>
+              <img src="/images/Anu-Profile-Pic2.png" alt="Anu Prasad" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
             </div>
-
-            {/* Slide 2 */}
-            <div className={`slide ${slideIndex === 1 ? 'active' : ''}`} style={{ height: '100%' }}>
-              <div className="slide-content" style={{ height: '100%', position: 'relative' }}>
-                <Image
-                  src="/images/Anu_profile_pic.png"
-                  alt="Expert Leadership"
-                  fill
-                  style={{ objectPosition: 'top center', objectFit: 'cover' }}
-                  className="slide-bg"
-                />
-                <div className="slide-overlay" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%)', bottom: 0, paddingBottom: '40px', position: 'absolute', width: '100%', textAlign: 'center' }}>
-                  <h2 style={{ fontSize: '1.5rem', color: 'white' }}>Expert Leadership You Can Trust</h2>
-                </div>
-              </div>
-            </div>
-
-            {/* Slide 3 */}
-            <div className={`slide ${slideIndex === 2 ? 'active' : ''}`} style={{ height: '100%' }}>
-              <div className="slide-content" style={{ height: '100%', position: 'relative' }}>
-                <Image
-                  src="/images/Anu_Homepage_pic.png"
-                  alt="Secure Your Family"
-                  fill
-                  style={{ objectPosition: 'top center', objectFit: 'cover' }}
-                  className="slide-bg"
-                />
-                <div className="slide-overlay" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%)', bottom: 0, paddingBottom: '40px', position: 'absolute', width: '100%', textAlign: 'center' }}>
-                  <h2 style={{ fontSize: '1.5rem', color: 'white' }}>Securing Your Family&apos;s Legacy</h2>
-                </div>
-              </div>
-            </div>
-
-            {/* Slide 4 */}
-            <div className={`slide ${slideIndex === 3 ? 'active' : ''}`} style={{ height: '100%' }}>
-              <div className="slide-content" style={{ background: 'linear-gradient(135deg, #f8f9fa, #e2e8f0)', height: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-                <div className="slide-services-container" style={{ width: '100%', padding: '0 8%', maxWidth: '1000px' }}>
-                  <h3 style={{ color: 'var(--primary)', textAlign: 'center', fontSize: 'clamp(1.2rem, 2vw, 2.2rem)', fontWeight: 800, marginBottom: '25px' }}>Our Expertise</h3>
-                  <div className="slide-services-grid">
-                    <div className="slide-service-box">📈 Financial Needs Analysis</div>
-                    <div className="slide-service-box">🏖️ Retirement</div>
-                    <div className="slide-service-box">🛡️ Life Insurance</div>
-                    <div className="slide-service-box">💰 Tax Savings</div>
-                    <div className="slide-service-box">🎓 Kids College</div>
-                    <div className="slide-service-box">📜 Will &amp; Trust</div>
+            <div style={{ width: '55%', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '15px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <div style={{ width: '3px', height: '40px', background: '#e8c678', marginRight: '12px', marginTop: '4px' }}></div>
+                  <div>
+                    <p style={{ color: '#e8c678', fontWeight: '700', letterSpacing: '1.5px', fontSize: '0.75rem', margin: '0 0 2px 0' }}>
+                      MEET YOUR
+                    </p>
+                    <h3 style={{ color: 'white', fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', lineHeight: '1.1', margin: '0 0 8px 0' }}>
+                      FINANCIAL<br />PARTNER
+                    </h3>
                   </div>
                 </div>
+                <div style={{ width: '40px', height: '2px', background: '#e8c678', marginLeft: '15px' }}></div>
               </div>
-            </div>
 
-            <div className="slider-dots" style={{ bottom: '30px', zIndex: 20 }}>
-              {[0, 1, 2, 3].map(i => (
-                <span key={i} className={`dot ${slideIndex === i ? 'active' : ''}`} onClick={() => goToHeroSlide(i)}></span>
-              ))}
+              <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.95rem', lineHeight: '1.5', marginBottom: '15px', fontWeight: '500' }}>
+                Helping families navigate financial decisions with clarity, confidence, and purpose.
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.85rem', lineHeight: '1.5', marginBottom: '20px' }}>
+                Whether you&apos;re preparing for retirement, seeking tax-efficient strategies, protecting your assets, or building a legacy for future generations, Quantum Leap Wealth is committed to helping you make informed financial choices through education and personalized guidance.
+              </p>
+              <div style={{ marginTop: 'auto' }}>
+                <p style={{ fontFamily: "'Great Vibes', 'Playfair Display', serif", fontStyle: 'italic', fontSize: '1.8rem', color: '#e8c678', marginBottom: '2px' }}>
+                  Anuradha
+                </p>
+                <p style={{ color: 'white', fontWeight: '700', fontSize: '0.7rem', letterSpacing: '1px', margin: '0' }}>
+                  FOUNDER | FINANCIAL STRATEGIST
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -358,12 +318,29 @@ export default function HomePage() {
           <div className="logo-ticker-track">
             {[1, 2].map(set => (
               <div key={set} style={{ display: 'contents' }}>
-                <TickerLogo src="/images/product_images/American_product.png" alt="American Product" />
-                <TickerLogo src="/images/product_images/annexus_product.png" alt="Annexus Product" />
-                <TickerLogo src="/images/product_images/corebridge_product.png" alt="Corebridge Product" />
-                <TickerLogo src="/images/product_images/Fidelity_product.png" alt="Fidelity Product" />
-                <TickerLogo src="/images/product_images/nationwide_product._pic.jpg" alt="Nationwide Product" />
-                <TickerLogo src="/images/product_images/northamerican_product.png" alt="North American Product" />
+                <a href="https://www.american-equity.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/American_product.png" alt="American Product" /></a>
+                <a href="https://www.annexus.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/annexus_product.png" alt="Annexus Product" /></a>
+                <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/corebridge_product.png" alt="Corebridge Product" /></a>
+                <a href="https://www.fidelity.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/Fidelity_product.png" alt="Fidelity Product" /></a>
+                <a href="https://www.nationwidenewheights.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/nationwide_product._pic.jpg" alt="Nationwide Product" /></a>
+                <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/northamerican_product.png" alt="North American Product" /></a>
+                <a href="https://www.fglife.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/fg-life.png" alt="F&G Life" /></a>
+                <a href="https://www.lincolnfinancial.com/public/individuals" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/lincoln-financial.png" alt="Lincoln Financial" /></a>
+                <a href="https://www.athene.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/athene.jpg" alt="Athene" /></a>
+                <a href="https://www.allianz.com/en.html" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/allianz.png" alt="Allianz" /></a>
+                <a href="https://www.ameritas.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/ameritas.png" alt="Ameritas" /></a>
+                <a href="https://www.ethos.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/ethos.png" alt="Ethos" /></a>
+                <a href="https://www.americanamicable.com/v4/index.php" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/american-amicable.png" alt="American Amicable" /></a>
+                <a href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/mutual-of-omaha.png" alt="Mutual of Omaha" /></a>
+                <a href="https://www.netlaw.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/netlaw.png" alt="NetLaw" /></a>
+                <a href="https://www.agentpipeline.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/agent-pipeline.png" alt="Agent Pipeline" /></a>
+                <a href="https://neishloss.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/neishloss.png" alt="Neishloss & Fleming" /></a>
+                <a href="https://www.foresters.com/en-ca" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/forester-canada.svg" alt="Foresters" /></a>
+                <a href="https://www.cpp.ca" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/canada-protection-plan.png" alt="Canada Protection Plan" /></a>
+                <a href="https://ia.ca/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/ia.png" alt="iA Financial Group" /></a>
+                <a href="https://www.beneva.ca/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/beneva.png" alt="Beneva" /></a>
+                <a href="https://www.serenialife.ca/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/serenia-life.jpg" alt="Serenia Life" /></a>
+                <a href="https://www.bmo.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TickerLogo src="/images/product_images/bmo.png" alt="BMO" /></a>
               </div>
             ))}
           </div>
@@ -371,15 +348,37 @@ export default function HomePage() {
       </section>
 
       {/* NEWSLETTER SECTION */}
-      <section className="events-section" id="newsletter" style={{ padding: '100px 0', textAlign: 'center', background: '#ffffff', color: '#0b1d42' }}>
+      <section className="events-section" id="newsletter" style={{ padding: '50px 0', textAlign: 'center', background: '#ffffff', color: '#0b1d42' }}>
         <div className="container">
-          <div className="events-header reveal" style={{ marginBottom: '40px' }}>
+          <div className="events-header reveal" style={{ marginBottom: '25px' }}>
             <span className="section-label" style={{ color: '#c9a84c', fontWeight: '800' }}>Newsletter</span>
             <h2 className="section-title" style={{ color: '#0b1d42' }}>Stay Connected With Us</h2>
             <p className="section-sub" style={{ margin: '0 auto', maxWidth: '600px', color: '#555' }}>Subscribe to our weekly newsletter.</p>
           </div>
           <div className="reveal">
-            <a href="/newsletter" className="btn-primary" style={{ display: 'inline-block', padding: '15px 35px', borderRadius: '4px', fontWeight: '800', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', background: '#c9a84c', color: '#fff', border: 'none', boxShadow: '0 10px 20px rgba(201,168,76,0.3)' }}>Subscribe Now</a>
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              const firstName = e.target.firstName.value;
+              const email = e.target.email.value;
+              try {
+                const res = await fetch('/api/newsletter', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ firstName, email })
+                });
+                if (res.ok) {
+                  window.location.href = '/newsletter/success';
+                } else {
+                  alert('Something went wrong. Please try again.');
+                }
+              } catch (err) {
+                alert('Something went wrong. Please try again.');
+              }
+            }} style={{ display: 'flex', gap: '10px', justifyContent: 'center', maxWidth: '700px', margin: '0 auto', flexWrap: 'wrap' }}>
+              <input type="text" name="firstName" required placeholder="First Name" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
+              <input type="email" name="email" required placeholder="Email Address" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
+              <button type="submit" className="btn-primary" style={{ padding: '15px 30px', borderRadius: '4px', fontWeight: '800', letterSpacing: '0.1em', textTransform: 'uppercase', background: '#c9a84c', color: '#fff', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(201,168,76,0.3)' }}>Subscribe</button>
+            </form>
           </div>
         </div>
       </section>
@@ -458,6 +457,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
 
       <ScrollAnimator />
     </div>

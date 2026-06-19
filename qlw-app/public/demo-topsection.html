@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DEMO 4 — Corporate Vision Concept | Quantum Leap Wealth</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; overflow: hidden; font-family: 'Inter', sans-serif; background: #081a3f; }
@@ -78,8 +78,8 @@
     }
 
     .hgi-tagline {
-      font-size: clamp(2.5rem, 4vw, 5rem); font-weight: 800; color: #ffffff;
-      letter-spacing: 0.05em; line-height: 1.2; text-transform: uppercase;
+      font-size: clamp(1.2rem, 2vw, 2.5rem); font-weight: 700; color: #ffffff;
+      letter-spacing: 0.08em; line-height: 1.3; text-transform: uppercase;
       text-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
@@ -148,8 +148,7 @@
 
     <nav class="nav">
       <div class="nav-logo">
-        <img src="images/icon.png" alt="Quantum Leap Wealth" />
-        <span class="brand-text">Quantum Leap <span class="brand-wealth">Wealth</span></span>
+        <img src="images/icon.png" alt="Quantum Leap Wealth" style="height: 55px; width: auto;" />
       </div>
       <div class="nav-right">
         <ul class="nav-links">
@@ -178,8 +177,13 @@
 
       <!-- RIGHT: Anu Image, Text, Buttons -->
       <div class="hero-right-col">
-        <img src="images/Anu_Homepage_pic.png" class="anim-img" alt="Anu" style="max-width: 320px; border-radius: 16px; margin-bottom: 25px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); width: 100%; object-fit: contain;" />
-        <p class="hero-desc anim-desc">At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for long-term security - not driven by trends or guesswork.</p>
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px; width: 100%;">
+          <img src="images/Anu_Homepage_pic.png" class="anim-img" alt="Anu" style="max-width: 360px; border-radius: 16px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); width: 100%; object-fit: contain; flex-shrink: 0;" />
+          <div style="display: flex; flex-direction: column; text-align: left;">
+            <h3 class="anim-desc" style="color: #c9a84c; font-size: clamp(1.3rem, 1.8vw, 1.6rem); font-family: 'Playfair Display', serif; margin-bottom: 12px; font-weight: 900; line-height: 1.2;">Built on Strategy.<br>Driven by Purpose.</h3>
+            <p class="hero-desc anim-desc" style="margin-bottom: 0; font-size: 1rem; line-height: 1.5; color: rgba(255, 255, 255, 0.95);">At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for long-term security - not driven by trends or guesswork.</p>
+          </div>
+        </div>
         <div class="hero-actions anim-actions">
           <a href="#" class="btn-primary">Our Story</a>
           <a href="contact/contact.html" class="btn-outline">Get in Touch</a>

@@ -6,9 +6,9 @@ export async function POST(request) {
     const body = await request.json();
     const { firstName, email } = body;
 
-    if (!firstName || !email) {
+    if (!email) {
       return NextResponse.json(
-        { error: 'First name and email are required' },
+        { error: 'Email is required' },
         { status: 400 }
       );
     }
@@ -26,7 +26,7 @@ export async function POST(request) {
     // Save new subscriber
     const newSubscriber = await prisma.subscriber.create({
       data: {
-        firstName,
+        firstName: firstName || '',
         email,
       },
     });

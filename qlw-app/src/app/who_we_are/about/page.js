@@ -1,4 +1,4 @@
-﻿import "./about.css";
+import "./about.css";
 
 export default function Page() {
   return (
@@ -48,7 +48,7 @@ export default function Page() {
                     <div class="founder-photo-wrap reveal">
 
                         <div class="founder-photo-card">
-                            <img src="/images/Anu_profile_pic.png" alt="Anuradha - Profile Photo">
+                            <img src="/images/Anu-Profile-Pic1.png" alt="Anuradha - Profile Photo">
                             <div class="founder-avatar">
                                 <div class="founder-avatar-name">Anuradha</div>
                                 <div class="founder-avatar-title">Founder &amp; CEO</div>
@@ -163,7 +163,7 @@ export default function Page() {
                     </div>
                     <div class="family-photo-wrap reveal reveal-delay-2">
                         <div class="founder-photo-card" style="aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 8px solid rgba(201,168,76,0.2);">
-                            <img src="/images/Anu_profile_pic.png" alt="Anuradha - Founder" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/images/Anu-Profile-Pic1.png" alt="Anuradha - Founder" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </div>

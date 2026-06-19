@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect } from "react";
 import "./blogs.css";
 
@@ -281,10 +281,10 @@ export default function Page() {
                                     <div class="sidebar-card">
                                         <h3>🕐 Recent Posts</h3>
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
-                                            <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 - Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born - Quantum Leap Wealth</a><span>Mar 19</span></li>
-                                            <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? - Quantum Leap Wealth</a><span>Mar 19</span></li>
+                                            <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth</a></li>
+                                            <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 - Quantum Leap Wealth</a></li>
+                                            <li><a href="/Activities/start-saving-college">Start Saving for College When Your Child Is Born - Quantum Leap Wealth</a></li>
+                                            <li><a href="/Activities/will-vs-trust">Will vs. Trust: What Do I Need? - Quantum Leap Wealth</a></li>
                                         </ul>
                                     </div>
 

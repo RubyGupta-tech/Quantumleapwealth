@@ -239,15 +239,20 @@
     <style>
       .hero-split-section {
         display: flex;
-        height: calc(100vh - 180px);
-        /* Strictly lock to one screen minus navbar height */
-        min-height: 600px;
-        /* Safety floor for very small screens */
+        height: auto;
+        min-height: auto;
         width: 100%;
-        background: radial-gradient(circle at 20% 50%, #1e293b 0%, #0f172a 100%);
+        background: radial-gradient(circle at 20% 50%, #061020 0%, #030810 100%);
         position: relative;
-        padding-top: 0;
+        padding: 60px 0 20px 0;
         overflow: hidden;
+      }
+      @media(max-width: 1200px) {
+        .hero-split-section { flex-direction: column; }
+        .hero-split-left { padding: 40px 20px !important; width: 100%; }
+        .hero-split-right { padding: 40px 20px !important; width: 100%; }
+        .hero-split-right > div { flex-direction: column; max-width: 500px !important; }
+        .hero-split-right > div > div { width: 100% !important; }
       }
 
       /* Fintech Grid Background Overlay */
@@ -675,154 +680,114 @@
     </style>
 
     <section class="hero-split-section" id="home">
-      <!-- Premium Ambient Elements -->
-      <div class="hero-ambient-orb orb-1"></div>
-      <div class="hero-ambient-orb orb-2"></div>
 
-      <!-- Background Design Element -->
-      <div class="hero-bg-design-left"></div>
 
       <!-- 50% LEFT TEXT COLUMN -->
-      <div class="hero-split-left" style="align-items: center;">
-        <div class="hero-split-left-content hero-glass-card">
-          <h1 class="hero-split-title">
-            <div class="hero-title-line">
-              <span class="reveal-inner">Built on <span class="shimmer-text">Strategy.</span></span>
-            </div>
-            <div class="hero-title-line">
-              <span class="reveal-inner">Driven by <span class="shimmer-text">Purpose.</span></span>
-            </div>
-          </h1>
-
-          <p class="hero-split-desc">
-            At Quantum Leap Wealth, we believe financial planning should be intentional, structured, and built for
-            long-term security — not driven by trends or guesswork.
+      <!-- 60% LEFT TEXT COLUMN -->
+      <!-- 60% LEFT TEXT COLUMN -->
+      <div class="hero-split-left" style="align-items: center; text-align: left; padding: 0 5% 0 8%;">
+        <div class="hero-split-left-content" style="background: transparent; padding: 0; box-shadow: none; backdrop-filter: none; max-width: 700px; width: 100%;">
+          <p style="color: #e8c678; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-size: 0.8rem;">
+            WELCOME TO QUANTUM LEAP WEALTH
           </p>
-
-          <div class="hero-split-highlights">
-            <div class="hero-split-hl" style="animation-delay: 1.8s;">
-              <div class="hero-split-hl-icon">💰</div>Tax-Efficient
-            </div>
-            <div class="hero-split-hl" style="animation-delay: 1.9s;">
-              <div class="hero-split-hl-icon">🏖️</div>Retirement
-            </div>
-            <div class="hero-split-hl" style="animation-delay: 2.0s;">
-              <div class="hero-split-hl-icon">🛡️</div>Life Protection
-            </div>
-            <div class="hero-split-hl" style="animation-delay: 2.1s;">
-              <div class="hero-split-hl-icon">🎓</div>College Funding
-            </div>
+          <h1 style="font-size: clamp(2rem, 3.5vw, 3.2rem); color: white; font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; margin-bottom: 15px;">
+            Helping Families Build,<br/> Protect & Preserve <span style="color: #e8c678;">Wealth</span>
+          </h1>
+          <p style="color: white; font-weight: 600; font-size: 0.95rem; margin-bottom: 15px; word-spacing: 2px;">
+            Retirement Planning <span style="color: #e8c678; margin: 0 5px;">•</span> Wealth Strategies <span style="color: #e8c678; margin: 0 5px;">•</span> Financial Education
+          </p>
+          <div style="width: 60px; height: 2px; background: #e8c678; margin-bottom: 20px;"></div>
+          <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin-bottom: 25px; max-width: 600px;">
+            At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+          </p>
+          
+          <div style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
+            <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #e8c678, #c9a84c); color: #0a2540; font-weight: 700; display: flex; align-items: center; gap: 10px; border: none; padding: 12px 24px; font-size: 0.85rem;">
+              <span style="font-size: 1.1rem;">📅</span> BOOK DISCOVERY CALL
+            </a>
+            <a href="who_we_are/about.html" class="btn btn-primary" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); font-weight: 600; display: flex; align-items: center; gap: 10px; padding: 12px 24px; font-size: 0.85rem;">
+              <span style="font-size: 1.1rem; color: #e8c678;">▷</span> EXPLORE OUR SERVICES
+            </a>
           </div>
 
-          <div class="hero-split-buttons">
-            <a href="who_we_are/about.html" class="btn btn-primary"
-              style="box-shadow:0 10px 20px rgba(201,168,76,0.2); white-space:nowrap;">Our Story</a>
-            <a href="#"
-              onclick="openCalendlyModal();return false;"
-              class="btn btn-light-gold"
-              style="white-space:nowrap; background:transparent; color:white; border:1px solid rgba(255,255,255,0.4);">Consultation</a>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-bottom: 20px;">
+            <div style="text-align: left; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 10px;">
+              <span style="display: block; margin-bottom: 8px;">
+                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+                </svg>
+              </span>
+              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">EDUCATE TODAY</h4>
+              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Build Knowledge</p>
+            </div>
+            <div style="text-align: left; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 10px;">
+              <span style="display: block; margin-bottom: 8px;">
+                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path>
+                </svg>
+              </span>
+              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">ELEVATE TOMORROW</h4>
+              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Create Opportunities</p>
+            </div>
+            <div style="text-align: left;">
+              <span style="display: block; margin-bottom: 8px;">
+                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                </svg>
+              </span>
+              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">EMPOWER FOREVER</h4>
+              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Leave a Lasting Impact</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="height: 2px; width: 60px; background: linear-gradient(to right, rgba(232,198,120,0), rgba(232,198,120,1));"></div>
+            <p style="font-family: 'Great Vibes', 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: #e8c678; margin: 0;">
+              Where Vision Becomes Wealth
+            </p>
+            <div style="height: 2px; width: 60px; background: linear-gradient(to right, rgba(232,198,120,1), rgba(232,198,120,0));"></div>
           </div>
         </div>
       </div>
 
-      <!-- 50% RIGHT SLIDER COLUMN (EDGE-TO-EDGE) -->
-      <div class="hero-split-right">
-        <!-- Legacy slider structural container injected & expanded -->
-        <div class="dynamic-slider"
-          style="width: 100%; height: 100%; position: absolute; inset: 0; overflow: hidden; border-radius: 0; border: none; box-shadow: none;">
-
-          <!-- Slide 1 -->
-          <div class="slide active" style="height: 100%;">
-            <div class="slide-content" style="
-              background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 50%, #f7f1e3 100%); 
-              flex-direction: column; 
-              padding: 40px 20px; 
-              height: 100%; 
-              justify-content: center; 
-              display: flex; 
-              align-items: center;">
-              <div style="
-                background: rgba(255, 255, 255, 0.95);
-                padding: 20px 30px;
-                border-radius: 16px;
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 30px;
-                width: 90%;
-                max-width: 440px;
-                transition: transform 0.3s ease;">
-                <img src="images/Logo1.png" alt="Quantum Leap Wealth Logo" class="slide-logo"
-                  style="width: 100%; max-width: 400px; height: auto; display: block;" />
-              </div>
-              <p style="
-                color: #0a2540; 
-                font-family: 'Playfair Display', serif;
-                font-size: 1.2rem; 
-                font-weight: 700; 
-                text-align: center; 
-                max-width: 85%; 
-                margin: 0 auto;
-                letter-spacing: 0.3px;
-                line-height: 1.4;
-                border-top: 2px solid rgba(201, 168, 76, 0.3);
-                padding-top: 20px;">
-                Comprehensive Wealth Management &amp; Real Estate Investment Strategies
-              </p>
-            </div>
+      <!-- 40% RIGHT CARD COLUMN -->
+      <div class="hero-split-right" style="padding: 0 5% 0 0; display: flex; align-items: center; justify-content: center;">
+        <div style="background: #061020; border-radius: 16px; overflow: hidden; display: flex; width: 100%; max-width: 600px; height: 550px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);">
+          <!-- Image Half -->
+          <div style="width: 45%; position: relative; background: #e2e8f0;">
+            <img src="images/Anu-Profile-Pic2.png" alt="Anu Prasad" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;" />
           </div>
-
-          <!-- Slide 2 -->
-          <div class="slide" style="height: 100%;">
-            <div class="slide-content" style="height: 100%;">
-              <img src="images/Anu_profile_pic.png" alt="Expert Leadership" class="slide-bg"
-                style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
-              <div class="slide-overlay"
-                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
-                <h3 style="font-size: 1.5rem; color: white;">Expert Leadership You Can Trust</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide" style="height: 100%;">
-            <div class="slide-content" style="height: 100%;">
-              <img src="images/prasad_family_pic.png" alt="Secure Your Family" class="slide-bg"
-                style="object-position: top center; width: 100%; height: 100%; object-fit: cover;" />
-              <div class="slide-overlay"
-                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); bottom: 0; padding-bottom: 40px;">
-                <h3 style="font-size: 1.5rem; color: white;">Securing Your Family's Legacy</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4: Services Grid -->
-          <div class="slide" style="height: 100%;">
-            <div class="slide-content"
-              style="background: linear-gradient(135deg, #f8f9fa, #e2e8f0); height: 100%; justify-content: center;">
-              <div class="slide-services-container" style="width: 100%; padding: 0 5%;">
-                <h3
-                  style="color:var(--primary); text-align:center; font-size:1.5rem; font-weight: 800; margin-bottom:15px;">
-                  Our Expertise</h3>
-                <div class="slide-services-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📈 Financial Needs Analysis</div>
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🏖️ Retirement</div>
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🛡️ Life Insurance</div>
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">💰 Tax Savings</div>
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">🎓 Kids College</div>
-                  <div class="slide-service-box" style="padding: 12px; font-size: 0.9rem;">📜 Will & Trust</div>
+          <!-- Text Half -->
+          <div style="width: 55%; padding: 30px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 15px;">
+              <div style="display: flex; align-items: flex-start;">
+                <div style="width: 3px; height: 40px; background: #e8c678; margin-right: 12px; margin-top: 4px;"></div>
+                <div>
+                  <p style="color: #e8c678; font-weight: 700; letter-spacing: 1.5px; font-size: 0.75rem; margin: 0 0 2px 0;">
+                    MEET YOUR
+                  </p>
+                  <h3 style="color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.1; margin: 0 0 8px 0;">
+                    FINANCIAL<br/>PARTNER
+                  </h3>
                 </div>
               </div>
+              <div style="width: 40px; height: 2px; background: #e8c678; margin-left: 15px;"></div>
             </div>
-          </div>
-
-          <!-- Slider Controls -->
-          <div class="slider-dots" style="bottom: 30px; z-index: 20;">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; font-weight: 500;">
+              Helping families navigate financial decisions with clarity, confidence, and purpose.
+            </p>
+            <p style="color: rgba(255,255,255,0.75); font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px;">
+              Whether you're preparing for retirement, seeking tax-efficient strategies, protecting your assets, or building a legacy for future generations, Quantum Leap Wealth is committed to helping you make informed financial choices through education and personalized guidance.
+            </p>
+            <div style="margin-top: auto;">
+              <p style="font-family: 'Great Vibes', 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: #e8c678; margin-bottom: 2px;">
+                Anuradha
+              </p>
+              <p style="color: white; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; margin: 0;">
+                FOUNDER | FINANCIAL STRATEGIST
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1593,25 +1558,53 @@
       <div class="logo-ticker-container">
         <div class="logo-ticker-track">
           <!-- Set 1 -->
-          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
-          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
-          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
-          </div>
-          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
-          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
-              alt="Nationwide Product" /></div>
-          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
-              alt="North American Product" /></div>
+          <div class="logo-item"><a href="https://www.american-equity.com/" target="_blank"><img src="images/product_images/American_product.png" alt="American Product" /></a></div>
+          <div class="logo-item"><a href="https://www.annexus.com/" target="_blank"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></a></div>
+          <div class="logo-item"><a href="https://www.corebridgefinancial.com/" target="_blank"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" /></a></div>
+          <div class="logo-item"><a href="https://www.fidelity.com/" target="_blank"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></a></div>
+          <div class="logo-item"><a href="https://www.nationwidenewheights.com/" target="_blank"><img src="images/product_images/nationwide_product._pic.jpg" alt="Nationwide Product" /></a></div>
+          <div class="logo-item"><a href="https://www.northamericancompany.com/" target="_blank"><img src="images/product_images/northamerican_product.png" alt="North American Product" /></a></div>
+          <div class="logo-item"><a href="https://www.fglife.com/" target="_blank"><img src="images/product_images/fg-life.png" alt="F&G Life" /></a></div>
+          <div class="logo-item"><a href="https://www.lincolnfinancial.com/public/individuals" target="_blank"><img src="images/product_images/lincoln-financial.png" alt="Lincoln Financial" /></a></div>
+          <div class="logo-item"><a href="https://www.athene.com/" target="_blank"><img src="images/product_images/athene.jpg" alt="Athene" /></a></div>
+          <div class="logo-item"><a href="https://www.allianz.com/en.html" target="_blank"><img src="images/product_images/allianz.png" alt="Allianz" /></a></div>
+          <div class="logo-item"><a href="https://www.ameritas.com/" target="_blank"><img src="images/product_images/ameritas.png" alt="Ameritas" /></a></div>
+          <div class="logo-item"><a href="https://www.ethos.com/" target="_blank"><img src="images/product_images/ethos.png" alt="Ethos" /></a></div>
+          <div class="logo-item"><a href="https://www.americanamicable.com/v4/index.php" target="_blank"><img src="images/product_images/american-amicable.png" alt="American Amicable" /></a></div>
+          <div class="logo-item"><a href="https://www.mutualofomaha.com/" target="_blank"><img src="images/product_images/mutual-of-omaha.png" alt="Mutual of Omaha" /></a></div>
+          <div class="logo-item"><a href="https://www.netlaw.com/" target="_blank"><img src="images/product_images/netlaw.png" alt="NetLaw" /></a></div>
+          <div class="logo-item"><a href="https://www.agentpipeline.com/" target="_blank"><img src="images/product_images/agent-pipeline.png" alt="Agent Pipeline" /></a></div>
+          <div class="logo-item"><a href="https://neishloss.com/" target="_blank"><img src="images/product_images/neishloss.png" alt="Neishloss & Fleming" /></a></div>
+          <div class="logo-item"><a href="https://www.foresters.com/en-ca" target="_blank"><img src="images/product_images/forester-canada.svg" alt="Foresters" /></a></div>
+          <div class="logo-item"><a href="https://www.cpp.ca" target="_blank"><img src="images/product_images/canada-protection-plan.png" alt="Canada Protection Plan" /></a></div>
+          <div class="logo-item"><a href="https://ia.ca/" target="_blank"><img src="images/product_images/ia.png" alt="iA Financial Group" /></a></div>
+          <div class="logo-item"><a href="https://www.beneva.ca/" target="_blank"><img src="images/product_images/beneva.png" alt="Beneva" /></a></div>
+          <div class="logo-item"><a href="https://www.serenialife.ca/" target="_blank"><img src="images/product_images/serenia-life.jpg" alt="Serenia Life" /></a></div>
+          <div class="logo-item"><a href="https://www.bmo.com/" target="_blank"><img src="images/product_images/bmo.png" alt="BMO" /></a></div>
           <!-- Set 2 (Duplicate for smooth loop) -->
-          <div class="logo-item"><img src="images/product_images/American_product.png" alt="American Product" /></div>
-          <div class="logo-item"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></div>
-          <div class="logo-item"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" />
-          </div>
-          <div class="logo-item"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></div>
-          <div class="logo-item"><img src="images/product_images/nationwide_product._pic.jpg"
-              alt="Nationwide Product" /></div>
-          <div class="logo-item"><img src="images/product_images/northamerican_product.png"
-              alt="North American Product" /></div>
+          <div class="logo-item"><a href="https://www.american-equity.com/" target="_blank"><img src="images/product_images/American_product.png" alt="American Product" /></a></div>
+          <div class="logo-item"><a href="https://www.annexus.com/" target="_blank"><img src="images/product_images/annexus_product.png" alt="Annexus Product" /></a></div>
+          <div class="logo-item"><a href="https://www.corebridgefinancial.com/" target="_blank"><img src="images/product_images/corebridge_product.png" alt="Corebridge Product" /></a></div>
+          <div class="logo-item"><a href="https://www.fidelity.com/" target="_blank"><img src="images/product_images/Fidelity_product.png" alt="Fidelity Product" /></a></div>
+          <div class="logo-item"><a href="https://www.nationwidenewheights.com/" target="_blank"><img src="images/product_images/nationwide_product._pic.jpg" alt="Nationwide Product" /></a></div>
+          <div class="logo-item"><a href="https://www.northamericancompany.com/" target="_blank"><img src="images/product_images/northamerican_product.png" alt="North American Product" /></a></div>
+          <div class="logo-item"><a href="https://www.fglife.com/" target="_blank"><img src="images/product_images/fg-life.png" alt="F&G Life" /></a></div>
+          <div class="logo-item"><a href="https://www.lincolnfinancial.com/public/individuals" target="_blank"><img src="images/product_images/lincoln-financial.png" alt="Lincoln Financial" /></a></div>
+          <div class="logo-item"><a href="https://www.athene.com/" target="_blank"><img src="images/product_images/athene.jpg" alt="Athene" /></a></div>
+          <div class="logo-item"><a href="https://www.allianz.com/en.html" target="_blank"><img src="images/product_images/allianz.png" alt="Allianz" /></a></div>
+          <div class="logo-item"><a href="https://www.ameritas.com/" target="_blank"><img src="images/product_images/ameritas.png" alt="Ameritas" /></a></div>
+          <div class="logo-item"><a href="https://www.ethos.com/" target="_blank"><img src="images/product_images/ethos.png" alt="Ethos" /></a></div>
+          <div class="logo-item"><a href="https://www.americanamicable.com/v4/index.php" target="_blank"><img src="images/product_images/american-amicable.png" alt="American Amicable" /></a></div>
+          <div class="logo-item"><a href="https://www.mutualofomaha.com/" target="_blank"><img src="images/product_images/mutual-of-omaha.png" alt="Mutual of Omaha" /></a></div>
+          <div class="logo-item"><a href="https://www.netlaw.com/" target="_blank"><img src="images/product_images/netlaw.png" alt="NetLaw" /></a></div>
+          <div class="logo-item"><a href="https://www.agentpipeline.com/" target="_blank"><img src="images/product_images/agent-pipeline.png" alt="Agent Pipeline" /></a></div>
+          <div class="logo-item"><a href="https://neishloss.com/" target="_blank"><img src="images/product_images/neishloss.png" alt="Neishloss & Fleming" /></a></div>
+          <div class="logo-item"><a href="https://www.foresters.com/en-ca" target="_blank"><img src="images/product_images/forester-canada.svg" alt="Foresters" /></a></div>
+          <div class="logo-item"><a href="https://www.cpp.ca" target="_blank"><img src="images/product_images/canada-protection-plan.png" alt="Canada Protection Plan" /></a></div>
+          <div class="logo-item"><a href="https://ia.ca/" target="_blank"><img src="images/product_images/ia.png" alt="iA Financial Group" /></a></div>
+          <div class="logo-item"><a href="https://www.beneva.ca/" target="_blank"><img src="images/product_images/beneva.png" alt="Beneva" /></a></div>
+          <div class="logo-item"><a href="https://www.serenialife.ca/" target="_blank"><img src="images/product_images/serenia-life.jpg" alt="Serenia Life" /></a></div>
+          <div class="logo-item"><a href="https://www.bmo.com/" target="_blank"><img src="images/product_images/bmo.png" alt="BMO" /></a></div>
         </div>
       </div>
     </section>
@@ -1619,15 +1612,40 @@
     <!-- ══════════════════════════════
      NEWSLETTER
 ══════════════════════════════ -->
-    <section class="events-section" id="newsletter" style="padding: 100px 0; text-align: center; background: #ffffff; color: #0b1d42;">
+    <section class="events-section" id="newsletter" style="padding: 50px 0; text-align: center; background: #ffffff; color: #0b1d42;">
       <div class="container">
-        <div class="events-header reveal" style="margin-bottom: 40px;">
+        <div class="events-header reveal" style="margin-bottom: 25px;">
           <span class="section-label" style="color: #c9a84c; font-weight: 800;">Newsletter</span>
           <h2 class="section-title" style="color: #0b1d42;">Stay Connected With Us</h2>
           <p class="section-sub" style="margin: 0 auto; max-width: 600px; color: #555;">Subscribe to our weekly newsletter.</p>
         </div>
         <div class="reveal">
-          <a href="newsletter.html" class="btn-primary" style="display: inline-block; padding: 15px 35px; border-radius: 4px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #c9a84c; color: #fff; border: none; box-shadow: 0 10px 20px rgba(201,168,76,0.3);">Subscribe Now</a>
+          <form id="inline-nl-form-static" style="display: flex; gap: 10px; justify-content: center; max-width: 700px; margin: 0 auto; flex-wrap: wrap;">
+            <input type="text" id="inline-nl-firstname-static" required placeholder="First Name" style="padding: 15px; border-radius: 4px; border: 1px solid #ccc; flex: 1; min-width: 200px; font-size: 1rem; font-family: inherit;" />
+            <input type="email" id="inline-nl-email-static" required placeholder="Email Address" style="padding: 15px; border-radius: 4px; border: 1px solid #ccc; flex: 1; min-width: 200px; font-size: 1rem; font-family: inherit;" />
+            <button type="submit" class="btn-primary" style="padding: 15px 30px; border-radius: 4px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: #c9a84c; color: #fff; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(201,168,76,0.3);">Subscribe</button>
+          </form>
+          <script>
+            document.getElementById('inline-nl-form-static').addEventListener('submit', async function(e) {
+              e.preventDefault();
+              const firstName = document.getElementById('inline-nl-firstname-static').value;
+              const email = document.getElementById('inline-nl-email-static').value;
+              try {
+                const res = await fetch('http://localhost:3000/api/newsletter', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ firstName, email })
+                });
+                if (res.ok) {
+                  window.location.href = 'newsletter-success.html';
+                } else {
+                  alert('Something went wrong. Please try again.');
+                }
+              } catch(err) {
+                 alert('Something went wrong. Please check if the Next.js server is running.');
+              }
+            });
+          </script>
         </div>
       </div>
     </section>
@@ -1973,6 +1991,8 @@
         </div>
       </div>
     </section>
+
+
 
   </main>
 
@@ -2446,6 +2466,9 @@
       });
     }
   </script>
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 
 </html>

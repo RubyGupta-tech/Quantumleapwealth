@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Post Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .download-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: #cca876;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 100;
+      transition: background 0.3s;
+    }
+    
+    .download-btn:hover {
+      background: #a68048;
+    }
+    
+    body {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Instagram Square Post: 1080x1080 */
+    .insta-post {
+      width: 1080px;
+      height: 1080px;
+      background: linear-gradient(to bottom, #f6efe8 48%, #dfd3ce 48%);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .top-text {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 55px;
+      color: #cca876; /* Gold color */
+      text-transform: none; /* Keep natural casing for cursive */
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 2px;
+    }
+
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+    }
+
+    /* Device Mockups Container */
+    .devices-container {
+      position: relative;
+      width: 800px;
+      height: 440px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    /* CSS iMac */
+    .imac {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      width: 560px;
+      height: 360px;
+      background: #111;
+      border-radius: 20px;
+      padding: 18px 18px 45px 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .imac-screen {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .imac-screen img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+    .imac-logo {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: #444;
+      border-radius: 50%;
+    }
+    .imac-stand {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 60px;
+      background: #444;
+      border-radius: 0 0 10px 10px;
+      clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
+    .imac-base {
+      position: absolute;
+      bottom: -65px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 5px;
+      background: #222;
+      border-radius: 5px;
+    }
+
+    /* CSS iPhone */
+    .iphone {
+      position: absolute;
+      right: 100px;
+      top: 140px;
+      width: 140px;
+      height: 290px;
+      background: #111;
+      border-radius: 24px;
+      padding: 10px;
+      box-shadow: -10px 20px 40px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .iphone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .iphone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 15px;
+      background: #111;
+      border-radius: 0 0 10px 10px;
+      z-index: 2;
+    }
+
+    .bottom-text {
+      font-size: 30px;
+      color: #222;
+      max-width: 700px;
+      line-height: 1.4;
+      font-weight: 500;
+      margin-top: 20px;
+      padding-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .bottom-text::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #cca876, #a68048, #cca876, transparent);
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1080x1080 Canvas for Instagram -->
+  <div class="insta-post" id="post">
+    
+    <div class="top-text">It's Launching Day</div>
+    
+    <div class="main-title">New Website</div>
+
+    <div class="devices-container">
+      <!-- iMac -->
+      <div class="imac">
+        <div class="imac-screen">
+          <img src="images/Home_page_QLW2.png" alt="Desktop Screenshot">
+        </div>
+        <div class="imac-logo"></div>
+        <div class="imac-stand"></div>
+        <div class="imac-base"></div>
+      </div>
+
+      <!-- iPhone -->
+      <div class="iphone">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+          <!-- Reusing the same image but object-fit will crop it nicely for mobile -->
+          <img src="images/instalaunchQWL.jpeg" alt="Mobile Screenshot">
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-text">
+      Just launched a new digital experience!<br>Custom UI/UX design for a luxury financial firm.
+    </div>
+
+  </div>
+
+  <button class="download-btn" onclick="downloadPost()">Download Post</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    function downloadPost() {
+      const btn = document.querySelector('.download-btn');
+      btn.innerText = 'Generating...';
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+
+      const post = document.getElementById('post');
+      
+      html2canvas(post, {
+        scale: 2, // 2x scale for better quality (retina)
+        useCORS: true, // To load images correctly
+      }).then(canvas => {
+        // Convert canvas to image
+        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+        
+        // Create an invisible download link and click it
+        const link = document.createElement('a');
+        link.download = 'instagram-launch-post.jpg';
+        link.href = imgData;
+        link.click();
+
+        // Reset button
+        btn.innerText = 'Download Post';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html>
