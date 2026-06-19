@@ -121,8 +121,9 @@ export default function HomePage() {
           .hero-split-section { flex-direction: column; }
           .hero-split-left { padding: 40px 20px !important; width: 100%; }
           .hero-split-right { padding: 40px 20px !important; width: 100%; }
-          .hero-split-right > div { flex-direction: column; max-width: 500px !important; }
+          .hero-split-right > div { flex-direction: column; max-width: 500px !important; height: auto !important; }
           .hero-split-right > div > div { width: 100% !important; }
+          .hero-split-right > div > div:first-child { height: 350px !important; }
         }
         .hero-glass-card { background: #0a2540; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; backdrop-filter: blur(16px); }
         .hero-split-title { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; color: white; font-family: var(--font-playfair); font-weight: 800; }

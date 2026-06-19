@@ -448,6 +448,13 @@
         min-height: 50vh;
         z-index: 1;
       }
+      
+      @media(max-width: 1200px) {
+        .hero-split-right { padding: 40px 20px !important; width: 100%; }
+        .hero-split-right > div { flex-direction: column; max-width: 500px !important; height: auto !important; }
+        .hero-split-right > div > div { width: 100% !important; }
+        .hero-split-right > div > div:first-child { height: 350px !important; }
+      }
 
       @media(max-width: 992px) {
         .hero-split-right {
