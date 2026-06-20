@@ -115,136 +115,267 @@ export default function HomePage() {
       {/* Critical CSS for LCP Optimization */}
       <style dangerouslySetInnerHTML={{
         __html: `
-        .hero-split-section { display: flex; height: auto; min-height: auto; width: 100%; background: radial-gradient(circle at 20% 50%, #061020 0%, #030810 100%); position: relative; overflow: hidden; padding: 60px 0 20px 0; }
-        .hero-split-left { flex: 1 1 50%; display: flex; align-items: center; justify-content: center; padding: 4% 8%; position: relative; z-index: 2; }
-        @media(max-width: 1200px) {
-          .hero-split-section { flex-direction: column; }
-          .hero-split-left { padding: 40px 20px !important; width: 100%; }
-          .hero-split-right { padding: 40px 20px !important; width: 100%; }
-          .hero-split-right > div { flex-direction: column; max-width: 500px !important; height: auto !important; }
-          .hero-split-right > div > div { width: 100% !important; }
-          .hero-split-right > div > div:first-child { height: 350px !important; }
+        /* New Hero CSS */
+        .hero-container {
+          position: relative;
+          width: 100%;
+          min-height: 60vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 100px 5% 120px 5%;
+          box-sizing: border-box;
+          background-color: #0a1930;
+          background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
         }
-        .hero-glass-card { background: #0a2540; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; backdrop-filter: blur(16px); }
-        .hero-split-title { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; color: white; font-family: var(--font-playfair); font-weight: 800; }
-        .hero-split-left-content { max-width: 600px; width: 100%; animation: fadeUpIn 0.3s ease-out forwards; }
-        @keyframes fadeUpIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-        @media(max-width: 992px) { .hero-split-section { flex-direction: column; height: auto; } .hero-split-left { padding: 40px 20px; width: 100%; } }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: linear-gradient(180deg, rgba(10, 25, 48, 0.85) 0%, rgba(10, 25, 48, 0.95) 100%);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 900px;
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .eyebrow {
+          color: #e8c678;
+          font-size: 0.85rem;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .eyebrow::before, .eyebrow::after {
+          content: '';
+          display: block;
+          width: 40px;
+          height: 2px;
+          background: #e8c678;
+        }
+
+        .headline {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(2.5rem, 4vw, 3.8rem); 
+          line-height: 1.15;
+          font-weight: 700;
+          margin: 0 0 15px 0;
+          color: #fff;
+        }
+
+        .headline span {
+          color: #e8c678;
+          font-style: italic;
+          font-weight: 400;
+        }
+
+        .paragraph {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.85);
+          margin: 0 auto 20px auto;
+          font-weight: 300;
+          max-width: 700px;
+        }
+
+        .mini-tags {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap;
+          margin: 0 auto 25px auto;
+          max-width: 800px;
+        }
+
+        .mini-tag {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .tag-title {
+          font-size: 0.8rem;
+          color: #e8c678;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .tag-desc {
+          font-size: 0.9rem;
+          color: rgba(255,255,255,0.7);
+          margin: 0;
+          font-family: 'Playfair Display', serif;
+          font-style: italic;
+        }
+
+        .btn-primary-hero {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+          color: #fff !important;
+          padding: 14px 32px;
+          border-radius: 40px;
+          font-size: 0.9rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-primary-hero:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 0 20px rgba(201, 168, 76, 0.8), 0 0 40px rgba(201, 168, 76, 0.4);
+        }
+
+        .btn-primary-hero svg {
+          transition: transform 0.3s ease;
+        }
+        
+        .btn-primary-hero:hover svg {
+          transform: translateX(4px);
+        }
+
+        .overlap-container {
+          position: relative;
+          z-index: 10;
+          max-width: 1200px;
+          margin: -180px auto -280px auto; 
+          padding: 0 5%;
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        .profile-box {
+          background: #f8f9fb;
+          border-radius: 12px;
+          padding: 15px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+          border-bottom: 4px solid #e8c678;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 12px;
+          width: 100%;
+          max-width: 250px;
+        }
+
+        .profile-box-image {
+          width: 100%;
+          height: 200px;
+          border-radius: 8px;
+          object-fit: cover;
+          object-position: top center;
+          background: #0a1930;
+        }
+
+        .profile-box-text h3 {
+          font-family: var(--font-great-vibes), 'Great Vibes', cursive;
+          font-size: 2.2rem;
+          color: #a07a28;
+          margin: 0 0 5px 0;
+          line-height: 1;
+        }
+
+        .profile-box-text p {
+          font-size: 0.85rem;
+          color: #0a1930;
+          margin: 0;
+          font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+          .headline { font-size: 2.5rem; }
+          .mini-tags { gap: 20px; flex-direction: column; }
+          .overlap-container { justify-content: center; margin-top: 20px; }
+        }
       `}} />
 
 
       {/* HERO SECTION */}
-      <section className="hero-split-section" id="home">
-        <div className="hero-split-left" style={{ alignItems: 'center', textAlign: 'left', padding: '0 5% 0 8%' }}>
-          <div className="hero-split-left-content" style={{ background: 'transparent', padding: '0', boxShadow: 'none', backdropFilter: 'none', maxWidth: '700px', width: '100%' }}>
-            <p style={{ color: '#e8c678', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px', fontSize: '0.8rem' }}>
-              WELCOME TO QUANTUM LEAP WEALTH
-            </p>
-            <h1 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', color: 'white', fontFamily: "'Playfair Display', serif", fontWeight: '800', lineHeight: '1.1', marginBottom: '15px' }}>
-              Helping Families Build,<br /> Protect & Preserve <span style={{ color: '#e8c678' }}>Wealth</span>
-            </h1>
-            <p style={{ color: 'white', fontWeight: '600', fontSize: '0.95rem', marginBottom: '15px', wordSpacing: '2px' }}>
-              Retirement Planning <span style={{ color: '#e8c678', margin: '0 5px' }}>•</span> Wealth Strategies <span style={{ color: '#e8c678', margin: '0 5px' }}>•</span> Financial Education
-            </p>
-            <div style={{ width: '60px', height: '2px', background: '#e8c678', marginBottom: '20px' }}></div>
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '25px', maxWidth: '600px' }}>
-              At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
-            </p>
+      <section className="hero-container" id="home">
+        <div className="hero-overlay"></div>
 
-            <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', flexWrap: 'wrap' }}>
-              <a href="#" onClick={(e) => {
-                e.preventDefault();
-                if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
-              }} className="btn btn-primary" style={{ background: 'linear-gradient(135deg, #e8c678, #c9a84c)', color: '#0a2540', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '10px', border: 'none', padding: '12px 24px', fontSize: '0.85rem' }}>
-                <span style={{ fontSize: '1.1rem' }}>📅</span> BOOK DISCOVERY CALL
-              </a>
-              <a href="/who_we_are/about" className="btn btn-primary" style={{ background: 'transparent', color: 'white', border: '2px solid rgba(255,255,255,0.3)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 24px', fontSize: '0.85rem' }}>
-                <span style={{ fontSize: '1.1rem', color: '#e8c678' }}>▷</span> EXPLORE OUR SERVICES
-              </a>
+        <div className="hero-content">
+          <div className="eyebrow">Quantum Leap Wealth</div>
+          <h1 className="headline">Navigating Your Financial Future <span>With Clarity</span></h1>
+          <p className="paragraph">
+            At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+          </p>
+
+          <div className="mini-tags">
+            <div className="mini-tag">
+              <div className="tag-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+                Educate Today
+              </div>
+              <p className="tag-desc">Build Knowledge</p>
             </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px', marginBottom: '20px' }}>
-              <div style={{ textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '10px' }}>
-                <span style={{ display: 'block', marginBottom: '8px' }}>
-                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
-                  </svg>
-                </span>
-                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>EDUCATE TODAY</h4>
-                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Build Knowledge</p>
+            <div className="mini-tag">
+              <div className="tag-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path></svg>
+                Elevate Tomorrow
               </div>
-              <div style={{ textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '10px' }}>
-                <span style={{ display: 'block', marginBottom: '8px' }}>
-                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path>
-                  </svg>
-                </span>
-                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>ELEVATE TOMORROW</h4>
-                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Create Opportunities</p>
-              </div>
-              <div style={{ textAlign: 'left' }}>
-                <span style={{ display: 'block', marginBottom: '8px' }}>
-                  <svg width="26" height="26" fill="none" stroke="#e8c678" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
-                  </svg>
-                </span>
-                <h4 style={{ color: 'white', fontSize: '0.8rem', fontWeight: '700', marginBottom: '3px' }}>EMPOWER FOREVER</h4>
-                <p style={{ color: '#e8c678', fontSize: '0.75rem', margin: '0' }}>Leave a Lasting Impact</p>
-              </div>
+              <p className="tag-desc">Create Opportunities</p>
             </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-              <div style={{ height: '2px', width: '60px', background: 'linear-gradient(to right, rgba(232,198,120,0), rgba(232,198,120,1))' }}></div>
-              <p style={{ fontFamily: "'Great Vibes', 'Playfair Display', serif", fontStyle: 'italic', fontSize: '1.8rem', color: '#e8c678', margin: '0' }}>
-                Where Vision Becomes Wealth
-              </p>
-              <div style={{ height: '2px', width: '60px', background: 'linear-gradient(to right, rgba(232,198,120,1), rgba(232,198,120,0))' }}></div>
+            <div className="mini-tag">
+              <div className="tag-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+                Empower Forever
+              </div>
+              <p className="tag-desc">Leave a Lasting Impact</p>
             </div>
           </div>
-        </div>
 
-        <div className="hero-split-right" style={{ padding: '0 5% 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ background: '#061020', borderRadius: '16px', overflow: 'hidden', display: 'flex', width: '100%', maxWidth: '600px', height: '550px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <div style={{ width: '45%', position: 'relative', background: '#e2e8f0' }}>
-              <img src="/images/Anu-Profile-Pic2.png" alt="Anu Prasad" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
-            </div>
-            <div style={{ width: '55%', padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '15px' }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                  <div style={{ width: '3px', height: '40px', background: '#e8c678', marginRight: '12px', marginTop: '4px' }}></div>
-                  <div>
-                    <p style={{ color: '#e8c678', fontWeight: '700', letterSpacing: '1.5px', fontSize: '0.75rem', margin: '0 0 2px 0' }}>
-                      MEET YOUR
-                    </p>
-                    <h3 style={{ color: 'white', fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', lineHeight: '1.1', margin: '0 0 8px 0' }}>
-                      FINANCIAL<br />PARTNER
-                    </h3>
-                  </div>
-                </div>
-                <div style={{ width: '40px', height: '2px', background: '#e8c678', marginLeft: '15px' }}></div>
-              </div>
-
-              <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.95rem', lineHeight: '1.5', marginBottom: '15px', fontWeight: '500' }}>
-                Helping families navigate financial decisions with clarity, confidence, and purpose.
-              </p>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.85rem', lineHeight: '1.5', marginBottom: '20px' }}>
-                Whether you&apos;re preparing for retirement, seeking tax-efficient strategies, protecting your assets, or building a legacy for future generations, Quantum Leap Wealth is committed to helping you make informed financial choices through education and personalized guidance.
-              </p>
-              <div style={{ marginTop: 'auto' }}>
-                <p style={{ fontFamily: "'Great Vibes', 'Playfair Display', serif", fontStyle: 'italic', fontSize: '1.8rem', color: '#e8c678', marginBottom: '2px' }}>
-                  Anuradha
-                </p>
-                <p style={{ color: 'white', fontWeight: '700', fontSize: '0.7rem', letterSpacing: '1px', margin: '0' }}>
-                  FOUNDER | FINANCIAL STRATEGIST
-                </p>
-              </div>
-            </div>
-          </div>
+          <button onClick={(e) => {
+            e.preventDefault();
+            if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
+          }} className="btn-primary-hero">
+            BOOK DISCOVERY CALL
+          </button>
         </div>
       </section>
 
+      {/* The Single Overlapping Box on the Left with Anu's Image */}
+      <div className="overlap-container">
+        <div className="profile-box">
+          <img src="/images/Anu-Cutout.png" alt="Anuradha" className="profile-box-image" />
+          <div className="profile-box-text">
+            <h3>Anuradha</h3>
+            <p>Founder | Financial Strategist</p>
+          </div>
+        </div>
+      </div>
+
       {/* SERVICES SECTION */}
-      <section className="section section-light" id="services">
+      <section className="section section-light" id="services" style={{ paddingTop: '260px' }}>
         <div className="container">
           <div className="text-center reveal">
             <span className="section-label">What We Offer</span>
@@ -553,7 +684,7 @@ function EventCard({ event, isPast }) {
             <a href="#" className="event-btn event-btn-register" onClick={(e) => {
               e.preventDefault();
               if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
-            }}>Register Now →</a>
+            }}>BOOK DISCOVERY CALL →</a>
           )}
         </div>
       </div>

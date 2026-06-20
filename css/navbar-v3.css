@@ -58,7 +58,7 @@
 }
 
 .brand-logo {
-    height: 85px; /* Restored to a more standard proportion for a stacked logo */
+    height: 70px;
     width: auto;
     object-fit: contain;
     border-radius: 0;
@@ -261,7 +261,7 @@
     box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
     transition: all 0.3s;
 }
-.btn-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(201, 168, 76, 0.45); }
+.btn-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(201, 168, 76, 0.8), 0 0 30px rgba(201, 168, 76, 0.4); }
 
 /* ---- Hamburger (Mobile Only) ---- */
 .hamburger {

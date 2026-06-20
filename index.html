@@ -213,13 +213,13 @@
         </li>
         <li class="nav-item"><a href="contact/contact.html" class="nav-link">Contact</a></li>
         <li class="nav-item">
-            <a href="#"
-                onclick="openCalendlyModal();return false;"
-                class="btn-nav-cta">Book Consultation <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                </svg></a>
+            <a href="#" class="btn-primary-hero" onclick="openCalendlyModal();return false;">
+          BOOK DISCOVERY CALL
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
         </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
@@ -237,568 +237,263 @@
      HERO
 ══════════════════════════════ -->
     <style>
-      .hero-split-section {
-        display: flex;
-        height: auto;
-        min-height: auto;
+      /* New Hero CSS */
+      :root {
+        --gold: #e8c678;
+        --gold-dark: #c9a84c;
+      }
+      .hero-container {
+        position: relative;
         width: 100%;
-        background: radial-gradient(circle at 20% 50%, #061020 0%, #030810 100%);
-        position: relative;
-        padding: 60px 0 20px 0;
-        overflow: hidden;
-      }
-      @media(max-width: 1200px) {
-        .hero-split-section { flex-direction: column; }
-        .hero-split-left { padding: 40px 20px !important; width: 100%; }
-        .hero-split-right { padding: 40px 20px !important; width: 100%; }
-        .hero-split-right > div { flex-direction: column; max-width: 500px !important; }
-        .hero-split-right > div > div { width: 100% !important; }
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 5% 120px 5%;
+        box-sizing: border-box;
+        background-color: #0a1930;
+        background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
       }
 
-      /* Fintech Grid Background Overlay */
-      .hero-split-section::before {
-        content: '';
+      .hero-overlay {
         position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(232, 198, 120, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(232, 198, 120, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(180deg, rgba(10, 25, 48, 0.85) 0%, rgba(10, 25, 48, 0.95) 100%);
         z-index: 1;
-        pointer-events: none;
-        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
       }
 
-      /* Ambient Background Orbs */
-      .hero-ambient-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.4;
-        animation: floatOrb 15s ease-in-out infinite alternate;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      .orb-1 {
-        width: 500px;
-        height: 500px;
-        background: rgba(201, 168, 76, 0.15);
-        top: 10%;
-        right: 40%;
-      }
-
-      .orb-2 {
-        width: 600px;
-        height: 600px;
-        background: rgba(56, 189, 248, 0.1);
-        bottom: -10%;
-        left: 30%;
-        animation-delay: 2s;
-      }
-
-      @keyframes floatOrb {
-        0% {
-          transform: translate(0, 0) scale(1);
-        }
-
-        100% {
-          transform: translate(40px, -40px) scale(1.1);
-        }
-      }
-
-      /* Premium Glassmorphism Data Card */
-      .hero-glass-card {
-        background:
-          linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85)),
-          url('images/hero_prosperity.png') center/cover no-repeat;
-        background-blend-mode: multiply;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-top: 1px solid rgba(201, 168, 76, 0.2);
-        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-        padding: 40px;
-        border-radius: 20px;
+      .hero-content {
         position: relative;
-        overflow: hidden;
-      }
-
-      .hero-glass-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.03), transparent);
-        transform: skewX(-20deg);
-        animation: glassShine 8s linear infinite 3s;
-      }
-
-      @keyframes glassShine {
-        0% {
-          left: -100%;
-        }
-
-        20% {
-          left: 200%;
-        }
-
-        100% {
-          left: 200%;
-        }
-      }
-
-      /* Left Side Visual Design - Prosperity & Growth (Option 1) */
-      .hero-bg-design-left {
-        position: absolute;
-        width: 850px;
-        height: 850px;
-        top: 50%;
-        left: 0;
-        transform: translate(-35%, -50%);
-        background:
-          radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0f172a 85%),
-          url('images/hero_prosperity.png') center/cover no-repeat;
         z-index: 2;
-        /* Put it above the background pattern */
-        pointer-events: none;
-        opacity: 0.9;
-        /* Made more vibrant */
-        border-radius: 50%;
-        box-shadow: 0 0 100px 50px #0f172a inset;
-        mix-blend-mode: screen;
-        /* Enhance brightness/visibility */
-        animation: rotateDesign 60s linear infinite;
-        /* Add missing animation */
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
       }
 
-      /* Left Side Visual Design - Prosperity & Growth (Option 1) */
-      .hero-bg-design-left {
-        position: absolute;
-        width: 850px;
-        height: 850px;
-        top: 50%;
-        left: 0;
-        transform: translate(-35%, -50%);
-        background:
-          radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0f172a 85%),
-          url('images/hero_prosperity.png') center/cover no-repeat;
-        z-index: 2;
-        /* Put it above the background pattern */
-        pointer-events: none;
-        opacity: 0.9;
-        /* Made more vibrant */
-        border-radius: 50%;
-        box-shadow: 0 0 100px 50px #0f172a inset;
-        mix-blend-mode: screen;
-        /* Enhance brightness/visibility */
-        animation: rotateDesign 60s linear infinite;
-        /* Add missing animation */
-      }
-
-      @keyframes rotateDesign {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @media(max-width: 992px) {
-        .hero-split-section {
-          flex-direction: column;
-          height: auto;
-          min-height: auto;
-        }
-      }
-
-      .hero-split-left {
-        flex: 1 1 50%;
+      .eyebrow {
+        color: #e8c678;
+        font-size: 0.85rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 4% 8%;
-        position: relative;
-        z-index: 2;
+        gap: 15px;
       }
 
-      @media(max-width: 992px) {
-        .hero-split-left {
-          padding: 40px 20px;
-          width: 100%;
-        }
-      }
-
-      .hero-split-left-content {
-        max-width: 600px;
-        width: 100%;
-        animation: fadeUpIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        position: relative;
-        z-index: 5;
-      }
-
-      .hero-split-right {
-        flex: 1 1 50%;
-        position: relative;
-        min-height: 50vh;
-        z-index: 1;
-      }
-      
-      @media(max-width: 1200px) {
-        .hero-split-right { padding: 40px 20px !important; width: 100%; }
-        .hero-split-right > div { flex-direction: column; max-width: 500px !important; height: auto !important; }
-        .hero-split-right > div > div { width: 100% !important; }
-        .hero-split-right > div > div:first-child { height: 350px !important; }
-      }
-
-      @media(max-width: 992px) {
-        .hero-split-right {
-          min-height: 400px;
-          width: 100%;
-        }
-      }
-
-      /* Gradient blending */
-      .hero-split-right::after {
+      .eyebrow::before, .eyebrow::after {
         content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right, #0f172a 0%, transparent 15%);
-        pointer-events: none;
-        z-index: 10;
-      }
-
-      @media(max-width: 992px) {
-        .hero-split-right::after {
-          background: linear-gradient(to bottom, #0f172a 0%, transparent 20%);
-        }
-      }
-
-      .hero-split-title {
-        font-size: clamp(2.2rem, 4vw, 3.5rem);
-        line-height: 1.1;
-        margin-bottom: 20px;
-        color: white;
-        font-family: 'Playfair Display', serif;
-        font-weight: 800;
-        letter-spacing: -1px;
-      }
-
-      /* Masked Line Reveal */
-      .hero-title-line {
         display: block;
-        overflow: hidden;
-        margin-bottom: 4px;
-        width: 100%;
-        /* Ensure full width availability */
+        width: 40px;
+        height: 2px;
+        background: #e8c678;
       }
 
-      @keyframes textReveal {
-        to {
-          transform: translateY(0);
-        }
+      .headline {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 4vw, 3.8rem); 
+        line-height: 1.15;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        color: #fff;
       }
 
-      /* Premium Typing Animation */
-      .hero-title-line .reveal-inner {
-        display: inline-block;
-        /* Changed to inline-block for width animation */
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 3px solid transparent;
-        /* The Cursor */
-        width: 0;
-        animation:
-          typing 1.5s steps(30, end) forwards,
-          cursor-blink 0.8s step-end infinite;
+      .headline span {
+        color: #e8c678;
+        font-style: italic;
+        font-weight: 400;
       }
 
-      .hero-title-line:nth-child(2) .reveal-inner {
-        animation-delay: 1.8s;
-        /* Wait for Line 1 to finish */
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-
-        to {
-          width: 100%;
-          border-color: transparent;
-        }
-
-        /* Remove cursor at end */
-      }
-
-      @keyframes cursor-blink {
-
-        0%,
-        100% {
-          border-color: transparent;
-        }
-
-        50% {
-          border-color: #e8c678;
-        }
-      }
-
-      /* Active typing state to handle cursor color while typing */
-      .hero-title-line .reveal-inner[data-typing="active"] {
-        border-color: #e8c678;
-      }
-
-      @keyframes fadeUpIn {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Golden Shimmer Effect */
-      .shimmer-text {
-        background: linear-gradient(to right,
-            #e8c678 20%,
-            #fff 40%,
-            #fff 60%,
-            #e8c678 80%);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shimmerGold 4s linear infinite;
-        font-weight: 900;
-        display: inline;
-      }
-
-      .hero-title-line:nth-child(1) .reveal-inner {
-        animation: typing 0.8s steps(30, end) forwards, cursor-blink 0.4s step-end 2;
-      }
-
-      .hero-title-line:nth-child(2) .reveal-inner {
-        animation: typing 0.8s steps(30, end) 0.6s forwards, cursor-blink 0.4s step-end 3;
-      }
-
-      @keyframes shimmerGold {
-        to {
-          background-position: 200% center;
-        }
-      }
-
-      .hero-split-desc {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 25px;
+      .paragraph {
+        font-size: 1.1rem;
         line-height: 1.6;
-        max-width: 540px;
-        animation: fadeUpIn 0.8s ease 1.2s forwards;
-        /* Much faster entrance */
-        opacity: 0;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0 auto 20px auto;
+        font-weight: 300;
+        max-width: 700px;
       }
 
-      .hero-split-highlights {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-bottom: 25px;
-      }
-
-      /* Highlights Staggered Entrance & Hover */
-      .hero-split-hl {
+      .mini-tags {
         display: flex;
         align-items: center;
-        gap: 12px;
-        color: white;
-        font-weight: 600;
-        font-size: 0.95rem;
-        background: rgba(255, 255, 255, 0.03);
-        padding: 12px 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        opacity: 0;
-        /* Star hidden for animation */
-        animation: fadeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        cursor: pointer;
-        will-change: transform, opacity;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 0 auto 25px auto;
+        max-width: 800px;
       }
 
-      .hero-split-hl:hover {
-        transform: translateY(-5px) scale(1.05);
-        background: rgba(201, 168, 76, 0.12);
-        border-color: rgba(201, 168, 76, 0.5);
-        box-shadow: 0 10px 25px rgba(201, 168, 76, 0.2);
+      .mini-tag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .tag-title {
+        font-size: 0.8rem;
         color: #e8c678;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
-      @keyframes fadeSlideIn {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .tag-desc {
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.7);
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
       }
 
-      @media(max-width: 600px) {
-        .hero-split-hl {
-          font-size: 0.85rem;
-          padding: 10px;
-        }
+      .btn-primary-hero {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: #fff !important;
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+        text-decoration: none;
       }
 
-      .hero-split-hl-icon {
-        font-size: 1.2rem;
+      .btn-primary-hero:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(201, 168, 76, 0.8), 0 0 40px rgba(201, 168, 76, 0.4);
+      }
+
+      .btn-primary-hero svg {
         transition: transform 0.3s ease;
       }
-
-      .hero-split-hl:hover .hero-split-hl-icon {
-        transform: scale(1.2) rotate(10deg);
+      
+      .btn-primary-hero:hover svg {
+        transform: translateX(4px);
       }
 
-      .hero-split-buttons {
+      .overlap-container {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        margin: -180px auto -280px auto; 
+        padding: 0 5%;
         display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-top: 10px;
-        animation: fadeUpIn 0.8s ease 2.5s forwards;
-        /* Buttons appear by 2.5s */
-        opacity: 0;
+        justify-content: flex-start;
       }
 
-      .hero-split-buttons .btn {
-        padding: 16px 36px;
-        font-size: 1.05rem;
-        border-radius: 50px;
+      .profile-box {
+        background: #f8f9fb;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        border-bottom: 4px solid #e8c678;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .profile-box-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: top center;
+        background: #0a1930;
+      }
+
+      .profile-box-text h3 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.2rem;
+        color: #a07a28;
+        margin: 0 0 5px 0;
+        line-height: 1;
+      }
+
+      .profile-box-text p {
+        font-size: 0.85rem;
+        color: #0a1930;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      @media (max-width: 1024px) {
+        .headline { font-size: 2.5rem; }
+        .mini-tags { gap: 20px; flex-direction: column; }
+        .overlap-container { justify-content: center; margin-top: 20px; }
       }
     </style>
 
-    <section class="hero-split-section" id="home">
-
-
-      <!-- 50% LEFT TEXT COLUMN -->
-      <!-- 60% LEFT TEXT COLUMN -->
-      <!-- 60% LEFT TEXT COLUMN -->
-      <div class="hero-split-left" style="align-items: center; text-align: left; padding: 0 5% 0 8%;">
-        <div class="hero-split-left-content" style="background: transparent; padding: 0; box-shadow: none; backdrop-filter: none; max-width: 700px; width: 100%;">
-          <p style="color: #e8c678; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-size: 0.8rem;">
-            WELCOME TO QUANTUM LEAP WEALTH
-          </p>
-          <h1 style="font-size: clamp(2rem, 3.5vw, 3.2rem); color: white; font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; margin-bottom: 15px;">
-            Helping Families Build,<br/> Protect & Preserve <span style="color: #e8c678;">Wealth</span>
-          </h1>
-          <p style="color: white; font-weight: 600; font-size: 0.95rem; margin-bottom: 15px; word-spacing: 2px;">
-            Retirement Planning <span style="color: #e8c678; margin: 0 5px;">•</span> Wealth Strategies <span style="color: #e8c678; margin: 0 5px;">•</span> Financial Education
-          </p>
-          <div style="width: 60px; height: 2px; background: #e8c678; margin-bottom: 20px;"></div>
-          <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin-bottom: 25px; max-width: 600px;">
-            At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
-          </p>
-          
-          <div style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
-            <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;" class="btn btn-primary" style="background: linear-gradient(135deg, #e8c678, #c9a84c); color: #0a2540; font-weight: 700; display: flex; align-items: center; gap: 10px; border: none; padding: 12px 24px; font-size: 0.85rem;">
-              <span style="font-size: 1.1rem;">📅</span> BOOK DISCOVERY CALL
-            </a>
-            <a href="who_we_are/about.html" class="btn btn-primary" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); font-weight: 600; display: flex; align-items: center; gap: 10px; padding: 12px 24px; font-size: 0.85rem;">
-              <span style="font-size: 1.1rem; color: #e8c678;">▷</span> EXPLORE OUR SERVICES
-            </a>
+    <section class="hero-container" id="home">
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <div class="eyebrow">Quantum Leap Wealth</div>
+        <h1 class="headline">Navigating Your Financial Future <span>With Clarity</span></h1>
+        <p class="paragraph">
+          At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+        </p>
+        
+        <div class="mini-tags">
+          <div class="mini-tag">
+            <div class="tag-title">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+              Educate Today
+            </div>
+            <p class="tag-desc">Build Knowledge</p>
           </div>
-
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-bottom: 20px;">
-            <div style="text-align: left; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 10px;">
-              <span style="display: block; margin-bottom: 8px;">
-                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
-                </svg>
-              </span>
-              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">EDUCATE TODAY</h4>
-              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Build Knowledge</p>
+          <div class="mini-tag">
+            <div class="tag-title">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path></svg>
+              Elevate Tomorrow
             </div>
-            <div style="text-align: left; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 10px;">
-              <span style="display: block; margin-bottom: 8px;">
-                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path>
-                </svg>
-              </span>
-              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">ELEVATE TOMORROW</h4>
-              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Create Opportunities</p>
-            </div>
-            <div style="text-align: left;">
-              <span style="display: block; margin-bottom: 8px;">
-                <svg width="26" height="26" fill="none" stroke="#e8c678" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
-                </svg>
-              </span>
-              <h4 style="color: white; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px;">EMPOWER FOREVER</h4>
-              <p style="color: #e8c678; font-size: 0.75rem; margin: 0;">Leave a Lasting Impact</p>
-            </div>
+            <p class="tag-desc">Create Opportunities</p>
           </div>
-          
-          <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="height: 2px; width: 60px; background: linear-gradient(to right, rgba(232,198,120,0), rgba(232,198,120,1));"></div>
-            <p style="font-family: 'Great Vibes', 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: #e8c678; margin: 0;">
-              Where Vision Becomes Wealth
-            </p>
-            <div style="height: 2px; width: 60px; background: linear-gradient(to right, rgba(232,198,120,1), rgba(232,198,120,0));"></div>
+          <div class="mini-tag">
+            <div class="tag-title">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+              Empower Forever
+            </div>
+            <p class="tag-desc">Leave a Lasting Impact</p>
           </div>
         </div>
-      </div>
-
-      <!-- 40% RIGHT CARD COLUMN -->
-      <div class="hero-split-right" style="padding: 0 5% 0 0; display: flex; align-items: center; justify-content: center;">
-        <div style="background: #061020; border-radius: 16px; overflow: hidden; display: flex; width: 100%; max-width: 600px; height: 550px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);">
-          <!-- Image Half -->
-          <div style="width: 45%; position: relative; background: #e2e8f0;">
-            <img src="images/Anu-Profile-Pic2.png" alt="Anu Prasad" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;" />
-          </div>
-          <!-- Text Half -->
-          <div style="width: 55%; padding: 30px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 15px;">
-              <div style="display: flex; align-items: flex-start;">
-                <div style="width: 3px; height: 40px; background: #e8c678; margin-right: 12px; margin-top: 4px;"></div>
-                <div>
-                  <p style="color: #e8c678; font-weight: 700; letter-spacing: 1.5px; font-size: 0.75rem; margin: 0 0 2px 0;">
-                    MEET YOUR
-                  </p>
-                  <h3 style="color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.1; margin: 0 0 8px 0;">
-                    FINANCIAL<br/>PARTNER
-                  </h3>
-                </div>
-              </div>
-              <div style="width: 40px; height: 2px; background: #e8c678; margin-left: 15px;"></div>
-            </div>
-            
-            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; font-weight: 500;">
-              Helping families navigate financial decisions with clarity, confidence, and purpose.
-            </p>
-            <p style="color: rgba(255,255,255,0.75); font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px;">
-              Whether you're preparing for retirement, seeking tax-efficient strategies, protecting your assets, or building a legacy for future generations, Quantum Leap Wealth is committed to helping you make informed financial choices through education and personalized guidance.
-            </p>
-            <div style="margin-top: auto;">
-              <p style="font-family: 'Great Vibes', 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: #e8c678; margin-bottom: 2px;">
-                Anuradha
-              </p>
-              <p style="color: white; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; margin: 0;">
-                FOUNDER | FINANCIAL STRATEGIST
-              </p>
-            </div>
-          </div>
-        </div>
+        
+        <button onclick="if(window.Calendly) Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'}); return false;" class="btn-primary-hero">
+          Start Your Journey
+        </button>
       </div>
     </section>
+
+    <div class="overlap-container">
+      <div class="profile-box">
+        <img src="images/Anu-Cutout.png" alt="Anuradha" class="profile-box-image" />
+        <div class="profile-box-text">
+          <h3>Anuradha</h3>
+          <p>Founder | Financial Strategist</p>
+        </div>
+      </div>
+    </div>
 
     <!-- ══════════════════════════════
      SERVICE PILLARS

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hero Section Demo - Centered with Left Image Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #e8c678;
+      --gold-dark: #c9a84c;
+      --navy: #0a1930;
+      --text-main: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.85);
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa; 
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- SLEEK NAVBAR --- */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      box-sizing: border-box;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 35px;
+      margin-right: 12px;
+    }
+    
+    .brand-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-wealth {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .dd-arrow {
+      width: 12px;
+      height: 12px;
+      opacity: 0.7;
+    }
+
+    .nav-btn {
+      border: 1px solid var(--gold);
+      padding: 10px 24px;
+      border-radius: 4px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .nav-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+    
+    /* -------------------- */
+    /* CENTERED HERO SECTION */
+    /* -------------------- */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 5% 100px 5%;
+      box-sizing: border-box;
+      background-color: var(--navy);
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(10, 25, 48, 0.85) 0%, rgba(10, 25, 48, 0.95) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem); 
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 30px 0;
+      color: #fff;
+    }
+
+    .headline span {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .paragraph {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin: 0 auto 30px auto;
+      font-weight: 300;
+      max-width: 700px;
+    }
+
+    /* TAGLINES MOVED UP AND MADE SMALLER */
+    .mini-tags {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 0 auto 40px auto;
+      max-width: 800px;
+    }
+
+    .mini-tag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .tag-title {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #000;
+      padding: 18px 40px;
+      border-radius: 5px; 
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(232, 198, 120, 0.4);
+      background: #fff;
+    }
+
+    /* -------------------- */
+    /* THE SINGLE LEFT OVERLAPPING BOX (ANU'S PIC) */
+    /* -------------------- */
+    .overlap-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: -140px auto 50px auto; /* Pulls the box up higher over the hero background */
+      padding: 0 5%;
+      display: flex;
+      justify-content: flex-start; /* Aligns the box back to the left */
+    }
+
+    .profile-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      border-bottom: 4px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+      width: 100%;
+      max-width: 280px; /* Narrower for a vertical portrait */
+    }
+
+    .profile-box-image {
+      width: 100%;
+      height: 250px; /* Taller image to look like a proper portrait card */
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top center;
+      background: var(--navy);
+    }
+
+    .profile-box-text h3 {
+      font-family: 'Great Vibes', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin: 0 0 5px 0;
+      line-height: 1;
+    }
+
+    .profile-box-text p {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      color: var(--navy);
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .headline {
+        font-size: 2.5rem;
+      }
+      .mini-tags {
+        gap: 20px;
+        flex-direction: column;
+      }
+      .overlap-container {
+        justify-content: center; /* Center on mobile */
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sleek Transparent Navbar with Original Branding -->
+  <nav class="navbar">
+    <a href="#" class="nav-logo">
+      <img src="/images/icon.png" alt="Quantum Leap Wealth Logo" class="brand-logo" />
+      <span class="brand-text">Quantum Leap <span class="brand-wealth">Wealth</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+      <a href="#" class="nav-link">Services <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+      <a href="#" class="nav-link">Entrepreneurship <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+      <a href="#" class="nav-link">Media <svg class="dd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+      <a href="#" class="nav-link">Resources</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="nav-btn">Book Consultation</a>
+    </div>
+  </nav>
+
+  <!-- Full Screen Hero Area -->
+  <section class="hero-container">
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <div class="eyebrow">Quantum Leap Wealth</div>
+      <h1 class="headline">Navigating Your Financial Future <span>With Clarity</span></h1>
+      <p class="paragraph">
+        At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+      </p>
+      
+      <!-- Taglines moved up and made small -->
+      <div class="mini-tags">
+        <div class="mini-tag">
+          <div class="tag-title">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+            Educate Today
+          </div>
+          <p class="tag-desc">Build Knowledge</p>
+        </div>
+        <div class="mini-tag">
+          <div class="tag-title">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path></svg>
+            Elevate Tomorrow
+          </div>
+          <p class="tag-desc">Create Opportunities</p>
+        </div>
+        <div class="mini-tag">
+          <div class="tag-title">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+            Empower Forever
+          </div>
+          <p class="tag-desc">Leave a Lasting Impact</p>
+        </div>
+      </div>
+      
+      <a href="#" class="btn-primary">
+        Start Your Journey
+      </a>
+    </div>
+  </section>
+
+  <!-- The Single Overlapping Box on the Left with Anu's Image -->
+  <div class="overlap-container">
+    <div class="profile-box">
+      <!-- Using the cutout image inside the box for a clean look -->
+      <img src="/images/Anu-Cutout.png" alt="Anuradha" class="profile-box-image">
+      <div class="profile-box-text">
+        <h3>Anuradha</h3>
+        <p>Founder | Financial Strategist</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

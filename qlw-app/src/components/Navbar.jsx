@@ -58,8 +58,8 @@ export default function Navbar() {
               src="/images/icon.png"
               alt="Quantum Leap Wealth Logo"
               className="brand-logo"
-              width="85"
-              height="85"
+              width="70"
+              height="70"
             />
             <span className="brand-text">
               Quantum Leap <span className="brand-wealth">Wealth</span>
@@ -72,8 +72,8 @@ export default function Navbar() {
                   src="/images/icon.png"
                   alt="Quantum Leap Wealth Logo"
                   className="brand-logo"
-                  width="85"
-                  height="85"
+                  width="70"
+                  height="70"
                 />
                 <span className="brand-text">
                   Quantum Leap <span className="brand-wealth">Wealth</span>
@@ -330,7 +330,7 @@ export default function Navbar() {
                 }}
                 className="btn-nav-cta"
               >
-                Book Consultation{" "}
+                BOOK DISCOVERY CALL{" "}
                 <svg
                   width="13"
                   height="13"
