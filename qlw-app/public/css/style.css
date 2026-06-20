@@ -1034,8 +1034,8 @@ img {
     display: flex;
     width: max-content;
     gap: 40px;
-    animation: marquee-scroll 12s linear infinite !important;
-    /* Faster and starts immediately */
+    animation: marquee-scroll 120s linear infinite !important;
+    /* Very slow readable speed */
     will-change: transform;
 }
 
@@ -2672,13 +2672,14 @@ html {
     background: linear-gradient(to var(--dir, right), #D4AF37, transparent) !important;
 }
 
+
 /* Force Smooth Marquee Animation */
 .logo-ticker-track {
     display: flex !important;
     width: max-content !important;
     min-width: 200% !important;
-    animation: marquee-glide 18s linear infinite !important;
-    /* Slower for professional feel */
+    animation: marquee-glide 120s linear infinite !important;
+    /* Very slow readable speed */
     animation-play-state: running !important;
     will-change: transform !important;
 }

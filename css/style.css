@@ -1035,8 +1035,8 @@ img {
     display: flex;
     width: max-content;
     gap: 40px;
-    animation: marquee-scroll 12s linear infinite !important;
-    /* Faster and starts immediately */
+    animation: marquee-scroll 120s linear infinite !important;
+    /* Very slow readable speed */
     will-change: transform;
 }
 

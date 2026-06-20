@@ -65,8 +65,8 @@ html {
     display: flex !important;
     width: max-content !important;
     min-width: 200% !important;
-    animation: marquee-glide 18s linear infinite !important;
-    /* Slower for professional feel */
+    animation: marquee-glide 120s linear infinite !important;
+    /* Very slow readable speed */
     animation-play-state: running !important;
     will-change: transform !important;
 }
