@@ -440,10 +440,25 @@
         font-weight: 600;
       }
 
+      #services {
+        background: #ffffff;
+        padding-top: 0px;
+        margin-top: -40px;
+        position: relative;
+        z-index: 1;
+      }
+
       @media (max-width: 1024px) {
+        .hero-container {
+          background-attachment: scroll; /* Fix for missing background on mobile/iOS */
+        }
         .headline { font-size: 2.5rem; }
         .mini-tags { gap: 20px; flex-direction: column; }
-        .overlap-container { justify-content: center; margin-top: 20px; }
+        .overlap-container { justify-content: center; margin-top: 20px; margin-bottom: 40px; }
+        #services {
+          margin-top: 0;
+          padding-top: 40px;
+        }
       }
     </style>
 
@@ -821,7 +836,7 @@
     <!-- ══════════════════════════════
      SERVICES
 ══════════════════════════════ -->
-    <section class="section" id="services" style="background: #ffffff; padding-top: 0px; margin-top: -40px; position: relative; z-index: 1;">
+    <section class="section" id="services">
       <div class="container">
         <div class="text-center" style="margin-bottom: 60px;">
           <span class="section-label">What We Offer</span>

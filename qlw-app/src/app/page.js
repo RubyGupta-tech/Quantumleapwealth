@@ -313,10 +313,25 @@ export default function HomePage() {
           font-weight: 600;
         }
 
+        #services {
+          background: #ffffff;
+          padding-top: 0px;
+          margin-top: -40px;
+          position: relative;
+          z-index: 1;
+        }
+
         @media (max-width: 1024px) {
+          .hero-container {
+            background-attachment: scroll; /* Fix for missing background on mobile/iOS */
+          }
           .headline { font-size: 2.5rem; }
           .mini-tags { gap: 20px; flex-direction: column; }
-          .overlap-container { justify-content: center; margin-top: 20px; }
+          .overlap-container { justify-content: center; margin-top: 20px; margin-bottom: 40px; }
+          #services {
+            margin-top: 0;
+            padding-top: 40px;
+          }
         }
       `}} />
 
@@ -377,7 +392,7 @@ export default function HomePage() {
       </div>
 
       {/* SERVICES SECTION */}
-      <section className="section" id="services" style={{ background: '#ffffff', paddingTop: '0px', marginTop: '-40px', position: 'relative', zIndex: 1 }}>
+      <section className="section" id="services">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '60px' }}>
             <span className="section-label">What We Offer</span>
