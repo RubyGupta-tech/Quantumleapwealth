@@ -21,6 +21,17 @@ export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
+  // Dynamic Word Rotation State
+  const heroWords = ["Clarity", "Confidence", "Strategy", "Prosperity"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const wordInterval = setInterval(() => {
+      setCurrentWordIndex(prev => (prev + 1) % heroWords.length);
+    }, 3000);
+    return () => clearInterval(wordInterval);
+  }, []);
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -131,6 +142,7 @@ export default function HomePage() {
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
+          overflow: hidden;
         }
 
         .hero-overlay {
@@ -143,7 +155,7 @@ export default function HomePage() {
         .hero-content {
           position: relative;
           z-index: 2;
-          max-width: 900px;
+          max-width: 1100px;
           width: 100%;
           text-align: center;
           margin-bottom: 20px;
@@ -204,12 +216,33 @@ export default function HomePage() {
           max-width: 800px;
         }
 
+        @keyframes slideInRightLoop {
+          0%, 100% {
+            transform: translateX(50px);
+            opacity: 0;
+          }
+          12.5%, 80% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          90% {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+        }
+
         .mini-tag {
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
+          opacity: 0;
+          animation: slideInRightLoop 8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
         }
+
+        .mini-tag:nth-child(1) { animation-delay: 0.2s; }
+        .mini-tag:nth-child(2) { animation-delay: 0.4s; }
+        .mini-tag:nth-child(3) { animation-delay: 0.6s; }
 
         .tag-title {
           font-size: 0.8rem;
@@ -232,34 +265,39 @@ export default function HomePage() {
         }
 
         .btn-primary-hero {
+          background: linear-gradient(135deg, #e8c678, #c9a84c);
+          color: #030810;
+          padding: 16px 36px;
+          border-radius: 50px;
+          font-size: 0.95rem;
+          font-weight: 700;
+          text-decoration: none;
+          transition: all 0.3s ease;
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-          color: #fff !important;
-          padding: 14px 32px;
-          border-radius: 40px;
-          font-size: 0.9rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          gap: 12px;
           border: none;
           cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 10px 20px rgba(232, 198, 120, 0.15);
+        }
+
+        .btn-primary-hero::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+          transform: skewX(-20deg);
+          animation: shineSweep 4s infinite;
         }
 
         .btn-primary-hero:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 0 20px rgba(201, 168, 76, 0.8), 0 0 40px rgba(201, 168, 76, 0.4);
-        }
-
-        .btn-primary-hero svg {
-          transition: transform 0.3s ease;
-        }
-        
-        .btn-primary-hero:hover svg {
-          transform: translateX(4px);
+          transform: translateY(-3px);
+          box-shadow: 0 15px 25px rgba(232, 198, 120, 0.3);
         }
 
         .overlap-container {
@@ -285,6 +323,7 @@ export default function HomePage() {
           gap: 15px;
           width: 100%;
           max-width: 280px;
+          animation: levitate 6s ease-in-out infinite;
         }
 
         .profile-box-image {
@@ -333,6 +372,35 @@ export default function HomePage() {
             padding-top: 40px;
           }
         }
+
+        /* --- WOW FACTOR ANIMATIONS --- */
+        @keyframes levitate {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
+        }
+
+        @keyframes shineSweep {
+          0% { left: -100%; }
+          50% { left: 100%; }
+          100% { left: 100%; }
+        }
+
+
+        /* --- SCROLL REVEAL ANIMATIONS --- */
+        .reveal {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
       `}} />
 
 
@@ -340,9 +408,43 @@ export default function HomePage() {
       <section className="hero-container" id="home">
         <div className="hero-overlay"></div>
 
-        <div className="hero-content">
+        <div className="hero-content" style={{ position: 'relative', zIndex: 2 }}>
           <div className="eyebrow">Quantum Leap Wealth</div>
-          <h1 className="headline">Navigating Your Financial Future <span>With Clarity</span></h1>
+          <h1 className="headline">
+            Navigating Your Financial Future <br className="hidden md:block" />
+            <span style={{ display: 'inline-block', transform: 'translateX(1.5em)' }}>
+              <span style={{ color: '#e8c678' }}>With</span>{' '}
+              <span style={{ position: 'relative', display: 'inline-block', width: '6.5em', height: '1.2em', verticalAlign: 'bottom', textAlign: 'left' }}>
+                {heroWords.map((word, idx) => {
+                  let transform = 'translateY(15px)'; // default entering
+                  let opacity = 0;
+                  if (idx === currentWordIndex) {
+                    transform = 'translateY(0)';
+                    opacity = 1;
+                  } else if (idx === (currentWordIndex - 1 + heroWords.length) % heroWords.length) {
+                    transform = 'translateY(-15px)'; // exiting up
+                  }
+                  return (
+                    <span
+                      key={word}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        opacity,
+                        transform,
+                        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        color: '#e8c678',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      {word}
+                    </span>
+                  );
+                })}
+              </span>
+            </span>
+          </h1>
           <p className="paragraph">
             At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
           </p>
@@ -394,7 +496,7 @@ export default function HomePage() {
       {/* SERVICES SECTION */}
       <section className="section" id="services">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '60px' }}>
+          <div className="text-center reveal" style={{ marginBottom: '60px' }}>
             <span className="section-label">What We Offer</span>
             <h2 className="section-title">Our Best Services</h2>
             <p className="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at every stage of life.</p>
@@ -402,7 +504,7 @@ export default function HomePage() {
           <div className="services-grid">
             <ServiceCard href="/images/services/investment-planning" img="/images/financial_pics.png" title="Financial Needs Analysis" backTitle="Comprehensive Financial Needs Analysis" delay="1"
               desc="Strategic portfolio management aligned with your risk tolerance and long-term financial goals for maximum growth." />
-            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will &amp; Trust" delay="2"
+            <ServiceCard href="/images/services/living-will-trust" img="/images/will&Trust_pics.png" title="Living Will & Trust" delay="2"
               desc="Protect your legacy and ensure your assets are distributed exactly as you intend, with confidence and clarity." />
             <ServiceCard href="/images/services/tax-saving" img="/images/LifeProtection_pics.png" title="Tax Savings" delay="3"
               desc="Maximize your wealth with smart, proactive tax strategies that keep more money in your pocket legally." />
@@ -617,7 +719,7 @@ export default function HomePage() {
 // Sub-components for cleaner structure
 function ServiceCard({ href, img, title, backTitle, desc, delay }) {
   return (
-    <a href={href} className={`flip-card reveal reveal-delay-${delay}`} style={{ textDecoration: 'none' }}>
+    <a href={href} className="flip-card" style={{ textDecoration: 'none' }}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <Image src={img} alt={title} width={375} height={320} style={{ objectFit: 'cover' }} />

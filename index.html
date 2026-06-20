@@ -257,6 +257,7 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        overflow: hidden;
       }
 
       .hero-overlay {
@@ -269,7 +270,7 @@
       .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 900px;
+        max-width: 1100px;
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
@@ -330,12 +331,33 @@
         max-width: 800px;
       }
 
+      @keyframes slideInRightLoop {
+        0%, 100% {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        12.5%, 80% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        90% {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+      }
+
       .mini-tag {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        opacity: 0;
+        animation: slideInRightLoop 8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       }
+
+      .mini-tag:nth-child(1) { animation-delay: 0.2s; }
+      .mini-tag:nth-child(2) { animation-delay: 0.4s; }
+      .mini-tag:nth-child(3) { animation-delay: 0.6s; }
 
       .tag-title {
         font-size: 0.8rem;
@@ -358,17 +380,17 @@
       }
 
       .btn-primary-hero {
+        background: linear-gradient(135deg, #e8c678, #c9a84c);
+        color: #030810;
+        padding: 16px 36px;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-        color: #fff !important;
-        padding: 14px 32px;
-        border-radius: 40px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        gap: 12px;
         border: none;
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -412,6 +434,7 @@
         gap: 15px;
         width: 100%;
         max-width: 280px;
+        animation: levitate 6s ease-in-out infinite;
       }
 
       .profile-box-image {
@@ -460,14 +483,74 @@
           padding-top: 40px;
         }
       }
+
+      /* --- WOW FACTOR ANIMATIONS --- */
+      @keyframes levitate {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+
+      @keyframes shineSweep {
+        0% { left: -100%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+      }
+
+      .dynamic-word-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #e8c678;
+        white-space: nowrap;
+      }
+
+      .dynamic-word-item.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .dynamic-word-item.exit {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+
+      /* --- SCROLL REVEAL ANIMATIONS --- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 { transition-delay: 0.1s; }
+      .reveal-delay-2 { transition-delay: 0.2s; }
+      .reveal-delay-3 { transition-delay: 0.3s; }
+      .reveal-delay-4 { transition-delay: 0.4s; }
     </style>
 
     <section class="hero-container" id="home">
       <div class="hero-overlay"></div>
       
-      <div class="hero-content">
+      <div class="hero-content" style="position: relative; z-index: 2;">
         <div class="eyebrow">Quantum Leap Wealth</div>
-        <h1 class="headline">Navigating Your Financial Future <span>With Clarity</span></h1>
+        <h1 class="headline">
+          Navigating Your Financial Future <br class="hidden md:block" />
+          <span style="display: inline-block; transform: translateX(1.5em);">
+            <span style="color: #e8c678;">With</span>&nbsp;
+            <span style="position: relative; display: inline-block; width: 6.5em; height: 1.2em; vertical-align: bottom; text-align: left;">
+              <span class="dynamic-word-item active">Clarity</span>
+              <span class="dynamic-word-item">Confidence</span>
+              <span class="dynamic-word-item">Strategy</span>
+              <span class="dynamic-word-item">Prosperity</span>
+            </span>
+          </span>
+        </h1>
         <p class="paragraph">
           At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
         </p>
@@ -838,14 +921,14 @@
 ══════════════════════════════ -->
     <section class="section" id="services">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 60px;">
+        <div class="text-center reveal" style="margin-bottom: 60px;">
           <span class="section-label">What We Offer</span>
           <h2 class="section-title">Our Best Services</h2>
           <p class="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at
             every stage of life.</p>
         </div>
         <div class="services-grid">
-          <a href="images/services/investment-planning.html" class="flip-card reveal reveal-delay-1"
+          <a href="images/services/investment-planning.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -863,7 +946,7 @@
             </div>
           </a>
 
-          <a href="images/services/living-will-trust.html" class="flip-card reveal reveal-delay-2"
+          <a href="images/services/living-will-trust.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -881,7 +964,7 @@
             </div>
           </a>
 
-          <a href="images/services/tax-saving.html" class="flip-card reveal reveal-delay-3"
+          <a href="images/services/tax-saving.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -899,7 +982,7 @@
             </div>
           </a>
 
-          <a href="images/services/retirement-planning.html" class="flip-card reveal reveal-delay-1"
+          <a href="images/services/retirement-planning.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -916,7 +999,7 @@
             </div>
           </a>
 
-          <a href="images/services/kids-college.html" class="flip-card reveal reveal-delay-2"
+          <a href="images/services/kids-college.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -934,7 +1017,7 @@
             </div>
           </a>
 
-          <a href="images/services/life-insurance.html" class="flip-card reveal reveal-delay-3"
+          <a href="images/services/life-insurance.html" class="flip-card"
             style="text-decoration:none;">
             <div class="flip-card-inner">
               <div class="flip-card-front">
@@ -2188,6 +2271,32 @@
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <script>
+    // Dynamic Word Rotation
+    document.addEventListener("DOMContentLoaded", () => {
+      const words = document.querySelectorAll(".dynamic-word-item");
+      if (!words.length) return;
+      let currentIndex = 0;
+      
+      setInterval(() => {
+        const currentWord = words[currentIndex];
+        currentWord.classList.remove("active");
+        currentWord.classList.add("exit");
+        
+        currentIndex = (currentIndex + 1) % words.length;
+        
+        const nextWord = words[currentIndex];
+        nextWord.classList.remove("exit");
+        nextWord.classList.add("active");
+        
+        // Clean up exit class after transition
+        setTimeout(() => {
+          currentWord.classList.remove("exit");
+        }, 800);
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>
