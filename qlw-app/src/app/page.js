@@ -266,30 +266,30 @@ export default function HomePage() {
           position: relative;
           z-index: 10;
           max-width: 1200px;
-          margin: -180px auto -280px auto; 
+          margin: -140px auto 10px auto; 
           padding: 0 5%;
           display: flex;
           justify-content: flex-start;
         }
 
         .profile-box {
-          background: #f8f9fb;
+          background: #ffffff;
           border-radius: 12px;
-          padding: 15px;
+          padding: 20px;
           box-shadow: 0 20px 50px rgba(0,0,0,0.15);
           border-bottom: 4px solid #e8c678;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-          gap: 12px;
+          gap: 15px;
           width: 100%;
-          max-width: 250px;
+          max-width: 280px;
         }
 
         .profile-box-image {
           width: 100%;
-          height: 200px;
+          height: 250px;
           border-radius: 8px;
           object-fit: cover;
           object-position: top center;
@@ -305,9 +305,11 @@ export default function HomePage() {
         }
 
         .profile-box-text p {
-          font-size: 0.85rem;
+          font-size: 0.75rem;
+          letter-spacing: 1.5px;
           color: #0a1930;
           margin: 0;
+          text-transform: uppercase;
           font-weight: 600;
         }
 
@@ -375,9 +377,9 @@ export default function HomePage() {
       </div>
 
       {/* SERVICES SECTION */}
-      <section className="section section-light" id="services" style={{ paddingTop: '260px' }}>
+      <section className="section" id="services" style={{ background: '#ffffff', paddingTop: '0px', marginTop: '-40px', position: 'relative', zIndex: 1 }}>
         <div className="container">
-          <div className="text-center reveal">
+          <div className="text-center" style={{ marginBottom: '60px' }}>
             <span className="section-label">What We Offer</span>
             <h2 className="section-title">Our Best Services</h2>
             <p className="section-sub">Comprehensive financial solutions designed to protect, grow, and sustain your wealth at every stage of life.</p>
