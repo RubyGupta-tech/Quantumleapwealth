@@ -2263,14 +2263,16 @@ img {
     height: 55px !important; /* Extremely slim inside transparent sticker */
 }
 
-.navbar.is-home-hero .nav-link {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
+@media (min-width: 1101px) {
+    .navbar.is-home-hero .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
 
-.navbar.is-home-hero .nav-link:hover,
-.navbar.is-home-hero .nav-link.active {
-    color: var(--accent-light) !important;
-    background: rgba(255, 255, 255, 0.08) !important;
+    .navbar.is-home-hero .nav-link:hover,
+    .navbar.is-home-hero .nav-link.active {
+        color: var(--accent-light) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
 }
 
 .navbar.is-home-hero .dd-arrow {
