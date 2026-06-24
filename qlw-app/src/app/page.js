@@ -911,12 +911,34 @@ export default function HomePage() {
             opacity: 0;
           }
         }
+
+        /* Subtle Geometric Grid Overlay */
+        .hero-grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: 50px 50px;
+          background-image: 
+            linear-gradient(to right, rgba(232, 198, 120, 0.035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(232, 198, 120, 0.035) 1px, transparent 1px);
+          z-index: 1;
+          pointer-events: none;
+          animation: gridPulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes gridPulse {
+          0% { opacity: 0.4; }
+          100% { opacity: 1; }
+        }
       `}} />
 
       {/* HERO SECTION */}
       <section className="hero-container" id="home">
 
         <div className="hero-overlay"></div>
+        <div className="hero-grid-overlay"></div>
         <div className="hero-gold-flare"></div>
 
         {/* Drifting Gold Particles Background */}
