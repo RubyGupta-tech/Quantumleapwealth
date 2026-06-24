@@ -384,6 +384,11 @@ export default function HomePage() {
           color: #fff;
         }
 
+        .headline-span {
+          display: inline-block;
+          white-space: nowrap;
+        }
+
         .hero-divider {
           width: 60px;
           height: 3px;
@@ -645,9 +650,79 @@ export default function HomePage() {
         }
 
         @media (max-width: 1024px) {
-          .hero-content { grid-template-columns: 1fr; text-align: center; }
-          .hero-left { align-items: center; }
-          .partner-card { position: relative; right: 0; top: 0; margin-top: 20px; text-align: center; }
+          .hero-container {
+            height: auto !important;
+            max-height: none !important;
+            padding: 90px 20px 80px 20px !important;
+            overflow: visible !important;
+          }
+          .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 40px;
+          }
+          .hero-left {
+            align-items: center;
+            width: 100%;
+          }
+          .hero-btns {
+            justify-content: center;
+            width: 100%;
+            gap: 12px;
+          }
+          .btn-primary-hero, .btn-outline-hero {
+            width: 100%;
+            max-width: 320px;
+            justify-content: center;
+            box-sizing: border-box;
+          }
+          .headline {
+            font-size: clamp(2rem, 7vw, 2.8rem) !important;
+            line-height: 1.25;
+            width: 100%;
+          }
+          .headline-span {
+            white-space: normal !important;
+            display: inline !important;
+          }
+          .paragraph {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+          }
+          .hero-right {
+            min-height: auto;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+          }
+          .profile-wrapper {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+          }
+          .main-profile-img {
+            max-height: 50vh;
+            width: 100%;
+            height: auto;
+          }
+          .partner-card {
+            position: relative;
+            right: auto;
+            top: auto;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+          }
+          .concentric-circles-container {
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%) scale(0.65);
+            opacity: 0.25;
+          }
           #services { padding-top: 40px; }
         }
 
@@ -750,11 +825,11 @@ export default function HomePage() {
 
               return (
                 <h1 className="headline">
-                  <span style={{ color: 'white', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                  <span className="headline-span" style={{ color: 'white' }}>
                     {displayLine1}
                     {typedLength < line1Text.length && <span className="typing-cursor">|</span>}
                   </span><br />
-                  <span style={{ color: '#e8c678', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                  <span className="headline-span" style={{ color: '#e8c678' }}>
                     {displayLine2}
                     {typedLength >= line1Text.length && typedLength < (line1Text.length + line2Text.length) && <span className="typing-cursor">|</span>}
                   </span>
