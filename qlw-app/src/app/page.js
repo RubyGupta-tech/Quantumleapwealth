@@ -753,6 +753,10 @@ export default function HomePage() {
             max-height: none !important;
             padding: 80px 0 0 0 !important;
             overflow: hidden !important;
+            background-color: #1e3a60 !important;
+            background-image: linear-gradient(135deg, rgba(30, 58, 96, 0.88) 0%, rgba(15, 32, 67, 0.94) 100%), url('/images/wealth-growth-arrow-bg.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
           }
           .hero-content {
             grid-template-columns: 1fr;
