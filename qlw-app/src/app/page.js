@@ -148,17 +148,17 @@ export default function HomePage() {
         .hero-container {
           position: relative;
           width: 100%;
-          height: calc(100vh - 85px);
+          height: 100vh;
           min-height: 600px;
-          max-height: calc(100vh - 85px);
+          max-height: 100vh;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           padding: 10px 5% 45px 5%;
           box-sizing: border-box;
-          background-color: #0a1c36;
-          background-image: linear-gradient(135deg, rgba(10, 28, 54, 0.93) 0%, rgba(3, 8, 16, 0.96) 100%), url('/images/wealth-growth-arrow-bg.png');
+          background-color: #1e3a60;
+          background-image: linear-gradient(135deg, rgba(30, 58, 96, 0.88) 0%, rgba(15, 32, 67, 0.94) 100%), url('/images/wealth-growth-arrow-bg.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -208,105 +208,119 @@ export default function HomePage() {
           justify-content: center;
         }
 
-        .cc-1 {
-          width: 250px;
-          height: 250px;
-          border-color: rgba(232, 198, 120, 0.65);
-          box-shadow: inset 0 0 15px rgba(232, 198, 120, 0.08), 0 0 15px rgba(232, 198, 120, 0.08);
-          animation: spinClockwise 45s linear infinite;
+        /* ─────────────────────────────────
+           BACKGROUND ORBITS — CLEAN RINGS
+        ───────────────────────────────── */
+        .orbits {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          overflow: hidden;
+          pointer-events: none;
         }
 
-        .cc-2 {
+        .orbit-ring {
+          position: absolute;
+          border-radius: 50%;
+          border: 1.5px solid rgba(255, 255, 255, 0.06);
+          animation: driftOrbitR3 45s linear infinite;
+        }
+
+        .r1 {
+          width: 600px;
+          height: 600px;
+          position: absolute;
+          top: -100px;
+          left: -600px;
+          border-color: rgba(201, 168, 76, 0.3);
+          /* gold ring */
+          background:
+            radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0e2544 80%),
+            url('/images/hero_prosperity.png') center/cover no-repeat;
+          box-shadow: 0 0 80px 40px #0e2544 inset;
+          mix-blend-mode: screen;
+          animation: driftOrbitR1 75s linear infinite;
+          animation-delay: -25s;
+        }
+
+        .r2 {
+          width: 900px;
+          height: 900px;
+          position: absolute;
+          top: 10%;
+          left: -900px;
+          border-color: rgba(56, 130, 246, 0.2);
+          /* blue ring */
+          background:
+            radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0e2544 85%),
+            url('/images/hero_prosperity.png') center/cover no-repeat;
+          box-shadow: 0 0 120px 60px #0e2544 inset;
+          mix-blend-mode: screen;
+          animation: driftOrbitR2 100s linear infinite;
+          animation-delay: -50s;
+        }
+
+        .r3 {
           width: 450px;
           height: 450px;
-          border-style: dashed;
-          border-color: rgba(232, 198, 120, 0.5);
-          animation: spinCounterClockwise 55s linear infinite;
-        }
-
-        .cc-3 {
-          width: 650px;
-          height: 650px;
-          border-color: rgba(232, 198, 120, 0.4);
-          border-style: double;
-          border-width: 3px;
-          animation: spinClockwise 70s linear infinite;
-        }
-
-        .cc-4 {
-          width: 850px;
-          height: 850px;
-          border-style: dotted;
-          border-color: rgba(232, 198, 120, 0.3);
-          animation: spinCounterClockwise 90s linear infinite;
-        }
-        .circle-node {
           position: absolute;
-          width: 7px;
-          height: 7px;
-          background: #e8c678;
-          border-radius: 50%;
-          box-shadow: 0 0 8px #fff, 0 0 15px #e8c678;
+          top: 30%;
+          left: -450px;
+          border-color: rgba(255, 255, 255, 0.05);
+          /* faint white ring */
+          animation: driftOrbitR3 60s linear infinite;
+          animation-delay: -15s;
         }
 
-        .circle-orb {
-          position: absolute;
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e8c678 40%, #c9a84c 85%, transparent 100%);
-          box-shadow: 0 0 18px rgba(232, 198, 120, 0.85);
+        @keyframes driftOrbitR1 {
+          0% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 0;
+          }
+          8% {
+            opacity: 0.9;
+          }
+          92% {
+            opacity: 0.9;
+          }
+          100% {
+            transform: translate(calc(100vw + 600px), 120px) rotate(360deg);
+            opacity: 0;
+          }
         }
 
-        .circle-arrow {
-          position: absolute;
-          width: 14px;
-          height: 14px;
-          fill: none;
-          pointer-events: none;
+        @keyframes driftOrbitR2 {
+          0% {
+            transform: translate(0, 0) rotate(360deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.8;
+          }
+          90% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translate(calc(100vw + 900px), -100px) rotate(0deg);
+            opacity: 0;
+          }
         }
 
-        .tilted-orbit {
-          position: absolute;
-          border-radius: 50%;
-          border: 1px solid rgba(232, 198, 120, 0.3);
-          pointer-events: none;
-        }
-
-        .to-1 {
-          width: 750px;
-          height: 750px;
-          transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg);
-          animation: spinTiltedClockwise 60s linear infinite;
-        }
-
-        .to-2 {
-          width: 750px;
-          height: 750px;
-          transform: rotateX(70deg) rotateY(-20deg) rotateZ(0deg);
-          border-style: dashed;
-          border-color: rgba(232, 198, 120, 0.25);
-          animation: spinTiltedCounterClockwise 80s linear infinite;
-        }
-
-        @keyframes spinTiltedClockwise {
-          from { transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg); }
-          to { transform: rotateX(70deg) rotateY(20deg) rotateZ(360deg); }
-        }
-
-        @keyframes spinTiltedCounterClockwise {
-          from { transform: rotateX(70deg) rotateY(-20deg) rotateZ(360deg); }
-          to { transform: rotateX(70deg) rotateY(-20deg) rotateZ(0deg); }
-        }
-
-        @keyframes spinClockwise {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        @keyframes spinCounterClockwise {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
+        @keyframes driftOrbitR3 {
+          0% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 0;
+          }
+          12% {
+            opacity: 0.5;
+          }
+          88% {
+            opacity: 0.5;
+          }
+          100% {
+            transform: translate(calc(100vw + 450px), -50px) rotate(-360deg);
+            opacity: 0;
+          }
         }
 
         @keyframes quantumHeroFloatOrb {
@@ -417,6 +431,17 @@ export default function HomePage() {
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
+          background: rgba(10, 28, 54, 0.65);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          border-left: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 16px;
+          padding: 35px;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+          z-index: 5;
+          max-width: 580px;
         }
 
         .headline {
@@ -459,16 +484,16 @@ export default function HomePage() {
 
         .hero-btns {
           display: flex;
-          gap: 16px;
-          flex-wrap: wrap;
+          gap: 12px;
+          flex-wrap: nowrap;
         }
 
         .btn-primary-hero {
           background: linear-gradient(135deg, #e8c678, #c9a84c);
           color: #030a16;
-          padding: 14px 28px;
+          padding: 12px 20px;
           border-radius: 4px;
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s ease;
@@ -506,9 +531,9 @@ export default function HomePage() {
         .btn-outline-hero {
           background: transparent;
           color: #fff;
-          padding: 13px 28px;
+          padding: 11px 20px;
           border-radius: 4px;
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s ease;
@@ -552,6 +577,8 @@ export default function HomePage() {
         /* Profile image */
         .profile-wrapper {
           position: relative;
+          right: -115px;
+          top: 60px;
           z-index: 2;
           width: 100%;
           max-width: 620px;
@@ -566,15 +593,14 @@ export default function HomePage() {
         .main-profile-img {
           width: 100%;
           max-width: 620px;
-          max-height: 65vh;
           height: auto;
-          object-fit: contain;
-          object-position: center bottom;
+          object-fit: cover;
           position: relative;
           z-index: 2;
           display: block;
-          mask-image: radial-gradient(ellipse at 45% 15%, black 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 75%, transparent 98%);
-          -webkit-mask-image: radial-gradient(ellipse at 45% 15%, black 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 75%, transparent 98%);
+          border-radius: 16px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
 
         .laptop-logo-overlay {
@@ -617,11 +643,11 @@ export default function HomePage() {
         /* Name plate image bottom-left */
         .name-plate-img {
           position: absolute;
-          bottom: -5px;
-          left: 0.5%;
-          width: 38%;
-          max-width: 240px;
-          z-index: 5;
+          bottom: 40px;
+          left: 12px;
+          width: 32%;
+          max-width: 170px;
+          z-index: 10 !important;
           filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
           transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -641,8 +667,8 @@ export default function HomePage() {
         /* PARTNER CARD – transparent background, right side */
         .partner-card {
           position: absolute;
-          right: -115px;
-          top: 8%;
+          right: -125px;
+          top: 95px;
           background: transparent;
           width: 280px;
           z-index: 6;
@@ -735,14 +761,22 @@ export default function HomePage() {
           }
           .hero-left {
             align-items: center;
-            width: 100%;
-            padding: 40px 20px 60px 20px !important;
+            width: 92%;
+            margin: 0 auto 30px auto;
+            padding: 30px 20px !important;
             box-sizing: border-box;
+            background: rgba(10, 28, 54, 0.75) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
           }
           .hero-btns {
             justify-content: center;
             width: 100%;
             gap: 12px;
+            flex-wrap: wrap !important;
           }
           .btn-primary-hero, .btn-outline-hero {
             width: 100%;
@@ -818,13 +852,6 @@ export default function HomePage() {
           }
           .partner-card .partner-eyebrow-bar {
             background: #8B6914 !important;
-          }
-          .concentric-circles-container {
-            left: 50%;
-            width: 500px;
-            height: 500px;
-            transform: translate(-50%, -50%) scale(0.65);
-            opacity: 0.2;
           }
           .bottom-banner {
             position: relative !important;
@@ -945,37 +972,11 @@ export default function HomePage() {
           <div className="particle" style={{ left: '85%', width: '5px', height: '5px', animationDuration: '16s', animationDelay: '2s' }}></div>
         </div>
 
-        {/* Gold Concentric Circles Design with Orbiting Orbs and Arrows */}
-        <div className="concentric-circles-container">
-          {/* Tilted 3D Gyroscopic Orbits */}
-          <div className="tilted-orbit to-1"></div>
-          <div className="tilted-orbit to-2"></div>
-
-          {/* CC-4 (Counter-Clockwise) */}
-          <div className="concentric-circle cc-4">
-            <div className="circle-orb" style={{ top: '50%', left: '0', transform: 'translate(-50%, -50%)' }}></div>
-            <svg className="circle-arrow" style={{ top: '50%', left: '30px', transform: 'translate(-50%, -50%) rotate(90deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
-          {/* CC-3 (Clockwise) */}
-          <div className="concentric-circle cc-3">
-            <div className="circle-node" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
-            <div className="circle-node" style={{ bottom: '0', left: '50%', transform: 'translate(-50%, 50%)' }}></div>
-            <div className="circle-orb" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)' }}></div>
-            <svg className="circle-arrow" style={{ top: '50%', right: '30px', transform: 'translate(50%, -50%) rotate(90deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
-          {/* CC-2 (Counter-Clockwise) */}
-          <div className="concentric-circle cc-2">
-            <div className="circle-node" style={{ top: '50%', left: '0', transform: 'translate(-50%, -50%)' }}></div>
-            <div className="circle-node" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)' }}></div>
-            <div className="circle-orb" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
-            <svg className="circle-arrow" style={{ top: '30px', left: '50%', transform: 'translate(-50%, -50%) rotate(180deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
-          {/* CC-1 (Clockwise) */}
-          <div className="concentric-circle cc-1">
-            <div className="circle-node" style={{ top: '15%', left: '85%', transform: 'translate(-50%, -50%)' }}></div>
-            <div className="circle-orb" style={{ bottom: '0', left: '50%', transform: 'translate(-50%, 50%)' }}></div>
-            <svg className="circle-arrow" style={{ bottom: '30px', left: '50%', transform: 'translate(-50%, 50%) rotate(180deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
+        {/* ORBITS BACKGROUND */}
+        <div className="orbits">
+          <div className="orbit-ring r1"></div>
+          <div className="orbit-ring r2"></div>
+          <div className="orbit-ring r3"></div>
         </div>
 
         {/* Abstract Glowing Financial Line Chart */}
@@ -995,22 +996,22 @@ export default function HomePage() {
         {/* Sparkling gold in bottom-left corner */}
         <div className="sparkle-container">
           {/* Horizontal beam lines */}
-          <div style={{ position:'absolute', bottom:'55px', left:0, width:'380px', height:'1.5px', background:'linear-gradient(to right, #c9a84c 0%, #e8c678 40%, #fff 55%, #e8c678 70%, transparent 100%)' }}></div>
-          <div style={{ position:'absolute', bottom:'48px', left:'20px', width:'260px', height:'1px', background:'linear-gradient(to right, rgba(201,168,76,0.5) 0%, rgba(232,198,120,0.8) 50%, transparent 100%)' }}></div>
-          <div style={{ position:'absolute', bottom:'42px', left:'40px', width:'160px', height:'0.5px', background:'linear-gradient(to right, transparent, rgba(232,198,120,0.4), transparent)' }}></div>
+          <div style={{ position: 'absolute', bottom: '55px', left: 0, width: '380px', height: '1.5px', background: 'linear-gradient(to right, #c9a84c 0%, #e8c678 40%, #fff 55%, #e8c678 70%, transparent 100%)' }}></div>
+          <div style={{ position: 'absolute', bottom: '48px', left: '20px', width: '260px', height: '1px', background: 'linear-gradient(to right, rgba(201,168,76,0.5) 0%, rgba(232,198,120,0.8) 50%, transparent 100%)' }}></div>
+          <div style={{ position: 'absolute', bottom: '42px', left: '40px', width: '160px', height: '0.5px', background: 'linear-gradient(to right, transparent, rgba(232,198,120,0.4), transparent)' }}></div>
 
           {/* 4-point sparkle stars */}
-          <div className="sparkle-star" style={{ bottom:'62px', left:'168px', animationDelay:'0s' }}></div>
-          <div className="sparkle-star" style={{ bottom:'80px', left:'80px', animationDelay:'0.8s', transform:'scale(0.6)' }}></div>
-          <div className="sparkle-star" style={{ bottom:'90px', left:'230px', animationDelay:'1.4s', transform:'scale(0.5)' }}></div>
-          <div className="sparkle-star" style={{ bottom:'70px', left:'310px', animationDelay:'0.4s', transform:'scale(0.4)' }}></div>
+          <div className="sparkle-star" style={{ bottom: '62px', left: '168px', animationDelay: '0s' }}></div>
+          <div className="sparkle-star" style={{ bottom: '80px', left: '80px', animationDelay: '0.8s', transform: 'scale(0.6)' }}></div>
+          <div className="sparkle-star" style={{ bottom: '90px', left: '230px', animationDelay: '1.4s', transform: 'scale(0.5)' }}></div>
+          <div className="sparkle-star" style={{ bottom: '70px', left: '310px', animationDelay: '0.4s', transform: 'scale(0.4)' }}></div>
 
           {/* Small glowing dots */}
-          <div className="sparkle" style={{ bottom:'64px', left:'170px', width:'5px', height:'5px', boxShadow:'0 0 8px 3px rgba(232,198,120,0.8), 0 0 2px 1px #fff', animationDelay:'0.2s' }}></div>
-          <div className="sparkle" style={{ bottom:'82px', left:'82px', width:'3px', height:'3px', boxShadow:'0 0 5px 2px rgba(232,198,120,0.6)', animationDelay:'1s' }}></div>
-          <div className="sparkle" style={{ bottom:'92px', left:'232px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.5)', animationDelay:'1.6s' }}></div>
-          <div className="sparkle" style={{ bottom:'72px', left:'312px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.4)', animationDelay:'0.6s' }}></div>
-          <div className="sparkle" style={{ bottom:'100px', left:'140px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.4)', animationDelay:'2s' }}></div>
+          <div className="sparkle" style={{ bottom: '64px', left: '170px', width: '5px', height: '5px', boxShadow: '0 0 8px 3px rgba(232,198,120,0.8), 0 0 2px 1px #fff', animationDelay: '0.2s' }}></div>
+          <div className="sparkle" style={{ bottom: '82px', left: '82px', width: '3px', height: '3px', boxShadow: '0 0 5px 2px rgba(232,198,120,0.6)', animationDelay: '1s' }}></div>
+          <div className="sparkle" style={{ bottom: '92px', left: '232px', width: '2px', height: '2px', boxShadow: '0 0 4px 2px rgba(232,198,120,0.5)', animationDelay: '1.6s' }}></div>
+          <div className="sparkle" style={{ bottom: '72px', left: '312px', width: '2px', height: '2px', boxShadow: '0 0 4px 2px rgba(232,198,120,0.4)', animationDelay: '0.6s' }}></div>
+          <div className="sparkle" style={{ bottom: '100px', left: '140px', width: '2px', height: '2px', boxShadow: '0 0 4px 2px rgba(232,198,120,0.4)', animationDelay: '2s' }}></div>
         </div>
 
         <div className="hero-content">
@@ -1021,8 +1022,8 @@ export default function HomePage() {
               const line1Text = "Built on Strategy.";
               const line2Text = "Driven by Purpose.";
               const displayLine1 = line1Text.slice(0, typedLength);
-              const displayLine2 = typedLength > line1Text.length 
-                ? line2Text.slice(0, typedLength - line1Text.length) 
+              const displayLine2 = typedLength > line1Text.length
+                ? line2Text.slice(0, typedLength - line1Text.length)
                 : "";
 
               return (
@@ -1064,7 +1065,7 @@ export default function HomePage() {
 
             <div className="profile-wrapper">
               <img
-                src="/images/Anu-Pic-with-laptop-removebg-preview.png"
+                src="/images/Anu-Pic-with-laptop.jpeg"
                 alt="Anuradha Pasupuleti"
                 className="main-profile-img"
               />
@@ -1082,7 +1083,7 @@ export default function HomePage() {
               <div className="partner-eyebrow">
                 <span className="partner-eyebrow-bar"></span> MEET YOUR
               </div>
-              <h2 className="partner-main-title">FINANCIAL<br/>PARTNER</h2>
+              <h2 className="partner-main-title">FINANCIAL<br />PARTNER</h2>
               <p className="partner-desc">
                 Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
               </p>
@@ -1287,13 +1288,13 @@ export default function HomePage() {
                   </div>
                   <div className="grid-span-2">
                     <button
-                       type="submit"
-                       className="opp-submit form-submit"
-                       disabled={isSubmitting}
-                       style={{ marginTop: 0 }}
-                     >
-                       {isSubmitting ? "Sending..." : "Send Message →"}
-                     </button>
+                      type="submit"
+                      className="opp-submit form-submit"
+                      disabled={isSubmitting}
+                      style={{ marginTop: 0 }}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message →"}
+                    </button>
                   </div>
                 </form>
                 {error && (

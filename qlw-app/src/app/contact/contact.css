@@ -22,6 +22,12 @@
     margin-bottom: 12px
 }
 
+.page-hero p {
+    color: var(--text-dark) !important;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

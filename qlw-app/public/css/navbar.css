@@ -69,7 +69,6 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* ---- Main Navbar ---- */
 .navbar {
     position: sticky;
     top: 0;
@@ -77,8 +76,34 @@
     z-index: 9999;
     background: #ffffff; /* Clean White Background */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: background 0.3s, box-shadow 0.3s;
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     border-bottom: 1px solid rgba(10, 37, 64, 0.05);
+}
+
+/* Transparent version for Home Hero Section */
+.navbar.is-home-hero {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.is-home-hero .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.2s, background 0.2s;
+}
+
+.navbar.is-home-hero .nav-link:hover,
+.navbar.is-home-hero .nav-link.active {
+    color: var(--accent-light);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar.is-home-hero .dd-arrow {
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.is-home-hero .hamburger span {
+    background: #ffffff;
 }
 
 .navbar.scrolled {

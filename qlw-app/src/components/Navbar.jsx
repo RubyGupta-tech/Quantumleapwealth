@@ -49,9 +49,13 @@ export default function Navbar() {
   };
 
   if (pathname?.startsWith("/admin")) return null;
+
+  const isHome = pathname === "/";
+  const headerClass = `navbar ${scrolled ? 'scrolled' : ''} ${isHome && !scrolled ? 'is-home-hero' : ''}`;
+
   return (
     <>
-      <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <header className={headerClass}>
         <div className="navbar-inner">
           <Link href="/" className="navbar-brand">
             <img

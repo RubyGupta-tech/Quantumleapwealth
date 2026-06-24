@@ -38,7 +38,7 @@
 }
 
 .page-hero-sub {
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
     font-size: 1.05rem;
     max-width: 600px;
     line-height: 1.75;

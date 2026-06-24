@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hero Section Demo - Growth Arrow Background</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #e8c678;
+      --gold-dark: #c9a84c;
+      --bg-dark: #030810;
+      --bg-card: rgba(255, 255, 255, 0.03);
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .hero-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 5% 60px 5%;
+      box-sizing: border-box;
+      /* Using the new generated growth arrow background image with a dark linear-gradient overlay */
+      background-image: linear-gradient(135deg, rgba(10, 28, 54, 0.93) 0%, rgba(3, 8, 16, 0.96) 100%), url('images/wealth-growth-arrow-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* Soft tech grid overlay */
+    .hero-grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(232, 198, 120, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(232, 198, 120, 0.02) 1px, transparent 1px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Concentric Circles Globe Styling */
+    .concentric-circles-container {
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      transform: translate(-50%, -50%);
+      width: 900px;
+      height: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .concentric-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 198, 120, 0.35);
+      box-shadow: 0 0 20px rgba(232, 198, 120, 0.03);
+    }
+
+    .cc-1 { width: 250px; height: 250px; border-color: rgba(232, 198, 120, 0.65); }
+    .cc-2 { width: 450px; height: 450px; border-style: dashed; border-color: rgba(232, 198, 120, 0.5); }
+    .cc-3 { width: 650px; height: 650px; border-color: rgba(232, 198, 120, 0.4); border-style: double; border-width: 3px; }
+    .cc-4 { width: 850px; height: 850px; border-style: dotted; border-color: rgba(232, 198, 120, 0.3); }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-text {
+      flex: 1 1 55%;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .eyebrow::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin: 0 0 30px 0;
+      color: #fff;
+    }
+
+    .paragraph {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 40px 0;
+      font-weight: 300;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #030810;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(232, 198, 120, 0.2);
+    }
+
+    .hero-image-wrapper {
+      flex: 1 1 45%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center 10%;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .founder-badge {
+      position: absolute;
+      bottom: -30px;
+      left: -40px;
+      background: rgba(6, 16, 32, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .founder-name {
+      font-family: 'Great Vibes', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin: 0 0 5px 0;
+      line-height: 1;
+    }
+
+    .founder-title {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 80px;
+      }
+      .eyebrow {
+        justify-content: center;
+      }
+      .eyebrow::after, .eyebrow::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .cta-group {
+        justify-content: center;
+      }
+      .founder-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -25px;
+        white-space: nowrap;
+      }
+      .concentric-circles-container {
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        transform: translate(-50%, -50%) scale(0.65);
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero-container">
+    <div class="hero-grid-overlay"></div>
+    
+    <!-- Concentric Circles Globe aligned with the growth arrow background -->
+    <div class="concentric-circles-container">
+      <div class="concentric-circle cc-4"></div>
+      <div class="concentric-circle cc-3"></div>
+      <div class="concentric-circle cc-2"></div>
+      <div class="concentric-circle cc-1"></div>
+    </div>
+
+    <div class="hero-content">
+      
+      <!-- Text Side -->
+      <div class="hero-text">
+        <div class="eyebrow">Quantum Leap Wealth</div>
+        <h1 class="headline">Navigating Your Financial Future With Clarity</h1>
+        <p class="paragraph">
+          At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
+        </p>
+        <div class="cta-group">
+          <a href="#" class="btn btn-primary">
+            <span>📅</span> Book Discovery Call
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Side -->
+      <div class="hero-image-wrapper">
+        <img src="images/Anu-Pic-with-laptop.jpeg" alt="Anu Prasad - Founder" class="hero-image" onerror="this.src='images/Anu-Profile-Pic2.png';">
+        <div class="founder-badge">
+          <p class="founder-name">Anuradha</p>
+          <p class="founder-title">Founder | Financial Strategist</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

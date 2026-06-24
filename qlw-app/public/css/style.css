@@ -2224,6 +2224,50 @@ img {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(10, 37, 64, 0.05);
     height: var(--nav-height);
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.navbar.is-home-hero {
+    position: absolute !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar.is-home-hero .navbar-brand {
+    background: #ffffff !important;
+    padding: 8px 20px !important;
+    border-radius: 12px !important; /* Premium rounded floating card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+    border: 1.5px solid #d4af37 !important; /* Elegant gold outline border */
+    margin-top: 5px !important; /* Push slightly down so it floats beautifully */
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.navbar.is-home-hero .brand-text {
+    color: var(--navy) !important;
+}
+
+.navbar.is-home-hero .brand-logo {
+    height: 55px !important; /* Extremely slim inside transparent sticker */
+}
+
+.navbar.is-home-hero .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar.is-home-hero .nav-link:hover,
+.navbar.is-home-hero .nav-link.active {
+    color: var(--accent-light) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.navbar.is-home-hero .dd-arrow {
+    stroke: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar.is-home-hero .hamburger span {
+    background: #ffffff !important;
 }
 
 .navbar-inner {
@@ -2246,7 +2290,7 @@ img {
 }
 
 .brand-logo {
-    height: 85px; /* Restored to a more standard proportion for a stacked logo */
+    height: 65px; /* Slimmer logo box height */
     width: auto;
     object-fit: contain;
     border-radius: 0;
@@ -2399,6 +2443,17 @@ img {
     transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
     z-index: 1000;
     list-style: none;
+}
+
+/* Invisible bridge to prevent dropdown from closing when cursor moves over the gap */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: transparent;
 }
 
 .nav-item:hover > .dropdown {

@@ -7,6 +7,7 @@ import FloatingContact from "@/components/FloatingContact";
 
 // Global CSS Imports - Consolidated into style.css for better performance
 import "./globals.css";
+import "../../public/css/navbar.css";
 import "../../public/css/style.css";
 
 const inter = Inter({
