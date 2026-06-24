@@ -200,13 +200,13 @@ export default function HomePage() {
           justify-content: center;
           pointer-events: none;
           z-index: 1;
-          opacity: 0.45;
+          opacity: 0.65;
         }
 
         .concentric-circle {
           position: absolute;
           border-radius: 50%;
-          border: 1px solid rgba(232, 198, 120, 0.25);
+          border: 1px solid rgba(232, 198, 120, 0.35);
           box-shadow: 0 0 20px rgba(232, 198, 120, 0.03);
           display: flex;
           align-items: center;
@@ -216,7 +216,7 @@ export default function HomePage() {
         .cc-1 {
           width: 250px;
           height: 250px;
-          border-color: rgba(232, 198, 120, 0.45);
+          border-color: rgba(232, 198, 120, 0.65);
           box-shadow: inset 0 0 15px rgba(232, 198, 120, 0.08), 0 0 15px rgba(232, 198, 120, 0.08);
           animation: spinClockwise 45s linear infinite;
         }
@@ -225,14 +225,14 @@ export default function HomePage() {
           width: 450px;
           height: 450px;
           border-style: dashed;
-          border-color: rgba(232, 198, 120, 0.3);
+          border-color: rgba(232, 198, 120, 0.5);
           animation: spinCounterClockwise 55s linear infinite;
         }
 
         .cc-3 {
           width: 650px;
           height: 650px;
-          border-color: rgba(232, 198, 120, 0.2);
+          border-color: rgba(232, 198, 120, 0.4);
           border-style: double;
           border-width: 3px;
           animation: spinClockwise 70s linear infinite;
@@ -242,10 +242,9 @@ export default function HomePage() {
           width: 850px;
           height: 850px;
           border-style: dotted;
-          border-color: rgba(232, 198, 120, 0.15);
+          border-color: rgba(232, 198, 120, 0.3);
           animation: spinCounterClockwise 90s linear infinite;
         }
-
         .circle-node {
           position: absolute;
           width: 7px;
@@ -253,6 +252,56 @@ export default function HomePage() {
           background: #e8c678;
           border-radius: 50%;
           box-shadow: 0 0 8px #fff, 0 0 15px #e8c678;
+        }
+
+        .circle-orb {
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e8c678 40%, #c9a84c 85%, transparent 100%);
+          box-shadow: 0 0 18px rgba(232, 198, 120, 0.85);
+        }
+
+        .circle-arrow {
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          fill: none;
+          pointer-events: none;
+        }
+
+        .tilted-orbit {
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid rgba(232, 198, 120, 0.3);
+          pointer-events: none;
+        }
+
+        .to-1 {
+          width: 750px;
+          height: 750px;
+          transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg);
+          animation: spinTiltedClockwise 60s linear infinite;
+        }
+
+        .to-2 {
+          width: 750px;
+          height: 750px;
+          transform: rotateX(70deg) rotateY(-20deg) rotateZ(0deg);
+          border-style: dashed;
+          border-color: rgba(232, 198, 120, 0.25);
+          animation: spinTiltedCounterClockwise 80s linear infinite;
+        }
+
+        @keyframes spinTiltedClockwise {
+          from { transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg); }
+          to { transform: rotateX(70deg) rotateY(20deg) rotateZ(360deg); }
+        }
+
+        @keyframes spinTiltedCounterClockwise {
+          from { transform: rotateX(70deg) rotateY(-20deg) rotateZ(360deg); }
+          to { transform: rotateX(70deg) rotateY(-20deg) rotateZ(0deg); }
         }
 
         @keyframes spinClockwise {
@@ -805,19 +854,36 @@ export default function HomePage() {
         <div className="hero-overlay"></div>
         <div className="hero-gold-flare"></div>
 
-        {/* Gold Concentric Circles Design */}
+        {/* Gold Concentric Circles Design with Orbiting Orbs and Arrows */}
         <div className="concentric-circles-container">
-          <div className="concentric-circle cc-4"></div>
+          {/* Tilted 3D Gyroscopic Orbits */}
+          <div className="tilted-orbit to-1"></div>
+          <div className="tilted-orbit to-2"></div>
+
+          {/* CC-4 (Counter-Clockwise) */}
+          <div className="concentric-circle cc-4">
+            <div className="circle-orb" style={{ top: '50%', left: '0', transform: 'translate(-50%, -50%)' }}></div>
+            <svg className="circle-arrow" style={{ top: '50%', left: '30px', transform: 'translate(-50%, -50%) rotate(90deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
+          {/* CC-3 (Clockwise) */}
           <div className="concentric-circle cc-3">
             <div className="circle-node" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
             <div className="circle-node" style={{ bottom: '0', left: '50%', transform: 'translate(-50%, 50%)' }}></div>
+            <div className="circle-orb" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)' }}></div>
+            <svg className="circle-arrow" style={{ top: '50%', right: '30px', transform: 'translate(50%, -50%) rotate(90deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
+          {/* CC-2 (Counter-Clockwise) */}
           <div className="concentric-circle cc-2">
             <div className="circle-node" style={{ top: '50%', left: '0', transform: 'translate(-50%, -50%)' }}></div>
             <div className="circle-node" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)' }}></div>
+            <div className="circle-orb" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+            <svg className="circle-arrow" style={{ top: '30px', left: '50%', transform: 'translate(-50%, -50%) rotate(180deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
+          {/* CC-1 (Clockwise) */}
           <div className="concentric-circle cc-1">
             <div className="circle-node" style={{ top: '15%', left: '85%', transform: 'translate(-50%, -50%)' }}></div>
+            <div className="circle-orb" style={{ bottom: '0', left: '50%', transform: 'translate(-50%, 50%)' }}></div>
+            <svg className="circle-arrow" style={{ bottom: '30px', left: '50%', transform: 'translate(-50%, 50%) rotate(180deg)' }} viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
         </div>
 
