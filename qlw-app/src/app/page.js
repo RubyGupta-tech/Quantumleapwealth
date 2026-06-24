@@ -144,6 +144,12 @@ export default function HomePage() {
       {/* Critical CSS for LCP Optimization */}
       <style dangerouslySetInnerHTML={{
         __html: `
+        /* Override base background color for homepage to eliminate reload flashing */
+        html, body {
+          background-color: #0b1c36 !important;
+          background: #0b1c36 !important;
+        }
+
         /* New Hero CSS */
         .hero-container {
           position: relative;
