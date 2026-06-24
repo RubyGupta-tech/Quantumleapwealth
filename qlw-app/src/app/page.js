@@ -821,9 +821,12 @@ export default function HomePage() {
             max-width: 420px;
             margin: 0 auto;
             width: 100%;
+            right: 0 !important;
+            top: 0 !important;
+            position: relative !important;
           }
           .main-profile-img {
-            max-height: 50vh;
+            max-height: none !important;
             width: 100%;
             height: auto;
           }
