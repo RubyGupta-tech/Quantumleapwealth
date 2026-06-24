@@ -715,6 +715,23 @@ export default function HomePage() {
             text-align: center;
             width: 100%;
             max-width: 400px;
+            box-sizing: border-box;
+            background: transparent !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+          }
+          .partner-card .partner-main-title {
+            color: #030a16 !important;
+          }
+          .partner-card .partner-desc {
+            color: #333333 !important;
+          }
+          .partner-card .partner-eyebrow {
+            color: #8B6914 !important;
+            justify-content: center;
+          }
+          .partner-card .partner-eyebrow-bar {
+            background: #8B6914 !important;
           }
           .concentric-circles-container {
             left: 50%;
