@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 
@@ -58,12 +59,13 @@ export default function Navbar() {
       <header className={headerClass}>
         <div className="navbar-inner">
           <Link href="/" className="navbar-brand">
-            <img
+            <Image
               src="/images/icon.png"
               alt="Quantum Leap Wealth Logo"
               className="brand-logo"
-              width="70"
-              height="70"
+              width={70}
+              height={70}
+              priority
             />
             <span className="brand-text">
               Quantum Leap <span className="brand-wealth">Wealth</span>
@@ -72,12 +74,13 @@ export default function Navbar() {
           <ul className="nav-menu" id="nav-menu">
             <li className="mobile-brand-container">
               <Link href="/" className="mobile-brand-link">
-                <img
+                <Image
                   src="/images/icon.png"
                   alt="Quantum Leap Wealth Logo"
                   className="brand-logo"
-                  width="70"
-                  height="70"
+                  width={70}
+                  height={70}
+                  priority
                 />
                 <span className="brand-text">
                   Quantum Leap <span className="brand-wealth">Wealth</span>

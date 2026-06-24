@@ -21,34 +21,7 @@ export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Headline Typing Animation State
-  const [typedLength, setTypedLength] = useState(0);
 
-  useEffect(() => {
-    const totalLength = "Built on Strategy.Driven by Purpose.".length; // 36 characters
-    const interval = setInterval(() => {
-      setTypedLength((prev) => {
-        if (prev < totalLength) {
-          return prev + 1;
-        } else {
-          clearInterval(interval);
-          return prev;
-        }
-      });
-    }, 55);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Dynamic Word Rotation State
-  const heroWords = ["Clarity", "Confidence", "Strategy", "Prosperity"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
-  useEffect(() => {
-    const wordInterval = setInterval(() => {
-      setCurrentWordIndex(prev => (prev + 1) % heroWords.length);
-    }, 3000);
-    return () => clearInterval(wordInterval);
-  }, []);
 
   useEffect(() => {
     setIsMounted(true);
@@ -1031,27 +1004,7 @@ export default function HomePage() {
 
           {/* LEFT: Headline + Text + Buttons */}
           <div className="hero-left">
-            {(() => {
-              const line1Text = "Built on Strategy.";
-              const line2Text = "Driven by Purpose.";
-              const displayLine1 = line1Text.slice(0, typedLength);
-              const displayLine2 = typedLength > line1Text.length
-                ? line2Text.slice(0, typedLength - line1Text.length)
-                : "";
-
-              return (
-                <h1 className="headline">
-                  <span className="headline-span" style={{ color: 'white' }}>
-                    {displayLine1}
-                    {typedLength < line1Text.length && <span className="typing-cursor">|</span>}
-                  </span><br />
-                  <span className="headline-span" style={{ color: '#e8c678' }}>
-                    {displayLine2}
-                    {typedLength >= line1Text.length && typedLength < (line1Text.length + line2Text.length) && <span className="typing-cursor">|</span>}
-                  </span>
-                </h1>
-              );
-            })()}
+            <TypingHeadline />
             <div className="hero-divider"></div>
             <h2 className="sub-headline">
               Take a Quantum Leap Toward Financial Confidence
@@ -1077,17 +1030,24 @@ export default function HomePage() {
             <div className="office-bg-layer"></div>
 
             <div className="profile-wrapper">
-              <img
+              <Image
                 src="/images/Anu-Pic-with-laptop.jpeg"
                 alt="Anuradha Pasupuleti"
                 className="main-profile-img"
+                width={620}
+                height={520}
+                priority
+                style={{ objectFit: "cover" }}
               />
 
               {/* Name plate image bottom-left */}
-              <img
+              <Image
                 src="/images/Anu-name-plate (1).png"
                 alt="Anuradha Pasupuleti - Founder | Financial Strategist"
                 className="name-plate-img"
+                width={170}
+                height={55}
+                priority
               />
             </div>
 
@@ -1435,5 +1395,44 @@ function EventCard({ event, isPast }) {
 function OppPerk({ text }) {
   return (
     <div className="opp-perk"><div className="opp-perk-icon">✓</div>{text}</div>
+  );
+}
+
+function TypingHeadline() {
+  const [typedLength, setTypedLength] = useState(0);
+  const line1Text = "Built on Strategy.";
+  const line2Text = "Driven by Purpose.";
+  const totalLength = line1Text.length + line2Text.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTypedLength((prev) => {
+        if (prev < totalLength) {
+          return prev + 1;
+        } else {
+          clearInterval(interval);
+          return prev;
+        }
+      });
+    }, 55);
+    return () => clearInterval(interval);
+  }, [totalLength]);
+
+  const displayLine1 = line1Text.slice(0, typedLength);
+  const displayLine2 = typedLength > line1Text.length
+    ? line2Text.slice(0, typedLength - line1Text.length)
+    : "";
+
+  return (
+    <h1 className="headline">
+      <span className="headline-span" style={{ color: 'white' }}>
+        {displayLine1}
+        {typedLength < line1Text.length && <span className="typing-cursor">|</span>}
+      </span><br />
+      <span className="headline-span" style={{ color: '#e8c678' }}>
+        {displayLine2}
+        {typedLength >= line1Text.length && typedLength < totalLength && <span className="typing-cursor">|</span>}
+      </span>
+    </h1>
   );
 }
