@@ -482,11 +482,30 @@ export default function HomePage() {
           gap: 10px;
           border: none;
           cursor: pointer;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .btn-primary-hero::after {
+          content: '';
+          position: absolute;
+          top: 0; left: -150%;
+          width: 80px;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+          transform: skewX(-25deg);
+          animation: goldenShineSwipe 4s infinite ease-in-out;
+        }
+
+        @keyframes goldenShineSwipe {
+          0% { left: -150%; }
+          15% { left: 150%; }
+          100% { left: 150%; }
         }
 
         .btn-primary-hero:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(232, 198, 120, 0.3);
+          box-shadow: 0 10px 20px rgba(232, 198, 120, 0.35);
         }
 
         .btn-outline-hero {
@@ -535,7 +554,6 @@ export default function HomePage() {
           z-index: 0;
           opacity: 0.9;
         }
-
         /* Profile image */
         .profile-wrapper {
           position: relative;
@@ -543,6 +561,11 @@ export default function HomePage() {
           width: 100%;
           max-width: 620px;
           container-type: inline-size;
+          transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .profile-wrapper:hover {
+          transform: translateY(-8px) scale(1.015);
         }
 
         .main-profile-img {
@@ -605,6 +628,11 @@ export default function HomePage() {
           max-width: 240px;
           z-index: 5;
           filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+          transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .profile-wrapper:hover .name-plate-img {
+          transform: translateY(3px) rotate(-1.5deg) scale(1.03);
         }
 
         @media (max-width: 500px) {
@@ -845,14 +873,60 @@ export default function HomePage() {
           0%, 100% { opacity: 0; }
           50% { opacity: 1; }
         }
-      `}} />
 
+        /* Drifting Gold Particles Background */
+        .drifting-particles-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .particle {
+          position: absolute;
+          bottom: -10px;
+          background: radial-gradient(circle, rgba(232, 198, 120, 0.8) 0%, rgba(201, 168, 76, 0.4) 60%, transparent 100%);
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(232, 198, 120, 0.5);
+          animation: floatUpParticle linear infinite;
+        }
+
+        @keyframes floatUpParticle {
+          0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.8;
+          }
+          90% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateY(-110vh) translateX(50px);
+            opacity: 0;
+          }
+        }
+      `}} />
 
       {/* HERO SECTION */}
       <section className="hero-container" id="home">
 
         <div className="hero-overlay"></div>
         <div className="hero-gold-flare"></div>
+
+        {/* Drifting Gold Particles Background */}
+        <div className="drifting-particles-container">
+          <div className="particle" style={{ left: '10%', width: '4px', height: '4px', animationDuration: '14s', animationDelay: '0s' }}></div>
+          <div className="particle" style={{ left: '25%', width: '6px', height: '6px', animationDuration: '18s', animationDelay: '3s' }}></div>
+          <div className="particle" style={{ left: '45%', width: '3px', height: '3px', animationDuration: '12s', animationDelay: '1s' }}></div>
+          <div className="particle" style={{ left: '65%', width: '8px', height: '8px', animationDuration: '22s', animationDelay: '5s' }}></div>
+          <div className="particle" style={{ left: '85%', width: '5px', height: '5px', animationDuration: '16s', animationDelay: '2s' }}></div>
+        </div>
 
         {/* Gold Concentric Circles Design with Orbiting Orbs and Arrows */}
         <div className="concentric-circles-container">
