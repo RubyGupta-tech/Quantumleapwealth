@@ -653,17 +653,19 @@ export default function HomePage() {
           .hero-container {
             height: auto !important;
             max-height: none !important;
-            padding: 90px 20px 80px 20px !important;
-            overflow: visible !important;
+            padding: 80px 0 0 0 !important;
+            overflow: hidden !important;
           }
           .hero-content {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 40px;
+            gap: 0 !important;
           }
           .hero-left {
             align-items: center;
             width: 100%;
+            padding: 40px 20px 60px 20px !important;
+            box-sizing: border-box;
           }
           .hero-btns {
             justify-content: center;
@@ -694,11 +696,23 @@ export default function HomePage() {
             min-height: auto;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 0 !important;
             width: 100%;
+            background: #ffffff !important;
+            padding: 60px 20px 80px 20px !important;
+            box-sizing: border-box;
+          }
+          .office-bg-layer {
+            left: 0 !important;
+            right: 0 !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            opacity: 0.15 !important;
+            background-image: url('/images/office-bg.png') !important;
+            background-size: cover !important;
           }
           .profile-wrapper {
-            max-width: 450px;
+            max-width: 420px;
             margin: 0 auto;
             width: 100%;
           }
@@ -738,7 +752,21 @@ export default function HomePage() {
             width: 500px;
             height: 500px;
             transform: translate(-50%, -50%) scale(0.65);
-            opacity: 0.25;
+            opacity: 0.2;
+          }
+          .bottom-banner {
+            position: relative !important;
+            z-index: 10;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 0.85rem !important;
+            letter-spacing: 1px !important;
+            padding: 12px 15px !important;
+            gap: 8px !important;
+            margin-top: 0 !important;
+          }
+          .bottom-banner .banner-line {
+            display: none !important;
           }
           #services { padding-top: 40px; }
         }
