@@ -21,6 +21,24 @@ export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
+  // Headline Typing Animation State
+  const [typedLength, setTypedLength] = useState(0);
+
+  useEffect(() => {
+    const totalLength = "Built on Strategy.Driven by Purpose.".length; // 36 characters
+    const interval = setInterval(() => {
+      setTypedLength((prev) => {
+        if (prev < totalLength) {
+          return prev + 1;
+        } else {
+          clearInterval(interval);
+          return prev;
+        }
+      });
+    }, 55);
+    return () => clearInterval(interval);
+  }, []);
+
   // Dynamic Word Rotation State
   const heroWords = ["Clarity", "Confidence", "Strategy", "Prosperity"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -130,368 +148,682 @@ export default function HomePage() {
         .hero-container {
           position: relative;
           width: 100%;
-          min-height: 60vh;
+          height: calc(100vh - 85px);
+          min-height: 600px;
+          max-height: calc(100vh - 85px);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 100px 5% 120px 5%;
+          padding: 10px 5% 45px 5%;
           box-sizing: border-box;
-          background-color: #0a1930;
-          background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+          background-color: #030a16;
+          background-image: url('/images/growth-arrow.svg?v=5');
           background-size: cover;
           background-position: center;
-          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-image: linear-gradient(135deg, rgba(3, 10, 22, 0.95) 0%, rgba(10, 25, 48, 0.85) 100%);
           overflow: hidden;
         }
-
         .hero-overlay {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(180deg, rgba(10, 25, 48, 0.85) 0%, rgba(10, 25, 48, 0.95) 100%);
+          background: linear-gradient(135deg, rgba(3, 10, 22, 0.95) 0%, rgba(10, 25, 48, 0.85) 100%);
+          background-image: url('/images/growth-arrow.svg?v=5');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.15;
           z-index: 1;
+          pointer-events: none;
+        }
+
+        .hero-chart-svg {
+          position: absolute;
+          top: auto; left: 0; right: 0; bottom: 0;
+          width: 100%; height: 35%;
+          opacity: 0.15;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* Gold Concentric Circles Design */
+        .concentric-circles-container {
+          position: absolute;
+          top: 50%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+          width: 900px;
+          height: 900px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none;
+          z-index: 1;
+          opacity: 0.45;
+        }
+
+        .concentric-circle {
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid rgba(232, 198, 120, 0.25);
+          box-shadow: 0 0 20px rgba(232, 198, 120, 0.03);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .cc-1 {
+          width: 250px;
+          height: 250px;
+          border-color: rgba(232, 198, 120, 0.45);
+          box-shadow: inset 0 0 15px rgba(232, 198, 120, 0.08), 0 0 15px rgba(232, 198, 120, 0.08);
+          animation: spinClockwise 45s linear infinite;
+        }
+
+        .cc-2 {
+          width: 450px;
+          height: 450px;
+          border-style: dashed;
+          border-color: rgba(232, 198, 120, 0.3);
+          animation: spinCounterClockwise 55s linear infinite;
+        }
+
+        .cc-3 {
+          width: 650px;
+          height: 650px;
+          border-color: rgba(232, 198, 120, 0.2);
+          border-style: double;
+          border-width: 3px;
+          animation: spinClockwise 70s linear infinite;
+        }
+
+        .cc-4 {
+          width: 850px;
+          height: 850px;
+          border-style: dotted;
+          border-color: rgba(232, 198, 120, 0.15);
+          animation: spinCounterClockwise 90s linear infinite;
+        }
+
+        .circle-node {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          background: #e8c678;
+          border-radius: 50%;
+          box-shadow: 0 0 8px #fff, 0 0 15px #e8c678;
+        }
+
+        @keyframes spinClockwise {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes spinCounterClockwise {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+
+        @keyframes quantumHeroFloatOrb {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(120px, -60px) scale(1.2); }
+          100% { transform: translate(-80px, 80px) scale(0.95); }
+        }
+
+        /* Gold corner design – bottom left */
+        .hero-gold-flare {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 620px;
+          height: 320px;
+          background-image: url('/images/gold-flare.svg');
+          background-size: contain;
+          background-position: bottom left;
+          background-repeat: no-repeat;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* Sparkling gold particles */
+        .sparkle-container {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 420px;
+          height: 260px;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .sparkle {
+          position: absolute;
+          border-radius: 50%;
+          background: #e8c678;
+          animation: sparklePulse 2.5s ease-in-out infinite;
+        }
+
+        .sparkle::before, .sparkle::after {
+          content: '';
+          position: absolute;
+          background: #e8c678;
+          border-radius: 50%;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        /* 4-point star shape via box-shadow */
+        .sparkle-star {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: transparent;
+          animation: starTwinkle 2.5s ease-in-out infinite;
+        }
+
+        .sparkle-star::before {
+          content: '';
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 2px;
+          height: 12px;
+          background: linear-gradient(to bottom, transparent, #e8c678, transparent);
+          border-radius: 50%;
+        }
+
+        .sparkle-star::after {
+          content: '';
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 12px;
+          height: 2px;
+          background: linear-gradient(to right, transparent, #e8c678, transparent);
+          border-radius: 50%;
+        }
+
+        @keyframes sparklePulse {
+          0%, 100% { opacity: 0; transform: scale(0.5); }
+          50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        @keyframes starTwinkle {
+          0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+          40% { opacity: 1; transform: scale(1) rotate(45deg); }
+          60% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+          80% { opacity: 0.3; transform: scale(0.8) rotate(90deg); }
         }
 
         .hero-content {
           position: relative;
           z-index: 2;
-          max-width: 1100px;
+          max-width: 1300px;
           width: 100%;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        .eyebrow {
-          color: #e8c678;
-          font-size: 0.85rem;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          font-weight: 700;
-          margin-bottom: 15px;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
           align-items: center;
-          justify-content: center;
-          gap: 15px;
+          margin-bottom: 0px;
         }
 
-        .eyebrow::before, .eyebrow::after {
-          content: '';
-          display: block;
-          width: 40px;
-          height: 2px;
-          background: #e8c678;
+        .hero-left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
         }
 
         .headline {
           font-family: 'Playfair Display', serif;
-          font-size: clamp(2.5rem, 4vw, 3.8rem); 
+          font-size: clamp(2.5rem, 4vw, 3.8rem);
           line-height: 1.15;
           font-weight: 700;
-          margin: 0 0 15px 0;
+          margin: 0 0 12px 0;
           color: #fff;
         }
 
-        .headline span {
-          color: #e8c678;
-          font-style: italic;
-          font-weight: 400;
+        .hero-divider {
+          width: 60px;
+          height: 3px;
+          background: #e8c678;
+          margin-bottom: 15px;
+        }
+
+        .sub-headline {
+          font-size: clamp(1.1rem, 2vw, 1.5rem);
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 12px;
+          line-height: 1.4;
         }
 
         .paragraph {
-          font-size: 1.1rem;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
-          margin: 0 auto 20px auto;
+          font-size: 1rem;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 0 0 25px 0;
           font-weight: 300;
-          max-width: 700px;
+          max-width: 480px;
         }
 
-        .mini-tags {
+        .hero-btns {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 30px;
+          gap: 16px;
           flex-wrap: wrap;
-          margin: 0 auto 25px auto;
-          max-width: 800px;
-        }
-
-        @keyframes slideInRightLoop {
-          0%, 100% {
-            transform: translateX(50px);
-            opacity: 0;
-          }
-          12.5%, 80% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          90% {
-            transform: translateX(-50px);
-            opacity: 0;
-          }
-        }
-
-        .mini-tag {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          opacity: 0;
-          animation: slideInRightLoop 8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-        }
-
-        .mini-tag:nth-child(1) { animation-delay: 0.2s; }
-        .mini-tag:nth-child(2) { animation-delay: 0.4s; }
-        .mini-tag:nth-child(3) { animation-delay: 0.6s; }
-
-        .tag-title {
-          font-size: 0.8rem;
-          color: #e8c678;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          margin-bottom: 5px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        .tag-desc {
-          font-size: 0.9rem;
-          color: rgba(255,255,255,0.7);
-          margin: 0;
-          font-family: 'Playfair Display', serif;
-          font-style: italic;
         }
 
         .btn-primary-hero {
           background: linear-gradient(135deg, #e8c678, #c9a84c);
-          color: #030810;
-          padding: 16px 36px;
-          border-radius: 50px;
+          color: #030a16;
+          padding: 14px 28px;
+          border-radius: 4px;
           font-size: 0.95rem;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s ease;
           display: inline-flex;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
           border: none;
           cursor: pointer;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 10px 20px rgba(232, 198, 120, 0.15);
-        }
-
-        .btn-primary-hero::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-          transform: skewX(-20deg);
-          animation: shineSweep 4s infinite;
         }
 
         .btn-primary-hero:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 25px rgba(232, 198, 120, 0.3);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 20px rgba(232, 198, 120, 0.3);
         }
 
-        .overlap-container {
+        .btn-outline-hero {
+          background: transparent;
+          color: #fff;
+          padding: 13px 28px;
+          border-radius: 4px;
+          font-size: 0.95rem;
+          font-weight: 700;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-outline-hero:hover {
+          border-color: #e8c678;
+          color: #e8c678;
+        }
+
+        .play-icon { color: #e8c678; }
+
+        /* RIGHT COLUMN */
+        .hero-right {
           position: relative;
-          z-index: 10;
-          max-width: 1200px;
-          margin: -140px auto 10px auto; 
-          padding: 0 5%;
           display: flex;
-          justify-content: flex-start;
+          justify-content: flex-end;
+          align-items: flex-end;
+          height: 100%;
+          min-height: 440px;
+          overflow: visible;
         }
 
-        .profile-box {
-          background: #ffffff;
-          border-radius: 12px;
-          padding: 20px;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-          border-bottom: 4px solid #e8c678;
+        /* Bright office background on right side only */
+        .office-bg-layer {
+          position: absolute;
+          top: -120px; bottom: -60px;
+          right: -15%; left: 10%;
+          background-image: url('/images/office-bg.png');
+          background-size: cover;
+          background-position: center top;
+          mask-image: linear-gradient(to right, transparent 0%, black 35%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+          z-index: 0;
+          opacity: 0.9;
+        }
+
+        /* Profile image */
+        .profile-wrapper {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          max-width: 620px;
+          container-type: inline-size;
+        }
+
+        .main-profile-img {
+          width: 100%;
+          max-width: 620px;
+          max-height: 65vh;
+          height: auto;
+          object-fit: contain;
+          object-position: center bottom;
+          position: relative;
+          z-index: 2;
+          display: block;
+          mask-image: radial-gradient(ellipse at 45% 15%, black 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 75%, transparent 98%);
+          -webkit-mask-image: radial-gradient(ellipse at 45% 15%, black 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 75%, transparent 98%);
+        }
+
+        .laptop-logo-overlay {
+          position: absolute;
+          bottom: 12%;
+          right: 3%;
+          width: 25cqw;
+          z-index: 4;
           display: flex;
           flex-direction: column;
           align-items: center;
-          text-align: center;
-          gap: 15px;
+          gap: 4px;
+          transform: rotate(-10deg) skewX(-14deg);
+        }
+
+        .laptop-logo-overlay img {
           width: 100%;
-          max-width: 280px;
-          animation: levitate 6s ease-in-out infinite;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
-        .profile-box-image {
-          width: 100%;
-          height: 250px;
-          border-radius: 8px;
-          object-fit: cover;
-          object-position: top center;
-          background: #0a1930;
-        }
-
-        .profile-box-text h3 {
-          font-family: var(--font-great-vibes), 'Great Vibes', cursive;
-          font-size: 2.2rem;
-          color: #a07a28;
-          margin: 0 0 5px 0;
-          line-height: 1;
-        }
-
-        .profile-box-text p {
-          font-size: 0.75rem;
-          letter-spacing: 1.5px;
+        .laptop-logo-overlay span {
+          font-size: 1.5cqw;
           color: #0a1930;
-          margin: 0;
-          text-transform: uppercase;
-          font-weight: 600;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          text-align: center;
         }
+
+        @media (max-width: 500px) {
+          .laptop-logo-overlay span {
+            display: none;
+          }
+          .laptop-logo-overlay {
+            width: 20cqw;
+            bottom: 12%;
+            right: 5%;
+          }
+        }
+
+        /* Name plate image bottom-left */
+        .name-plate-img {
+          position: absolute;
+          bottom: -5px;
+          left: 0.5%;
+          width: 38%;
+          max-width: 240px;
+          z-index: 5;
+          filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+        }
+
+        @media (max-width: 500px) {
+          .name-plate-img {
+            bottom: 12px;
+            left: 4%;
+            width: 50cqw;
+          }
+        }
+
+        /* PARTNER CARD – transparent background, right side */
+        .partner-card {
+          position: absolute;
+          right: -115px;
+          top: 8%;
+          background: transparent;
+          width: 280px;
+          z-index: 6;
+        }
+
+        .partner-eyebrow {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #8B6914;
+          font-size: 1.1rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin-bottom: 6px;
+          text-transform: uppercase;
+        }
+
+        .partner-eyebrow-bar {
+          width: 3px;
+          height: 18px;
+          background: #8B6914;
+          display: inline-block;
+          border-radius: 2px;
+        }
+
+        .partner-main-title {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+          color: #030a16;
+          line-height: 1.1;
+          font-weight: 700;
+          margin: 0 0 16px 0;
+        }
+
+        .partner-desc {
+          font-size: 0.88rem;
+          color: #333333;
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        /* BOTTOM BANNER */
+        .bottom-banner {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          background: rgba(3, 10, 22, 0.92);
+          border-top: 1px solid rgba(232, 198, 120, 0.25);
+          padding: 14px 30px;
+          color: #e8c678;
+          font-size: 1.05rem;
+          font-family: 'Playfair Display', serif;
+          letter-spacing: 2px;
+          z-index: 10;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+
+        .banner-line {
+          flex: 1; max-width: 100px; height: 1px;
+          background: linear-gradient(to right, transparent, #e8c678);
+        }
+        .banner-line.right {
+          background: linear-gradient(to left, transparent, #e8c678);
+        }
+
+        .bottom-banner .dot { font-size: 0.5rem; opacity: 0.7; }
 
         #services {
           background: #ffffff;
-          padding-top: 0px;
-          margin-top: -40px;
+          padding-top: 80px;
+          margin-top: 0;
           position: relative;
           z-index: 1;
         }
 
         @media (max-width: 1024px) {
-          .hero-container {
-            background-attachment: scroll; /* Fix for missing background on mobile/iOS */
-          }
-          .headline { font-size: 2.5rem; }
-          .mini-tags { gap: 20px; flex-direction: column; }
-          .overlap-container { justify-content: center; margin-top: 20px; margin-bottom: 40px; }
-          #services {
-            margin-top: 0;
-            padding-top: 40px;
-          }
-        }
-
-        /* --- WOW FACTOR ANIMATIONS --- */
-        @keyframes levitate {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0); }
+          .hero-content { grid-template-columns: 1fr; text-align: center; }
+          .hero-left { align-items: center; }
+          .partner-card { position: relative; right: 0; top: 0; margin-top: 20px; text-align: center; }
+          #services { padding-top: 40px; }
         }
 
         @keyframes shineSweep {
-          0% { left: -100%; }
-          50% { left: 100%; }
-          100% { left: 100%; }
+          0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; }
         }
 
-
-        /* --- SCROLL REVEAL ANIMATIONS --- */
         .reveal {
-          opacity: 0;
-          transform: translateY(40px);
+          opacity: 0; transform: translateY(40px);
           transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
-        .reveal.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
+
+        .typing-cursor {
+          display: inline-block;
+          font-weight: 300;
+          color: #e8c678;
+          animation: cursorBlink 0.8s infinite;
+          margin-left: 4px;
+        }
+        @keyframes cursorBlink {
+          0%, 100% { opacity: 0; }
+          50% { opacity: 1; }
+        }
       `}} />
 
 
       {/* HERO SECTION */}
       <section className="hero-container" id="home">
+
         <div className="hero-overlay"></div>
+        <div className="hero-gold-flare"></div>
 
-        <div className="hero-content" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">Quantum Leap Wealth</div>
-          <h1 className="headline">
-            Navigating Your Financial Future <br className="hidden md:block" />
-            <span style={{ display: 'inline-block', transform: 'translateX(1.5em)' }}>
-              <span style={{ color: '#e8c678' }}>With</span>{' '}
-              <span style={{ position: 'relative', display: 'inline-block', width: '6.5em', height: '1.2em', verticalAlign: 'bottom', textAlign: 'left' }}>
-                {heroWords.map((word, idx) => {
-                  let transform = 'translateY(15px)'; // default entering
-                  let opacity = 0;
-                  if (idx === currentWordIndex) {
-                    transform = 'translateY(0)';
-                    opacity = 1;
-                  } else if (idx === (currentWordIndex - 1 + heroWords.length) % heroWords.length) {
-                    transform = 'translateY(-15px)'; // exiting up
-                  }
-                  return (
-                    <span
-                      key={word}
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        opacity,
-                        transform,
-                        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-                        color: '#e8c678',
-                        whiteSpace: 'nowrap'
-                      }}
-                    >
-                      {word}
-                    </span>
-                  );
-                })}
-              </span>
-            </span>
-          </h1>
-          <p className="paragraph">
-            At Quantum Leap Wealth, we empower individuals, families, and entrepreneurs with education-first financial strategies designed to help create long-term security, tax-efficient retirement income, and a lasting legacy.
-          </p>
+        {/* Gold Concentric Circles Design */}
+        <div className="concentric-circles-container">
+          <div className="concentric-circle cc-4"></div>
+          <div className="concentric-circle cc-3">
+            <div className="circle-node" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+            <div className="circle-node" style={{ bottom: '0', left: '50%', transform: 'translate(-50%, 50%)' }}></div>
+          </div>
+          <div className="concentric-circle cc-2">
+            <div className="circle-node" style={{ top: '50%', left: '0', transform: 'translate(-50%, -50%)' }}></div>
+            <div className="circle-node" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)' }}></div>
+          </div>
+          <div className="concentric-circle cc-1">
+            <div className="circle-node" style={{ top: '15%', left: '85%', transform: 'translate(-50%, -50%)' }}></div>
+          </div>
+        </div>
 
-          <div className="mini-tags">
-            <div className="mini-tag">
-              <div className="tag-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
-                Educate Today
-              </div>
-              <p className="tag-desc">Build Knowledge</p>
-            </div>
-            <div className="mini-tag">
-              <div className="tag-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path></svg>
-                Elevate Tomorrow
-              </div>
-              <p className="tag-desc">Create Opportunities</p>
-            </div>
-            <div className="mini-tag">
-              <div className="tag-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
-                Empower Forever
-              </div>
-              <p className="tag-desc">Leave a Lasting Impact</p>
+        {/* Abstract Glowing Financial Line Chart */}
+        <svg className="hero-chart-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#e8c678" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#e8c678" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
+          <path d="M0,330 Q150,260 300,290 T600,160 T900,70 L1000,40 L1000,400 L0,400 Z" fill="url(#chartGlow)" />
+          <path d="M0,330 Q150,260 300,290 T600,160 T900,70 L1000,40" fill="none" stroke="#e8c678" strokeWidth="2.5" strokeLinecap="round" style={{ filter: 'drop-shadow(0 2px 8px rgba(232, 198, 120, 0.5))' }} />
+          <circle cx="300" cy="290" r="4.5" fill="#fff" style={{ filter: 'drop-shadow(0 0 6px #e8c678)' }} />
+          <circle cx="600" cy="160" r="4.5" fill="#fff" style={{ filter: 'drop-shadow(0 0 6px #e8c678)' }} />
+          <circle cx="900" cy="70" r="4.5" fill="#fff" style={{ filter: 'drop-shadow(0 0 6px #e8c678)' }} />
+        </svg>
+        {/* Sparkling gold in bottom-left corner */}
+        <div className="sparkle-container">
+          {/* Horizontal beam lines */}
+          <div style={{ position:'absolute', bottom:'55px', left:0, width:'380px', height:'1.5px', background:'linear-gradient(to right, #c9a84c 0%, #e8c678 40%, #fff 55%, #e8c678 70%, transparent 100%)' }}></div>
+          <div style={{ position:'absolute', bottom:'48px', left:'20px', width:'260px', height:'1px', background:'linear-gradient(to right, rgba(201,168,76,0.5) 0%, rgba(232,198,120,0.8) 50%, transparent 100%)' }}></div>
+          <div style={{ position:'absolute', bottom:'42px', left:'40px', width:'160px', height:'0.5px', background:'linear-gradient(to right, transparent, rgba(232,198,120,0.4), transparent)' }}></div>
+
+          {/* 4-point sparkle stars */}
+          <div className="sparkle-star" style={{ bottom:'62px', left:'168px', animationDelay:'0s' }}></div>
+          <div className="sparkle-star" style={{ bottom:'80px', left:'80px', animationDelay:'0.8s', transform:'scale(0.6)' }}></div>
+          <div className="sparkle-star" style={{ bottom:'90px', left:'230px', animationDelay:'1.4s', transform:'scale(0.5)' }}></div>
+          <div className="sparkle-star" style={{ bottom:'70px', left:'310px', animationDelay:'0.4s', transform:'scale(0.4)' }}></div>
+
+          {/* Small glowing dots */}
+          <div className="sparkle" style={{ bottom:'64px', left:'170px', width:'5px', height:'5px', boxShadow:'0 0 8px 3px rgba(232,198,120,0.8), 0 0 2px 1px #fff', animationDelay:'0.2s' }}></div>
+          <div className="sparkle" style={{ bottom:'82px', left:'82px', width:'3px', height:'3px', boxShadow:'0 0 5px 2px rgba(232,198,120,0.6)', animationDelay:'1s' }}></div>
+          <div className="sparkle" style={{ bottom:'92px', left:'232px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.5)', animationDelay:'1.6s' }}></div>
+          <div className="sparkle" style={{ bottom:'72px', left:'312px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.4)', animationDelay:'0.6s' }}></div>
+          <div className="sparkle" style={{ bottom:'100px', left:'140px', width:'2px', height:'2px', boxShadow:'0 0 4px 2px rgba(232,198,120,0.4)', animationDelay:'2s' }}></div>
+        </div>
+
+        <div className="hero-content">
+
+          {/* LEFT: Headline + Text + Buttons */}
+          <div className="hero-left">
+            {(() => {
+              const line1Text = "Built on Strategy.";
+              const line2Text = "Driven by Purpose.";
+              const displayLine1 = line1Text.slice(0, typedLength);
+              const displayLine2 = typedLength > line1Text.length 
+                ? line2Text.slice(0, typedLength - line1Text.length) 
+                : "";
+
+              return (
+                <h1 className="headline">
+                  <span style={{ color: 'white', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                    {displayLine1}
+                    {typedLength < line1Text.length && <span className="typing-cursor">|</span>}
+                  </span><br />
+                  <span style={{ color: '#e8c678', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                    {displayLine2}
+                    {typedLength >= line1Text.length && typedLength < (line1Text.length + line2Text.length) && <span className="typing-cursor">|</span>}
+                  </span>
+                </h1>
+              );
+            })()}
+            <div className="hero-divider"></div>
+            <h2 className="sub-headline">
+              Take a Quantum Leap Toward Financial Confidence
+            </h2>
+            <p className="paragraph">
+              Empowering families through education-first financial strategies designed for retirement confidence, wealth preservation, and lasting legacy.
+            </p>
+            <div className="hero-btns">
+              <button onClick={(e) => {
+                e.preventDefault();
+                if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
+              }} className="btn-primary-hero">
+                <span>🗓️</span> BOOK DISCOVERY CALL
+              </button>
+              <a href="#services" className="btn-outline-hero">
+                <span className="play-icon">▷</span> EXPLORE OUR SERVICES
+              </a>
             </div>
           </div>
 
-          <button onClick={(e) => {
-            e.preventDefault();
-            if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
-          }} className="btn-primary-hero">
-            BOOK DISCOVERY CALL
-          </button>
+          {/* RIGHT: Image + overlays */}
+          <div className="hero-right">
+            <div className="office-bg-layer"></div>
+
+            <div className="profile-wrapper">
+              <img
+                src="/images/Anu-Pic-with-laptop-removebg-preview.png"
+                alt="Anuradha Pasupuleti"
+                className="main-profile-img"
+              />
+
+              {/* Name plate image bottom-left */}
+              <img
+                src="/images/Anu-name-plate (1).png"
+                alt="Anuradha Pasupuleti - Founder | Financial Strategist"
+                className="name-plate-img"
+              />
+            </div>
+
+            {/* Partner text – top right, transparent */}
+            <div className="partner-card">
+              <div className="partner-eyebrow">
+                <span className="partner-eyebrow-bar"></span> MEET YOUR
+              </div>
+              <h2 className="partner-main-title">FINANCIAL<br/>PARTNER</h2>
+              <p className="partner-desc">
+                Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="bottom-banner">
+          <span className="banner-line"></span>
+          <span>Educate Today.</span>
+          <span className="dot">♦</span>
+          <span>Elevate Tomorrow.</span>
+          <span className="dot">♦</span>
+          <span>Empower Forever.</span>
+          <span className="banner-line right"></span>
         </div>
       </section>
-
-      {/* The Single Overlapping Box on the Left with Anu's Image */}
-      <div className="overlap-container">
-        <div className="profile-box">
-          <img src="/images/Anu-Cutout.png" alt="Anuradha" className="profile-box-image" />
-          <div className="profile-box-text">
-            <h3>Anuradha</h3>
-            <p>Founder | Financial Strategist</p>
-          </div>
-        </div>
-      </div>
 
       {/* SERVICES SECTION */}
       <section className="section" id="services">
@@ -678,13 +1010,13 @@ export default function HomePage() {
                   </div>
                   <div className="grid-span-2">
                     <button
-                      type="submit"
-                      className="opp-submit form-submit"
-                      disabled={isSubmitting}
-                      style={{ marginTop: 0 }}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message →"}
-                    </button>
+                       type="submit"
+                       className="opp-submit form-submit"
+                       disabled={isSubmitting}
+                       style={{ marginTop: 0 }}
+                     >
+                       {isSubmitting ? "Sending..." : "Send Message →"}
+                     </button>
                   </div>
                 </form>
                 {error && (
@@ -708,8 +1040,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-
 
       <ScrollAnimator />
     </div>
@@ -794,7 +1124,7 @@ function EventCard({ event, isPast }) {
             {isPast ? (
               <><span>👥 {event.attendees || 'N/A'} Attendees</span><span>📍 {event.location}</span></>
             ) : (
-              <><span>🕐 {event.time}</span><span>📍 {event.location}</span><span>🎟️ {event.price || 'Free'}</span></>
+              <><span>📍 {event.location}</span><span>🎟️ {event.price || 'Free'}</span></>
             )}
           </div>
           {isPast ? (

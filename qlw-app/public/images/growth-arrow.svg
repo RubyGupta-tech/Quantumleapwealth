@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="shaftGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#c9a84c" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#e8c678" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#e8c678" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Curved shaft ending at (600, 240) -->
+  <path d="M 120,450 C 300,450 500,400 600,240" 
+        stroke="url(#shaftGrad)" 
+        stroke-width="16" 
+        stroke-linecap="round" 
+        fill="none" />
+
+  <!-- Arrowhead pointing straight UP (vertical) -->
+  <polygon points="600,195 578,242 622,242" fill="#e8c678" opacity="0.95" />
+</svg>

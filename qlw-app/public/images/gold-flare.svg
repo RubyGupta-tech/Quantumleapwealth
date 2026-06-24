@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" fill="none">
+  <defs>
+    <radialGradient id="spark" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#e8c678" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8c678" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#e8c678" stop-opacity="0.8"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beam2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8c678" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#e8c678" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ray1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8c678" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#e8c678" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ray2" x1="0%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#e8c678" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#e8c678" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ray3" x1="0%" y1="100%" x2="60%" y2="0%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Angled rays emanating up-right from bottom-left sparkle -->
+  <polygon points="200,300 600,0 600,20 220,300" fill="url(#ray1)" opacity="0.35"/>
+  <polygon points="150,300 550,0 570,0 170,300" fill="url(#ray2)" opacity="0.25"/>
+  <polygon points="100,300 480,0 510,0 120,300" fill="url(#ray3)" opacity="0.2"/>
+  <polygon points="220,300 600,30 600,50 240,300" fill="url(#ray2)" opacity="0.2"/>
+  <polygon points="260,300 600,80 600,100 280,300" fill="url(#ray3)" opacity="0.15"/>
+
+  <!-- Main horizontal gold beam line -->
+  <rect x="0" y="255" width="520" height="1.5" fill="url(#beam1)" rx="1"/>
+  <!-- Thinner second beam -->
+  <rect x="0" y="263" width="380" height="0.8" fill="url(#beam2)" rx="1"/>
+  <!-- Third faint beam -->
+  <rect x="20" y="270" width="280" height="0.5" fill="url(#beam2)" rx="1" opacity="0.5"/>
+
+  <!-- Sparkle / starburst at beam focal point -->
+  <!-- Cross hair -->
+  <line x1="195" y1="248" x2="195" y2="262" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+  <line x1="188" y1="255" x2="202" y2="255" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+  <!-- Diagonal cross -->
+  <line x1="190" y1="250" x2="200" y2="260" stroke="#e8c678" stroke-width="0.8" opacity="0.7"/>
+  <line x1="200" y1="250" x2="190" y2="260" stroke="#e8c678" stroke-width="0.8" opacity="0.7"/>
+  <!-- Center glow dot -->
+  <circle cx="195" cy="255" r="3" fill="#ffffff" opacity="0.95"/>
+  <circle cx="195" cy="255" r="6" fill="url(#spark)" opacity="0.6"/>
+  <circle cx="195" cy="255" r="12" fill="url(#spark)" opacity="0.25"/>
+</svg>

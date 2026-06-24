@@ -1,0 +1,15 @@
+<svg width="400" height="240" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Laptop Lid (Back view) -->
+  <rect x="20" y="20" width="360" height="210" rx="12" fill="url(#lid-gradient)" stroke="#cccccc" stroke-width="1"/>
+  <!-- Hinge -->
+  <rect x="150" y="225" width="100" height="10" rx="4" fill="#a0a0a0"/>
+  <!-- Base peeking out slightly at the bottom -->
+  <path d="M 15 230 L 385 230 L 390 238 L 10 238 Z" fill="#b0b0b0" />
+  
+  <defs>
+    <linearGradient id="lid-gradient" x1="0" y1="0" x2="400" y2="240">
+      <stop offset="0%" stop-color="#f9f9f9"/>
+      <stop offset="100%" stop-color="#d0d0d0"/>
+    </linearGradient>
+  </defs>
+</svg>
