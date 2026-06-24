@@ -158,21 +158,16 @@ export default function HomePage() {
           padding: 10px 5% 45px 5%;
           box-sizing: border-box;
           background-color: #0a1c36;
-          background-image: url('/images/growth-arrow.svg?v=5');
+          background-image: linear-gradient(135deg, rgba(10, 28, 54, 0.93) 0%, rgba(3, 8, 16, 0.96) 100%), url('/images/wealth-growth-arrow-bg.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
-          background-image: linear-gradient(135deg, rgba(10, 28, 54, 0.96) 0%, rgba(20, 48, 90, 0.9) 65%, rgba(139, 105, 20, 0.22) 100%);
           overflow: hidden;
         }
         .hero-overlay {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(135deg, rgba(10, 28, 54, 0.96) 0%, rgba(20, 48, 90, 0.9) 65%, rgba(139, 105, 20, 0.22) 100%);
-          background-image: url('/images/growth-arrow.svg?v=5');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: transparent;
           opacity: 0.15;
           z-index: 1;
           pointer-events: none;
