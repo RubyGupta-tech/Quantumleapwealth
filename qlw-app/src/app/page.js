@@ -578,8 +578,8 @@ export default function HomePage() {
           position: relative;
           z-index: 2;
           display: block;
-          mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-          -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+          mask-image: radial-gradient(ellipse at 45% 35%, black 45%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.2) 90%, transparent 100%);
+          -webkit-mask-image: radial-gradient(ellipse at 45% 35%, black 45%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.2) 90%, transparent 100%);
         }
 
         .laptop-logo-overlay {
