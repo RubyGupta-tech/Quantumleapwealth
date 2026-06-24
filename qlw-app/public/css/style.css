@@ -2596,6 +2596,11 @@ img {
     }
 
     .nav-menu.open { transform: translateX(0); }
+    
+    /* Enforce dark text color for links inside mobile nav drawer */
+    .navbar.is-home-hero .nav-menu .nav-link {
+        color: var(--navy) !important;
+    }
 
     .nav-link {
         padding: 12px 15px;
@@ -2603,6 +2608,7 @@ img {
         border-radius: 0;
         justify-content: space-between;
         font-size: 0.85rem;
+        color: var(--navy) !important;
     }
 
     .nav-link.active {
