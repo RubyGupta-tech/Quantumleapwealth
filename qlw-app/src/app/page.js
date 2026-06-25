@@ -940,6 +940,51 @@ export default function HomePage() {
           0% { opacity: 0.4; }
           100% { opacity: 1; }
         }
+
+        /* Large Screen / Ultra-wide Optimizations (1600px+) */
+        @media (min-width: 1600px) {
+          .hero-content {
+            max-width: 1600px !important;
+            gap: 80px !important;
+          }
+          .hero-left {
+            max-width: 720px !important;
+            padding: 55px !important;
+          }
+          .headline {
+            font-size: 4.8rem !important;
+            line-height: 1.1 !important;
+          }
+          .sub-headline {
+            font-size: 1.8rem !important;
+            margin-bottom: 20px !important;
+          }
+          .paragraph {
+            font-size: 1.25rem !important;
+            max-width: 600px !important;
+            margin-bottom: 35px !important;
+          }
+          .btn-primary-hero, .btn-outline-hero {
+            padding: 16px 28px !important;
+            font-size: 1rem !important;
+          }
+          .profile-wrapper {
+            max-width: 720px !important;
+            right: -80px !important;
+            top: 40px !important;
+          }
+          .partner-card {
+            right: -100px !important;
+            top: 100px !important;
+            width: 320px !important;
+          }
+          .partner-main-title {
+            font-size: 2.6rem !important;
+          }
+          .partner-desc {
+            font-size: 1.05rem !important;
+          }
+        }
       `}} />
 
       {/* HERO SECTION */}
