@@ -80,31 +80,7 @@
     border-bottom: 1px solid rgba(10, 37, 64, 0.05);
 }
 
-/* Transparent version for Home Hero Section */
-.navbar.is-home-hero {
-    background: transparent;
-    box-shadow: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navbar.is-home-hero .nav-link {
-    color: rgba(255, 255, 255, 0.9);
-    transition: color 0.2s, background 0.2s;
-}
-
-.navbar.is-home-hero .nav-link:hover,
-.navbar.is-home-hero .nav-link.active {
-    color: var(--accent-light);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.navbar.is-home-hero .dd-arrow {
-    stroke: rgba(255, 255, 255, 0.9);
-}
-
-.navbar.is-home-hero .hamburger span {
-    background: #ffffff;
-}
+/* Home hero navbar — always white, no transparent override */
 
 .navbar.scrolled {
     background: rgba(248, 250, 252, 0.98);
