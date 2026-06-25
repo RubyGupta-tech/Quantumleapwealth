@@ -398,9 +398,8 @@ export default function HomePage() {
           z-index: 2;
           max-width: 1300px;
           width: 100%;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
+          display: flex;
+          justify-content: center;
           align-items: center;
           margin-bottom: 0px;
         }
@@ -408,8 +407,8 @@ export default function HomePage() {
         .hero-left {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
+          align-items: center;
+          text-align: center;
           background: rgba(10, 28, 54, 0.65);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
@@ -417,10 +416,11 @@ export default function HomePage() {
           border-top: 1px solid rgba(255, 255, 255, 0.15);
           border-left: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 16px;
-          padding: 35px;
+          padding: 50px 60px;
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
           z-index: 5;
-          max-width: 580px;
+          max-width: 720px;
+          width: 100%;
         }
 
         .headline {
@@ -465,6 +465,7 @@ export default function HomePage() {
           display: flex;
           gap: 12px;
           flex-wrap: nowrap;
+          justify-content: center;
         }
 
         .btn-primary-hero {
@@ -527,167 +528,6 @@ export default function HomePage() {
           color: #e8c678;
         }
 
-        .play-icon { color: #e8c678; }
-
-        /* RIGHT COLUMN */
-        .hero-right {
-          position: relative;
-          display: flex;
-          justify-content: flex-end;
-          align-items: flex-end;
-          height: 100%;
-          min-height: 440px;
-          overflow: visible;
-        }
-
-        /* Bright office background on right side only */
-        .office-bg-layer {
-          position: absolute;
-          top: -120px; bottom: -60px;
-          right: -15%; left: 10%;
-          background-image: url('/images/office-bg.png');
-          background-size: cover;
-          background-position: center top;
-          mask-image: linear-gradient(to right, transparent 0%, black 35%);
-          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
-          z-index: 0;
-          opacity: 0.9;
-        }
-        /* Profile image */
-        .profile-wrapper {
-          position: relative;
-          right: -115px;
-          top: 60px;
-          z-index: 2;
-          width: 100%;
-          max-width: 620px;
-          container-type: inline-size;
-          transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .profile-wrapper:hover {
-          transform: translateY(-8px) scale(1.015);
-        }
-
-        .main-profile-img {
-          width: 100%;
-          max-width: 620px;
-          height: auto;
-          object-fit: cover;
-          position: relative;
-          z-index: 2;
-          display: block;
-          border-radius: 16px;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-        }
-
-        .laptop-logo-overlay {
-          position: absolute;
-          bottom: 12%;
-          right: 3%;
-          width: 25cqw;
-          z-index: 4;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 4px;
-          transform: rotate(-10deg) skewX(-14deg);
-        }
-
-        .laptop-logo-overlay img {
-          width: 100%;
-          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        .laptop-logo-overlay span {
-          font-size: 1.5cqw;
-          color: #0a1930;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          text-align: center;
-        }
-
-        @media (max-width: 500px) {
-          .laptop-logo-overlay span {
-            display: none;
-          }
-          .laptop-logo-overlay {
-            width: 20cqw;
-            bottom: 12%;
-            right: 5%;
-          }
-        }
-
-        /* Name plate image bottom-left */
-        .name-plate-img {
-          position: absolute;
-          bottom: 40px;
-          left: 12px;
-          width: 32%;
-          max-width: 170px;
-          z-index: 10 !important;
-          filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
-          transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .profile-wrapper:hover .name-plate-img {
-          transform: translateY(3px) rotate(-1.5deg) scale(1.03);
-        }
-
-        @media (max-width: 500px) {
-          .name-plate-img {
-            bottom: 12px;
-            left: 4%;
-            width: 50cqw;
-          }
-        }
-
-        /* PARTNER CARD – transparent background, right side */
-        .partner-card {
-          position: absolute;
-          right: -125px;
-          top: 95px;
-          background: transparent;
-          width: 280px;
-          z-index: 6;
-        }
-
-        .partner-eyebrow {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          color: #8B6914;
-          font-size: 1.1rem;
-          font-weight: 700;
-          letter-spacing: 2px;
-          margin-bottom: 6px;
-          text-transform: uppercase;
-        }
-
-        .partner-eyebrow-bar {
-          width: 3px;
-          height: 18px;
-          background: #8B6914;
-          display: inline-block;
-          border-radius: 2px;
-        }
-
-        .partner-main-title {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-          color: #030a16;
-          line-height: 1.1;
-          font-weight: 700;
-          margin: 0 0 16px 0;
-        }
-
-        .partner-desc {
-          font-size: 0.88rem;
-          color: #333333;
-          line-height: 1.7;
-          margin: 0;
-        }
 
         /* BOTTOM BANNER */
         .bottom-banner {
@@ -780,84 +620,6 @@ export default function HomePage() {
             margin-left: auto;
             margin-right: auto;
             max-width: 100%;
-          }
-          .hero-right {
-            min-height: auto;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0 !important;
-            width: 100%;
-            background: #ffffff !important;
-            padding: 0 !important;
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
-          }
-          .office-bg-layer {
-            display: none !important;
-          }
-          .profile-wrapper {
-            max-width: 100% !important;
-            margin: 0 !important;
-            width: 100% !important;
-            right: 0 !important;
-            top: 0 !important;
-            position: relative !important;
-          }
-          .main-profile-img {
-            max-height: none !important;
-            width: 100% !important;
-            height: auto !important;
-            border-radius: 0 !important;
-            border: none !important;
-            box-shadow: none !important;
-          }
-          .name-plate-img {
-            bottom: 20px !important;
-            left: 16px !important;
-            width: 45% !important;
-            max-width: 200px !important;
-          }
-          .partner-card {
-            position: absolute !important;
-            right: -5px !important;
-            top: 10px !important;
-            bottom: auto !important;
-            left: auto !important;
-            margin: 0 !important;
-            text-align: left !important;
-            width: auto !important;
-            max-width: 52% !important;
-            box-sizing: border-box;
-            background: transparent !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            padding: 12px 10px 12px 16px !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            z-index: 10;
-          }
-          .partner-card .partner-eyebrow {
-            color: #8B6914 !important;
-            justify-content: flex-start !important;
-            font-size: 0.7rem !important;
-            letter-spacing: 1.5px !important;
-            margin-bottom: 4px !important;
-          }
-          .partner-card .partner-eyebrow-bar {
-            background: #8B6914 !important;
-            height: 14px !important;
-          }
-          .partner-card .partner-main-title {
-            color: #030a16 !important;
-            font-size: 1.3rem !important;
-            line-height: 1.1 !important;
-            margin-bottom: 8px !important;
-          }
-          .partner-card .partner-desc {
-            color: #555 !important;
-            font-size: 0.75rem !important;
-            line-height: 1.5 !important;
           }
           .bottom-banner {
             position: relative !important;
@@ -1090,44 +852,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* RIGHT: Image + overlays */}
-          <div className="hero-right">
-            <div className="office-bg-layer"></div>
-
-            <div className="profile-wrapper">
-              <Image
-                src="/images/Anu-Pic-with-laptop.jpeg"
-                alt="Anuradha Pasupuleti"
-                className="main-profile-img"
-                width={620}
-                height={520}
-                priority
-                style={{ objectFit: "cover" }}
-              />
-
-              {/* Name plate image bottom-left */}
-              <Image
-                src="/images/Anu-name-plate (1).png"
-                alt="Anuradha Pasupuleti - Founder | Financial Strategist"
-                className="name-plate-img"
-                width={170}
-                height={55}
-                priority
-              />
-            </div>
-
-            {/* Partner text – top right, transparent */}
-            <div className="partner-card">
-              <div className="partner-eyebrow">
-                <span className="partner-eyebrow-bar"></span> MEET YOUR
-              </div>
-              <h2 className="partner-main-title">FINANCIAL<br />PARTNER</h2>
-              <p className="partner-desc">
-                Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
-              </p>
-            </div>
-          </div>
-
         </div>
 
         <div className="bottom-banner">
@@ -1163,17 +887,14 @@ export default function HomePage() {
             </div>
             <div className="meet-partner-text">
               <div className="meet-partner-eyebrow">
-                <span className="meet-partner-bar"></span> MEET YOUR PARTNER
+                <span className="meet-partner-bar"></span> MEET YOUR
               </div>
               <h2 className="meet-partner-title">
-                Your Trusted <span style={{ color: '#c9a84c' }}>Financial</span> Guide
+                FINANCIAL<br />PARTNER
               </h2>
               <div className="meet-partner-divider"></div>
               <p className="meet-partner-desc">
-                Anuradha Pasupuleti is a licensed financial strategist and founder of Quantum Leap Wealth, dedicated to empowering families through education-first financial planning.
-              </p>
-              <p className="meet-partner-desc">
-                With years of experience in retirement planning, life insurance, tax optimization, and wealth preservation, she provides thoughtful, personalized strategies that help families make informed decisions and build a more confident future.
+                Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
               </p>
               <div className="meet-partner-highlights">
                 <div className="meet-partner-hl">
