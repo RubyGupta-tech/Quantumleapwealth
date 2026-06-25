@@ -821,8 +821,8 @@ export default function HomePage() {
           .partner-card {
             position: absolute !important;
             right: 0 !important;
-            top: auto !important;
-            bottom: 0 !important;
+            top: 10px !important;
+            bottom: auto !important;
             left: auto !important;
             margin: 0 !important;
             text-align: left !important;
@@ -833,8 +833,8 @@ export default function HomePage() {
             backdrop-filter: blur(12px) !important;
             -webkit-backdrop-filter: blur(12px) !important;
             padding: 16px 20px !important;
-            box-shadow: -4px -4px 20px rgba(0,0,0,0.08) !important;
-            border-radius: 12px 0 0 0 !important;
+            box-shadow: -4px 4px 20px rgba(0,0,0,0.08) !important;
+            border-radius: 0 0 0 12px !important;
             z-index: 10;
           }
           .partner-card .partner-eyebrow {
@@ -858,10 +858,6 @@ export default function HomePage() {
             color: #555 !important;
             font-size: 0.75rem !important;
             line-height: 1.5 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
           }
           .bottom-banner {
             position: relative !important;
