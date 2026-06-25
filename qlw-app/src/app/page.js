@@ -1141,6 +1141,71 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* MEET YOUR FINANCIAL PARTNER SECTION */}
+      <section className="meet-partner-section" id="meet-partner">
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div className="meet-partner-grid reveal">
+            <div className="meet-partner-image">
+              <Image
+                src="/images/Anu-Pic-with-laptop.jpeg"
+                alt="Anuradha Pasupuleti — Founder & Financial Strategist"
+                width={600}
+                height={700}
+                style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '16px' }}
+              />
+              <Image
+                src="/images/Anu-name-plate (1).png"
+                alt="Anuradha Pasupuleti - Founder | Financial Strategist"
+                width={200}
+                height={65}
+                className="meet-partner-nameplate"
+              />
+            </div>
+            <div className="meet-partner-text">
+              <div className="meet-partner-eyebrow">
+                <span className="meet-partner-bar"></span> MEET YOUR PARTNER
+              </div>
+              <h2 className="meet-partner-title">
+                Your Trusted <span style={{ color: '#c9a84c' }}>Financial</span> Guide
+              </h2>
+              <div className="meet-partner-divider"></div>
+              <p className="meet-partner-desc">
+                Anuradha Pasupuleti is a licensed financial strategist and founder of Quantum Leap Wealth, dedicated to empowering families through education-first financial planning.
+              </p>
+              <p className="meet-partner-desc">
+                With years of experience in retirement planning, life insurance, tax optimization, and wealth preservation, she provides thoughtful, personalized strategies that help families make informed decisions and build a more confident future.
+              </p>
+              <div className="meet-partner-highlights">
+                <div className="meet-partner-hl">
+                  <span className="meet-partner-hl-icon">🎯</span>
+                  <div>
+                    <strong>Licensed Professional</strong>
+                    <span>Certified financial strategist</span>
+                  </div>
+                </div>
+                <div className="meet-partner-hl">
+                  <span className="meet-partner-hl-icon">👨‍👩‍👧‍👦</span>
+                  <div>
+                    <strong>Family-First Approach</strong>
+                    <span>Strategies tailored for families</span>
+                  </div>
+                </div>
+                <div className="meet-partner-hl">
+                  <span className="meet-partner-hl-icon">📈</span>
+                  <div>
+                    <strong>Proven Track Record</strong>
+                    <span>Trusted by hundreds of families</span>
+                  </div>
+                </div>
+              </div>
+              <a href="/who_we_are/about" className="meet-partner-btn">
+                Learn More About Us →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES SECTION */}
       <section className="section" id="services">
         <div className="container">

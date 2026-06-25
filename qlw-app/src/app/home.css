@@ -828,3 +828,220 @@
   .section-sub { font-size: 1.2rem; max-width: 800px; }
   .container { max-width: 1500px; }
 }
+
+/* ══════════════════════════════
+   MEET YOUR FINANCIAL PARTNER
+══════════════════════════════ */
+.meet-partner-section {
+  padding: 90px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.meet-partner-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.3), transparent);
+}
+
+.meet-partner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.meet-partner-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(10, 37, 64, 0.15);
+  aspect-ratio: 5 / 6;
+}
+
+.meet-partner-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(10, 37, 64, 0.3), transparent);
+  pointer-events: none;
+}
+
+.meet-partner-nameplate {
+  position: absolute;
+  bottom: 24px;
+  left: 20px;
+  z-index: 5;
+  width: 45%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.meet-partner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-partner-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8B6914;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.meet-partner-bar {
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(to bottom, #c9a84c, #8B6914);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.meet-partner-title {
+  font-family: var(--font-playfair);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--primary);
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.meet-partner-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #c9a84c, #e8c678);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.meet-partner-desc {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+.meet-partner-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px 0 32px;
+}
+
+.meet-partner-hl {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.meet-partner-hl:hover {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.35);
+  transform: translateX(6px);
+}
+
+.meet-partner-hl-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.meet-partner-hl div {
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-partner-hl strong {
+  font-size: 0.92rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.meet-partner-hl span {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 2px;
+}
+
+.meet-partner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--accent), #b8922a);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.meet-partner-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.45);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .meet-partner-section {
+    padding: 60px 0;
+  }
+  .meet-partner-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .meet-partner-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .meet-partner-text {
+    text-align: center;
+    align-items: center;
+  }
+  .meet-partner-eyebrow {
+    justify-content: center;
+  }
+  .meet-partner-desc {
+    max-width: 100%;
+  }
+  .meet-partner-hl {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1600px) {
+  .meet-partner-section {
+    padding: 120px 0;
+  }
+  .meet-partner-grid {
+    gap: 100px;
+  }
+  .meet-partner-title {
+    font-size: 3.2rem;
+  }
+  .meet-partner-desc {
+    font-size: 1.2rem;
+  }
+}
