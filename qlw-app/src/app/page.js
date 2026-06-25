@@ -820,21 +820,21 @@ export default function HomePage() {
           }
           .partner-card {
             position: absolute !important;
-            right: 0 !important;
+            right: -5px !important;
             top: 10px !important;
             bottom: auto !important;
             left: auto !important;
             margin: 0 !important;
             text-align: left !important;
             width: auto !important;
-            max-width: 55% !important;
+            max-width: 52% !important;
             box-sizing: border-box;
-            background: rgba(255, 255, 255, 0.92) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            padding: 16px 20px !important;
-            box-shadow: -4px 4px 20px rgba(0,0,0,0.08) !important;
-            border-radius: 0 0 0 12px !important;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            padding: 12px 10px 12px 16px !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
             z-index: 10;
           }
           .partner-card .partner-eyebrow {
