@@ -788,56 +788,80 @@ export default function HomePage() {
             margin-top: 0 !important;
             width: 100%;
             background: #ffffff !important;
-            padding: 60px 20px 80px 20px !important;
+            padding: 0 !important;
             box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
           }
           .office-bg-layer {
-            left: 0 !important;
-            right: 0 !important;
-            top: 0 !important;
-            bottom: 0 !important;
-            opacity: 0.15 !important;
-            background-image: url('/images/office-bg.png') !important;
-            background-size: cover !important;
+            display: none !important;
           }
           .profile-wrapper {
-            max-width: 420px;
-            margin: 0 auto;
-            width: 100%;
+            max-width: 100% !important;
+            margin: 0 !important;
+            width: 100% !important;
             right: 0 !important;
             top: 0 !important;
             position: relative !important;
           }
           .main-profile-img {
             max-height: none !important;
-            width: 100%;
-            height: auto;
-          }
-          .partner-card {
-            position: relative;
-            right: auto;
-            top: auto;
-            margin: 30px auto 0 auto;
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            box-sizing: border-box;
-            background: transparent !important;
-            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            border-radius: 0 !important;
+            border: none !important;
             box-shadow: none !important;
           }
-          .partner-card .partner-main-title {
-            color: #030a16 !important;
+          .name-plate-img {
+            bottom: 20px !important;
+            left: 16px !important;
+            width: 45% !important;
+            max-width: 200px !important;
           }
-          .partner-card .partner-desc {
-            color: #333333 !important;
+          .partner-card {
+            position: absolute !important;
+            right: 0 !important;
+            top: auto !important;
+            bottom: 0 !important;
+            left: auto !important;
+            margin: 0 !important;
+            text-align: left !important;
+            width: auto !important;
+            max-width: 55% !important;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.92) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            padding: 16px 20px !important;
+            box-shadow: -4px -4px 20px rgba(0,0,0,0.08) !important;
+            border-radius: 12px 0 0 0 !important;
+            z-index: 10;
           }
           .partner-card .partner-eyebrow {
             color: #8B6914 !important;
-            justify-content: center;
+            justify-content: flex-start !important;
+            font-size: 0.7rem !important;
+            letter-spacing: 1.5px !important;
+            margin-bottom: 4px !important;
           }
           .partner-card .partner-eyebrow-bar {
             background: #8B6914 !important;
+            height: 14px !important;
+          }
+          .partner-card .partner-main-title {
+            color: #030a16 !important;
+            font-size: 1.3rem !important;
+            line-height: 1.1 !important;
+            margin-bottom: 8px !important;
+          }
+          .partner-card .partner-desc {
+            color: #555 !important;
+            font-size: 0.75rem !important;
+            line-height: 1.5 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
           .bottom-banner {
             position: relative !important;
