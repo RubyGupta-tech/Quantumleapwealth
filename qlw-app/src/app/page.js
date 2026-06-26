@@ -127,9 +127,9 @@ export default function HomePage() {
         .hero-container {
           position: relative;
           width: 100%;
-          height: 100vh;
-          min-height: 600px;
-          max-height: 100vh;
+          height: 60vh;
+          min-height: 420px;
+          max-height: 60vh;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -202,104 +202,48 @@ export default function HomePage() {
           position: absolute;
           border-radius: 50%;
           border: 1.5px solid rgba(255, 255, 255, 0.06);
-          animation: driftOrbitR3 45s linear infinite;
         }
 
         .r1 {
-          width: 600px;
-          height: 600px;
+          width: 800px;
+          height: 800px;
           position: absolute;
-          top: -100px;
-          left: -600px;
-          border-color: rgba(201, 168, 76, 0.3);
+          top: -200px;
+          left: -200px;
+          border-color: rgba(201, 168, 76, 0.25);
           /* gold ring */
           background:
-            radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0e2544 80%),
+            radial-gradient(circle, rgba(11, 28, 54, 0) 0%, #0b1c36 75%),
             url('/images/hero_prosperity.png') center/cover no-repeat;
-          box-shadow: 0 0 80px 40px #0e2544 inset;
+          box-shadow: 0 0 80px 40px #0b1c36 inset;
           mix-blend-mode: screen;
-          animation: driftOrbitR1 75s linear infinite;
-          animation-delay: -25s;
+          opacity: 0.75;
         }
 
         .r2 {
-          width: 900px;
-          height: 900px;
+          width: 1000px;
+          height: 1000px;
           position: absolute;
-          top: 10%;
-          left: -900px;
-          border-color: rgba(56, 130, 246, 0.2);
+          bottom: -300px;
+          right: -300px;
+          border-color: rgba(56, 130, 246, 0.15);
           /* blue ring */
           background:
-            radial-gradient(circle, rgba(15, 23, 42, 0) 0%, #0e2544 85%),
+            radial-gradient(circle, rgba(11, 28, 54, 0) 0%, #0b1c36 75%),
             url('/images/hero_prosperity.png') center/cover no-repeat;
-          box-shadow: 0 0 120px 60px #0e2544 inset;
+          box-shadow: 0 0 120px 60px #0b1c36 inset;
           mix-blend-mode: screen;
-          animation: driftOrbitR2 100s linear infinite;
-          animation-delay: -50s;
+          opacity: 0.65;
         }
 
         .r3 {
-          width: 450px;
-          height: 450px;
+          width: 500px;
+          height: 500px;
           position: absolute;
-          top: 30%;
-          left: -450px;
-          border-color: rgba(255, 255, 255, 0.05);
+          top: 25%;
+          left: 35%;
+          border-color: rgba(255, 255, 255, 0.04);
           /* faint white ring */
-          animation: driftOrbitR3 60s linear infinite;
-          animation-delay: -15s;
-        }
-
-        @keyframes driftOrbitR1 {
-          0% {
-            transform: translate(0, 0) rotate(0deg);
-            opacity: 0;
-          }
-          8% {
-            opacity: 0.9;
-          }
-          92% {
-            opacity: 0.9;
-          }
-          100% {
-            transform: translate(calc(100vw + 600px), 120px) rotate(360deg);
-            opacity: 0;
-          }
-        }
-
-        @keyframes driftOrbitR2 {
-          0% {
-            transform: translate(0, 0) rotate(360deg);
-            opacity: 0;
-          }
-          10% {
-            opacity: 0.8;
-          }
-          90% {
-            opacity: 0.8;
-          }
-          100% {
-            transform: translate(calc(100vw + 900px), -100px) rotate(0deg);
-            opacity: 0;
-          }
-        }
-
-        @keyframes driftOrbitR3 {
-          0% {
-            transform: translate(0, 0) rotate(0deg);
-            opacity: 0;
-          }
-          12% {
-            opacity: 0.5;
-          }
-          88% {
-            opacity: 0.5;
-          }
-          100% {
-            transform: translate(calc(100vw + 450px), -50px) rotate(-360deg);
-            opacity: 0;
-          }
         }
 
         @keyframes quantumHeroFloatOrb {
@@ -399,7 +343,7 @@ export default function HomePage() {
           max-width: 1300px;
           width: 100%;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
           margin-bottom: 0px;
         }
@@ -407,17 +351,14 @@ export default function HomePage() {
         .hero-left {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          text-align: center;
-          background: rgba(10, 28, 54, 0.65);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-top: 1px solid rgba(255, 255, 255, 0.15);
-          border-left: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 16px;
-          padding: 50px 60px;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+          align-items: flex-start;
+          text-align: left;
+          background: transparent;
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
+          border: none;
+          padding: 0;
+          box-shadow: none;
           z-index: 5;
           max-width: 720px;
           width: 100%;
@@ -578,22 +519,23 @@ export default function HomePage() {
             background-position: center !important;
           }
           .hero-content {
-            grid-template-columns: 1fr;
-            text-align: center;
+            text-align: left;
+            justify-content: flex-start;
             gap: 0 !important;
           }
           .hero-left {
-            align-items: center;
-            width: 92%;
-            margin: 0 auto 30px auto;
-            padding: 30px 20px !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 40px 20px 80px 20px !important;
             box-sizing: border-box;
-            background: rgba(10, 28, 54, 0.75) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 16px !important;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
           }
           .hero-btns {
             justify-content: center;
@@ -731,7 +673,7 @@ export default function HomePage() {
           }
           .hero-left {
             max-width: 720px !important;
-            padding: 55px !important;
+            padding: 0 !important;
           }
           .headline {
             font-size: 4.8rem !important;
@@ -839,17 +781,7 @@ export default function HomePage() {
             <p className="paragraph">
               Empowering families through education-first financial strategies designed for retirement confidence, wealth preservation, and lasting legacy.
             </p>
-            <div className="hero-btns">
-              <button onClick={(e) => {
-                e.preventDefault();
-                if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
-              }} className="btn-primary-hero">
-                <span>🗓️</span> BOOK DISCOVERY CALL
-              </button>
-              <a href="#services" className="btn-outline-hero">
-                <span className="play-icon">▷</span> EXPLORE OUR SERVICES
-              </a>
-            </div>
+
           </div>
 
         </div>
@@ -896,32 +828,17 @@ export default function HomePage() {
               <p className="meet-partner-desc">
                 Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
               </p>
-              <div className="meet-partner-highlights">
-                <div className="meet-partner-hl">
-                  <span className="meet-partner-hl-icon">🎯</span>
-                  <div>
-                    <strong>Licensed Professional</strong>
-                    <span>Certified financial strategist</span>
-                  </div>
-                </div>
-                <div className="meet-partner-hl">
-                  <span className="meet-partner-hl-icon">👨‍👩‍👧‍👦</span>
-                  <div>
-                    <strong>Family-First Approach</strong>
-                    <span>Strategies tailored for families</span>
-                  </div>
-                </div>
-                <div className="meet-partner-hl">
-                  <span className="meet-partner-hl-icon">📈</span>
-                  <div>
-                    <strong>Proven Track Record</strong>
-                    <span>Trusted by hundreds of families</span>
-                  </div>
-                </div>
+              <div className="meet-partner-btns">
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
+                }} className="btn-primary-hero">
+                  <span>🗓️</span> BOOK DISCOVERY CALL
+                </button>
+                <a href="#services" className="btn-outline-hero meet-partner-outline">
+                  <span className="play-icon">▷</span> EXPLORE OUR SERVICES
+                </a>
               </div>
-              <a href="/who_we_are/about" className="meet-partner-btn">
-                Learn More About Us →
-              </a>
             </div>
           </div>
         </div>
@@ -1170,7 +1087,6 @@ function ServiceCard({ href, img, title, backTitle, desc, delay }) {
 function WhyChooseItem({ icon, title, desc }) {
   return (
     <div>
-      <div style={{ fontSize: '2.2rem', marginBottom: '14px' }}>{icon}</div>
       <h3 style={{ color: '#fff', fontSize: '1rem', marginBottom: '8px', fontWeight: '700' }}>{title}</h3>
       <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.5' }}>{desc}</p>
     </div>
@@ -1251,38 +1167,44 @@ function OppPerk({ text }) {
 
 function TypingHeadline() {
   const [typedLength, setTypedLength] = useState(0);
-  const line1Text = "Built on Strategy.";
-  const line2Text = "Driven by Purpose.";
-  const totalLength = line1Text.length + line2Text.length;
+  const [isDeleting, setIsDeleting] = useState(false);
+  const word1 = "Strategy.";
+  const word2 = "Purpose.";
+  const totalLength = word1.length + word2.length;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTypedLength((prev) => {
-        if (prev < totalLength) {
-          return prev + 1;
-        } else {
-          clearInterval(interval);
-          return prev;
-        }
-      });
-    }, 55);
-    return () => clearInterval(interval);
-  }, [totalLength]);
+    let timeout;
 
-  const displayLine1 = line1Text.slice(0, typedLength);
-  const displayLine2 = typedLength > line1Text.length
-    ? line2Text.slice(0, typedLength - line1Text.length)
+    if (!isDeleting && typedLength === totalLength) {
+      // Pause for 4 seconds when fully typed
+      timeout = setTimeout(() => setIsDeleting(true), 4000);
+    } else if (isDeleting && typedLength === 0) {
+      // Pause for half a second before typing again
+      timeout = setTimeout(() => setIsDeleting(false), 500);
+    } else {
+      // Type forward or backspace
+      timeout = setTimeout(() => {
+        setTypedLength(prev => prev + (isDeleting ? -1 : 1));
+      }, isDeleting ? 30 : 55);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [typedLength, isDeleting, totalLength]);
+
+  const displayWord1 = word1.slice(0, typedLength);
+  const displayWord2 = typedLength > word1.length
+    ? word2.slice(0, typedLength - word1.length)
     : "";
 
   return (
     <h1 className="headline">
       <span className="headline-span" style={{ color: 'white' }}>
-        {displayLine1}
-        {typedLength < line1Text.length && <span className="typing-cursor">|</span>}
+        Built on {displayWord1}
+        {typedLength < word1.length && <span className="typing-cursor">|</span>}
       </span><br />
       <span className="headline-span" style={{ color: '#e8c678' }}>
-        {displayLine2}
-        {typedLength >= line1Text.length && typedLength < totalLength && <span className="typing-cursor">|</span>}
+        Driven by {displayWord2}
+        {typedLength >= word1.length && <span className="typing-cursor">|</span>}
       </span>
     </h1>
   );

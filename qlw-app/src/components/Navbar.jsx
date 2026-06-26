@@ -51,8 +51,7 @@ export default function Navbar() {
 
   if (pathname?.startsWith("/admin")) return null;
 
-  const isHome = pathname === "/";
-  const headerClass = `navbar ${scrolled ? 'scrolled' : ''} ${isHome && !scrolled ? 'is-home-hero' : ''}`;
+  const headerClass = `navbar ${scrolled ? 'scrolled' : ''}`;
 
   return (
     <>
@@ -112,9 +111,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/who_we_are/about" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      👤
-                    </span>
                     About Us
                   </Link>
                 </li>
@@ -124,9 +120,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/who_we_are/partners" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🤝
-                    </span>
                     Our Partners
                   </Link>
                 </li> */}
@@ -136,9 +129,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/who_we_are/disclaimer" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      📋
-                    </span>
                     Our Disclaimer
                   </Link>
                 </li>
@@ -164,9 +154,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/investment-planning" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      📈
-                    </span>
                     Financial Needs Analysis
                   </Link>
                 </li>
@@ -176,9 +163,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/living-will-trust" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      📜
-                    </span>
                     Living Will &amp; Trust
                   </Link>
                 </li>
@@ -188,9 +172,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/tax-saving" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      💰
-                    </span>
                     Tax Savings
                   </Link>
                 </li>
@@ -200,9 +181,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/retirement-planning" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🏖️
-                    </span>
                     Retirement Planning
                   </Link>
                 </li>
@@ -212,9 +190,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/kids-college" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🎓
-                    </span>
                     Kids College
                   </Link>
                 </li>
@@ -224,9 +199,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/images/services/life-insurance" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🛡️
-                    </span>
                     Life Insurance
                   </Link>
                 </li>
@@ -252,9 +224,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/Entrepreneurship/6-steps-to-financial-freedom" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🚀
-                    </span>
                     6 Steps to Financial Freedom
                   </Link>
                 </li>
@@ -280,9 +249,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/Activities/blogs" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      ✍️
-                    </span>
                     Blog Articles
                   </Link>
                 </li>
@@ -292,9 +258,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/Activities/videos" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      🎥
-                    </span>
                     Video Gallery
                   </Link>
                 </li> */}
@@ -304,9 +267,6 @@ export default function Navbar() {
                     className={`dropdown-item ${pathname === "/Activities/Photos" ? "active" : ""}`}
                     role="menuitem"
                   >
-                    <span className="dd-icon" aria-hidden="true">
-                      📸
-                    </span>
                     Photo Gallery
                   </Link>
                 </li>

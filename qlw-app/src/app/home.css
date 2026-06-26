@@ -936,11 +936,36 @@
   max-width: 520px;
 }
 
-.meet-partner-highlights {
+.meet-partner-btns {
   display: flex;
-  flex-direction: column;
   gap: 14px;
-  margin: 24px 0 32px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.meet-partner-btns .btn-primary-hero {
+  background: linear-gradient(135deg, #c9a84c, #b8922a);
+  color: #fff;
+  border: none;
+}
+
+.meet-partner-outline {
+  background: transparent !important;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+}
+
+.meet-partner-outline:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+.meet-partner-outline .play-icon {
+  color: var(--primary) !important;
+}
+
+.meet-partner-outline:hover .play-icon {
+  color: #fff !important;
 }
 
 .meet-partner-hl {
