@@ -778,9 +778,7 @@ export default function HomePage() {
             <h2 className="sub-headline">
               Take a Quantum Leap Toward Financial Confidence
             </h2>
-            <p className="paragraph">
-              Empowering families through education-first financial strategies designed for retirement confidence, wealth preservation, and lasting legacy.
-            </p>
+
 
           </div>
 
