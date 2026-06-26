@@ -92,8 +92,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={`nav-item has-dropdown ${activeDropdown === 'about' ? 'open' : ''}`}>
-              <a href="#" className={`nav-link ${pathname?.startsWith("/who_we_are") ? "active" : ""}`} onClick={(e) => toggleDropdown('about', e)}>
-                About{" "}
+              <Link href="/who_we_are/about" className={`nav-link ${pathname?.startsWith("/who_we_are") ? "active" : ""}`} onClick={(e) => {
+                if (typeof window !== 'undefined' && window.innerWidth <= 1100) {
+                  e.preventDefault();
+                  toggleDropdown('about', { preventDefault: () => {} });
+                }
+              }}>
+                About Us{" "}
                 <svg
                   className="dd-arrow"
                   viewBox="0 0 24 24"
@@ -103,7 +108,7 @@ export default function Navbar() {
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
-              </a>
+              </Link>
               <ul className="dropdown" role="menu">
                 <li role="none">
                   <Link
@@ -114,15 +119,6 @@ export default function Navbar() {
                     About Us
                   </Link>
                 </li>
-                {/* <li role="none">
-                  <Link
-                    href="/who_we_are/partners"
-                    className={`dropdown-item ${pathname === "/who_we_are/partners" ? "active" : ""}`}
-                    role="menuitem"
-                  >
-                    Our Partners
-                  </Link>
-                </li> */}
                 <li role="none">
                   <Link
                     href="/who_we_are/disclaimer"
