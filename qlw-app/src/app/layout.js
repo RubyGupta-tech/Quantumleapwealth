@@ -71,6 +71,24 @@ export default function RootLayout({ children }) {
                     mutation.addedNodes.forEach((node) => {
                       if (node.classList && node.classList.contains('calendly-overlay')) {
                         window.history.pushState({ calendlyOpen: true }, '');
+                        
+                        // Inject custom close button for mobile
+                        if (window.innerWidth <= 768 && !document.getElementById('custom-calendly-close')) {
+                            const btn = document.createElement('button');
+                            btn.id = 'custom-calendly-close';
+                            btn.innerHTML = '✕';
+                            btn.style.cssText = 'position: fixed; top: 15px; right: 15px; width: 44px; height: 44px; border-radius: 50%; background: #04111f; color: white; border: 2px solid white; font-size: 20px; font-weight: bold; cursor: pointer; z-index: 2147483647; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5);';
+                            btn.onclick = () => {
+                                const overlay = document.querySelector('.calendly-overlay');
+                                if (overlay) overlay.parentNode.removeChild(overlay);
+                                document.body.style.overflow = '';
+                                if (window.history.state && window.history.state.calendlyOpen) {
+                                    window.history.back();
+                                }
+                                btn.remove();
+                            };
+                            document.body.appendChild(btn);
+                        }
                       }
                     });
                     mutation.removedNodes.forEach((node) => {
@@ -78,6 +96,8 @@ export default function RootLayout({ children }) {
                         if (window.history.state && window.history.state.calendlyOpen) {
                           window.history.back();
                         }
+                        const btn = document.getElementById('custom-calendly-close');
+                        if (btn) btn.remove();
                       }
                     });
                   });
@@ -97,10 +117,13 @@ export default function RootLayout({ children }) {
                   overlay.parentNode.removeChild(overlay);
                   document.body.style.overflow = '';
                 }
+                const btn = document.getElementById('custom-calendly-close');
+                if (btn) btn.remove();
               });
             }
           `}
         </Script>
+
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
