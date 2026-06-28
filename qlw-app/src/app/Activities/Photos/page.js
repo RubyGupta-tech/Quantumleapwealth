@@ -18,7 +18,7 @@ export default function Page() {
                             style="color:var(--text-muted)">Activities</span><span>›</span><span
                             style="color:var(--primary)">Photos</span></div>
 
-                    <div class="page-hero-badge">📸 Activities</div>
+                    <div class="page-hero-badge">Activities</div>
 
                     <h1>Our <span class="highlight">Photo Gallery</span></h1>
 
@@ -40,9 +40,9 @@ export default function Page() {
 
             <div class="activities-tabs-inner">
 
-                <a href="/Activities/Photos" class="act-tab active">📸 Photos</a>
-                <a href="/Activities/videos" class="act-tab" style="display: none;">🎥 Videos</a>
-                <a href="/Activities/blogs" class="act-tab">✍️ Blog</a>
+                <a href="/Activities/Photos" class="act-tab active">Photos</a>
+                <a href="/Activities/videos" class="act-tab" style="display: none;">Videos</a>
+                <a href="/Activities/blogs" class="act-tab">Blog</a>
 
             </div>
 
@@ -395,7 +395,7 @@ export default function Page() {
 
                 <div class="upload-cta">
 
-                    <div class="upload-cta-icon">🖼️</div>
+                    <div class="upload-cta-icon" style="display: none;"></div>
 
                     <h3>More Photos Coming Soon!</h3>
 
@@ -433,7 +433,7 @@ export default function Page() {
 
                         <a href="#"
                             onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
-                            class="btn btn-primary">📅 Book Free Appointment</a>
+                            class="btn btn-primary">Book Free Appointment</a>
 
                         <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 

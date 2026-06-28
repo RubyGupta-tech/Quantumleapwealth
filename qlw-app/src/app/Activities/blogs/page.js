@@ -59,7 +59,7 @@ export default function Page() {
             <div class="container">
                 <div class="page-hero-inner">
                     <div class="breadcrumb"><a href="/">Home</a><span>›</span><span style="color:var(--primary)">Media & Blog</span></div>
-                    <div class="page-hero-badge">✍️ Media Insights</div>
+                    <div class="page-hero-badge">Media Insights</div>
                     <h1>Financial <span class="highlight">Insights</span></h1>
                     <p class="page-hero-sub">Read our latest wealth-building strategies, actionable financial tips, and community media updates from the experts.</p>
                 </div>
@@ -69,9 +69,9 @@ export default function Page() {
         <!-- ACTIVITY TABS -->
         <nav class="activities-tabs">
             <div class="activities-tabs-inner">
-                <a href="/Activities/Photos" class="act-tab">📸 Photos</a>
-                <a href="/Activities/videos" class="act-tab" style="display: none;">🎥 Videos</a>
-                <a href="/Activities/blogs" class="act-tab active">✍️ Blog</a>
+                <a href="/Activities/Photos" class="act-tab">Photos</a>
+                <a href="/Activities/videos" class="act-tab" style="display: none;">Videos</a>
+                <a href="/Activities/blogs" class="act-tab active">Blog</a>
             </div>
         </nav>
 
@@ -108,7 +108,7 @@ export default function Page() {
 
                                     <div class="blog-coming-strip">
 
-                                        <div class="blog-coming-strip-icon">✍️</div>
+                                        <div class="blog-coming-strip-icon" style="display: none;"></div>
 
                                         <h3>Articles Coming Soon!</h3>
 
@@ -219,7 +219,7 @@ export default function Page() {
 
                                     <div class="sidebar-card">
 
-                                        <h3>🔍 Search Articles</h3>
+                                        <h3>Search Articles</h3>
 
                                         <div style="display:flex;gap:8px">
 
@@ -237,7 +237,7 @@ export default function Page() {
 
                                     <div class="sidebar-card">
 
-                                        <h3>🏷️ Topics</h3>
+                                        <h3>Topics</h3>
 
                                         <div class="sidebar-topics">
 
@@ -265,7 +265,7 @@ export default function Page() {
 
                                     <div class="sidebar-cta">
 
-                                        <h3>📅 Free Consultation</h3>
+                                        <h3>Free Consultation</h3>
 
                                         <p>Have questions? Our team is available 24/7 to guide your financial journey.
                                         </p>
@@ -279,7 +279,7 @@ export default function Page() {
                                     <!-- Recent (placeholder) -->
 
                                     <div class="sidebar-card">
-                                        <h3>🕐 Recent Posts</h3>
+                                        <h3>Recent Posts</h3>
                                         <ul class="sidebar-recent" style="padding:0;margin:0">
                                             <li><a href="/Activities/life-insurance-safety-net">Why Life Insurance Is Your Family's Safety Net - Quantum Leap Wealth</a></li>
                                             <li><a href="/Activities/retire-comfortably-before-60">How to Retire Comfortably Before 60 - Quantum Leap Wealth</a></li>
@@ -314,7 +314,7 @@ export default function Page() {
 
                                     <a href="#"
                                         onclick="Calendly.initPopupWidget({url:'https://calendly.com/quantumleapwealth/30min'});return false;"
-                                        class="btn btn-primary">📅 Book Free Appointment</a>
+                                        class="btn btn-primary">Book Free Appointment</a>
 
                                     <a href="/contact" class="btn btn-outline-white">Contact Us</a>
 

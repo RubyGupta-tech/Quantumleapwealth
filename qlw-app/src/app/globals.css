@@ -155,7 +155,9 @@ body {
   }
 
   .calendly-popup-close > * {
-    display: none !important; /* Hide default icon if any */
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
+
 

@@ -62,6 +62,45 @@ export default function RootLayout({ children }) {
         {/* Calendly - Restored to afterInteractive for functional popup widget */}
         <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        <Script id="calendly-back-fix" strategy="afterInteractive">
+          {`
+            if (typeof window !== 'undefined') {
+              const initCalendlyObserver = () => {
+                const observer = new MutationObserver((mutations) => {
+                  mutations.forEach((mutation) => {
+                    mutation.addedNodes.forEach((node) => {
+                      if (node.classList && node.classList.contains('calendly-overlay')) {
+                        window.history.pushState({ calendlyOpen: true }, '');
+                      }
+                    });
+                    mutation.removedNodes.forEach((node) => {
+                      if (node.classList && node.classList.contains('calendly-overlay')) {
+                        if (window.history.state && window.history.state.calendlyOpen) {
+                          window.history.back();
+                        }
+                      }
+                    });
+                  });
+                });
+                observer.observe(document.body, { childList: true });
+              };
+
+              if (document.body) {
+                initCalendlyObserver();
+              } else {
+                document.addEventListener('DOMContentLoaded', initCalendlyObserver);
+              }
+
+              window.addEventListener('popstate', (e) => {
+                const overlay = document.querySelector('.calendly-overlay');
+                if (overlay) {
+                  overlay.parentNode.removeChild(overlay);
+                  document.body.style.overflow = '';
+                }
+              });
+            }
+          `}
+        </Script>
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
