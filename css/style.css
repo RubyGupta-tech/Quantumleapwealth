@@ -2226,3 +2226,45 @@ img {
   .qlw-cta-bold { font-size: 1.6rem; }
   .qlw-cta-italic { font-size: 1.45rem; }
 }
+
+/* Calendly Mobile Close Button Fix */
+@media (max-width: 767px) {
+  .calendly-popup-close {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #04111f !important;
+    color: white !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    top: 15px !important;
+    right: 15px !important;
+    z-index: 999999 !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+  }
+  
+  .calendly-popup-close::before,
+  .calendly-popup-close::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 20px !important;
+    height: 2px !important;
+    background-color: white !important;
+    top: 50% !important;
+    left: 50% !important;
+  }
+  
+  .calendly-popup-close::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+  }
+  
+  .calendly-popup-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+  }
+
+  .calendly-popup-close > * {
+    display: none !important;
+  }
+}
