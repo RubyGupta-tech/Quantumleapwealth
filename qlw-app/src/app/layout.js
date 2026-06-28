@@ -79,13 +79,8 @@ export default function RootLayout({ children }) {
                             btn.innerHTML = '✕';
                             btn.style.cssText = 'position: fixed; top: 15px; right: 15px; width: 44px; height: 44px; border-radius: 50%; background: #04111f; color: white; border: 2px solid white; font-size: 20px; font-weight: bold; cursor: pointer; z-index: 2147483647; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5);';
                             btn.onclick = () => {
-                                if (window.history.state && window.history.state.calendlyOpen) {
-                                    window.history.back(); // Let popstate handle cleanup to avoid double-back
-                                } else {
-                                    const overlay = document.querySelector('.calendly-overlay');
-                                    if (overlay) overlay.parentNode.removeChild(overlay);
-                                    document.body.style.overflow = '';
-                                    btn.remove();
+                                if (window.Calendly && typeof window.Calendly.closePopupWidget === 'function') {
+                                    window.Calendly.closePopupWidget();
                                 }
                             };
                             document.body.appendChild(btn);
@@ -113,17 +108,14 @@ export default function RootLayout({ children }) {
               }
 
               window.addEventListener('popstate', (e) => {
-                const overlay = document.querySelector('.calendly-overlay');
-                if (overlay) {
-                  overlay.parentNode.removeChild(overlay);
-                  document.body.style.overflow = '';
+                if (document.querySelector('.calendly-overlay') && window.Calendly && typeof window.Calendly.closePopupWidget === 'function') {
+                  window.Calendly.closePopupWidget();
                 }
-                const btn = document.getElementById('custom-calendly-close');
-                if (btn) btn.remove();
               });
             }
           `}
         </Script>
+
 
 
       </head>
