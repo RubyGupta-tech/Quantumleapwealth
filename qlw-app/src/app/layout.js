@@ -42,7 +42,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${dancingScript.variable} ${greatVibes.variable}`}>
+    <html lang="en" suppressHydrationWarning={true} className={`${inter.variable} ${playfair.variable} ${dancingScript.variable} ${greatVibes.variable}`}>
       <head>
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
 
 
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
         <main id="main-content" role="main">

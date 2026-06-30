@@ -209,7 +209,17 @@
                         Gallery</a></li>
             </ul>
         </li>
-        <li class="nav-item"><a href="resources/resources.html" class="nav-link">Resources</a>
+        <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">Resources <svg class="dd-arrow" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+            <ul class="dropdown" role="menu">
+                <li role="none"><a href="resources/financial-resource-center.html" class="dropdown-item" role="menuitem"><span
+                            class="dd-icon" aria-hidden="true">🧮</span>Financial Resource Center</a></li>
+                <li role="none"><a href="resources/strategic-partners.html" class="dropdown-item" role="menuitem"><span
+                            class="dd-icon" aria-hidden="true">🤝</span>Strategic Partners</a></li>
+            </ul>
         </li>
         <li class="nav-item"><a href="contact/contact.html" class="nav-link">Contact</a></li>
         <li class="nav-item">
@@ -396,6 +406,7 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
         text-decoration: none;
+        white-space: nowrap;
       }
 
       .btn-primary-hero:hover {
@@ -444,6 +455,14 @@
         object-fit: cover;
         object-position: top center;
         background: #0a1930;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .profile-box-image:hover {
+        box-shadow: 
+          0 0 10px 4px rgba(255, 255, 255, 0.8),
+          0 0 25px 10px rgba(232, 198, 120, 0.8),
+          0 0 50px 25px rgba(56, 130, 246, 0.4) !important;
       }
 
       .profile-box-text h3 {
@@ -464,7 +483,7 @@
       }
 
       #services {
-        background: #ffffff;
+        background: #f8f7f2;
         padding-top: 0px;
         margin-top: -40px;
         position: relative;

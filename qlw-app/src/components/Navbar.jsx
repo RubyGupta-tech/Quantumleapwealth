@@ -268,10 +268,39 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
-              <Link href="/resources" className={`nav-link ${pathname === "/resources" ? "active" : ""}`}>
-                Resources
-              </Link>
+            <li className={`nav-item has-dropdown ${activeDropdown === 'resources' ? 'open' : ''}`}>
+              <a href="#" className={`nav-link ${pathname?.startsWith("/resources") ? "active" : ""}`} onClick={(e) => toggleDropdown('resources', e)}>
+                Resources{" "}
+                <svg
+                  className="dd-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+              <ul className="dropdown" role="menu">
+                <li role="none">
+                  <Link
+                    href="/resources/financial-resource-center"
+                    className={`dropdown-item ${pathname === "/resources/financial-resource-center" ? "active" : ""}`}
+                    role="menuitem"
+                  >
+                    Financial Resource Center
+                  </Link>
+                </li>
+                <li role="none">
+                  <Link
+                    href="/resources/strategic-partners"
+                    className={`dropdown-item ${pathname === "/resources/strategic-partners" ? "active" : ""}`}
+                    role="menuitem"
+                  >
+                    Strategic Partners
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
               <Link href="/contact" className={`nav-link ${pathname === "/contact" ? "active" : ""}`}>

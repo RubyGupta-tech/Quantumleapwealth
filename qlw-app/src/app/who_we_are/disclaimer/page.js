@@ -1,4 +1,4 @@
-﻿import "./disclaimer.css";
+import "./disclaimer.css";
 
 export default function Page() {
   return (
@@ -323,23 +323,6 @@ export default function Page() {
             </div>
 
         </section>
-
-
-
-        <!-- LAST UPDATED -->
-
-        <div class="last-updated">
-
-            <div class="container">Last updated: February 2025 &nbsp;|&nbsp; © 2025 Quantum Leap Wealth. All
-                rights
-
-                reserved. &nbsp;|&nbsp; <a href="/contact" style="color:var(--accent-dark)">Contact
-                    Us</a>
-
-            </div>
-
-        </div>
-
 
 
     ` }} />

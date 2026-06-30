@@ -118,6 +118,7 @@
     width: auto;
     object-fit: contain;
     border-radius: 5px;
+    mix-blend-mode: multiply;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -153,11 +154,6 @@
 .navbar-brand:hover .brand-text {
     color: var(--accent-dark);
 }
-.navbar-brand:hover .brand-logo {
-    transform: scale(1.05);
-    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
-}
-
 /* Legacy Visibility Cleanup */
 .brand-name, .brand-tagline { display: none !important; }
 
@@ -313,6 +309,7 @@
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
 .btn-nav-cta:hover {

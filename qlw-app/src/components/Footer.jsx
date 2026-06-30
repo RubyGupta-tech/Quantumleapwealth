@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -34,7 +34,7 @@ export default function Footer() {
                 <li><Link href="/who_we_are/about">About Us</Link></li>
                 <li><Link href="/who_we_are/partners">Our Partners</Link></li>
                 <li><Link href="/Entrepreneurship/6-steps-to-financial-freedom">Entrepreneurship</Link></li>
-                <li><Link href="/resources">Resources</Link></li>
+                <li><Link href="/resources/financial-resource-center">Resources</Link></li>
                 <li><Link href="/Activities/blogs">Blog Articles</Link></li>
                 <li><Link href="/Activities/Photos">Photo Gallery</Link></li>
                 <li><Link href="/contact">Contact</Link></li>

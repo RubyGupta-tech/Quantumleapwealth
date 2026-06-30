@@ -97,11 +97,17 @@
         }
 
         .calc-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            max-width: 860px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .calc-list {
+                grid-template-columns: 1fr;
+            }
         }
 
         .calc-card {
@@ -414,17 +420,17 @@
 
                 <!-- LEFT COLUMN: Calculators -->
                 <div class="resources-left">
-                    <div style="margin-bottom: 24px;">
+                    <div style="margin-bottom: 32px; text-align: center;">
                         <h2
                             style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary, #0a2540);">
-                            Financial Resource <span style="color: #c9a84c;">Center</span></h2>
+                            Interactive <span style="color: #c9a84c;">Calculators</span></h2>
                         <p style="color: var(--text-muted, #6b7c8d); font-size: 0.9rem; margin-top: 6px;">Calculate your
                             retirement, insurance, and investment needs.</p>
                     </div>
                     <div class="calc-list">
 
                         <!-- Abacus Wizard Login Card -->
-                        <div class="calc-card" style="border: 1.5px solid #c9a84c; margin-bottom: 8px;">
+                        <div class="calc-card" style="border: 1.5px solid #c9a84c; margin: 0 auto 20px auto; max-width: 600px;">
                             <div class="calc-card-header-static" style="padding: 12px 20px; background: linear-gradient(135deg, #0a2540, #1a4a7a); color: #fff; font-family: 'Playfair Display', serif; font-size: 1.02rem; font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
                                 <div class="calc-header-left">
                                     <span class="icon" style="font-size: 1.3rem; margin-right: 10px;">🔮</span> FNA (Financial Need Analysis)
@@ -636,7 +642,7 @@
                             </div>
                             <h4>American</h4>
                             <p>Access top-tier annuities and life insurance products to secure your retirement income.</p>
-                            <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.american-equity.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
 
                         <!-- Partner 2 -->
@@ -648,7 +654,7 @@
                             </div>
                             <h4>Annexus</h4>
                             <p>Explore innovative retirement solutions designed to protect and aggressively grow your wealth.</p>
-                            <a href="https://www.annexus.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.annexus.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
 
                         <!-- Partner 3 -->
@@ -660,7 +666,7 @@
                             </div>
                             <h4>Corebridge</h4>
                             <p>Benefit from retirement and insurance solutions tailored for long-term stability.</p>
-                            <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.corebridgefinancial.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
 
                         <!-- Partner 4 -->
@@ -672,7 +678,7 @@
                             </div>
                             <h4>Fidelity</h4>
                             <p>Manage your investments with world-class brokerage and holistic wealth management.</p>
-                            <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.fidelity.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
 
                         <!-- Partner 5 -->
@@ -684,7 +690,7 @@
                             </div>
                             <h4>Nationwide</h4>
                             <p>Protect your family and assets with industry-leading insurance and diverse planning products.</p>
-                            <a href="https://www.nationwidenewheights.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.nationwidenewheights.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
 
                         <!-- Partner 6 -->
@@ -696,7 +702,7 @@
                             </div>
                             <h4>North American</h4>
                             <p>Secure your legacy with reliable life insurance and annuity products from a trusted provider.</p>
-                            <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Learn More →</a>
+                            <a href="https://www.northamericancompany.com/" target="_blank" rel="noopener">Explore Solutions →</a>
                         </div>
                         </div>
 

@@ -58,16 +58,16 @@
 }
 
 .brand-logo {
-    height: 85px; /* Restored to a more standard proportion for a stacked logo */
+    height: 65px; /* Slimmer logo box height */
     width: auto;
     object-fit: contain;
     border-radius: 0;
+    mix-blend-mode: multiply;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navbar-brand:hover .brand-logo, .mobile-brand-link:hover .brand-logo {
-    transform: scale(1.08); /* Smoother interaction */
-    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.1));
+    /* Removed transform and filter to preserve mix-blend-mode */
 }
 
 .brand-text {

@@ -499,8 +499,36 @@ export default function HomePage() {
 
         .bottom-banner .dot { font-size: 0.5rem; opacity: 0.7; }
 
+        .flash-word {
+          animation: goldenFlash 4.5s infinite;
+          opacity: 0.8;
+          transition: all 0.3s ease;
+        }
+        .flash-word:hover {
+          color: #fff;
+          text-shadow: 0 0 15px #e8c678;
+          opacity: 1;
+        }
+        .flash-1 { animation-delay: 0s; }
+        .flash-2 { animation-delay: 1.5s; }
+        .flash-3 { animation-delay: 3s; }
+
+        @keyframes goldenFlash {
+          0%, 20%, 100% {
+            color: #e8c678;
+            text-shadow: none;
+            opacity: 0.8;
+          }
+          10% {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(232, 198, 120, 0.9), 0 0 30px rgba(255, 255, 255, 0.6);
+            opacity: 1;
+            transform: scale(1.02);
+          }
+        }
+
         #services {
-          background: #ffffff;
+          background: #f8f7f2;
           padding-top: 80px;
           margin-top: 0;
           position: relative;
@@ -709,6 +737,17 @@ export default function HomePage() {
             font-size: 1.05rem !important;
           }
         }
+
+        /* Anu Image Glow Effect */
+        .glow-on-hover {
+          transition: all 0.4s ease;
+        }
+        .glow-on-hover:hover {
+          box-shadow: 
+            0 0 10px 4px rgba(255, 255, 255, 0.8),
+            0 0 25px 10px rgba(232, 198, 120, 0.8),
+            0 0 50px 25px rgba(56, 130, 246, 0.4) !important;
+        }
       `}} />
 
       {/* HERO SECTION */}
@@ -786,11 +825,11 @@ export default function HomePage() {
 
         <div className="bottom-banner">
           <span className="banner-line"></span>
-          <span>Educate Today.</span>
+          <span className="flash-word flash-1">Educate Today.</span>
           <span className="dot">♦</span>
-          <span>Elevate Tomorrow.</span>
+          <span className="flash-word flash-2">Elevate Tomorrow.</span>
           <span className="dot">♦</span>
-          <span>Empower Forever.</span>
+          <span className="flash-word flash-3">Empower Forever.</span>
           <span className="banner-line right"></span>
         </div>
       </section>
@@ -799,7 +838,7 @@ export default function HomePage() {
       <section className="meet-partner-section" id="meet-partner">
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div className="meet-partner-grid reveal">
-            <div className="meet-partner-image">
+            <div className="meet-partner-image glow-on-hover">
               <Image
                 src="/images/Anu-Pic-with-laptop.jpeg"
                 alt="Anuradha Pasupuleti — Founder & Financial Strategist"

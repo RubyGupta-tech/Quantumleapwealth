@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glow Effect Options - Quantum Leap Wealth</title>
+  <style>
+    body {
+      background-color: #0b1c36;
+      color: #fff;
+      font-family: 'Inter', system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      margin: 0;
+    }
+    h1 {
+      color: #e8c678;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 60px;
+      max-width: 1400px;
+      width: 100%;
+    }
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Common Image Box */
+    .img-box {
+      width: 100%;
+      height: 380px;
+      border-radius: 16px;
+      position: relative;
+      background-image: url('/images/Anu-Pic-with-laptop.jpeg');
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+
+    /* Option 1: Pulsating Glow */
+    .opt-1 {
+      transition: all 0.3s ease;
+    }
+    .opt-1:hover {
+      animation: pulseGlow 1.5s infinite;
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px 4px rgba(232, 198, 120, 0.4); }
+      50% { box-shadow: 0 0 35px 12px rgba(232, 198, 120, 0.9); }
+      100% { box-shadow: 0 0 15px 4px rgba(232, 198, 120, 0.4); }
+    }
+
+    /* Option 2: Spinning Rim Light */
+    .opt-2 {
+      position: relative;
+      border-radius: 16px;
+    }
+    /* We use an ::after for the background so the ::before can spin behind it */
+    .opt-2 {
+      background: none;
+      z-index: 1;
+    }
+    .opt-2-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background-image: url('/images/Anu-Pic-with-laptop.jpeg');
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
+    }
+    .opt-2::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 20px;
+      background: conic-gradient(from 0deg, transparent 0%, transparent 70%, #e8c678 85%, #fff 100%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .opt-2:hover::before {
+      opacity: 1;
+      animation: spinRim 2s linear infinite;
+    }
+    @keyframes spinRim {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Option 3: Multi-Layered Glow */
+    .opt-3 {
+      transition: all 0.4s ease;
+    }
+    .opt-3:hover {
+      box-shadow: 
+        0 0 10px 4px rgba(255, 255, 255, 0.8),    /* Inner White Hot */
+        0 0 25px 10px rgba(232, 198, 120, 0.8),   /* Mid Gold */
+        0 0 50px 25px rgba(56, 130, 246, 0.4);    /* Outer Soft Blue */
+    }
+
+    /* Option 4: 3D Tilt + Reflection */
+    .opt-4-container {
+      perspective: 1000px;
+      width: 100%;
+    }
+    .opt-4 {
+      transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+      transform-origin: center;
+    }
+    .opt-4:hover {
+      transform: rotateY(15deg) rotateX(10deg);
+      box-shadow: -20px 20px 40px rgba(232, 198, 120, 0.4), 
+                  -5px 5px 15px rgba(232, 198, 120, 0.6);
+    }
+    .opt-4::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(115deg, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    .opt-4:hover::after {
+      opacity: 1;
+    }
+
+    /* Option 5: Dimmed to Bright Spotlight */
+    .opt-5 {
+      filter: grayscale(60%) brightness(0.6);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .opt-5:hover {
+      filter: grayscale(0%) brightness(1.05) contrast(1.05);
+      box-shadow: 0 0 40px 10px rgba(232, 198, 120, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <h1>Hover over each option to test the effects!</h1>
+  <div class="grid">
+    
+    <div class="card-wrapper">
+      <div class="card-title">1. Pulsating Glow</div>
+      <div class="img-box opt-1"></div>
+    </div>
+    
+    <div class="card-wrapper">
+      <div class="card-title">2. Spinning Rim Light</div>
+      <div class="img-box opt-2">
+        <div class="opt-2-bg"></div>
+      </div>
+    </div>
+    
+    <div class="card-wrapper">
+      <div class="card-title">3. Multi-Layered Theme Glow</div>
+      <div class="img-box opt-3"></div>
+    </div>
+    
+    <div class="card-wrapper">
+      <div class="card-title">4. 3D Tilt + Glass Reflection</div>
+      <div class="opt-4-container">
+        <div class="img-box opt-4"></div>
+      </div>
+    </div>
+    
+    <div class="card-wrapper">
+      <div class="card-title">5. Dimmed to Bright Spotlight</div>
+      <div class="img-box opt-5"></div>
+    </div>
+
+  </div>
+</body>
+</html>
