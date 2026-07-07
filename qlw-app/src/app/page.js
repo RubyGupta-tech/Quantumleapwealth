@@ -1201,12 +1201,10 @@ function OppPerk({ text }) {
 }
 
 const SERVICES = [
-  "Retirement Planning",
-  "Tax Strategies",
-  "Life Protection",
-  "College Funding",
-  "Wealth Building",
-  "Estate Planning",
+  "Kids’ College Planning & Beyond",
+  "Retirement Confidence",
+  "Tax-Advantaged Income strategies",
+  "Strategies to Protect and Build Wealth",
 ];
 
 function ServicesTicker() {
@@ -1253,7 +1251,7 @@ function ServicesTicker() {
 
   return (
     <div className="hero-ticker-wrap">
-      <span className="hero-ticker-label">Helping you with</span>
+      <span className="hero-ticker-label">Helping Families Build</span>
       <span className="hero-ticker-service">
         {displayed}<span className="ticker-cursor">|</span>
       </span>
