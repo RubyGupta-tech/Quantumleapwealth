@@ -830,6 +830,67 @@
 }
 
 /* ══════════════════════════════
+   HERO SERVICES TICKER
+══════════════════════════════ */
+.hero-ticker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 22px;
+  gap: 6px;
+}
+
+.hero-ticker-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-ticker-service {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #e8c678;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #e8c678;
+  padding-left: 12px;
+  min-height: 1.6em;
+}
+
+.ticker-cursor {
+  display: inline-block;
+  font-weight: 300;
+  color: #e8c678;
+  margin-left: 2px;
+  animation: cursorBlink 0.75s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+.hero-ticker-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.ticker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(232, 198, 120, 0.25);
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.ticker-dot-active {
+  background: #e8c678;
+  transform: scale(1.4);
+}
+
+/* ══════════════════════════════
    MEET YOUR FINANCIAL PARTNER
 ══════════════════════════════ */
 .meet-partner-section {
@@ -875,16 +936,7 @@
   pointer-events: none;
 }
 
-.meet-partner-nameplate {
-  position: absolute;
-  bottom: 24px;
-  left: 20px;
-  z-index: 5;
-  width: 45%;
-  max-width: 200px;
-  height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-}
+
 
 .meet-partner-text {
   display: flex;
@@ -917,8 +969,38 @@
   color: var(--primary);
   line-height: 1.15;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
+
+.meet-partner-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #c9a84c;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.meet-partner-license {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+
+.meet-partner-license strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
 
 .meet-partner-divider {
   width: 60px;

@@ -478,7 +478,7 @@ export default function HomePage() {
           border-top: 1px solid rgba(232, 198, 120, 0.25);
           padding: 14px 30px;
           color: #e8c678;
-          font-size: 1.05rem;
+          font-size: 1.3rem;
           font-family: 'Playfair Display', serif;
           letter-spacing: 2px;
           z-index: 10;
@@ -503,6 +503,7 @@ export default function HomePage() {
           animation: goldenFlash 4.5s infinite;
           opacity: 0.8;
           transition: all 0.3s ease;
+          font-weight: 800;
         }
         .flash-word:hover {
           color: #fff;
@@ -817,8 +818,7 @@ export default function HomePage() {
             <h2 className="sub-headline">
               Take a Quantum Leap Toward Financial Confidence
             </h2>
-
-
+            <ServicesTicker />
           </div>
 
         </div>
@@ -846,27 +846,24 @@ export default function HomePage() {
                 height={700}
                 style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '16px' }}
               />
-              <Image
-                src="/images/Anu-name-plate (1).png"
-                alt="Anuradha Pasupuleti - Founder | Financial Strategist"
-                width={200}
-                height={65}
-                className="meet-partner-nameplate"
-              />
             </div>
             <div className="meet-partner-text">
               <div className="meet-partner-eyebrow">
-                <span className="meet-partner-bar"></span> MEET YOUR
+                <span className="meet-partner-bar"></span> MEET
               </div>
               <h2 className="meet-partner-title">
-                FINANCIAL<br />PARTNER
+                Anuradha Pasupuleti
               </h2>
+              <p className="meet-partner-subtitle">Founder | Financial Strategist</p>
+              <div className="meet-partner-license">
+                <span>License No: <strong>4153441</strong></span>
+              </div>
               <div className="meet-partner-divider"></div>
               <p className="meet-partner-desc">
                 Providing thoughtful guidance and personalized strategies to help families make informed financial decisions and build a more confident future.
               </p>
               <div className="meet-partner-btns">
-                <button onClick={(e) => {
+                <button suppressHydrationWarning onClick={(e) => {
                   e.preventDefault();
                   if (window.Calendly) window.Calendly.initPopupWidget({ url: 'https://calendly.com/quantumleapwealth/30min' });
                 }} className="btn-primary-hero">
@@ -1014,9 +1011,9 @@ export default function HomePage() {
                 alert('Something went wrong. Please try again.');
               }
             }} style={{ display: 'flex', gap: '10px', justifyContent: 'center', maxWidth: '700px', margin: '0 auto', flexWrap: 'wrap' }}>
-              <input type="text" name="firstName" required placeholder="First Name" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
-              <input type="email" name="email" required placeholder="Email Address" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
-              <button type="submit" className="btn-primary" style={{ padding: '15px 30px', borderRadius: '4px', fontWeight: '800', letterSpacing: '0.1em', textTransform: 'uppercase', background: '#c9a84c', color: '#fff', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(201,168,76,0.3)' }}>Subscribe</button>
+              <input suppressHydrationWarning type="text" name="firstName" required placeholder="First Name" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
+              <input suppressHydrationWarning type="email" name="email" required placeholder="Email Address" style={{ padding: '15px', borderRadius: '4px', border: '1px solid #ccc', flex: 1, minWidth: '200px', fontSize: '1rem', fontFamily: 'inherit' }} />
+              <button suppressHydrationWarning type="submit" className="btn-primary" style={{ padding: '15px 30px', borderRadius: '4px', fontWeight: '800', letterSpacing: '0.1em', textTransform: 'uppercase', background: '#c9a84c', color: '#fff', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(201,168,76,0.3)' }}>Subscribe</button>
             </form>
           </div>
         </div>
@@ -1032,23 +1029,23 @@ export default function HomePage() {
                 <form id="contact-form" className="contact-form-grid" onSubmit={handleFormSubmit}>
                   <div className="opp-form-group">
                     <label>First Name *</label>
-                    <input type="text" name="first_name" required placeholder="First name" />
+                    <input suppressHydrationWarning type="text" name="first_name" required placeholder="First name" />
                   </div>
                   <div className="opp-form-group">
                     <label>Last Name *</label>
-                    <input type="text" name="last_name" required placeholder="Last name" />
+                    <input suppressHydrationWarning type="text" name="last_name" required placeholder="Last name" />
                   </div>
                   <div className="opp-form-group">
                     <label>Email Address *</label>
-                    <input type="email" name="user_email" required placeholder="your@email.com" />
+                    <input suppressHydrationWarning type="email" name="user_email" required placeholder="your@email.com" />
                   </div>
                   <div className="opp-form-group">
                     <label>Phone Number</label>
-                    <input type="tel" name="user_phone" placeholder="(+1) 000-000-0000" />
+                    <input suppressHydrationWarning type="tel" name="user_phone" placeholder="(+1) 000-000-0000" />
                   </div>
                   <div className="opp-form-group grid-span-2">
                     <label>Service of Interest</label>
-                    <select name="service">
+                    <select suppressHydrationWarning name="service">
                       <option value="">- Select a service -</option>
                       <option>Financial Needs Analysis</option>
                       <option>Living Will &amp; Trust</option>
@@ -1066,6 +1063,7 @@ export default function HomePage() {
                   </div>
                   <div className="grid-span-2">
                     <button
+                      suppressHydrationWarning
                       type="submit"
                       className="opp-submit form-submit"
                       disabled={isSubmitting}
@@ -1202,46 +1200,106 @@ function OppPerk({ text }) {
   );
 }
 
-function TypingHeadline() {
-  const [typedLength, setTypedLength] = useState(0);
+const SERVICES = [
+  "Retirement Planning",
+  "Tax Strategies",
+  "Life Protection",
+  "College Funding",
+  "Wealth Building",
+  "Estate Planning",
+];
+
+function ServicesTicker() {
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const [displayed, setDisplayed] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const currentService = SERVICES[serviceIndex];
+
+    if (isPaused) {
+      const pause = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 1500);
+      return () => clearTimeout(pause);
+    }
+
+    if (isDeleting) {
+      if (displayed.length === 0) {
+        // Move to next service
+        setIsDeleting(false);
+        setServiceIndex(prev => (prev + 1) % SERVICES.length);
+        return;
+      }
+      const del = setTimeout(() => {
+        setDisplayed(prev => prev.slice(0, -1));
+      }, 35);
+      return () => clearTimeout(del);
+    }
+
+    // Typing forward
+    if (displayed.length < currentService.length) {
+      const type = setTimeout(() => {
+        setDisplayed(currentService.slice(0, displayed.length + 1));
+      }, 60);
+      return () => clearTimeout(type);
+    } else {
+      // Fully typed — pause before deleting
+      setIsPaused(true);
+    }
+  }, [displayed, isDeleting, isPaused, serviceIndex]);
+
+  return (
+    <div className="hero-ticker-wrap">
+      <span className="hero-ticker-label">Helping you with</span>
+      <span className="hero-ticker-service">
+        {displayed}<span className="ticker-cursor">|</span>
+      </span>
+      <div className="hero-ticker-dots">
+        {SERVICES.map((_, i) => (
+          <span key={i} className={`ticker-dot${i === serviceIndex ? ' ticker-dot-active' : ''}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TypingHeadline() {
   const word1 = "Strategy.";
   const word2 = "Purpose.";
   const totalLength = word1.length + word2.length;
+  const [typedLength, setTypedLength] = useState(0);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
-    let timeout;
-
-    if (!isDeleting && typedLength === totalLength) {
-      // Pause for 4 seconds when fully typed
-      timeout = setTimeout(() => setIsDeleting(true), 4000);
-    } else if (isDeleting && typedLength === 0) {
-      // Pause for half a second before typing again
-      timeout = setTimeout(() => setIsDeleting(false), 500);
-    } else {
-      // Type forward or backspace
-      timeout = setTimeout(() => {
-        setTypedLength(prev => prev + (isDeleting ? -1 : 1));
-      }, isDeleting ? 30 : 55);
+    if (done) return; // Stop once fully typed — no loop
+    if (typedLength === totalLength) {
+      setDone(true);
+      return;
     }
-
+    const timeout = setTimeout(() => {
+      setTypedLength(prev => prev + 1);
+    }, 55);
     return () => clearTimeout(timeout);
-  }, [typedLength, isDeleting, totalLength]);
+  }, [typedLength, done, totalLength]);
 
   const displayWord1 = word1.slice(0, typedLength);
   const displayWord2 = typedLength > word1.length
     ? word2.slice(0, typedLength - word1.length)
     : "";
+  const showCursor = !done;
 
   return (
     <h1 className="headline">
       <span className="headline-span" style={{ color: 'white' }}>
         Built on {displayWord1}
-        {typedLength < word1.length && <span className="typing-cursor">|</span>}
+        {showCursor && typedLength <= word1.length && <span className="typing-cursor">|</span>}
       </span><br />
       <span className="headline-span" style={{ color: '#e8c678' }}>
         Driven by {displayWord2}
-        {typedLength >= word1.length && <span className="typing-cursor">|</span>}
+        {showCursor && typedLength > word1.length && <span className="typing-cursor">|</span>}
       </span>
     </h1>
   );
