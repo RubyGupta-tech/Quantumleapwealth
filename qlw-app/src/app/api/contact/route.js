@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 
@@ -31,6 +31,37 @@ export async function POST(request) {
       leadId = newLead.id;
     } catch (dbError) {
       console.error("Database save failed, but proceeding with emails:", dbError);
+    }
+
+    // 1.5 Send to Salesforce via Web-to-Lead
+    const salesforceOid = process.env.SALESFORCE_OID;
+    if (salesforceOid) {
+      try {
+        const sfData = new URLSearchParams();
+        sfData.append('oid', salesforceOid);
+        sfData.append('first_name', firstName);
+        sfData.append('last_name', lastName);
+        sfData.append('email', email);
+        sfData.append('company', 'Individual/Family'); // Salesforce usually requires a Company field
+        if (phone) sfData.append('phone', phone);
+        if (service) sfData.append('00Nhm000003myo9', service);
+        if (message) sfData.append('00Nhm000003nKYX', message);
+        sfData.append('lead_source', 'Web');
+
+        // The webto.salesforce.com endpoint typically returns a 200 OK even on failure, 
+        // but we send it asynchronously to not block the user response.
+        const sfResponse = await fetch('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: sfData.toString(),
+        });
+        
+        console.log("Salesforce W2L submitted. Status:", sfResponse.status);
+      } catch (sfError) {
+        console.error("Salesforce Web-to-Lead submission failed:", sfError);
+      }
+    } else {
+      console.log("Skipping Salesforce W2L submission: SALESFORCE_OID not set in .env");
     }
 
     // 2. Get admin notification email from DB or fallback
