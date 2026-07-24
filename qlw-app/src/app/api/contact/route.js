@@ -68,7 +68,7 @@ export async function POST(request) {
     const dbEmailSetting = await prisma.setting.findUnique({
       where: { key: "notification_email" },
     });
-    const notificationEmail = dbEmailSetting?.value || "connect@quantumleapwealth.com";
+    const notificationEmail = dbEmailSetting?.value || process.env.ADMIN_EMAIL || "connect@quantumleapwealth.com";
 
     // 3. Admin notification email HTML
     const adminEmailHtml = `
